@@ -18,7 +18,7 @@
         android:layout_width="600dp"
         android:layout_height="300dp"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" >
+        android:layout_marginTop="284dp" >
 
         <Button
             android:id="@+id/btn_com"
