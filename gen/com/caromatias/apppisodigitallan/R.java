@@ -37,6 +37,7 @@ public final class R {
         public static final int logo_splash=0x7f020008;
         public static final int mapa_inter=0x7f020009;
         public static final int panel_final=0x7f02000a;
+        public static final int panel_final_2=0x7f02000b;
     }
     public static final class id {
         public static final int action_settings=0x7f0a0010;
@@ -61,6 +62,7 @@ public final class R {
         public static final int activity_lamina_uno=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int activity_splash_screen=0x7f030002;
+        public static final int zoomableview=0x7f030003;
     }
     public static final class menu {
         public static final int lamina_uno=0x7f090000;

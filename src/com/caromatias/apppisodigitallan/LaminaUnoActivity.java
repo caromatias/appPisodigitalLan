@@ -1,19 +1,35 @@
 package com.caromatias.apppisodigitallan;
 
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.app.Activity;
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.VideoView;
 
 public class LaminaUnoActivity extends Activity {
 
+	private ZoomView zoomView;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lamina_uno);
+		
+		View v = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE))
+				.inflate(R.layout.zoomableview, null, false);
+		v.setLayoutParams(new LinearLayout.LayoutParams(
+				android.view.ViewGroup.LayoutParams.FILL_PARENT, android.view.ViewGroup.LayoutParams.FILL_PARENT));
+
+		zoomView = new ZoomView(this);
+		zoomView.addView(v);
+		RelativeLayout lay_principal = (RelativeLayout) findViewById(R.id.zona_zoomable);
+		lay_principal.addView(zoomView);
 		
 		final VideoView videoView = (VideoView) findViewById(R.id.video_lamina_uno);
 
