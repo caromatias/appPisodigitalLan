@@ -26,6 +26,10 @@
             android:name="com.caromatias.apppisodigitallan.MainActivity"
             android:label="@string/title_activity_main" >
         </activity>
+        <activity
+            android:name="com.caromatias.apppisodigitallan.LaminaUnoActivity"
+            android:label="@string/title_activity_lamina_uno" >
+        </activity>
     </application>
 
 </manifest>
