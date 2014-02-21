@@ -24,9 +24,113 @@
         android:src="@drawable/mapa_inter"
         android:contentDescription="@string/desc"/>
     
+    <RelativeLayout
+        android:id="@+id/panel"
+        android:layout_width="210dp"
+        android:layout_height="444dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/panel_final" >
+
+        <Button
+            android:id="@+id/btn_chile"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="145dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="345dp"
+            android:background="@drawable/boton"
+            android:text="CHILE"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_argentina"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="145dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="385dp"
+            android:background="@drawable/boton"
+            android:text="ARGENTINA"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_peru"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="145dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="425dp"
+            android:background="@drawable/boton"
+            android:text="PERÚ"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_brasil"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="145dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="466dp"
+            android:background="@drawable/boton"
+            android:text="BRASIL"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_ecuador"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="145dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="506dp"
+            android:background="@drawable/boton"
+            android:text="ECUADOR"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_colombia"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="145dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="545dp"
+            android:background="@drawable/boton"
+            android:text="COLOMBIA"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_internacional"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="145dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="315dp"
+            android:background="@drawable/boton"
+            android:text="INTERNACIONAL"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    
+    
     <VideoView
         android:id="@+id/video_lamina_uno"
         android:layout_width="1280dp"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" 
+        android:visibility="gone"/>
+
+    
 
 </RelativeLayout>
