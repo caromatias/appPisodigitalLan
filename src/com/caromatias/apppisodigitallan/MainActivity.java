@@ -26,9 +26,14 @@ public class MainActivity extends Activity {
 
 		videoView.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
 				+ R.raw.back_a_2);
-		Display display = getWindowManager().getDefaultDisplay();
 
 		videoView.start();
+		videoView.setOnPreparedListener(new OnPreparedListener() {
+		    @Override
+		    public void onPrepared(MediaPlayer mp) {
+		        mp.setLooping(true);
+		    }
+		});
 		
 		Button botonAnimado = (Button) findViewById(R.id.btn_com);
 	    Animation animacion = AnimationUtils.loadAnimation(this, R.anim.animacion);

@@ -8,9 +8,25 @@
     android:paddingTop="0dp"
     tools:context=".LaminaUnoActivity" >
 
+    <ImageView
+        android:id="@+id/img_fondo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/fondo_mapas" 
+        android:contentDescription="@string/desc"/>
+
+    <ImageView
+        android:id="@+id/img_mapa"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/mapa_inter"
+        android:contentDescription="@string/desc"/>
+    
     <VideoView
         android:id="@+id/video_lamina_uno"
         android:layout_width="1280dp"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </RelativeLayout>
