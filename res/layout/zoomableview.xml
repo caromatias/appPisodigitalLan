@@ -28,12 +28,11 @@
             android:id="@+id/puntos_lay_inter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="-58dp"
             android:paddingBottom="0dp"
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
-            android:paddingTop="0dp"
-            android:layout_marginTop="-58dp"
-             >
+            android:paddingTop="0dp" >
 
             <RelativeLayout
                 android:id="@+id/lay_back_01"
@@ -1182,7 +1181,7 @@
         android:visibility="gone" >
 
         <ImageView
-            android:id="@+id/imageView1"
+            android:id="@+id/img_view_chile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -1663,6 +1662,433 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/lay_argentina"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/img_argentina"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/mapa_argentina" />
+
+            <RelativeLayout
+                android:id="@+id/lay_argentina_01"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="660dp"
+                android:layout_marginTop="115dp" >
+
+                <Button
+                    android:id="@+id/btn_argentina_01"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/botoncomenzar"
+                    android:text="Salta"
+                    android:textColor="#ffffff"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_argentina_01"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/img_punto" >
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lay_argentina_02"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="592dp"
+                android:layout_marginTop="140dp" >
+
+                <Button
+                    android:id="@+id/btn_argentina_02"
+                    android:layout_width="90dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/botoncomenzar"
+                    android:text="Tucumán"
+                    android:textColor="#ffffff"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_argentina_02"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/img_punto" >
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lay_argentina_03"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="588dp"
+                android:layout_marginTop="190dp" >
+
+                <Button
+                    android:id="@+id/btn_argentina_03"
+                    android:layout_width="90dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/botoncomenzar"
+                    android:text="Córdoba"
+                    android:textColor="#ffffff"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_argentina_03"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/img_punto" >
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lay_argentina_04"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="558dp"
+                android:layout_marginTop="232dp" >
+
+                <Button
+                    android:id="@+id/btn_argentina_04"
+                    android:layout_width="80dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/botoncomenzar"
+                    android:text="San Juan"
+                    android:textColor="#ffffff"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_argentina_04"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/img_punto" >
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lay_argentina_05"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="540dp"
+                android:layout_marginTop="256dp" >
+
+                <Button
+                    android:id="@+id/btn_argentina_05"
+                    android:layout_width="80dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/botoncomenzar"
+                    android:text="Mendoza"
+                    android:textColor="#ffffff"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_argentina_05"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/img_punto" >
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lay_argentina_06"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="530dp"
+                android:layout_marginTop="340dp" >
+
+                <Button
+                    android:id="@+id/btn_argentina_06"
+                    android:layout_width="80dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/botoncomenzar"
+                    android:text="Neuquén"
+                    android:textColor="#ffffff"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_argentina_06"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/img_punto" >
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lay_argentina_07"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="485dp"
+                android:layout_marginTop="400dp" >
+
+                <Button
+                    android:id="@+id/btn_argentina_07"
+                    android:layout_width="80dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/botoncomenzar"
+                    android:text="Bariloche"
+                    android:textColor="#ffffff"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_argentina_07"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/img_punto" >
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lay_argentina_08"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="475dp"
+                android:layout_marginTop="546dp" >
+
+                <Button
+                    android:id="@+id/btn_argentina_08"
+                    android:layout_width="80dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/botoncomenzar"
+                    android:text="El Cafalate"
+                    android:textColor="#ffffff"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_argentina_08"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/img_punto" >
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lay_argentina_10"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="510dp"
+                android:layout_marginTop="620dp" >
+
+                <Button
+                    android:id="@+id/btn_argentina_10"
+                    android:layout_width="80dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/botoncomenzar"
+                    android:text="Ushuai"
+                    android:textColor="#ffffff"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_argentina_10"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/img_punto" >
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lay_argentina_11"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="593dp"
+                android:layout_marginTop="568dp" >
+
+                <Button
+                    android:id="@+id/btn_argentina_11"
+                    android:layout_width="80dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/botoncomenzar"
+                    android:text="Río Gallegos"
+                    android:textColor="#ffffff"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_argentina_11"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/img_punto" >
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lay_argentina_12"
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="625dp"
+                android:layout_marginTop="475dp" >
+
+                <Button
+                    android:id="@+id/btn_argentina_12"
+                    android:layout_width="120dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/botoncomenzar"
+                    android:text="Comodoro Rivadavia"
+                    android:textColor="#ffffff"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_argentina_12"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/img_punto" >
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lay_argentina_13"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="705dp"
+                android:layout_marginTop="360dp" >
+
+                <Button
+                    android:id="@+id/btn_argentina_13"
+                    android:layout_width="80dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/botoncomenzar"
+                    android:text="Bahía Blanca"
+                    android:textColor="#ffffff"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_argentina_13"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/img_punto" >
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lay_argentina_14"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="745dp"
+                android:layout_marginTop="285dp" >
+
+                <Button
+                    android:id="@+id/btn_argentina_14"
+                    android:layout_width="80dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/botonamarillo"
+                    android:text="Buenos Aires"
+                    android:textColor="#ffffff"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_argentina_14"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/puntoamarillo" >
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lay_argentina_15"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="765dp"
+                android:layout_marginTop="178dp" >
+
+                <Button
+                    android:id="@+id/btn_argentina_15"
+                    android:layout_width="80dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/botoncomenzar"
+                    android:text="Iguazú"
+                    android:textColor="#ffffff"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_argentina_15"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/img_punto" >
+                </ImageView>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/lay_mapa_peru"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -2079,7 +2505,7 @@
                 android:text="Tacna"
                 android:textColor="#ffffff"
                 android:textSize="12dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <ImageView
                 android:id="@+id/img_btn_peru_14"
@@ -2087,6 +2513,1182 @@
                 android:layout_height="10dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_mapa_brasil"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/img_brasil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/mapa_brasil"/>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_01"
+            android:layout_width="90dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="580dp"
+            android:layout_marginTop="115dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_01"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Buena Vista"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_01"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_02"
+            android:layout_width="90dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="620dp"
+            android:layout_marginTop="152dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_01"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Macapá"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_02"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_03"
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="742dp"
+            android:layout_marginTop="162dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_03"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Belém"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_03"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_04"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="792dp"
+            android:layout_marginTop="188dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_04"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Sao Luis"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_04"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="05dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_05"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="875dp"
+            android:layout_marginTop="196dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_05"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Fortaleza"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_05"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_06"
+            android:layout_width="90dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="505dp"
+            android:layout_marginTop="195dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_06"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Manaus"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_06"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="05dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_07"
+            android:layout_width="90dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="605dp"
+            android:layout_marginTop="197dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_07"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Santarém"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_07"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_08"
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="660dp"
+            android:layout_marginTop="234dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_08"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Maramba"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_08"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="75dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_09"
+            android:layout_width="90dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="730dp"
+            android:layout_marginTop="230dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_09"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Maramba"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_09"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_10"
+            android:layout_width="90dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="815dp"
+            android:layout_marginTop="225dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_10"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Teresina"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_10"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_11"
+            android:layout_width="90dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="920dp"
+            android:layout_marginTop="220dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_11"
+                android:layout_width="80dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Natal"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_11"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_12"
+            android:layout_width="90dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="930dp"
+            android:layout_marginTop="240dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_12"
+                android:layout_width="80dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Joao Pessoa"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_12"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_13"
+            android:layout_width="90dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="923dp"
+            android:layout_marginTop="258dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_13"
+                android:layout_width="80dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Recife"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_13"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_14"
+            android:layout_width="90dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="915dp"
+            android:layout_marginTop="278dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_14"
+                android:layout_width="80dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Maceió"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_14"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_15"
+            android:layout_width="90dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="450dp"
+            android:layout_marginTop="275dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_15"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Rio Branco"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_15"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_16"
+            android:layout_width="90dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="535dp"
+            android:layout_marginTop="280dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_16"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Puerto Velho"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_16"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_17"
+            android:layout_width="90dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="673dp"
+            android:layout_marginTop="290dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_17"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Palmas"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_17"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="05dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_18"
+            android:layout_width="90dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="890dp"
+            android:layout_marginTop="303dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_18"
+                android:layout_width="80dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Aracaju"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_18"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_19"
+            android:layout_width="90dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="880dp"
+            android:layout_marginTop="323dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_19"
+                android:layout_width="80dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Salvador"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_19"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_20"
+            android:layout_width="90dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="875dp"
+            android:layout_marginTop="345dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_20"
+                android:layout_width="80dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Ileus"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_20"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_21"
+            android:layout_width="90dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="875dp"
+            android:layout_marginTop="345dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_21"
+                android:layout_width="80dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Porto Seguro"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_21"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_22"
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="764dp"
+            android:layout_marginTop="358dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_22"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Brasilia"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/btn_brasil_22"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_23"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="555dp"
+            android:layout_marginTop="365dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_23"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Cuiabá"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_23"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="85dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_24"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="665dp"
+            android:layout_marginTop="377dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_24"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Goiania"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_24"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="85dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_25"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="670dp"
+            android:layout_marginTop="412dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_25"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Uberlandia"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_25"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="85dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_26"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="825dp"
+            android:layout_marginTop="407dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_26"
+                android:layout_width="90dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Belo Horizonte"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_26"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_27"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="580dp"
+            android:layout_marginTop="425dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_27"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Campo Grande"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_27"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="85dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_28"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="640dp"
+            android:layout_marginTop="440dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_28"
+                android:layout_width="100dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="S.J do Rio Preto"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_28"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="105dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_29"
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="680dp"
+            android:layout_marginTop="457dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_29"
+                android:layout_width="70dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Campinas"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_29"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_30"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="852dp"
+            android:layout_marginTop="429dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_30"
+                android:layout_width="90dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Riverao Preto"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_30"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_31"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="852dp"
+            android:layout_marginTop="429dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_31"
+                android:layout_width="90dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Victoria"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_31"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_32"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="760dp"
+            android:layout_marginTop="440dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_32"
+                android:layout_width="90dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Riberao Preto"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_32"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_33"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="825dp"
+            android:layout_marginTop="448dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_33"
+                android:layout_width="90dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Rio de Janeiro"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_33"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_34"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="599dp"
+            android:layout_marginTop="500dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_34"
+                android:layout_width="80dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Foz do Iguazú"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_34"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="85dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_35"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="780dp"
+            android:layout_marginTop="478dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_35"
+                android:layout_width="90dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Sao Paulo"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_35"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_36"
+            android:layout_width="90dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="663dp"
+            android:layout_marginTop="520dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_36"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Curitiva"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_36"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="02dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_37"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="742dp"
+            android:layout_marginTop="496dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_37"
+                android:layout_width="90dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Curitiva"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_37"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_38"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="742dp"
+            android:layout_marginTop="510dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_38"
+                android:layout_width="90dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Joinville"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_38"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_39"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="742dp"
+            android:layout_marginTop="535dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_39"
+                android:layout_width="90dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Florianópolis"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_39"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_brasil_40"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="722dp"
+            android:layout_marginTop="570dp" >
+
+            <Button
+                android:id="@+id/btn_brasil_40"
+                android:layout_width="90dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Porto Alegre"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_brasil_40"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>

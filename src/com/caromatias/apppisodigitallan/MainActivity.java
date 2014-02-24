@@ -13,6 +13,7 @@ import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.VideoView;
 
 public class MainActivity extends Activity {
@@ -56,6 +57,10 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+				VideoView videoView = (VideoView) findViewById(R.id.videoPrincipal);
+				videoView.pause();
+				ProgressBar cargando = (ProgressBar)findViewById(R.id.progressBarMain);
+				cargando.setVisibility(View.VISIBLE);
 				Button botonAnimado = (Button) findViewById(R.id.btn_com);
 				botonAnimado.setBackgroundResource(R.drawable.botoncomenzar);
 				Intent act = new Intent(MainActivity.this, LaminaUnoActivity.class);
