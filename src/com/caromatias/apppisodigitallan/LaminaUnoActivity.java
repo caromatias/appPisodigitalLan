@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -59,6 +60,20 @@ public class LaminaUnoActivity extends Activity {
 		// ////////////////////////////////////////////
 
 		eventosBotones();
+
+		// ////////// ANIMACION GOGAME ///////////////
+		Button btnGoGame = (Button) findViewById(R.id.btn_ir_al_juego);
+		Animation animGoGame = AnimationUtils.loadAnimation(this,
+				R.anim.animacion);
+		btnGoGame.startAnimation(animGoGame);
+
+		Button btnGoGameText = (Button) findViewById(R.id.btn_ir_al_juego_text);
+		Animation animGoGameText = AnimationUtils.loadAnimation(this,
+				R.anim.slide_out);
+		btnGoGameText.startAnimation(animGoGameText);
+		// ///////////////////////////////////////////
+		
+		cambiaActivity();
 	}
 
 	@Override
@@ -200,12 +215,14 @@ public class LaminaUnoActivity extends Activity {
 								case 6:
 									layMapaEcuador.setVisibility(View.GONE);
 									layMapaInter.setVisibility(View.VISIBLE);
-									layMapaInter.startAnimation(animMapaEcuador);
+									layMapaInter
+											.startAnimation(animMapaEcuador);
 									break;
 								case 7:
 									layMapaColombia.setVisibility(View.GONE);
 									layMapaInter.setVisibility(View.VISIBLE);
-									layMapaInter.startAnimation(animMapaColombia);
+									layMapaInter
+											.startAnimation(animMapaColombia);
 									break;
 								}
 								// ///// Animaciones
@@ -317,7 +334,8 @@ public class LaminaUnoActivity extends Activity {
 						// TODO Auto-generated method stub
 						Button btnChile = (Button) findViewById(R.id.btn_chile);
 						Button btnArgentina = (Button) findViewById(R.id.btn_argentina);
-						btnArgentina.setBackgroundResource(R.drawable.botonrojo);
+						btnArgentina
+								.setBackgroundResource(R.drawable.botonrojo);
 
 						switch (posicionMenu) {
 						case 1:
@@ -399,8 +417,10 @@ public class LaminaUnoActivity extends Activity {
 									break;
 								case 7:
 									layMapaColombia.setVisibility(View.GONE);
-									layMapaArgentina.setVisibility(View.VISIBLE);
-									layMapaArgentina.startAnimation(animMapaArgentina);
+									layMapaArgentina
+											.setVisibility(View.VISIBLE);
+									layMapaArgentina
+											.startAnimation(animMapaArgentina);
 									break;
 								}
 								// ///// Animaciones
@@ -597,7 +617,8 @@ public class LaminaUnoActivity extends Activity {
 			}
 		});
 		// //////////////////////////////////////////////////////////////////////
-		// ///////////////////// CLICK BOTÓN ECUADOR ////////////////////////////
+		// ///////////////////// CLICK BOTÓN ECUADOR
+		// ////////////////////////////
 		findViewById(R.id.btn_ecuador).setOnClickListener(
 				new OnClickListener() {
 					@Override
@@ -619,8 +640,10 @@ public class LaminaUnoActivity extends Activity {
 							btnChile.setEnabled(true);
 							break;
 						case 3:
-							layMapaArgentina.startAnimation(animMapaArgentinaOut);
-							btnArgentina.setBackgroundResource(R.drawable.boton);
+							layMapaArgentina
+									.startAnimation(animMapaArgentinaOut);
+							btnArgentina
+									.setBackgroundResource(R.drawable.boton);
 							btnArgentina.setEnabled(true);
 							break;
 						case 4:
@@ -683,7 +706,8 @@ public class LaminaUnoActivity extends Activity {
 								case 7:
 									layMapaColombia.setVisibility(View.GONE);
 									layMapaEcuador.setVisibility(View.VISIBLE);
-									layMapaEcuador.startAnimation(animMapaEcuador);
+									layMapaEcuador
+											.startAnimation(animMapaEcuador);
 									break;
 								}
 								// ///// Animaciones
@@ -695,7 +719,8 @@ public class LaminaUnoActivity extends Activity {
 					}
 				});
 		// //////////////////////////////////////////////////////////////////////
-		// ///////////////////// CLICK BOTÓN COLOMBIA ///////////////////////////
+		// ///////////////////// CLICK BOTÓN COLOMBIA
+		// ///////////////////////////
 		findViewById(R.id.btn_colombia).setOnClickListener(
 				new OnClickListener() {
 					@Override
@@ -775,12 +800,14 @@ public class LaminaUnoActivity extends Activity {
 								case 5:
 									layMapaBrasil.setVisibility(View.GONE);
 									layMapaColombia.setVisibility(View.VISIBLE);
-									layMapaColombia.startAnimation(animMapaColombia);
+									layMapaColombia
+											.startAnimation(animMapaColombia);
 									break;
 								case 6:
 									layMapaEcuador.setVisibility(View.GONE);
 									layMapaColombia.setVisibility(View.VISIBLE);
-									layMapaColombia.startAnimation(animMapaColombia);
+									layMapaColombia
+											.startAnimation(animMapaColombia);
 									break;
 								case 7:
 									return;
@@ -879,5 +906,18 @@ public class LaminaUnoActivity extends Activity {
 	}
 
 	// ////////////////////////////////////////////////////////////////
+
+	public void cambiaActivity() {
+		findViewById(R.id.btn_ir_al_juego).setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						Intent act = new Intent(LaminaUnoActivity.this, LaminaDosActivity.class);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+					}
+				});
+	}
 
 }

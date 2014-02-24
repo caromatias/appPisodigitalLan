@@ -23,7 +23,7 @@
         android:paddingBottom="0dp"
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
-        android:paddingTop="0dp">
+        android:paddingTop="0dp" >
     </RelativeLayout>
 
     <RelativeLayout
@@ -126,9 +126,51 @@
             android:textStyle="bold" />
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/go_game_master"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginLeft="990dp"
+        android:layout_marginTop="20dp" >
+        
+        <RelativeLayout
+            android:id="@+id/go_game_texto"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="82dp">
+            
+            <Button
+                android:id="@+id/btn_ir_al_juego_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/etiqueta_despegar" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/go_game_circulo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="20dp" >
+
+            <Button
+                android:id="@+id/btn_ir_al_juego"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/circulo_avion" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
     <VideoView
         android:id="@+id/video_lamina_uno"
         android:layout_width="1280dp"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:visibility="gone" />
 
 </RelativeLayout>
