@@ -15,7 +15,7 @@
         android:paddingBottom="0dp"
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
-        android:paddingTop="0dp" >
+        android:paddingTop="0dp">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -28,18 +28,19 @@
             android:id="@+id/puntos_lay_inter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="-58dp"
             android:paddingBottom="0dp"
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
-            android:paddingTop="0dp" >
+            android:paddingTop="0dp"
+            android:layout_marginTop="-58dp"
+             >
 
             <RelativeLayout
                 android:id="@+id/lay_back_01"
                 android:layout_width="5dp"
                 android:layout_height="5dp"
-                android:layout_marginLeft="188dp"
-                android:layout_marginTop="600dp"
+                android:layout_marginLeft="190dp"
+                android:layout_marginTop="625dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -47,8 +48,8 @@
                 android:id="@+id/lay_back_02"
                 android:layout_width="5dp"
                 android:layout_height="5dp"
-                android:layout_marginLeft="315dp"
-                android:layout_marginTop="600dp"
+                android:layout_marginLeft="317dp"
+                android:layout_marginTop="622dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -57,7 +58,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="415dp"
-                android:layout_marginTop="510dp"
+                android:layout_marginTop="516dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -66,7 +67,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="535dp"
-                android:layout_marginTop="540dp"
+                android:layout_marginTop="527dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -75,7 +76,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="655dp"
-                android:layout_marginTop="570dp"
+                android:layout_marginTop="560dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -84,7 +85,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="445dp"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="145dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -92,8 +93,8 @@
                 android:id="@+id/lay_back_07"
                 android:layout_width="5dp"
                 android:layout_height="5dp"
-                android:layout_marginLeft="459dp"
-                android:layout_marginTop="155dp"
+                android:layout_marginLeft="458dp"
+                android:layout_marginTop="172dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -102,7 +103,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="690dp"
-                android:layout_marginTop="116dp"
+                android:layout_marginTop="134dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -111,7 +112,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="637dp"
-                android:layout_marginTop="180dp"
+                android:layout_marginTop="195dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -120,7 +121,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="642dp"
-                android:layout_marginTop="200dp"
+                android:layout_marginTop="213dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -129,16 +130,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="629dp"
-                android:layout_marginTop="218dp"
-                android:background="@drawable/puntoamarillo" >
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/lay_back_12"
-                android:layout_width="5dp"
-                android:layout_height="5dp"
-                android:layout_marginLeft="629dp"
-                android:layout_marginTop="218dp"
+                android:layout_marginTop="231dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -147,7 +139,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="598dp"
-                android:layout_marginTop="225dp"
+                android:layout_marginTop="239dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -155,8 +147,8 @@
                 android:id="@+id/lay_back_14"
                 android:layout_width="5dp"
                 android:layout_height="5dp"
-                android:layout_marginLeft="548dp"
-                android:layout_marginTop="237dp"
+                android:layout_marginLeft="549dp"
+                android:layout_marginTop="250dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -164,8 +156,8 @@
                 android:id="@+id/lay_back_15"
                 android:layout_width="5dp"
                 android:layout_height="5dp"
-                android:layout_marginLeft="530dp"
-                android:layout_marginTop="242dp"
+                android:layout_marginLeft="532dp"
+                android:layout_marginTop="255dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -174,7 +166,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="1058dp"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="135dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -183,7 +175,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="1090dp"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="95dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -192,7 +184,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="1115dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="82dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -201,7 +193,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="1125dp"
-                android:layout_marginTop="78dp"
+                android:layout_marginTop="102dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -210,7 +202,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="700dp"
-                android:layout_marginTop="243dp"
+                android:layout_marginTop="258dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -219,7 +211,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="660dp"
-                android:layout_marginTop="278dp"
+                android:layout_marginTop="285dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -228,7 +220,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="665dp"
-                android:layout_marginTop="293dp"
+                android:layout_marginTop="300dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -237,7 +229,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="659dp"
-                android:layout_marginTop="296dp"
+                android:layout_marginTop="302dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -246,7 +238,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="655dp"
-                android:layout_marginTop="300dp"
+                android:layout_marginTop="306dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -255,7 +247,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="653dp"
-                android:layout_marginTop="307dp"
+                android:layout_marginTop="312dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -264,7 +256,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="648dp"
-                android:layout_marginTop="312dp"
+                android:layout_marginTop="317dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -273,7 +265,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="652dp"
-                android:layout_marginTop="320dp"
+                android:layout_marginTop="325dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -282,7 +274,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="645dp"
-                android:layout_marginTop="327dp"
+                android:layout_marginTop="330dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -291,7 +283,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="659dp"
-                android:layout_marginTop="332dp"
+                android:layout_marginTop="334dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -300,7 +292,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="655dp"
-                android:layout_marginTop="337dp"
+                android:layout_marginTop="339dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -309,7 +301,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="647dp"
-                android:layout_marginTop="345dp"
+                android:layout_marginTop="348dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -318,7 +310,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="673dp"
-                android:layout_marginTop="347dp"
+                android:layout_marginTop="349dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -327,7 +319,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="649dp"
-                android:layout_marginTop="351dp"
+                android:layout_marginTop="354dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -336,7 +328,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="644dp"
-                android:layout_marginTop="358dp"
+                android:layout_marginTop="361dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -345,7 +337,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="687dp"
-                android:layout_marginTop="290dp"
+                android:layout_marginTop="295dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -354,7 +346,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="707dp"
-                android:layout_marginTop="302dp"
+                android:layout_marginTop="310dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -363,7 +355,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="667dp"
-                android:layout_marginTop="300dp"
+                android:layout_marginTop="305dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -372,7 +364,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="671dp"
-                android:layout_marginTop="312dp"
+                android:layout_marginTop="317dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -381,7 +373,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="673dp"
-                android:layout_marginTop="320dp"
+                android:layout_marginTop="325dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -390,7 +382,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="677dp"
-                android:layout_marginTop="328dp"
+                android:layout_marginTop="333dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -430,14 +422,6 @@
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/lay_back_45"
-                android:layout_width="5dp"
-                android:layout_height="5dp"
-                android:layout_marginLeft="680dp"
-                android:layout_marginTop="381dp"
-                android:background="@drawable/puntoamarillo" >
-            </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/lay_back_46"
@@ -480,7 +464,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="627dp"
-                android:layout_marginTop="402dp"
+                android:layout_marginTop="405dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -489,7 +473,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="629dp"
-                android:layout_marginTop="396dp"
+                android:layout_marginTop="398dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -543,7 +527,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="690dp"
-                android:layout_marginTop="455dp"
+                android:layout_marginTop="450dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -551,8 +535,8 @@
                 android:id="@+id/lay_back_58"
                 android:layout_width="5dp"
                 android:layout_height="5dp"
-                android:layout_marginLeft="697dp"
-                android:layout_marginTop="467dp"
+                android:layout_marginLeft="699dp"
+                android:layout_marginTop="466dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -561,7 +545,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="688dp"
-                android:layout_marginTop="475dp"
+                android:layout_marginTop="470dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -570,7 +554,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="691dp"
-                android:layout_marginTop="490dp"
+                android:layout_marginTop="480dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -579,7 +563,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="693dp"
-                android:layout_marginTop="498dp"
+                android:layout_marginTop="488dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -587,8 +571,8 @@
                 android:id="@+id/lay_back_62"
                 android:layout_width="5dp"
                 android:layout_height="5dp"
-                android:layout_marginLeft="692dp"
-                android:layout_marginTop="513dp"
+                android:layout_marginLeft="690dp"
+                android:layout_marginTop="508dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -597,7 +581,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="700dp"
-                android:layout_marginTop="508dp"
+                android:layout_marginTop="500dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -615,7 +599,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="693dp"
-                android:layout_marginTop="545dp"
+                android:layout_marginTop="540dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -749,7 +733,7 @@
                 android:id="@+id/lay_back_80"
                 android:layout_width="5dp"
                 android:layout_height="5dp"
-                android:layout_marginLeft="874dp"
+                android:layout_marginLeft="873dp"
                 android:layout_marginTop="430dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
@@ -786,7 +770,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="850dp"
-                android:layout_marginTop="482dp"
+                android:layout_marginTop="477dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -795,7 +779,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="835dp"
-                android:layout_marginTop="480dp"
+                android:layout_marginTop="475dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -804,7 +788,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="835dp"
-                android:layout_marginTop="500dp"
+                android:layout_marginTop="495dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -939,7 +923,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="805dp"
-                android:layout_marginTop="517dp"
+                android:layout_marginTop="512dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -948,7 +932,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="810dp"
-                android:layout_marginTop="525dp"
+                android:layout_marginTop="520dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -957,7 +941,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="810dp"
-                android:layout_marginTop="533dp"
+                android:layout_marginTop="528dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -966,7 +950,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="810dp"
-                android:layout_marginTop="538dp"
+                android:layout_marginTop="533dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -975,7 +959,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="810dp"
-                android:layout_marginTop="543dp"
+                android:layout_marginTop="538dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -984,7 +968,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="800dp"
-                android:layout_marginTop="553dp"
+                android:layout_marginTop="547dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -993,7 +977,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="784dp"
-                android:layout_marginTop="578dp"
+                android:layout_marginTop="568dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -1002,7 +986,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="705dp"
-                android:layout_marginTop="590dp"
+                android:layout_marginTop="580dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -1011,7 +995,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="705dp"
-                android:layout_marginTop="603dp"
+                android:layout_marginTop="593dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -1020,7 +1004,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="706dp"
-                android:layout_marginTop="609dp"
+                android:layout_marginTop="599dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -1029,7 +1013,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="706dp"
-                android:layout_marginTop="617dp"
+                android:layout_marginTop="607dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -1038,7 +1022,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="703dp"
-                android:layout_marginTop="627dp"
+                android:layout_marginTop="617dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -1047,7 +1031,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="699dp"
-                android:layout_marginTop="633dp"
+                android:layout_marginTop="623dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -1056,7 +1040,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="712dp"
-                android:layout_marginTop="647dp"
+                android:layout_marginTop="637dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -1065,7 +1049,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="744dp"
-                android:layout_marginTop="694dp"
+                android:layout_marginTop="680dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -1074,7 +1058,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="755dp"
-                android:layout_marginTop="685dp"
+                android:layout_marginTop="670dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -1083,7 +1067,7 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_marginLeft="800dp"
-                android:layout_marginTop="688dp"
+                android:layout_marginTop="672dp"
                 android:background="@drawable/puntoamarillo" >
             </RelativeLayout>
 
@@ -1092,7 +1076,7 @@
                 android:layout_width="10dp"
                 android:layout_height="10dp"
                 android:layout_marginLeft="662dp"
-                android:layout_marginTop="337dp" >
+                android:layout_marginTop="339dp" >
 
                 <Button
                     android:id="@+id/button1"
@@ -1148,7 +1132,7 @@
                 android:layout_width="10dp"
                 android:layout_height="10dp"
                 android:layout_marginLeft="700dp"
-                android:layout_marginTop="572dp" >
+                android:layout_marginTop="563dp" >
 
                 <Button
                     android:id="@+id/button5"
@@ -1161,8 +1145,8 @@
                 android:id="@+id/lay_back_123"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
-                android:layout_marginLeft="768dp"
-                android:layout_marginTop="572dp" >
+                android:layout_marginLeft="748dp"
+                android:layout_marginTop="565dp" >
 
                 <Button
                     android:id="@+id/button6"
@@ -1178,15 +1162,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="gone" >
+        android:visibility="gone">
 
         <ImageView
-            android:id="@+id/img_view_chile"
+            android:id="@+id/imageView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/mapa_chile" />
+            android:src="@drawable/mapa_chile"
+             />
 
         <ImageView
             android:id="@+id/img_lineas_chile"
@@ -1200,8 +1185,8 @@
             android:id="@+id/lay_chile_01"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="648dp"
-            android:layout_marginTop="36dp" >
+            android:layout_marginLeft="618dp"
+            android:layout_marginTop="100dp" >
 
             <Button
                 android:id="@+id/button1"
@@ -1229,8 +1214,8 @@
             android:id="@+id/lay_chile_02"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="648dp"
-            android:layout_marginTop="62dp" >
+            android:layout_marginLeft="620dp"
+            android:layout_marginTop="123dp" >
 
             <Button
                 android:id="@+id/button2"
@@ -1258,8 +1243,8 @@
             android:id="@+id/lay_chile_03"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="643dp"
-            android:layout_marginTop="119dp" >
+            android:layout_marginLeft="617dp"
+            android:layout_marginTop="163dp" >
 
             <Button
                 android:id="@+id/button3"
@@ -1287,8 +1272,8 @@
             android:id="@+id/lay_chile_04"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="648dp"
-            android:layout_marginTop="160dp" >
+            android:layout_marginLeft="622dp"
+            android:layout_marginTop="190dp" >
 
             <Button
                 android:id="@+id/button4"
@@ -1316,8 +1301,8 @@
             android:id="@+id/lay_chile_05"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="634dp"
-            android:layout_marginTop="226dp" >
+            android:layout_marginLeft="612dp"
+            android:layout_marginTop="238dp" >
 
             <Button
                 android:id="@+id/button5"
@@ -1345,7 +1330,7 @@
             android:id="@+id/lay_chile_06"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="632dp"
+            android:layout_marginLeft="612dp"
             android:layout_marginTop="280dp" >
 
             <Button
@@ -1374,8 +1359,8 @@
             android:id="@+id/lay_chile_07"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="619dp"
-            android:layout_marginTop="354dp" >
+            android:layout_marginLeft="600dp"
+            android:layout_marginTop="340dp" >
 
             <Button
                 android:id="@+id/button7"
@@ -1403,8 +1388,8 @@
             android:id="@+id/lay_chile_08"
             android:layout_width="100dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="619dp"
-            android:layout_marginTop="390dp" >
+            android:layout_marginLeft="601dp"
+            android:layout_marginTop="366dp" >
 
             <Button
                 android:id="@+id/button8"
@@ -1432,8 +1417,8 @@
             android:id="@+id/lay_chile_09"
             android:layout_width="100dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="619dp"
-            android:layout_marginTop="413dp" >
+            android:layout_marginLeft="600dp"
+            android:layout_marginTop="384dp" >
 
             <Button
                 android:id="@+id/button9"
@@ -1461,8 +1446,8 @@
             android:id="@+id/lay_chile_10"
             android:layout_width="100dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="618dp"
-            android:layout_marginTop="439dp" >
+            android:layout_marginLeft="598dp"
+            android:layout_marginTop="403dp" >
 
             <Button
                 android:id="@+id/button10"
@@ -1490,8 +1475,8 @@
             android:id="@+id/lay_chile_11"
             android:layout_width="100dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="613dp"
-            android:layout_marginTop="463dp" >
+            android:layout_marginLeft="597dp"
+            android:layout_marginTop="422dp" >
 
             <Button
                 android:id="@+id/button11"
@@ -1519,8 +1504,8 @@
             android:id="@+id/lay_chile_12"
             android:layout_width="100dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="604dp"
-            android:layout_marginTop="488dp" >
+            android:layout_marginLeft="589dp"
+            android:layout_marginTop="443dp" >
 
             <Button
                 android:id="@+id/button12"
@@ -1548,8 +1533,8 @@
             android:id="@+id/lay_chile_13"
             android:layout_width="100dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="663dp"
-            android:layout_marginTop="668dp" >
+            android:layout_marginLeft="631dp"
+            android:layout_marginTop="578dp" >
 
             <Button
                 android:id="@+id/button13"
@@ -1577,8 +1562,8 @@
             android:id="@+id/lay_chile_14"
             android:layout_width="100dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="760dp"
-            android:layout_marginTop="100dp" >
+            android:layout_marginLeft="730dp"
+            android:layout_marginTop="150dp" >
 
             <Button
                 android:id="@+id/button14"
@@ -1606,8 +1591,8 @@
             android:id="@+id/lay_chile_15"
             android:layout_width="100dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="733dp"
-            android:layout_marginTop="524dp" >
+            android:layout_marginLeft="710dp"
+            android:layout_marginTop="470dp" >
 
             <Button
                 android:id="@+id/button15"
@@ -1635,7 +1620,7 @@
             android:id="@+id/lay_chile_16"
             android:layout_width="80dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="446dp"
+            android:layout_marginLeft="485dp"
             android:layout_marginTop="290dp" >
 
             <Button
@@ -2093,7 +2078,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="gone" >
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/imageView"
@@ -2115,8 +2100,8 @@
             android:id="@+id/lay_peru_01"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="500dp"
-            android:layout_marginTop="225dp" >
+            android:layout_marginLeft="510dp"
+            android:layout_marginTop="240dp" >
 
             <Button
                 android:id="@+id/btn_peru_01"
@@ -2144,8 +2129,8 @@
             android:id="@+id/lay_peru_02"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="495dp"
-            android:layout_marginTop="253dp" >
+            android:layout_marginLeft="508dp"
+            android:layout_marginTop="265dp" >
 
             <Button
                 android:id="@+id/btn_peru_02"
@@ -2173,8 +2158,8 @@
             android:id="@+id/lay_peru_03"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="520dp"
-            android:layout_marginTop="305dp" >
+            android:layout_marginLeft="525dp"
+            android:layout_marginTop="294dp" >
 
             <Button
                 android:id="@+id/btn_peru_03"
@@ -2231,8 +2216,8 @@
             android:id="@+id/lay_peru_05"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="570dp"
-            android:layout_marginTop="388dp" >
+            android:layout_marginLeft="564dp"
+            android:layout_marginTop="367dp" >
 
             <Button
                 android:id="@+id/btn_peru_05"
@@ -2260,8 +2245,8 @@
             android:id="@+id/lay_peru_06"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="618dp"
-            android:layout_marginTop="477dp" >
+            android:layout_marginLeft="615dp"
+            android:layout_marginTop="435dp" >
 
             <Button
                 android:id="@+id/btn_peru_06"
@@ -2289,8 +2274,8 @@
             android:id="@+id/lay_peru_07"
             android:layout_width="100dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="735dp"
-            android:layout_marginTop="225dp" >
+            android:layout_marginLeft="710dp"
+            android:layout_marginTop="240dp" >
 
             <Button
                 android:id="@+id/btn_peru_07"
@@ -2318,7 +2303,7 @@
             android:id="@+id/lay_peru_08"
             android:layout_width="100dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="681dp"
+            android:layout_marginLeft="670dp"
             android:layout_marginTop="275dp" >
 
             <Button
@@ -2347,7 +2332,7 @@
             android:id="@+id/lay_peru_09"
             android:layout_width="100dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="640dp"
+            android:layout_marginLeft="642dp"
             android:layout_marginTop="308dp" >
 
             <Button
@@ -2376,8 +2361,8 @@
             android:id="@+id/lay_peru_10"
             android:layout_width="100dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="687dp"
-            android:layout_marginTop="323dp" >
+            android:layout_marginLeft="692dp"
+            android:layout_marginTop="332dp" >
 
             <Button
                 android:id="@+id/btn_peru_10"
@@ -2405,8 +2390,8 @@
             android:id="@+id/lay_peru_11"
             android:layout_width="150dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="820dp"
-            android:layout_marginTop="380dp" >
+            android:layout_marginLeft="768dp"
+            android:layout_marginTop="358dp" >
 
             <Button
                 android:id="@+id/btn_peru_11"
@@ -2434,8 +2419,8 @@
             android:id="@+id/lay_peru_12"
             android:layout_width="100dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="742dp"
-            android:layout_marginTop="410dp" >
+            android:layout_marginLeft="715dp"
+            android:layout_marginTop="380dp" >
 
             <Button
                 android:id="@+id/btn_peru_12"
@@ -2463,8 +2448,8 @@
             android:id="@+id/lay_peru_13"
             android:layout_width="100dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="815dp"
-            android:layout_marginTop="470dp" >
+            android:layout_marginLeft="770dp"
+            android:layout_marginTop="427dp" >
 
             <Button
                 android:id="@+id/btn_peru_13"
@@ -2492,8 +2477,8 @@
             android:id="@+id/lay_peru_14"
             android:layout_width="100dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="807dp"
-            android:layout_marginTop="525dp" >
+            android:layout_marginLeft="765dp"
+            android:layout_marginTop="467dp" >
 
             <Button
                 android:id="@+id/btn_peru_14"
