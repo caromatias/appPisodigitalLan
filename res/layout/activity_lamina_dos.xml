@@ -9,20 +9,297 @@
     tools:context=".LaminaDosActivity" >
 
     <RelativeLayout
-        android:layout_width="900dp"
-        android:layout_height="170dp"
-        android:layout_marginTop="550dp"
-        android:layout_marginLeft="180dp" 
-        android:background="#FF0000">
+        android:id="@+id/relativeLayout1"
+        android:layout_width="1120dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="595dp" >
+
+        <RelativeLayout
+            android:id="@+id/img_back_barra"
+            android:layout_width="10dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="5dp"
+            android:background="#FF0000" >
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/img_back_rutas"
+            android:layout_width="1110dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/back_rutas" >
+
+            <Button
+                android:id="@+id/btnUno"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/boton_rutas"
+                android:text="SANTIAGO / BUENOS AIRES"
+                android:textColor="#FFFFFF" 
+                android:textSize="10sp"/>
+            
+            <Button
+                android:id="@+id/btnDos"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/boton_rutas"
+                android:text="SANTIAGO / SAO PAULO"
+                android:textColor="#FFFFFF" 
+                android:textSize="10sp"/>
+            
+            <Button
+                android:id="@+id/btnTres"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="105dp"
+                android:background="@drawable/boton_rutas"
+                android:text="SANTIAGO / RIO DE JANEIRO"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp" />
+            
+            <Button
+                android:id="@+id/btnCuatro"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="170dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/boton_rutas"
+                android:text="SANTIAGO / BOGOTA"
+                android:textColor="#FFFFFF" 
+                android:textSize="10sp"/>
+            
+            <Button
+                android:id="@+id/btnCinco"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="170dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/boton_rutas"
+                android:text="SANTIAGO / QUITO"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp" />
+            
+            <Button
+                android:id="@+id/btnSeis"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="170dp"
+                android:layout_marginTop="105dp"
+                android:background="@drawable/boton_rutas"
+                android:text="SANTIAGO / GUAYAQUIL"
+                android:textColor="#FFFFFF" 
+                android:textSize="10sp"/>
+            
+            <Button
+                android:id="@+id/btnSiete"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="325dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/boton_rutas"
+                android:text="SANTIAGO / LIMA"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp" />
+            
+            <Button
+                android:id="@+id/btnOcho"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="325dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/boton_rutas"
+                android:text="SANTIAGO / MADRID"
+                android:textColor="#FFFFFF" 
+                android:textSize="10sp"/>
+            
+            <Button
+                android:id="@+id/btnNueve"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="325dp"
+                android:layout_marginTop="105dp"
+                android:background="@drawable/boton_rutas"
+                android:text="SANTIAGO / MIAMI"
+                android:textColor="#FFFFFF" 
+                android:textSize="10sp"/>
+            
+            <Button
+                android:id="@+id/btnDiez"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="480dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/boton_rutas"
+                android:text="SANTIAGO / NUEVA YORK"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp" />
+            
+            <Button
+                android:id="@+id/btnOnce"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="480dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/boton_rutas"
+                android:text="SANTIAGO / LOS ANGELES"
+                android:textColor="#FFFFFF" 
+                android:textSize="10sp"/>
+            
+            <Button
+                android:id="@+id/btnDoce"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="480dp"
+                android:layout_marginTop="105dp"
+                android:background="@drawable/boton_rutas"
+                android:text="SANTIAGO / PUNTA CANA"
+                android:textColor="#FFFFFF" 
+                android:textSize="10sp"/>
+            
+            <Button
+                android:id="@+id/btnTrece"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="635dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/boton_rutas"
+                android:text="SANTIAGO / CIUDAD DE MEXICO"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp" />
+            
+            <Button
+                android:id="@+id/btnCatorce"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="635dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/boton_rutas"
+                android:text="SANTIAGO / SYDNEY"
+                android:textColor="#FFFFFF" 
+                android:textSize="10sp"/>
+            
+            <Button
+                android:id="@+id/btnQuince"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="635dp"
+                android:layout_marginTop="105dp"
+                android:background="@drawable/boton_rutas"
+                android:text="SANTIAGO / AUCKLAND"
+                android:textColor="#FFFFFF" 
+                android:textSize="10sp"/>
+            
+            <Button
+                android:id="@+id/btn16"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="790dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/boton_rutas"
+                android:text="SANTIAGO / ISLA DE PASCUA"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp" />
+            
+            <Button
+                android:id="@+id/btn17"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="790dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/boton_rutas"
+                android:text="PUERTO MONTT / CHILOÉ"
+                android:textColor="#FFFFFF" 
+                android:textSize="10sp"/>
+            
+            <Button
+                android:id="@+id/btn18"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="790dp"
+                android:layout_marginTop="105dp"
+                android:background="@drawable/boton_rutas"
+                android:text="INSLA DE PASCUA / TAHITÍ"
+                android:textColor="#FFFFFF" 
+                android:textSize="10sp"/>
+            
+            <Button
+                android:id="@+id/btn19"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="945dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/boton_rutas"
+                android:text="SAO PAULO / FRANKFURT"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp" />
+            
+            <Button
+                android:id="@+id/btn20"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="945dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/boton_rutas"
+                android:text="SAO PAULO / LONDRES"
+                android:textColor="#FFFFFF" 
+                android:textSize="10sp"/>
+            
+            <Button
+                android:id="@+id/btn21"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="945dp"
+                android:layout_marginTop="105dp"
+                android:background="@drawable/boton_rutas"
+                android:text="LIMA / CUZCO"
+                android:textColor="#FFFFFF" 
+                android:textSize="10sp"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="140dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="615dp"
+        android:layout_marginLeft="5dp" >
 
         <ImageView
-            android:id="@+id/img_back_rutas"
+            android:id="@+id/img_elige_ruta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/back_rutas" />
-        
+            android:src="@drawable/elige_tu_ruta_uno" />
+
     </RelativeLayout>
 
 </RelativeLayout>
