@@ -451,8 +451,35 @@
                 android:textColor="#FFFFFF"
                 android:textSize="30sp"
                 android:textStyle="bold" />
+        </RelativeLayout>
 
-            <ImageView
+        <ImageView
+            android:id="@+id/img_logo_izq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="44dp"
+            android:src="@drawable/logo_pasajero_virtual"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/txt_incorrecto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/relativeLayout2"
+            android:layout_alignLeft="@+id/relativeLayout2"
+            android:layout_marginBottom="122dp"
+            android:layout_marginLeft="61dp"
+            android:text="Combustible insufuciente, intentalo nuevamente."
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FF0000"
+            android:textSize="30sp"
+            android:visibility="gone" />
+
+        
+        <ImageView
                 android:id="@+id/img_intento_tres"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -464,7 +491,7 @@
                 android:id="@+id/intentos_de"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="885dp"
+                android:layout_marginLeft="895dp"
                 android:layout_marginTop="50dp"
                 android:text="INTENTOS DE "
                 android:textAppearance="?android:attr/textAppearanceMedium"
@@ -491,42 +518,16 @@
                 android:id="@+id/txt_intentos_0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="860dp"
+                android:layout_marginLeft="870dp"
                 android:layout_marginTop="48dp"
                 android:text=">>"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#FF0000"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-        </RelativeLayout>
-
-        <ImageView
-            android:id="@+id/img_logo_izq"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="26dp"
-            android:layout_marginTop="44dp"
-            android:src="@drawable/logo_pasajero_virtual"
-            android:visibility="gone" />
-
-        <TextView
-            android:id="@+id/txt_incorrecto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/relativeLayout2"
-            android:layout_alignLeft="@+id/relativeLayout2"
-            android:layout_marginBottom="122dp"
-            android:layout_marginLeft="61dp"
-            android:text="Combustible insufuciente, intentalo nuevamente."
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#FF0000"
-            android:textSize="30sp"
-            android:visibility="gone" />
-
-        <TextView
-            android:id="@+id/txt_intentos"
+            
+            <TextView
+            android:id="@+id/txt_intentos_despegue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="1010dp"
