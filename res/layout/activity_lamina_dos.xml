@@ -195,7 +195,7 @@
                 android:layout_marginLeft="635dp"
                 android:layout_marginTop="60dp"
                 android:background="@drawable/boton_rutas"
-                android:text="SANTIAGO / SYDNEY"
+                android:text="SANTIAGO / SIDNEY"
                 android:textColor="#FFFFFF"
                 android:textSize="10sp" />
 
@@ -301,6 +301,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/lay_juego_master"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
@@ -308,7 +309,8 @@
         android:paddingBottom="0dp"
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
-        android:paddingTop="0dp" >
+        android:paddingTop="0dp"
+        android:visibility="visible" >
 
         <ImageView
             android:id="@+id/imageView1"
@@ -355,8 +357,183 @@
             android:layout_alignTop="@+id/relativeLayout2"
             android:layout_marginLeft="11dp"
             android:layout_toRightOf="@+id/relativeLayout2"
-            android:background="@drawable/boton_juego" />
+            android:background="@drawable/btn_despegue" />
 
+        <RelativeLayout
+            android:id="@+id/lay_popup_despegue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/popup_transp"
+            android:paddingBottom="0dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:paddingTop="0dp"
+            android:visibility="visible" >
+
+            <ImageView
+                android:id="@+id/img_logo_pv"
+                android:layout_width="250dp"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="59dp"
+                android:src="@drawable/logo_pasajero_virtual" />
+
+            <ImageView
+                android:id="@+id/img_tacometro_carga"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_alignLeft="@+id/img_logo_pv"
+                android:layout_below="@+id/img_logo_pv"
+                android:src="@drawable/tac_despegar" />
+
+            <TextView
+                android:id="@+id/txt_titulo_carga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/img_tacometro_carga"
+                android:layout_below="@+id/img_tacometro_carga"
+                android:layout_marginRight="107dp"
+                android:layout_marginTop="14dp"
+                android:text="ACELERADOR /"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_titulo_carga_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/txt_titulo_carga"
+                android:layout_alignBottom="@+id/txt_titulo_carga"
+                android:layout_alignLeft="@+id/img_tacometro_carga"
+                android:layout_marginLeft="149dp"
+                android:text="THROTTLE"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/txt_titulo_carga_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/txt_titulo_carga"
+                android:layout_alignBottom="@+id/txt_titulo_carga"
+                android:layout_marginRight="12dp"
+                android:layout_toLeftOf="@+id/txt_titulo_carga"
+                android:text=">>"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FF0000"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_desc_despegue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_titulo_carga_0"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="35dp"
+                android:gravity="center"
+                android:text="@string/desc_despegue"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFFFF"
+                android:textStyle="normal" />
+
+            <Button
+                android:id="@+id/btn_comenzar_juego_despegue"
+                android:layout_width="270dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/txt_desc_despegue"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="43dp"
+                android:background="@drawable/btn_comenzar"
+                android:text="COMENZAR"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_intento_tres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1210dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/intento_white" />
+
+            <TextView
+                android:id="@+id/intentos_de"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="885dp"
+                android:layout_marginTop="50dp"
+                android:text="INTENTOS DE "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_intento_dos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1160dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/intento_white" />
+
+            <ImageView
+                android:id="@+id/img_intento_uno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1110dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/intento_white" />
+
+            <TextView
+                android:id="@+id/txt_intentos_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="860dp"
+                android:layout_marginTop="48dp"
+                android:text=">>"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FF0000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/img_logo_izq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="44dp"
+            android:src="@drawable/logo_pasajero_virtual"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txt_incorrecto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/relativeLayout2"
+            android:layout_alignLeft="@+id/relativeLayout2"
+            android:layout_marginBottom="122dp"
+            android:layout_marginLeft="61dp"
+            android:text="Combustible insufuciente, intentalo nuevamente."
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FF0000"
+            android:textSize="30sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txt_intentos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1010dp"
+            android:layout_marginTop="50dp"
+            android:text="DESPEGUE"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFFFFF" />
     </RelativeLayout>
 
 </RelativeLayout>

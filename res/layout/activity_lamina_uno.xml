@@ -170,7 +170,6 @@
     <VideoView
         android:id="@+id/video_lamina_uno"
         android:layout_width="1280dp"
-        android:layout_height="match_parent"
-        android:visibility="gone" />
+        android:layout_height="match_parent"/>
 
 </RelativeLayout>

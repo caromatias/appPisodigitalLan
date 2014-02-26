@@ -32,7 +32,7 @@ public class LaminaUnoActivity extends Activity {
 		v.setLayoutParams(new LinearLayout.LayoutParams(
 				android.view.ViewGroup.LayoutParams.FILL_PARENT,
 				android.view.ViewGroup.LayoutParams.FILL_PARENT));
-
+		
 		zoomView = new ZoomView(this);
 		zoomView.addView(v);
 		RelativeLayout lay_principal = (RelativeLayout) findViewById(R.id.zona_zoomable);
@@ -40,8 +40,7 @@ public class LaminaUnoActivity extends Activity {
 
 		final VideoView videoView = (VideoView) findViewById(R.id.video_lamina_uno);
 
-		videoView
-				.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+		videoView.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
 						+ R.raw.transicion);
 
 		videoView.start();
