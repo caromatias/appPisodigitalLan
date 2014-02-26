@@ -24,7 +24,7 @@ public class SplashScreenActivity extends Activity {
 		TimerTask task = new TimerTask() {
 			@Override
 			public void run() {
-				Intent act = new Intent(SplashScreenActivity.this,	MainActivity.class);
+				Intent act = new Intent(SplashScreenActivity.this,	LaminaUnoActivity.class);
 				startActivity(act);
 				overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 				//finish();

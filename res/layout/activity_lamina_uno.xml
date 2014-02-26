@@ -172,4 +172,44 @@
         android:layout_width="1280dp"
         android:layout_height="match_parent"/>
 
+    <RelativeLayout
+        android:id="@+id/lay_video_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <VideoView
+            android:id="@+id/video_main"
+            android:layout_width="1280dp"
+            android:layout_height="match_parent"/>
+        
+        <RelativeLayout
+        android:id="@+id/lay_btn_comenzar"
+        android:layout_width="600dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="284dp" >
+
+        <Button
+            android:id="@+id/btn_com"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_comenzar"
+            android:text="COMENZAR"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp" />
+
+    </RelativeLayout>
+        
+    </RelativeLayout>
+    
+    <ImageView
+            android:id="@+id/img_fade_white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/fade_white"
+            android:scaleType="fitXY"
+            android:visibility="gone" />
+
 </RelativeLayout>

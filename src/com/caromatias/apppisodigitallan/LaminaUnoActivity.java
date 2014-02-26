@@ -1,6 +1,8 @@
 package com.caromatias.apppisodigitallan;
 
 import pl.polidea.view.ZoomView;
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnPreparedListener;
 import android.os.Bundle;
 import android.os.Handler;
 import android.app.Activity;
@@ -13,7 +15,9 @@ import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.VideoView;
 
@@ -21,6 +25,7 @@ public class LaminaUnoActivity extends Activity {
 
 	private ZoomView zoomView;
 	private int posicionMenu = 1;
+	private VideoView videoLaminaDos;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,23 +43,16 @@ public class LaminaUnoActivity extends Activity {
 		RelativeLayout lay_principal = (RelativeLayout) findViewById(R.id.zona_zoomable);
 		lay_principal.addView(zoomView);
 
-		final VideoView videoView = (VideoView) findViewById(R.id.video_lamina_uno);
+		videoLaminaDos = (VideoView) findViewById(R.id.video_lamina_uno);
 
-		videoView.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
-						+ R.raw.transicion);
+		videoLaminaDos.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+						+ R.raw.world_transition);
 
-		videoView.start();
+		exMain();
 
 		// //////// Cambio de imagen a video ////////////
 
-		final Handler handler = new Handler();
-		handler.postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				// Do something after 5s = 5000ms
-				videoView.setVisibility(View.INVISIBLE);
-			}
-		}, 5000);
+		
 
 		// ////////////////////////////////////////////
 
@@ -73,6 +71,7 @@ public class LaminaUnoActivity extends Activity {
 		// ///////////////////////////////////////////
 		
 		cambiaActivity();
+		
 	}
 
 	@Override
@@ -917,6 +916,50 @@ public class LaminaUnoActivity extends Activity {
 						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 					}
 				});
+	}
+	
+	public void exMain(){
+		final VideoView videoView = (VideoView) findViewById(R.id.video_main);
+
+		videoView.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+				+ R.raw.back_a_2);
+
+		videoView.start();
+		videoView.setOnPreparedListener(new OnPreparedListener() {
+		    @Override
+		    public void onPrepared(MediaPlayer mp) {
+		        mp.setLooping(true);
+		    }
+		});
+		
+		Button botonAnimado = (Button) findViewById(R.id.btn_com);
+	    Animation animacion = AnimationUtils.loadAnimation(this, R.anim.animacion);
+	    botonAnimado.startAnimation(animacion);
+	    final Animation animVideoMain = AnimationUtils.loadAnimation(this,R.anim.fade_in);
+	    
+	    findViewById(R.id.btn_com).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				VideoView videoView = (VideoView) findViewById(R.id.video_main);
+				RelativeLayout layVideoMain = (RelativeLayout) findViewById(R.id.lay_video_main);
+				ImageView imgWhite = (ImageView) findViewById(R.id.img_fade_white);
+				videoView.pause();
+				Button botonAnimado = (Button) findViewById(R.id.btn_com);
+				botonAnimado.setBackgroundResource(R.drawable.botoncomenzar);
+				imgWhite.setAnimation(animVideoMain);
+				layVideoMain.setVisibility(View.GONE);
+				videoLaminaDos.start();
+				final Handler handler = new Handler();
+				handler.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						// Do something after 5s = 5000ms
+						videoLaminaDos.setVisibility(View.INVISIBLE);
+					}
+				}, 5000);
+			}
+		});
 	}
 
 }
