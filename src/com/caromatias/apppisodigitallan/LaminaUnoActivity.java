@@ -37,16 +37,12 @@ public class LaminaUnoActivity extends Activity {
 		v.setLayoutParams(new LinearLayout.LayoutParams(
 				android.view.ViewGroup.LayoutParams.FILL_PARENT,
 				android.view.ViewGroup.LayoutParams.FILL_PARENT));
+
 		
 		zoomView = new ZoomView(this);
 		zoomView.addView(v);
 		RelativeLayout lay_principal = (RelativeLayout) findViewById(R.id.zona_zoomable);
 		lay_principal.addView(zoomView);
-
-		videoLaminaDos = (VideoView) findViewById(R.id.video_lamina_uno);
-
-		videoLaminaDos.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
-						+ R.raw.world_transition);
 
 		exMain();
 
@@ -58,17 +54,6 @@ public class LaminaUnoActivity extends Activity {
 
 		eventosBotones();
 
-		// ////////// ANIMACION GOGAME ///////////////
-		Button btnGoGame = (Button) findViewById(R.id.btn_ir_al_juego);
-		Animation animGoGame = AnimationUtils.loadAnimation(this,
-				R.anim.animacion);
-		btnGoGame.startAnimation(animGoGame);
-
-		Button btnGoGameText = (Button) findViewById(R.id.btn_ir_al_juego_text);
-		Animation animGoGameText = AnimationUtils.loadAnimation(this,
-				R.anim.slide_out);
-		btnGoGameText.startAnimation(animGoGameText);
-		// ///////////////////////////////////////////
 		
 		cambiaActivity();
 		
@@ -919,10 +904,16 @@ public class LaminaUnoActivity extends Activity {
 	}
 	
 	public void exMain(){
+		
 		final VideoView videoView = (VideoView) findViewById(R.id.video_main);
 
 		videoView.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
 				+ R.raw.back_a_2);
+		
+		videoLaminaDos = (VideoView) findViewById(R.id.video_lamina_uno);
+
+		videoLaminaDos.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+						+ R.raw.world_transition);
 
 		videoView.start();
 		videoView.setOnPreparedListener(new OnPreparedListener() {
@@ -934,30 +925,81 @@ public class LaminaUnoActivity extends Activity {
 		
 		Button botonAnimado = (Button) findViewById(R.id.btn_com);
 	    Animation animacion = AnimationUtils.loadAnimation(this, R.anim.animacion);
+	    final RelativeLayout layPanelRutas = (RelativeLayout) findViewById(R.id.panel);
+	    final RelativeLayout goGameMaster = (RelativeLayout) findViewById(R.id.go_game_master);
+	    final Button btnGoGame = (Button) findViewById(R.id.btn_ir_al_juego);
+		final Animation animGoGame = AnimationUtils.loadAnimation(this,R.anim.animacion);
+		final Button btnGoGameText = (Button) findViewById(R.id.btn_ir_al_juego_text);
+		final Animation animGoGameText = AnimationUtils.loadAnimation(this,R.anim.slide_out);
 	    botonAnimado.startAnimation(animacion);
 	    final Animation animVideoMain = AnimationUtils.loadAnimation(this,R.anim.fade_in);
+	    final Animation animVideoMainOut = AnimationUtils.loadAnimation(this,R.anim.fade_out);
+	    final Animation animInInter = AnimationUtils.loadAnimation(this,R.anim.in_mapa_inter);
+	    final Animation animPanel = AnimationUtils.loadAnimation(this,R.anim.anim_lamina_home_market);
+	    final RelativeLayout layZonaZoomable = (RelativeLayout) findViewById(R.id.zona_zoomable);
 	    
 	    findViewById(R.id.btn_com).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				VideoView videoView = (VideoView) findViewById(R.id.video_main);
+				//VideoView videoView = (VideoView) findViewById(R.id.video_main);
 				RelativeLayout layVideoMain = (RelativeLayout) findViewById(R.id.lay_video_main);
-				ImageView imgWhite = (ImageView) findViewById(R.id.img_fade_white);
-				videoView.pause();
+				final ImageView imgWhite = (ImageView) findViewById(R.id.img_fade_white);
+				
+				//videoView.pause();
 				Button botonAnimado = (Button) findViewById(R.id.btn_com);
 				botonAnimado.setBackgroundResource(R.drawable.botoncomenzar);
+				imgWhite.setVisibility(View.VISIBLE);
 				imgWhite.setAnimation(animVideoMain);
 				layVideoMain.setVisibility(View.GONE);
-				videoLaminaDos.start();
+				
 				final Handler handler = new Handler();
 				handler.postDelayed(new Runnable() {
 					@Override
 					public void run() {
 						// Do something after 5s = 5000ms
-						videoLaminaDos.setVisibility(View.INVISIBLE);
+						videoLaminaDos.start();
+						videoView.setVisibility(View.INVISIBLE);
+						imgWhite.setAnimation(animVideoMainOut);
+						imgWhite.setVisibility(View.GONE);
+					}
+				}, 800);
+				
+				final Handler handlerDos = new Handler();
+				handlerDos.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						// Do something after 5s = 5000ms
+						layZonaZoomable.bringToFront();
+						layZonaZoomable.startAnimation(animInInter);
+					}
+				}, 4000);
+				
+				final Handler handlerTres = new Handler();
+				handlerTres.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						// Do something after 5s = 5000ms
+						videoLaminaDos.setVisibility(View.GONE);
 					}
 				}, 5000);
+				
+				final Handler handlerCuatro = new Handler();
+				handlerCuatro.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						// Do something after 5s = 5000ms
+						goGameMaster.setVisibility(View.VISIBLE);
+						layPanelRutas.setVisibility(View.VISIBLE);
+						layPanelRutas.startAnimation(animPanel);
+						// ////////// ANIMACION GOGAME ///////////////
+						btnGoGame.startAnimation(animGoGame);
+						btnGoGameText.startAnimation(animGoGameText);
+						// ///////////////////////////////////////////
+						layPanelRutas.bringToFront();
+						goGameMaster.bringToFront();
+					}
+				}, 6000);
 			}
 		});
 	}

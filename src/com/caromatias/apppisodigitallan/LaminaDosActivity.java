@@ -38,6 +38,8 @@ public class LaminaDosActivity extends Activity {
 	private ImageView intentoDos;
 	private ImageView intentoTres;
 	private int intentos = 1;
+	private VideoView videoBackDespegue;
+	private ImageView ImagenBackDespegue;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +75,7 @@ public class LaminaDosActivity extends Activity {
 		findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
 				estadoProgress = 3;
-				botonStop.setEnabled(false);
+				//botonStop.setEnabled(false);
 				switch (intentos) {
 				case 1:
 					intentoTres.setImageResource(R.drawable.intento_red);
@@ -99,6 +101,12 @@ public class LaminaDosActivity extends Activity {
 		final ImageView layLogoIzq = (ImageView) findViewById(R.id.img_logo_izq);
 		final Animation animLogoIzq = AnimationUtils.loadAnimation(this,
 				R.anim.anim_mapa_in);
+		
+		videoBackDespegue = (VideoView) findViewById(R.id.video_back_despegue);
+		videoBackDespegue.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+				+ R.raw.world_transition);
+		ImagenBackDespegue = (ImageView) findViewById(R.id.img_back_despegue);
+		final Animation animImgBackDespegue = AnimationUtils.loadAnimation(this,R.anim.fade_out);
 
 		findViewById(R.id.btn_comenzar_juego_despegue).setOnClickListener(
 				new OnClickListener() {
@@ -134,6 +142,10 @@ public class LaminaDosActivity extends Activity {
 									intentos = 2;
 									if (mProgressStatus < 70) {										
 										intentoDos();
+									}else if(mProgressStatus > 70){
+										ImagenBackDespegue.startAnimation(animImgBackDespegue);
+										videoBackDespegue.start();
+										ImagenBackDespegue.setVisibility(View.GONE);
 									}
 									break;
 								}
@@ -168,7 +180,7 @@ public class LaminaDosActivity extends Activity {
 		int delay = 3000; // delay for 1 sec.
 		int period = 3; // repeat every 10 sec.
 		estadoProgress = 1;
-		botonStop.setEnabled(true);
+		//botonStop.setEnabled(true);
 		final Timer timer = new Timer();
 		timer.scheduleAtFixedRate(new TimerTask() {
 			public void run() {
@@ -192,6 +204,8 @@ public class LaminaDosActivity extends Activity {
 					intentos = 3;
 					if (mProgressStatus < 70) {
 						intentoTres();
+					}else if(mProgressStatus > 70){
+						videoBackDespegue.start();
 					}
 					break;
 				}
@@ -211,7 +225,7 @@ public class LaminaDosActivity extends Activity {
 		int delay = 3000; // delay for 1 sec.
 		int period = 3; // repeat every 10 sec.
 		estadoProgress = 1;
-		botonStop.setEnabled(true);
+		//botonStop.setEnabled(true);
 		final Timer timer = new Timer();
 		timer.scheduleAtFixedRate(new TimerTask() {
 			public void run() {
@@ -232,6 +246,11 @@ public class LaminaDosActivity extends Activity {
 					break;
 				case 3:
 					timer.cancel();
+					if (mProgressStatus < 70) {
+						intentoTres();
+					}else if(mProgressStatus > 70){
+						videoBackDespegue.start();
+					}
 					break;
 				}
 				mProgress.setProgress(mProgressStatus);

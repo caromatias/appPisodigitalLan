@@ -310,7 +310,19 @@
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
         android:paddingTop="0dp"
-        android:visibility="visible" >
+        android:visibility="gone" >
+        
+        <VideoView
+        android:id="@+id/video_back_despegue"
+        android:layout_width="1280dp"
+        android:layout_height="match_parent"/>
+        
+        <ImageView
+            android:id="@+id/img_back_despegue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_back_despegue" />
 
         <ImageView
             android:id="@+id/imageView1"
@@ -536,5 +548,6 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#FFFFFF" />
     </RelativeLayout>
+
 
 </RelativeLayout>
