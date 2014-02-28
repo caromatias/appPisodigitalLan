@@ -27,7 +27,7 @@ public class SplashScreenActivity extends Activity {
 				Intent act = new Intent(SplashScreenActivity.this,	LaminaUnoActivity.class);
 				startActivity(act);
 				overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-				//finish();
+				finish();
 			}
 		};
 

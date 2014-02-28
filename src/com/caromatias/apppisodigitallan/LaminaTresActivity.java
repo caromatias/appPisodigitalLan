@@ -1,43 +1,113 @@
 package com.caromatias.apppisodigitallan;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 public class LaminaTresActivity extends Activity {
 
+	private long splashDelay = 9500;
 	private VideoView videoBackTrivia;
 	private VideoView videoBackTriviaB;
-	
+	private ImageView imgWhiteTres;
+	private RelativeLayout layPregTrivia;
+	private TextView preguntaTrivia;
+	private Button respuestaUno;
+	private Button respuestaDos;
+	private Button respuestaTres;
+	private int respuestaCorrecta = 0;
+	private AnimationDrawable savingAnimation;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lamina_tres);
-		
+
 		// INICIO VIDEO DE TRANSICION TRIVIA //
 		videoBackTrivia = (VideoView) findViewById(R.id.video_back_trivia);
-		videoBackTrivia.setVideoPath("android.resource://com.caromatias.apppisodigitallan/" + R.raw.transicion);
+		videoBackTriviaB = (VideoView) findViewById(R.id.video_back_trivia_dos);
+		imgWhiteTres = (ImageView) findViewById(R.id.img_transicion_tres);
+		layPregTrivia = (RelativeLayout) findViewById(R.id.lay_trivia_preg);
+		preguntaTrivia = (TextView) findViewById(R.id.txt_pregunta_trivia);
+		respuestaUno = (Button) findViewById(R.id.btn_respuesta1);
+		respuestaDos = (Button) findViewById(R.id.btn_respuesta2);
+		respuestaTres = (Button) findViewById(R.id.btn_respuesta3);
+		rutaSeleccionada();
 		videoBackTrivia.start();
-		final ImageView imgWhite = (ImageView) findViewById(R.id.img_fade_white);
-    	final Animation animVideoMain = AnimationUtils.loadAnimation(this,R.anim.fade_in);
-		///////////////////////////////////////
-		videoBackTrivia.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-		    public void onCompletion(MediaPlayer mp) {
-		    	imgWhite.setVisibility(View.VISIBLE);
-				imgWhite.setAnimation(animVideoMain);
-		    	videoBackTrivia.setVisibility(View.GONE);
-		    	videoBackTriviaB.setVideoPath("android.resource://com.caromatias.apppisodigitallan/" + R.raw.back_trivia);
-				videoBackTriviaB.start();
-				imgWhite.setVisibility(View.GONE);
-		    }
-		});
+		final Animation animVideoMain = AnimationUtils.loadAnimation(this,
+				R.anim.fade_in);
+		final Animation animVideoMainOut = AnimationUtils.loadAnimation(this,
+				R.anim.fade_out);
+		final Animation animTriviaIn = AnimationUtils.loadAnimation(this,
+				R.anim.anim_trivia_in);
+		// /////////////////////////////////////
+		videoBackTrivia
+				.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+					public void onCompletion(MediaPlayer mp) {
+						videoBackTrivia.setVisibility(View.GONE);
+						videoBackTriviaB
+								.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+										+ R.raw.back_trivia);
+						videoBackTriviaB.start();
+
+					}
+				});
+
+		final Handler handlerDos = new Handler();
+		handlerDos.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				// Do something after 5s = 5000ms
+				imgWhiteTres.setVisibility(View.VISIBLE);
+				imgWhiteTres.setAnimation(animVideoMain);
+			}
+		}, 5800);
+		final Handler handlerTres = new Handler();
+		handlerTres.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				// Do something after 5s = 5000ms
+				imgWhiteTres.setAnimation(animVideoMainOut);
+				imgWhiteTres.setVisibility(View.GONE);
+				layPregTrivia.setVisibility(View.VISIBLE);
+				layPregTrivia.setAnimation(animTriviaIn);
+			}
+		}, 7000);
+		/*
+		 * TimerTask task = new TimerTask() {
+		 * 
+		 * @Override public void run() {
+		 * imgWhiteTres.setVisibility(View.VISIBLE);
+		 * imgWhiteTres.setAnimation(animVideoMain);
+		 * //imgWhite.setVisibility(View.GONE); } };
+		 * 
+		 * Timer timer = new Timer(); timer.schedule(task, splashDelay);
+		 * 
+		 * TimerTask taskOut = new TimerTask() {
+		 * 
+		 * @Override public void run() {
+		 * imgWhiteTres.setAnimation(animVideoMainOut);
+		 * imgWhiteTres.setVisibility(View.GONE); } };
+		 * 
+		 * Timer timerOut = new Timer(); timerOut.schedule(taskOut, 10500);
+		 */
+		btnRespuestas();
 	}
 
 	@Override
@@ -45,5 +115,159 @@ public class LaminaTresActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.lamina_tres, menu);
 		return true;
+	}
+
+	public void rutaSeleccionada() {
+		Bundle bundle = getIntent().getExtras();
+		switch (bundle.getInt("ruta")) {
+		case 1:
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.buenos_aires);
+			preguntaTrivia.setText(getResources().getString(R.string.baires));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.rbaires1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.rbaires2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.rbaires3));
+			respuestaCorrecta = 3;
+			break;
+		case 2:
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.sao_paulo);
+			preguntaTrivia
+					.setText(getResources().getString(R.string.sao_paulo));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.rsao_paulo1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.rsao_paulo2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.rsao_paulo3));
+			respuestaCorrecta = 2;
+			break;
+		case 3:
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.rio_janeiro);
+			preguntaTrivia.setText(getResources().getString(
+					R.string.rio_janeiro));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.rrio_janeiro1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.rrio_janeiro2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.rrio_janeiro3));
+			respuestaCorrecta = 2;
+			break;
+		default:
+			break;
+		}
+	}
+
+	public void btnRespuestas() {
+		// /////// RESPUESTA 1 /////////////
+		findViewById(R.id.btn_respuesta1).setOnClickListener(
+				new OnClickListener() {
+					public void onClick(View arg0) {
+						respuestaUno.setBackgroundResource(R.drawable.botoncomenzar);
+						Handler handlerBtnUno = new Handler();
+						handlerBtnUno.postDelayed(new Runnable() {
+							@Override
+							public void run() {
+								// Do something after 5s = 5000ms
+								switch (respuestaCorrecta) {
+								case 1:
+									respuestaUno.setBackgroundResource(R.anim.anim_respuesta_correcta);
+									savingAnimation = (AnimationDrawable) respuestaUno.getBackground();
+									savingAnimation.start();
+									break;
+								case 2:
+									respuestaDos.setBackgroundResource(R.anim.anim_respuesta_correcta);
+									savingAnimation = (AnimationDrawable) respuestaDos.getBackground();
+									savingAnimation.start();
+									break;
+								case 3:
+									respuestaTres.setBackgroundResource(R.anim.anim_respuesta_correcta);
+									savingAnimation = (AnimationDrawable) respuestaTres.getBackground();
+									savingAnimation.start();
+									break;
+								default:
+									break;
+								}
+							}
+						}, 2000);
+					}
+				});
+		// /////////////////////////////////
+		// /////// RESPUESTA 2 /////////////
+		findViewById(R.id.btn_respuesta2).setOnClickListener(
+				new OnClickListener() {
+					public void onClick(View arg0) {
+						respuestaDos.setBackgroundResource(R.drawable.botoncomenzar);
+						Handler handlerBtnDos = new Handler();
+						handlerBtnDos.postDelayed(new Runnable() {
+							@Override
+							public void run() {
+								// Do something after 5s = 5000ms
+								switch (respuestaCorrecta) {
+								case 1:
+									respuestaUno.setBackgroundResource(R.anim.anim_respuesta_correcta);
+									savingAnimation = (AnimationDrawable) respuestaUno.getBackground();
+									savingAnimation.start();
+									break;
+								case 2:
+									respuestaDos.setBackgroundResource(R.anim.anim_respuesta_correcta);
+									savingAnimation = (AnimationDrawable) respuestaDos.getBackground();
+									savingAnimation.start();
+									break;
+								case 3:
+									respuestaTres.setBackgroundResource(R.anim.anim_respuesta_correcta);
+									savingAnimation = (AnimationDrawable) respuestaTres.getBackground();
+									savingAnimation.start();
+									break;
+								default:
+									break;
+								}
+							}
+						}, 2000);
+					}
+				});
+		// /////////////////////////////////
+		// /////// RESPUESTA 3 /////////////
+		findViewById(R.id.btn_respuesta3).setOnClickListener(
+				new OnClickListener() {
+					public void onClick(View arg0) {
+						respuestaTres.setBackgroundResource(R.drawable.botoncomenzar);
+						Handler handlerBtnTres = new Handler();
+						handlerBtnTres.postDelayed(new Runnable() {
+							@Override
+							public void run() {
+								// Do something after 5s = 5000ms
+								switch (respuestaCorrecta) {
+								case 1:
+									respuestaUno.setBackgroundResource(R.anim.anim_respuesta_correcta);
+									savingAnimation = (AnimationDrawable) respuestaUno.getBackground();
+									savingAnimation.start();
+									break;
+								case 2:
+									respuestaDos.setBackgroundResource(R.anim.anim_respuesta_correcta);
+									savingAnimation = (AnimationDrawable) respuestaDos.getBackground();
+									savingAnimation.start();
+									break;
+								case 3:
+									respuestaTres.setBackgroundResource(R.anim.anim_respuesta_correcta);
+									savingAnimation = (AnimationDrawable) respuestaTres.getBackground();
+									savingAnimation.start();
+									break;
+								default:
+									break;
+								}
+							}
+						}, 2000);
+					}
+				});
+		// /////////////////////////////////
 	}
 }

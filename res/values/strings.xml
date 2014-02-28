@@ -9,7 +9,23 @@
     <string name="desc">Imagen</string>
     <string name="title_activity_lamina_dos">LaminaDosActivity</string>
     <string name="desc_despegue">PARA EL DESPEGUE NECESITAS TODA LA POTENCIA DE LOS MOTORES.\nPRESIONA EL BOTÓN DEL ACELERADOR CUANDO LA POTENCIA ESTE AL\nMÁXIMO Y ASÍ DESPEGAR A NUEVO DESTINO.</string>
+    <string name="desc_carga">PARA LLEGAR A TU DESTINO, DEBES TENER EL COMBUSTIBLE NECESARIO.\nPRESIONA EL BOTÓN REPETITIVAMENTE EN EL MENOR TIEMPO POSIBLE\nPARE INICIAR TU VIAJE.</string>
     <string name="title_activity_lamina_tres">LaminaTresActivity</string>
     <string name="title_activity_game_over">GameOverActivity</string>
-
+    <!-- Strings preguntas Trivias -->
+    <string name ="baires">¿Cómo se conoce a la sede de Gobierno de Argentina?</string>
+    <string name ="sao_paulo">¿Cúal es la población aproximada de Sao Paulo Metropolitano?</string>
+    <string name ="rio_janeiro">¿Cúal de estas playas es conocida por sus eventos masivos al aire libre?</string>
+    <!-- Strings preguntas Trivias -->
+    <!-- Strings respuestas trivias -->
+    <string name ="rbaires1">Casa Blanca</string>
+    <string name ="rbaires2">Casa de Pizarro</string>
+    <string name ="rbaires3">Casa Rosada</string>
+    <string name ="rsao_paulo1">11.821.000</string>
+    <string name ="rsao_paulo2">20.893.053</string>
+    <string name ="rsao_paulo3">27.883.790</string>
+    <string name ="rrio_janeiro1">Leblón</string>
+    <string name ="rrio_janeiro2">Copacabana</string>
+    <string name ="rrio_janeiro3">Ipanema</string>
+	<!-- Strings respuestas trivias -->
 </resources>
