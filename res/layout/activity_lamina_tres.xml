@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    tools:context=".LaminaTresActivity" >
+
+    <VideoView
+        android:id="@+id/video_back_trivia"
+        android:layout_width="1280dp"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/img_transicion"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/fade_white"
+        android:visibility="gone" />
+
+</RelativeLayout>

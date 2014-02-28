@@ -9,5 +9,7 @@
     <string name="desc">Imagen</string>
     <string name="title_activity_lamina_dos">LaminaDosActivity</string>
     <string name="desc_despegue">PARA EL DESPEGUE NECESITAS TODA LA POTENCIA DE LOS MOTORES.\nPRESIONA EL BOTÓN DEL ACELERADOR CUANDO LA POTENCIA ESTE AL\nMÁXIMO Y ASÍ DESPEGAR A NUEVO DESTINO.</string>
+    <string name="title_activity_lamina_tres">LaminaTresActivity</string>
+    <string name="title_activity_game_over">GameOverActivity</string>
 
 </resources>

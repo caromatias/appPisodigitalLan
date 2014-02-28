@@ -34,6 +34,14 @@
             android:name="com.caromatias.apppisodigitallan.LaminaDosActivity"
             android:label="@string/title_activity_lamina_dos" >
         </activity>
+        <activity
+            android:name="com.caromatias.apppisodigitallan.LaminaTresActivity"
+            android:label="@string/title_activity_lamina_tres" >
+        </activity>
+        <activity
+            android:name="com.caromatias.apppisodigitallan.GameOverActivity"
+            android:label="@string/title_activity_game_over" >
+        </activity>
     </application>
 
 </manifest>

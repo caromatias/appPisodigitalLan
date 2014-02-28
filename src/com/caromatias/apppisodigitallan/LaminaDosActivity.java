@@ -3,6 +3,7 @@ package com.caromatias.apppisodigitallan;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -40,6 +41,7 @@ public class LaminaDosActivity extends Activity {
 	private int intentos = 1;
 	private VideoView videoBackDespegue;
 	private ImageView ImagenBackDespegue;
+	private Animation animImgBackDespegue;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -106,7 +108,7 @@ public class LaminaDosActivity extends Activity {
 		videoBackDespegue.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
 				+ R.raw.world_transition);
 		ImagenBackDespegue = (ImageView) findViewById(R.id.img_back_despegue);
-		final Animation animImgBackDespegue = AnimationUtils.loadAnimation(this,R.anim.fade_out);
+		animImgBackDespegue = AnimationUtils.loadAnimation(this,R.anim.fade_out);
 
 		findViewById(R.id.btn_comenzar_juego_despegue).setOnClickListener(
 				new OnClickListener() {
@@ -142,10 +144,10 @@ public class LaminaDosActivity extends Activity {
 									intentos = 2;
 									if (mProgressStatus < 70) {										
 										intentoDos();
-									}else if(mProgressStatus > 70){
-										ImagenBackDespegue.startAnimation(animImgBackDespegue);
+									}else if(mProgressStatus >= 70){
+										//ImagenBackDespegue.startAnimation(animImgBackDespegue);
 										videoBackDespegue.start();
-										ImagenBackDespegue.setVisibility(View.GONE);
+										//ImagenBackDespegue.setVisibility(View.GONE);
 									}
 									break;
 								}
@@ -155,6 +157,11 @@ public class LaminaDosActivity extends Activity {
 									public void run() {
 										textoDos.setText(String
 												.valueOf(mProgressStatus + "%"));
+										if(estadoProgress == 3 && mProgressStatus > 70){
+											ImagenBackDespegue.startAnimation(animImgBackDespegue);
+											//videoBackDespegue.start();
+											ImagenBackDespegue.setVisibility(View.GONE);
+										}
 									}
 								});
 							}
@@ -166,6 +173,14 @@ public class LaminaDosActivity extends Activity {
 		// //////////////////////////////////
 		goRutas();
 		// //////////////////////////////////
+		
+		videoBackDespegue.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+		    public void onCompletion(MediaPlayer mp) {
+		    	Intent act = new Intent(LaminaDosActivity.this,	LaminaTresActivity.class);
+				startActivity(act);
+				overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+		    }
+		});
 	}
 
 	@Override
@@ -204,7 +219,7 @@ public class LaminaDosActivity extends Activity {
 					intentos = 3;
 					if (mProgressStatus < 70) {
 						intentoTres();
-					}else if(mProgressStatus > 70){
+					}else if(mProgressStatus >= 70){
 						videoBackDespegue.start();
 					}
 					break;
@@ -214,6 +229,11 @@ public class LaminaDosActivity extends Activity {
 				{
 					public void run() {
 						textoDos.setText(String.valueOf(mProgressStatus + "%"));
+						if(estadoProgress == 3 && mProgressStatus > 70){
+							ImagenBackDespegue.startAnimation(animImgBackDespegue);
+							//videoBackDespegue.start();
+							ImagenBackDespegue.setVisibility(View.GONE);
+						}
 					}
 				});
 			}
@@ -247,8 +267,10 @@ public class LaminaDosActivity extends Activity {
 				case 3:
 					timer.cancel();
 					if (mProgressStatus < 70) {
-						intentoTres();
-					}else if(mProgressStatus > 70){
+						Intent act = new Intent(LaminaDosActivity.this,	GameOverActivity.class);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+					}else if(mProgressStatus >= 70){
 						videoBackDespegue.start();
 					}
 					break;
@@ -259,6 +281,11 @@ public class LaminaDosActivity extends Activity {
 					public void run() {
 						textoDos.setText(String
 								.valueOf(mProgressStatus + "%"));
+						if(estadoProgress == 3 && mProgressStatus > 70){
+							ImagenBackDespegue.startAnimation(animImgBackDespegue);
+							//videoBackDespegue.start();
+							ImagenBackDespegue.setVisibility(View.GONE);
+						}
 					}
 				});
 			}
