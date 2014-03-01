@@ -95,7 +95,8 @@ public class LaminaDosActivity extends Activity {
 		intentoDos = (ImageView) findViewById(R.id.img_intento_dos);
 		intentoTres = (ImageView) findViewById(R.id.img_intento_tres);
 		txtPorcentajeCarga = (TextView) findViewById(R.id.txt_tacometro_porcentaje);
-		Typeface tf = Typeface.createFromAsset(getAssets(),"fonts/wwDigital.ttf");
+		Typeface tf = Typeface.createFromAsset(getAssets(),
+				"fonts/wwDigital.ttf");
 		tiempoParaCarga = (TextView) findViewById(R.id.txt_tiempo_juego_carga);
 		tiempoParaCargaCero = (TextView) findViewById(R.id.txt_tiempo_juego_carga_0);
 		tiempoParaCargaCero.setTypeface(tf);
@@ -126,7 +127,7 @@ public class LaminaDosActivity extends Activity {
 		// ///////// BOTON COMENZAR /////////
 
 		final RelativeLayout layPopup = (RelativeLayout) findViewById(R.id.lay_popup_despegue);
-		layPopUpCarga = (RelativeLayout)findViewById(R.id.lay_popup_carga);
+		layPopUpCarga = (RelativeLayout) findViewById(R.id.lay_popup_carga);
 		final Animation animPopup = AnimationUtils.loadAnimation(this,
 				R.anim.anim_mapa_inter_out);
 		final ImageView layLogoIzq = (ImageView) findViewById(R.id.img_logo_izq);
@@ -203,21 +204,21 @@ public class LaminaDosActivity extends Activity {
 						// ///////////////////////////////////////////
 					}
 				});
-		
-		//////////////////////////////////////////
-		
+
+		// ////////////////////////////////////////
+
 		findViewById(R.id.btn_comenzar_juego_carga).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
 						layPopUpCarga.startAnimation(animPopup);
 						layPopUpCarga.setVisibility(View.GONE);
-						//layLogoIzq.setVisibility(View.VISIBLE);
-						//layLogoIzq.startAnimation(animLogoIzq);
-						
+						// layLogoIzq.setVisibility(View.VISIBLE);
+						// layLogoIzq.startAnimation(animLogoIzq);
+
 					}
 				});
-		
-		/////////////////////////////////////////
+
+		// ///////////////////////////////////////
 
 		// //////////////////////////////////
 		goRutas();
@@ -323,6 +324,7 @@ public class LaminaDosActivity extends Activity {
 					if (mProgressStatus < 70) {
 						Intent act = new Intent(LaminaDosActivity.this,
 								GameOverActivity.class);
+						act.putExtra("game", 1);
 						startActivity(act);
 						overridePendingTransition(R.anim.fade_in,
 								R.anim.fade_out);
@@ -354,8 +356,9 @@ public class LaminaDosActivity extends Activity {
 		final RelativeLayout layJuegoCarga = (RelativeLayout) findViewById(R.id.lay_juego_carga);
 		final Animation animJuego = AnimationUtils.loadAnimation(this,
 				R.anim.anim_in_juego);
-		
-		final Animation animRotate = AnimationUtils.loadAnimation(this, R.anim.anim_rotacion);
+
+		final Animation animRotate = AnimationUtils.loadAnimation(this,
+				R.anim.anim_rotacion);
 		// /////// BOTON UNO //////////
 		findViewById(R.id.btnUno).setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
@@ -410,59 +413,177 @@ public class LaminaDosActivity extends Activity {
 			}
 		});
 		// ////////////////////////////
-		
-		
-		findViewById(R.id.btn_activa_carga).setOnClickListener(new OnClickListener() {
+		// /////// BOTON CUATRO //////////
+		findViewById(R.id.btnCuatro).setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-				if(comienzaCarga == 1){
-					if(currentRotation < 100){
-						//int currentRotation = 0;
-						RotateAnimation anim = new RotateAnimation(currentRotation, currentRotation + 1,Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF,0.5f);
-					    currentRotation = (currentRotation) % 360;
-
-					    anim.setInterpolator(new LinearInterpolator());
-					    anim.setDuration(0);
-					    anim.setFillEnabled(true);
-
-					    anim.setFillAfter(true);
-					    findViewById(R.id.img_aguja_tacom_transp).startAnimation(anim);
-					    currentRotation +=1;
-					    txtPorcentajeCarga.setText(currentRotation+ "%");
-					}else{
-						activaCarga.setEnabled(false);
-					}
-				}else{
-					comienzaCarga += 1;
-					new CountDownTimer(10000, 1000) {
-			        	 
-			            public void onTick(long millisUntilFinished) {
-			            	tiempoParaCarga.setText("0" + millisUntilFinished / 1000);
-			            }
-			        
-			            public void onFinish() {
-			            	tiempoParaCarga.setText("00");
-			            	activaCarga.setEnabled(false);
-							if (currentRotation < 70) {
-								Intent act = new Intent(LaminaDosActivity.this,
-										GameOverActivity.class);
-								startActivity(act);
-								overridePendingTransition(R.anim.fade_in,
-										R.anim.fade_out);
-							} else if (currentRotation >= 70) {
-								Intent act = new Intent(LaminaDosActivity.this,
-										LaminaTresActivity.class);
-								act.putExtra("ruta", rutaSeleccionada);
-								startActivity(act);
-								overridePendingTransition(R.anim.fade_in,
-										R.anim.fade_out);
-							}
-			            }
-			         }.start();
+				int numeroRandom = generaRandom();
+				switch (numeroRandom) {
+				case 1:
+					layJuegoDespegue.setVisibility(View.VISIBLE);
+					layJuegoDespegue.startAnimation(animJuego);
+					break;
+				case 2:
+					layJuegoCarga.setVisibility(View.VISIBLE);
+					layJuegoCarga.startAnimation(animJuego);
+					break;
 				}
+				rutaSeleccionada = 4;
 			}
 		});
+		// ////////////////////////////
+		// /////// BOTON CINCO //////////
+		findViewById(R.id.btnCinco).setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				int numeroRandom = generaRandom();
+				switch (numeroRandom) {
+				case 1:
+					layJuegoDespegue.setVisibility(View.VISIBLE);
+					layJuegoDespegue.startAnimation(animJuego);
+					break;
+				case 2:
+					layJuegoCarga.setVisibility(View.VISIBLE);
+					layJuegoCarga.startAnimation(animJuego);
+					break;
+				}
+				rutaSeleccionada = 5;
+			}
+		});
+		// ////////////////////////////
+		// /////// BOTON SEIS //////////
+		findViewById(R.id.btnSeis).setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				int numeroRandom = generaRandom();
+				switch (numeroRandom) {
+				case 1:
+					layJuegoDespegue.setVisibility(View.VISIBLE);
+					layJuegoDespegue.startAnimation(animJuego);
+					break;
+				case 2:
+					layJuegoCarga.setVisibility(View.VISIBLE);
+					layJuegoCarga.startAnimation(animJuego);
+					break;
+				}
+				rutaSeleccionada = 6;
+			}
+		});
+		// ////////////////////////////
+		// /////// BOTON SIETE //////////
+		findViewById(R.id.btnSiete).setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				int numeroRandom = generaRandom();
+				switch (numeroRandom) {
+				case 1:
+					layJuegoDespegue.setVisibility(View.VISIBLE);
+					layJuegoDespegue.startAnimation(animJuego);
+					break;
+				case 2:
+					layJuegoCarga.setVisibility(View.VISIBLE);
+					layJuegoCarga.startAnimation(animJuego);
+					break;
+				}
+				rutaSeleccionada = 7;
+			}
+		});
+		// ////////////////////////////
+		// /////// BOTON OCHO //////////
+		findViewById(R.id.btnOcho).setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				int numeroRandom = generaRandom();
+				switch (numeroRandom) {
+				case 1:
+					layJuegoDespegue.setVisibility(View.VISIBLE);
+					layJuegoDespegue.startAnimation(animJuego);
+					break;
+				case 2:
+					layJuegoCarga.setVisibility(View.VISIBLE);
+					layJuegoCarga.startAnimation(animJuego);
+					break;
+				}
+				rutaSeleccionada = 8;
+			}
+		});
+		// ////////////////////////////
+		// /////// BOTON NUEVE //////////
+		findViewById(R.id.btnNueve).setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				int numeroRandom = generaRandom();
+				switch (numeroRandom) {
+				case 1:
+					layJuegoDespegue.setVisibility(View.VISIBLE);
+					layJuegoDespegue.startAnimation(animJuego);
+					break;
+				case 2:
+					layJuegoCarga.setVisibility(View.VISIBLE);
+					layJuegoCarga.startAnimation(animJuego);
+					break;
+				}
+				rutaSeleccionada = 9;
+			}
+		});
+		// ////////////////////////////
+
+		findViewById(R.id.btn_activa_carga).setOnClickListener(
+				new OnClickListener() {
+					public void onClick(View arg0) {
+						if (comienzaCarga == 1) {
+							if (currentRotation < 100) {
+								// int currentRotation = 0;
+								RotateAnimation anim = new RotateAnimation(
+										currentRotation, currentRotation + 1,
+										Animation.RELATIVE_TO_SELF, 0.5f,
+										Animation.RELATIVE_TO_SELF, 0.5f);
+								currentRotation = (currentRotation) % 360;
+
+								anim.setInterpolator(new LinearInterpolator());
+								anim.setDuration(0);
+								anim.setFillEnabled(true);
+
+								anim.setFillAfter(true);
+								findViewById(R.id.img_aguja_tacom_transp)
+										.startAnimation(anim);
+								currentRotation += 1;
+								txtPorcentajeCarga.setText(currentRotation
+										+ "%");
+							} else {
+								activaCarga.setEnabled(false);
+							}
+						} else {
+							comienzaCarga += 1;
+							new CountDownTimer(10000, 1000) {
+
+								public void onTick(long millisUntilFinished) {
+									tiempoParaCarga.setText("0"
+											+ millisUntilFinished / 1000);
+								}
+
+								public void onFinish() {
+									tiempoParaCarga.setText("00");
+									activaCarga.setEnabled(false);
+									if (currentRotation < 70) {
+										Intent act = new Intent(
+												LaminaDosActivity.this,
+												GameOverActivity.class);
+										act.putExtra("game", 1);
+										startActivity(act);
+										overridePendingTransition(
+												R.anim.fade_in, R.anim.fade_out);
+									} else if (currentRotation >= 70) {
+										Intent act = new Intent(
+												LaminaDosActivity.this,
+												LaminaTresActivity.class);
+										act.putExtra("ruta", rutaSeleccionada);
+										startActivity(act);
+										overridePendingTransition(
+												R.anim.fade_in, R.anim.fade_out);
+									}
+								}
+							}.start();
+						}
+					}
+				});
 	}
-	public int generaRandom(){
+
+	public int generaRandom() {
 		int min = 1;
 		int max = 2;
 

@@ -77,7 +77,7 @@ public class LaminaTresActivity extends Activity {
 				imgWhiteTres.setVisibility(View.VISIBLE);
 				imgWhiteTres.setAnimation(animVideoMain);
 			}
-		}, 5800);
+		}, 9800);
 		final Handler handlerTres = new Handler();
 		handlerTres.postDelayed(new Runnable() {
 			@Override
@@ -88,7 +88,7 @@ public class LaminaTresActivity extends Activity {
 				layPregTrivia.setVisibility(View.VISIBLE);
 				layPregTrivia.setAnimation(animTriviaIn);
 			}
-		}, 7000);
+		}, 11000);
 		/*
 		 * TimerTask task = new TimerTask() {
 		 * 
@@ -161,6 +161,85 @@ public class LaminaTresActivity extends Activity {
 					+ getResources().getString(R.string.rrio_janeiro3));
 			respuestaCorrecta = 2;
 			break;
+		case 4:
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.bogota);
+			preguntaTrivia.setText(getResources().getString(R.string.bogota));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.rbogota1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.rbogota2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.rbogota3));
+			respuestaCorrecta = 1;
+			break;
+		case 5:
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.quito);
+			preguntaTrivia.setText(getResources().getString(R.string.quito));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.rquito1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.rquito2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.rquito3));
+			respuestaCorrecta = 3;
+			break;
+		case 6:
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.guayaquil);
+			preguntaTrivia
+					.setText(getResources().getString(R.string.guayaquil));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.rguayaquil1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.rguayaquil2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.rguayaquil3));
+			respuestaCorrecta = 1;
+			break;
+		case 7:
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.lima);
+			preguntaTrivia.setText(getResources().getString(R.string.lima));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.rlima1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.rlima2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.rlima3));
+			respuestaCorrecta = 3;
+			break;
+		case 8:
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.madrid);
+			preguntaTrivia.setText(getResources().getString(R.string.madrid));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.rmadrid1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.rmadrid2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.rmadrid3));
+			respuestaCorrecta = 3;
+			break;
+		case 9:
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.miami);
+			preguntaTrivia.setText(getResources().getString(R.string.miami));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.rmiami1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.rmiami2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.rmiami3));
+			respuestaCorrecta = 2;
+			break;
 		default:
 			break;
 		}
@@ -171,7 +250,8 @@ public class LaminaTresActivity extends Activity {
 		findViewById(R.id.btn_respuesta1).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
-						respuestaUno.setBackgroundResource(R.drawable.botoncomenzar);
+						respuestaUno
+								.setBackgroundResource(R.drawable.botoncomenzar);
 						Handler handlerBtnUno = new Handler();
 						handlerBtnUno.postDelayed(new Runnable() {
 							@Override
@@ -179,18 +259,24 @@ public class LaminaTresActivity extends Activity {
 								// Do something after 5s = 5000ms
 								switch (respuestaCorrecta) {
 								case 1:
-									respuestaUno.setBackgroundResource(R.anim.anim_respuesta_correcta);
-									savingAnimation = (AnimationDrawable) respuestaUno.getBackground();
+									respuestaUno
+											.setBackgroundResource(R.anim.anim_respuesta_correcta);
+									savingAnimation = (AnimationDrawable) respuestaUno
+											.getBackground();
 									savingAnimation.start();
 									break;
 								case 2:
-									respuestaDos.setBackgroundResource(R.anim.anim_respuesta_correcta);
-									savingAnimation = (AnimationDrawable) respuestaDos.getBackground();
+									respuestaDos
+											.setBackgroundResource(R.anim.anim_respuesta_correcta);
+									savingAnimation = (AnimationDrawable) respuestaDos
+											.getBackground();
 									savingAnimation.start();
 									break;
 								case 3:
-									respuestaTres.setBackgroundResource(R.anim.anim_respuesta_correcta);
-									savingAnimation = (AnimationDrawable) respuestaTres.getBackground();
+									respuestaTres
+											.setBackgroundResource(R.anim.anim_respuesta_correcta);
+									savingAnimation = (AnimationDrawable) respuestaTres
+											.getBackground();
 									savingAnimation.start();
 									break;
 								default:
@@ -198,6 +284,19 @@ public class LaminaTresActivity extends Activity {
 								}
 							}
 						}, 2000);
+						// //////////////////////
+						Handler handlerPasoGameOver = new Handler();
+						handlerPasoGameOver.postDelayed(new Runnable() {
+							@Override
+							public void run() {
+								// Do something after 5s = 5000ms
+								Intent act = new Intent(LaminaTresActivity.this,GameOverActivity.class);
+								act.putExtra("game", 2);
+								startActivity(act);
+								overridePendingTransition(R.anim.fade_in,
+										R.anim.fade_out);
+							}
+						}, 5000);
 					}
 				});
 		// /////////////////////////////////
@@ -205,7 +304,8 @@ public class LaminaTresActivity extends Activity {
 		findViewById(R.id.btn_respuesta2).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
-						respuestaDos.setBackgroundResource(R.drawable.botoncomenzar);
+						respuestaDos
+								.setBackgroundResource(R.drawable.botoncomenzar);
 						Handler handlerBtnDos = new Handler();
 						handlerBtnDos.postDelayed(new Runnable() {
 							@Override
@@ -213,18 +313,24 @@ public class LaminaTresActivity extends Activity {
 								// Do something after 5s = 5000ms
 								switch (respuestaCorrecta) {
 								case 1:
-									respuestaUno.setBackgroundResource(R.anim.anim_respuesta_correcta);
-									savingAnimation = (AnimationDrawable) respuestaUno.getBackground();
+									respuestaUno
+											.setBackgroundResource(R.anim.anim_respuesta_correcta);
+									savingAnimation = (AnimationDrawable) respuestaUno
+											.getBackground();
 									savingAnimation.start();
 									break;
 								case 2:
-									respuestaDos.setBackgroundResource(R.anim.anim_respuesta_correcta);
-									savingAnimation = (AnimationDrawable) respuestaDos.getBackground();
+									respuestaDos
+											.setBackgroundResource(R.anim.anim_respuesta_correcta);
+									savingAnimation = (AnimationDrawable) respuestaDos
+											.getBackground();
 									savingAnimation.start();
 									break;
 								case 3:
-									respuestaTres.setBackgroundResource(R.anim.anim_respuesta_correcta);
-									savingAnimation = (AnimationDrawable) respuestaTres.getBackground();
+									respuestaTres
+											.setBackgroundResource(R.anim.anim_respuesta_correcta);
+									savingAnimation = (AnimationDrawable) respuestaTres
+											.getBackground();
 									savingAnimation.start();
 									break;
 								default:
@@ -232,6 +338,19 @@ public class LaminaTresActivity extends Activity {
 								}
 							}
 						}, 2000);
+						// //////////////////////
+						Handler handlerPasoGameOver = new Handler();
+						handlerPasoGameOver.postDelayed(new Runnable() {
+							@Override
+							public void run() {
+								// Do something after 5s = 5000ms
+								Intent act = new Intent(LaminaTresActivity.this,GameOverActivity.class);
+								act.putExtra("game", 2);
+								startActivity(act);
+								overridePendingTransition(R.anim.fade_in,
+										R.anim.fade_out);
+							}
+						}, 5000);
 					}
 				});
 		// /////////////////////////////////
@@ -239,7 +358,8 @@ public class LaminaTresActivity extends Activity {
 		findViewById(R.id.btn_respuesta3).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
-						respuestaTres.setBackgroundResource(R.drawable.botoncomenzar);
+						respuestaTres
+								.setBackgroundResource(R.drawable.botoncomenzar);
 						Handler handlerBtnTres = new Handler();
 						handlerBtnTres.postDelayed(new Runnable() {
 							@Override
@@ -247,18 +367,24 @@ public class LaminaTresActivity extends Activity {
 								// Do something after 5s = 5000ms
 								switch (respuestaCorrecta) {
 								case 1:
-									respuestaUno.setBackgroundResource(R.anim.anim_respuesta_correcta);
-									savingAnimation = (AnimationDrawable) respuestaUno.getBackground();
+									respuestaUno
+											.setBackgroundResource(R.anim.anim_respuesta_correcta);
+									savingAnimation = (AnimationDrawable) respuestaUno
+											.getBackground();
 									savingAnimation.start();
 									break;
 								case 2:
-									respuestaDos.setBackgroundResource(R.anim.anim_respuesta_correcta);
-									savingAnimation = (AnimationDrawable) respuestaDos.getBackground();
+									respuestaDos
+											.setBackgroundResource(R.anim.anim_respuesta_correcta);
+									savingAnimation = (AnimationDrawable) respuestaDos
+											.getBackground();
 									savingAnimation.start();
 									break;
 								case 3:
-									respuestaTres.setBackgroundResource(R.anim.anim_respuesta_correcta);
-									savingAnimation = (AnimationDrawable) respuestaTres.getBackground();
+									respuestaTres
+											.setBackgroundResource(R.anim.anim_respuesta_correcta);
+									savingAnimation = (AnimationDrawable) respuestaTres
+											.getBackground();
 									savingAnimation.start();
 									break;
 								default:
@@ -266,6 +392,19 @@ public class LaminaTresActivity extends Activity {
 								}
 							}
 						}, 2000);
+						// //////////////////////
+						Handler handlerPasoGameOver = new Handler();
+						handlerPasoGameOver.postDelayed(new Runnable() {
+							@Override
+							public void run() {
+								// Do something after 5s = 5000ms
+								Intent act = new Intent(LaminaTresActivity.this,GameOverActivity.class);
+								act.putExtra("game", 2);
+								startActivity(act);
+								overridePendingTransition(R.anim.fade_in,
+										R.anim.fade_out);
+							}
+						}, 5000);
 					}
 				});
 		// /////////////////////////////////

@@ -8,6 +8,8 @@
     android:paddingTop="0dp"
     tools:context=".LaminaDosActivity" >
 
+    
+
     <RelativeLayout
         android:id="@+id/relativeLayout1"
         android:layout_width="1120dp"
@@ -579,7 +581,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_marginRight="229dp"
-            android:layout_marginTop="96dp" 
+            android:layout_marginTop="96dp"
             android:src="@drawable/img_tacometro_carga" />
 
         <ImageView
@@ -613,7 +615,7 @@
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold" />
-        
+
         <RelativeLayout
             android:id="@+id/lay_popup_carga"
             android:layout_width="match_parent"
@@ -703,7 +705,6 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold" />
-
         </RelativeLayout>
 
         <TextView
@@ -733,7 +734,6 @@
             android:textColor="#FFFFFF"
             android:textSize="50sp"
             android:textStyle="bold" />
-
     </RelativeLayout>
 
 </RelativeLayout>

@@ -16,6 +16,12 @@
     <string name ="baires">¿Cómo se conoce a la sede de Gobierno de Argentina?</string>
     <string name ="sao_paulo">¿Cúal es la población aproximada de Sao Paulo Metropolitano?</string>
     <string name ="rio_janeiro">¿Cúal de estas playas es conocida por sus eventos masivos al aire libre?</string>
+    <string name ="bogota">¿Qué tipo de clima presenta Bogotá?</string>
+    <string name ="quito">¿Cuál de estas iglesias es conocida por sus muros de oro?</string>
+    <string name ="guayaquil">¿En la orilla de qué río se encuentra el Malecón 2000?</string>
+    <string name ="lima">¿Cúal de estos barrios no pertenece a Lima?</string>
+    <string name ="madrid">¿Cúal de estos museos se encuentra en Madrid?</string>
+    <string name ="miami">¿Cúal de estas calles se encuentra en Miami Beach?</string>
     <!-- Strings preguntas Trivias -->
     <!-- Strings respuestas trivias -->
     <string name ="rbaires1">Casa Blanca</string>
@@ -27,5 +33,23 @@
     <string name ="rrio_janeiro1">Leblón</string>
     <string name ="rrio_janeiro2">Copacabana</string>
     <string name ="rrio_janeiro3">Ipanema</string>
+    <string name ="rbogota1">Templado de altura</string>
+    <string name ="rbogota2">Tropical</string>
+    <string name ="rbogota3">Polar</string>
+    <string name ="rquito1">San Francisco</string>
+    <string name ="rquito2">Metropolitana</string>
+    <string name ="rquito3">De la Compañía</string>
+    <string name ="rguayaquil1">Guayas</string>
+    <string name ="rguayaquil2">Amazonas</string>
+    <string name ="rguayaquil3">Daule</string>
+    <string name ="rlima1">Barranco</string>
+    <string name ="rlima2">Miraflores</string>
+    <string name ="rlima3">Avellaneda</string>
+    <string name ="rmadrid1">Casa Milá</string>
+    <string name ="rmadrid2">Picasso</string>
+    <string name ="rmadrid3">Del Prado</string>
+    <string name ="rmiami1">Brickell Key Dr.</string>
+    <string name ="rmiami2">Ocenan Dr.</string>
+    <string name ="rmiami3">Bayshore Dr.</string>
 	<!-- Strings respuestas trivias -->
 </resources>

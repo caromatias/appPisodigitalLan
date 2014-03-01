@@ -15,21 +15,41 @@ public class GameOverActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_game_over);
-
-		// INICIO VIDEO GAMEOVER //
-		videoGameOver = (VideoView) findViewById(R.id.video_game_over);
-		videoGameOver
-				.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
-						+ R.raw.game_over);
-		videoGameOver.start();
-		// /////////////////////////////////////
-		videoGameOver.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-		    public void onCompletion(MediaPlayer mp) {
-		    	Intent act = new Intent(GameOverActivity.this,	LaminaUnoActivity.class);
-				startActivity(act);
-				overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-		    }
-		});
+		Bundle bundle = getIntent().getExtras();
+		switch (bundle.getInt("game")) {
+		case 1:
+			// INICIO VIDEO GAMEOVER //
+			videoGameOver = (VideoView) findViewById(R.id.video_game_over);
+			videoGameOver
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.game_over);
+			videoGameOver.start();
+			// /////////////////////////////////////
+			videoGameOver.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+			    public void onCompletion(MediaPlayer mp) {
+			    	Intent act = new Intent(GameOverActivity.this,	LaminaUnoActivity.class);
+					startActivity(act);
+					overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+			    }
+			});
+			break;
+		case 2:
+			// INICIO VIDEO GAMEOVER //
+			videoGameOver = (VideoView) findViewById(R.id.video_game_over);
+			videoGameOver
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.felicitaciones);
+			videoGameOver.start();
+			// /////////////////////////////////////
+			videoGameOver.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+			    public void onCompletion(MediaPlayer mp) {
+			    	Intent act = new Intent(GameOverActivity.this,	LaminaDosActivity.class);
+					startActivity(act);
+					overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+			    }
+			});
+			break;
+		}
 	}
 
 	@Override
