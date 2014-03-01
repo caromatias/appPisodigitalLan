@@ -285,18 +285,33 @@ public class LaminaTresActivity extends Activity {
 							}
 						}, 2000);
 						// //////////////////////
-						Handler handlerPasoGameOver = new Handler();
-						handlerPasoGameOver.postDelayed(new Runnable() {
-							@Override
-							public void run() {
-								// Do something after 5s = 5000ms
-								Intent act = new Intent(LaminaTresActivity.this,GameOverActivity.class);
-								act.putExtra("game", 2);
-								startActivity(act);
-								overridePendingTransition(R.anim.fade_in,
-										R.anim.fade_out);
-							}
-						}, 5000);
+						if(respuestaCorrecta != 1){
+							Handler handlerPasoGameOver = new Handler();
+							handlerPasoGameOver.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									// Do something after 5s = 5000ms
+									Intent act = new Intent(LaminaTresActivity.this,GameOverActivity.class);
+									act.putExtra("game", 1);
+									startActivity(act);
+									overridePendingTransition(R.anim.fade_in,
+											R.anim.fade_out);
+								}
+							}, 5000);
+						}else if(respuestaCorrecta == 1){
+							Handler handlerPasoGameOver = new Handler();
+							handlerPasoGameOver.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									// Do something after 5s = 5000ms
+									Intent act = new Intent(LaminaTresActivity.this,GameOverActivity.class);
+									act.putExtra("game", 2);
+									startActivity(act);
+									overridePendingTransition(R.anim.fade_in,
+											R.anim.fade_out);
+								}
+							}, 5000);
+						}
 					}
 				});
 		// /////////////////////////////////
@@ -339,18 +354,33 @@ public class LaminaTresActivity extends Activity {
 							}
 						}, 2000);
 						// //////////////////////
-						Handler handlerPasoGameOver = new Handler();
-						handlerPasoGameOver.postDelayed(new Runnable() {
-							@Override
-							public void run() {
-								// Do something after 5s = 5000ms
-								Intent act = new Intent(LaminaTresActivity.this,GameOverActivity.class);
-								act.putExtra("game", 2);
-								startActivity(act);
-								overridePendingTransition(R.anim.fade_in,
-										R.anim.fade_out);
-							}
-						}, 5000);
+						if(respuestaCorrecta != 2){
+							Handler handlerPasoGameOver = new Handler();
+							handlerPasoGameOver.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									// Do something after 5s = 5000ms
+									Intent act = new Intent(LaminaTresActivity.this,GameOverActivity.class);
+									act.putExtra("game", 1);
+									startActivity(act);
+									overridePendingTransition(R.anim.fade_in,
+											R.anim.fade_out);
+								}
+							}, 5000);
+						}else if(respuestaCorrecta == 2){
+							Handler handlerPasoGameOver = new Handler();
+							handlerPasoGameOver.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									// Do something after 5s = 5000ms
+									Intent act = new Intent(LaminaTresActivity.this,GameOverActivity.class);
+									act.putExtra("game", 2);
+									startActivity(act);
+									overridePendingTransition(R.anim.fade_in,
+											R.anim.fade_out);
+								}
+							}, 5000);
+						}
 					}
 				});
 		// /////////////////////////////////
@@ -393,18 +423,33 @@ public class LaminaTresActivity extends Activity {
 							}
 						}, 2000);
 						// //////////////////////
-						Handler handlerPasoGameOver = new Handler();
-						handlerPasoGameOver.postDelayed(new Runnable() {
-							@Override
-							public void run() {
-								// Do something after 5s = 5000ms
-								Intent act = new Intent(LaminaTresActivity.this,GameOverActivity.class);
-								act.putExtra("game", 2);
-								startActivity(act);
-								overridePendingTransition(R.anim.fade_in,
-										R.anim.fade_out);
-							}
-						}, 5000);
+						if(respuestaCorrecta != 3){
+							Handler handlerPasoGameOver = new Handler();
+							handlerPasoGameOver.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									// Do something after 5s = 5000ms
+									Intent act = new Intent(LaminaTresActivity.this,GameOverActivity.class);
+									act.putExtra("game", 1);
+									startActivity(act);
+									overridePendingTransition(R.anim.fade_in,
+											R.anim.fade_out);
+								}
+							}, 5000);
+						}else if(respuestaCorrecta == 3){
+							Handler handlerPasoGameOver = new Handler();
+							handlerPasoGameOver.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									// Do something after 5s = 5000ms
+									Intent act = new Intent(LaminaTresActivity.this,GameOverActivity.class);
+									act.putExtra("game", 2);
+									startActivity(act);
+									overridePendingTransition(R.anim.fade_in,
+											R.anim.fade_out);
+								}
+							}, 5000);
+						}
 					}
 				});
 		// /////////////////////////////////
