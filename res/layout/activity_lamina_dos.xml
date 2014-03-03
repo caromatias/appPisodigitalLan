@@ -373,6 +373,63 @@
             android:layout_marginLeft="11dp"
             android:layout_toRightOf="@+id/relativeLayout2"
             android:background="@drawable/btn_despegue" />
+        
+        <ImageView
+            android:id="@+id/img_intento_tres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1210dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/intento_white" />
+
+        <TextView
+            android:id="@+id/intentos_de"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="895dp"
+            android:layout_marginTop="50dp"
+            android:text="INTENTOS DE "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_intento_dos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1160dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/intento_white" />
+
+        <ImageView
+            android:id="@+id/img_intento_uno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1110dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/intento_white" />
+
+        <TextView
+            android:id="@+id/txt_intentos_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="870dp"
+            android:layout_marginTop="48dp"
+            android:text=">>"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FF0000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_intentos_despegue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1010dp"
+            android:layout_marginTop="50dp"
+            android:text="DESPEGUE"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFFFFF" />
 
         <RelativeLayout
             android:id="@+id/lay_popup_despegue"
@@ -477,7 +534,7 @@
             android:layout_marginLeft="26dp"
             android:layout_marginTop="44dp"
             android:src="@drawable/logo_pasajero_virtual"
-            android:visibility="visible" />
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/txt_incorrecto"
@@ -493,62 +550,7 @@
             android:textSize="30sp"
             android:visibility="gone" />
 
-        <ImageView
-            android:id="@+id/img_intento_tres"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="1210dp"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/intento_white" />
-
-        <TextView
-            android:id="@+id/intentos_de"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="895dp"
-            android:layout_marginTop="50dp"
-            android:text="INTENTOS DE "
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img_intento_dos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="1160dp"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/intento_white" />
-
-        <ImageView
-            android:id="@+id/img_intento_uno"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="1110dp"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/intento_white" />
-
-        <TextView
-            android:id="@+id/txt_intentos_0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="870dp"
-            android:layout_marginTop="48dp"
-            android:text=">>"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#FF0000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/txt_intentos_despegue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="1010dp"
-            android:layout_marginTop="50dp"
-            android:text="DESPEGUE"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#FFFFFF" />
+        
     </RelativeLayout>
 
     <RelativeLayout
@@ -616,6 +618,108 @@
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold" />
+        
+        <ImageView
+            android:id="@+id/img_intento_carga_tres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1210dp"
+            android:layout_marginTop="680dp"
+            android:src="@drawable/intento_white" />
+
+        <TextView
+            android:id="@+id/intentos_de_carga_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="895dp"
+            android:layout_marginTop="690dp"
+            android:text="INTENTOS DE "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_intento_carga_dos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1160dp"
+            android:layout_marginTop="680dp"
+            android:src="@drawable/intento_white" />
+
+        <ImageView
+            android:id="@+id/img_intento_carga_uno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1110dp"
+            android:layout_marginTop="680dp"
+            android:src="@drawable/intento_white" />
+
+        <TextView
+            android:id="@+id/txt_intentos_carga_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="870dp"
+            android:layout_marginTop="690dp"
+            android:text=">>"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FF0000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_intentos_carga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1010dp"
+            android:layout_marginTop="690dp"
+            android:text="DESPEGUE"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFFFFF" />
+        
+        <RelativeLayout
+            android:id="@+id/lay_pop_cuenta_atras"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/popup_transp"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/txt_cuanta_atras_uno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="3"
+                android:textAppearance="?android:attr/textAppearanceLarge" 
+                android:textColor="#FFFFFF"
+                android:textSize="150sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/txt_cuanta_atras_dos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="2"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFFFF"
+                android:textSize="150sp"
+                android:textStyle="bold"
+                android:visibility="gone"/>
+            <TextView
+                android:id="@+id/txt_cuanta_atras_tres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="1"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFFFF"
+                android:textSize="150sp"
+                android:textStyle="bold"
+                android:visibility="gone"/>
+            
+        </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/lay_popup_carga"
@@ -626,7 +730,7 @@
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
             android:paddingTop="0dp"
-            android:visibility="visible" >
+            android:visibility="visible">
 
             <ImageView
                 android:id="@+id/img_logo_pv_carga"
@@ -638,7 +742,7 @@
                 android:src="@drawable/logo_pasajero_virtual" />
 
             <ImageView
-                android:id="@+id/img_tacometro_carga"
+                android:id="@+id/img_tacometro_carga_0"
                 android:layout_width="250dp"
                 android:layout_height="250dp"
                 android:layout_alignLeft="@+id/img_logo_pv_carga"
@@ -662,7 +766,7 @@
                 android:id="@+id/btn_comenzar_juego_carga"
                 android:layout_width="270dp"
                 android:layout_height="60dp"
-                android:layout_alignLeft="@+id/img_tacometro_carga"
+                android:layout_alignLeft="@+id/img_tacometro_carga_0"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="47dp"
                 android:background="@drawable/btn_comenzar"
@@ -699,7 +803,7 @@
                 android:id="@+id/txt_titulo_carga_dos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/img_tacometro_carga"
+                android:layout_below="@+id/img_tacometro_carga_0"
                 android:layout_marginTop="13dp"
                 android:layout_toLeftOf="@+id/txt_titulo_carga_2_dos"
                 android:text="COMBUSTIBLE /"
@@ -735,6 +839,8 @@
             android:textColor="#FFFFFF"
             android:textSize="50sp"
             android:textStyle="bold" />
+
+
     </RelativeLayout>
 
 </RelativeLayout>

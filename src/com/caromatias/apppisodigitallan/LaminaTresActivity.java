@@ -1,5 +1,6 @@
 package com.caromatias.apppisodigitallan;
 
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -32,7 +33,10 @@ public class LaminaTresActivity extends Activity {
 	private Button respuestaDos;
 	private Button respuestaTres;
 	private int respuestaCorrecta = 0;
+	private int numeroDeRespuesta = 0;
 	private AnimationDrawable savingAnimation;
+	private Animation animTriviaIn;
+	private Animation animTriviaOut;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +58,10 @@ public class LaminaTresActivity extends Activity {
 				R.anim.fade_in);
 		final Animation animVideoMainOut = AnimationUtils.loadAnimation(this,
 				R.anim.fade_out);
-		final Animation animTriviaIn = AnimationUtils.loadAnimation(this,
-				R.anim.anim_trivia_in);
+		animTriviaIn = AnimationUtils
+				.loadAnimation(this, R.anim.anim_trivia_in);
+		animTriviaOut = AnimationUtils.loadAnimation(this,
+				R.anim.anim_trivia_out);
 		// /////////////////////////////////////
 		videoBackTrivia
 				.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -75,7 +81,7 @@ public class LaminaTresActivity extends Activity {
 			public void run() {
 				// Do something after 5s = 5000ms
 				imgWhiteTres.setVisibility(View.VISIBLE);
-				imgWhiteTres.setAnimation(animVideoMain);
+				imgWhiteTres.startAnimation(animVideoMain);
 			}
 		}, 9800);
 		final Handler handlerTres = new Handler();
@@ -83,10 +89,10 @@ public class LaminaTresActivity extends Activity {
 			@Override
 			public void run() {
 				// Do something after 5s = 5000ms
-				imgWhiteTres.setAnimation(animVideoMainOut);
+				imgWhiteTres.startAnimation(animVideoMainOut);
 				imgWhiteTres.setVisibility(View.GONE);
 				layPregTrivia.setVisibility(View.VISIBLE);
-				layPregTrivia.setAnimation(animTriviaIn);
+				layPregTrivia.startAnimation(animTriviaIn);
 			}
 		}, 11000);
 		/*
@@ -132,6 +138,7 @@ public class LaminaTresActivity extends Activity {
 			respuestaTres.setText("c) "
 					+ getResources().getString(R.string.rbaires3));
 			respuestaCorrecta = 3;
+			numeroDeRespuesta = 1;
 			break;
 		case 2:
 			videoBackTrivia
@@ -146,6 +153,7 @@ public class LaminaTresActivity extends Activity {
 			respuestaTres.setText("c) "
 					+ getResources().getString(R.string.rsao_paulo3));
 			respuestaCorrecta = 2;
+			numeroDeRespuesta = 1;
 			break;
 		case 3:
 			videoBackTrivia
@@ -160,6 +168,7 @@ public class LaminaTresActivity extends Activity {
 			respuestaTres.setText("c) "
 					+ getResources().getString(R.string.rrio_janeiro3));
 			respuestaCorrecta = 2;
+			numeroDeRespuesta = 1;
 			break;
 		case 4:
 			videoBackTrivia
@@ -173,6 +182,7 @@ public class LaminaTresActivity extends Activity {
 			respuestaTres.setText("c) "
 					+ getResources().getString(R.string.rbogota3));
 			respuestaCorrecta = 1;
+			numeroDeRespuesta = 1;
 			break;
 		case 5:
 			videoBackTrivia
@@ -186,6 +196,7 @@ public class LaminaTresActivity extends Activity {
 			respuestaTres.setText("c) "
 					+ getResources().getString(R.string.rquito3));
 			respuestaCorrecta = 3;
+			numeroDeRespuesta = 1;
 			break;
 		case 6:
 			videoBackTrivia
@@ -200,6 +211,7 @@ public class LaminaTresActivity extends Activity {
 			respuestaTres.setText("c) "
 					+ getResources().getString(R.string.rguayaquil3));
 			respuestaCorrecta = 1;
+			numeroDeRespuesta = 1;
 			break;
 		case 7:
 			videoBackTrivia
@@ -213,6 +225,7 @@ public class LaminaTresActivity extends Activity {
 			respuestaTres.setText("c) "
 					+ getResources().getString(R.string.rlima3));
 			respuestaCorrecta = 3;
+			numeroDeRespuesta = 1;
 			break;
 		case 8:
 			videoBackTrivia
@@ -226,6 +239,7 @@ public class LaminaTresActivity extends Activity {
 			respuestaTres.setText("c) "
 					+ getResources().getString(R.string.rmadrid3));
 			respuestaCorrecta = 3;
+			numeroDeRespuesta = 1;
 			break;
 		case 9:
 			videoBackTrivia
@@ -239,8 +253,55 @@ public class LaminaTresActivity extends Activity {
 			respuestaTres.setText("c) "
 					+ getResources().getString(R.string.rmiami3));
 			respuestaCorrecta = 2;
+			numeroDeRespuesta = 1;
 			break;
 		default:
+			break;
+		}
+	}
+
+	public void preguntasLan() {
+		int numeroRandom = generaRandom();
+		switch (numeroRandom) {
+		case 1:
+			final Handler handlerPregUno = new Handler();
+			handlerPregUno.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					// Do something after 5s = 5000ms
+					preguntaTrivia.setText(getResources().getString(
+							R.string.plan1));
+					respuestaUno.setText("a) "
+							+ getResources().getString(R.string.rlan1_1));
+					respuestaDos.setText("b) "
+							+ getResources().getString(R.string.rlan1_2));
+					respuestaTres.setText("c) "
+							+ getResources().getString(R.string.rlan1_3));
+					respuestaCorrecta = 1;
+					numeroDeRespuesta = 2;
+					layPregTrivia.startAnimation(animTriviaIn);
+				}
+			}, 1000);
+			break;
+		case 2:
+			final Handler handlerPregDos = new Handler();
+			handlerPregDos.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					// Do something after 5s = 5000ms
+					preguntaTrivia.setText(getResources().getString(
+							R.string.plan1));
+					respuestaUno.setText("a) "
+							+ getResources().getString(R.string.rlan1_1));
+					respuestaDos.setText("b) "
+							+ getResources().getString(R.string.rlan1_2));
+					respuestaTres.setText("c) "
+							+ getResources().getString(R.string.rlan1_3));
+					respuestaCorrecta = 1;
+					numeroDeRespuesta = 2;
+					layPregTrivia.startAnimation(animTriviaIn);
+				}
+			}, 1000);
 			break;
 		}
 	}
@@ -285,30 +346,49 @@ public class LaminaTresActivity extends Activity {
 							}
 						}, 2000);
 						// //////////////////////
-						if(respuestaCorrecta != 1){
+						if (respuestaCorrecta != 1) {
 							Handler handlerPasoGameOver = new Handler();
 							handlerPasoGameOver.postDelayed(new Runnable() {
 								@Override
 								public void run() {
 									// Do something after 5s = 5000ms
-									Intent act = new Intent(LaminaTresActivity.this,GameOverActivity.class);
+									Intent act = new Intent(
+											LaminaTresActivity.this,
+											GameOverActivity.class);
 									act.putExtra("game", 1);
 									startActivity(act);
 									overridePendingTransition(R.anim.fade_in,
 											R.anim.fade_out);
 								}
 							}, 5000);
-						}else if(respuestaCorrecta == 1){
+						} else if (respuestaCorrecta == 1) {
 							Handler handlerPasoGameOver = new Handler();
 							handlerPasoGameOver.postDelayed(new Runnable() {
 								@Override
 								public void run() {
 									// Do something after 5s = 5000ms
-									Intent act = new Intent(LaminaTresActivity.this,GameOverActivity.class);
-									act.putExtra("game", 2);
-									startActivity(act);
-									overridePendingTransition(R.anim.fade_in,
-											R.anim.fade_out);
+									/*
+									 * Intent act = new Intent(
+									 * LaminaTresActivity.this,
+									 * GameOverActivity.class);
+									 * act.putExtra("game", 2);
+									 * startActivity(act);
+									 * overridePendingTransition(R.anim.fade_in,
+									 * R.anim.fade_out);
+									 */
+									if (numeroDeRespuesta != 2) {
+										 savingAnimation.stop();
+										layPregTrivia.startAnimation(animTriviaOut);
+										preguntasLan();
+									} else if (numeroDeRespuesta == 2) {
+										Intent act = new Intent(
+												LaminaTresActivity.this,
+												GameOverActivity.class);
+										act.putExtra("game", 2);
+										startActivity(act);
+										overridePendingTransition(
+												R.anim.fade_in, R.anim.fade_out);
+									}
 								}
 							}, 5000);
 						}
@@ -354,30 +434,40 @@ public class LaminaTresActivity extends Activity {
 							}
 						}, 2000);
 						// //////////////////////
-						if(respuestaCorrecta != 2){
+						if (respuestaCorrecta != 2) {
 							Handler handlerPasoGameOver = new Handler();
 							handlerPasoGameOver.postDelayed(new Runnable() {
 								@Override
 								public void run() {
 									// Do something after 5s = 5000ms
-									Intent act = new Intent(LaminaTresActivity.this,GameOverActivity.class);
+									Intent act = new Intent(
+											LaminaTresActivity.this,
+											GameOverActivity.class);
 									act.putExtra("game", 1);
 									startActivity(act);
 									overridePendingTransition(R.anim.fade_in,
 											R.anim.fade_out);
 								}
 							}, 5000);
-						}else if(respuestaCorrecta == 2){
+						} else if (respuestaCorrecta == 2) {
 							Handler handlerPasoGameOver = new Handler();
 							handlerPasoGameOver.postDelayed(new Runnable() {
 								@Override
 								public void run() {
 									// Do something after 5s = 5000ms
-									Intent act = new Intent(LaminaTresActivity.this,GameOverActivity.class);
-									act.putExtra("game", 2);
-									startActivity(act);
-									overridePendingTransition(R.anim.fade_in,
-											R.anim.fade_out);
+									if (numeroDeRespuesta != 2) {
+										savingAnimation.stop();
+										layPregTrivia.startAnimation(animTriviaOut);
+										preguntasLan();
+									} else if (numeroDeRespuesta == 2) {
+										Intent act = new Intent(
+												LaminaTresActivity.this,
+												GameOverActivity.class);
+										act.putExtra("game", 2);
+										startActivity(act);
+										overridePendingTransition(
+												R.anim.fade_in, R.anim.fade_out);
+									}
 								}
 							}, 5000);
 						}
@@ -423,35 +513,54 @@ public class LaminaTresActivity extends Activity {
 							}
 						}, 2000);
 						// //////////////////////
-						if(respuestaCorrecta != 3){
+						if (respuestaCorrecta != 3) {
 							Handler handlerPasoGameOver = new Handler();
 							handlerPasoGameOver.postDelayed(new Runnable() {
 								@Override
 								public void run() {
 									// Do something after 5s = 5000ms
-									Intent act = new Intent(LaminaTresActivity.this,GameOverActivity.class);
+									Intent act = new Intent(
+											LaminaTresActivity.this,
+											GameOverActivity.class);
 									act.putExtra("game", 1);
 									startActivity(act);
 									overridePendingTransition(R.anim.fade_in,
 											R.anim.fade_out);
 								}
 							}, 5000);
-						}else if(respuestaCorrecta == 3){
+						} else if (respuestaCorrecta == 3) {
 							Handler handlerPasoGameOver = new Handler();
 							handlerPasoGameOver.postDelayed(new Runnable() {
 								@Override
 								public void run() {
 									// Do something after 5s = 5000ms
-									Intent act = new Intent(LaminaTresActivity.this,GameOverActivity.class);
-									act.putExtra("game", 2);
-									startActivity(act);
-									overridePendingTransition(R.anim.fade_in,
-											R.anim.fade_out);
+									if (numeroDeRespuesta != 2) {
+										savingAnimation.stop();
+										layPregTrivia.startAnimation(animTriviaOut);
+										preguntasLan();
+									} else if (numeroDeRespuesta == 2) {
+										Intent act = new Intent(
+												LaminaTresActivity.this,
+												GameOverActivity.class);
+										act.putExtra("game", 2);
+										startActivity(act);
+										overridePendingTransition(
+												R.anim.fade_in, R.anim.fade_out);
+									}
 								}
 							}, 5000);
 						}
 					}
 				});
 		// /////////////////////////////////
+	}
+
+	public int generaRandom() {
+		int min = 1;
+		int max = 2;
+
+		Random r = new Random();
+		int i1 = r.nextInt(max - min + 1) + min;
+		return i1;
 	}
 }

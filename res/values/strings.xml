@@ -12,6 +12,14 @@
     <string name="desc_carga">PARA LLEGAR A TU DESTINO, DEBES TENER EL COMBUSTIBLE NECESARIO.\nPRESIONA EL BOTÓN REPETITIVAMENTE EN EL MENOR TIEMPO POSIBLE\nPARE INICIAR TU VIAJE.</string>
     <string name="title_activity_lamina_tres">LaminaTresActivity</string>
     <string name="title_activity_game_over">GameOverActivity</string>
+    <!-- Strings preguntas LAN -->
+    <string name ="plan1">¿Cúal es la capacidad de pasajeros de un Airbus 319?</string>
+    <!-- Strings preguntas LAN -->
+    <!-- Strings respuestas LAN -->
+    <string name ="rlan1_1">144</string>
+    <string name ="rlan1_2">200</string>
+    <string name ="rlan1_3">120</string>
+    <!-- Strings respuestas LAN -->
     <!-- Strings preguntas Trivias -->
     <string name ="baires">¿Cómo se conoce a la sede de Gobierno de Argentina?</string>
     <string name ="sao_paulo">¿Cúal es la población aproximada de Sao Paulo Metropolitano?</string>

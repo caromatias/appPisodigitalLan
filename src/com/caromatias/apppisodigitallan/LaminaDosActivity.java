@@ -61,6 +61,7 @@ public class LaminaDosActivity extends Activity {
 	private TextView tiempoParaCarga;
 	private TextView tiempoParaCargaCero;
 	private Button activaCarga;
+	private int intentosCarga = 0;
 
 	// ///////////////////////////////////
 
@@ -214,7 +215,7 @@ public class LaminaDosActivity extends Activity {
 						layPopUpCarga.setVisibility(View.GONE);
 						// layLogoIzq.setVisibility(View.VISIBLE);
 						// layLogoIzq.startAnimation(animLogoIzq);
-
+						muestraCuentaAtas();
 					}
 				});
 
@@ -242,6 +243,101 @@ public class LaminaDosActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.lamina_dos, menu);
 		return true;
+	}
+
+	public void muestraCuentaAtas() {
+		currentRotation = 0;
+		comienzaCarga = 0;
+		activaCarga.setEnabled(true);
+		findViewById(R.id.lay_pop_cuenta_atras).setVisibility(View.VISIBLE);
+		final Handler handlerCargaUno = new Handler();
+		handlerCargaUno.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				// Do something after 5s = 5000ms
+				findViewById(R.id.txt_cuanta_atras_uno)
+						.setVisibility(View.GONE);
+				findViewById(R.id.txt_cuanta_atras_dos).setVisibility(
+						View.VISIBLE);
+			}
+		}, 1500);
+		final Handler handlerCargaDos = new Handler();
+		handlerCargaDos.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				// Do something after 5s = 5000ms
+				findViewById(R.id.txt_cuanta_atras_dos)
+						.setVisibility(View.GONE);
+				findViewById(R.id.txt_cuanta_atras_tres).setVisibility(
+						View.VISIBLE);
+			}
+		}, 2500);
+		final Handler handlerCargaTres = new Handler();
+		handlerCargaTres.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				// Do something after 5s = 5000ms
+				findViewById(R.id.txt_cuanta_atras_tres).setVisibility(
+						View.GONE);
+				findViewById(R.id.lay_pop_cuenta_atras)
+						.setVisibility(View.GONE);
+				intentosCarga += 1;
+				comienzaCuentaAtras();
+			}
+		}, 3500);
+	}
+
+	public void comienzaCuentaAtras() {
+		comienzaCarga += 1;
+		new CountDownTimer(10000, 1000) {
+
+			public void onTick(long millisUntilFinished) {
+				tiempoParaCarga.setText("0" + millisUntilFinished / 1000);
+			}
+
+			public void onFinish() {
+				tiempoParaCarga.setText("00");
+				activaCarga.setEnabled(false);
+				if (currentRotation < 70) {
+					/*
+					 * Intent act = new Intent( LaminaDosActivity.this,
+					 * GameOverActivity.class); act.putExtra("game", 1);
+					 * startActivity(act); overridePendingTransition(
+					 * R.anim.fade_in, R.anim.fade_out);
+					 */
+					if (intentosCarga < 3) {
+						switch (intentosCarga) {
+						case 1:
+							ImageView intUno = (ImageView) findViewById(R.id.img_intento_carga_uno);
+							intUno.setImageResource(R.drawable.intento_red);
+							break;
+						case 2:
+							ImageView intDos = (ImageView) findViewById(R.id.img_intento_carga_dos);
+							intDos.setImageResource(R.drawable.intento_red);
+							break;
+						case 3:
+							ImageView intTres = (ImageView) findViewById(R.id.img_intento_carga_tres);
+							intTres.setImageResource(R.drawable.intento_red);
+							break;
+						}
+					} else if (intentosCarga == 3) {
+						Intent act = new Intent(LaminaDosActivity.this,
+								GameOverActivity.class);
+						act.putExtra("game", 1);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in,
+								R.anim.fade_out);
+					}
+					muestraCuentaAtas();
+				} else if (currentRotation >= 70) {
+					Intent act = new Intent(LaminaDosActivity.this,
+							LaminaTresActivity.class);
+					act.putExtra("ruta", rutaSeleccionada);
+					startActivity(act);
+					overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+				}
+			}
+		}.start();
 	}
 
 	public void intentoDos() {
@@ -548,36 +644,7 @@ public class LaminaDosActivity extends Activity {
 								activaCarga.setEnabled(false);
 							}
 						} else {
-							comienzaCarga += 1;
-							new CountDownTimer(10000, 1000) {
-
-								public void onTick(long millisUntilFinished) {
-									tiempoParaCarga.setText("0"
-											+ millisUntilFinished / 1000);
-								}
-
-								public void onFinish() {
-									tiempoParaCarga.setText("00");
-									activaCarga.setEnabled(false);
-									if (currentRotation < 70) {
-										Intent act = new Intent(
-												LaminaDosActivity.this,
-												GameOverActivity.class);
-										act.putExtra("game", 1);
-										startActivity(act);
-										overridePendingTransition(
-												R.anim.fade_in, R.anim.fade_out);
-									} else if (currentRotation >= 70) {
-										Intent act = new Intent(
-												LaminaDosActivity.this,
-												LaminaTresActivity.class);
-										act.putExtra("ruta", rutaSeleccionada);
-										startActivity(act);
-										overridePendingTransition(
-												R.anim.fade_in, R.anim.fade_out);
-									}
-								}
-							}.start();
+							
 						}
 					}
 				});
