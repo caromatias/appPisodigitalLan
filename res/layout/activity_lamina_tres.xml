@@ -17,12 +17,12 @@
         android:id="@+id/video_back_trivia_dos"
         android:layout_width="1280dp"
         android:layout_height="match_parent" />
-    
+
     <RelativeLayout
         android:id="@+id/lay_img_back_trivia"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" 
-        android:visibility="visible">
+        android:layout_height="match_parent"
+        android:visibility="gone" >
 
         <ImageView
             android:id="@+id/img_back_trivia_uno"
@@ -34,14 +34,11 @@
 
         <ImageView
             android:id="@+id/img_mundo_back_trivia"
-            android:layout_width="550dp"
-            android:layout_height="455dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="82dp"
-            android:src="@drawable/img_mundo_back_trivia" />
-
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_mundo_back_trivia" 
+            android:visibility="gone"/>
     </RelativeLayout>
 
     <ImageView

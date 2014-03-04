@@ -18,6 +18,7 @@ import android.graphics.Matrix;
 import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.BitmapDrawable;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -62,6 +63,7 @@ public class LaminaDosActivity extends Activity {
 	private TextView tiempoParaCargaCero;
 	private Button activaCarga;
 	private int intentosCarga = 0;
+	private RelativeLayout layMasterComp;
 
 	// ///////////////////////////////////
 
@@ -92,6 +94,7 @@ public class LaminaDosActivity extends Activity {
 
 		// ///////////////////////////////////
 		botonStop = (Button) findViewById(R.id.button1);
+		botonStop.setEnabled(false);
 		intentoUno = (ImageView) findViewById(R.id.img_intento_uno);
 		intentoDos = (ImageView) findViewById(R.id.img_intento_dos);
 		intentoTres = (ImageView) findViewById(R.id.img_intento_tres);
@@ -103,6 +106,7 @@ public class LaminaDosActivity extends Activity {
 		tiempoParaCargaCero.setTypeface(tf);
 		tiempoParaCarga.setTypeface(tf);
 		activaCarga = (Button) findViewById(R.id.btn_activa_carga);
+		layMasterComp = (RelativeLayout) findViewById(R.id.lay_master_rutas_comp);
 
 		findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
@@ -124,6 +128,7 @@ public class LaminaDosActivity extends Activity {
 			}
 		});
 
+		
 		// //////////////////////////////////
 		// ///////// BOTON COMENZAR /////////
 
@@ -150,6 +155,7 @@ public class LaminaDosActivity extends Activity {
 						layPopup.setVisibility(View.GONE);
 						layLogoIzq.setVisibility(View.VISIBLE);
 						layLogoIzq.startAnimation(animLogoIzq);
+						botonStop.setEnabled(true);
 						// ////// COMIENZA ANIMACION DE CARGA ////////
 						final TextView textoDos = (TextView) findViewById(R.id.txt_porcentaje);
 						int delay = 1000; // delay for 1 sec.
@@ -176,9 +182,11 @@ public class LaminaDosActivity extends Activity {
 									timer.cancel();
 									intentos = 2;
 									if (mProgressStatus < 70) {
+										//botonStop.setEnabled(false);
 										intentoDos();
 									} else if (mProgressStatus >= 70) {
 										// ImagenBackDespegue.startAnimation(animImgBackDespegue);
+										//botonStop.setEnabled(false);
 										videoBackDespegue.start();
 										// ImagenBackDespegue.setVisibility(View.GONE);
 									}
@@ -345,7 +353,6 @@ public class LaminaDosActivity extends Activity {
 		int delay = 3000; // delay for 1 sec.
 		int period = 3; // repeat every 10 sec.
 		estadoProgress = 1;
-		// botonStop.setEnabled(true);
 		final Timer timer = new Timer();
 		timer.scheduleAtFixedRate(new TimerTask() {
 			public void run() {
@@ -370,6 +377,7 @@ public class LaminaDosActivity extends Activity {
 					if (mProgressStatus < 70) {
 						intentoTres();
 					} else if (mProgressStatus >= 70) {
+						botonStop.setEnabled(false);
 						videoBackDespegue.start();
 					}
 					break;
@@ -396,7 +404,6 @@ public class LaminaDosActivity extends Activity {
 		int delay = 3000; // delay for 1 sec.
 		int period = 3; // repeat every 10 sec.
 		estadoProgress = 1;
-		// botonStop.setEnabled(true);
 		final Timer timer = new Timer();
 		timer.scheduleAtFixedRate(new TimerTask() {
 			public void run() {
@@ -425,6 +432,7 @@ public class LaminaDosActivity extends Activity {
 						overridePendingTransition(R.anim.fade_in,
 								R.anim.fade_out);
 					} else if (mProgressStatus >= 70) {
+						botonStop.setEnabled(false);
 						videoBackDespegue.start();
 					}
 					break;
@@ -470,6 +478,7 @@ public class LaminaDosActivity extends Activity {
 					break;
 				}
 				rutaSeleccionada = 1;
+				layMasterComp.setVisibility(View.GONE);
 			}
 		});
 		// ////////////////////////////
@@ -488,6 +497,7 @@ public class LaminaDosActivity extends Activity {
 					break;
 				}
 				rutaSeleccionada = 2;
+				layMasterComp.setVisibility(View.GONE);
 			}
 		});
 		// ////////////////////////////
@@ -506,6 +516,7 @@ public class LaminaDosActivity extends Activity {
 					break;
 				}
 				rutaSeleccionada = 3;
+				layMasterComp.setVisibility(View.GONE);
 			}
 		});
 		// ////////////////////////////
@@ -524,6 +535,7 @@ public class LaminaDosActivity extends Activity {
 					break;
 				}
 				rutaSeleccionada = 4;
+				layMasterComp.setVisibility(View.GONE);
 			}
 		});
 		// ////////////////////////////
@@ -542,6 +554,7 @@ public class LaminaDosActivity extends Activity {
 					break;
 				}
 				rutaSeleccionada = 5;
+				layMasterComp.setVisibility(View.GONE);
 			}
 		});
 		// ////////////////////////////
@@ -560,6 +573,7 @@ public class LaminaDosActivity extends Activity {
 					break;
 				}
 				rutaSeleccionada = 6;
+				layMasterComp.setVisibility(View.GONE);
 			}
 		});
 		// ////////////////////////////
@@ -578,6 +592,7 @@ public class LaminaDosActivity extends Activity {
 					break;
 				}
 				rutaSeleccionada = 7;
+				layMasterComp.setVisibility(View.GONE);
 			}
 		});
 		// ////////////////////////////
@@ -596,6 +611,7 @@ public class LaminaDosActivity extends Activity {
 					break;
 				}
 				rutaSeleccionada = 8;
+				layMasterComp.setVisibility(View.GONE);
 			}
 		});
 		// ////////////////////////////
@@ -614,6 +630,7 @@ public class LaminaDosActivity extends Activity {
 					break;
 				}
 				rutaSeleccionada = 9;
+				layMasterComp.setVisibility(View.GONE);
 			}
 		});
 		// ////////////////////////////
@@ -658,5 +675,4 @@ public class LaminaDosActivity extends Activity {
 		int i1 = r.nextInt(max - min + 1) + min;
 		return i1;
 	}
-
 }

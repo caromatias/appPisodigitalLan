@@ -132,8 +132,9 @@ public class LaminaUnoActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						btnInter.setBackgroundResource(R.drawable.botonrojo);
-
+						//btnInter.setBackgroundResource(R.drawable.botonrojo);
+						reestableceBotones(btnInter);
+						
 						switch (posicionMenu) {
 						case 1:
 							return;
@@ -227,10 +228,9 @@ public class LaminaUnoActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				btnChile.setBackgroundResource(R.drawable.botonrojo);
-				
-				
-				
+				//btnChile.setBackgroundResource(R.drawable.botonrojo);
+				reestableceBotones(btnChile);
+
 				switch (posicionMenu) {
 				case 1:
 					layMapaInter.startAnimation(animMapaInter);
@@ -423,7 +423,8 @@ public class LaminaUnoActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				btnPeru.setBackgroundResource(R.drawable.botonrojo);
+				//btnPeru.setBackgroundResource(R.drawable.botonrojo);
+				reestableceBotones(btnPeru);
 
 				switch (posicionMenu) {
 				case 1:
@@ -513,7 +514,8 @@ public class LaminaUnoActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				btnBrasil.setBackgroundResource(R.drawable.botonrojo);
+				//btnBrasil.setBackgroundResource(R.drawable.botonrojo);
+				reestableceBotones(btnBrasil);
 
 				switch (posicionMenu) {
 				case 1:
@@ -705,7 +707,8 @@ public class LaminaUnoActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						btnColombia.setBackgroundResource(R.drawable.botonrojo);
+						//btnColombia.setBackgroundResource(R.drawable.botonrojo);
+						reestableceBotones(btnColombia);
 
 						switch (posicionMenu) {
 						case 1:
@@ -1392,6 +1395,25 @@ public class LaminaUnoActivity extends Activity {
 				}, 6000);
 			}
 		});
+	}
+
+	public void reestableceBotones(Button btnActivo) {
+		btnInter.setBackgroundResource(R.drawable.boton);
+		btnPeru.setBackgroundResource(R.drawable.boton);
+		btnBrasil.setBackgroundResource(R.drawable.boton);
+		btnEcuador.setBackgroundResource(R.drawable.boton);
+		btnColombia.setBackgroundResource(R.drawable.boton);
+		btnChile.setBackgroundResource(R.drawable.boton);
+		btnArgentina.setBackgroundResource(R.drawable.boton);
+		btnActivo.setBackgroundResource(R.drawable.botonrojo);
+		btnInter.setEnabled(true);
+		btnPeru.setEnabled(true);
+		btnBrasil.setEnabled(true);
+		btnEcuador.setEnabled(true);
+		btnColombia.setEnabled(true);
+		btnChile.setEnabled(true);
+		btnArgentina.setEnabled(true);
+		btnActivo.setEnabled(false);
 	}
 
 }

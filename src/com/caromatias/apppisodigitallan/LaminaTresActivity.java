@@ -38,6 +38,7 @@ public class LaminaTresActivity extends Activity {
 	private Animation animTriviaIn;
 	private Animation animTriviaOut;
 	private RelativeLayout imgBackTrivia;
+	private ImageView imgBackTriviaUno;
 	private ImageView imgMundoTrivia;
 
 	@Override
@@ -54,8 +55,10 @@ public class LaminaTresActivity extends Activity {
 		respuestaUno = (Button) findViewById(R.id.btn_respuesta1);
 		respuestaDos = (Button) findViewById(R.id.btn_respuesta2);
 		respuestaTres = (Button) findViewById(R.id.btn_respuesta3);
+		
 		imgBackTrivia = (RelativeLayout) findViewById(R.id.lay_img_back_trivia);
 		imgMundoTrivia = (ImageView) findViewById(R.id.img_mundo_back_trivia);
+		imgBackTriviaUno = (ImageView) findViewById(R.id.img_back_trivia_uno);
 		rutaSeleccionada();
 		videoBackTrivia.start();
 		final Animation animVideoMain = AnimationUtils.loadAnimation(this,
@@ -133,6 +136,25 @@ public class LaminaTresActivity extends Activity {
 				layPregTrivia.startAnimation(animTriviaIn);
 			}
 		}, 11000);
+		final Handler handlerCuatro = new Handler();
+		handlerCuatro.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				// Do something after 5s = 5000ms
+				imgBackTrivia.setVisibility(View.VISIBLE);
+				imgBackTriviaUno.setVisibility(View.VISIBLE);
+				imgBackTriviaUno.startAnimation(animVideoMain);
+			}
+		}, 13500);
+		final Handler handlerCinco = new Handler();
+		handlerCuatro.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				// Do something after 5s = 5000ms
+				imgMundoTrivia.setVisibility(View.VISIBLE);
+				imgMundoTrivia.startAnimation(animVideoMain);
+			}
+		}, 14000);
 		/*
 		 * TimerTask task = new TimerTask() {
 		 * 

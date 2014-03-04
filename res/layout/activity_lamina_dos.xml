@@ -12,7 +12,7 @@
     
 
     <RelativeLayout
-        android:id="@+id/relativeLayout1"
+        android:id="@+id/lay_master_rutas_comp"
         android:layout_width="1120dp"
         android:layout_height="150dp"
         android:layout_marginLeft="150dp"
