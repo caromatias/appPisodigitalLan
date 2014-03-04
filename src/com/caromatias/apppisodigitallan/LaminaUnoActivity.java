@@ -806,140 +806,140 @@ public class LaminaUnoActivity extends Activity {
 	public void animaCiudadesChile() {
 		RelativeLayout layArica = (RelativeLayout) findViewById(R.id.lay_chile_01);
 		Animation animArica = AnimationUtils.loadAnimation(this,
-				R.anim.anim_chile_arica);
+				R.anim.anim_botones_01);
 		layArica.startAnimation(animArica);
 
 		RelativeLayout layIquique = (RelativeLayout) findViewById(R.id.lay_chile_02);
 		Animation animIquique = AnimationUtils.loadAnimation(this,
-				R.anim.anim_chile_iquique);
+				R.anim.anim_botones_02);
 		layIquique.startAnimation(animIquique);
 
 		RelativeLayout layCalama = (RelativeLayout) findViewById(R.id.lay_chile_14);
 		Animation animCalama = AnimationUtils.loadAnimation(this,
-				R.anim.anim_chile_calama);
+				R.anim.anim_botones_03);
 		layCalama.startAnimation(animCalama);
 
 		RelativeLayout layAntofagasta = (RelativeLayout) findViewById(R.id.lay_chile_03);
 		Animation animAntofagasta = AnimationUtils.loadAnimation(this,
-				R.anim.anim_chile_antofagasta);
+				R.anim.anim_botones_04);
 		layAntofagasta.startAnimation(animAntofagasta);
 
 		RelativeLayout layCopiapo = (RelativeLayout) findViewById(R.id.lay_chile_04);
 		Animation animCopiapo = AnimationUtils.loadAnimation(this,
-				R.anim.anim_chile_copiapo);
+				R.anim.anim_botones_05);
 		layCopiapo.startAnimation(animCopiapo);
 
 		RelativeLayout laySerena = (RelativeLayout) findViewById(R.id.lay_chile_05);
 		Animation animSerena = AnimationUtils.loadAnimation(this,
-				R.anim.anim_chile_serena);
+				R.anim.anim_botones_06);
 		laySerena.startAnimation(animSerena);
 
 		RelativeLayout laySantiago = (RelativeLayout) findViewById(R.id.lay_chile_06);
 		Animation animSantiago = AnimationUtils.loadAnimation(this,
-				R.anim.anim_chile_santiago);
+				R.anim.anim_botones_07);
 		laySantiago.startAnimation(animSantiago);
 
 		RelativeLayout layPascua = (RelativeLayout) findViewById(R.id.lay_chile_16);
 		Animation animPascua = AnimationUtils.loadAnimation(this,
-				R.anim.anim_chile_pascua);
+				R.anim.anim_botones_08);
 		layPascua.startAnimation(animPascua);
 
 		RelativeLayout layConcepcion = (RelativeLayout) findViewById(R.id.lay_chile_07);
 		Animation animConcepcion = AnimationUtils.loadAnimation(this,
-				R.anim.anim_chile_concepcion);
+				R.anim.anim_botones_09);
 		layConcepcion.startAnimation(animConcepcion);
 
 		RelativeLayout layTemuco = (RelativeLayout) findViewById(R.id.lay_chile_08);
 		Animation animTemuco = AnimationUtils.loadAnimation(this,
-				R.anim.anim_chile_temuco);
+				R.anim.anim_botones_10);
 		layTemuco.startAnimation(animTemuco);
 
 		RelativeLayout layValdivia = (RelativeLayout) findViewById(R.id.lay_chile_09);
 		Animation animValdivia = AnimationUtils.loadAnimation(this,
-				R.anim.anim_chile_valdivia);
+				R.anim.anim_botones_11);
 		layValdivia.startAnimation(animValdivia);
 
 		RelativeLayout layOsorno = (RelativeLayout) findViewById(R.id.lay_chile_10);
 		Animation animOsorno = AnimationUtils.loadAnimation(this,
-				R.anim.anim_chile_osorno);
+				R.anim.anim_botones_12);
 		layOsorno.startAnimation(animOsorno);
 
 		RelativeLayout layMontt = (RelativeLayout) findViewById(R.id.lay_chile_11);
 		Animation animMontt = AnimationUtils.loadAnimation(this,
-				R.anim.anim_chile_montt);
+				R.anim.anim_botones_13);
 		layMontt.startAnimation(animMontt);
 
 		RelativeLayout layChiloe = (RelativeLayout) findViewById(R.id.lay_chile_12);
 		Animation animChileo = AnimationUtils.loadAnimation(this,
-				R.anim.anim_chile_chiloe);
+				R.anim.anim_botones_14);
 		layChiloe.startAnimation(animChileo);
 
 		RelativeLayout layBalmaceda = (RelativeLayout) findViewById(R.id.lay_chile_15);
 		Animation animBalmaceda = AnimationUtils.loadAnimation(this,
-				R.anim.anim_chile_balmaceda);
+				R.anim.anim_botones_15);
 		layBalmaceda.startAnimation(animBalmaceda);
 
 		RelativeLayout layArenas = (RelativeLayout) findViewById(R.id.lay_chile_13);
 		Animation animArenas = AnimationUtils.loadAnimation(this,
-				R.anim.anim_chile_parenas);
+				R.anim.anim_botones_16);
 		layArenas.startAnimation(animArenas);
 	}
 	
 	public void animaCiudadesArgentina(){
 		RelativeLayout laySalta = (RelativeLayout) findViewById(R.id.lay_argentina_01);
-		Animation animSalta =  AnimationUtils.loadAnimation(this, R.anim.amin_algo);
+		Animation animSalta =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_01);
 		laySalta.startAnimation(animSalta);
 		
 		RelativeLayout layTucuman = (RelativeLayout) findViewById(R.id.lay_argentina_02);
-		Animation animTucuman =  AnimationUtils.loadAnimation(this, R.anim.amin_algo);
+		Animation animTucuman =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_02);
 		layTucuman.startAnimation(animTucuman);
 		
 		RelativeLayout layIguazu = (RelativeLayout) findViewById(R.id.lay_argentina_03);
-		Animation animIguazu =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_iguazu);
+		Animation animIguazu =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_03);
 		layIguazu.startAnimation(animIguazu);
 		
 		RelativeLayout layCordoba = (RelativeLayout) findViewById(R.id.lay_argentina_04);
-		Animation animCordoba =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_cordoba);
+		Animation animCordoba =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_04);
 		layCordoba.startAnimation(animCordoba);
 		
 		RelativeLayout laySanJuan = (RelativeLayout) findViewById(R.id.lay_argentina_05);
-		Animation animSanJuan =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_san_juan);
+		Animation animSanJuan =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_05);
 		laySanJuan.startAnimation(animSanJuan);
 		
 		RelativeLayout layMendoza = (RelativeLayout) findViewById(R.id.lay_argentina_06);
-		Animation animMendoza =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_mendoza);
+		Animation animMendoza =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_06);
 		layMendoza.startAnimation(animMendoza);
 		
 		RelativeLayout layBuenosAires = (RelativeLayout) findViewById(R.id.lay_argentina_07);
-		Animation animBuenosAires =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_buenos_aires);
+		Animation animBuenosAires =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_07);
 		layBuenosAires.startAnimation(animBuenosAires);
 		
 		RelativeLayout layNeuquen = (RelativeLayout) findViewById(R.id.lay_argentina_08);
-		Animation animNeuquen =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_neuquen);
+		Animation animNeuquen =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_08);
 		layNeuquen.startAnimation(animNeuquen);
 		
 		RelativeLayout layBahiaBlabca = (RelativeLayout) findViewById(R.id.lay_argentina_10);
-		Animation animBahiaBlanca =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_bahia_blanca);
+		Animation animBahiaBlanca =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_09);
 		layBahiaBlabca.startAnimation(animBahiaBlanca);
 		
 		RelativeLayout layBariloche = (RelativeLayout) findViewById(R.id.lay_argentina_11);
-		Animation animBariloche =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_bariloche);
+		Animation animBariloche =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_10);
 		layBariloche.startAnimation(animBariloche);
 		
 		RelativeLayout layComodoro = (RelativeLayout) findViewById(R.id.lay_argentina_12);
-		Animation animComodoro =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_comodoro_rivadavia);
+		Animation animComodoro =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_11);
 		layComodoro.startAnimation(animComodoro);
 		
 		RelativeLayout layCalafate = (RelativeLayout) findViewById(R.id.lay_argentina_13);
-		Animation animCalafate =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_comodoro_el_calafate);
+		Animation animCalafate =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_12);
 		layCalafate.startAnimation(animCalafate);
 		
 		RelativeLayout layRioGallegos = (RelativeLayout) findViewById(R.id.lay_argentina_14);
-		Animation animRioGallegos =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_comodoro_rio_gallegos);
+		Animation animRioGallegos =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_13);
 		layRioGallegos.startAnimation(animRioGallegos);
 		
 		RelativeLayout layUshuai = (RelativeLayout) findViewById(R.id.lay_argentina_15);
-		Animation animUshuai =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_comodoro_ushuai);
+		Animation animUshuai =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_14);
 		layUshuai.startAnimation(animUshuai);
 	}
 	
@@ -947,159 +947,159 @@ public class LaminaUnoActivity extends Activity {
 	
 	public void animaCiudadesBrasil(){
 		RelativeLayout layBuenaVista = (RelativeLayout) findViewById(R.id.lay_brasil_01);
-		Animation animBuenaVista =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_buena_vista);
+		Animation animBuenaVista =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_01);
 		layBuenaVista.startAnimation(animBuenaVista);
 		
 		RelativeLayout layMacapa = (RelativeLayout) findViewById(R.id.lay_brasil_02);
-		Animation animMacapa =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_macapa);
+		Animation animMacapa =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_02);
 		layMacapa.startAnimation(animMacapa);
 		
 		RelativeLayout layBelem = (RelativeLayout) findViewById(R.id.lay_brasil_03);
-		Animation animBelem =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_belem);
+		Animation animBelem =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_03);
 		layBelem.startAnimation(animBelem);
 		
 		RelativeLayout laySao = (RelativeLayout) findViewById(R.id.lay_brasil_04);
-		Animation animSao =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_sao_luis);
+		Animation animSao =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_04);
 		laySao.startAnimation(animSao);
 		
 		RelativeLayout layManaus = (RelativeLayout) findViewById(R.id.lay_brasil_05);
-		Animation animManaus =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_manaus);
+		Animation animManaus =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_05);
 		layManaus.startAnimation(animManaus);
 		
 		RelativeLayout laySantarem = (RelativeLayout) findViewById(R.id.lay_brasil_06);
-		Animation animSantarem =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_santarem);
+		Animation animSantarem =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_06);
 		laySantarem.startAnimation(animSantarem);
 		
 		RelativeLayout layMaramba = (RelativeLayout) findViewById(R.id.lay_brasil_07);
-		Animation animMaramba =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_maramba);
+		Animation animMaramba =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_07);
 		layMaramba.startAnimation(animMaramba);
 		
 		RelativeLayout layImperatriz = (RelativeLayout) findViewById(R.id.lay_brasil_08);
-		Animation animImperatriz =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_imperatriz);
+		Animation animImperatriz =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_08);
 		layImperatriz.startAnimation(animImperatriz);
 		
 		RelativeLayout layTeresina = (RelativeLayout) findViewById(R.id.lay_brasil_09);
-		Animation animTeresina =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_teresina);
+		Animation animTeresina =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_09);
 		layTeresina.startAnimation(animTeresina);
 		
 		RelativeLayout layNatal = (RelativeLayout) findViewById(R.id.lay_brasil_10);
-		Animation animNatal =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_natal);
+		Animation animNatal =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_10);
 		layNatal.startAnimation(animNatal);
 		
 		RelativeLayout layJoao = (RelativeLayout) findViewById(R.id.lay_brasil_11);
-		Animation animJoao =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_joao);
+		Animation animJoao =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_11);
 		layJoao.startAnimation(animJoao);
 		
 		RelativeLayout layRecife = (RelativeLayout) findViewById(R.id.lay_brasil_12);
-		Animation animRecife =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_recife);
+		Animation animRecife =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_12);
 		layRecife.startAnimation(animRecife);
 		
 		RelativeLayout layMaceio = (RelativeLayout) findViewById(R.id.lay_brasil_13);
-		Animation animMaceio =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_maceio);
+		Animation animMaceio =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_13);
 		layMaceio.startAnimation(animMaceio);
 		
 		RelativeLayout layRioBranco = (RelativeLayout) findViewById(R.id.lay_brasil_14);
-		Animation animRioBranco =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_rio_branco);
+		Animation animRioBranco =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_14);
 		layRioBranco.startAnimation(animRioBranco);	
 		
 		RelativeLayout layPortoVelho = (RelativeLayout) findViewById(R.id.lay_brasil_15);
-		Animation animPortoVelho =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_porto_velho);
+		Animation animPortoVelho =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_15);
 		layPortoVelho.startAnimation(animPortoVelho);
 		
 		RelativeLayout layPalmas = (RelativeLayout) findViewById(R.id.lay_brasil_16);
-		Animation animPalmas =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_palmas);
+		Animation animPalmas =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_16);
 		layPalmas.startAnimation(animPalmas);
 		
 		RelativeLayout layAracaju = (RelativeLayout) findViewById(R.id.lay_brasil_17);
-		Animation animAracaju =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_aracaju);
+		Animation animAracaju =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_17);
 		layAracaju.startAnimation(animAracaju);
 		
 		RelativeLayout laySalvador = (RelativeLayout) findViewById(R.id.lay_brasil_18);
-		Animation animSalvador =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_salvador);
+		Animation animSalvador =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_18);
 		laySalvador.startAnimation(animSalvador);
 		
 		RelativeLayout layIleus = (RelativeLayout) findViewById(R.id.lay_brasil_19);
-		Animation animIleus =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_ileus);
+		Animation animIleus =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_19);
 		layIleus.startAnimation(animIleus);
 		
 		RelativeLayout layCuiaba = (RelativeLayout) findViewById(R.id.lay_brasil_20);
-		Animation animCuiaba =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_cuiaba);
+		Animation animCuiaba =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_20);
 		layCuiaba.startAnimation(animCuiaba);
 		
 		RelativeLayout layBrasilia = (RelativeLayout) findViewById(R.id.lay_brasil_21);
-		Animation animBrasilia =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_brasilia);
+		Animation animBrasilia =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_21);
 		layBrasilia.startAnimation(animBrasilia);
 		
 		RelativeLayout layPortoSeguro = (RelativeLayout) findViewById(R.id.lay_brasil_22);
-		Animation animPortoSeguro =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_porto_seguro);
+		Animation animPortoSeguro =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_22);
 		layPortoSeguro.startAnimation(animPortoSeguro);
 		
 		RelativeLayout layGoiania = (RelativeLayout) findViewById(R.id.lay_brasil_23);
-		Animation animGoiania =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_goiania);
+		Animation animGoiania =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_23);
 		layGoiania.startAnimation(animGoiania);
 		
 		RelativeLayout layUberlandia = (RelativeLayout) findViewById(R.id.lay_brasil_24);
-		Animation animUberlandia =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_uberlandia);
+		Animation animUberlandia =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_24);
 		layUberlandia.startAnimation(animUberlandia);	
 		
 		RelativeLayout layBeloHorizonte = (RelativeLayout) findViewById(R.id.lay_brasil_25);
-		Animation animBeloHorizonte =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_belo_horizonte);
+		Animation animBeloHorizonte =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_25);
 		layBeloHorizonte.startAnimation(animBeloHorizonte);
 		
 		RelativeLayout layCampoGrande = (RelativeLayout) findViewById(R.id.lay_brasil_26);
-		Animation animCampoGrande =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_campo_grande);
+		Animation animCampoGrande =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_26);
 		layCampoGrande.startAnimation(animCampoGrande);
 		
 		RelativeLayout layRioPreto = (RelativeLayout) findViewById(R.id.lay_brasil_27);
-		Animation animRioPreto =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_rio_preto);
+		Animation animRioPreto =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_27);
 		layRioPreto.startAnimation(animRioPreto);
 		
 		RelativeLayout layRiberaoPreto = (RelativeLayout) findViewById(R.id.lay_brasil_28);
-		Animation animRiberaoPreto =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_riberao_preto);
+		Animation animRiberaoPreto =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_28);
 		layRiberaoPreto.startAnimation(animRiberaoPreto);
 		
 		RelativeLayout layVictoria = (RelativeLayout) findViewById(R.id.lay_brasil_29);
-		Animation animVictoria =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_victoria);
+		Animation animVictoria =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_29);
 		layVictoria.startAnimation(animVictoria);
 		
 		RelativeLayout layCampinas = (RelativeLayout) findViewById(R.id.lay_brasil_30);
-		Animation animCampinas =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_campinas);
+		Animation animCampinas =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_30);
 		layCampinas.startAnimation(animCampinas);
 		
 		RelativeLayout layRioDeJaneiro = (RelativeLayout) findViewById(R.id.lay_brasil_31);
-		Animation animRioDeJaniro =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_rio_de_janeiro);
+		Animation animRioDeJaniro =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_31);
 		layRioDeJaneiro.startAnimation(animRioDeJaniro);
 		
 		RelativeLayout layLondrina = (RelativeLayout) findViewById(R.id.lay_brasil_32);
-		Animation animLondrina =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_londrina);
+		Animation animLondrina =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_32);
 		layLondrina.startAnimation(animLondrina);
 		
 		RelativeLayout laySaoPaulo = (RelativeLayout) findViewById(R.id.lay_brasil_33);
-		Animation animSaoPaulo =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_sao_paulo);
+		Animation animSaoPaulo =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_33);
 		laySaoPaulo.startAnimation(animSaoPaulo);
 		
 		RelativeLayout layCuritiva = (RelativeLayout) findViewById(R.id.lay_brasil_34);
-		Animation animCuritiva =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_curitiva);
+		Animation animCuritiva =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_34);
 		layCuritiva.startAnimation(animCuritiva);
 		
 		RelativeLayout layFoz = (RelativeLayout) findViewById(R.id.lay_brasil_35);
-		Animation animFoz =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_foz);
+		Animation animFoz =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_35);
 		layFoz.startAnimation(animFoz);
 		
 		RelativeLayout layJoinville = (RelativeLayout) findViewById(R.id.lay_brasil_36);
-		Animation animJoinville =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_joinville);
+		Animation animJoinville =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_36);
 		layJoinville.startAnimation(animJoinville);
 		
 		RelativeLayout layNavegantes = (RelativeLayout) findViewById(R.id.lay_brasil_37);
-		Animation animNavegantes =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_navegantes);
+		Animation animNavegantes =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_37);
 		layNavegantes.startAnimation(animNavegantes);
 		
 		RelativeLayout layFlorianopolis = (RelativeLayout) findViewById(R.id.lay_brasil_38);
-		Animation animFlorianopolis =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_florianopolis);
+		Animation animFlorianopolis =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_38);
 		layFlorianopolis.startAnimation(animFlorianopolis);
 		
 		RelativeLayout layPortoAlegre = (RelativeLayout) findViewById(R.id.lay_brasil_39);
-		Animation animPortoAlegre =  AnimationUtils.loadAnimation(this, R.anim.anim_argentina_porto_alegre);
+		Animation animPortoAlegre =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_39);
 		layPortoAlegre.startAnimation(animPortoAlegre);
 	}
 
@@ -1107,165 +1107,165 @@ public class LaminaUnoActivity extends Activity {
 	
 	public void animaCiudadesColombia(){
 		RelativeLayout laySanAndres = (RelativeLayout) findViewById(R.id.lay_colombia_01);
-		Animation animSanAndres = AnimationUtils.loadAnimation(this, R.anim.anim_colombia_san_andres);
+		Animation animSanAndres = AnimationUtils.loadAnimation(this, R.anim.anim_botones_01);
 		laySanAndres.startAnimation(animSanAndres);
 		
 		RelativeLayout laySantaMarta = (RelativeLayout) findViewById(R.id.lay_colombia_02);
-		Animation animSantaMarta = AnimationUtils.loadAnimation(this, R.anim.anim_colombia_santa_marta);
+		Animation animSantaMarta = AnimationUtils.loadAnimation(this, R.anim.anim_botones_02);
 		laySantaMarta.startAnimation(animSantaMarta);
 		
 		RelativeLayout layBarranquilla = (RelativeLayout) findViewById(R.id.lay_colombia_03);
-		Animation animBarranquilla = AnimationUtils.loadAnimation(this, R.anim.anim_colombia_barranquilla);
+		Animation animBarranquilla = AnimationUtils.loadAnimation(this, R.anim.anim_botones_03);
 		layBarranquilla.startAnimation(animBarranquilla);
 		
 		RelativeLayout layCartagena = (RelativeLayout) findViewById(R.id.lay_colombia_04);
-		Animation animCartagena = AnimationUtils.loadAnimation(this, R.anim.anim_colombia_cartagena);
+		Animation animCartagena = AnimationUtils.loadAnimation(this, R.anim.anim_botones_04);
 		layCartagena.startAnimation(animCartagena);
 		
 		RelativeLayout layValledupar = (RelativeLayout) findViewById(R.id.lay_colombia_05);
-		Animation animValledupar = AnimationUtils.loadAnimation(this, R.anim.anim_colombia_valledupar);
+		Animation animValledupar = AnimationUtils.loadAnimation(this, R.anim.anim_botones_05);
 		layValledupar.startAnimation(animValledupar);
 		
 		RelativeLayout layMonteria = (RelativeLayout) findViewById(R.id.lay_colombia_06);
-		Animation animMonteria = AnimationUtils.loadAnimation(this, R.anim.anim_colombia_monteria);
+		Animation animMonteria = AnimationUtils.loadAnimation(this, R.anim.anim_botones_06);
 		layMonteria.startAnimation(animMonteria);
 		
 		RelativeLayout layApartado = (RelativeLayout) findViewById(R.id.lay_colombia_07);
-		Animation animApartado = AnimationUtils.loadAnimation(this, R.anim.anim_colombia_apartado);
+		Animation animApartado = AnimationUtils.loadAnimation(this, R.anim.anim_botones_07);
 		layApartado.startAnimation(animApartado);
 		
 		RelativeLayout layCucuta = (RelativeLayout) findViewById(R.id.lay_colombia_08);
-		Animation animCucuta = AnimationUtils.loadAnimation(this, R.anim.anim_colombia_cucuta);
+		Animation animCucuta = AnimationUtils.loadAnimation(this, R.anim.anim_botones_08);
 		layCucuta.startAnimation(animCucuta);
 		
 		RelativeLayout layMedellin = (RelativeLayout) findViewById(R.id.lay_colombia_09);
-		Animation animMedellin = AnimationUtils.loadAnimation(this, R.anim.anim_colombia_medellin);
+		Animation animMedellin = AnimationUtils.loadAnimation(this, R.anim.anim_botones_09);
 		layMedellin.startAnimation(animMedellin);
 		
 		RelativeLayout layBucaramanga = (RelativeLayout) findViewById(R.id.lay_colombia_10);
-		Animation animBucaramanda = AnimationUtils.loadAnimation(this, R.anim.anim_colombia_bucaramanga);
+		Animation animBucaramanda = AnimationUtils.loadAnimation(this, R.anim.anim_botones_10);
 		layBucaramanga.startAnimation(animBucaramanda);
 		
 		RelativeLayout layQuibdo = (RelativeLayout) findViewById(R.id.lay_colombia_11);
-		Animation animQuibdo = AnimationUtils.loadAnimation(this, R.anim.anim_colombia_quibdo);
+		Animation animQuibdo = AnimationUtils.loadAnimation(this, R.anim.anim_botones_11);
 		layQuibdo.startAnimation(animQuibdo);
 		
 		RelativeLayout layIbaque = (RelativeLayout) findViewById(R.id.lay_colombia_12);
-		Animation animIbaque = AnimationUtils.loadAnimation(this, R.anim.anim_colombia_ibaque);
+		Animation animIbaque = AnimationUtils.loadAnimation(this, R.anim.anim_botones_12);
 		layIbaque.startAnimation(animIbaque);
 		
 		RelativeLayout layYopal = (RelativeLayout) findViewById(R.id.lay_colombia_13);
-		Animation animYopal = AnimationUtils.loadAnimation(this, R.anim.anim_colombia_yopal);
+		Animation animYopal = AnimationUtils.loadAnimation(this, R.anim.anim_botones_13);
 		layYopal.startAnimation(animYopal);
 		
 		RelativeLayout layBogota = (RelativeLayout) findViewById(R.id.lay_colombia_14);
-		Animation animBogota = AnimationUtils.loadAnimation(this, R.anim.anim_colombia_bogota);
+		Animation animBogota = AnimationUtils.loadAnimation(this, R.anim.anim_botones_14);
 		layBogota.startAnimation(animBogota);
 		
 		RelativeLayout layPereira = (RelativeLayout) findViewById(R.id.lay_colombia_15);
-		Animation animPereira = AnimationUtils.loadAnimation(this, R.anim.anim_colombia_pereira);
+		Animation animPereira = AnimationUtils.loadAnimation(this, R.anim.anim_botones_15);
 		layPereira.startAnimation(animPereira);
 		
 		RelativeLayout layVillavicencio = (RelativeLayout) findViewById(R.id.lay_colombia_16);
-		Animation animVillavicencio = AnimationUtils.loadAnimation(this, R.anim.anim_colombia_villavicencio);
+		Animation animVillavicencio = AnimationUtils.loadAnimation(this, R.anim.anim_botones_16);
 		layVillavicencio.startAnimation(animVillavicencio);
 		
 		RelativeLayout layCali = (RelativeLayout) findViewById(R.id.lay_colombia_17);
-		Animation animCali = AnimationUtils.loadAnimation(this, R.anim.anim_colombia_cali);
+		Animation animCali = AnimationUtils.loadAnimation(this, R.anim.anim_botones_17);
 		layCali.startAnimation(animCali);
 		
 		RelativeLayout layNeiva = (RelativeLayout) findViewById(R.id.lay_colombia_18);
-		Animation animNeiva = AnimationUtils.loadAnimation(this, R.anim.anim_colombia_neiva);
+		Animation animNeiva = AnimationUtils.loadAnimation(this, R.anim.anim_botones_18);
 		layNeiva.startAnimation(animNeiva);
 		
 		RelativeLayout layPuertoAsis = (RelativeLayout) findViewById(R.id.lay_colombia_19);
-		Animation animPuertoAsis = AnimationUtils.loadAnimation(this, R.anim.anim_colombia_puerto_asis);
+		Animation animPuertoAsis = AnimationUtils.loadAnimation(this, R.anim.anim_botones_19);
 		layPuertoAsis.startAnimation(animPuertoAsis);
 		
 		RelativeLayout layLeticia = (RelativeLayout) findViewById(R.id.lay_colombia_20);
-		Animation animPuertoAsis = AnimationUtils.loadAnimation(this, R.anim.anim_colombia_puerto_asis);
-		layPuertoAsis.startAnimation(animPuertoAsis);
+		Animation animLeticia = AnimationUtils.loadAnimation(this, R.anim.anim_botones_20);
+		layLeticia.startAnimation(animLeticia);
 	}
 	
 	// ////////////////////////////////////////////////////////////////
 	
 	public void animaCiudadesEcuador(){
 		RelativeLayout layIslaGalapagos = (RelativeLayout) findViewById(R.id.lay_ecuador_01);
-		Animation animIslaGalapagos = AnimationUtils.loadAnimation(this, R.anim.anim_ecuador_isla_galapagos);
+		Animation animIslaGalapagos = AnimationUtils.loadAnimation(this, R.anim.anim_botones_01);
 		layIslaGalapagos.startAnimation(animIslaGalapagos);
 		
 		RelativeLayout layBaltro = (RelativeLayout) findViewById(R.id.lay_ecuador_02);
-		Animation animBaltro = AnimationUtils.loadAnimation(this, R.anim.anim_ecuador_baltro);
+		Animation animBaltro = AnimationUtils.loadAnimation(this, R.anim.anim_botones_02);
 		layBaltro.startAnimation(animBaltro);
 		
 		RelativeLayout laySanCristobal = (RelativeLayout) findViewById(R.id.lay_ecuador_03);
-		Animation animSanCristobal = AnimationUtils.loadAnimation(this, R.anim.anim_ecuador_san_cristobal);
+		Animation animSanCristobal = AnimationUtils.loadAnimation(this, R.anim.anim_botones_03);
 		laySanCristobal.startAnimation(animSanCristobal);
 		
 		RelativeLayout layGuayaquil = (RelativeLayout) findViewById(R.id.lay_ecuador_04);
-		Animation animGuayaquil = AnimationUtils.loadAnimation(this, R.anim.anim_ecuador_guallaquil);
+		Animation animGuayaquil = AnimationUtils.loadAnimation(this, R.anim.anim_botones_04);
 		layGuayaquil.startAnimation(animGuayaquil);
 		
 		RelativeLayout layQuito = (RelativeLayout) findViewById(R.id.lay_ecuador_05);
-		Animation animQuito = AnimationUtils.loadAnimation(this, R.anim.anim_ecuador_quito);
+		Animation animQuito = AnimationUtils.loadAnimation(this, R.anim.anim_botones_05);
 		layQuito.startAnimation(animQuito);
 		
 		RelativeLayout layCuenca = (RelativeLayout) findViewById(R.id.lay_ecuador_06);
-		Animation animCuenca = AnimationUtils.loadAnimation(this, R.anim.anim_ecuador_cuenca);
+		Animation animCuenca = AnimationUtils.loadAnimation(this, R.anim.anim_botones_06);
 		layCuenca.startAnimation(animCuenca);
 	}
 	
 	public void animaCiudadesPeru(){
 		RelativeLayout layTumbes = (RelativeLayout) findViewById(R.id.lay_peru_01);
-		Animation animTumbes = AnimationUtils.loadAnimation(this, R.anim.anim_peru_tumbes);
+		Animation animTumbes = AnimationUtils.loadAnimation(this, R.anim.anim_botones_01);
 		layTumbes.startAnimation(animTumbes);
 		
 		RelativeLayout layIquito = (RelativeLayout) findViewById(R.id.lay_peru_02);
-		Animation animIquitos = AnimationUtils.loadAnimation(this, R.anim.anim_peru_iquitos);
+		Animation animIquitos = AnimationUtils.loadAnimation(this, R.anim.anim_botones_02);
 		layIquito.startAnimation(animIquitos);
 		
 		RelativeLayout layPiura = (RelativeLayout) findViewById(R.id.lay_peru_03);
-		Animation animPiura = AnimationUtils.loadAnimation(this, R.anim.anim_peru_piura);
+		Animation animPiura = AnimationUtils.loadAnimation(this, R.anim.anim_botones_03);
 		layPiura.startAnimation(animPiura);
 		
 		RelativeLayout layTaraporo = (RelativeLayout) findViewById(R.id.lay_peru_04);
-		Animation animTaraporo = AnimationUtils.loadAnimation(this, R.anim.anim_peru_tarporo);
+		Animation animTaraporo = AnimationUtils.loadAnimation(this, R.anim.anim_botones_04);
 		layTaraporo.startAnimation(animTaraporo);
 		
 		RelativeLayout layCajamarca = (RelativeLayout) findViewById(R.id.lay_peru_05);
-		Animation animCajamarca = AnimationUtils.loadAnimation(this, R.anim.anim_peru_cajamarca);
+		Animation animCajamarca = AnimationUtils.loadAnimation(this, R.anim.anim_botones_05);
 		layCajamarca.startAnimation(animCajamarca);
 		
 		RelativeLayout layTrujillo = (RelativeLayout) findViewById(R.id.lay_peru_06);
-		Animation animTrujillo = AnimationUtils.loadAnimation(this, R.anim.anim_peru_trujillo);
+		Animation animTrujillo = AnimationUtils.loadAnimation(this, R.anim.anim_botones_06);
 		layTrujillo.startAnimation(animTrujillo);
 		
 		RelativeLayout layPucallpa = (RelativeLayout) findViewById(R.id.lay_peru_07);
-		Animation animPucallpa = AnimationUtils.loadAnimation(this, R.anim.anim_peru_pucallpa);
+		Animation animPucallpa = AnimationUtils.loadAnimation(this, R.anim.anim_botones_07);
 		layPucallpa.startAnimation(animPucallpa);
 		
 		RelativeLayout layLima = (RelativeLayout) findViewById(R.id.lay_peru_08);
-		Animation animLima = AnimationUtils.loadAnimation(this, R.anim.anim_peru_lima);
+		Animation animLima = AnimationUtils.loadAnimation(this, R.anim.anim_botones_08);
 		layLima.startAnimation(animLima);
 		
 		RelativeLayout layPuertoMaldonado = (RelativeLayout) findViewById(R.id.lay_peru_09);
-		Animation animPuertoMaldonado = AnimationUtils.loadAnimation(this, R.anim.anim_peru_maldonado);
+		Animation animPuertoMaldonado = AnimationUtils.loadAnimation(this, R.anim.anim_botones_09);
 		layPuertoMaldonado.startAnimation(animPuertoMaldonado);
 		
 		RelativeLayout layCusco = (RelativeLayout) findViewById(R.id.lay_peru_10);
-		Animation animCusco = AnimationUtils.loadAnimation(this, R.anim.anim_peru_cusco);
+		Animation animCusco = AnimationUtils.loadAnimation(this, R.anim.anim_botones_10);
 		layCusco.startAnimation(animCusco);
 		
 		RelativeLayout layArequipa = (RelativeLayout) findViewById(R.id.lay_peru_11);
-		Animation animArequipa = AnimationUtils.loadAnimation(this, R.anim.anim_peru_arequipa);
+		Animation animArequipa = AnimationUtils.loadAnimation(this, R.anim.anim_botones_11);
 		layArequipa.startAnimation(animArequipa);
 		
 		RelativeLayout layJulianca = (RelativeLayout) findViewById(R.id.lay_peru_12);
-		Animation animJulianca = AnimationUtils.loadAnimation(this, R.anim.anim_peru_julianca);
+		Animation animJulianca = AnimationUtils.loadAnimation(this, R.anim.anim_botones_12);
 		layJulianca.startAnimation(animJulianca);
 		
 		RelativeLayout layTacna = (RelativeLayout) findViewById(R.id.lay_peru_13);
-		Animation animTacna = AnimationUtils.loadAnimation(this, R.anim.anim_peru_tacna);
+		Animation animTacna = AnimationUtils.loadAnimation(this, R.anim.anim_botones_13);
 		layTacna.startAnimation(animTacna);
 	}
 
