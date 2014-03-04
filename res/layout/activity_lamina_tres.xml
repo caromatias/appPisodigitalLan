@@ -17,6 +17,32 @@
         android:id="@+id/video_back_trivia_dos"
         android:layout_width="1280dp"
         android:layout_height="match_parent" />
+    
+    <RelativeLayout
+        android:id="@+id/lay_img_back_trivia"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/img_back_trivia_uno"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_back_trivia"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_mundo_back_trivia"
+            android:layout_width="550dp"
+            android:layout_height="455dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="82dp"
+            android:src="@drawable/img_mundo_back_trivia" />
+
+    </RelativeLayout>
 
     <ImageView
         android:id="@+id/img_transicion_tres"
@@ -67,8 +93,8 @@
             android:layout_toRightOf="@+id/btn_respuesta1"
             android:background="@drawable/btn_comenzar"
             android:text="Button2"
-            android:textColor="#ffffff" 
-            android:textStyle="bold"/>
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_respuesta1"
@@ -91,9 +117,27 @@
             android:layout_alignRight="@+id/relativeLayout1"
             android:background="@drawable/btn_comenzar"
             android:text="Button3"
-            android:textColor="#ffffff" 
-            android:textStyle="bold"/>
-
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_abre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="39dp"
+        android:layout_marginRight="110dp"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btn_cierra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="48dp"
+        android:text="Button" />
 
 </RelativeLayout>

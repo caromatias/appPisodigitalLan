@@ -37,6 +37,8 @@ public class LaminaTresActivity extends Activity {
 	private AnimationDrawable savingAnimation;
 	private Animation animTriviaIn;
 	private Animation animTriviaOut;
+	private RelativeLayout imgBackTrivia;
+	private ImageView imgMundoTrivia;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,8 @@ public class LaminaTresActivity extends Activity {
 		respuestaUno = (Button) findViewById(R.id.btn_respuesta1);
 		respuestaDos = (Button) findViewById(R.id.btn_respuesta2);
 		respuestaTres = (Button) findViewById(R.id.btn_respuesta3);
+		imgBackTrivia = (RelativeLayout) findViewById(R.id.lay_img_back_trivia);
+		imgMundoTrivia = (ImageView) findViewById(R.id.img_mundo_back_trivia);
 		rutaSeleccionada();
 		videoBackTrivia.start();
 		final Animation animVideoMain = AnimationUtils.loadAnimation(this,
@@ -72,6 +76,40 @@ public class LaminaTresActivity extends Activity {
 										+ R.raw.back_trivia);
 						videoBackTriviaB.start();
 
+					}
+				});
+		
+		/*
+		videoBackTriviaB
+		.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+			public void onCompletion(MediaPlayer mp) {
+				imgBackTrivia.setVisibility(View.VISIBLE);
+				imgBackTrivia.startAnimation(animVideoMain);
+				final Handler handlerVideoBack = new Handler();
+				handlerVideoBack.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						// Do something after 5s = 5000ms
+						videoBackTriviaB.setVisibility(View.GONE);
+					}
+				}, 2000);
+			}
+		});
+		*/
+		
+		findViewById(R.id.btn_abre).setOnClickListener(
+				new OnClickListener() {
+					public void onClick(View arg0) {
+						
+						imgBackTrivia.setVisibility(View.VISIBLE);
+					}
+				});
+		
+		findViewById(R.id.btn_cierra).setOnClickListener(
+				new OnClickListener() {
+					public void onClick(View arg0) {
+						
+						imgBackTrivia.setVisibility(View.GONE);
 					}
 				});
 

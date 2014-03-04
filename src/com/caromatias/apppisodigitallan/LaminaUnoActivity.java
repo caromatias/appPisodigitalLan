@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -26,37 +27,41 @@ public class LaminaUnoActivity extends Activity {
 	private ZoomView zoomView;
 	private int posicionMenu = 1;
 	private VideoView videoLaminaDos;
+	private RelativeLayout lay_principal;
+	private Button btnInter;
+	private Button btnPeru;
+	private Button btnBrasil;
+	private Button btnEcuador;
+	private Button btnColombia;
+	private Button btnChile;
+	private Button btnArgentina;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lamina_uno);
 
-		View v = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE))
+		final View v = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE))
 				.inflate(R.layout.zoomableview, null, false);
 		v.setLayoutParams(new LinearLayout.LayoutParams(
 				android.view.ViewGroup.LayoutParams.FILL_PARENT,
 				android.view.ViewGroup.LayoutParams.FILL_PARENT));
 
-		
 		zoomView = new ZoomView(this);
 		zoomView.addView(v);
-		RelativeLayout lay_principal = (RelativeLayout) findViewById(R.id.zona_zoomable);
+		lay_principal = (RelativeLayout) findViewById(R.id.zona_zoomable);
 		lay_principal.addView(zoomView);
 
 		exMain();
 
 		// //////// Cambio de imagen a video ////////////
 
-		
-
 		// ////////////////////////////////////////////
 
 		eventosBotones();
 
-		
 		cambiaActivity();
-		
+
 	}
 
 	@Override
@@ -70,13 +75,15 @@ public class LaminaUnoActivity extends Activity {
 
 	public void eventosBotones() {
 
-		final Button btnInter = (Button) findViewById(R.id.btn_internacional);
+		btnInter = (Button) findViewById(R.id.btn_internacional);
 		btnInter.setBackgroundResource(R.drawable.botonrojo);
 
-		final Button btnPeru = (Button) findViewById(R.id.btn_peru);
-		final Button btnBrasil = (Button) findViewById(R.id.btn_brasil);
-		final Button btnEcuador = (Button) findViewById(R.id.btn_ecuador);
-		final Button btnColombia = (Button) findViewById(R.id.btn_colombia);
+		btnPeru = (Button) findViewById(R.id.btn_peru);
+		btnBrasil = (Button) findViewById(R.id.btn_brasil);
+		btnEcuador = (Button) findViewById(R.id.btn_ecuador);
+		btnColombia = (Button) findViewById(R.id.btn_colombia);
+		btnChile = (Button) findViewById(R.id.btn_chile);
+		btnArgentina = (Button) findViewById(R.id.btn_argentina);
 
 		final RelativeLayout layMapaInter = (RelativeLayout) findViewById(R.id.lay_mapa_inter);
 		final Animation animMapaInter = AnimationUtils.loadAnimation(this,
@@ -125,8 +132,6 @@ public class LaminaUnoActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						Button btnChile = (Button) findViewById(R.id.btn_chile);
-						Button btnArgentina = (Button) findViewById(R.id.btn_argentina);
 						btnInter.setBackgroundResource(R.drawable.botonrojo);
 
 						switch (posicionMenu) {
@@ -222,10 +227,10 @@ public class LaminaUnoActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Button btnChile = (Button) findViewById(R.id.btn_chile);
-				Button btnArgentina = (Button) findViewById(R.id.btn_argentina);
 				btnChile.setBackgroundResource(R.drawable.botonrojo);
-
+				
+				
+				
 				switch (posicionMenu) {
 				case 1:
 					layMapaInter.startAnimation(animMapaInter);
@@ -315,8 +320,6 @@ public class LaminaUnoActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						Button btnChile = (Button) findViewById(R.id.btn_chile);
-						Button btnArgentina = (Button) findViewById(R.id.btn_argentina);
 						btnArgentina
 								.setBackgroundResource(R.drawable.botonrojo);
 
@@ -420,9 +423,6 @@ public class LaminaUnoActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Button btnPeru = (Button) findViewById(R.id.btn_peru);
-				Button btnArgentina = (Button) findViewById(R.id.btn_argentina);
-				Button btnChile = (Button) findViewById(R.id.btn_chile);
 				btnPeru.setBackgroundResource(R.drawable.botonrojo);
 
 				switch (posicionMenu) {
@@ -513,8 +513,6 @@ public class LaminaUnoActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Button btnArgentina = (Button) findViewById(R.id.btn_argentina);
-				Button btnChile = (Button) findViewById(R.id.btn_chile);
 				btnBrasil.setBackgroundResource(R.drawable.botonrojo);
 
 				switch (posicionMenu) {
@@ -607,8 +605,6 @@ public class LaminaUnoActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						Button btnArgentina = (Button) findViewById(R.id.btn_argentina);
-						Button btnChile = (Button) findViewById(R.id.btn_chile);
 						btnEcuador.setBackgroundResource(R.drawable.botonrojo);
 
 						switch (posicionMenu) {
@@ -709,8 +705,6 @@ public class LaminaUnoActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						Button btnArgentina = (Button) findViewById(R.id.btn_argentina);
-						Button btnChile = (Button) findViewById(R.id.btn_chile);
 						btnColombia.setBackgroundResource(R.drawable.botonrojo);
 
 						switch (posicionMenu) {
@@ -896,63 +890,75 @@ public class LaminaUnoActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						Intent act = new Intent(LaminaUnoActivity.this, LaminaDosActivity.class);
+						Intent act = new Intent(LaminaUnoActivity.this,
+								LaminaDosActivity.class);
 						startActivity(act);
-						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+						overridePendingTransition(R.anim.fade_in,
+								R.anim.fade_out);
 					}
 				});
 	}
-	
-	public void exMain(){
-		
+
+	public void exMain() {
+
 		final VideoView videoView = (VideoView) findViewById(R.id.video_main);
 
-		videoView.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
-				+ R.raw.back_a_2);
-		
+		videoView
+				.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+						+ R.raw.back_a_2);
+
 		videoLaminaDos = (VideoView) findViewById(R.id.video_lamina_uno);
 
-		videoLaminaDos.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+		videoLaminaDos
+				.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
 						+ R.raw.world_transition);
 
 		videoView.start();
 		videoView.setOnPreparedListener(new OnPreparedListener() {
-		    @Override
-		    public void onPrepared(MediaPlayer mp) {
-		        mp.setLooping(true);
-		    }
+			@Override
+			public void onPrepared(MediaPlayer mp) {
+				mp.setLooping(true);
+			}
 		});
-		
+
 		Button botonAnimado = (Button) findViewById(R.id.btn_com);
-	    Animation animacion = AnimationUtils.loadAnimation(this, R.anim.animacion);
-	    final RelativeLayout layPanelRutas = (RelativeLayout) findViewById(R.id.panel);
-	    final RelativeLayout goGameMaster = (RelativeLayout) findViewById(R.id.go_game_master);
-	    final Button btnGoGame = (Button) findViewById(R.id.btn_ir_al_juego);
-		final Animation animGoGame = AnimationUtils.loadAnimation(this,R.anim.animacion);
+		Animation animacion = AnimationUtils.loadAnimation(this,
+				R.anim.animacion);
+		final RelativeLayout layPanelRutas = (RelativeLayout) findViewById(R.id.panel);
+		final RelativeLayout goGameMaster = (RelativeLayout) findViewById(R.id.go_game_master);
+		final Button btnGoGame = (Button) findViewById(R.id.btn_ir_al_juego);
+		final Animation animGoGame = AnimationUtils.loadAnimation(this,
+				R.anim.animacion);
 		final Button btnGoGameText = (Button) findViewById(R.id.btn_ir_al_juego_text);
-		final Animation animGoGameText = AnimationUtils.loadAnimation(this,R.anim.slide_out);
-	    botonAnimado.startAnimation(animacion);
-	    final Animation animVideoMain = AnimationUtils.loadAnimation(this,R.anim.fade_in);
-	    final Animation animVideoMainOut = AnimationUtils.loadAnimation(this,R.anim.fade_out);
-	    final Animation animInInter = AnimationUtils.loadAnimation(this,R.anim.in_mapa_inter);
-	    final Animation animPanel = AnimationUtils.loadAnimation(this,R.anim.anim_lamina_home_market);
-	    final RelativeLayout layZonaZoomable = (RelativeLayout) findViewById(R.id.zona_zoomable);
-	    
-	    findViewById(R.id.btn_com).setOnClickListener(new OnClickListener() {
+		final Animation animGoGameText = AnimationUtils.loadAnimation(this,
+				R.anim.slide_out);
+		botonAnimado.startAnimation(animacion);
+		final Animation animVideoMain = AnimationUtils.loadAnimation(this,
+				R.anim.fade_in);
+		final Animation animVideoMainOut = AnimationUtils.loadAnimation(this,
+				R.anim.fade_out);
+		final Animation animInInter = AnimationUtils.loadAnimation(this,
+				R.anim.in_mapa_inter);
+		final Animation animPanel = AnimationUtils.loadAnimation(this,
+				R.anim.anim_lamina_home_market);
+		final RelativeLayout layZonaZoomable = (RelativeLayout) findViewById(R.id.zona_zoomable);
+
+		findViewById(R.id.btn_com).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				//VideoView videoView = (VideoView) findViewById(R.id.video_main);
+				// VideoView videoView = (VideoView)
+				// findViewById(R.id.video_main);
 				RelativeLayout layVideoMain = (RelativeLayout) findViewById(R.id.lay_video_main);
 				final ImageView imgWhite = (ImageView) findViewById(R.id.img_fade_white);
-				
-				//videoView.pause();
+
+				// videoView.pause();
 				Button botonAnimado = (Button) findViewById(R.id.btn_com);
 				botonAnimado.setBackgroundResource(R.drawable.botoncomenzar);
 				imgWhite.setVisibility(View.VISIBLE);
 				imgWhite.setAnimation(animVideoMain);
 				layVideoMain.setVisibility(View.GONE);
-				
+
 				final Handler handler = new Handler();
 				handler.postDelayed(new Runnable() {
 					@Override
@@ -964,7 +970,7 @@ public class LaminaUnoActivity extends Activity {
 						imgWhite.setVisibility(View.GONE);
 					}
 				}, 800);
-				
+
 				final Handler handlerDos = new Handler();
 				handlerDos.postDelayed(new Runnable() {
 					@Override
@@ -974,7 +980,7 @@ public class LaminaUnoActivity extends Activity {
 						layZonaZoomable.startAnimation(animInInter);
 					}
 				}, 4000);
-				
+
 				final Handler handlerTres = new Handler();
 				handlerTres.postDelayed(new Runnable() {
 					@Override
@@ -983,7 +989,7 @@ public class LaminaUnoActivity extends Activity {
 						videoLaminaDos.setVisibility(View.GONE);
 					}
 				}, 5000);
-				
+
 				final Handler handlerCuatro = new Handler();
 				handlerCuatro.postDelayed(new Runnable() {
 					@Override
