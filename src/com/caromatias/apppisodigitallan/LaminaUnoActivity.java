@@ -410,7 +410,7 @@ public class LaminaUnoActivity extends Activity {
 									break;
 								}
 								// ///// Animaciones
-
+								animaCiudadesArgentina();
 								posicionMenu = 3;
 							}
 						}, 1000);
@@ -501,7 +501,7 @@ public class LaminaUnoActivity extends Activity {
 							break;
 						}
 						// ///// Animaciones
-
+						animaCiudadesPeru();
 						posicionMenu = 4;
 					}
 				}, 1000);
@@ -592,7 +592,7 @@ public class LaminaUnoActivity extends Activity {
 							break;
 						}
 						// ///// Animaciones
-
+						animaCiudadesBrasil();
 						posicionMenu = 5;
 					}
 				}, 1000);
@@ -692,7 +692,7 @@ public class LaminaUnoActivity extends Activity {
 									break;
 								}
 								// ///// Animaciones
-
+								animaCiudadesEcuador();
 								posicionMenu = 6;
 							}
 						}, 1000);
@@ -793,7 +793,7 @@ public class LaminaUnoActivity extends Activity {
 									return;
 								}
 								// ///// Animaciones
-
+								animaCiudadesColombia();
 								posicionMenu = 7;
 							}
 						}, 1000);
