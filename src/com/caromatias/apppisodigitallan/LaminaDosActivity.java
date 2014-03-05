@@ -39,6 +39,7 @@ public class LaminaDosActivity extends Activity {
 
 	private ImageView ivAnimacion;
 	private AnimationDrawable savingAnimation;
+	private AnimationDrawable savingAnimationLuz;
 	// ///////////////////////////////////////
 	private ProgressBar mProgress;
 	private int mProgressStatus = 0;
@@ -70,7 +71,7 @@ public class LaminaDosActivity extends Activity {
 	private Animation animMensajesDespegueOut;
 	private Animation animMensajesDespegueFailIn;
 	private Animation animMensajesDespegueFailOut;
-
+	private ImageView imgLuzEstado;
 	// ///////////////////////////////////
 
 	@Override
@@ -115,6 +116,7 @@ public class LaminaDosActivity extends Activity {
 		layMasterComp = (RelativeLayout) findViewById(R.id.lay_master_rutas_comp);
 		despegueOk = (ImageView) findViewById(R.id.ok_despegue);
 		despegueFail = (ImageView) findViewById(R.id.fail_despegue);
+		imgLuzEstado = (ImageView) findViewById(R.id.img_luz_estado);
 		animMensajesDespegue = AnimationUtils.loadAnimation(this,R.anim.anim_scale_translation_world);
 		animMensajesDespegueOut = AnimationUtils.loadAnimation(this,R.anim.anim_translacion_out);
 		animMensajesDespegueFailIn = AnimationUtils.loadAnimation(this,R.anim.anim_translacion_in);
@@ -199,6 +201,9 @@ public class LaminaDosActivity extends Activity {
 											public void run() {
 												despegueFail.setVisibility(View.VISIBLE);
 												despegueFail.startAnimation(animMensajesDespegueFailIn);
+												imgLuzEstado.setBackgroundResource(R.anim.anim_despegue_fail);
+												savingAnimationLuz = (AnimationDrawable) imgLuzEstado.getBackground();
+												savingAnimationLuz.start();
 											}
 										});
 										intentoDos();
@@ -208,6 +213,9 @@ public class LaminaDosActivity extends Activity {
 											public void run() {
 												despegueOk.setVisibility(View.VISIBLE);
 												despegueOk.startAnimation(animMensajesDespegue);
+												imgLuzEstado.setBackgroundResource(R.anim.anim_despegue_ok);
+												savingAnimationLuz = (AnimationDrawable) imgLuzEstado.getBackground();
+												savingAnimationLuz.start();
 											}
 										});
 										videoBackDespegue.start();
@@ -380,6 +388,7 @@ public class LaminaDosActivity extends Activity {
 					public void run() {
 						despegueFail.startAnimation(animMensajesDespegueFailOut);
 						despegueFail.setVisibility(View.GONE);
+						savingAnimationLuz.stop();
 					}
 				}, 3000);
 			}
@@ -415,6 +424,9 @@ public class LaminaDosActivity extends Activity {
 							public void run() {
 								despegueFail.setVisibility(View.VISIBLE);
 								despegueFail.startAnimation(animMensajesDespegueFailIn);
+								imgLuzEstado.setBackgroundResource(R.anim.anim_despegue_fail);
+								savingAnimationLuz = (AnimationDrawable) imgLuzEstado.getBackground();
+								savingAnimationLuz.start();
 							}
 						});
 						intentoTres();
@@ -424,6 +436,9 @@ public class LaminaDosActivity extends Activity {
 							public void run() {
 								despegueOk.setVisibility(View.VISIBLE);
 								despegueOk.startAnimation(animMensajesDespegue);
+								imgLuzEstado.setBackgroundResource(R.anim.anim_despegue_ok);
+								savingAnimationLuz = (AnimationDrawable) imgLuzEstado.getBackground();
+								savingAnimationLuz.start();
 							}
 						});
 						videoBackDespegue.start();
@@ -457,6 +472,7 @@ public class LaminaDosActivity extends Activity {
 					public void run() {
 						despegueFail.startAnimation(animMensajesDespegueFailOut);
 						despegueFail.setVisibility(View.GONE);
+						savingAnimationLuz.stop();
 					}
 				}, 3000);
 			}
@@ -498,6 +514,9 @@ public class LaminaDosActivity extends Activity {
 							public void run() {
 								despegueOk.setVisibility(View.VISIBLE);
 								despegueOk.startAnimation(animMensajesDespegue);
+								imgLuzEstado.setBackgroundResource(R.anim.anim_despegue_fail);
+								savingAnimationLuz = (AnimationDrawable) imgLuzEstado.getBackground();
+								savingAnimationLuz.start();
 							}
 						});
 						videoBackDespegue.start();
@@ -512,7 +531,9 @@ public class LaminaDosActivity extends Activity {
 						if (estadoProgress == 3 && mProgressStatus > 70) {
 							ImagenBackDespegue
 									.startAnimation(animImgBackDespegue);
-							// videoBackDespegue.start();
+							imgLuzEstado.setBackgroundResource(R.anim.anim_despegue_ok);
+							savingAnimationLuz = (AnimationDrawable) imgLuzEstado.getBackground();
+							savingAnimationLuz.start();
 							ImagenBackDespegue.setVisibility(View.GONE);
 						}
 					}

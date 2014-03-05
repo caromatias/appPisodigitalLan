@@ -311,7 +311,7 @@
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
         android:paddingTop="0dp"
-        android:visibility="gone" >
+        android:visibility="visible" >
 
         <VideoView
             android:id="@+id/video_back_despegue"
@@ -495,7 +495,7 @@
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
             android:paddingTop="0dp"
-            android:visibility="visible" >
+            android:visibility="gone" >
 
             <ImageView
                 android:id="@+id/img_logo_pv"
