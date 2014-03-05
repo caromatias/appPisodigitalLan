@@ -155,10 +155,12 @@ public class LaminaTresActivity extends Activity {
 				imgMundoTrivia.setVisibility(View.VISIBLE);
 				imgMundoTrivia.startAnimation(animMundoIn);
 				layPregTrivia.setVisibility(View.VISIBLE);
-				ScaleAnimation scale = new ScaleAnimation(1, 1, 1, 0);
-				scale.setFillAfter(true);
-				scale.setDuration(500);
-				layPregTrivia.startAnimation(scale); 
+				/*
+				ResizeWidthAnimation anim = new ResizeWidthAnimation(layPregTrivia, 1200);
+			    anim.setDuration(2000);
+			    layPregTrivia.startAnimation(anim);
+			    */
+				layPregTrivia.startAnimation(animMundoIn);
 			}
 		}, 15500);
 		final Handler handlerCinco = new Handler();
