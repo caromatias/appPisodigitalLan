@@ -40,6 +40,7 @@ public class LaminaTresActivity extends Activity {
 	private RelativeLayout imgBackTrivia;
 	private ImageView imgBackTriviaUno;
 	private ImageView imgMundoTrivia;
+	private Animation animMundoIn;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +70,8 @@ public class LaminaTresActivity extends Activity {
 				.loadAnimation(this, R.anim.anim_trivia_in);
 		animTriviaOut = AnimationUtils.loadAnimation(this,
 				R.anim.anim_trivia_out);
+		animMundoIn = AnimationUtils.loadAnimation(this,
+				R.anim.anim_scale_translation_world);
 		// /////////////////////////////////////
 		videoBackTrivia
 				.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -141,9 +144,13 @@ public class LaminaTresActivity extends Activity {
 			@Override
 			public void run() {
 				// Do something after 5s = 5000ms
+				/*
 				imgBackTrivia.setVisibility(View.VISIBLE);
 				imgBackTriviaUno.setVisibility(View.VISIBLE);
 				imgBackTriviaUno.startAnimation(animVideoMain);
+				*/
+				imgMundoTrivia.setVisibility(View.VISIBLE);
+				imgMundoTrivia.startAnimation(animMundoIn);
 			}
 		}, 13500);
 		final Handler handlerCinco = new Handler();
