@@ -130,8 +130,6 @@ public class LaminaDosActivity extends Activity {
 		findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
 				estadoProgress = 3;
-				flecha.setVisibility(View.GONE);
-				// botonStop.setEnabled(false);
 				switch (intentos) {
 				case 1:
 					intentoTres.setImageResource(R.drawable.intento_red);
@@ -141,8 +139,6 @@ public class LaminaDosActivity extends Activity {
 					break;
 				case 3:
 					intentoUno.setImageResource(R.drawable.intento_red);
-					break;
-				default:
 					break;
 				}
 			}
@@ -176,6 +172,7 @@ public class LaminaDosActivity extends Activity {
 						layLogoIzq.setVisibility(View.VISIBLE);
 						layLogoIzq.startAnimation(animLogoIzq);
 						botonStop.setEnabled(true);
+						flecha.setVisibility(View.VISIBLE);
 						flecha.startAnimation(animFlechaRebote);
 						// ////// COMIENZA ANIMACION DE CARGA ////////
 						final TextView textoDos = (TextView) findViewById(R.id.txt_porcentaje);
@@ -206,6 +203,7 @@ public class LaminaDosActivity extends Activity {
 										runOnUiThread(new Runnable() // run on ui thread
 										{
 											public void run() {
+												flecha.setVisibility(View.GONE);
 												despegueFail.setVisibility(View.VISIBLE);
 												despegueFail.startAnimation(animMensajesDespegueFailIn);
 												imgLuzEstado.setBackgroundResource(R.anim.anim_despegue_fail);

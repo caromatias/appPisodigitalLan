@@ -492,7 +492,8 @@
             android:layout_height="130dp"
             android:layout_marginLeft="835dp"
             android:layout_marginTop="420dp"
-            android:src="@drawable/img_flecha_down" />
+            android:src="@drawable/img_flecha_down"
+            android:visibility="gone" />
 
         <RelativeLayout
             android:id="@+id/lay_popup_despegue"
