@@ -73,15 +73,16 @@ public final class R {
         public static final int anim_respuesta_correcta=0x7f04003d;
         public static final int anim_rotacion=0x7f04003e;
         public static final int anim_rotacion_mundo=0x7f04003f;
-        public static final int anim_trivia_in=0x7f040040;
-        public static final int anim_trivia_out=0x7f040041;
-        public static final int animacion=0x7f040042;
-        public static final int fade_in=0x7f040043;
-        public static final int fade_out=0x7f040044;
-        public static final int in_mapa_inter=0x7f040045;
-        public static final int slide_down=0x7f040046;
-        public static final int slide_out=0x7f040047;
-        public static final int slide_rutas=0x7f040048;
+        public static final int anim_scale_translation_world=0x7f040040;
+        public static final int anim_trivia_in=0x7f040041;
+        public static final int anim_trivia_out=0x7f040042;
+        public static final int animacion=0x7f040043;
+        public static final int fade_in=0x7f040044;
+        public static final int fade_out=0x7f040045;
+        public static final int in_mapa_inter=0x7f040046;
+        public static final int slide_down=0x7f040047;
+        public static final int slide_out=0x7f040048;
+        public static final int slide_rutas=0x7f040049;
     }
     public static final class attr {
     }
@@ -129,27 +130,28 @@ public final class R {
         public static final int img_lineas_chile=0x7f02001e;
         public static final int img_lineas_peru=0x7f02001f;
         public static final int img_mundo_back_trivia=0x7f020020;
-        public static final int img_punto=0x7f020021;
-        public static final int img_punto_amarillo=0x7f020022;
-        public static final int img_tacometro_carga=0x7f020023;
-        public static final int intento_red=0x7f020024;
-        public static final int intento_white=0x7f020025;
-        public static final int logo_pasajero_virtual=0x7f020026;
-        public static final int logo_splash=0x7f020027;
-        public static final int mapa_argentina=0x7f020028;
-        public static final int mapa_brasil=0x7f020029;
-        public static final int mapa_chile=0x7f02002a;
-        public static final int mapa_colombia=0x7f02002b;
-        public static final int mapa_ecuador=0x7f02002c;
-        public static final int mapa_inter=0x7f02002d;
-        public static final int mapa_peru=0x7f02002e;
-        public static final int panel_final=0x7f02002f;
-        public static final int panel_final_2=0x7f020030;
-        public static final int popup_transp=0x7f020031;
-        public static final int puntoamarillo=0x7f020032;
-        public static final int splashscreen=0x7f020033;
-        public static final int tac_despegar=0x7f020034;
-        public static final int tacometro_carga=0x7f020035;
+        public static final int img_mundo_back_trivia_b=0x7f020021;
+        public static final int img_punto=0x7f020022;
+        public static final int img_punto_amarillo=0x7f020023;
+        public static final int img_tacometro_carga=0x7f020024;
+        public static final int intento_red=0x7f020025;
+        public static final int intento_white=0x7f020026;
+        public static final int logo_pasajero_virtual=0x7f020027;
+        public static final int logo_splash=0x7f020028;
+        public static final int mapa_argentina=0x7f020029;
+        public static final int mapa_brasil=0x7f02002a;
+        public static final int mapa_chile=0x7f02002b;
+        public static final int mapa_colombia=0x7f02002c;
+        public static final int mapa_ecuador=0x7f02002d;
+        public static final int mapa_inter=0x7f02002e;
+        public static final int mapa_peru=0x7f02002f;
+        public static final int panel_final=0x7f020030;
+        public static final int panel_final_2=0x7f020031;
+        public static final int popup_transp=0x7f020032;
+        public static final int puntoamarillo=0x7f020033;
+        public static final int splashscreen=0x7f020034;
+        public static final int tac_despegar=0x7f020035;
+        public static final int tacometro_carga=0x7f020036;
     }
     public static final class id {
         public static final int ProgressBar_carga=0x7f0a001f;
