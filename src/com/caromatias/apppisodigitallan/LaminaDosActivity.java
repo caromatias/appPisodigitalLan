@@ -71,7 +71,7 @@ public class LaminaDosActivity extends Activity {
 	private Animation animMensajesDespegueOut;
 	private Animation animMensajesDespegueFailIn;
 	private Animation animMensajesDespegueFailOut;
-	private ImageView imgLuzEstado;
+	private RelativeLayout imgLuzEstado;
 	// ///////////////////////////////////
 
 	@Override
@@ -116,7 +116,7 @@ public class LaminaDosActivity extends Activity {
 		layMasterComp = (RelativeLayout) findViewById(R.id.lay_master_rutas_comp);
 		despegueOk = (ImageView) findViewById(R.id.ok_despegue);
 		despegueFail = (ImageView) findViewById(R.id.fail_despegue);
-		imgLuzEstado = (ImageView) findViewById(R.id.img_luz_estado);
+		imgLuzEstado = (RelativeLayout) findViewById(R.id.img_luz_estado);
 		animMensajesDespegue = AnimationUtils.loadAnimation(this,R.anim.anim_scale_translation_world);
 		animMensajesDespegueOut = AnimationUtils.loadAnimation(this,R.anim.anim_translacion_out);
 		animMensajesDespegueFailIn = AnimationUtils.loadAnimation(this,R.anim.anim_translacion_in);
