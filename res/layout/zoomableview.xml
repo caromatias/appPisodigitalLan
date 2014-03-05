@@ -15,7 +15,7 @@
         android:paddingBottom="0dp"
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
-        android:paddingTop="0dp" >
+        android:paddingTop="0dp">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -745,6 +745,14 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:src="@drawable/mapa_argentina" />
+            
+            <ImageView
+            android:id="@+id/img_lineas_argentina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/img_lineas_argentina" />
 
             <RelativeLayout
                 android:id="@+id/lay_argentina_01"
@@ -1168,6 +1176,13 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:src="@drawable/mapa_peru" />
+        <ImageView
+            android:id="@+id/img_lineas_peru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/img_lineas_peru" />
 
         <ImageView
             android:id="@+id/img_lineas_peru"
@@ -1598,6 +1613,14 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:src="@drawable/mapa_brasil" />
+        
+        <ImageView
+            android:id="@+id/img_lineas_brasil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/img_lineas_brasil" />
 
         <RelativeLayout
             android:id="@+id/lay_brasil_01"
@@ -2773,6 +2796,14 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:src="@drawable/mapa_ecuador" />
+        
+        <ImageView
+            android:id="@+id/img_lineas_ecuador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/img_lineas_ecuador" />
 
         <RelativeLayout
             android:id="@+id/lay_ecuador_01"
@@ -2951,6 +2982,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/mapa_colombia" />
+        
+        <ImageView
+            android:id="@+id/img_lineas_colombia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/img_lineas_colombia" />
 
         <RelativeLayout
             android:id="@+id/lay_colombia_01"

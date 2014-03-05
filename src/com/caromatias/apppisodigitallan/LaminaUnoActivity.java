@@ -883,6 +883,11 @@ public class LaminaUnoActivity extends Activity {
 		Animation animArenas = AnimationUtils.loadAnimation(this,
 				R.anim.anim_botones_16);
 		layArenas.startAnimation(animArenas);
+		
+		ImageView layAnimChile = (ImageView) findViewById(R.id.img_lineas_chile);
+		Animation animLineasChile = AnimationUtils.loadAnimation(this,
+				R.anim.anim_lineas_chile);
+		layAnimChile.startAnimation(animLineasChile);
 	}
 	
 	public void animaCiudadesArgentina(){
@@ -941,6 +946,11 @@ public class LaminaUnoActivity extends Activity {
 		RelativeLayout layUshuai = (RelativeLayout) findViewById(R.id.lay_argentina_15);
 		Animation animUshuai =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_14);
 		layUshuai.startAnimation(animUshuai);
+		
+		ImageView layAnimArgentina = (ImageView) findViewById(R.id.img_lineas_argentina);
+		Animation animLineasArgentina = AnimationUtils.loadAnimation(this,
+				R.anim.anim_lineas_argentina);
+		layAnimArgentina.startAnimation(animLineasArgentina);
 	}
 	
 	// ////////////////////////////////////////////////////////////////
@@ -1105,6 +1115,11 @@ public class LaminaUnoActivity extends Activity {
 		RelativeLayout layFoz2 = (RelativeLayout) findViewById(R.id.lay_brasil_41);
 		Animation animFoz2 =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_41);
 		layFoz2.startAnimation(animFoz2);
+		
+		ImageView layAnimBrasil = (ImageView) findViewById(R.id.img_lineas_brasil);
+		Animation animLineasBrasil = AnimationUtils.loadAnimation(this,
+				R.anim.anim_lineas_brasil);
+		layAnimBrasil.startAnimation(animLineasBrasil);
 	}
 
 	// ////////////////////////////////////////////////////////////////
@@ -1189,6 +1204,11 @@ public class LaminaUnoActivity extends Activity {
 		RelativeLayout layLeticia = (RelativeLayout) findViewById(R.id.lay_colombia_20);
 		Animation animLeticia = AnimationUtils.loadAnimation(this, R.anim.anim_botones_20);
 		layLeticia.startAnimation(animLeticia);
+		
+		ImageView layAnimColombia = (ImageView) findViewById(R.id.img_lineas_colombia);
+		Animation animLineasColombia = AnimationUtils.loadAnimation(this,
+				R.anim.anim_lineas_colombia);
+		layAnimColombia.startAnimation(animLineasColombia);
 	}
 	
 	// ////////////////////////////////////////////////////////////////
@@ -1217,6 +1237,11 @@ public class LaminaUnoActivity extends Activity {
 		RelativeLayout layCuenca = (RelativeLayout) findViewById(R.id.lay_ecuador_06);
 		Animation animCuenca = AnimationUtils.loadAnimation(this, R.anim.anim_botones_06);
 		layCuenca.startAnimation(animCuenca);
+		
+		ImageView layAnimEcuador = (ImageView) findViewById(R.id.img_lineas_ecuador);
+		Animation animLineasEcuador = AnimationUtils.loadAnimation(this,
+				R.anim.anim_lineas_ecuador);
+		layAnimEcuador.startAnimation(animLineasEcuador);
 	}
 	
 	public void animaCiudadesPeru(){
@@ -1275,6 +1300,11 @@ public class LaminaUnoActivity extends Activity {
 		RelativeLayout layIquito = (RelativeLayout) findViewById(R.id.lay_peru_14);
 		Animation animIquitos = AnimationUtils.loadAnimation(this, R.anim.anim_botones_14);
 		layIquito.startAnimation(animIquitos);
+		
+		ImageView layAnimPeru = (ImageView) findViewById(R.id.img_lineas_peru);
+		Animation animLineasPeru = AnimationUtils.loadAnimation(this,
+				R.anim.anim_lineas_ecuador);
+		layAnimPeru.startAnimation(animLineasPeru);
 	}
 
 	// ////////////////////////////////////////////////////////////////
