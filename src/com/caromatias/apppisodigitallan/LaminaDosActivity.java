@@ -130,11 +130,11 @@ public class LaminaDosActivity extends Activity {
 		findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
 				estadoProgress = 3;
+				flecha.setVisibility(View.GONE);
 				// botonStop.setEnabled(false);
 				switch (intentos) {
 				case 1:
 					intentoTres.setImageResource(R.drawable.intento_red);
-					flecha.setVisibility(View.GONE);
 					break;
 				case 2:
 					intentoDos.setImageResource(R.drawable.intento_red);
