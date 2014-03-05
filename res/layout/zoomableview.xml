@@ -3055,8 +3055,8 @@
             android:id="@+id/lay_colombia_01"
             android:layout_width="100dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="559dp"
-            android:layout_marginTop="160dp" >
+            android:layout_marginLeft="505dp"
+            android:layout_marginTop="170dp" >
 
             <Button
                 android:id="@+id/button_colombia_01"
@@ -3113,8 +3113,8 @@
             android:id="@+id/lay_colombia_03"
             android:layout_width="100dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="669dp"
-            android:layout_marginTop="150dp" >
+            android:layout_marginLeft="617dp"
+            android:layout_marginTop="166dp" >
 
             <Button
                 android:id="@+id/button_colombia_03"
@@ -3142,8 +3142,8 @@
             android:id="@+id/lay_colombia_04"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="544dp"
-            android:layout_marginTop="187dp" >
+            android:layout_marginLeft="490dp"
+            android:layout_marginTop="205dp" >
 
             <Button
                 android:id="@+id/button_colombia_04"
@@ -3606,7 +3606,7 @@
             android:id="@+id/lay_colombia_20"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="698dp"
+            android:layout_marginLeft="650dp"
             android:layout_marginTop="190dp" >
 
             <Button
@@ -3616,7 +3616,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
-                android:text="Cucuta"
+                android:text="Valledupar"
                 android:textColor="#ffffff"
                 android:textSize="12dp"
                 android:textStyle="bold" />
