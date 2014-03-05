@@ -439,14 +439,15 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#FFFFFF" />
         
-        <ImageView
+        <RelativeLayout
             android:id="@+id/img_luz_estado"
             android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_height="90dp"
             android:layout_above="@+id/relativeLayout2"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="76dp"
-            android:src="@drawable/img_luz_reposo" />
+            android:layout_marginBottom="80dp"
+            android:background="@drawable/img_luz_reposo">
+            </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/relativeLayout1"
