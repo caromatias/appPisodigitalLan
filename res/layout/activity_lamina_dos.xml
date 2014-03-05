@@ -438,7 +438,7 @@
             android:text="DESPEGUE"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#FFFFFF" />
-        
+
         <RelativeLayout
             android:id="@+id/img_luz_estado"
             android:layout_width="100dp"
@@ -446,8 +446,8 @@
             android:layout_above="@+id/relativeLayout2"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="80dp"
-            android:background="@drawable/img_luz_reposo">
-            </RelativeLayout>
+            android:background="@drawable/img_luz_reposo" >
+        </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/relativeLayout1"
@@ -456,36 +456,43 @@
             android:layout_alignBottom="@+id/img_luz_estado"
             android:layout_marginBottom="5dp"
             android:layout_marginRight="-10dp"
-            android:layout_toLeftOf="@+id/img_luz_estado">
+            android:layout_toLeftOf="@+id/img_luz_estado" >
 
             <ImageView
                 android:id="@+id/fail_despegue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/img_mensaje_fail_despegue" 
-                android:visibility="gone"/>
-
+                android:layout_width="300dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="210dp"
+                android:layout_marginTop="23dp"
+                android:src="@drawable/img_mensaje_fail_despegue"
+                android:visibility="gone" />
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/relativeLayout3"
             android:layout_width="500dp"
             android:layout_height="100dp"
             android:layout_alignTop="@+id/relativeLayout1"
-            android:layout_toRightOf="@+id/img_luz_estado"
-            android:layout_marginLeft="-6dp" >
+            android:layout_marginLeft="-10dp"
+            android:layout_toRightOf="@+id/img_luz_estado" >
 
             <ImageView
                 android:id="@+id/ok_despegue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
+                android:layout_width="300dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="27dp"
                 android:src="@drawable/img_mensaje_ok_despegue"
                 android:visibility="gone" />
-
         </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/img_flecha_down"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginLeft="835dp"
+            android:layout_marginTop="420dp"
+            android:src="@drawable/img_flecha_down" />
 
         <RelativeLayout
             android:id="@+id/lay_popup_despegue"
@@ -605,8 +612,6 @@
             android:textColor="#FF0000"
             android:textSize="30sp"
             android:visibility="gone" />
-
-        
     </RelativeLayout>
 
     <RelativeLayout

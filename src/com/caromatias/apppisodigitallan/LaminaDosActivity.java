@@ -72,6 +72,8 @@ public class LaminaDosActivity extends Activity {
 	private Animation animMensajesDespegueFailIn;
 	private Animation animMensajesDespegueFailOut;
 	private RelativeLayout imgLuzEstado;
+	private ImageView flecha;
+	private Animation animFlechaRebote;
 	// ///////////////////////////////////
 
 	@Override
@@ -121,6 +123,8 @@ public class LaminaDosActivity extends Activity {
 		animMensajesDespegueOut = AnimationUtils.loadAnimation(this,R.anim.anim_translacion_out);
 		animMensajesDespegueFailIn = AnimationUtils.loadAnimation(this,R.anim.anim_translacion_in);
 		animMensajesDespegueFailOut = AnimationUtils.loadAnimation(this,R.anim.anim_translacion_fail_out);
+		animFlechaRebote = AnimationUtils.loadAnimation(this,R.anim.anim_rebote_flecha);
+		
 
 		findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
@@ -170,6 +174,7 @@ public class LaminaDosActivity extends Activity {
 						layLogoIzq.setVisibility(View.VISIBLE);
 						layLogoIzq.startAnimation(animLogoIzq);
 						botonStop.setEnabled(true);
+						flecha.startAnimation(animFlechaRebote);
 						// ////// COMIENZA ANIMACION DE CARGA ////////
 						final TextView textoDos = (TextView) findViewById(R.id.txt_porcentaje);
 						int delay = 1000; // delay for 1 sec.
