@@ -72,15 +72,16 @@ public final class R {
         public static final int anim_mapa_inter_out=0x7f04003c;
         public static final int anim_respuesta_correcta=0x7f04003d;
         public static final int anim_rotacion=0x7f04003e;
-        public static final int anim_trivia_in=0x7f04003f;
-        public static final int anim_trivia_out=0x7f040040;
-        public static final int animacion=0x7f040041;
-        public static final int fade_in=0x7f040042;
-        public static final int fade_out=0x7f040043;
-        public static final int in_mapa_inter=0x7f040044;
-        public static final int slide_down=0x7f040045;
-        public static final int slide_out=0x7f040046;
-        public static final int slide_rutas=0x7f040047;
+        public static final int anim_rotacion_mundo=0x7f04003f;
+        public static final int anim_trivia_in=0x7f040040;
+        public static final int anim_trivia_out=0x7f040041;
+        public static final int animacion=0x7f040042;
+        public static final int fade_in=0x7f040043;
+        public static final int fade_out=0x7f040044;
+        public static final int in_mapa_inter=0x7f040045;
+        public static final int slide_down=0x7f040046;
+        public static final int slide_out=0x7f040047;
+        public static final int slide_rutas=0x7f040048;
     }
     public static final class attr {
     }
