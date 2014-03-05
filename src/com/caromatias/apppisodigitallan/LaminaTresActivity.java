@@ -44,6 +44,7 @@ public class LaminaTresActivity extends Activity {
 	private ImageView imgBackTriviaUno;
 	private ImageView imgMundoTrivia;
 	private Animation animMundoIn;
+	private Animation animMundoRotacion;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +76,8 @@ public class LaminaTresActivity extends Activity {
 				R.anim.anim_trivia_out);
 		animMundoIn = AnimationUtils.loadAnimation(this,
 				R.anim.anim_scale_translation_world);
+		animMundoRotacion = AnimationUtils.loadAnimation(this,
+				R.anim.anim_rotacion_mundo);
 		// /////////////////////////////////////
 		videoBackTrivia
 				.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -388,8 +391,9 @@ public class LaminaTresActivity extends Activity {
 		findViewById(R.id.btn_respuesta1).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
-						respuestaUno
-								.setBackgroundResource(R.drawable.botoncomenzar);
+						respuestaUno.setBackgroundResource(R.drawable.botoncomenzar);
+						imgMundoTrivia.setVisibility(View.VISIBLE);
+						imgMundoTrivia.startAnimation(animMundoRotacion);
 						Handler handlerBtnUno = new Handler();
 						handlerBtnUno.postDelayed(new Runnable() {
 							@Override
@@ -443,19 +447,9 @@ public class LaminaTresActivity extends Activity {
 							handlerPasoGameOver.postDelayed(new Runnable() {
 								@Override
 								public void run() {
-									// Do something after 5s = 5000ms
-									/*
-									 * Intent act = new Intent(
-									 * LaminaTresActivity.this,
-									 * GameOverActivity.class);
-									 * act.putExtra("game", 2);
-									 * startActivity(act);
-									 * overridePendingTransition(R.anim.fade_in,
-									 * R.anim.fade_out);
-									 */
 									if (numeroDeRespuesta != 2) {
-										 savingAnimation.stop();
-										//layPregTrivia.startAnimation(animTriviaOut);
+										savingAnimation.stop();
+										
 										preguntasLan();
 									} else if (numeroDeRespuesta == 2) {
 										Intent act = new Intent(

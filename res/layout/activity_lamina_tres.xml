@@ -34,13 +34,13 @@
 
         <ImageView
             android:id="@+id/img_mundo_back_trivia"
-            android:layout_width="450dp"
-            android:layout_height="441dp"
+            android:layout_width="430dp"
+            android:layout_height="430dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="32dp"
             android:src="@drawable/img_mundo_back_trivia_b"
-            android:visibility="visible" />
+            android:visibility="gone" />
 
     </RelativeLayout>
 
