@@ -64,6 +64,12 @@ public class LaminaDosActivity extends Activity {
 	private Button activaCarga;
 	private int intentosCarga = 0;
 	private RelativeLayout layMasterComp;
+	private ImageView despegueOk;
+	private ImageView despegueFail;
+	private Animation animMensajesDespegue;
+	private Animation animMensajesDespegueOut;
+	private Animation animMensajesDespegueFailIn;
+	private Animation animMensajesDespegueFailOut;
 
 	// ///////////////////////////////////
 
@@ -107,6 +113,12 @@ public class LaminaDosActivity extends Activity {
 		tiempoParaCarga.setTypeface(tf);
 		activaCarga = (Button) findViewById(R.id.btn_activa_carga);
 		layMasterComp = (RelativeLayout) findViewById(R.id.lay_master_rutas_comp);
+		despegueOk = (ImageView) findViewById(R.id.ok_despegue);
+		despegueFail = (ImageView) findViewById(R.id.fail_despegue);
+		animMensajesDespegue = AnimationUtils.loadAnimation(this,R.anim.anim_scale_translation_world);
+		animMensajesDespegueOut = AnimationUtils.loadAnimation(this,R.anim.anim_translacion_out);
+		animMensajesDespegueFailIn = AnimationUtils.loadAnimation(this,R.anim.anim_translacion_in);
+		animMensajesDespegueFailOut = AnimationUtils.loadAnimation(this,R.anim.anim_translacion_fail_out);
 
 		findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
@@ -182,13 +194,23 @@ public class LaminaDosActivity extends Activity {
 									timer.cancel();
 									intentos = 2;
 									if (mProgressStatus < 70) {
-										//botonStop.setEnabled(false);
+										runOnUiThread(new Runnable() // run on ui thread
+										{
+											public void run() {
+												despegueFail.setVisibility(View.VISIBLE);
+												despegueFail.startAnimation(animMensajesDespegueFailIn);
+											}
+										});
 										intentoDos();
 									} else if (mProgressStatus >= 70) {
-										// ImagenBackDespegue.startAnimation(animImgBackDespegue);
-										//botonStop.setEnabled(false);
+										runOnUiThread(new Runnable() // run on ui thread
+										{
+											public void run() {
+												despegueOk.setVisibility(View.VISIBLE);
+												despegueOk.startAnimation(animMensajesDespegue);
+											}
+										});
 										videoBackDespegue.start();
-										// ImagenBackDespegue.setVisibility(View.GONE);
 									}
 									break;
 								}
@@ -349,6 +371,19 @@ public class LaminaDosActivity extends Activity {
 	}
 
 	public void intentoDos() {
+		runOnUiThread(new Runnable() // run on ui thread
+		{
+			public void run() {
+				final Handler handlerDespegueMensajeOut = new Handler();
+				handlerDespegueMensajeOut.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						despegueFail.startAnimation(animMensajesDespegueFailOut);
+						despegueFail.setVisibility(View.GONE);
+					}
+				}, 3000);
+			}
+		});
 		final TextView textoDos = (TextView) findViewById(R.id.txt_porcentaje);
 		int delay = 3000; // delay for 1 sec.
 		int period = 3; // repeat every 10 sec.
@@ -375,9 +410,22 @@ public class LaminaDosActivity extends Activity {
 					timer.cancel();
 					intentos = 3;
 					if (mProgressStatus < 70) {
+						runOnUiThread(new Runnable() // run on ui thread
+						{
+							public void run() {
+								despegueFail.setVisibility(View.VISIBLE);
+								despegueFail.startAnimation(animMensajesDespegueFailIn);
+							}
+						});
 						intentoTres();
 					} else if (mProgressStatus >= 70) {
-						//botonStop.setEnabled(false);
+						runOnUiThread(new Runnable() // run on ui thread
+						{
+							public void run() {
+								despegueOk.setVisibility(View.VISIBLE);
+								despegueOk.startAnimation(animMensajesDespegue);
+							}
+						});
 						videoBackDespegue.start();
 					}
 					break;
@@ -400,6 +448,19 @@ public class LaminaDosActivity extends Activity {
 	}
 
 	public void intentoTres() {
+		runOnUiThread(new Runnable() // run on ui thread
+		{
+			public void run() {
+				final Handler handlerDespegueMensajeOut = new Handler();
+				handlerDespegueMensajeOut.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						despegueFail.startAnimation(animMensajesDespegueFailOut);
+						despegueFail.setVisibility(View.GONE);
+					}
+				}, 3000);
+			}
+		});
 		final TextView textoDos = (TextView) findViewById(R.id.txt_porcentaje);
 		int delay = 3000; // delay for 1 sec.
 		int period = 3; // repeat every 10 sec.
@@ -432,7 +493,13 @@ public class LaminaDosActivity extends Activity {
 						overridePendingTransition(R.anim.fade_in,
 								R.anim.fade_out);
 					} else if (mProgressStatus >= 70) {
-						botonStop.setEnabled(false);
+						runOnUiThread(new Runnable() // run on ui thread
+						{
+							public void run() {
+								despegueOk.setVisibility(View.VISIBLE);
+								despegueOk.startAnimation(animMensajesDespegue);
+							}
+						});
 						videoBackDespegue.start();
 					}
 					break;
