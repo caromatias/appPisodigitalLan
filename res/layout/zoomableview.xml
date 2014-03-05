@@ -15,8 +15,7 @@
         android:paddingBottom="0dp"
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
-        android:paddingTop="0dp"
-        android:visibility="gone" >
+        android:paddingTop="0dp" >
 
         <ImageView
             android:id="@+id/imageView2"
@@ -1015,7 +1014,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-         >
+        android:visibility="gone" >
 
         <ImageView
             android:id="@+id/imageView"

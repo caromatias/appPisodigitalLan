@@ -1220,7 +1220,7 @@ public class LaminaUnoActivity extends Activity {
 		Animation animTumbes = AnimationUtils.loadAnimation(this, R.anim.anim_botones_01);
 		layTumbes.startAnimation(animTumbes);
 		
-		RelativeLayout layPiura = (RelativeLayout) findViewById(R.id.lay_peru_03);
+		RelativeLayout layPiura = (RelativeLayout) findViewById(R.id.lay_peru_02);
 		Animation animPiura = AnimationUtils.loadAnimation(this, R.anim.anim_botones_02);
 		layPiura.startAnimation(animPiura);
 		
@@ -1228,47 +1228,47 @@ public class LaminaUnoActivity extends Activity {
 		Animation animChiclayo = AnimationUtils.loadAnimation(this, R.anim.anim_botones_03);
 		layChiclayo.startAnimation(animChiclayo);
 		
-		RelativeLayout layTrujillo = (RelativeLayout) findViewById(R.id.lay_peru_06);
+		RelativeLayout layTrujillo = (RelativeLayout) findViewById(R.id.lay_peru_04);
 		Animation animTrujillo = AnimationUtils.loadAnimation(this, R.anim.anim_botones_04);
 		layTrujillo.startAnimation(animTrujillo);
 		
-		RelativeLayout layLima = (RelativeLayout) findViewById(R.id.lay_peru_08);
+		RelativeLayout layLima = (RelativeLayout) findViewById(R.id.lay_peru_05);
 		Animation animLima = AnimationUtils.loadAnimation(this, R.anim.anim_botones_05);
 		layLima.startAnimation(animLima);
 		
-		RelativeLayout layArequipa = (RelativeLayout) findViewById(R.id.lay_peru_11);
+		RelativeLayout layArequipa = (RelativeLayout) findViewById(R.id.lay_peru_06);
 		Animation animArequipa = AnimationUtils.loadAnimation(this, R.anim.anim_botones_06);
 		layArequipa.startAnimation(animArequipa);
 		
-		RelativeLayout layTacna = (RelativeLayout) findViewById(R.id.lay_peru_13);
+		RelativeLayout layTacna = (RelativeLayout) findViewById(R.id.lay_peru_07);
 		Animation animTacna = AnimationUtils.loadAnimation(this, R.anim.anim_botones_07);
 		layTacna.startAnimation(animTacna);
 		
-		RelativeLayout layJulianca = (RelativeLayout) findViewById(R.id.lay_peru_12);
+		RelativeLayout layJulianca = (RelativeLayout) findViewById(R.id.lay_peru_08);
 		Animation animJulianca = AnimationUtils.loadAnimation(this, R.anim.anim_botones_08);
 		layJulianca.startAnimation(animJulianca);
 		
-		RelativeLayout layCusco = (RelativeLayout) findViewById(R.id.lay_peru_10);
+		RelativeLayout layCusco = (RelativeLayout) findViewById(R.id.lay_peru_09);
 		Animation animCusco = AnimationUtils.loadAnimation(this, R.anim.anim_botones_09);
 		layCusco.startAnimation(animCusco);
 		
-		RelativeLayout layPuertoMaldonado = (RelativeLayout) findViewById(R.id.lay_peru_09);
+		RelativeLayout layPuertoMaldonado = (RelativeLayout) findViewById(R.id.lay_peru_10);
 		Animation animPuertoMaldonado = AnimationUtils.loadAnimation(this, R.anim.anim_botones_10);
 		layPuertoMaldonado.startAnimation(animPuertoMaldonado);
 		
-		RelativeLayout layPucallpa = (RelativeLayout) findViewById(R.id.lay_peru_07);
+		RelativeLayout layPucallpa = (RelativeLayout) findViewById(R.id.lay_peru_11);
 		Animation animPucallpa = AnimationUtils.loadAnimation(this, R.anim.anim_botones_11);
 		layPucallpa.startAnimation(animPucallpa);
 		
-		RelativeLayout layCajamarca = (RelativeLayout) findViewById(R.id.lay_peru_05);
+		RelativeLayout layCajamarca = (RelativeLayout) findViewById(R.id.lay_peru_12);
 		Animation animCajamarca = AnimationUtils.loadAnimation(this, R.anim.anim_botones_12);
 		layCajamarca.startAnimation(animCajamarca);
 		
-		RelativeLayout layTaraporo = (RelativeLayout) findViewById(R.id.lay_peru_04);
+		RelativeLayout layTaraporo = (RelativeLayout) findViewById(R.id.lay_peru_13);
 		Animation animTaraporo = AnimationUtils.loadAnimation(this, R.anim.anim_botones_13);
 		layTaraporo.startAnimation(animTaraporo);
 		
-		RelativeLayout layIquito = (RelativeLayout) findViewById(R.id.lay_peru_02);
+		RelativeLayout layIquito = (RelativeLayout) findViewById(R.id.lay_peru_14);
 		Animation animIquitos = AnimationUtils.loadAnimation(this, R.anim.anim_botones_14);
 		layIquito.startAnimation(animIquitos);
 	}
