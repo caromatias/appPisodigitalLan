@@ -134,6 +134,7 @@ public class LaminaDosActivity extends Activity {
 				switch (intentos) {
 				case 1:
 					intentoTres.setImageResource(R.drawable.intento_red);
+					flecha.setVisibility(View.GONE);
 					break;
 				case 2:
 					intentoDos.setImageResource(R.drawable.intento_red);
