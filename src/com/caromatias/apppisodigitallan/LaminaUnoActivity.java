@@ -1062,9 +1062,9 @@ public class LaminaUnoActivity extends Activity {
 		Animation animVictoria =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_29);
 		layVictoria.startAnimation(animVictoria);
 		
-		//RelativeLayout layCampinas = (RelativeLayout) findViewById(R.id.lay_brasil_);
-		//Animation animCampinas =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_30);
-		//layCampinas.startAnimation(animCampinas);
+		RelativeLayout layCampinas = (RelativeLayout) findViewById(R.id.lay_brasil_40);
+		Animation animCampinas =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_30);
+		layCampinas.startAnimation(animCampinas);
 		
 		RelativeLayout layRioDeJaneiro = (RelativeLayout) findViewById(R.id.lay_brasil_31);
 		Animation animRioDeJaniro =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_31);
@@ -1101,6 +1101,10 @@ public class LaminaUnoActivity extends Activity {
 		RelativeLayout layPortoAlegre = (RelativeLayout) findViewById(R.id.lay_brasil_39);
 		Animation animPortoAlegre =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_39);
 		layPortoAlegre.startAnimation(animPortoAlegre);
+		
+		RelativeLayout layFoz2 = (RelativeLayout) findViewById(R.id.lay_brasil_41);
+		Animation animFoz2 =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_41);
+		layFoz2.startAnimation(animFoz2);
 	}
 
 	// ////////////////////////////////////////////////////////////////
