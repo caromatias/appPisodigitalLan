@@ -3316,8 +3316,8 @@
             android:id="@+id/lay_colombia_10"
             android:layout_width="100dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="559dp"
-            android:layout_marginTop="362dp" >
+            android:layout_marginLeft="508dp"
+            android:layout_marginTop="387dp" >
 
             <Button
                 android:id="@+id/button_colombia_10"
@@ -3345,8 +3345,8 @@
             android:id="@+id/lay_colombia_11"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="505dp"
-            android:layout_marginTop="405dp" >
+            android:layout_marginLeft="450dp"
+            android:layout_marginTop="430dp" >
 
             <Button
                 android:id="@+id/button_colombia_11"
@@ -3374,8 +3374,8 @@
             android:id="@+id/lay_colombia_12"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="525dp"
-            android:layout_marginTop="430dp" >
+            android:layout_marginLeft="477dp"
+            android:layout_marginTop="457dp" >
 
             <Button
                 android:id="@+id/button_colombia_12"
@@ -3548,8 +3548,8 @@
             android:id="@+id/lay_colombia_18"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="740dp"
-            android:layout_marginTop="285dp" >
+            android:layout_marginLeft="695dp"
+            android:layout_marginTop="305dp" >
 
             <Button
                 android:id="@+id/button_colombia_18"
@@ -3577,8 +3577,8 @@
             android:id="@+id/lay_colombia_19"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="717dp"
-            android:layout_marginTop="253dp" >
+            android:layout_marginLeft="670dp"
+            android:layout_marginTop="265dp" >
 
             <Button
                 android:id="@+id/button_colombia_19"
@@ -3607,7 +3607,7 @@
             android:layout_width="100dp"
             android:layout_height="20dp"
             android:layout_marginLeft="650dp"
-            android:layout_marginTop="190dp" >
+            android:layout_marginTop="220dp" >
 
             <Button
                 android:id="@+id/button_colombia_20"
