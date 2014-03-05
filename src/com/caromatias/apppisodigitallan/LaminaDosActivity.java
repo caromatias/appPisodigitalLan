@@ -377,7 +377,7 @@ public class LaminaDosActivity extends Activity {
 					if (mProgressStatus < 70) {
 						intentoTres();
 					} else if (mProgressStatus >= 70) {
-						botonStop.setEnabled(false);
+						//botonStop.setEnabled(false);
 						videoBackDespegue.start();
 					}
 					break;

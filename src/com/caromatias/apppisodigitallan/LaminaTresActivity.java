@@ -7,6 +7,7 @@ import java.util.TimerTask;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
@@ -15,6 +16,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.BounceInterpolator;
+import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -135,8 +138,8 @@ public class LaminaTresActivity extends Activity {
 				// Do something after 5s = 5000ms
 				imgWhiteTres.startAnimation(animVideoMainOut);
 				imgWhiteTres.setVisibility(View.GONE);
-				layPregTrivia.setVisibility(View.VISIBLE);
-				layPregTrivia.startAnimation(animTriviaIn);
+				//layPregTrivia.setVisibility(View.VISIBLE);
+				//layPregTrivia.startAnimation(animTriviaIn);
 			}
 		}, 11000);
 		final Handler handlerCuatro = new Handler();
@@ -151,15 +154,20 @@ public class LaminaTresActivity extends Activity {
 				*/
 				imgMundoTrivia.setVisibility(View.VISIBLE);
 				imgMundoTrivia.startAnimation(animMundoIn);
+				layPregTrivia.setVisibility(View.VISIBLE);
+				ScaleAnimation scale = new ScaleAnimation(1, 1, 1, 0);
+				scale.setFillAfter(true);
+				scale.setDuration(500);
+				layPregTrivia.startAnimation(scale); 
 			}
-		}, 13500);
+		}, 15500);
 		final Handler handlerCinco = new Handler();
-		handlerCuatro.postDelayed(new Runnable() {
+		handlerCinco.postDelayed(new Runnable() {
 			@Override
 			public void run() {
 				// Do something after 5s = 5000ms
-				imgMundoTrivia.setVisibility(View.VISIBLE);
-				imgMundoTrivia.startAnimation(animVideoMain);
+				//imgMundoTrivia.setVisibility(View.VISIBLE);
+				//imgMundoTrivia.startAnimation(animVideoMain);
 			}
 		}, 14000);
 		/*
@@ -346,7 +354,7 @@ public class LaminaTresActivity extends Activity {
 							+ getResources().getString(R.string.rlan1_3));
 					respuestaCorrecta = 1;
 					numeroDeRespuesta = 2;
-					layPregTrivia.startAnimation(animTriviaIn);
+					//layPregTrivia.startAnimation(animTriviaIn);
 				}
 			}, 1000);
 			break;
@@ -366,7 +374,7 @@ public class LaminaTresActivity extends Activity {
 							+ getResources().getString(R.string.rlan1_3));
 					respuestaCorrecta = 1;
 					numeroDeRespuesta = 2;
-					layPregTrivia.startAnimation(animTriviaIn);
+					//layPregTrivia.startAnimation(animTriviaIn);
 				}
 			}, 1000);
 			break;
@@ -445,7 +453,7 @@ public class LaminaTresActivity extends Activity {
 									 */
 									if (numeroDeRespuesta != 2) {
 										 savingAnimation.stop();
-										layPregTrivia.startAnimation(animTriviaOut);
+										//layPregTrivia.startAnimation(animTriviaOut);
 										preguntasLan();
 									} else if (numeroDeRespuesta == 2) {
 										Intent act = new Intent(
@@ -524,7 +532,7 @@ public class LaminaTresActivity extends Activity {
 									// Do something after 5s = 5000ms
 									if (numeroDeRespuesta != 2) {
 										savingAnimation.stop();
-										layPregTrivia.startAnimation(animTriviaOut);
+										//layPregTrivia.startAnimation(animTriviaOut);
 										preguntasLan();
 									} else if (numeroDeRespuesta == 2) {
 										Intent act = new Intent(
@@ -603,7 +611,7 @@ public class LaminaTresActivity extends Activity {
 									// Do something after 5s = 5000ms
 									if (numeroDeRespuesta != 2) {
 										savingAnimation.stop();
-										layPregTrivia.startAnimation(animTriviaOut);
+										//layPregTrivia.startAnimation(animTriviaOut);
 										preguntasLan();
 									} else if (numeroDeRespuesta == 2) {
 										Intent act = new Intent(
