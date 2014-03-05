@@ -2,14 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back_rutas_tr"
     android:paddingBottom="0dp"
     android:paddingLeft="0dp"
     android:paddingRight="0dp"
     android:paddingTop="0dp"
-    tools:context=".LaminaDosActivity"
-    android:background="@drawable/back_rutas_tr" >
-
-    
+    tools:context=".LaminaDosActivity" >
 
     <RelativeLayout
         android:id="@+id/lay_master_rutas_comp"
@@ -313,7 +311,7 @@
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
         android:paddingTop="0dp"
-        android:visibility="gone" >
+        android:visibility="visible" >
 
         <VideoView
             android:id="@+id/video_back_despegue"
@@ -363,6 +361,16 @@
                 android:textColor="#FFFFFF"
                 android:textSize="40sp"
                 android:textStyle="normal" />
+
+            <ImageView
+                android:id="@+id/img_titulo_despegue_tro"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-5dp"
+                android:src="@drawable/titulo_acelerador_despegue" />
         </RelativeLayout>
 
         <Button
@@ -373,7 +381,7 @@
             android:layout_marginLeft="11dp"
             android:layout_toRightOf="@+id/relativeLayout2"
             android:background="@drawable/btn_despegue" />
-        
+
         <ImageView
             android:id="@+id/img_intento_tres"
             android:layout_width="wrap_content"
@@ -440,7 +448,7 @@
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
             android:paddingTop="0dp"
-            android:visibility="visible" >
+            android:visibility="gone" >
 
             <ImageView
                 android:id="@+id/img_logo_pv"
@@ -550,7 +558,52 @@
             android:textSize="30sp"
             android:visibility="gone" />
 
-        
+        <ImageView
+            android:id="@+id/img_luz_estado"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_above="@+id/relativeLayout2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="76dp"
+            android:src="@drawable/img_luz_reposo" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="500dp"
+            android:layout_height="100dp"
+            android:layout_alignBottom="@+id/img_luz_estado"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="-10dp"
+            android:layout_toLeftOf="@+id/img_luz_estado"
+            android:background="#FF0000" >
+
+            <ImageView
+                android:id="@+id/fail_despegue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/img_mensaje_fail_despegue" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="500dp"
+            android:layout_height="100dp"
+            android:layout_alignTop="@+id/relativeLayout1"
+            android:layout_toRightOf="@+id/img_luz_estado"
+            android:layout_marginLeft="-6dp"
+            android:background="#FF0000" >
+
+            <ImageView
+                android:id="@+id/ok_despegue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/img_mensaje_ok_despegue" />
+
+        </RelativeLayout>
     </RelativeLayout>
 
     <RelativeLayout
@@ -618,7 +671,7 @@
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold" />
-        
+
         <ImageView
             android:id="@+id/img_intento_carga_tres"
             android:layout_width="wrap_content"
@@ -675,13 +728,13 @@
             android:text="DESPEGUE"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#FFFFFF" />
-        
+
         <RelativeLayout
             android:id="@+id/lay_pop_cuenta_atras"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/popup_transp"
-            android:visibility="visible">
+            android:visibility="visible" >
 
             <TextView
                 android:id="@+id/txt_cuanta_atras_uno"
@@ -690,10 +743,11 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:text="3"
-                android:textAppearance="?android:attr/textAppearanceLarge" 
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#FFFFFF"
                 android:textSize="150sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/txt_cuanta_atras_dos"
                 android:layout_width="wrap_content"
@@ -705,7 +759,8 @@
                 android:textColor="#FFFFFF"
                 android:textSize="150sp"
                 android:textStyle="bold"
-                android:visibility="gone"/>
+                android:visibility="gone" />
+
             <TextView
                 android:id="@+id/txt_cuanta_atras_tres"
                 android:layout_width="wrap_content"
@@ -717,8 +772,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="150sp"
                 android:textStyle="bold"
-                android:visibility="gone"/>
-            
+                android:visibility="gone" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -730,7 +784,7 @@
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
             android:paddingTop="0dp"
-            android:visibility="visible">
+            android:visibility="visible" >
 
             <ImageView
                 android:id="@+id/img_logo_pv_carga"
@@ -839,8 +893,6 @@
             android:textColor="#FFFFFF"
             android:textSize="50sp"
             android:textStyle="bold" />
-
-
     </RelativeLayout>
 
 </RelativeLayout>
