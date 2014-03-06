@@ -819,7 +819,7 @@ public class LaminaUnoActivity extends Activity {
 				R.anim.anim_botones_02);
 		animLayInterGuayaquil.startAnimation(animInterGuayaquil);
 		
-		RelativeLayout animLayInterLima = (RelativeLayout) findViewById(R.id.lay_internacional_lima);
+		RelativeLayout animLayInterLima = (RelativeLayout) findViewById(R.id.lay_internacional_lima_1);
 		Animation animInterLima = AnimationUtils.loadAnimation(this,
 				R.anim.anim_botones_03);
 		animLayInterLima.startAnimation(animInterLima);

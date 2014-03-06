@@ -160,14 +160,14 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/lay_internacional_lima"
+                android:id="@+id/lay_internacional_lima_1"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="538dp"
                 android:layout_marginTop="434dp" >
 
                 <Button
-                    android:id="@+id/button_internacional_lima"
+                    android:id="@+id/button_internacional_lima_1"
                     android:layout_width="80dp"
                     android:layout_height="15dp"
                     android:layout_marginLeft="30dp"
@@ -179,7 +179,7 @@
                     android:textStyle="bold" />
 
                 <ImageView
-                    android:id="@+id/image_internacional_lima"
+                    android:id="@+id/image_internacional_lima_1"
                     android:layout_width="10dp"
                     android:layout_height="10dp"
                     android:layout_marginLeft="110dp"
