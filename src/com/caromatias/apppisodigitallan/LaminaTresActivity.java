@@ -406,6 +406,8 @@ public class LaminaTresActivity extends Activity {
 									savingAnimation = (AnimationDrawable) respuestaUno
 											.getBackground();
 									savingAnimation.start();
+									ImageView imaCorrecta = (ImageView) findViewById(R.id.img_respuesta_correcta);
+									imaCorrecta.setVisibility(View.VISIBLE);
 									break;
 								case 2:
 									respuestaDos
@@ -413,6 +415,8 @@ public class LaminaTresActivity extends Activity {
 									savingAnimation = (AnimationDrawable) respuestaDos
 											.getBackground();
 									savingAnimation.start();
+									ImageView imaIncorrecta = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
+									imaIncorrecta.setVisibility(View.VISIBLE);
 									break;
 								case 3:
 									respuestaTres
@@ -420,6 +424,8 @@ public class LaminaTresActivity extends Activity {
 									savingAnimation = (AnimationDrawable) respuestaTres
 											.getBackground();
 									savingAnimation.start();
+									ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
+									imaIncorrecta2.setVisibility(View.VISIBLE);
 									break;
 								default:
 									break;
@@ -451,6 +457,8 @@ public class LaminaTresActivity extends Activity {
 										savingAnimation.stop();
 										
 										preguntasLan();
+										ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_correcta);
+										imaIncorrecta2.setVisibility(View.GONE);
 									} else if (numeroDeRespuesta == 2) {
 										Intent act = new Intent(
 												LaminaTresActivity.this,
@@ -484,6 +492,8 @@ public class LaminaTresActivity extends Activity {
 									savingAnimation = (AnimationDrawable) respuestaUno
 											.getBackground();
 									savingAnimation.start();
+									ImageView imaIncorrecta = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
+									imaIncorrecta.setVisibility(View.VISIBLE);
 									break;
 								case 2:
 									respuestaDos
@@ -491,6 +501,8 @@ public class LaminaTresActivity extends Activity {
 									savingAnimation = (AnimationDrawable) respuestaDos
 											.getBackground();
 									savingAnimation.start();
+									ImageView imaCorrecta = (ImageView) findViewById(R.id.img_respuesta_correcta);
+									imaCorrecta.setVisibility(View.VISIBLE);
 									break;
 								case 3:
 									respuestaTres
@@ -498,6 +510,8 @@ public class LaminaTresActivity extends Activity {
 									savingAnimation = (AnimationDrawable) respuestaTres
 											.getBackground();
 									savingAnimation.start();
+									ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
+									imaIncorrecta2.setVisibility(View.VISIBLE);
 									break;
 								default:
 									break;
@@ -530,6 +544,8 @@ public class LaminaTresActivity extends Activity {
 										savingAnimation.stop();
 										//layPregTrivia.startAnimation(animTriviaOut);
 										preguntasLan();
+										ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_correcta);
+										imaIncorrecta2.setVisibility(View.GONE);
 									} else if (numeroDeRespuesta == 2) {
 										Intent act = new Intent(
 												LaminaTresActivity.this,
@@ -563,13 +579,17 @@ public class LaminaTresActivity extends Activity {
 									savingAnimation = (AnimationDrawable) respuestaUno
 											.getBackground();
 									savingAnimation.start();
+									ImageView imaIncorrecta = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
+									imaIncorrecta.setVisibility(View.VISIBLE);
 									break;
 								case 2:
 									respuestaDos
-											.setBackgroundResource(R.anim.anim_respuesta_correcta);
+											.setBackgroundResource(R.anim.anim_respuesta_correcta); 
 									savingAnimation = (AnimationDrawable) respuestaDos
 											.getBackground();
 									savingAnimation.start();
+									ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
+									imaIncorrecta2.setVisibility(View.VISIBLE);
 									break;
 								case 3:
 									respuestaTres
@@ -577,6 +597,8 @@ public class LaminaTresActivity extends Activity {
 									savingAnimation = (AnimationDrawable) respuestaTres
 											.getBackground();
 									savingAnimation.start();
+									ImageView imaCorrecta = (ImageView) findViewById(R.id.img_respuesta_correcta);
+									imaCorrecta.setVisibility(View.VISIBLE);
 									break;
 								default:
 									break;
@@ -609,6 +631,8 @@ public class LaminaTresActivity extends Activity {
 										savingAnimation.stop();
 										//layPregTrivia.startAnimation(animTriviaOut);
 										preguntasLan();
+										ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_correcta);
+										imaIncorrecta2.setVisibility(View.GONE);
 									} else if (numeroDeRespuesta == 2) {
 										Intent act = new Intent(
 												LaminaTresActivity.this,

@@ -129,7 +129,8 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="39dp"
         android:layout_marginRight="110dp"
-        android:text="Button" />
+        android:text="Button"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/btn_cierra"
@@ -138,6 +139,25 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="48dp"
-        android:text="Button" />
+        android:text="Button" 
+        android:visibility="gone"/>
+    
+    <ImageView
+            android:id="@+id/img_respuesta_correcta"
+            android:layout_marginLeft="940dp"
+            android:layout_marginTop="50dp"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:src="@drawable/aviso_trivia_correcto"
+            android:visibility="gone" />
+    
+    <ImageView
+            android:id="@+id/img_respuesta_incorrecta"
+            android:layout_marginLeft="940dp"
+            android:layout_marginTop="50dp"
+            android:layout_width="330dp"
+            android:layout_height="100dp"
+            android:src="@drawable/aviso_trivia_incorrecto" 
+            android:visibility="gone"/>
 
 </RelativeLayout>
