@@ -226,7 +226,99 @@ public class LaminaUnoActivity extends Activity {
 				});
 		// //////////////////////////////////////////////////////////////////
 		// ///////////////////// CLICK BOTÓN CHILE //////////////////////////
+		
 		findViewById(R.id.btn_chile).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				//btnChile.setBackgroundResource(R.drawable.botonrojo);
+				reestableceBotones(btnChile);
+
+				switch (posicionMenu) {
+				case 1:
+					layMapaInter.startAnimation(animMapaInter);
+					btnInter.setBackgroundResource(R.drawable.boton);
+					btnInter.setEnabled(true);
+					break;
+				case 2:
+					return;
+				case 3:
+					layMapaArgentina.startAnimation(animMapaArgentinaOut);
+					btnArgentina.setBackgroundResource(R.drawable.boton);
+					btnArgentina.setEnabled(true);
+					break;
+				case 4:
+					layMapaPeru.startAnimation(animMapaPeruOut);
+					btnPeru.setBackgroundResource(R.drawable.boton);
+					btnPeru.setEnabled(true);
+					break;
+				case 5:
+					layMapaBrasil.startAnimation(animMapaBrasilOut);
+					btnBrasil.setBackgroundResource(R.drawable.boton);
+					btnBrasil.setEnabled(true);
+					break;
+				case 6:
+					layMapaEcuador.startAnimation(animMapaEcuadorOut);
+					btnEcuador.setBackgroundResource(R.drawable.boton);
+					btnEcuador.setEnabled(true);
+					break;
+				case 7:
+					layMapaColombia.startAnimation(animMapaColombiaOut);
+					btnColombia.setBackgroundResource(R.drawable.boton);
+					btnColombia.setEnabled(true);
+					break;
+				}
+
+				final Handler handler = new Handler();
+				handler.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+
+						switch (posicionMenu) {
+						case 1:
+							layMapaInter.setVisibility(View.GONE);
+							layMapaChile.setVisibility(View.VISIBLE);
+							layMapaChile.startAnimation(animMapaChile);
+							break;
+						case 2:
+							return;
+						case 3:
+							layMapaArgentina.setVisibility(View.GONE);
+							layMapaChile.setVisibility(View.VISIBLE);
+							layMapaChile.startAnimation(animMapaChile);
+							break;
+						case 4:
+							layMapaPeru.setVisibility(View.GONE);
+							layMapaChile.setVisibility(View.VISIBLE);
+							layMapaChile.startAnimation(animMapaChile);
+							break;
+						case 5:
+							layMapaBrasil.setVisibility(View.GONE);
+							layMapaChile.setVisibility(View.VISIBLE);
+							layMapaChile.startAnimation(animMapaChile);
+							break;
+						case 6:
+							layMapaEcuador.setVisibility(View.GONE);
+							layMapaChile.setVisibility(View.VISIBLE);
+							layMapaChile.startAnimation(animMapaChile);
+							break;
+						case 7:
+							layMapaColombia.setVisibility(View.GONE);
+							layMapaChile.setVisibility(View.VISIBLE);
+							layMapaChile.startAnimation(animMapaChile);
+							break;
+						}
+						// ///// Animaciones
+						animaCiudadesChile();
+						posicionMenu = 2;
+					}
+				}, 1000);
+				btnChile.setEnabled(false);
+			}
+		});
+		// //////////////////////////////////////////////////////////////////
+		// ///////////////////// CLICK BOTÓN SANTIAGO //////////////////////////
+		findViewById(R.id.button_internacional_santiago).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
@@ -420,6 +512,109 @@ public class LaminaUnoActivity extends Activity {
 					}
 				});
 		// //////////////////////////////////////////////////////////////////
+				// ///////////////////// CLICK BOTÓN BUENOS AIRES //////////////////////////
+				findViewById(R.id.button_internacional_buenos_aires).setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						btnArgentina
+								.setBackgroundResource(R.drawable.botonrojo);
+
+						switch (posicionMenu) {
+						case 1:
+							layMapaInter.startAnimation(animMapaInter);
+							btnInter.setBackgroundResource(R.drawable.boton);
+							btnInter.setEnabled(true);
+							break;
+						case 2:
+							layMapaChile.startAnimation(animMapaChileOut);
+							btnChile.setBackgroundResource(R.drawable.boton);
+							btnChile.setEnabled(true);
+							break;
+						case 3:
+							return;
+						case 4:
+							layMapaPeru.startAnimation(animMapaPeruOut);
+							btnPeru.setBackgroundResource(R.drawable.boton);
+							btnPeru.setEnabled(true);
+							break;
+						case 5:
+							layMapaBrasil.startAnimation(animMapaBrasilOut);
+							btnBrasil.setBackgroundResource(R.drawable.boton);
+							btnBrasil.setEnabled(true);
+							break;
+						case 6:
+							layMapaEcuador.startAnimation(animMapaEcuadorOut);
+							btnEcuador.setBackgroundResource(R.drawable.boton);
+							btnEcuador.setEnabled(true);
+							break;
+						case 7:
+							layMapaColombia.startAnimation(animMapaColombiaOut);
+							btnColombia.setBackgroundResource(R.drawable.boton);
+							btnColombia.setEnabled(true);
+							break;
+						}
+
+						final Handler handler = new Handler();
+						handler.postDelayed(new Runnable() {
+							@Override
+							public void run() {
+
+								switch (posicionMenu) {
+								case 1:
+									layMapaInter.setVisibility(View.GONE);
+									layMapaArgentina
+											.setVisibility(View.VISIBLE);
+									layMapaArgentina
+											.startAnimation(animMapaArgentina);
+									break;
+								case 2:
+									layMapaChile.setVisibility(View.GONE);
+									layMapaArgentina
+											.setVisibility(View.VISIBLE);
+									layMapaArgentina
+											.startAnimation(animMapaArgentina);
+									break;
+								case 3:
+									return;
+								case 4:
+									layMapaPeru.setVisibility(View.GONE);
+									layMapaArgentina
+											.setVisibility(View.VISIBLE);
+									layMapaArgentina
+											.startAnimation(animMapaArgentina);
+									break;
+								case 5:
+									layMapaBrasil.setVisibility(View.GONE);
+									layMapaArgentina
+											.setVisibility(View.VISIBLE);
+									layMapaArgentina
+											.startAnimation(animMapaArgentina);
+									break;
+								case 6:
+									layMapaEcuador.setVisibility(View.GONE);
+									layMapaArgentina
+											.setVisibility(View.VISIBLE);
+									layMapaArgentina
+											.startAnimation(animMapaArgentina);
+									break;
+								case 7:
+									layMapaColombia.setVisibility(View.GONE);
+									layMapaArgentina
+											.setVisibility(View.VISIBLE);
+									layMapaArgentina
+											.startAnimation(animMapaArgentina);
+									break;
+								}
+								// ///// Animaciones
+								animaCiudadesArgentina();
+								posicionMenu = 3;
+							}
+						}, 1000);
+						btnArgentina.setEnabled(false);
+					}
+				});
+		// //////////////////////////////////////////////////////////////////
 		// ///////////////////// CLICK BOTÓN PERÚ ///////////////////////////
 		findViewById(R.id.btn_peru).setOnClickListener(new OnClickListener() {
 			@Override
@@ -510,6 +705,98 @@ public class LaminaUnoActivity extends Activity {
 				btnPeru.setEnabled(false);
 			}
 		});
+		// //////////////////////////////////////////////////////////////////
+				// ///////////////////// CLICK BOTÓN LIMA ///////////////////////////
+				findViewById(R.id.button_internacional_lima_1).setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						//btnPeru.setBackgroundResource(R.drawable.botonrojo);
+						reestableceBotones(btnPeru);
+
+						switch (posicionMenu) {
+						case 1:
+							layMapaInter.startAnimation(animMapaInter);
+							btnInter.setBackgroundResource(R.drawable.boton);
+							btnInter.setEnabled(true);
+							break;
+						case 2:
+							layMapaChile.startAnimation(animMapaChileOut);
+							btnChile.setBackgroundResource(R.drawable.boton);
+							btnChile.setEnabled(true);
+							break;
+						case 3:
+							layMapaArgentina.startAnimation(animMapaArgentinaOut);
+							btnArgentina.setBackgroundResource(R.drawable.boton);
+							btnArgentina.setEnabled(true);
+							break;
+						case 4:
+							return;
+						case 5:
+							layMapaBrasil.startAnimation(animMapaBrasilOut);
+							btnBrasil.setBackgroundResource(R.drawable.boton);
+							btnBrasil.setEnabled(true);
+							break;
+						case 6:
+							layMapaEcuador.startAnimation(animMapaEcuadorOut);
+							btnEcuador.setBackgroundResource(R.drawable.boton);
+							btnEcuador.setEnabled(true);
+							break;
+						case 7:
+							layMapaColombia.startAnimation(animMapaColombiaOut);
+							btnColombia.setBackgroundResource(R.drawable.boton);
+							btnColombia.setEnabled(true);
+							break;
+						}
+
+						final Handler handler = new Handler();
+						handler.postDelayed(new Runnable() {
+							@Override
+							public void run() {
+
+								switch (posicionMenu) {
+								case 1:
+									layMapaInter.setVisibility(View.GONE);
+									layMapaPeru.setVisibility(View.VISIBLE);
+									layMapaPeru.startAnimation(animMapaPeru);
+									break;
+								case 2:
+									layMapaChile.setVisibility(View.GONE);
+									layMapaPeru.setVisibility(View.VISIBLE);
+									layMapaPeru.startAnimation(animMapaPeru);
+									break;
+								case 3:
+									layMapaArgentina.setVisibility(View.GONE);
+									layMapaPeru.setVisibility(View.VISIBLE);
+									layMapaPeru.startAnimation(animMapaPeru);
+									break;
+								case 4:
+									return;
+								case 5:
+									layMapaBrasil.setVisibility(View.GONE);
+									layMapaPeru.setVisibility(View.VISIBLE);
+									layMapaPeru.startAnimation(animMapaPeru);
+									break;
+								case 6:
+									layMapaEcuador.setVisibility(View.GONE);
+									layMapaPeru.setVisibility(View.VISIBLE);
+									layMapaPeru.startAnimation(animMapaPeru);
+									break;
+								case 7:
+									layMapaColombia.setVisibility(View.GONE);
+									layMapaPeru.setVisibility(View.VISIBLE);
+									layMapaPeru.startAnimation(animMapaPeru);
+									break;
+								}
+								// ///// Animaciones
+								animaCiudadesPeru();
+								posicionMenu = 4;
+							}
+						}, 1000);
+						btnPeru.setEnabled(false);
+					}
+				});
+		
 		// //////////////////////////////////////////////////////////////////////
 		// ///////////////////// CLICK BOTÓN BRASIL ///////////////////////////
 		findViewById(R.id.btn_brasil).setOnClickListener(new OnClickListener() {
@@ -602,8 +889,98 @@ public class LaminaUnoActivity extends Activity {
 			}
 		});
 		// //////////////////////////////////////////////////////////////////////
-		// ///////////////////// CLICK BOTÓN ECUADOR
-		// ////////////////////////////
+				// ///////////////////// CLICK BOTÓN BRASILIA ///////////////////////////
+				findViewById(R.id.button_internacional_brasilia).setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						//btnBrasil.setBackgroundResource(R.drawable.botonrojo);
+						reestableceBotones(btnBrasil);
+
+						switch (posicionMenu) {
+						case 1:
+							layMapaInter.startAnimation(animMapaInter);
+							btnInter.setBackgroundResource(R.drawable.boton);
+							btnInter.setEnabled(true);
+							break;
+						case 2:
+							layMapaChile.startAnimation(animMapaChileOut);
+							btnChile.setBackgroundResource(R.drawable.boton);
+							btnChile.setEnabled(true);
+							break;
+						case 3:
+							layMapaArgentina.startAnimation(animMapaArgentinaOut);
+							btnArgentina.setBackgroundResource(R.drawable.boton);
+							btnArgentina.setEnabled(true);
+							break;
+						case 4:
+							layMapaPeru.startAnimation(animMapaPeruOut);
+							btnPeru.setBackgroundResource(R.drawable.boton);
+							btnPeru.setEnabled(true);
+							break;
+						case 5:
+							return;
+						case 6:
+							layMapaEcuador.startAnimation(animMapaEcuadorOut);
+							btnEcuador.setBackgroundResource(R.drawable.boton);
+							btnEcuador.setEnabled(true);
+							break;
+						case 7:
+							layMapaColombia.startAnimation(animMapaColombiaOut);
+							btnColombia.setBackgroundResource(R.drawable.boton);
+							btnColombia.setEnabled(true);
+							break;
+						}
+
+						final Handler handler = new Handler();
+						handler.postDelayed(new Runnable() {
+							@Override
+							public void run() {
+
+								switch (posicionMenu) {
+								case 1:
+									layMapaInter.setVisibility(View.GONE);
+									layMapaBrasil.setVisibility(View.VISIBLE);
+									layMapaBrasil.startAnimation(animMapaBrasil);
+									break;
+								case 2:
+									layMapaChile.setVisibility(View.GONE);
+									layMapaBrasil.setVisibility(View.VISIBLE);
+									layMapaBrasil.startAnimation(animMapaBrasil);
+									break;
+								case 3:
+									layMapaArgentina.setVisibility(View.GONE);
+									layMapaBrasil.setVisibility(View.VISIBLE);
+									layMapaBrasil.startAnimation(animMapaBrasil);
+									break;
+								case 4:
+									layMapaPeru.setVisibility(View.GONE);
+									layMapaBrasil.setVisibility(View.VISIBLE);
+									layMapaBrasil.startAnimation(animMapaBrasil);
+									break;
+								case 5:
+									return;
+								case 6:
+									layMapaEcuador.setVisibility(View.GONE);
+									layMapaBrasil.setVisibility(View.VISIBLE);
+									layMapaBrasil.startAnimation(animMapaBrasil);
+									break;
+								case 7:
+									layMapaColombia.setVisibility(View.GONE);
+									layMapaBrasil.setVisibility(View.VISIBLE);
+									layMapaBrasil.startAnimation(animMapaBrasil);
+									break;
+								}
+								// ///// Animaciones
+								animaCiudadesBrasil();
+								posicionMenu = 5;
+							}
+						}, 1000);
+						btnBrasil.setEnabled(false);
+					}
+				});
+		// //////////////////////////////////////////////////////////////////////
+		// ///////////////////// CLICK BOTÓN ECUADOR // ////////////////////////////
 		findViewById(R.id.btn_ecuador).setOnClickListener(
 				new OnClickListener() {
 					@Override
@@ -702,8 +1079,107 @@ public class LaminaUnoActivity extends Activity {
 					}
 				});
 		// //////////////////////////////////////////////////////////////////////
-		// ///////////////////// CLICK BOTÓN COLOMBIA
-		// ///////////////////////////
+				// ///////////////////// CLICK BOTÓN GUAYAQUIL // ////////////////////////////
+				findViewById(R.id.button_internacional_guayaquil).setOnClickListener(
+						new OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								// TODO Auto-generated method stub
+								btnEcuador.setBackgroundResource(R.drawable.botonrojo);
+
+								switch (posicionMenu) {
+								case 1:
+									layMapaInter.startAnimation(animMapaInter);
+									btnInter.setBackgroundResource(R.drawable.boton);
+									btnInter.setEnabled(true);
+									break;
+								case 2:
+									layMapaChile.startAnimation(animMapaChileOut);
+									btnChile.setBackgroundResource(R.drawable.boton);
+									btnChile.setEnabled(true);
+									break;
+								case 3:
+									layMapaArgentina
+											.startAnimation(animMapaArgentinaOut);
+									btnArgentina
+											.setBackgroundResource(R.drawable.boton);
+									btnArgentina.setEnabled(true);
+									break;
+								case 4:
+									layMapaPeru.startAnimation(animMapaPeruOut);
+									btnPeru.setBackgroundResource(R.drawable.boton);
+									btnPeru.setEnabled(true);
+									break;
+								case 5:
+									layMapaBrasil.startAnimation(animMapaBrasilOut);
+									btnBrasil.setBackgroundResource(R.drawable.boton);
+									btnBrasil.setEnabled(true);
+									break;
+								case 6:
+									return;
+								case 7:
+									layMapaColombia.startAnimation(animMapaColombiaOut);
+									btnColombia.setBackgroundResource(R.drawable.boton);
+									btnColombia.setEnabled(true);
+									break;
+								}
+
+								final Handler handler = new Handler();
+								handler.postDelayed(new Runnable() {
+									@Override
+									public void run() {
+
+										switch (posicionMenu) {
+										case 1:
+											layMapaInter.setVisibility(View.GONE);
+											layMapaEcuador.setVisibility(View.VISIBLE);
+											layMapaEcuador
+													.startAnimation(animMapaEcuador);
+											break;
+										case 2:
+											layMapaChile.setVisibility(View.GONE);
+											layMapaEcuador.setVisibility(View.VISIBLE);
+											layMapaEcuador
+													.startAnimation(animMapaEcuador);
+											break;
+										case 3:
+											layMapaArgentina.setVisibility(View.GONE);
+											layMapaEcuador.setVisibility(View.VISIBLE);
+											layMapaEcuador
+													.startAnimation(animMapaEcuador);
+											break;
+										case 4:
+											layMapaPeru.setVisibility(View.GONE);
+											layMapaEcuador.setVisibility(View.VISIBLE);
+											layMapaEcuador
+													.startAnimation(animMapaEcuador);
+											break;
+										case 5:
+											layMapaBrasil.setVisibility(View.GONE);
+											layMapaEcuador.setVisibility(View.VISIBLE);
+											layMapaEcuador
+													.startAnimation(animMapaEcuador);
+											break;
+										case 6:
+											return;
+										case 7:
+											layMapaColombia.setVisibility(View.GONE);
+											layMapaEcuador.setVisibility(View.VISIBLE);
+											layMapaEcuador
+													.startAnimation(animMapaEcuador);
+											break;
+										}
+										// ///// Animaciones
+										animaCiudadesEcuador();
+										posicionMenu = 6;
+									}
+								}, 1000);
+								btnEcuador.setEnabled(false);
+							}
+						});
+		
+		// //////////////////////////////////////////////////////////////////////
+		// ///////////////////// CLICK BOTÓN COLOMBIA // ///////////////////////////
 		findViewById(R.id.btn_colombia).setOnClickListener(
 				new OnClickListener() {
 					@Override
@@ -802,6 +1278,107 @@ public class LaminaUnoActivity extends Activity {
 						btnColombia.setEnabled(false);
 					}
 				});
+		
+		// //////////////////////////////////////////////////////////////////////
+				// ///////////////////// CLICK BOTÓN BOGOTA // ///////////////////////////
+				findViewById(R.id.button_internacional_bogota).setOnClickListener(
+						new OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								// TODO Auto-generated method stub
+								//btnColombia.setBackgroundResource(R.drawable.botonrojo);
+								reestableceBotones(btnColombia);
+
+								switch (posicionMenu) {
+								case 1:
+									layMapaInter.startAnimation(animMapaInter);
+									btnInter.setBackgroundResource(R.drawable.boton);
+									btnInter.setEnabled(true);
+									break;
+								case 2:
+									layMapaChile.startAnimation(animMapaChileOut);
+									btnChile.setBackgroundResource(R.drawable.boton);
+									btnChile.setEnabled(true);
+									break;
+								case 3:
+									layMapaArgentina
+											.startAnimation(animMapaArgentinaOut);
+									btnArgentina
+											.setBackgroundResource(R.drawable.boton);
+									btnArgentina.setEnabled(true);
+									break;
+								case 4:
+									layMapaPeru.startAnimation(animMapaPeruOut);
+									btnPeru.setBackgroundResource(R.drawable.boton);
+									btnPeru.setEnabled(true);
+									break;
+								case 5:
+									layMapaBrasil.startAnimation(animMapaBrasilOut);
+									btnBrasil.setBackgroundResource(R.drawable.boton);
+									btnBrasil.setEnabled(true);
+									break;
+								case 6:
+									layMapaEcuador.startAnimation(animMapaEcuadorOut);
+									btnEcuador.setBackgroundResource(R.drawable.boton);
+									btnEcuador.setEnabled(true);
+									break;
+								case 7:
+									return;
+								}
+
+								final Handler handler = new Handler();
+								handler.postDelayed(new Runnable() {
+									@Override
+									public void run() {
+
+										switch (posicionMenu) {
+										case 1:
+											layMapaInter.setVisibility(View.GONE);
+											layMapaColombia.setVisibility(View.VISIBLE);
+											layMapaColombia
+													.startAnimation(animMapaColombia);
+											break;
+										case 2:
+											layMapaChile.setVisibility(View.GONE);
+											layMapaColombia.setVisibility(View.VISIBLE);
+											layMapaColombia
+													.startAnimation(animMapaColombia);
+											break;
+										case 3:
+											layMapaArgentina.setVisibility(View.GONE);
+											layMapaColombia.setVisibility(View.VISIBLE);
+											layMapaColombia
+													.startAnimation(animMapaColombia);
+											break;
+										case 4:
+											layMapaPeru.setVisibility(View.GONE);
+											layMapaColombia.setVisibility(View.VISIBLE);
+											layMapaColombia
+													.startAnimation(animMapaColombia);
+											break;
+										case 5:
+											layMapaBrasil.setVisibility(View.GONE);
+											layMapaColombia.setVisibility(View.VISIBLE);
+											layMapaColombia
+													.startAnimation(animMapaColombia);
+											break;
+										case 6:
+											layMapaEcuador.setVisibility(View.GONE);
+											layMapaColombia.setVisibility(View.VISIBLE);
+											layMapaColombia
+													.startAnimation(animMapaColombia);
+											break;
+										case 7:
+											return;
+										}
+										// ///// Animaciones
+										animaCiudadesColombia();
+										posicionMenu = 7;
+									}
+								}, 1000);
+								btnColombia.setEnabled(false);
+							}
+						});
 		// //////////////////////////////////////////////////////////////////////
 	}
 	
@@ -811,34 +1388,34 @@ public class LaminaUnoActivity extends Activity {
 				R.anim.anim_conoce_flota);
 		animLayFlota.startAnimation(animFlota);
 		
-		RelativeLayout animLayInterBogota = (RelativeLayout) findViewById(R.id.lay_internacional_bogota);
+		Button animLayInterBogota = (Button) findViewById(R.id.button_internacional_bogota);
 		Animation animInterBogota = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_01);
+				R.anim.anim_conoce_flota);
 		animLayInterBogota.startAnimation(animInterBogota);
 		
-		RelativeLayout animLayInterGuayaquil = (RelativeLayout) findViewById(R.id.lay_internacional_guayaquil);
+		Button animLayInterGuayaquil = (Button) findViewById(R.id.button_internacional_guayaquil);
 		Animation animInterGuayaquil = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_02);
+				R.anim.anim_conoce_flota);
 		animLayInterGuayaquil.startAnimation(animInterGuayaquil);
 		
-		RelativeLayout animLayInterLima = (RelativeLayout) findViewById(R.id.lay_internacional_lima_1);
+		Button animLayInterLima = (Button) findViewById(R.id.button_internacional_lima_1);
 		Animation animInterLima = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_03);
+				R.anim.anim_conoce_flota);
 		animLayInterLima.startAnimation(animInterLima);
 		
-		RelativeLayout animLayInterSantiago = (RelativeLayout) findViewById(R.id.lay_internacional_santiago);
+		Button animLayInterSantiago = (Button) findViewById(R.id.button_internacional_santiago);
 		Animation animInterSantiago = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_04);
+				R.anim.anim_conoce_flota);
 		animLayInterSantiago.startAnimation(animInterSantiago);
 		
-		RelativeLayout animLayInterBuenosAires = (RelativeLayout) findViewById(R.id.lay_internacional_buenos_aires);
+		Button animLayInterBuenosAires = (Button) findViewById(R.id.button_internacional_buenos_aires);
 		Animation animInterBuenosAires = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_05);
+				R.anim.anim_conoce_flota);
 		animLayInterBuenosAires.startAnimation(animInterBuenosAires);
 		
-		RelativeLayout animLayInterBrasilia = (RelativeLayout) findViewById(R.id.lay_internacional_brasilia);
+		Button animLayInterBrasilia = (Button) findViewById(R.id.button_internacional_brasilia);
 		Animation animInterBrasilia = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_06);
+				R.anim.anim_conoce_flota);
 		animLayInterBrasilia.startAnimation(animInterBrasilia);
 	}
 
@@ -1154,6 +1731,10 @@ public class LaminaUnoActivity extends Activity {
 		RelativeLayout layFoz2 = (RelativeLayout) findViewById(R.id.lay_brasil_41);
 		Animation animFoz2 =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_41);
 		layFoz2.startAnimation(animFoz2);
+		
+		RelativeLayout layFoz3 = (RelativeLayout) findViewById(R.id.lay_brasil_31);
+		Animation animFoz3 =  AnimationUtils.loadAnimation(this, R.anim.anim_botones_41);
+		layFoz3.startAnimation(animFoz3);
 		
 		ImageView layAnimBrasil = (ImageView) findViewById(R.id.img_lineas_brasil);
 		Animation animLineasBrasil = AnimationUtils.loadAnimation(this,

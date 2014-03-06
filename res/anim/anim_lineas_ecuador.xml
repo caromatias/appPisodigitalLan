@@ -3,12 +3,12 @@
     android:interpolator="@android:anim/accelerate_decelerate_interpolator">
     
     <alpha
-        android:startOffset="4400"
+        android:startOffset="2000"
         android:duration="1000"
         android:fromAlpha="0"
         android:toAlpha="1" /> 
     <scale
-        android:startOffset="4400"
+        android:startOffset="2000"
         android:duration="1000"
         android:fromXScale="0"
         android:fromYScale="0"
@@ -16,4 +16,4 @@
         android:toYScale="1"
         android:pivotX="50%"
         android:pivotY="50%"/>
- </set>  
+ </set>   
