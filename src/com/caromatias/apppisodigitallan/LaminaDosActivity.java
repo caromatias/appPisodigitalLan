@@ -257,6 +257,8 @@ public class LaminaDosActivity extends Activity {
 		findViewById(R.id.btn_comenzar_juego_carga).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
+						flechaCarga.setVisibility(View.VISIBLE);
+						activaCarga.setVisibility(View.VISIBLE);
 						flechaCarga.startAnimation(animFlechaRebote);
 						layPopUpCarga.startAnimation(animPopup);
 						layPopUpCarga.setVisibility(View.GONE);

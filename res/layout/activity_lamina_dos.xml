@@ -899,7 +899,8 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/txt_tacometro_porcentaje"
             android:layout_alignRight="@+id/img_intento_carga_dos"
-            android:background="@drawable/btn_despegue" />
+            android:background="@drawable/btn_despegue"
+            android:visibility="gone"/>
 
         <ImageView
             android:id="@+id/img_flecha_carga"
@@ -907,7 +908,8 @@
             android:layout_height="120dp"
             android:layout_above="@+id/btn_activa_carga"
             android:layout_alignRight="@+id/btn_activa_carga"
-            android:src="@drawable/img_flecha_down" />
+            android:src="@drawable/img_flecha_down"
+            android:visibility="gone" />
     </RelativeLayout>
 
 </RelativeLayout>
