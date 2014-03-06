@@ -274,6 +274,23 @@
                     android:background="@drawable/img_punto" >
                 </ImageView>
             </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/lay_logo_pasajero_virtual_dos"
+                android:layout_width="240dp"
+                android:layout_height="180dp"
+                android:layout_marginLeft="1020dp"
+                android:layout_marginTop="590dp" >
+
+                <ImageView
+                    android:id="@+id/image_logo_pasajero_virtual_dos"
+                    android:layout_width="240dp"
+                    android:layout_height="180dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/logo_pasajero_virtual_dos" >
+                </ImageView>
+            </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>
 
