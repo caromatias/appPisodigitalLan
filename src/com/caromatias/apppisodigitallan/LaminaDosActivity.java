@@ -67,6 +67,8 @@ public class LaminaDosActivity extends Activity {
 	private RelativeLayout layMasterComp;
 	private ImageView despegueOk;
 	private ImageView despegueFail;
+	private ImageView cargaOk;
+	private ImageView cargaFail;
 	private Animation animMensajesDespegue;
 	private Animation animMensajesDespegueOut;
 	private Animation animMensajesDespegueFailIn;
@@ -127,6 +129,8 @@ public class LaminaDosActivity extends Activity {
 		animMensajesDespegueFailIn = AnimationUtils.loadAnimation(this,R.anim.anim_translacion_in);
 		animMensajesDespegueFailOut = AnimationUtils.loadAnimation(this,R.anim.anim_translacion_fail_out);
 		animFlechaRebote = AnimationUtils.loadAnimation(this,R.anim.anim_rebote_flecha);
+		cargaOk = (ImageView) findViewById(R.id.img_mensaje_carga_ok);
+		cargaFail = (ImageView) findViewById(R.id.img_mensaje_carga_fail);
 		
 
 		findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
@@ -298,7 +302,12 @@ public class LaminaDosActivity extends Activity {
 		currentRotation = 0;
 		comienzaCarga = 0;
 		activaCarga.setEnabled(true);
+		flechaCarga.setVisibility(View.VISIBLE);
+		flechaCarga.startAnimation(animFlechaRebote);
+		findViewById(R.id.txt_cuanta_atras_uno)
+		.setVisibility(View.VISIBLE);
 		findViewById(R.id.lay_pop_cuenta_atras).setVisibility(View.VISIBLE);
+		txtPorcentajeCarga.setText("0%");
 		final Handler handlerCargaUno = new Handler();
 		handlerCargaUno.postDelayed(new Runnable() {
 			@Override
@@ -349,12 +358,8 @@ public class LaminaDosActivity extends Activity {
 				tiempoParaCarga.setText("00");
 				activaCarga.setEnabled(false);
 				if (currentRotation < 70) {
-					/*
-					 * Intent act = new Intent( LaminaDosActivity.this,
-					 * GameOverActivity.class); act.putExtra("game", 1);
-					 * startActivity(act); overridePendingTransition(
-					 * R.anim.fade_in, R.anim.fade_out);
-					 */
+					cargaFail.setVisibility(View.VISIBLE);
+					cargaFail.startAnimation(animMensajesDespegueFailIn);
 					if (intentosCarga < 3) {
 						switch (intentosCarga) {
 						case 1:
@@ -378,13 +383,53 @@ public class LaminaDosActivity extends Activity {
 						overridePendingTransition(R.anim.fade_in,
 								R.anim.fade_out);
 					}
-					muestraCuentaAtas();
+					runOnUiThread(new Runnable() // run on ui thread
+					{
+						public void run() {
+							final Handler handlerCargaQuitaUno = new Handler();
+							handlerCargaQuitaUno.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									cargaFail.startAnimation(animMensajesDespegueFailOut);
+									cargaFail.setVisibility(View.GONE);
+								}
+							}, 1500);
+							final Handler handlerCargaQuita = new Handler();
+							handlerCargaQuita.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									muestraCuentaAtas();
+								}
+							}, 2100);
+						}
+					});
 				} else if (currentRotation >= 70) {
-					Intent act = new Intent(LaminaDosActivity.this,
-							LaminaTresActivity.class);
-					act.putExtra("ruta", rutaSeleccionada);
-					startActivity(act);
-					overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+					cargaOk.setVisibility(View.VISIBLE);
+					cargaOk.startAnimation(animMensajesDespegueFailIn);
+					runOnUiThread(new Runnable() // run on ui thread
+					{
+						public void run() {
+							final Handler handlerCargaQuitaUno = new Handler();
+							handlerCargaQuitaUno.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									cargaOk.startAnimation(animMensajesDespegueFailOut);
+									cargaOk.setVisibility(View.GONE);
+								}
+							}, 1500);
+							final Handler handlerCargaQuita = new Handler();
+							handlerCargaQuita.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									Intent act = new Intent(LaminaDosActivity.this,
+											LaminaTresActivity.class);
+									act.putExtra("ruta", rutaSeleccionada);
+									startActivity(act);
+									overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+								}
+							}, 2100);
+						}
+					});
 				}
 			}
 		}.start();
