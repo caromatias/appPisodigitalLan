@@ -44,6 +44,7 @@ public class LaminaTresActivity extends Activity {
 	private ImageView imgBackTriviaUno;
 	private ImageView imgMundoTrivia;
 	private Animation animMundoIn;
+	private Animation animMundoOut;
 	private Animation animMundoRotacion;
 
 	@Override
@@ -76,6 +77,8 @@ public class LaminaTresActivity extends Activity {
 				R.anim.anim_trivia_out);
 		animMundoIn = AnimationUtils.loadAnimation(this,
 				R.anim.anim_scale_translation_world);
+		animMundoOut = AnimationUtils.loadAnimation(this,
+				R.anim.anim_translate_mundo_out);
 		animMundoRotacion = AnimationUtils.loadAnimation(this,
 				R.anim.anim_rotacion_mundo);
 		// /////////////////////////////////////
@@ -341,6 +344,11 @@ public class LaminaTresActivity extends Activity {
 	}
 
 	public void preguntasLan() {
+		respuestaUno.setEnabled(false);
+		respuestaDos.setEnabled(false);
+		respuestaTres.setEnabled(false);
+		layPregTrivia.startAnimation(animMundoOut);
+		imgMundoTrivia.startAnimation(animMundoOut);
 		int numeroRandom = generaRandom();
 		switch (numeroRandom) {
 		case 1:
@@ -360,6 +368,8 @@ public class LaminaTresActivity extends Activity {
 					respuestaCorrecta = 1;
 					numeroDeRespuesta = 2;
 					//layPregTrivia.startAnimation(animTriviaIn);
+					layPregTrivia.startAnimation(animMundoIn);
+					imgMundoTrivia.startAnimation(animMundoIn);
 				}
 			}, 1000);
 			break;
@@ -380,6 +390,8 @@ public class LaminaTresActivity extends Activity {
 					respuestaCorrecta = 1;
 					numeroDeRespuesta = 2;
 					//layPregTrivia.startAnimation(animTriviaIn);
+					layPregTrivia.startAnimation(animMundoIn);
+					imgMundoTrivia.startAnimation(animMundoIn);
 				}
 			}, 1000);
 			break;
@@ -394,6 +406,9 @@ public class LaminaTresActivity extends Activity {
 						respuestaUno.setBackgroundResource(R.drawable.botoncomenzar);
 						imgMundoTrivia.setVisibility(View.VISIBLE);
 						imgMundoTrivia.startAnimation(animMundoRotacion);
+						respuestaUno.setEnabled(false);
+						respuestaDos.setEnabled(false);
+						respuestaTres.setEnabled(false);
 						Handler handlerBtnUno = new Handler();
 						handlerBtnUno.postDelayed(new Runnable() {
 							@Override
@@ -478,8 +493,10 @@ public class LaminaTresActivity extends Activity {
 		findViewById(R.id.btn_respuesta2).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
-						respuestaDos
-								.setBackgroundResource(R.drawable.botoncomenzar);
+						respuestaDos.setBackgroundResource(R.drawable.botoncomenzar);
+						respuestaUno.setEnabled(false);
+						respuestaDos.setEnabled(false);
+						respuestaTres.setEnabled(false);
 						Handler handlerBtnDos = new Handler();
 						handlerBtnDos.postDelayed(new Runnable() {
 							@Override
@@ -565,8 +582,10 @@ public class LaminaTresActivity extends Activity {
 		findViewById(R.id.btn_respuesta3).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
-						respuestaTres
-								.setBackgroundResource(R.drawable.botoncomenzar);
+						respuestaTres.setBackgroundResource(R.drawable.botoncomenzar);
+						respuestaUno.setEnabled(false);
+						respuestaDos.setEnabled(false);
+						respuestaTres.setEnabled(false);
 						Handler handlerBtnTres = new Handler();
 						handlerBtnTres.postDelayed(new Runnable() {
 							@Override
