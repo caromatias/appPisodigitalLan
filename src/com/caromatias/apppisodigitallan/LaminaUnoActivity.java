@@ -61,6 +61,8 @@ public class LaminaUnoActivity extends Activity {
 		eventosBotones();
 
 		cambiaActivity();
+		
+		animBotonesMapaInternacional();
 
 	}
 
