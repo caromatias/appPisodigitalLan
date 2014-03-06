@@ -625,7 +625,7 @@
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
         android:paddingTop="0dp"
-        android:visibility="gone" >
+        android:visibility="visible" >
 
         <VideoView
             android:id="@+id/video_back_carga"
@@ -638,6 +638,23 @@
             android:layout_height="match_parent"
             android:scaleType="fitXY"
             android:src="@drawable/img_back_carga" />
+        
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="170dp"
+            android:layout_marginLeft="420dp"
+            android:background="#FF0000" >
+
+            <ImageView
+                android:id="@+id/img_mensaje_carga_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/img_mensaje_ok_carga" />
+
+        </RelativeLayout>
 
         <ImageView
             android:id="@+id/img_tacometro_carga_dos"
@@ -733,7 +750,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/popup_transp"
-            android:visibility="visible" >
+            android:visibility="gone" >
 
             <TextView
                 android:id="@+id/txt_cuanta_atras_uno"
@@ -783,7 +800,7 @@
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
             android:paddingTop="0dp"
-            android:visibility="visible" >
+            android:visibility="gone" >
 
             <ImageView
                 android:id="@+id/img_logo_pv_carga"
@@ -910,6 +927,7 @@
             android:layout_alignRight="@+id/btn_activa_carga"
             android:src="@drawable/img_flecha_down"
             android:visibility="gone" />
+
     </RelativeLayout>
 
 </RelativeLayout>
