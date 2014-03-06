@@ -1383,7 +1383,7 @@ public class LaminaUnoActivity extends Activity {
 	}
 	
 	public void animBotonesMapaInternacional(){
-		RelativeLayout animLayFlota = (RelativeLayout) findViewById(R.id.lay_imag_destinos);
+		RelativeLayout animLayFlota = (RelativeLayout) findViewById(R.id.lay_imag_flota);
 		Animation animFlota = AnimationUtils.loadAnimation(this,
 				R.anim.anim_conoce_flota);
 		animLayFlota.startAnimation(animFlota);
