@@ -344,9 +344,9 @@ public class LaminaTresActivity extends Activity {
 	}
 
 	public void preguntasLan() {
-		respuestaUno.setEnabled(false);
-		respuestaDos.setEnabled(false);
-		respuestaTres.setEnabled(false);
+		respuestaUno.setEnabled(true);
+		respuestaDos.setEnabled(true);
+		respuestaTres.setEnabled(true);
 		layPregTrivia.startAnimation(animMundoOut);
 		imgMundoTrivia.startAnimation(animMundoOut);
 		int numeroRandom = generaRandom();
@@ -497,6 +497,7 @@ public class LaminaTresActivity extends Activity {
 						respuestaUno.setEnabled(false);
 						respuestaDos.setEnabled(false);
 						respuestaTres.setEnabled(false);
+						imgMundoTrivia.startAnimation(animMundoRotacion);
 						Handler handlerBtnDos = new Handler();
 						handlerBtnDos.postDelayed(new Runnable() {
 							@Override
@@ -586,6 +587,7 @@ public class LaminaTresActivity extends Activity {
 						respuestaUno.setEnabled(false);
 						respuestaDos.setEnabled(false);
 						respuestaTres.setEnabled(false);
+						imgMundoTrivia.startAnimation(animMundoRotacion);
 						Handler handlerBtnTres = new Handler();
 						handlerBtnTres.postDelayed(new Runnable() {
 							@Override
