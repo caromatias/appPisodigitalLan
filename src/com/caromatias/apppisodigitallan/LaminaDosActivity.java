@@ -378,7 +378,7 @@ public class LaminaDosActivity extends Activity {
 					} else if (intentosCarga == 3) {
 						Intent act = new Intent(LaminaDosActivity.this,
 								GameOverActivity.class);
-						act.putExtra("game", 1);
+						act.putExtra("game", 3);
 						startActivity(act);
 						overridePendingTransition(R.anim.fade_in,
 								R.anim.fade_out);
@@ -561,7 +561,7 @@ public class LaminaDosActivity extends Activity {
 					if (mProgressStatus < 70) {
 						Intent act = new Intent(LaminaDosActivity.this,
 								GameOverActivity.class);
-						act.putExtra("game", 1);
+						act.putExtra("game", 3);
 						startActivity(act);
 						overridePendingTransition(R.anim.fade_in,
 								R.anim.fade_out);

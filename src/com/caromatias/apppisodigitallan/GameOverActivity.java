@@ -49,6 +49,22 @@ public class GameOverActivity extends Activity {
 			    }
 			});
 			break;
+		case 3:
+			// INICIO VIDEO GAMEOVER //
+			videoGameOver = (VideoView) findViewById(R.id.video_game_over);
+			videoGameOver
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.fail_prueba);
+			videoGameOver.start();
+			// /////////////////////////////////////
+			videoGameOver.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+			    public void onCompletion(MediaPlayer mp) {
+			    	Intent act = new Intent(GameOverActivity.this,	LaminaDosActivity.class);
+					startActivity(act);
+					overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+			    }
+			});
+			break;
 		}
 	}
 
