@@ -625,7 +625,7 @@
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
         android:paddingTop="0dp"
-        android:visibility="visible" >
+        android:visibility="gone" >
 
         <VideoView
             android:id="@+id/video_back_carga"
@@ -733,7 +733,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/popup_transp"
-            android:visibility="gone" >
+            android:visibility="visible" >
 
             <TextView
                 android:id="@+id/txt_cuanta_atras_uno"
@@ -783,7 +783,7 @@
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
             android:paddingTop="0dp"
-            android:visibility="gone" >
+            android:visibility="visible" >
 
             <ImageView
                 android:id="@+id/img_logo_pv_carga"
@@ -908,7 +908,6 @@
             android:layout_above="@+id/btn_activa_carga"
             android:layout_alignRight="@+id/btn_activa_carga"
             android:src="@drawable/img_flecha_down" />
-
     </RelativeLayout>
 
 </RelativeLayout>
