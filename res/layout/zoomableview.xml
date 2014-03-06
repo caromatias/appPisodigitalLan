@@ -23,45 +23,7 @@
             android:layout_height="match_parent"
             android:scaleType="fitXY"
             android:src="@drawable/mapa_inter" />
-
-        <RelativeLayout
-            android:id="@+id/lay_imag_destinos"
-            android:layout_width="225dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="172dp"
-            android:layout_marginTop="670dp" >
-
-            <Button
-                android:id="@+id/button_nuestros_destinos"
-                android:layout_width="225dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="0dp"
-                android:background="@drawable/boton_conoce_nuestros_destinos"
-                android:textColor="#ffffff"
-                android:textSize="12dp"
-                android:textStyle="bold" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/lay_imag_flota"
-            android:layout_width="175dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="27dp"
-            android:layout_marginTop="670dp" >
-
-            <Button
-                android:id="@+id/button_nuestra_flota"
-                android:layout_width="175dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="0dp"
-                android:background="@drawable/boton_conoce_nuestra_flota"
-                android:textColor="#ffffff"
-                android:textSize="12dp"
-                android:textStyle="bold" />
-        </RelativeLayout>
-
+        
         <RelativeLayout
             android:id="@+id/puntos_lay_inter"
             android:layout_width="match_parent"
@@ -243,23 +205,6 @@
                     android:layout_marginLeft="0dp"
                     android:layout_marginTop="0dp"
                     android:background="@drawable/img_punto" >
-                </ImageView>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/lay_logo_pasajero_virtual_dos"
-                android:layout_width="210dp"
-                android:layout_height="160dp"
-                android:layout_marginLeft="1050dp"
-                android:layout_marginTop="610dp" >
-
-                <ImageView
-                    android:id="@+id/image_logo_pasajero_virtual_dos"
-                    android:layout_width="210dp"
-                    android:layout_height="160dp"
-                    android:layout_marginLeft="0dp"
-                    android:layout_marginTop="0dp"
-                    android:background="@drawable/logo_pasajero_virtual_dos" >
                 </ImageView>
             </RelativeLayout>
         </RelativeLayout>
@@ -751,23 +696,6 @@
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/lay_logo_pasajero_virtual_dos"
-            android:layout_width="210dp"
-            android:layout_height="160dp"
-            android:layout_marginLeft="1050dp"
-            android:layout_marginTop="610dp" >
-
-            <ImageView
-                android:id="@+id/image_logo_pasajero_virtual_dos"
-                android:layout_width="210dp"
-                android:layout_height="160dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="0dp"
-                android:background="@drawable/logo_pasajero_virtual_dos" >
-            </ImageView>
-        </RelativeLayout>
     </RelativeLayout>
 
     <RelativeLayout
@@ -1210,23 +1138,6 @@
                 </ImageView>
             </RelativeLayout>
         </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/lay_logo_pasajero_virtual_dos"
-            android:layout_width="210dp"
-            android:layout_height="160dp"
-            android:layout_marginLeft="1050dp"
-            android:layout_marginTop="610dp" >
-
-            <ImageView
-                android:id="@+id/image_logo_pasajero_virtual_dos"
-                android:layout_width="210dp"
-                android:layout_height="160dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="0dp"
-                android:background="@drawable/logo_pasajero_virtual_dos" >
-            </ImageView>
-        </RelativeLayout>
     </RelativeLayout>
 
     <RelativeLayout
@@ -1655,23 +1566,6 @@
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/img_punto" >
-            </ImageView>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/lay_logo_pasajero_virtual_dos"
-            android:layout_width="210dp"
-            android:layout_height="160dp"
-            android:layout_marginLeft="1050dp"
-            android:layout_marginTop="610dp" >
-
-            <ImageView
-                android:id="@+id/image_logo_pasajero_virtual_dos"
-                android:layout_width="210dp"
-                android:layout_height="160dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="0dp"
-                android:background="@drawable/logo_pasajero_virtual_dos" >
             </ImageView>
         </RelativeLayout>
     </RelativeLayout>
@@ -2864,23 +2758,6 @@
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/lay_logo_pasajero_virtual_dos"
-            android:layout_width="210dp"
-            android:layout_height="160dp"
-            android:layout_marginLeft="1050dp"
-            android:layout_marginTop="610dp" >
-
-            <ImageView
-                android:id="@+id/image_logo_pasajero_virtual_dos"
-                android:layout_width="210dp"
-                android:layout_height="160dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="0dp"
-                android:background="@drawable/logo_pasajero_virtual_dos" >
-            </ImageView>
-        </RelativeLayout>
     </RelativeLayout>
 
     <RelativeLayout
@@ -3075,23 +2952,6 @@
                 android:textColor="#ffffff"
                 android:textSize="12dp"
                 android:textStyle="bold" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/lay_logo_pasajero_virtual_dos"
-            android:layout_width="210dp"
-            android:layout_height="160dp"
-            android:layout_marginLeft="1050dp"
-            android:layout_marginTop="610dp" >
-
-            <ImageView
-                android:id="@+id/image_logo_pasajero_virtual_dos"
-                android:layout_width="210dp"
-                android:layout_height="160dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="0dp"
-                android:background="@drawable/logo_pasajero_virtual_dos" >
-            </ImageView>
         </RelativeLayout>
     </RelativeLayout>
 
@@ -3694,23 +3554,5 @@
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/lay_logo_pasajero_virtual_dos"
-            android:layout_width="210dp"
-            android:layout_height="160dp"
-            android:layout_marginLeft="1050dp"
-            android:layout_marginTop="610dp" >
-
-            <ImageView
-                android:id="@+id/image_logo_pasajero_virtual_dos"
-                android:layout_width="210dp"
-                android:layout_height="160dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="0dp"
-                android:background="@drawable/logo_pasajero_virtual_dos" >
-            </ImageView>
-        </RelativeLayout>
     </RelativeLayout>
-
 </RelativeLayout>

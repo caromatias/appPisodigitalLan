@@ -32,8 +32,8 @@
         android:layout_height="416dp"
         android:layout_marginLeft="70dp"
         android:layout_marginTop="-7dp"
-        android:background="@drawable/panel_final" 
-        android:visibility="gone">
+        android:background="@drawable/panel_final"
+        android:visibility="gone" >
 
         <Button
             android:id="@+id/btn_chile"
@@ -128,20 +128,75 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/lay_logo_pasajero_virtual_dos"
+        android:layout_width="210dp"
+        android:layout_height="160dp"
+        android:layout_marginLeft="1050dp"
+        android:layout_marginTop="555dp" >
+
+        <ImageView
+            android:id="@+id/image_logo_pasajero_virtual_dos"
+            android:layout_width="210dp"
+            android:layout_height="160dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/logo_pasajero_virtual_dos" >
+        </ImageView>
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/lay_imag_destinos"
+        android:layout_width="225dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="172dp"
+        android:layout_marginTop="670dp" >
+
+        <Button
+            android:id="@+id/button_nuestros_destinos"
+            android:layout_width="225dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/boton_conoce_nuestros_destinos"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_imag_flota"
+        android:layout_width="175dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="670dp" >
+
+        <Button
+            android:id="@+id/button_nuestra_flota"
+            android:layout_width="175dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/boton_conoce_nuestra_flota"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/go_game_master"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginLeft="990dp"
         android:layout_marginTop="20dp"
         android:visibility="gone" >
-        
+
         <RelativeLayout
             android:id="@+id/go_game_texto"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_marginLeft="35dp"
-            android:layout_marginTop="82dp">
-            
+            android:layout_marginTop="82dp" >
+
             <Button
                 android:id="@+id/btn_ir_al_juego_text"
                 android:layout_width="wrap_content"
@@ -166,52 +221,49 @@
                 android:layout_alignParentRight="true"
                 android:background="@drawable/circulo_avion" />
         </RelativeLayout>
-
     </RelativeLayout>
 
     <VideoView
         android:id="@+id/video_lamina_uno"
         android:layout_width="1280dp"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
     <RelativeLayout
         android:id="@+id/lay_video_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent" >
 
         <VideoView
             android:id="@+id/video_main"
             android:layout_width="1280dp"
-            android:layout_height="match_parent"/>
-        
+            android:layout_height="match_parent" />
+
         <RelativeLayout
-        android:id="@+id/lay_btn_comenzar"
-        android:layout_width="600dp"
-        android:layout_height="300dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="284dp" >
-
-        <Button
-            android:id="@+id/btn_com"
-            android:layout_width="250dp"
-            android:layout_height="60dp"
+            android:id="@+id/lay_btn_comenzar"
+            android:layout_width="600dp"
+            android:layout_height="300dp"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/btn_comenzar"
-            android:text="COMENZAR"
-            android:textColor="#FFFFFF"
-            android:textSize="25dp" />
+            android:layout_marginTop="284dp" >
 
+            <Button
+                android:id="@+id/btn_com"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/btn_comenzar"
+                android:text="COMENZAR"
+                android:textColor="#FFFFFF"
+                android:textSize="25dp" />
+        </RelativeLayout>
     </RelativeLayout>
-        
-    </RelativeLayout>
-    
+
     <ImageView
-            android:id="@+id/img_fade_white"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/fade_white"
-            android:scaleType="fitXY"
-            android:visibility="gone" />
+        android:id="@+id/img_fade_white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/fade_white"
+        android:visibility="gone" />
 
 </RelativeLayout>
