@@ -328,8 +328,8 @@ public final class R {
         public static final int button_internacional_guayaquil=0x7f0a008d;
         public static final int button_internacional_lima_1=0x7f0a0090;
         public static final int button_internacional_santiago=0x7f0a0093;
-        public static final int button_nuestra_flota=0x7f0a0073;
-        public static final int button_nuestros_destinos=0x7f0a0075;
+        public static final int button_nuestra_flota=0x7f0a0075;
+        public static final int button_nuestros_destinos=0x7f0a0073;
         public static final int fail_despegue=0x7f0a002b;
         public static final int go_game_circulo=0x7f0a0079;
         public static final int go_game_master=0x7f0a0076;
@@ -592,8 +592,8 @@ public final class R {
         public static final int lay_ecuador_04=0x7f0a01ab;
         public static final int lay_ecuador_05=0x7f0a01ae;
         public static final int lay_ecuador_06=0x7f0a01b1;
-        public static final int lay_imag_destinos=0x7f0a0074;
-        public static final int lay_imag_flota=0x7f0a0072;
+        public static final int lay_imag_destinos=0x7f0a0072;
+        public static final int lay_imag_flota=0x7f0a0074;
         public static final int lay_img_back_trivia=0x7f0a0059;
         public static final int lay_internacional_bogota=0x7f0a0089;
         public static final int lay_internacional_brasilia=0x7f0a0098;
