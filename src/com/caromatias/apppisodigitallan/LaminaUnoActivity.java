@@ -215,7 +215,7 @@ public class LaminaUnoActivity extends Activity {
 									break;
 								}
 								// ///// Animaciones
-
+								animBotonesMapaInternacional();
 								posicionMenu = 1;
 							}
 						}, 1000);
@@ -801,6 +801,43 @@ public class LaminaUnoActivity extends Activity {
 					}
 				});
 		// //////////////////////////////////////////////////////////////////////
+	}
+	
+	public void animBotonesMapaInternacional(){
+		RelativeLayout animLayFlota = (RelativeLayout) findViewById(R.id.lay_imag_flota);
+		Animation animFlota = AnimationUtils.loadAnimation(this,
+				R.anim.anim_conoce_flota);
+		animLayFlota.startAnimation(animFlota);
+		
+		RelativeLayout animLayInterBogota = (RelativeLayout) findViewById(R.id.lay_internacional_bogota);
+		Animation animInterBogota = AnimationUtils.loadAnimation(this,
+				R.anim.anim_botones_01);
+		animLayInterBogota.startAnimation(animInterBogota);
+		
+		RelativeLayout animLayInterGuayaquil = (RelativeLayout) findViewById(R.id.lay_internacional_guayaquil);
+		Animation animInterGuayaquil = AnimationUtils.loadAnimation(this,
+				R.anim.anim_botones_02);
+		animLayInterGuayaquil.startAnimation(animInterGuayaquil);
+		
+		RelativeLayout animLayInterLima = (RelativeLayout) findViewById(R.id.lay_internacional_lima);
+		Animation animInterLima = AnimationUtils.loadAnimation(this,
+				R.anim.anim_botones_03);
+		animLayInterLima.startAnimation(animInterLima);
+		
+		RelativeLayout animLayInterSantiago = (RelativeLayout) findViewById(R.id.lay_internacional_santiago);
+		Animation animInterSantiago = AnimationUtils.loadAnimation(this,
+				R.anim.anim_botones_04);
+		animLayInterSantiago.startAnimation(animInterSantiago);
+		
+		RelativeLayout animLayInterBuenosAires = (RelativeLayout) findViewById(R.id.lay_internacional_buenos_aires);
+		Animation animInterBuenosAires = AnimationUtils.loadAnimation(this,
+				R.anim.anim_botones_05);
+		animLayInterBuenosAires.startAnimation(animInterBuenosAires);
+		
+		RelativeLayout animLayInterBrasilia = (RelativeLayout) findViewById(R.id.lay_internacional_brasilia);
+		Animation animInterBrasilia = AnimationUtils.loadAnimation(this,
+				R.anim.anim_botones_06);
+		animLayInterBrasilia.startAnimation(animInterBrasilia);
 	}
 
 	public void animaCiudadesChile() {
