@@ -73,6 +73,7 @@ public class LaminaDosActivity extends Activity {
 	private Animation animMensajesDespegueFailOut;
 	private RelativeLayout imgLuzEstado;
 	private ImageView flecha;
+	private ImageView flechaCarga;
 	private Animation animFlechaRebote;
 	// ///////////////////////////////////
 
@@ -120,6 +121,7 @@ public class LaminaDosActivity extends Activity {
 		despegueFail = (ImageView) findViewById(R.id.fail_despegue);
 		imgLuzEstado = (RelativeLayout) findViewById(R.id.img_luz_estado);
 		flecha = (ImageView) findViewById(R.id.img_flecha_down);
+		flechaCarga = (ImageView) findViewById(R.id.img_flecha_carga);
 		animMensajesDespegue = AnimationUtils.loadAnimation(this,R.anim.anim_scale_translation_world);
 		animMensajesDespegueOut = AnimationUtils.loadAnimation(this,R.anim.anim_translacion_out);
 		animMensajesDespegueFailIn = AnimationUtils.loadAnimation(this,R.anim.anim_translacion_in);
@@ -255,6 +257,7 @@ public class LaminaDosActivity extends Activity {
 		findViewById(R.id.btn_comenzar_juego_carga).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
+						flechaCarga.startAnimation(animFlechaRebote);
 						layPopUpCarga.startAnimation(animPopup);
 						layPopUpCarga.setVisibility(View.GONE);
 						// layLogoIzq.setVisibility(View.VISIBLE);
@@ -321,6 +324,7 @@ public class LaminaDosActivity extends Activity {
 			@Override
 			public void run() {
 				// Do something after 5s = 5000ms
+				flechaCarga.setVisibility(View.GONE);
 				findViewById(R.id.txt_cuanta_atras_tres).setVisibility(
 						View.GONE);
 				findViewById(R.id.lay_pop_cuenta_atras)
