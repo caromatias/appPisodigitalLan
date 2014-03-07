@@ -1,6 +1,7 @@
 package com.caromatias.apppisodigitallan;
 
 import pl.polidea.view.ZoomView;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.os.Bundle;
@@ -40,6 +41,13 @@ public class LaminaUnoActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lamina_uno);
+		
+		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
+		int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+		float percent = 1.0f;
+		int seventyVolume = (int) (maxVolume*percent);
+		audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
 
 		final View v = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE))
 				.inflate(R.layout.zoomableview, null, false);
