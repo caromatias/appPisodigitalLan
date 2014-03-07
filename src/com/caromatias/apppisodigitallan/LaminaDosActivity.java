@@ -4,12 +4,14 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -69,6 +71,8 @@ public class LaminaDosActivity extends Activity {
 	private ImageView despegueFail;
 	private ImageView cargaOk;
 	private ImageView cargaFail;
+	private VideoView videoBackCarga;
+	private ImageView imgBackCarga;
 	private Animation animMensajesDespegue;
 	private Animation animMensajesDespegueOut;
 	private Animation animMensajesDespegueFailIn;
@@ -78,6 +82,7 @@ public class LaminaDosActivity extends Activity {
 	private ImageView flechaCarga;
 	private Animation animFlechaRebote;
 	private MediaPlayer mp;
+
 	// ///////////////////////////////////
 
 	@Override
@@ -125,14 +130,20 @@ public class LaminaDosActivity extends Activity {
 		imgLuzEstado = (RelativeLayout) findViewById(R.id.img_luz_estado);
 		flecha = (ImageView) findViewById(R.id.img_flecha_down);
 		flechaCarga = (ImageView) findViewById(R.id.img_flecha_carga);
-		animMensajesDespegue = AnimationUtils.loadAnimation(this,R.anim.anim_scale_translation_world);
-		animMensajesDespegueOut = AnimationUtils.loadAnimation(this,R.anim.anim_translacion_out);
-		animMensajesDespegueFailIn = AnimationUtils.loadAnimation(this,R.anim.anim_translacion_in);
-		animMensajesDespegueFailOut = AnimationUtils.loadAnimation(this,R.anim.anim_translacion_fail_out);
-		animFlechaRebote = AnimationUtils.loadAnimation(this,R.anim.anim_rebote_flecha);
+		animMensajesDespegue = AnimationUtils.loadAnimation(this,
+				R.anim.anim_scale_translation_world);
+		animMensajesDespegueOut = AnimationUtils.loadAnimation(this,
+				R.anim.anim_translacion_out);
+		animMensajesDespegueFailIn = AnimationUtils.loadAnimation(this,
+				R.anim.anim_translacion_in);
+		animMensajesDespegueFailOut = AnimationUtils.loadAnimation(this,
+				R.anim.anim_translacion_fail_out);
+		animFlechaRebote = AnimationUtils.loadAnimation(this,
+				R.anim.anim_rebote_flecha);
 		cargaOk = (ImageView) findViewById(R.id.img_mensaje_carga_ok);
 		cargaFail = (ImageView) findViewById(R.id.img_mensaje_carga_fail);
-		
+		videoBackCarga = (VideoView) findViewById(R.id.video_back_carga);
+		imgBackCarga = (ImageView) findViewById(R.id.img_back_carga);
 
 		findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
@@ -152,7 +163,6 @@ public class LaminaDosActivity extends Activity {
 			}
 		});
 
-		
 		// //////////////////////////////////
 		// ///////// BOTON COMENZAR /////////
 
@@ -208,36 +218,53 @@ public class LaminaDosActivity extends Activity {
 									timer.cancel();
 									intentos = 2;
 									if (mProgressStatus < 70) {
-										runOnUiThread(new Runnable() // run on ui thread
+										runOnUiThread(new Runnable() // run on
+																		// ui
+																		// thread
 										{
 											public void run() {
 												flecha.setVisibility(View.GONE);
-												despegueFail.setVisibility(View.VISIBLE);
-												despegueFail.startAnimation(animMensajesDespegueFailIn);
-												imgLuzEstado.setBackgroundResource(R.anim.anim_despegue_fail);
-												savingAnimationLuz = (AnimationDrawable) imgLuzEstado.getBackground();
+												despegueFail
+														.setVisibility(View.VISIBLE);
+												despegueFail
+														.startAnimation(animMensajesDespegueFailIn);
+												imgLuzEstado
+														.setBackgroundResource(R.anim.anim_despegue_fail);
+												savingAnimationLuz = (AnimationDrawable) imgLuzEstado
+														.getBackground();
 												savingAnimationLuz.start();
 											}
 										});
 										intentoDos();
 									} else if (mProgressStatus >= 70) {
-										runOnUiThread(new Runnable() // run on ui thread
+										runOnUiThread(new Runnable() // run on
+																		// ui
+																		// thread
 										{
 											public void run() {
-												despegueOk.setVisibility(View.VISIBLE);
-												despegueOk.startAnimation(animMensajesDespegue);
-												imgLuzEstado.setBackgroundResource(R.anim.anim_despegue_ok);
-												savingAnimationLuz = (AnimationDrawable) imgLuzEstado.getBackground();
+												despegueOk
+														.setVisibility(View.VISIBLE);
+												despegueOk
+														.startAnimation(animMensajesDespegue);
+												imgLuzEstado
+														.setBackgroundResource(R.anim.anim_despegue_ok);
+												savingAnimationLuz = (AnimationDrawable) imgLuzEstado
+														.getBackground();
 												savingAnimationLuz.start();
 												Handler handlerDespegueOkUno = new Handler();
-												handlerDespegueOkUno.postDelayed(new Runnable() {
-													@Override
-													public void run() {
-														videoBackDespegue.start();
-														ImagenBackDespegue.startAnimation(animImgBackDespegue);
-														ImagenBackDespegue.setVisibility(View.GONE);
-													}
-												}, 2000);
+												handlerDespegueOkUno
+														.postDelayed(
+																new Runnable() {
+																	@Override
+																	public void run() {
+																		videoBackDespegue
+																				.start();
+																		ImagenBackDespegue
+																				.startAnimation(animImgBackDespegue);
+																		ImagenBackDespegue
+																				.setVisibility(View.GONE);
+																	}
+																}, 2000);
 											}
 										});
 									}
@@ -251,9 +278,9 @@ public class LaminaDosActivity extends Activity {
 												.valueOf(mProgressStatus + "%"));
 										if (estadoProgress == 3
 												&& mProgressStatus > 70) {
-											//ImagenBackDespegue.startAnimation(animImgBackDespegue);
+											// ImagenBackDespegue.startAnimation(animImgBackDespegue);
 											// videoBackDespegue.start();
-											//ImagenBackDespegue.setVisibility(View.GONE);
+											// ImagenBackDespegue.setVisibility(View.GONE);
 										}
 									}
 								});
@@ -307,13 +334,18 @@ public class LaminaDosActivity extends Activity {
 
 	public void muestraCuentaAtas() {
 		mp = MediaPlayer.create(this, R.raw.cuenta_atras);
+		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
+		int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+		float percent = 1.0f;
+		int seventyVolume = (int) (maxVolume * percent);
+		audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
 		currentRotation = 0;
 		comienzaCarga = 0;
 		activaCarga.setEnabled(true);
 		flechaCarga.setVisibility(View.VISIBLE);
 		flechaCarga.startAnimation(animFlechaRebote);
-		findViewById(R.id.txt_cuanta_atras_uno)
-		.setVisibility(View.VISIBLE);
+		findViewById(R.id.txt_cuanta_atras_uno).setVisibility(View.VISIBLE);
 		findViewById(R.id.lay_pop_cuenta_atras).setVisibility(View.VISIBLE);
 		txtPorcentajeCarga.setText("0%");
 		final Handler handlerCargaSound = new Handler();
@@ -363,6 +395,9 @@ public class LaminaDosActivity extends Activity {
 	}
 
 	public void comienzaCuentaAtras() {
+		videoBackCarga.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.video_carga);
+		videoBackCarga.start();
+		imgBackCarga.setVisibility(View.GONE);
 		comienzaCarga += 1;
 		new CountDownTimer(10000, 1000) {
 
@@ -407,7 +442,8 @@ public class LaminaDosActivity extends Activity {
 							handlerCargaQuitaUno.postDelayed(new Runnable() {
 								@Override
 								public void run() {
-									cargaFail.startAnimation(animMensajesDespegueFailOut);
+									cargaFail
+											.startAnimation(animMensajesDespegueFailOut);
 									cargaFail.setVisibility(View.GONE);
 									mp.stop();
 								}
@@ -440,11 +476,13 @@ public class LaminaDosActivity extends Activity {
 							handlerCargaQuita.postDelayed(new Runnable() {
 								@Override
 								public void run() {
-									Intent act = new Intent(LaminaDosActivity.this,
+									Intent act = new Intent(
+											LaminaDosActivity.this,
 											LaminaTresActivity.class);
 									act.putExtra("ruta", rutaSeleccionada);
 									startActivity(act);
-									overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+									overridePendingTransition(R.anim.fade_in,
+											R.anim.fade_out);
 								}
 							}, 3000);
 						}
@@ -462,7 +500,8 @@ public class LaminaDosActivity extends Activity {
 				handlerDespegueMensajeOut.postDelayed(new Runnable() {
 					@Override
 					public void run() {
-						despegueFail.startAnimation(animMensajesDespegueFailOut);
+						despegueFail
+								.startAnimation(animMensajesDespegueFailOut);
 						despegueFail.setVisibility(View.GONE);
 						savingAnimationLuz.stop();
 					}
@@ -499,9 +538,12 @@ public class LaminaDosActivity extends Activity {
 						{
 							public void run() {
 								despegueFail.setVisibility(View.VISIBLE);
-								despegueFail.startAnimation(animMensajesDespegueFailIn);
-								imgLuzEstado.setBackgroundResource(R.anim.anim_despegue_fail);
-								savingAnimationLuz = (AnimationDrawable) imgLuzEstado.getBackground();
+								despegueFail
+										.startAnimation(animMensajesDespegueFailIn);
+								imgLuzEstado
+										.setBackgroundResource(R.anim.anim_despegue_fail);
+								savingAnimationLuz = (AnimationDrawable) imgLuzEstado
+										.getBackground();
 								savingAnimationLuz.start();
 							}
 						});
@@ -512,18 +554,23 @@ public class LaminaDosActivity extends Activity {
 							public void run() {
 								despegueOk.setVisibility(View.VISIBLE);
 								despegueOk.startAnimation(animMensajesDespegue);
-								imgLuzEstado.setBackgroundResource(R.anim.anim_despegue_ok);
-								savingAnimationLuz = (AnimationDrawable) imgLuzEstado.getBackground();
+								imgLuzEstado
+										.setBackgroundResource(R.anim.anim_despegue_ok);
+								savingAnimationLuz = (AnimationDrawable) imgLuzEstado
+										.getBackground();
 								savingAnimationLuz.start();
 								Handler handlerDespegueOkDos = new Handler();
-								handlerDespegueOkDos.postDelayed(new Runnable() {
-									@Override
-									public void run() {
-										videoBackDespegue.start();
-										ImagenBackDespegue.startAnimation(animImgBackDespegue);
-										ImagenBackDespegue.setVisibility(View.GONE);
-									}
-								}, 2000);
+								handlerDespegueOkDos.postDelayed(
+										new Runnable() {
+											@Override
+											public void run() {
+												videoBackDespegue.start();
+												ImagenBackDespegue
+														.startAnimation(animImgBackDespegue);
+												ImagenBackDespegue
+														.setVisibility(View.GONE);
+											}
+										}, 2000);
 							}
 						});
 					}
@@ -554,7 +601,8 @@ public class LaminaDosActivity extends Activity {
 				handlerDespegueMensajeOut.postDelayed(new Runnable() {
 					@Override
 					public void run() {
-						despegueFail.startAnimation(animMensajesDespegueFailOut);
+						despegueFail
+								.startAnimation(animMensajesDespegueFailOut);
 						despegueFail.setVisibility(View.GONE);
 						savingAnimationLuz.stop();
 					}
@@ -598,18 +646,23 @@ public class LaminaDosActivity extends Activity {
 							public void run() {
 								despegueOk.setVisibility(View.VISIBLE);
 								despegueOk.startAnimation(animMensajesDespegue);
-								imgLuzEstado.setBackgroundResource(R.anim.anim_despegue_fail);
-								savingAnimationLuz = (AnimationDrawable) imgLuzEstado.getBackground();
+								imgLuzEstado
+										.setBackgroundResource(R.anim.anim_despegue_fail);
+								savingAnimationLuz = (AnimationDrawable) imgLuzEstado
+										.getBackground();
 								savingAnimationLuz.start();
 								Handler handlerDespegueOkTres = new Handler();
-								handlerDespegueOkTres.postDelayed(new Runnable() {
-									@Override
-									public void run() {
-										videoBackDespegue.start();
-										ImagenBackDespegue.startAnimation(animImgBackDespegue);
-										ImagenBackDespegue.setVisibility(View.GONE);
-									}
-								}, 2000);
+								handlerDespegueOkTres.postDelayed(
+										new Runnable() {
+											@Override
+											public void run() {
+												videoBackDespegue.start();
+												ImagenBackDespegue
+														.startAnimation(animImgBackDespegue);
+												ImagenBackDespegue
+														.setVisibility(View.GONE);
+											}
+										}, 2000);
 							}
 						});
 					}
@@ -623,8 +676,10 @@ public class LaminaDosActivity extends Activity {
 						if (estadoProgress == 3 && mProgressStatus > 70) {
 							ImagenBackDespegue
 									.startAnimation(animImgBackDespegue);
-							imgLuzEstado.setBackgroundResource(R.anim.anim_despegue_ok);
-							savingAnimationLuz = (AnimationDrawable) imgLuzEstado.getBackground();
+							imgLuzEstado
+									.setBackgroundResource(R.anim.anim_despegue_ok);
+							savingAnimationLuz = (AnimationDrawable) imgLuzEstado
+									.getBackground();
 							savingAnimationLuz.start();
 							ImagenBackDespegue.setVisibility(View.GONE);
 						}
@@ -841,7 +896,7 @@ public class LaminaDosActivity extends Activity {
 								activaCarga.setEnabled(false);
 							}
 						} else {
-							
+
 						}
 					}
 				});
@@ -855,8 +910,9 @@ public class LaminaDosActivity extends Activity {
 		int i1 = r.nextInt(max - min + 1) + min;
 		return i1;
 	}
+
 	@Override
-    public void onBackPressed() {
-       return;
-    }
+	public void onBackPressed() {
+		return;
+	}
 }
