@@ -431,7 +431,7 @@ public class LaminaTresActivity extends Activity {
 							@Override
 							public void run() {
 								// Do something after 5s = 5000ms
-								mpMundo.stop();
+								//mpMundo.stop();
 								switch (respuestaCorrecta) {
 								case 1:
 									respuestaUno
@@ -526,7 +526,7 @@ public class LaminaTresActivity extends Activity {
 							@Override
 							public void run() {
 								// Do something after 5s = 5000ms
-								mpMundo.stop();
+								//mpMundo.stop();
 								switch (respuestaCorrecta) {
 								case 1:
 									respuestaUno
@@ -623,7 +623,7 @@ public class LaminaTresActivity extends Activity {
 							@Override
 							public void run() {
 								// Do something after 5s = 5000ms
-								mpMundo.stop();
+								//mpMundo.stop();
 								switch (respuestaCorrecta) {
 								case 1:
 									respuestaUno

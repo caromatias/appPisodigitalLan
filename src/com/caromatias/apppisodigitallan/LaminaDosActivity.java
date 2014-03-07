@@ -91,7 +91,7 @@ public class LaminaDosActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lamina_dos);
-		
+
 		mpFail = MediaPlayer.create(this, R.raw.sonido_incorrecto);
 		mpOk = MediaPlayer.create(this, R.raw.sonido_correcto);
 
@@ -556,23 +556,27 @@ public class LaminaDosActivity extends Activity {
 							public void run() {
 								mpFail.start();
 								despegueFail.setVisibility(View.VISIBLE);
-								despegueFail.startAnimation(animMensajesDespegueFailIn);
+								despegueFail
+										.startAnimation(animMensajesDespegueFailIn);
 								Handler handlerCargaTerminaJuego = new Handler();
-								handlerCargaTerminaJuego.postDelayed(new Runnable() {
-									@Override
-									public void run() {
-										imgLuzEstado
-												.setBackgroundResource(R.anim.anim_despegue_fail);
-										savingAnimationLuz = (AnimationDrawable) imgLuzEstado
-												.getBackground();
-										savingAnimationLuz.start();
-									}
-								}, 1500);
+								handlerCargaTerminaJuego.postDelayed(
+										new Runnable() {
+											@Override
+											public void run() {
+												imgLuzEstado
+														.setBackgroundResource(R.anim.anim_despegue_fail);
+												savingAnimationLuz = (AnimationDrawable) imgLuzEstado
+														.getBackground();
+												savingAnimationLuz.start();
+											}
+										}, 1500);
 							}
 						});
 						intentoTres();
 					} else if (mProgressStatus >= 70) {
-						runOnUiThread(new Runnable() // run on ui thread
+						runOnUiThread(new Runnable() // run on
+						// ui
+						// thread
 						{
 							public void run() {
 								mpOk.start();
@@ -583,8 +587,8 @@ public class LaminaDosActivity extends Activity {
 								savingAnimationLuz = (AnimationDrawable) imgLuzEstado
 										.getBackground();
 								savingAnimationLuz.start();
-								Handler handlerDespegueOkDos = new Handler();
-								handlerDespegueOkDos.postDelayed(
+								Handler handlerDespegueOkUno = new Handler();
+								handlerDespegueOkUno.postDelayed(
 										new Runnable() {
 											@Override
 											public void run() {
@@ -671,19 +675,21 @@ public class LaminaDosActivity extends Activity {
 							}
 						});
 					} else if (mProgressStatus >= 70) {
-						runOnUiThread(new Runnable() // run on ui thread
+						runOnUiThread(new Runnable() // run on
+						// ui
+						// thread
 						{
 							public void run() {
 								mpOk.start();
 								despegueOk.setVisibility(View.VISIBLE);
 								despegueOk.startAnimation(animMensajesDespegue);
 								imgLuzEstado
-										.setBackgroundResource(R.anim.anim_despegue_fail);
+										.setBackgroundResource(R.anim.anim_despegue_ok);
 								savingAnimationLuz = (AnimationDrawable) imgLuzEstado
 										.getBackground();
 								savingAnimationLuz.start();
-								Handler handlerDespegueOkTres = new Handler();
-								handlerDespegueOkTres.postDelayed(
+								Handler handlerDespegueOkUno = new Handler();
+								handlerDespegueOkUno.postDelayed(
 										new Runnable() {
 											@Override
 											public void run() {
