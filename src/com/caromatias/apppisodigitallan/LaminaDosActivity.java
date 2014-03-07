@@ -395,7 +395,7 @@ public class LaminaDosActivity extends Activity {
 	}
 
 	public void comienzaCuentaAtras() {
-		videoBackCarga.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.game_over);
+		videoBackCarga.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.video_carga);
 		videoBackCarga.start();
 		imgBackCarga.setVisibility(View.GONE);
 		comienzaCarga += 1;
