@@ -228,9 +228,17 @@ public class LaminaDosActivity extends Activity {
 												imgLuzEstado.setBackgroundResource(R.anim.anim_despegue_ok);
 												savingAnimationLuz = (AnimationDrawable) imgLuzEstado.getBackground();
 												savingAnimationLuz.start();
+												Handler handlerDespegueOkUno = new Handler();
+												handlerDespegueOkUno.postDelayed(new Runnable() {
+													@Override
+													public void run() {
+														videoBackDespegue.start();
+														ImagenBackDespegue.startAnimation(animImgBackDespegue);
+														ImagenBackDespegue.setVisibility(View.GONE);
+													}
+												}, 2000);
 											}
 										});
-										videoBackDespegue.start();
 									}
 									break;
 								}
@@ -242,11 +250,9 @@ public class LaminaDosActivity extends Activity {
 												.valueOf(mProgressStatus + "%"));
 										if (estadoProgress == 3
 												&& mProgressStatus > 70) {
-											ImagenBackDespegue
-													.startAnimation(animImgBackDespegue);
+											//ImagenBackDespegue.startAnimation(animImgBackDespegue);
 											// videoBackDespegue.start();
-											ImagenBackDespegue
-													.setVisibility(View.GONE);
+											//ImagenBackDespegue.setVisibility(View.GONE);
 										}
 									}
 								});
@@ -496,9 +502,15 @@ public class LaminaDosActivity extends Activity {
 								imgLuzEstado.setBackgroundResource(R.anim.anim_despegue_ok);
 								savingAnimationLuz = (AnimationDrawable) imgLuzEstado.getBackground();
 								savingAnimationLuz.start();
+								Handler handlerDespegueOkDos = new Handler();
+								handlerDespegueOkDos.postDelayed(new Runnable() {
+									@Override
+									public void run() {
+										videoBackDespegue.start();
+									}
+								}, 2000);
 							}
 						});
-						videoBackDespegue.start();
 					}
 					break;
 				}
@@ -574,9 +586,15 @@ public class LaminaDosActivity extends Activity {
 								imgLuzEstado.setBackgroundResource(R.anim.anim_despegue_fail);
 								savingAnimationLuz = (AnimationDrawable) imgLuzEstado.getBackground();
 								savingAnimationLuz.start();
+								Handler handlerDespegueOkTres = new Handler();
+								handlerDespegueOkTres.postDelayed(new Runnable() {
+									@Override
+									public void run() {
+										videoBackDespegue.start();
+									}
+								}, 2000);
 							}
 						});
-						videoBackDespegue.start();
 					}
 					break;
 				}
@@ -820,4 +838,8 @@ public class LaminaDosActivity extends Activity {
 		int i1 = r.nextInt(max - min + 1) + min;
 		return i1;
 	}
+	@Override
+    public void onBackPressed() {
+       return;
+    }
 }

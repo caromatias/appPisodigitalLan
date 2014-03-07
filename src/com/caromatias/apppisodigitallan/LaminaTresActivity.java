@@ -679,4 +679,8 @@ public class LaminaTresActivity extends Activity {
 		int i1 = r.nextInt(max - min + 1) + min;
 		return i1;
 	}
+	@Override
+    public void onBackPressed() {
+       return;
+    }
 }

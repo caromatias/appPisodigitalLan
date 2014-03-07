@@ -74,5 +74,9 @@ public class GameOverActivity extends Activity {
 		getMenuInflater().inflate(R.menu.game_over, menu);
 		return true;
 	}
+	@Override
+    public void onBackPressed() {
+       return;
+    }
 
 }
