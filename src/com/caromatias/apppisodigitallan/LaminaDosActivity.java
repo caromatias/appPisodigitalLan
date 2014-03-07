@@ -520,6 +520,8 @@ public class LaminaDosActivity extends Activity {
 									@Override
 									public void run() {
 										videoBackDespegue.start();
+										ImagenBackDespegue.startAnimation(animImgBackDespegue);
+										ImagenBackDespegue.setVisibility(View.GONE);
 									}
 								}, 2000);
 							}
@@ -604,6 +606,8 @@ public class LaminaDosActivity extends Activity {
 									@Override
 									public void run() {
 										videoBackDespegue.start();
+										ImagenBackDespegue.startAnimation(animImgBackDespegue);
+										ImagenBackDespegue.setVisibility(View.GONE);
 									}
 								}, 2000);
 							}
