@@ -153,11 +153,11 @@
     
     <ImageView
             android:id="@+id/img_respuesta_incorrecta"
-            android:layout_marginLeft="940dp"
+            android:layout_marginLeft="920dp"
             android:layout_marginTop="50dp"
             android:layout_width="330dp"
             android:layout_height="100dp"
-            android:src="@drawable/aviso_trivia_incorrecto" 
-            android:visibility="gone"/>
+            android:src="@drawable/aviso_trivia_incorrecto"
+            android:visibility="gone" />
 
 </RelativeLayout>
