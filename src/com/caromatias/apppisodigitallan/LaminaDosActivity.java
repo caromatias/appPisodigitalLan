@@ -77,6 +77,7 @@ public class LaminaDosActivity extends Activity {
 	private ImageView flecha;
 	private ImageView flechaCarga;
 	private Animation animFlechaRebote;
+	private MediaPlayer mp;
 	// ///////////////////////////////////
 
 	@Override
@@ -305,6 +306,7 @@ public class LaminaDosActivity extends Activity {
 	}
 
 	public void muestraCuentaAtas() {
+		mp = MediaPlayer.create(this, R.raw.cuenta_atras);
 		currentRotation = 0;
 		comienzaCarga = 0;
 		activaCarga.setEnabled(true);
@@ -314,6 +316,13 @@ public class LaminaDosActivity extends Activity {
 		.setVisibility(View.VISIBLE);
 		findViewById(R.id.lay_pop_cuenta_atras).setVisibility(View.VISIBLE);
 		txtPorcentajeCarga.setText("0%");
+		final Handler handlerCargaSound = new Handler();
+		handlerCargaSound.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				mp.start();
+			}
+		}, 500);
 		final Handler handlerCargaUno = new Handler();
 		handlerCargaUno.postDelayed(new Runnable() {
 			@Override
@@ -323,6 +332,7 @@ public class LaminaDosActivity extends Activity {
 						.setVisibility(View.GONE);
 				findViewById(R.id.txt_cuanta_atras_dos).setVisibility(
 						View.VISIBLE);
+				mp.start();
 			}
 		}, 1500);
 		final Handler handlerCargaDos = new Handler();
@@ -388,6 +398,7 @@ public class LaminaDosActivity extends Activity {
 						startActivity(act);
 						overridePendingTransition(R.anim.fade_in,
 								R.anim.fade_out);
+						mp.stop();
 					}
 					runOnUiThread(new Runnable() // run on ui thread
 					{
@@ -398,6 +409,7 @@ public class LaminaDosActivity extends Activity {
 								public void run() {
 									cargaFail.startAnimation(animMensajesDespegueFailOut);
 									cargaFail.setVisibility(View.GONE);
+									mp.stop();
 								}
 							}, 1500);
 							final Handler handlerCargaQuita = new Handler();
@@ -421,8 +433,9 @@ public class LaminaDosActivity extends Activity {
 								public void run() {
 									cargaOk.startAnimation(animMensajesDespegueFailOut);
 									cargaOk.setVisibility(View.GONE);
+									mp.stop();
 								}
-							}, 1500);
+							}, 2400);
 							final Handler handlerCargaQuita = new Handler();
 							handlerCargaQuita.postDelayed(new Runnable() {
 								@Override
@@ -433,7 +446,7 @@ public class LaminaDosActivity extends Activity {
 									startActivity(act);
 									overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 								}
-							}, 2100);
+							}, 3000);
 						}
 					});
 				}

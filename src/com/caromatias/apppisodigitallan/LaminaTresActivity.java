@@ -4,11 +4,13 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.view.Menu;
@@ -46,11 +48,25 @@ public class LaminaTresActivity extends Activity {
 	private Animation animMundoIn;
 	private Animation animMundoOut;
 	private Animation animMundoRotacion;
+	private MediaPlayer mpTrivia;
+	private MediaPlayer mp;
+	private MediaPlayer mpMundo;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lamina_tres);
+		
+		mpMundo = MediaPlayer.create(this, R.raw.engranaje_mundo);
+		mpTrivia = MediaPlayer.create(this, R.raw.reloj_trivia);
+		mp = MediaPlayer.create(this, R.raw.jazz_dance);
+		mp.start();
+		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
+		int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+		float percent = 0.7f;
+		int seventyVolume = (int) (maxVolume*percent);
+		audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
 
 		// INICIO VIDEO DE TRANSICION TRIVIA //
 		videoBackTrivia = (VideoView) findViewById(R.id.video_back_trivia);
@@ -61,7 +77,7 @@ public class LaminaTresActivity extends Activity {
 		respuestaUno = (Button) findViewById(R.id.btn_respuesta1);
 		respuestaDos = (Button) findViewById(R.id.btn_respuesta2);
 		respuestaTres = (Button) findViewById(R.id.btn_respuesta3);
-		
+
 		imgBackTrivia = (RelativeLayout) findViewById(R.id.lay_img_back_trivia);
 		imgMundoTrivia = (ImageView) findViewById(R.id.img_mundo_back_trivia);
 		imgBackTriviaUno = (ImageView) findViewById(R.id.img_back_trivia_uno);
@@ -90,43 +106,43 @@ public class LaminaTresActivity extends Activity {
 								.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
 										+ R.raw.back_trivia);
 						videoBackTriviaB.start();
-
+						AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+						int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
+						int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+						float percent = 0.3f;
+						int seventyVolume = (int) (maxVolume*percent);
+						audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
+						mpTrivia.start();
+						mpTrivia.setLooping(true);
 					}
 				});
-		
+
 		/*
-		videoBackTriviaB
-		.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-			public void onCompletion(MediaPlayer mp) {
+		 * videoBackTriviaB .setOnCompletionListener(new
+		 * MediaPlayer.OnCompletionListener() { public void
+		 * onCompletion(MediaPlayer mp) {
+		 * imgBackTrivia.setVisibility(View.VISIBLE);
+		 * imgBackTrivia.startAnimation(animVideoMain); final Handler
+		 * handlerVideoBack = new Handler(); handlerVideoBack.postDelayed(new
+		 * Runnable() {
+		 * 
+		 * @Override public void run() { // Do something after 5s = 5000ms
+		 * videoBackTriviaB.setVisibility(View.GONE); } }, 2000); } });
+		 */
+
+		findViewById(R.id.btn_abre).setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+
 				imgBackTrivia.setVisibility(View.VISIBLE);
-				imgBackTrivia.startAnimation(animVideoMain);
-				final Handler handlerVideoBack = new Handler();
-				handlerVideoBack.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						// Do something after 5s = 5000ms
-						videoBackTriviaB.setVisibility(View.GONE);
-					}
-				}, 2000);
 			}
 		});
-		*/
-		
-		findViewById(R.id.btn_abre).setOnClickListener(
-				new OnClickListener() {
-					public void onClick(View arg0) {
-						
-						imgBackTrivia.setVisibility(View.VISIBLE);
-					}
-				});
-		
-		findViewById(R.id.btn_cierra).setOnClickListener(
-				new OnClickListener() {
-					public void onClick(View arg0) {
-						
-						imgBackTrivia.setVisibility(View.GONE);
-					}
-				});
+
+		findViewById(R.id.btn_cierra).setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+
+				imgBackTrivia.setVisibility(View.GONE);
+			}
+		});
 
 		final Handler handlerDos = new Handler();
 		handlerDos.postDelayed(new Runnable() {
@@ -144,8 +160,8 @@ public class LaminaTresActivity extends Activity {
 				// Do something after 5s = 5000ms
 				imgWhiteTres.startAnimation(animVideoMainOut);
 				imgWhiteTres.setVisibility(View.GONE);
-				//layPregTrivia.setVisibility(View.VISIBLE);
-				//layPregTrivia.startAnimation(animTriviaIn);
+				// layPregTrivia.setVisibility(View.VISIBLE);
+				// layPregTrivia.startAnimation(animTriviaIn);
 			}
 		}, 11000);
 		final Handler handlerCuatro = new Handler();
@@ -154,18 +170,18 @@ public class LaminaTresActivity extends Activity {
 			public void run() {
 				// Do something after 5s = 5000ms
 				/*
-				imgBackTrivia.setVisibility(View.VISIBLE);
-				imgBackTriviaUno.setVisibility(View.VISIBLE);
-				imgBackTriviaUno.startAnimation(animVideoMain);
-				*/
+				 * imgBackTrivia.setVisibility(View.VISIBLE);
+				 * imgBackTriviaUno.setVisibility(View.VISIBLE);
+				 * imgBackTriviaUno.startAnimation(animVideoMain);
+				 */
 				imgMundoTrivia.setVisibility(View.VISIBLE);
 				imgMundoTrivia.startAnimation(animMundoIn);
 				layPregTrivia.setVisibility(View.VISIBLE);
 				/*
-				ResizeWidthAnimation anim = new ResizeWidthAnimation(layPregTrivia, 1200);
-			    anim.setDuration(2000);
-			    layPregTrivia.startAnimation(anim);
-			    */
+				 * ResizeWidthAnimation anim = new
+				 * ResizeWidthAnimation(layPregTrivia, 1200);
+				 * anim.setDuration(2000); layPregTrivia.startAnimation(anim);
+				 */
 				layPregTrivia.startAnimation(animMundoIn);
 			}
 		}, 15500);
@@ -174,8 +190,8 @@ public class LaminaTresActivity extends Activity {
 			@Override
 			public void run() {
 				// Do something after 5s = 5000ms
-				//imgMundoTrivia.setVisibility(View.VISIBLE);
-				//imgMundoTrivia.startAnimation(animVideoMain);
+				// imgMundoTrivia.setVisibility(View.VISIBLE);
+				// imgMundoTrivia.startAnimation(animVideoMain);
 			}
 		}, 14000);
 		/*
@@ -367,7 +383,7 @@ public class LaminaTresActivity extends Activity {
 							+ getResources().getString(R.string.rlan1_3));
 					respuestaCorrecta = 1;
 					numeroDeRespuesta = 2;
-					//layPregTrivia.startAnimation(animTriviaIn);
+					// layPregTrivia.startAnimation(animTriviaIn);
 					layPregTrivia.startAnimation(animMundoIn);
 					imgMundoTrivia.startAnimation(animMundoIn);
 				}
@@ -389,7 +405,7 @@ public class LaminaTresActivity extends Activity {
 							+ getResources().getString(R.string.rlan1_3));
 					respuestaCorrecta = 1;
 					numeroDeRespuesta = 2;
-					//layPregTrivia.startAnimation(animTriviaIn);
+					// layPregTrivia.startAnimation(animTriviaIn);
 					layPregTrivia.startAnimation(animMundoIn);
 					imgMundoTrivia.startAnimation(animMundoIn);
 				}
@@ -403,6 +419,7 @@ public class LaminaTresActivity extends Activity {
 		findViewById(R.id.btn_respuesta1).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
+						mpMundo.start();
 						respuestaUno.setBackgroundResource(R.drawable.botoncomenzar);
 						imgMundoTrivia.setVisibility(View.VISIBLE);
 						imgMundoTrivia.startAnimation(animMundoRotacion);
@@ -414,6 +431,7 @@ public class LaminaTresActivity extends Activity {
 							@Override
 							public void run() {
 								// Do something after 5s = 5000ms
+								mpMundo.stop();
 								switch (respuestaCorrecta) {
 								case 1:
 									respuestaUno
@@ -461,6 +479,8 @@ public class LaminaTresActivity extends Activity {
 									startActivity(act);
 									overridePendingTransition(R.anim.fade_in,
 											R.anim.fade_out);
+									mp.stop();
+									mpTrivia.stop();
 								}
 							}, 5000);
 						} else if (respuestaCorrecta == 1) {
@@ -470,7 +490,7 @@ public class LaminaTresActivity extends Activity {
 								public void run() {
 									if (numeroDeRespuesta != 2) {
 										savingAnimation.stop();
-										
+
 										preguntasLan();
 										ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_correcta);
 										imaIncorrecta2.setVisibility(View.GONE);
@@ -482,6 +502,8 @@ public class LaminaTresActivity extends Activity {
 										startActivity(act);
 										overridePendingTransition(
 												R.anim.fade_in, R.anim.fade_out);
+										mp.stop();
+										mpTrivia.stop();
 									}
 								}
 							}, 5000);
@@ -493,6 +515,7 @@ public class LaminaTresActivity extends Activity {
 		findViewById(R.id.btn_respuesta2).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
+						mpMundo.start();
 						respuestaDos.setBackgroundResource(R.drawable.botoncomenzar);
 						respuestaUno.setEnabled(false);
 						respuestaDos.setEnabled(false);
@@ -503,6 +526,7 @@ public class LaminaTresActivity extends Activity {
 							@Override
 							public void run() {
 								// Do something after 5s = 5000ms
+								mpMundo.stop();
 								switch (respuestaCorrecta) {
 								case 1:
 									respuestaUno
@@ -550,6 +574,9 @@ public class LaminaTresActivity extends Activity {
 									startActivity(act);
 									overridePendingTransition(R.anim.fade_in,
 											R.anim.fade_out);
+									mp.stop();
+									mpTrivia.stop();
+									
 								}
 							}, 5000);
 						} else if (respuestaCorrecta == 2) {
@@ -560,7 +587,7 @@ public class LaminaTresActivity extends Activity {
 									// Do something after 5s = 5000ms
 									if (numeroDeRespuesta != 2) {
 										savingAnimation.stop();
-										//layPregTrivia.startAnimation(animTriviaOut);
+										// layPregTrivia.startAnimation(animTriviaOut);
 										preguntasLan();
 										ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_correcta);
 										imaIncorrecta2.setVisibility(View.GONE);
@@ -572,6 +599,8 @@ public class LaminaTresActivity extends Activity {
 										startActivity(act);
 										overridePendingTransition(
 												R.anim.fade_in, R.anim.fade_out);
+										mp.stop();
+										mpTrivia.stop();
 									}
 								}
 							}, 5000);
@@ -583,6 +612,7 @@ public class LaminaTresActivity extends Activity {
 		findViewById(R.id.btn_respuesta3).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
+						mpMundo.start();
 						respuestaTres.setBackgroundResource(R.drawable.botoncomenzar);
 						respuestaUno.setEnabled(false);
 						respuestaDos.setEnabled(false);
@@ -593,6 +623,7 @@ public class LaminaTresActivity extends Activity {
 							@Override
 							public void run() {
 								// Do something after 5s = 5000ms
+								mpMundo.stop();
 								switch (respuestaCorrecta) {
 								case 1:
 									respuestaUno
@@ -605,7 +636,7 @@ public class LaminaTresActivity extends Activity {
 									break;
 								case 2:
 									respuestaDos
-											.setBackgroundResource(R.anim.anim_respuesta_correcta); 
+											.setBackgroundResource(R.anim.anim_respuesta_correcta);
 									savingAnimation = (AnimationDrawable) respuestaDos
 											.getBackground();
 									savingAnimation.start();
@@ -640,6 +671,8 @@ public class LaminaTresActivity extends Activity {
 									startActivity(act);
 									overridePendingTransition(R.anim.fade_in,
 											R.anim.fade_out);
+									mp.stop();
+									mpTrivia.stop();
 								}
 							}, 5000);
 						} else if (respuestaCorrecta == 3) {
@@ -650,7 +683,7 @@ public class LaminaTresActivity extends Activity {
 									// Do something after 5s = 5000ms
 									if (numeroDeRespuesta != 2) {
 										savingAnimation.stop();
-										//layPregTrivia.startAnimation(animTriviaOut);
+										// layPregTrivia.startAnimation(animTriviaOut);
 										preguntasLan();
 										ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_correcta);
 										imaIncorrecta2.setVisibility(View.GONE);
@@ -662,6 +695,8 @@ public class LaminaTresActivity extends Activity {
 										startActivity(act);
 										overridePendingTransition(
 												R.anim.fade_in, R.anim.fade_out);
+										mp.stop();
+										mpTrivia.stop();
 									}
 								}
 							}, 5000);
@@ -679,8 +714,9 @@ public class LaminaTresActivity extends Activity {
 		int i1 = r.nextInt(max - min + 1) + min;
 		return i1;
 	}
+
 	@Override
-    public void onBackPressed() {
-       return;
-    }
+	public void onBackPressed() {
+		return;
+	}
 }
