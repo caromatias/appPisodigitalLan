@@ -165,16 +165,16 @@
 
     <RelativeLayout
         android:id="@+id/lay_imag_flota"
-        android:layout_width="175dp"
-        android:layout_height="35dp"
-        android:layout_marginLeft="27dp"
+        android:layout_width="185dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="22dp"
         android:layout_marginTop="670dp" >
 
         <Button
             android:id="@+id/button_nuestra_flota"
             android:layout_width="175dp"
             android:layout_height="35dp"
-            android:layout_marginLeft="0dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="0dp"
             android:background="@drawable/boton_conoce_nuestra_flota"
             android:textColor="#ffffff"

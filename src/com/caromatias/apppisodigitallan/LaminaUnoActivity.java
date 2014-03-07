@@ -1379,14 +1379,29 @@ public class LaminaUnoActivity extends Activity {
 								btnColombia.setEnabled(false);
 							}
 						});
-		// //////////////////////////////////////////slide_out////////////////////////////
+		// //////////////////////////////////////////lay_logo_pasajero_virtual_dos////////////////////////////
 	}
 	
 	public void animBotonesMapaInternacional(){
+		Button animLayButFlota = (Button) findViewById(R.id.button_nuestra_flota);
+		Animation animButFlota = AnimationUtils.loadAnimation(this,
+				R.anim.anim_conoce_flota);
+		animLayButFlota.startAnimation(animButFlota);
+		
 		RelativeLayout animLayFlota = (RelativeLayout) findViewById(R.id.lay_imag_flota);
 		Animation animFlota = AnimationUtils.loadAnimation(this,
-				R.anim.anim_conoce_flota);
+				R.anim.anim_lineas_brasil);
 		animLayFlota.startAnimation(animFlota);
+		
+		RelativeLayout animLayDes = (RelativeLayout) findViewById(R.id.lay_imag_destinos);
+		Animation animDes = AnimationUtils.loadAnimation(this,
+				R.anim.anim_lineas_brasil);
+		animLayDes.startAnimation(animDes);
+		
+		RelativeLayout animLayLogo = (RelativeLayout) findViewById(R.id.lay_logo_pasajero_virtual_dos);
+		Animation animLogo = AnimationUtils.loadAnimation(this,
+				R.anim.anim_lineas_brasil);
+		animLayLogo.startAnimation(animLogo);
 		
 		Button animLayInterBogota = (Button) findViewById(R.id.button_internacional_bogota);
 		Animation animInterBogota = AnimationUtils.loadAnimation(this,
