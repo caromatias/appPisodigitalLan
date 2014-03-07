@@ -59,7 +59,7 @@ public class GameOverActivity extends Activity {
 			// /////////////////////////////////////
 			videoGameOver.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 			    public void onCompletion(MediaPlayer mp) {
-			    	Intent act = new Intent(GameOverActivity.this,	LaminaDosActivity.class);
+			    	Intent act = new Intent(GameOverActivity.this,	LaminaUnoActivity.class);
 					startActivity(act);
 					overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 			    }

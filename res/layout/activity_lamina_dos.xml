@@ -759,7 +759,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/popup_transp"
-            android:visibility="visible" >
+            android:visibility="gone" >
 
             <TextView
                 android:id="@+id/txt_cuanta_atras_uno"
@@ -798,6 +798,15 @@
                 android:textSize="150sp"
                 android:textStyle="bold"
                 android:visibility="gone" />
+            
+            <ImageView
+                android:id="@+id/img_circulo_cuenta_atras"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="225dp"
+                android:src="@drawable/img_circulo_cuenta_atras" />
         </RelativeLayout>
 
         <RelativeLayout
