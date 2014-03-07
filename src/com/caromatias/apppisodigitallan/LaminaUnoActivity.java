@@ -2073,5 +2073,9 @@ public class LaminaUnoActivity extends Activity {
 		btnArgentina.setEnabled(true);
 		btnActivo.setEnabled(false);
 	}
+	@Override
+    public void onBackPressed() {
+       return;
+    }
 
 }

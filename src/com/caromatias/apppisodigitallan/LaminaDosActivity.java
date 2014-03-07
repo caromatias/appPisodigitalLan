@@ -422,7 +422,7 @@ public class LaminaDosActivity extends Activity {
 									cargaOk.startAnimation(animMensajesDespegueFailOut);
 									cargaOk.setVisibility(View.GONE);
 								}
-							}, 1500);
+							}, 2400);
 							final Handler handlerCargaQuita = new Handler();
 							handlerCargaQuita.postDelayed(new Runnable() {
 								@Override
@@ -433,7 +433,7 @@ public class LaminaDosActivity extends Activity {
 									startActivity(act);
 									overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 								}
-							}, 2100);
+							}, 3000);
 						}
 					});
 				}
