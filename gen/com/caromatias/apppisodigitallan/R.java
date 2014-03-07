@@ -708,10 +708,12 @@ public final class R {
         public static final int rio=0x7f050010;
         public static final int rio_janeiro=0x7f050011;
         public static final int sao_paulo=0x7f050012;
-        public static final int transicion=0x7f050013;
-        public static final int video_carga=0x7f050014;
-        public static final int video_despegue=0x7f050015;
-        public static final int world_transition=0x7f050016;
+        public static final int sonido_correcto=0x7f050013;
+        public static final int sonido_incorrecto=0x7f050014;
+        public static final int transicion=0x7f050015;
+        public static final int video_carga=0x7f050016;
+        public static final int video_despegue=0x7f050017;
+        public static final int world_transition=0x7f050018;
     }
     public static final class string {
         public static final int action_settings=0x7f070001;
