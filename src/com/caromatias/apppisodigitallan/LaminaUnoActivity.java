@@ -38,6 +38,7 @@ public class LaminaUnoActivity extends Activity {
 	private Button btnArgentina;
 	private Button btnFlota;
 	private Button btnDestinos;
+	private int posiciones = 1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -2041,38 +2042,16 @@ public class LaminaUnoActivity extends Activity {
 						//btnColombia.setBackgroundResource(R.drawable.botonrojo);
 						reestableceBotones(btnFlota);
 
-						switch (posicionMenu) {
+						switch (posiciones) {
 						case 1:
-							layBotonFlota.startAnimation(animMapaInter);
+							layBotonFlota.startAnimation(animBotonFlota);
 							btnFlota.setBackgroundResource(R.drawable.boton);
 							btnFlota.setEnabled(true);
 							break;
 						case 2:
-							layMapaChile.startAnimation(animMapaChileOut);
-							btnChile.setBackgroundResource(R.drawable.boton);
-							btnChile.setEnabled(true);
-							break;
-						case 3:
-							layMapaArgentina
-									.startAnimation(animMapaArgentinaOut);
-							btnArgentina
-									.setBackgroundResource(R.drawable.boton);
-							btnArgentina.setEnabled(true);
-							break;
-						case 4:
-							layMapaPeru.startAnimation(animMapaPeruOut);
-							btnPeru.setBackgroundResource(R.drawable.boton);
-							btnPeru.setEnabled(true);
-							break;
-						case 5:
-							layMapaBrasil.startAnimation(animMapaBrasilOut);
-							btnBrasil.setBackgroundResource(R.drawable.boton);
-							btnBrasil.setEnabled(true);
-							break;
-						case 6:
-							layMapaEcuador.startAnimation(animMapaEcuadorOut);
-							btnEcuador.setBackgroundResource(R.drawable.boton);
-							btnEcuador.setEnabled(true);
+							layBotonDestinos.startAnimation(animBotonDestinos);
+							btnDestinos.setBackgroundResource(R.drawable.boton);
+							btnDestinos.setEnabled(true);
 							break;
 						case 7:
 							return;
@@ -2083,52 +2062,23 @@ public class LaminaUnoActivity extends Activity {
 							@Override
 							public void run() {
 
-								switch (posicionMenu) {
+								switch (posiciones) {
 								case 1:
-									layMapaInter.setVisibility(View.GONE);
-									layMapaColombia.setVisibility(View.VISIBLE);
-									layMapaColombia
-											.startAnimation(animMapaColombia);
+									layBotonFlota.setVisibility(View.GONE);
+									layBotonDestinos.setVisibility(View.VISIBLE);
+									layBotonDestinos.startAnimation(animBotonDestinos);
 									break;
 								case 2:
-									layMapaChile.setVisibility(View.GONE);
-									layMapaColombia.setVisibility(View.VISIBLE);
-									layMapaColombia
-											.startAnimation(animMapaColombia);
-									break;
-								case 3:
-									layMapaArgentina.setVisibility(View.GONE);
-									layMapaColombia.setVisibility(View.VISIBLE);
-									layMapaColombia
-											.startAnimation(animMapaColombia);
-									break;
-								case 4:
-									layMapaPeru.setVisibility(View.GONE);
-									layMapaColombia.setVisibility(View.VISIBLE);
-									layMapaColombia
-											.startAnimation(animMapaColombia);
-									break;
-								case 5:
-									layMapaBrasil.setVisibility(View.GONE);
-									layMapaColombia.setVisibility(View.VISIBLE);
-									layMapaColombia
-											.startAnimation(animMapaColombia);
-									break;
-								case 6:
-									layMapaEcuador.setVisibility(View.GONE);
-									layMapaColombia.setVisibility(View.VISIBLE);
-									layMapaColombia
-											.startAnimation(animMapaColombia);
+									layBotonDestinos.setVisibility(View.GONE);
+									layBotonFlota.setVisibility(View.VISIBLE);
+									layBotonFlota.startAnimation(animBotonFlota);
 									break;
 								case 7:
 									return;
 								}
 								// ///// Animaciones
-								animaCiudadesColombia();
-								posicionMenu = 7;
 							}
 						}, 1000);
-						btnColombia.setEnabled(false);
 					}
 				});
 	}
