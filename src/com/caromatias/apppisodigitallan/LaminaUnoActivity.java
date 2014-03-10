@@ -97,7 +97,24 @@ public class LaminaUnoActivity extends Activity {
 		btnChile = (Button) findViewById(R.id.btn_chile);
 		btnArgentina = (Button) findViewById(R.id.btn_argentina);
 		btnFlota = (Button) findViewById(R.id.button_nuestra_flota);
-
+		btnDestinos = (Button) findViewById(R.id.button_nuestros_destinos);
+		
+		//////////////////////// BOTONES FLOTA Y DESTINO //////////////////////////
+		
+		final RelativeLayout layBotonFlota = (RelativeLayout) findViewById(R.id.lay_imag_flota);
+		final Animation animBotonFlota = AnimationUtils.loadAnimation(this,
+				R.anim.anim_mapa_in);
+		final Animation animBotonFlotaOut = AnimationUtils.loadAnimation(this,
+				R.anim.anim_mapa_inter_out);
+		
+		final RelativeLayout layBotonDestinos = (RelativeLayout) findViewById(R.id.lay_imag_destinos);
+		final Animation animBotonDestinos = AnimationUtils.loadAnimation(this,
+				R.anim.anim_mapa_in);
+		final Animation animBotonDestinosOut = AnimationUtils.loadAnimation(this,
+				R.anim.anim_mapa_inter_out);
+		
+		////////////////////////// BOTONES MAPA INTERNACIONAL //////////////////////////
+		
 		final RelativeLayout layMapaInter = (RelativeLayout) findViewById(R.id.lay_mapa_inter);
 		final Animation animMapaInter = AnimationUtils.loadAnimation(this,
 				R.anim.anim_mapa_inter_out);
@@ -2022,13 +2039,13 @@ public class LaminaUnoActivity extends Activity {
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
 						//btnColombia.setBackgroundResource(R.drawable.botonrojo);
-						reestableceBotones(btnColombia);
+						reestableceBotones(btnFlota);
 
 						switch (posicionMenu) {
 						case 1:
-							layMapaInter.startAnimation(animMapaInter);
-							btnInter.setBackgroundResource(R.drawable.boton);
-							btnInter.setEnabled(true);
+							layBotonFlota.startAnimation(animMapaInter);
+							btnFlota.setBackgroundResource(R.drawable.boton);
+							btnFlota.setEnabled(true);
 							break;
 						case 2:
 							layMapaChile.startAnimation(animMapaChileOut);
