@@ -39,6 +39,7 @@ public class LaminaUnoActivity extends Activity {
 	private Button btnFlota;
 	private Button btnDestinos;
 	private int posiciones = 1;
+	public static MediaPlayer mpFondoUno;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class LaminaUnoActivity extends Activity {
 		float percent = 1.0f;
 		int seventyVolume = (int) (maxVolume * percent);
 		audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
+		mpFondoUno = MediaPlayer.create(this, R.raw.the_shining);
 
 		final View v = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE))
 				.inflate(R.layout.zoomableview, null, false);
@@ -2821,6 +2823,14 @@ public class LaminaUnoActivity extends Activity {
 					@Override
 					public void run() {
 						// Do something after 5s = 5000ms
+						mpFondoUno.start();
+						mpFondoUno.setLooping(true);
+						AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+						int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
+						int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+						float percent = 0.3f;
+						int seventyVolume = (int) (maxVolume*percent);
+						audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
 						videoLaminaDos.start();
 						videoView.setVisibility(View.INVISIBLE);
 						imgWhite.setAnimation(animVideoMainOut);
