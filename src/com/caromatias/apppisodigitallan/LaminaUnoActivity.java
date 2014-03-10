@@ -2034,53 +2034,7 @@ public class LaminaUnoActivity extends Activity {
 		
 		// //////////////////////////////////////////////////////////////////////
 		// ///////////////////// NAVEGACION BOTON FLOTA // ///////////////////////////
-		findViewById(R.id.lay_imag_flota).setOnClickListener(
-				new OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						// TODO Auto-generated method stub
-						//btnColombia.setBackgroundResource(R.drawable.botonrojo);
-						reestableceBotones(btnFlota);
-
-						switch (posiciones) {
-						case 1:
-							layBotonFlota.startAnimation(animBotonFlota);
-							btnFlota.setBackgroundResource(R.drawable.boton);
-							btnFlota.setEnabled(true);
-							break;
-						case 2:
-							layBotonDestinos.startAnimation(animBotonDestinos);
-							btnDestinos.setBackgroundResource(R.drawable.boton);
-							btnDestinos.setEnabled(true);
-							break;
-						case 7:
-							return;
-						}
-
-						final Handler handler = new Handler();
-						handler.postDelayed(new Runnable() {
-							@Override
-							public void run() {
-
-								switch (posiciones) {
-								case 1:
-									layBotonFlota.setVisibility(View.GONE);
-									layBotonDestinos.setVisibility(View.VISIBLE);
-									layBotonDestinos.startAnimation(animBotonDestinos);
-									break;
-								case 2:
-									layBotonDestinos.setVisibility(View.GONE);
-									layBotonFlota.setVisibility(View.VISIBLE);
-									layBotonFlota.startAnimation(animBotonFlota);
-									break;
-								case 7:
-									return;
-								}
-								// ///// Animaciones
-							}
-						}, 1000);
-					}
-				});
+		
 	}
 
 	public void animBotonesMapaInternacional() {
