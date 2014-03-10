@@ -145,38 +145,38 @@
     </RelativeLayout>
     
     <RelativeLayout
-        android:id="@+id/lay_imag_destinos"
-        android:layout_width="350dp"
-        android:layout_height="45dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="670dp" >
-
-        <Button
-            android:id="@+id/button_nuestros_destinos"
-            android:layout_width="350dp"
-            android:layout_height="45dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/boton_conoce_nuestros_destinos"
-            android:textColor="#ffffff"
-            android:textSize="12dp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
-    <RelativeLayout
         android:id="@+id/lay_imag_flota"
-        android:layout_width="350dp"
-        android:layout_height="45dp"
+        android:layout_width="370dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="670dp" >
 
         <Button
             android:id="@+id/button_nuestra_flota"
-            android:layout_width="350dp"
-            android:layout_height="45dp"
+            android:layout_width="370dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="0dp"
             android:background="@drawable/boton_conoce_nuestra_flota"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/lay_imag_destinos"
+        android:layout_width="370dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="670dp" >
+
+        <Button
+            android:id="@+id/button_nuestros_destinos"
+            android:layout_width="370dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/boton_conoce_nuestros_destinos"
             android:textColor="#ffffff"
             android:textSize="12dp"
             android:textStyle="bold" />
