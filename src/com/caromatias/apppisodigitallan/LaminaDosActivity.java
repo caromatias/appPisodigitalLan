@@ -93,7 +93,7 @@ public class LaminaDosActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lamina_dos);
 
-		LaminaUnoActivity.mpFondoUno.stop();
+		//LaminaUnoActivity.mpFondoUno.stop();
 		mpFail = MediaPlayer.create(this, R.raw.sonido_incorrecto);
 		mpOk = MediaPlayer.create(this, R.raw.sonido_correcto);
 		mpDespegue = MediaPlayer.create(this, R.raw.airplane_on_board);
