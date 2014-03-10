@@ -37,16 +37,16 @@
             <RelativeLayout
                 android:id="@+id/lay_internacional_bogota"
                 android:layout_width="150dp"
-                android:layout_height="15dp"
+                android:layout_height="30dp"
                 android:layout_marginLeft="540dp"
-                android:layout_marginTop="334dp" >
+                android:layout_marginTop="330dp" >
 
                 <Button
                     android:id="@+id/button_internacional_bogota"
                     android:layout_width="80dp"
                     android:layout_height="15dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="0dp"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/botoncomenzar"
                     android:text="Bogota"
                     android:textColor="#ffffff"
@@ -58,7 +58,7 @@
                     android:layout_width="10dp"
                     android:layout_height="10dp"
                     android:layout_marginLeft="120dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="9dp"
                     android:background="@drawable/img_punto" >
                 </ImageView>
             </RelativeLayout>
@@ -66,16 +66,16 @@
             <RelativeLayout
                 android:id="@+id/lay_internacional_guayaquil"
                 android:layout_width="150dp"
-                android:layout_height="15dp"
+                android:layout_height="30dp"
                 android:layout_marginLeft="528dp"
-                android:layout_marginTop="390dp" >
+                android:layout_marginTop="385dp" >
 
                 <Button
                     android:id="@+id/button_internacional_guayaquil"
                     android:layout_width="80dp"
                     android:layout_height="15dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="0dp"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/botoncomenzar"
                     android:text="Guayaquil"
                     android:textColor="#ffffff"
@@ -182,16 +182,16 @@
             <RelativeLayout
                 android:id="@+id/lay_internacional_brasilia"
                 android:layout_width="150dp"
-                android:layout_height="15dp"
+                android:layout_height="30dp"
                 android:layout_marginLeft="830dp"
-                android:layout_marginTop="450dp" >
+                android:layout_marginTop="445dp" >
 
                 <Button
                     android:id="@+id/button_internacional_brasilia"
                     android:layout_width="80dp"
                     android:layout_height="15dp"
                     android:layout_marginLeft="45dp"
-                    android:layout_marginTop="0dp"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/botoncomenzar"
                     android:text="Brasilia"
                     android:textColor="#ffffff"
