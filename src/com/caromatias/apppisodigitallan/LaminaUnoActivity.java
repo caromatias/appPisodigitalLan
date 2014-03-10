@@ -2749,6 +2749,7 @@ public class LaminaUnoActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
+						mpFondoUno.stop();
 						Intent act = new Intent(LaminaUnoActivity.this,
 								LaminaDosActivity.class);
 						startActivity(act);

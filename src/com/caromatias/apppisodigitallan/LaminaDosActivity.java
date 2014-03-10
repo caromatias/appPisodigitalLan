@@ -194,6 +194,12 @@ public class LaminaDosActivity extends Activity {
 				new OnClickListener() {
 					public void onClick(View arg0) {
 						mpDespegue.start();
+						AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+						int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
+						int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+						float percent = 1.0f;
+						int seventyVolume = (int) (maxVolume*percent);
+						audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
 						layPopup.startAnimation(animPopup);
 						layPopup.setVisibility(View.GONE);
 						layLogoIzq.setVisibility(View.VISIBLE);
