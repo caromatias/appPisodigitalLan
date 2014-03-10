@@ -84,6 +84,7 @@ public class LaminaDosActivity extends Activity {
 	private MediaPlayer mp;
 	private MediaPlayer mpFail;
 	private MediaPlayer mpOk;
+	public static MediaPlayer mpDespegue;
 
 	// ///////////////////////////////////
 
@@ -94,6 +95,7 @@ public class LaminaDosActivity extends Activity {
 
 		mpFail = MediaPlayer.create(this, R.raw.sonido_incorrecto);
 		mpOk = MediaPlayer.create(this, R.raw.sonido_correcto);
+		mpDespegue = MediaPlayer.create(this, R.raw.airplane_on_board);
 
 		RelativeLayout layLineaRoja = (RelativeLayout) findViewById(R.id.img_back_barra);
 		Animation animLayBarra = AnimationUtils.loadAnimation(this,
@@ -190,6 +192,7 @@ public class LaminaDosActivity extends Activity {
 		findViewById(R.id.btn_comenzar_juego_despegue).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
+						mpDespegue.start();
 						layPopup.startAnimation(animPopup);
 						layPopup.setVisibility(View.GONE);
 						layLogoIzq.setVisibility(View.VISIBLE);
