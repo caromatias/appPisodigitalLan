@@ -49,18 +49,22 @@ public class LaminaTresActivity extends Activity {
 	private Animation animMundoOut;
 	private Animation animMundoRotacion;
 	private MediaPlayer mpTrivia;
-	private MediaPlayer mp;
+	public static MediaPlayer mpFondo;
 	private MediaPlayer mpMundo;
+	private MediaPlayer mpoK;
+	private MediaPlayer mpFail;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lamina_tres);
 		
+		mpoK = MediaPlayer.create(this, R.raw.sonido_correcto);
+		mpFail = MediaPlayer.create(this, R.raw.sonido_incorrecto);
 		mpMundo = MediaPlayer.create(this, R.raw.engranaje_mundo);
 		mpTrivia = MediaPlayer.create(this, R.raw.reloj_trivia);
-		mp = MediaPlayer.create(this, R.raw.jazz_dance);
-		mp.start();
+		mpFondo = MediaPlayer.create(this, R.raw.jazz_dance);
+		mpFondo.start();
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
 		int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
@@ -441,6 +445,7 @@ public class LaminaTresActivity extends Activity {
 									savingAnimation.start();
 									ImageView imaCorrecta = (ImageView) findViewById(R.id.img_respuesta_correcta);
 									imaCorrecta.setVisibility(View.VISIBLE);
+									mpoK.start();
 									break;
 								case 2:
 									respuestaDos
@@ -450,6 +455,7 @@ public class LaminaTresActivity extends Activity {
 									savingAnimation.start();
 									ImageView imaIncorrecta = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
 									imaIncorrecta.setVisibility(View.VISIBLE);
+									mpFail.start();
 									break;
 								case 3:
 									respuestaTres
@@ -459,6 +465,7 @@ public class LaminaTresActivity extends Activity {
 									savingAnimation.start();
 									ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
 									imaIncorrecta2.setVisibility(View.VISIBLE);
+									mpFail.start();
 									break;
 								default:
 									break;
@@ -479,7 +486,7 @@ public class LaminaTresActivity extends Activity {
 									startActivity(act);
 									overridePendingTransition(R.anim.fade_in,
 											R.anim.fade_out);
-									mp.stop();
+									//mp.stop();
 									mpTrivia.stop();
 								}
 							}, 5000);
@@ -490,7 +497,7 @@ public class LaminaTresActivity extends Activity {
 								public void run() {
 									if (numeroDeRespuesta != 2) {
 										savingAnimation.stop();
-
+										
 										preguntasLan();
 										ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_correcta);
 										imaIncorrecta2.setVisibility(View.GONE);
@@ -502,7 +509,7 @@ public class LaminaTresActivity extends Activity {
 										startActivity(act);
 										overridePendingTransition(
 												R.anim.fade_in, R.anim.fade_out);
-										mp.stop();
+										//mp.stop();
 										mpTrivia.stop();
 									}
 								}
@@ -536,6 +543,7 @@ public class LaminaTresActivity extends Activity {
 									savingAnimation.start();
 									ImageView imaIncorrecta = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
 									imaIncorrecta.setVisibility(View.VISIBLE);
+									mpFail.start();
 									break;
 								case 2:
 									respuestaDos
@@ -545,6 +553,7 @@ public class LaminaTresActivity extends Activity {
 									savingAnimation.start();
 									ImageView imaCorrecta = (ImageView) findViewById(R.id.img_respuesta_correcta);
 									imaCorrecta.setVisibility(View.VISIBLE);
+									mpoK.start();
 									break;
 								case 3:
 									respuestaTres
@@ -554,6 +563,7 @@ public class LaminaTresActivity extends Activity {
 									savingAnimation.start();
 									ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
 									imaIncorrecta2.setVisibility(View.VISIBLE);
+									mpFail.start();
 									break;
 								default:
 									break;
@@ -574,7 +584,7 @@ public class LaminaTresActivity extends Activity {
 									startActivity(act);
 									overridePendingTransition(R.anim.fade_in,
 											R.anim.fade_out);
-									mp.stop();
+									//mp.stop();
 									mpTrivia.stop();
 									
 								}
@@ -599,7 +609,7 @@ public class LaminaTresActivity extends Activity {
 										startActivity(act);
 										overridePendingTransition(
 												R.anim.fade_in, R.anim.fade_out);
-										mp.stop();
+										//mp.stop();
 										mpTrivia.stop();
 									}
 								}
@@ -633,6 +643,7 @@ public class LaminaTresActivity extends Activity {
 									savingAnimation.start();
 									ImageView imaIncorrecta = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
 									imaIncorrecta.setVisibility(View.VISIBLE);
+									mpFail.start();
 									break;
 								case 2:
 									respuestaDos
@@ -642,6 +653,7 @@ public class LaminaTresActivity extends Activity {
 									savingAnimation.start();
 									ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
 									imaIncorrecta2.setVisibility(View.VISIBLE);
+									mpFail.start();
 									break;
 								case 3:
 									respuestaTres
@@ -651,6 +663,7 @@ public class LaminaTresActivity extends Activity {
 									savingAnimation.start();
 									ImageView imaCorrecta = (ImageView) findViewById(R.id.img_respuesta_correcta);
 									imaCorrecta.setVisibility(View.VISIBLE);
+									mpoK.start();
 									break;
 								default:
 									break;
@@ -671,7 +684,7 @@ public class LaminaTresActivity extends Activity {
 									startActivity(act);
 									overridePendingTransition(R.anim.fade_in,
 											R.anim.fade_out);
-									mp.stop();
+									//mp.stop();
 									mpTrivia.stop();
 								}
 							}, 5000);
@@ -695,7 +708,7 @@ public class LaminaTresActivity extends Activity {
 										startActivity(act);
 										overridePendingTransition(
 												R.anim.fade_in, R.anim.fade_out);
-										mp.stop();
+										//mp.stop();
 										mpTrivia.stop();
 									}
 								}
