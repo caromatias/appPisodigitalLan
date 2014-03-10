@@ -85,6 +85,7 @@ public class LaminaDosActivity extends Activity {
 	private MediaPlayer mpFail;
 	private MediaPlayer mpOk;
 	public static MediaPlayer mpDespegue;
+	private MediaPlayer mpMapaJuego;
 
 	// ///////////////////////////////////
 
@@ -93,7 +94,16 @@ public class LaminaDosActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lamina_dos);
 
-		//LaminaUnoActivity.mpFondoUno.stop();
+		mpMapaJuego = MediaPlayer.create(this, R.raw.a_life_begins);
+		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
+		int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+		float percent = 0.7f;
+		int seventyVolume = (int) (maxVolume*percent);
+		audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
+		mpMapaJuego.start();
+
+		// LaminaUnoActivity.mpFondoUno.stop();
 		mpFail = MediaPlayer.create(this, R.raw.sonido_incorrecto);
 		mpOk = MediaPlayer.create(this, R.raw.sonido_correcto);
 		mpDespegue = MediaPlayer.create(this, R.raw.airplane_on_board);
@@ -195,11 +205,14 @@ public class LaminaDosActivity extends Activity {
 					public void onClick(View arg0) {
 						mpDespegue.start();
 						AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-						int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
-						int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+						int currentVolume = audio
+								.getStreamVolume(AudioManager.STREAM_MUSIC);
+						int maxVolume = audio
+								.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
 						float percent = 1.0f;
-						int seventyVolume = (int) (maxVolume*percent);
-						audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
+						int seventyVolume = (int) (maxVolume * percent);
+						audio.setStreamVolume(AudioManager.STREAM_MUSIC,
+								seventyVolume, 0);
 						layPopup.startAnimation(animPopup);
 						layPopup.setVisibility(View.GONE);
 						layLogoIzq.setVisibility(View.VISIBLE);
@@ -737,7 +750,8 @@ public class LaminaDosActivity extends Activity {
 	}
 
 	public void goRutas() {
-
+		
+		
 		final RelativeLayout layJuegoDespegue = (RelativeLayout) findViewById(R.id.lay_juego_master);
 		final RelativeLayout layJuegoCarga = (RelativeLayout) findViewById(R.id.lay_juego_carga);
 		final Animation animJuego = AnimationUtils.loadAnimation(this,
@@ -761,6 +775,7 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 1;
 				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
 			}
 		});
 		// ////////////////////////////
@@ -780,6 +795,7 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 2;
 				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
 			}
 		});
 		// ////////////////////////////
@@ -799,6 +815,7 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 3;
 				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
 			}
 		});
 		// ////////////////////////////
@@ -818,6 +835,7 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 4;
 				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
 			}
 		});
 		// ////////////////////////////
@@ -837,6 +855,7 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 5;
 				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
 			}
 		});
 		// ////////////////////////////
@@ -856,6 +875,7 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 6;
 				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
 			}
 		});
 		// ////////////////////////////
@@ -875,6 +895,7 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 7;
 				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
 			}
 		});
 		// ////////////////////////////
@@ -894,6 +915,7 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 8;
 				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
 			}
 		});
 		// ////////////////////////////
@@ -913,6 +935,7 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 9;
 				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
 			}
 		});
 		// ////////////////////////////

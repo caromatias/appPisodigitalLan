@@ -101,23 +101,25 @@ public class LaminaUnoActivity extends Activity {
 		btnArgentina = (Button) findViewById(R.id.btn_argentina);
 		btnFlota = (Button) findViewById(R.id.button_nuestra_flota);
 		btnDestinos = (Button) findViewById(R.id.button_nuestros_destinos);
-		
-		//////////////////////// BOTONES FLOTA Y DESTINO //////////////////////////
-		
+
+		// ////////////////////// BOTONES FLOTA Y DESTINO
+		// //////////////////////////
+
 		final RelativeLayout layBotonFlota = (RelativeLayout) findViewById(R.id.lay_imag_flota);
 		final Animation animBotonFlota = AnimationUtils.loadAnimation(this,
 				R.anim.anim_mapa_in);
 		final Animation animBotonFlotaOut = AnimationUtils.loadAnimation(this,
 				R.anim.anim_mapa_inter_out);
-		
+
 		final RelativeLayout layBotonDestinos = (RelativeLayout) findViewById(R.id.lay_imag_destinos);
 		final Animation animBotonDestinos = AnimationUtils.loadAnimation(this,
 				R.anim.anim_mapa_in);
-		final Animation animBotonDestinosOut = AnimationUtils.loadAnimation(this,
-				R.anim.anim_mapa_inter_out);
-		
-		////////////////////////// BOTONES MAPA INTERNACIONAL //////////////////////////
-		
+		final Animation animBotonDestinosOut = AnimationUtils.loadAnimation(
+				this, R.anim.anim_mapa_inter_out);
+
+		// //////////////////////// BOTONES MAPA INTERNACIONAL
+		// //////////////////////////
+
 		final RelativeLayout layMapaInter = (RelativeLayout) findViewById(R.id.lay_mapa_inter);
 		final Animation animMapaInter = AnimationUtils.loadAnimation(this,
 				R.anim.anim_mapa_inter_out);
@@ -2033,10 +2035,11 @@ public class LaminaUnoActivity extends Activity {
 						btnColombia.setEnabled(false);
 					}
 				});
-		
-		////////////////////////////////////////////////////////////////////////
-		/////////////////////// NAVEGACION BOTON FLOTA /////////////////////////
-		
+
+		// //////////////////////////////////////////////////////////////////////
+		// ///////////////////// NAVEGACION BOTON FLOTA
+		// /////////////////////////
+
 		findViewById(R.id.image_internacional_bogota).setOnClickListener(
 				new OnClickListener() {
 					@Override
@@ -2047,11 +2050,15 @@ public class LaminaUnoActivity extends Activity {
 
 						switch (posicionMenu) {
 						
+						case 1:
+							
+							break;
+
 						}
 
 					}
 				});
-		
+
 	}
 
 	public void animBotonesMapaInternacional() {
@@ -2796,11 +2803,14 @@ public class LaminaUnoActivity extends Activity {
 						mpFondoUno.start();
 						mpFondoUno.setLooping(true);
 						AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-						int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
-						int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+						int currentVolume = audio
+								.getStreamVolume(AudioManager.STREAM_MUSIC);
+						int maxVolume = audio
+								.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
 						float percent = 0.3f;
-						int seventyVolume = (int) (maxVolume*percent);
-						audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
+						int seventyVolume = (int) (maxVolume * percent);
+						audio.setStreamVolume(AudioManager.STREAM_MUSIC,
+								seventyVolume, 0);
 						videoLaminaDos.start();
 						videoView.setVisibility(View.INVISIBLE);
 						imgWhite.setAnimation(animVideoMainOut);
