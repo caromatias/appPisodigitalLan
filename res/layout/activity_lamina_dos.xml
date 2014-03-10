@@ -10,21 +10,18 @@
     tools:context=".LaminaDosActivity" >
 
     <RelativeLayout
-        android:id="@+id/img_back_barra"
         android:layout_width="10dp"
         android:layout_height="150dp"
         android:layout_marginLeft="140dp"
         android:layout_marginTop="595dp"
         android:background="#FF0000" >
-    </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/img_back_barra"
-        android:layout_width="10dp"
-        android:layout_height="150dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="595dp"
-        android:background="#FF0000" >
+        <RelativeLayout
+            android:id="@+id/img_back_barra"
+            android:layout_width="10dp"
+            android:layout_height="145dp"
+            android:background="#FF0000" >
+        </RelativeLayout>
     </RelativeLayout>
 
     <RelativeLayout
