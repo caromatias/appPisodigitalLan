@@ -12,8 +12,8 @@
     <RelativeLayout
         android:layout_width="10dp"
         android:layout_height="150dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="595dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="600dp"
         android:background="#FF0000" >
 
         <RelativeLayout
@@ -33,7 +33,7 @@
 
         <RelativeLayout
             android:id="@+id/img_back_rutas"
-            android:layout_width="1110dp"
+            android:layout_width="1120dp"
             android:layout_height="150dp"
             android:layout_marginLeft="10dp"
             android:background="@drawable/back_rutas" >

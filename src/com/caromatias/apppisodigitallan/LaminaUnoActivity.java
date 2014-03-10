@@ -2807,7 +2807,7 @@ public class LaminaUnoActivity extends Activity {
 								.getStreamVolume(AudioManager.STREAM_MUSIC);
 						int maxVolume = audio
 								.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-						float percent = 0.3f;
+						float percent = 0.4f;
 						int seventyVolume = (int) (maxVolume * percent);
 						audio.setStreamVolume(AudioManager.STREAM_MUSIC,
 								seventyVolume, 0);
