@@ -167,15 +167,15 @@ public class LaminaUnoActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				ResizeWidthAnimation anim = new ResizeWidthAnimation(btnFlota, 500);
+				ResizeWidthAnimation anim = new ResizeWidthAnimation(btnFlota, 300);
 			    anim.setDuration(500);
-			    btnFlota.setTextSize(14);
+			    btnFlota.setTextSize(18);
+			    btnFlota.bringToFront();
 			    btnFlota.startAnimation(anim);	
 			    
-			    ResizeWidthAnimation animDes = new ResizeWidthAnimation(btnDestinos, 200);
+			    ResizeWidthAnimation animDes = new ResizeWidthAnimation(btnDestinos, 300);
 			    animDes.setDuration(500);
 			    btnDestinos.setTextSize(12);
-			    btnDestinos.setLeft(300);
 			    btnDestinos.startAnimation(anim);	
 			}					
 		});
@@ -185,12 +185,13 @@ public class LaminaUnoActivity extends Activity {
 				@Override
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
-					ResizeWidthAnimation anim = new ResizeWidthAnimation(btnDestinos, 500);
+					ResizeWidthAnimation anim = new ResizeWidthAnimation(btnDestinos, 300);
 				    anim.setDuration(500);
-				    btnDestinos.setTextSize(14);
+				    btnDestinos.setTextSize(18);
+				    btnDestinos.bringToFront();
 				    btnDestinos.startAnimation(anim);	
 				    
-				    ResizeWidthAnimation animDes = new ResizeWidthAnimation(btnFlota, 200);
+				    ResizeWidthAnimation animDes = new ResizeWidthAnimation(btnFlota, 300);
 				    animDes.setDuration(500);
 				    btnFlota.setTextSize(12);
 				    btnFlota.startAnimation(anim);
