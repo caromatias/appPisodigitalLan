@@ -107,6 +107,7 @@ public class LaminaDosActivity extends Activity {
 		mpFail = MediaPlayer.create(this, R.raw.sonido_incorrecto);
 		mpOk = MediaPlayer.create(this, R.raw.sonido_correcto);
 		mpDespegue = MediaPlayer.create(this, R.raw.airplane_on_board);
+		mp = MediaPlayer.create(this, R.raw.cuenta_atras);
 
 		RelativeLayout layLineaRoja = (RelativeLayout) findViewById(R.id.img_back_barra);
 		Animation animLayBarra = AnimationUtils.loadAnimation(this,
@@ -363,7 +364,6 @@ public class LaminaDosActivity extends Activity {
 	}
 
 	public void muestraCuentaAtas() {
-		mp = MediaPlayer.create(this, R.raw.cuenta_atras);
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
 		int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
@@ -425,6 +425,7 @@ public class LaminaDosActivity extends Activity {
 	}
 
 	public void comienzaCuentaAtras() {
+		mp.stop();
 		videoBackCarga.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.video_carga);
 		videoBackCarga.start();
 		final Handler handlerCargaImg = new Handler();
