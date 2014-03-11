@@ -175,6 +175,7 @@ public class LaminaUnoActivity extends Activity {
 			    ResizeWidthAnimation animDes = new ResizeWidthAnimation(btnDestinos, 200);
 			    animDes.setDuration(500);
 			    btnDestinos.setTextSize(12);
+			    btnDestinos.setLeft(300);
 			    btnDestinos.startAnimation(anim);	
 			}					
 		});
