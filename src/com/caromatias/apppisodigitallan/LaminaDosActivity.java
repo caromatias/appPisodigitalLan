@@ -204,7 +204,7 @@ public class LaminaDosActivity extends Activity {
 		findViewById(R.id.btn_comenzar_juego_despegue).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
-						mpDespegue.start();
+						//mpDespegue.start();
 						AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 						int currentVolume = audio
 								.getStreamVolume(AudioManager.STREAM_MUSIC);
@@ -756,6 +756,8 @@ public class LaminaDosActivity extends Activity {
 		// /////// BOTON UNO //////////
 		findViewById(R.id.btnUno).setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
 				int numeroRandom = generaRandom();
 				switch (numeroRandom) {
 				case 1:
@@ -770,13 +772,15 @@ public class LaminaDosActivity extends Activity {
 				rutaSeleccionada = 1;
 				layMasterComp.setVisibility(View.GONE);
 				mpMapaJuego.stop();
-				volumeJuego();
+				//volumeJuego();
 			}
 		});
 		// ////////////////////////////
 		// /////// BOTON DOS //////////
 		findViewById(R.id.btnDos).setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
 				int numeroRandom = generaRandom();
 				switch (numeroRandom) {
 				case 1:
@@ -791,13 +795,15 @@ public class LaminaDosActivity extends Activity {
 				rutaSeleccionada = 2;
 				layMasterComp.setVisibility(View.GONE);
 				mpMapaJuego.stop();
-				volumeJuego();
+				//volumeJuego();
 			}
 		});
 		// ////////////////////////////
 		// /////// BOTON TRES //////////
 		findViewById(R.id.btnTres).setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
 				int numeroRandom = generaRandom();
 				switch (numeroRandom) {
 				case 1:
@@ -812,13 +818,15 @@ public class LaminaDosActivity extends Activity {
 				rutaSeleccionada = 3;
 				layMasterComp.setVisibility(View.GONE);
 				mpMapaJuego.stop();
-				volumeJuego();
+				//volumeJuego();
 			}
 		});
 		// ////////////////////////////
 		// /////// BOTON CUATRO //////////
 		findViewById(R.id.btnCuatro).setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
 				int numeroRandom = generaRandom();
 				switch (numeroRandom) {
 				case 1:
@@ -833,13 +841,15 @@ public class LaminaDosActivity extends Activity {
 				rutaSeleccionada = 4;
 				layMasterComp.setVisibility(View.GONE);
 				mpMapaJuego.stop();
-				volumeJuego();
+				//volumeJuego();
 			}
 		});
 		// ////////////////////////////
 		// /////// BOTON CINCO //////////
 		findViewById(R.id.btnCinco).setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
 				int numeroRandom = generaRandom();
 				switch (numeroRandom) {
 				case 1:
@@ -854,13 +864,15 @@ public class LaminaDosActivity extends Activity {
 				rutaSeleccionada = 5;
 				layMasterComp.setVisibility(View.GONE);
 				mpMapaJuego.stop();
-				volumeJuego();
+				//volumeJuego();
 			}
 		});
 		// ////////////////////////////
 		// /////// BOTON SEIS //////////
 		findViewById(R.id.btnSeis).setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
 				int numeroRandom = generaRandom();
 				switch (numeroRandom) {
 				case 1:
@@ -875,13 +887,15 @@ public class LaminaDosActivity extends Activity {
 				rutaSeleccionada = 6;
 				layMasterComp.setVisibility(View.GONE);
 				mpMapaJuego.stop();
-				volumeJuego();
+				//volumeJuego();
 			}
 		});
 		// ////////////////////////////
 		// /////// BOTON SIETE //////////
 		findViewById(R.id.btnSiete).setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
 				int numeroRandom = generaRandom();
 				switch (numeroRandom) {
 				case 1:
@@ -896,13 +910,15 @@ public class LaminaDosActivity extends Activity {
 				rutaSeleccionada = 7;
 				layMasterComp.setVisibility(View.GONE);
 				mpMapaJuego.stop();
-				volumeJuego();
+				//volumeJuego();
 			}
 		});
 		// ////////////////////////////
 		// /////// BOTON OCHO //////////
 		findViewById(R.id.btnOcho).setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
 				int numeroRandom = generaRandom();
 				switch (numeroRandom) {
 				case 1:
@@ -917,13 +933,15 @@ public class LaminaDosActivity extends Activity {
 				rutaSeleccionada = 8;
 				layMasterComp.setVisibility(View.GONE);
 				mpMapaJuego.stop();
-				volumeJuego();
+				//volumeJuego();
 			}
 		});
 		// ////////////////////////////
 		// /////// BOTON NUEVE //////////
 		findViewById(R.id.btnNueve).setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
 				int numeroRandom = generaRandom();
 				switch (numeroRandom) {
 				case 1:
@@ -938,7 +956,7 @@ public class LaminaDosActivity extends Activity {
 				rutaSeleccionada = 9;
 				layMasterComp.setVisibility(View.GONE);
 				mpMapaJuego.stop();
-				volumeJuego();
+				//volumeJuego();
 			}
 		});
 		// ////////////////////////////
@@ -988,6 +1006,14 @@ public class LaminaDosActivity extends Activity {
 		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
 		int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
 		float percent = 0.5f;
+		int seventyVolume = (int) (maxVolume * percent);
+		audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
+	}
+	public void volumeCabinaJuego(){
+		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
+		int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+		float percent = 0.8f;
 		int seventyVolume = (int) (maxVolume * percent);
 		audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
 	}
