@@ -164,12 +164,13 @@ public final class R {
         public static final int mapa_peru=0x7f020041;
         public static final int panel_final=0x7f020042;
         public static final int panel_final_2=0x7f020043;
-        public static final int popup_transp=0x7f020044;
-        public static final int puntoamarillo=0x7f020045;
-        public static final int splashscreen=0x7f020046;
-        public static final int tac_despegar=0x7f020047;
-        public static final int tacometro_carga=0x7f020048;
-        public static final int titulo_acelerador_despegue=0x7f020049;
+        public static final int pop_up_info=0x7f020044;
+        public static final int popup_transp=0x7f020045;
+        public static final int puntoamarillo=0x7f020046;
+        public static final int splashscreen=0x7f020047;
+        public static final int tac_despegar=0x7f020048;
+        public static final int tacometro_carga=0x7f020049;
+        public static final int titulo_acelerador_despegue=0x7f02004a;
     }
     public static final class id {
         public static final int ProgressBar_carga=0x7f0a001f;
