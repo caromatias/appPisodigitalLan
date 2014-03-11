@@ -1,5 +1,6 @@
 package com.caromatias.apppisodigitallan;
 
+
 import pl.polidea.view.ZoomView;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -70,13 +71,23 @@ public class LaminaUnoActivity extends Activity {
 		// //////// Cambio de imagen a video ////////////
 
 		// ////////////////////////////////////////////
+		
+		/////////////// BOTONES DE FLOTA Y DESTINO //////////////
+		
+		btnFlota = (Button) findViewById(R.id.button_nuestra_flota);
+		
+		ResizeWidthAnimation anim = new ResizeWidthAnimation(btnFlota, 500);
+	    anim.setDuration(500);
+	    btnFlota.startAnimation(anim);
+		
+		////////////////////////////////////////////////////
+		
 
 		eventosBotones();
 
 		cambiaActivity();
 
 		animBotonesMapaInternacional();
-
 	}
 
 	@Override
@@ -84,6 +95,8 @@ public class LaminaUnoActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.lamina_uno, menu);
 		return true;
+		
+		
 	}
 
 	// ///////////////// EVENTOS BOTONES DEL PANEL /////////////////////////
@@ -2831,6 +2844,17 @@ public class LaminaUnoActivity extends Activity {
 					}
 				}, 6000);
 			}
+		});
+		
+		findViewById(R.id.button_nuestra_flota).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				
+				ResizeWidthAnimation anim = new ResizeWidthAnimation(btnFlota, 500);
+			    anim.setDuration(500);
+			    btnFlota.startAnimation(anim);				
+			}
+			
 		});
 	}
 

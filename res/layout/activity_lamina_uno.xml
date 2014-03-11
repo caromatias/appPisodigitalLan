@@ -150,7 +150,6 @@
         android:layout_height="80dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="670dp" >
-
         <Button
             android:id="@+id/button_nuestra_flota"
             android:layout_width="200dp"
