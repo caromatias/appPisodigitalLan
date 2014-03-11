@@ -228,7 +228,7 @@ public class LaminaUnoActivity extends Activity {
 		// ////////////////////////////
 
 		findViewById(R.id.button_nuestra_flota).setOnClickListener(
-<<<<<<< HEAD
+
 		    new OnClickListener() {			
 			@Override
 			public void onClick(View v) {
@@ -264,46 +264,6 @@ public class LaminaUnoActivity extends Activity {
 				}					
 			});
 		
-=======
-				new OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						// TODO Auto-generated method stub
-						ResizeWidthAnimation anim = new ResizeWidthAnimation(
-								btnFlota, 500);
-						anim.setDuration(500);
-						btnFlota.setTextSize(14);
-						btnFlota.startAnimation(anim);
-
-						ResizeWidthAnimation animDes = new ResizeWidthAnimation(
-								btnDestinos, 200);
-						animDes.setDuration(500);
-						btnDestinos.setTextSize(12);
-						btnDestinos.setLeft(300);
-						btnDestinos.startAnimation(anim);
-					}
-				});
-
-		findViewById(R.id.button_nuestros_destinos).setOnClickListener(
-				new OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						// TODO Auto-generated method stub
-						ResizeWidthAnimation anim = new ResizeWidthAnimation(
-								btnDestinos, 500);
-						anim.setDuration(500);
-						btnDestinos.setTextSize(14);
-						btnDestinos.startAnimation(anim);
-
-						ResizeWidthAnimation animDes = new ResizeWidthAnimation(
-								btnFlota, 200);
-						animDes.setDuration(500);
-						btnFlota.setTextSize(12);
-						btnFlota.startAnimation(anim);
-					}
-				});
-
->>>>>>> 44bb1e8c7eed08718aa22df2700e7055986c3fd7
 		findViewById(R.id.btn_internacional).setOnClickListener(
 				new OnClickListener() {
 					@Override
