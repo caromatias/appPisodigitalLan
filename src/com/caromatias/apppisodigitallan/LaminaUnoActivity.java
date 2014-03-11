@@ -36,13 +36,14 @@ public class LaminaUnoActivity extends Activity {
 	private Button btnColombia;
 	private Button btnChile;
 	private Button btnArgentina;
-    private Button btnFlota;
+	private Button btnFlota;
 	private Button btnDestinos;
 	private int posiciones = 1;
 	public static MediaPlayer mpFondoUno;
-	public RelativeLayout layFlota;
-	public RelativeLayout layDestinos;
-	
+	private RelativeLayout layFlota;
+	private RelativeLayout layDestinos;
+	private RelativeLayout layPopupInfo;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -99,7 +100,71 @@ public class LaminaUnoActivity extends Activity {
 		btnArgentina = (Button) findViewById(R.id.btn_argentina);
 		btnFlota = (Button) findViewById(R.id.button_nuestra_flota);
 		btnDestinos = (Button) findViewById(R.id.button_nuestros_destinos);
+		layPopupInfo = (RelativeLayout) findViewById(R.id.lay_popup_info);
+
+		findViewById(R.id.btn_cerrar_popup_info).setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						layPopupInfo.setVisibility(View.GONE);
+					}
+				});
 		
+		findViewById(R.id.lay_apretable_chile).setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						layPopupInfo.bringToFront();
+						layPopupInfo.setVisibility(View.VISIBLE);
+					}
+				});
+		findViewById(R.id.lay_apretable_argentina).setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						layPopupInfo.bringToFront();
+						layPopupInfo.setVisibility(View.VISIBLE);
+					}
+				});
+		findViewById(R.id.lay_apretable_peru).setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						layPopupInfo.bringToFront();
+						layPopupInfo.setVisibility(View.VISIBLE);
+					}
+				});
+		findViewById(R.id.lay_apretable_brasil).setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						layPopupInfo.bringToFront();
+						layPopupInfo.setVisibility(View.VISIBLE);
+					}
+				});
+		findViewById(R.id.lay_apretable_ecuador).setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						layPopupInfo.bringToFront();
+						layPopupInfo.setVisibility(View.VISIBLE);
+					}
+				});
+		findViewById(R.id.lay_apretable_colombia).setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						layPopupInfo.bringToFront();
+						layPopupInfo.setVisibility(View.VISIBLE);
+					}
+				});
 
 		// ////////////////////// BOTONES FLOTA Y DESTINO
 		// //////////////////////////
@@ -163,6 +228,7 @@ public class LaminaUnoActivity extends Activity {
 		// ////////////////////////////
 
 		findViewById(R.id.button_nuestra_flota).setOnClickListener(
+<<<<<<< HEAD
 		    new OnClickListener() {			
 			@Override
 			public void onClick(View v) {
@@ -198,6 +264,46 @@ public class LaminaUnoActivity extends Activity {
 				}					
 			});
 		
+=======
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						ResizeWidthAnimation anim = new ResizeWidthAnimation(
+								btnFlota, 500);
+						anim.setDuration(500);
+						btnFlota.setTextSize(14);
+						btnFlota.startAnimation(anim);
+
+						ResizeWidthAnimation animDes = new ResizeWidthAnimation(
+								btnDestinos, 200);
+						animDes.setDuration(500);
+						btnDestinos.setTextSize(12);
+						btnDestinos.setLeft(300);
+						btnDestinos.startAnimation(anim);
+					}
+				});
+
+		findViewById(R.id.button_nuestros_destinos).setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						ResizeWidthAnimation anim = new ResizeWidthAnimation(
+								btnDestinos, 500);
+						anim.setDuration(500);
+						btnDestinos.setTextSize(14);
+						btnDestinos.startAnimation(anim);
+
+						ResizeWidthAnimation animDes = new ResizeWidthAnimation(
+								btnFlota, 200);
+						animDes.setDuration(500);
+						btnFlota.setTextSize(12);
+						btnFlota.startAnimation(anim);
+					}
+				});
+
+>>>>>>> 44bb1e8c7eed08718aa22df2700e7055986c3fd7
 		findViewById(R.id.btn_internacional).setOnClickListener(
 				new OnClickListener() {
 					@Override
