@@ -15,7 +15,8 @@
         android:paddingBottom="0dp"
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
-        android:paddingTop="0dp" >
+        android:paddingTop="0dp"
+        android:visibility="visible" >
 
         <ImageView
             android:id="@+id/imageView2"
@@ -696,6 +697,15 @@
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_apretable_chile"
+            android:layout_width="300dp"
+            android:layout_height="700dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="500dp">
+        </RelativeLayout>
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -1138,6 +1148,13 @@
                 </ImageView>
             </RelativeLayout>
         </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/lay_apretable_argentina"
+            android:layout_width="400dp"
+            android:layout_height="600dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="450dp">
+        </RelativeLayout>
     </RelativeLayout>
 
     <RelativeLayout
@@ -1567,6 +1584,13 @@
                 android:layout_marginTop="5dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/lay_apretable_peru"
+            android:layout_width="400dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginLeft="520dp" >
         </RelativeLayout>
     </RelativeLayout>
 
@@ -2758,6 +2782,13 @@
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/lay_apretable_brasil"
+            android:layout_width="450dp"
+            android:layout_height="400dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginLeft="480dp">
+        </RelativeLayout>
     </RelativeLayout>
 
     <RelativeLayout
@@ -2952,6 +2983,13 @@
                 android:textColor="#ffffff"
                 android:textSize="12dp"
                 android:textStyle="bold" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/lay_apretable_ecuador"
+            android:layout_width="480dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="220dp"
+            android:layout_marginLeft="440dp">
         </RelativeLayout>
     </RelativeLayout>
 
@@ -3553,6 +3591,13 @@
                 android:layout_marginTop="5dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/lay_apretable_colombia"
+            android:layout_width="410dp"
+            android:layout_height="550dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="460dp">
         </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

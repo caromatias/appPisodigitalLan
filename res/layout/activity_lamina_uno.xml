@@ -256,7 +256,8 @@
         android:id="@+id/lay_popup_info"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/pop_up_info" >
+        android:background="@drawable/pop_up_info" 
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/txt_titulo_popup_info"
@@ -282,6 +283,16 @@
             android:text="TEXTO"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn_cerrar_popup_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/txt_titulo_popup_info"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="42dp"
+            android:layout_marginRight="244dp"
+            android:background="@drawable/btn_cerrar_popup" />
 
     </RelativeLayout>
 
