@@ -75,6 +75,23 @@ public class LaminaUnoActivity extends Activity {
 		cambiaActivity();
 
 		animBotonesMapaInternacional();
+
+		// //////////////////////////////// APARICION DE BOTONES DE FLOTA Y
+		// DESTINO ////////////////////////////
+		Button animLayFlota = (Button) findViewById(R.id.button_nuestra_flota);
+		Animation animFlota = AnimationUtils.loadAnimation(this,
+				R.anim.anim_lineas_brasil);
+		animLayFlota.startAnimation(animFlota);
+
+		Button animLayDes = (Button) findViewById(R.id.button_nuestros_destinos);
+		Animation animDes = AnimationUtils.loadAnimation(this,
+				R.anim.anim_lineas_brasil);
+		animLayDes.startAnimation(animDes);
+		
+		RelativeLayout animLayLogo = (RelativeLayout) findViewById(R.id.lay_logo_pasajero_virtual_dos);
+		Animation animLogo = AnimationUtils.loadAnimation(this,
+				R.anim.anim_lineas_brasil);
+		animLayLogo.startAnimation(animLogo);
 	}
 
 	@Override
@@ -101,6 +118,8 @@ public class LaminaUnoActivity extends Activity {
 		btnFlota = (Button) findViewById(R.id.button_nuestra_flota);
 		btnDestinos = (Button) findViewById(R.id.button_nuestros_destinos);
 		layPopupInfo = (RelativeLayout) findViewById(R.id.lay_popup_info);
+		final Animation animNuevoMapaInter = AnimationUtils.loadAnimation(this,
+				R.anim.anim_in_juego);
 
 		findViewById(R.id.btn_cerrar_popup_info).setOnClickListener(
 				new OnClickListener() {
@@ -110,7 +129,7 @@ public class LaminaUnoActivity extends Activity {
 						layPopupInfo.setVisibility(View.GONE);
 					}
 				});
-		
+
 		findViewById(R.id.lay_apretable_chile).setOnClickListener(
 				new OnClickListener() {
 					@Override
@@ -229,41 +248,45 @@ public class LaminaUnoActivity extends Activity {
 
 		findViewById(R.id.button_nuestra_flota).setOnClickListener(
 
-		    new OnClickListener() {			
+		new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				ResizeWidthAnimation anim = new ResizeWidthAnimation(btnFlota, 300);
-			    anim.setDuration(500);
-			    btnFlota.setTextSize(18);
-			    btnFlota.bringToFront();
-			    btnFlota.startAnimation(anim);	
-			    
-			    ResizeWidthAnimation animDes = new ResizeWidthAnimation(btnDestinos, 300);
-			    animDes.setDuration(500);
-			    btnDestinos.setTextSize(14);
-			    btnDestinos.startAnimation(anim);	
-			}					
+				ResizeWidthAnimation anim = new ResizeWidthAnimation(btnFlota,
+						300);
+				anim.setDuration(500);
+				btnFlota.setTextSize(18);
+				btnFlota.bringToFront();
+				btnFlota.startAnimation(anim);
+
+				ResizeWidthAnimation animDes = new ResizeWidthAnimation(
+						btnDestinos, 300);
+				animDes.setDuration(500);
+				btnDestinos.setTextSize(14);
+				btnDestinos.startAnimation(anim);
+			}
 		});
-		
-		findViewById(R.id.button_nuestros_destinos).setOnClickListener(        
-			    new OnClickListener() {			
-				@Override
-				public void onClick(View v) {
-					// TODO Auto-generated method stub
-					ResizeWidthAnimation anim = new ResizeWidthAnimation(btnDestinos, 320);
-				    anim.setDuration(500);
-				    btnDestinos.setTextSize(18);
-				    btnDestinos.bringToFront();
-				    btnDestinos.startAnimation(anim);	
-				    
-				    ResizeWidthAnimation animDes = new ResizeWidthAnimation(btnFlota, 300);
-				    animDes.setDuration(500);
-				    btnFlota.setTextSize(14);
-				    btnFlota.startAnimation(anim);
-				}					
-			});
-		
+
+		findViewById(R.id.button_nuestros_destinos).setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						ResizeWidthAnimation anim = new ResizeWidthAnimation(
+								btnDestinos, 355);
+						anim.setDuration(500);
+						btnDestinos.setTextSize(18);
+						btnDestinos.bringToFront();
+						btnDestinos.startAnimation(anim);
+
+						ResizeWidthAnimation animDes = new ResizeWidthAnimation(
+								btnFlota, 300);
+						animDes.setDuration(500);
+						btnFlota.setTextSize(14);
+						btnFlota.startAnimation(anim);
+					}
+				});
+
 		findViewById(R.id.btn_internacional).setOnClickListener(
 				new OnClickListener() {
 					@Override
@@ -320,7 +343,8 @@ public class LaminaUnoActivity extends Activity {
 								case 2:
 									layMapaChile.setVisibility(View.GONE);
 									layMapaInter.setVisibility(View.VISIBLE);
-									layMapaInter.startAnimation(animMapaChile);
+									layMapaInter
+											.startAnimation(animNuevoMapaInter);
 									break;
 								case 3:
 									layMapaArgentina.setVisibility(View.GONE);
@@ -2142,25 +2166,8 @@ public class LaminaUnoActivity extends Activity {
 
 	public void animBotonesMapaInternacional() {
 
-		// //////////////////////////////// APARICION DE BOTONES DE FLOTA Y
-		// DESTINO ////////////////////////////
-		Button animLayFlota = (Button) findViewById(R.id.button_nuestra_flota);
-		Animation animFlota = AnimationUtils.loadAnimation(this,
-				R.anim.anim_lineas_brasil);
-		animLayFlota.startAnimation(animFlota);
-
-		Button animLayDes = (Button) findViewById(R.id.button_nuestros_destinos);
-		Animation animDes = AnimationUtils.loadAnimation(this,
-				R.anim.anim_lineas_brasil);
-		animLayDes.startAnimation(animDes);
-
 		// ////////////////////// BOTONES (CAPITALES) DE MAPA INTERNACIONAL
 		// /////////////////////////////
-
-		RelativeLayout animLayLogo = (RelativeLayout) findViewById(R.id.lay_logo_pasajero_virtual_dos);
-		Animation animLogo = AnimationUtils.loadAnimation(this,
-				R.anim.anim_lineas_brasil);
-		animLayLogo.startAnimation(animLogo);
 
 		Button animLayInterBogota = (Button) findViewById(R.id.button_internacional_bogota);
 		Animation animInterBogota = AnimationUtils.loadAnimation(this,
