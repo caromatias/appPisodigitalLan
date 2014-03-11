@@ -350,29 +350,29 @@ public class LaminaUnoActivity extends Activity {
 									layMapaArgentina.setVisibility(View.GONE);
 									layMapaInter.setVisibility(View.VISIBLE);
 									layMapaInter
-											.startAnimation(animMapaArgentina);
+											.startAnimation(animNuevoMapaInter);
 									break;
 								case 4:
 									layMapaPeru.setVisibility(View.GONE);
 									layMapaInter.setVisibility(View.VISIBLE);
-									layMapaInter.startAnimation(animMapaPeru);
+									layMapaInter.startAnimation(animNuevoMapaInter);
 									break;
 								case 5:
 									layMapaBrasil.setVisibility(View.GONE);
 									layMapaInter.setVisibility(View.VISIBLE);
-									layMapaInter.startAnimation(animMapaBrasil);
+									layMapaInter.startAnimation(animNuevoMapaInter);
 									break;
 								case 6:
 									layMapaEcuador.setVisibility(View.GONE);
 									layMapaInter.setVisibility(View.VISIBLE);
 									layMapaInter
-											.startAnimation(animMapaEcuador);
+											.startAnimation(animNuevoMapaInter);
 									break;
 								case 7:
 									layMapaColombia.setVisibility(View.GONE);
 									layMapaInter.setVisibility(View.VISIBLE);
 									layMapaInter
-											.startAnimation(animMapaColombia);
+											.startAnimation(animNuevoMapaInter);
 									break;
 								}
 								// ///// Animaciones
