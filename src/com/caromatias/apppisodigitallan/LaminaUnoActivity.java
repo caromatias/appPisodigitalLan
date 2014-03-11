@@ -2036,29 +2036,6 @@ public class LaminaUnoActivity extends Activity {
 					}
 				});
 
-		// //////////////////////////////////////////////////////////////////////
-		// ///////////////////// NAVEGACION BOTON FLOTA
-		// /////////////////////////
-
-		findViewById(R.id.image_internacional_bogota).setOnClickListener(
-				new OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						// TODO Auto-generated method stub
-						// btnColombia.setBackgroundResource(R.drawable.botonrojo);
-						reestableceBotones(btnColombia);
-
-						switch (posicionMenu) {
-						
-						case 1:
-							
-							break;
-
-						}
-
-					}
-				});
-
 	}
 
 	public void animBotonesMapaInternacional() {

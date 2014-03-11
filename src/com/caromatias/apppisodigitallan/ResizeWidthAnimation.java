@@ -8,7 +8,7 @@ public class ResizeWidthAnimation extends Animation
 {
     private int mWidth;
     private int mStartWidth;
-    private View mView;
+    private View mView; 
 
     public ResizeWidthAnimation(View view, int width)
     {
