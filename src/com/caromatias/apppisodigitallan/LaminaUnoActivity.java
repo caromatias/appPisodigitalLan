@@ -1,6 +1,5 @@
 package com.caromatias.apppisodigitallan;
 
-
 import pl.polidea.view.ZoomView;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -37,11 +36,13 @@ public class LaminaUnoActivity extends Activity {
 	private Button btnColombia;
 	private Button btnChile;
 	private Button btnArgentina;
-	private Button btnFlota;
+    private Button btnFlota;
 	private Button btnDestinos;
 	private int posiciones = 1;
 	public static MediaPlayer mpFondoUno;
-
+	public RelativeLayout layFlota;
+	public RelativeLayout layDestinos;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -68,21 +69,6 @@ public class LaminaUnoActivity extends Activity {
 
 		exMain();
 
-		// //////// Cambio de imagen a video ////////////
-
-		// ////////////////////////////////////////////
-		
-		/////////////// BOTONES DE FLOTA Y DESTINO //////////////
-		
-		btnFlota = (Button) findViewById(R.id.button_nuestra_flota);
-		
-		ResizeWidthAnimation anim = new ResizeWidthAnimation(btnFlota, 500);
-	    anim.setDuration(500);
-	    btnFlota.startAnimation(anim);
-		
-		////////////////////////////////////////////////////
-		
-
 		eventosBotones();
 
 		cambiaActivity();
@@ -95,8 +81,7 @@ public class LaminaUnoActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.lamina_uno, menu);
 		return true;
-		
-		
+
 	}
 
 	// ///////////////// EVENTOS BOTONES DEL PANEL /////////////////////////
@@ -114,17 +99,18 @@ public class LaminaUnoActivity extends Activity {
 		btnArgentina = (Button) findViewById(R.id.btn_argentina);
 		btnFlota = (Button) findViewById(R.id.button_nuestra_flota);
 		btnDestinos = (Button) findViewById(R.id.button_nuestros_destinos);
+		
 
 		// ////////////////////// BOTONES FLOTA Y DESTINO
 		// //////////////////////////
 
-		final RelativeLayout layBotonFlota = (RelativeLayout) findViewById(R.id.lay_imag_flota);
+		final Button layBotonFlota = (Button) findViewById(R.id.button_nuestra_flota);
 		final Animation animBotonFlota = AnimationUtils.loadAnimation(this,
 				R.anim.anim_mapa_in);
 		final Animation animBotonFlotaOut = AnimationUtils.loadAnimation(this,
 				R.anim.anim_mapa_inter_out);
 
-		final RelativeLayout layBotonDestinos = (RelativeLayout) findViewById(R.id.lay_imag_destinos);
+		final Button layBotonDestinos = (Button) findViewById(R.id.button_nuestros_destinos);
 		final Animation animBotonDestinos = AnimationUtils.loadAnimation(this,
 				R.anim.anim_mapa_in);
 		final Animation animBotonDestinosOut = AnimationUtils.loadAnimation(
@@ -175,6 +161,41 @@ public class LaminaUnoActivity extends Activity {
 
 		// ///////////////////// CLICK BOTÓN INTERNACIONAL
 		// ////////////////////////////
+
+		findViewById(R.id.button_nuestra_flota).setOnClickListener(
+		    new OnClickListener() {			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				ResizeWidthAnimation anim = new ResizeWidthAnimation(btnFlota, 500);
+			    anim.setDuration(500);
+			    btnFlota.setTextSize(14);
+			    btnFlota.startAnimation(anim);	
+			    
+			    ResizeWidthAnimation animDes = new ResizeWidthAnimation(btnDestinos, 200);
+			    animDes.setDuration(500);
+			    btnDestinos.setTextSize(12);
+			    btnDestinos.startAnimation(anim);	
+			}					
+		});
+		
+		findViewById(R.id.button_nuestros_destinos).setOnClickListener(        
+			    new OnClickListener() {			
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					ResizeWidthAnimation anim = new ResizeWidthAnimation(btnDestinos, 500);
+				    anim.setDuration(500);
+				    btnDestinos.setTextSize(14);
+				    btnDestinos.startAnimation(anim);	
+				    
+				    ResizeWidthAnimation animDes = new ResizeWidthAnimation(btnFlota, 200);
+				    animDes.setDuration(500);
+				    btnFlota.setTextSize(12);
+				    btnFlota.startAnimation(anim);
+				}					
+			});
+		
 		findViewById(R.id.btn_internacional).setOnClickListener(
 				new OnClickListener() {
 					@Override
@@ -2055,12 +2076,12 @@ public class LaminaUnoActivity extends Activity {
 
 		// //////////////////////////////// APARICION DE BOTONES DE FLOTA Y
 		// DESTINO ////////////////////////////
-		RelativeLayout animLayFlota = (RelativeLayout) findViewById(R.id.lay_imag_flota);
+		Button animLayFlota = (Button) findViewById(R.id.button_nuestra_flota);
 		Animation animFlota = AnimationUtils.loadAnimation(this,
 				R.anim.anim_lineas_brasil);
 		animLayFlota.startAnimation(animFlota);
 
-		RelativeLayout animLayDes = (RelativeLayout) findViewById(R.id.lay_imag_destinos);
+		Button animLayDes = (Button) findViewById(R.id.button_nuestros_destinos);
 		Animation animDes = AnimationUtils.loadAnimation(this,
 				R.anim.anim_lineas_brasil);
 		animLayDes.startAnimation(animDes);
@@ -2815,6 +2836,8 @@ public class LaminaUnoActivity extends Activity {
 						// Do something after 5s = 5000ms
 						layZonaZoomable.bringToFront();
 						layZonaZoomable.startAnimation(animInInter);
+						btnFlota.bringToFront();
+						btnDestinos.bringToFront();
 					}
 				}, 4000);
 
@@ -2844,17 +2867,6 @@ public class LaminaUnoActivity extends Activity {
 					}
 				}, 6000);
 			}
-		});
-		
-		findViewById(R.id.button_nuestra_flota).setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				
-				ResizeWidthAnimation anim = new ResizeWidthAnimation(btnFlota, 500);
-			    anim.setDuration(500);
-			    btnFlota.startAnimation(anim);				
-			}
-			
 		});
 	}
 
