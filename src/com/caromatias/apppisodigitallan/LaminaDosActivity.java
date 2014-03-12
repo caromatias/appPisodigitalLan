@@ -82,12 +82,15 @@ public class LaminaDosActivity extends Activity {
 	private ImageView flecha;
 	private ImageView flechaCarga;
 	private Animation animFlechaRebote;
-	//private MediaPlayer mp;
-	//private MediaPlayer mpFail;
-	//private MediaPlayer mpOk;
+	// private MediaPlayer mp;
+	// private MediaPlayer mpFail;
+	// private MediaPlayer mpOk;
 	public static MediaPlayer mpDespegue;
 	private MediaPlayer mpMapaJuego;
-	
+	private VideoView videoInterface;
+	private ImageView imgWhiteDos;
+	private Animation animVideoMain;
+	private Animation animVideoMainOut;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -103,30 +106,11 @@ public class LaminaDosActivity extends Activity {
 		audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
 		mpMapaJuego.start();
 
-		// LaminaUnoActivity.mpFondoUno.stop();
-		//mpFail = MediaPlayer.create(this, R.raw.sonido_incorrecto);
-		//mpOk = MediaPlayer.create(this, R.raw.sonido_correcto);
 		mpDespegue = MediaPlayer.create(this, R.raw.airplane_on_board);
-		//mp = MediaPlayer.create(this, R.raw.cuenta_atras);
-		
-		/*
-		mpFail.setOnCompletionListener(new OnCompletionListener() {
-		    public void onCompletion(MediaPlayer mpFa) {
-		    	mpFa.release();
-
-		    };
-		});
-		mpOk.setOnCompletionListener(new OnCompletionListener() {
-		    public void onCompletion(MediaPlayer mpOk) {
-		    	mpOk.release();
-
-		    };
-		});
-		*/
 		mpDespegue.setOnCompletionListener(new OnCompletionListener() {
-		    public void onCompletion(MediaPlayer mpDes) {
-		    	mpDes.release();
-		    };
+			public void onCompletion(MediaPlayer mpDes) {
+				mpDes.release();
+			};
 		});
 
 		RelativeLayout layLineaRoja = (RelativeLayout) findViewById(R.id.img_back_barra);
@@ -179,10 +163,15 @@ public class LaminaDosActivity extends Activity {
 				R.anim.anim_translacion_fail_out);
 		animFlechaRebote = AnimationUtils.loadAnimation(this,
 				R.anim.anim_rebote_flecha);
+		animVideoMain = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+		animVideoMainOut = AnimationUtils.loadAnimation(this, R.anim.fade_out);
 		cargaOk = (ImageView) findViewById(R.id.img_mensaje_carga_ok);
 		cargaFail = (ImageView) findViewById(R.id.img_mensaje_carga_fail);
 		videoBackCarga = (VideoView) findViewById(R.id.video_back_carga);
 		imgBackCarga = (ImageView) findViewById(R.id.img_back_carga);
+		imgWhiteDos = (ImageView) findViewById(R.id.img_transicion_interface_uno);
+		
+		muestraInterfaceJuego();
 
 		findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
@@ -408,7 +397,6 @@ public class LaminaDosActivity extends Activity {
 						.setVisibility(View.GONE);
 				findViewById(R.id.txt_cuanta_atras_dos).setVisibility(
 						View.VISIBLE);
-				creaCuentaAtras();
 			}
 		}, 1500);
 		final Handler handlerCargaDos = new Handler();
@@ -772,6 +760,7 @@ public class LaminaDosActivity extends Activity {
 			}
 		}, delay, period);
 	}
+
 	public void goRutas() {
 
 		final RelativeLayout layJuegoDespegue = (RelativeLayout) findViewById(R.id.lay_juego_master);
@@ -1047,120 +1036,185 @@ public class LaminaDosActivity extends Activity {
 		int seventyVolume = (int) (maxVolume * percent);
 		audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
 	}
-	public void desactivaRutas(){
-		if(LaminaUnoActivity.btn1 == 1){
+
+	public void desactivaRutas() {
+		if (LaminaUnoActivity.btn1 == 1) {
 			findViewById(R.id.btnUno).setEnabled(false);
-			findViewById(R.id.btnUno).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btnUno).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
-		if(LaminaUnoActivity.btn2 == 1){
+		if (LaminaUnoActivity.btn2 == 1) {
 			findViewById(R.id.btnDos).setEnabled(false);
-			findViewById(R.id.btnDos).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btnDos).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
-		if(LaminaUnoActivity.btn3 == 1){
+		if (LaminaUnoActivity.btn3 == 1) {
 			findViewById(R.id.btnTres).setEnabled(false);
-			findViewById(R.id.btnTres).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btnTres).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
-		if(LaminaUnoActivity.btn4 == 1){
+		if (LaminaUnoActivity.btn4 == 1) {
 			findViewById(R.id.btnCuatro).setEnabled(false);
-			findViewById(R.id.btnCuatro).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btnCuatro).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
-		if(LaminaUnoActivity.btn5 == 1){
+		if (LaminaUnoActivity.btn5 == 1) {
 			findViewById(R.id.btnCinco).setEnabled(false);
-			findViewById(R.id.btnCinco).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btnCinco).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
-		if(LaminaUnoActivity.btn6 == 1){
+		if (LaminaUnoActivity.btn6 == 1) {
 			findViewById(R.id.btnSeis).setEnabled(false);
-			findViewById(R.id.btnSeis).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btnSeis).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
-		if(LaminaUnoActivity.btn7 == 1){
+		if (LaminaUnoActivity.btn7 == 1) {
 			findViewById(R.id.btnSiete).setEnabled(false);
-			findViewById(R.id.btnSiete).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btnSiete).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
-		if(LaminaUnoActivity.btn8 == 1){
+		if (LaminaUnoActivity.btn8 == 1) {
 			findViewById(R.id.btnOcho).setEnabled(false);
-			findViewById(R.id.btnOcho).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btnOcho).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
-		if(LaminaUnoActivity.btn9 == 1){
+		if (LaminaUnoActivity.btn9 == 1) {
 			findViewById(R.id.btnNueve).setEnabled(false);
-			findViewById(R.id.btnNueve).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btnNueve).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
-		if(LaminaUnoActivity.btn10 == 1){
+		if (LaminaUnoActivity.btn10 == 1) {
 			findViewById(R.id.btnDiez).setEnabled(false);
-			findViewById(R.id.btnDiez).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btnDiez).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
-		if(LaminaUnoActivity.btn11 == 1){
+		if (LaminaUnoActivity.btn11 == 1) {
 			findViewById(R.id.btnOnce).setEnabled(false);
-			findViewById(R.id.btnOnce).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btnOnce).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
-		if(LaminaUnoActivity.btn12 == 1){
+		if (LaminaUnoActivity.btn12 == 1) {
 			findViewById(R.id.btnDoce).setEnabled(false);
-			findViewById(R.id.btnDoce).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btnDoce).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
-		if(LaminaUnoActivity.btn13 == 1){
+		if (LaminaUnoActivity.btn13 == 1) {
 			findViewById(R.id.btnTrece).setEnabled(false);
-			findViewById(R.id.btnTrece).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btnTrece).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
-		if(LaminaUnoActivity.btn14 == 1){
+		if (LaminaUnoActivity.btn14 == 1) {
 			findViewById(R.id.btnCatorce).setEnabled(false);
-			findViewById(R.id.btnCatorce).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btnCatorce).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
-		if(LaminaUnoActivity.btn15 == 1){
+		if (LaminaUnoActivity.btn15 == 1) {
 			findViewById(R.id.btnQuince).setEnabled(false);
-			findViewById(R.id.btnQuince).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btnQuince).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
-		if(LaminaUnoActivity.btn16 == 1){
+		if (LaminaUnoActivity.btn16 == 1) {
 			findViewById(R.id.btn16).setEnabled(false);
-			findViewById(R.id.btn16).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btn16).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
-		if(LaminaUnoActivity.btn17 == 1){
+		if (LaminaUnoActivity.btn17 == 1) {
 			findViewById(R.id.btn17).setEnabled(false);
-			findViewById(R.id.btn17).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btn17).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
-		if(LaminaUnoActivity.btn18 == 1){
+		if (LaminaUnoActivity.btn18 == 1) {
 			findViewById(R.id.btn18).setEnabled(false);
-			findViewById(R.id.btn18).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btn18).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
-		if(LaminaUnoActivity.btn19 == 1){
+		if (LaminaUnoActivity.btn19 == 1) {
 			findViewById(R.id.btn19).setEnabled(false);
-			findViewById(R.id.btn19).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btn19).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
-		if(LaminaUnoActivity.btn20 == 1){
+		if (LaminaUnoActivity.btn20 == 1) {
 			findViewById(R.id.btn20).setEnabled(false);
-			findViewById(R.id.btn20).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btn20).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
-		if(LaminaUnoActivity.btn21 == 1){
+		if (LaminaUnoActivity.btn21 == 1) {
 			findViewById(R.id.btn21).setEnabled(false);
-			findViewById(R.id.btn21).setBackgroundResource(R.drawable.btn_rutas_jugada);
+			findViewById(R.id.btn21).setBackgroundResource(
+					R.drawable.btn_rutas_jugada);
 		}
 	}
-	public void creaMpOk(){
-		final MediaPlayer mpoK = MediaPlayer.create(this, R.raw.sonido_correcto);
+
+	public void creaMpOk() {
+		final MediaPlayer mpoK = MediaPlayer
+				.create(this, R.raw.sonido_correcto);
 		mpoK.start();
 		mpoK.setOnCompletionListener(new OnCompletionListener() {
-		    public void onCompletion(MediaPlayer mp) {
-		        mp.release();
+			public void onCompletion(MediaPlayer mp) {
+				mp.release();
 
-		    };
+			};
 		});
 	}
-	public void creaMpFail(){
-		final MediaPlayer mpFail = MediaPlayer.create(this, R.raw.sonido_incorrecto);
+
+	public void creaMpFail() {
+		final MediaPlayer mpFail = MediaPlayer.create(this,
+				R.raw.sonido_incorrecto);
 		mpFail.start();
 		mpFail.setOnCompletionListener(new OnCompletionListener() {
-		    public void onCompletion(MediaPlayer mp) {
-		        mp.release();
+			public void onCompletion(MediaPlayer mp) {
+				mp.release();
 
-		    };
+			};
 		});
 	}
-	public void creaCuentaAtras(){
+
+	public void creaCuentaAtras() {
 		final MediaPlayer mp = MediaPlayer.create(this, R.raw.cuenta_atras);
 		mp.start();
 		mp.setOnCompletionListener(new OnCompletionListener() {
-		    public void onCompletion(MediaPlayer mpCu) {
-		        mpCu.release();
-		    };
+			public void onCompletion(MediaPlayer mpCu) {
+				mpCu.release();
+			};
 		});
+	}
+
+	public void muestraInterfaceJuego() {
+
+		videoInterface = (VideoView) findViewById(R.id.video_interface_uno);
+		Bundle bundle = getIntent().getExtras();
+		if (bundle.getInt("isInterface") == 0) {
+			videoInterface
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.interface_final);
+			videoInterface.start();
+
+			Handler handlerInterfaceUno = new Handler();
+			handlerInterfaceUno.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					imgWhiteDos.setVisibility(View.VISIBLE);
+					imgWhiteDos.startAnimation(animVideoMain);
+				}
+			}, 29500);
+			Handler handlerInterfaceVid = new Handler();
+			handlerInterfaceVid.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					videoInterface.setVisibility(View.GONE);
+				}
+			}, 30400);
+			Handler handlerInterfaceDos = new Handler();
+			handlerInterfaceDos.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					imgWhiteDos.startAnimation(animVideoMainOut);
+					imgWhiteDos.setVisibility(View.GONE);
+				}
+			}, 30900);
+		}else{
+			videoInterface.setVisibility(View.GONE);
+		}
 	}
 
 	@Override

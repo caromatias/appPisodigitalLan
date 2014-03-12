@@ -2842,6 +2842,7 @@ public class LaminaUnoActivity extends Activity {
 						mpFondoUno.stop();
 						Intent act = new Intent(LaminaUnoActivity.this,
 								LaminaDosActivity.class);
+						act.putExtra("isInterface", 0);
 						startActivity(act);
 						overridePendingTransition(R.anim.fade_in,
 								R.anim.fade_out);

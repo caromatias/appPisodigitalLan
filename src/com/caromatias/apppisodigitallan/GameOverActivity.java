@@ -154,6 +154,7 @@ public class GameOverActivity extends Activity {
 							LaminaTresActivity.mpFondo.release();
 							Intent act = new Intent(GameOverActivity.this,
 									LaminaDosActivity.class);
+							act.putExtra("isInterface", 1);
 							startActivity(act);
 							overridePendingTransition(R.anim.fade_in,
 									R.anim.fade_out);
