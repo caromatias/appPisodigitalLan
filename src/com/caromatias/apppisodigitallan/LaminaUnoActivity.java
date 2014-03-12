@@ -359,6 +359,10 @@ public class LaminaUnoActivity extends Activity {
 				btnDestinos.setTextSize(14);
 				btnDestinos.startAnimation(anim);
 				popNuestraFlota.setVisibility(View.VISIBLE);
+				popNuestraFlota.bringToFront();
+				popNuestraFlota.startAnimation(animNuevoMapaInter);
+				btnDestinos.bringToFront();
+				btnFlota.bringToFront();
 			}
 		});
 
@@ -379,6 +383,7 @@ public class LaminaUnoActivity extends Activity {
 						animDes.setDuration(500);
 						btnFlota.setTextSize(14);
 						btnFlota.startAnimation(anim);
+						popNuestraFlota.startAnimation(animMapaInter);
 						popNuestraFlota.setVisibility(View.GONE);
 					}
 				});
