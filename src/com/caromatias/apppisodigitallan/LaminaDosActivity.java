@@ -467,6 +467,27 @@ public class LaminaDosActivity extends Activity {
 							intTres.setImageResource(R.drawable.intento_red);
 							break;
 						}
+						runOnUiThread(new Runnable() // run on ui thread
+						{
+							public void run() {
+								final Handler handlerCargaQuitaUno = new Handler();
+								handlerCargaQuitaUno.postDelayed(new Runnable() {
+									@Override
+									public void run() {
+										cargaFail
+												.startAnimation(animMensajesDespegueFailOut);
+										cargaFail.setVisibility(View.GONE);
+									}
+								}, 1500);
+								final Handler handlerCargaQuita = new Handler();
+								handlerCargaQuita.postDelayed(new Runnable() {
+									@Override
+									public void run() {
+										muestraCuentaAtas();
+									}
+								}, 2100);
+							}
+						});
 					} else if (intentosCarga == 3) {
 						runOnUiThread(new Runnable() // run on ui thread
 						{
@@ -476,7 +497,8 @@ public class LaminaDosActivity extends Activity {
 										new Runnable() {
 											@Override
 											public void run() {
-												creaMpFail();
+												//creaMpFail();
+												mpDespegue.release();
 												Intent act = new Intent(
 														LaminaDosActivity.this,
 														GameOverActivity.class);
@@ -490,6 +512,7 @@ public class LaminaDosActivity extends Activity {
 							}
 						});
 					}
+					/*
 					runOnUiThread(new Runnable() // run on ui thread
 					{
 						public void run() {
@@ -511,6 +534,7 @@ public class LaminaDosActivity extends Activity {
 							}, 2100);
 						}
 					});
+					*/
 				} else if (currentRotation >= 60) {
 					creaMpOk();
 					cargaOk.setVisibility(View.VISIBLE);
@@ -702,6 +726,7 @@ public class LaminaDosActivity extends Activity {
 						{
 							public void run() {
 								creaMpFail();
+								mpDespegue.release();
 								Intent act = new Intent(LaminaDosActivity.this,
 										GameOverActivity.class);
 								act.putExtra("game", 3);

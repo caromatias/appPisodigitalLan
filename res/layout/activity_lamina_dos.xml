@@ -652,7 +652,7 @@
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
         android:paddingTop="0dp"
-        android:visibility="visible" >
+        android:visibility="gone" >
 
         <VideoView
             android:id="@+id/video_back_carga"
@@ -779,34 +779,6 @@
             android:text="DESPEGUE"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#FFFFFF" />
-        
-        <TextView
-            android:id="@+id/txt_tiempo_juego_carga"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginBottom="18dp"
-            android:layout_marginLeft="130dp"
-            android:text="00"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#FFFFFF"
-            android:textSize="50sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/txt_tiempo_juego_carga_0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/txt_tiempo_juego_carga"
-            android:layout_alignBottom="@+id/txt_tiempo_juego_carga"
-            android:layout_alignRight="@+id/txt_tiempo_juego_carga"
-            android:layout_marginRight="57dp"
-            android:text="00:"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#FFFFFF"
-            android:textSize="50sp"
-            android:textStyle="bold" />
 
         <RelativeLayout
             android:id="@+id/lay_pop_cuenta_atras"
@@ -872,7 +844,7 @@
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
             android:paddingTop="0dp"
-            android:visibility="gone" >
+            android:visibility="visible" >
 
             <ImageView
                 android:id="@+id/img_logo_pv_carga"
@@ -954,7 +926,33 @@
                 android:textStyle="bold" />
         </RelativeLayout>
 
-        
+        <TextView
+            android:id="@+id/txt_tiempo_juego_carga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="18dp"
+            android:layout_marginLeft="130dp"
+            android:text="00"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_tiempo_juego_carga_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txt_tiempo_juego_carga"
+            android:layout_alignBottom="@+id/txt_tiempo_juego_carga"
+            android:layout_alignRight="@+id/txt_tiempo_juego_carga"
+            android:layout_marginRight="57dp"
+            android:text="00:"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="50sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_activa_carga"
@@ -978,8 +976,7 @@
     <VideoView
         android:id="@+id/video_interface_uno"
         android:layout_width="1280dp"
-        android:layout_height="match_parent"
-        android:visibility="gone"/>
+        android:layout_height="match_parent"/>
     
     <ImageView
         android:id="@+id/img_transicion_interface_uno"

@@ -126,6 +126,15 @@
             android:textSize="15sp"
             android:textStyle="bold" />
     </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/lay_img_flota"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:background="@drawable/flota"
+        android:visibility="gone">
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/lay_logo_pasajero_virtual_dos"

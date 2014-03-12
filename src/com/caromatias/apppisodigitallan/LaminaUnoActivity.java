@@ -43,6 +43,13 @@ public class LaminaUnoActivity extends Activity {
 	private RelativeLayout layFlota;
 	private RelativeLayout layDestinos;
 	private RelativeLayout layPopupInfo;
+	private boolean doubleClick = false;
+	private RelativeLayout animLayLogo;
+	private Animation animLogo;
+	private Button animLayDes;
+	private Animation animDes;
+	private Animation animFlota;
+	private RelativeLayout popNuestraFlota;
 	// ///////////////////////////////////
 	public static int btn1 = 0;
 	public static int btn2 = 0;
@@ -72,7 +79,7 @@ public class LaminaUnoActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lamina_uno);
-		
+
 		reseteaRutas();
 
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
@@ -93,6 +100,15 @@ public class LaminaUnoActivity extends Activity {
 		zoomView.addView(v);
 		lay_principal = (RelativeLayout) findViewById(R.id.zona_zoomable);
 		lay_principal.addView(zoomView);
+		
+		popNuestraFlota = (RelativeLayout) findViewById(R.id.lay_img_flota);
+		animLayLogo = (RelativeLayout) findViewById(R.id.lay_logo_pasajero_virtual_dos);
+		animLogo = AnimationUtils.loadAnimation(this,R.anim.anim_lineas_brasil);
+		animLayDes = (Button) findViewById(R.id.button_nuestros_destinos);
+		animDes = AnimationUtils.loadAnimation(this,
+				R.anim.anim_lineas_brasil);
+		animFlota = AnimationUtils.loadAnimation(this,
+				R.anim.anim_lineas_brasil);
 
 		exMain();
 
@@ -102,22 +118,6 @@ public class LaminaUnoActivity extends Activity {
 
 		animBotonesMapaInternacional();
 
-		// //////////////////////////////// APARICION DE BOTONES DE FLOTA Y
-		// DESTINO ////////////////////////////
-		Button animLayFlota = (Button) findViewById(R.id.button_nuestra_flota);
-		Animation animFlota = AnimationUtils.loadAnimation(this,
-				R.anim.anim_lineas_brasil);
-		animLayFlota.startAnimation(animFlota);
-
-		Button animLayDes = (Button) findViewById(R.id.button_nuestros_destinos);
-		Animation animDes = AnimationUtils.loadAnimation(this,
-				R.anim.anim_lineas_brasil);
-		animLayDes.startAnimation(animDes);
-
-		RelativeLayout animLayLogo = (RelativeLayout) findViewById(R.id.lay_logo_pasajero_virtual_dos);
-		Animation animLogo = AnimationUtils.loadAnimation(this,
-				R.anim.anim_lineas_brasil);
-		animLayLogo.startAnimation(animLogo);
 	}
 
 	@Override
@@ -146,6 +146,7 @@ public class LaminaUnoActivity extends Activity {
 		layPopupInfo = (RelativeLayout) findViewById(R.id.lay_popup_info);
 		final Animation animNuevoMapaInter = AnimationUtils.loadAnimation(this,
 				R.anim.anim_in_juego);
+		
 
 		findViewById(R.id.btn_cerrar_popup_info).setOnClickListener(
 				new OnClickListener() {
@@ -156,13 +157,25 @@ public class LaminaUnoActivity extends Activity {
 					}
 				});
 
+		
 		findViewById(R.id.lay_apretable_chile).setOnClickListener(
 				new OnClickListener() {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						layPopupInfo.bringToFront();
-						layPopupInfo.setVisibility(View.VISIBLE);
+						if(doubleClick == true){
+							layPopupInfo.bringToFront();
+							layPopupInfo.setVisibility(View.VISIBLE);
+						}else {
+							doubleClick = true;
+							Handler handlerDoubleClickUno = new Handler();
+							handlerDoubleClickUno.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									doubleClick = false;
+								}
+							}, 1000);
+						}
 					}
 				});
 		findViewById(R.id.lay_apretable_argentina).setOnClickListener(
@@ -170,8 +183,19 @@ public class LaminaUnoActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						layPopupInfo.bringToFront();
-						layPopupInfo.setVisibility(View.VISIBLE);
+						if(doubleClick == true){
+							layPopupInfo.bringToFront();
+							layPopupInfo.setVisibility(View.VISIBLE);
+						}else {
+							doubleClick = true;
+							Handler handlerDoubleClickUno = new Handler();
+							handlerDoubleClickUno.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									doubleClick = false;
+								}
+							}, 1000);
+						}
 					}
 				});
 		findViewById(R.id.lay_apretable_peru).setOnClickListener(
@@ -179,8 +203,19 @@ public class LaminaUnoActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						layPopupInfo.bringToFront();
-						layPopupInfo.setVisibility(View.VISIBLE);
+						if(doubleClick == true){
+							layPopupInfo.bringToFront();
+							layPopupInfo.setVisibility(View.VISIBLE);
+						}else {
+							doubleClick = true;
+							Handler handlerDoubleClickUno = new Handler();
+							handlerDoubleClickUno.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									doubleClick = false;
+								}
+							}, 1000);
+						}
 					}
 				});
 		findViewById(R.id.lay_apretable_brasil).setOnClickListener(
@@ -188,8 +223,19 @@ public class LaminaUnoActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						layPopupInfo.bringToFront();
-						layPopupInfo.setVisibility(View.VISIBLE);
+						if(doubleClick == true){
+							layPopupInfo.bringToFront();
+							layPopupInfo.setVisibility(View.VISIBLE);
+						}else {
+							doubleClick = true;
+							Handler handlerDoubleClickUno = new Handler();
+							handlerDoubleClickUno.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									doubleClick = false;
+								}
+							}, 1000);
+						}
 					}
 				});
 		findViewById(R.id.lay_apretable_ecuador).setOnClickListener(
@@ -197,8 +243,19 @@ public class LaminaUnoActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						layPopupInfo.bringToFront();
-						layPopupInfo.setVisibility(View.VISIBLE);
+						if(doubleClick == true){
+							layPopupInfo.bringToFront();
+							layPopupInfo.setVisibility(View.VISIBLE);
+						}else {
+							doubleClick = true;
+							Handler handlerDoubleClickUno = new Handler();
+							handlerDoubleClickUno.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									doubleClick = false;
+								}
+							}, 1000);
+						}
 					}
 				});
 		findViewById(R.id.lay_apretable_colombia).setOnClickListener(
@@ -206,8 +263,19 @@ public class LaminaUnoActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						layPopupInfo.bringToFront();
-						layPopupInfo.setVisibility(View.VISIBLE);
+						if(doubleClick == true){
+							layPopupInfo.bringToFront();
+							layPopupInfo.setVisibility(View.VISIBLE);
+						}else {
+							doubleClick = true;
+							Handler handlerDoubleClickUno = new Handler();
+							handlerDoubleClickUno.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									doubleClick = false;
+								}
+							}, 1000);
+						}
 					}
 				});
 
@@ -290,6 +358,7 @@ public class LaminaUnoActivity extends Activity {
 				animDes.setDuration(500);
 				btnDestinos.setTextSize(14);
 				btnDestinos.startAnimation(anim);
+				popNuestraFlota.setVisibility(View.VISIBLE);
 			}
 		});
 
@@ -310,6 +379,7 @@ public class LaminaUnoActivity extends Activity {
 						animDes.setDuration(500);
 						btnFlota.setTextSize(14);
 						btnFlota.startAnimation(anim);
+						popNuestraFlota.setVisibility(View.GONE);
 					}
 				});
 
@@ -2909,6 +2979,17 @@ public class LaminaUnoActivity extends Activity {
 				imgWhite.setVisibility(View.VISIBLE);
 				imgWhite.setAnimation(animVideoMain);
 				layVideoMain.setVisibility(View.GONE);
+				
+				// //////////////////////////////// APARICION DE BOTONES DE FLOTA Y
+				// DESTINO ////////////////////////////
+				Button animLayFlota = (Button) findViewById(R.id.button_nuestra_flota);
+				
+				animLayFlota.startAnimation(animFlota);
+
+				
+				animLayDes.startAnimation(animDes);
+
+				animLayLogo.startAnimation(animLogo);
 
 				final Handler handler = new Handler();
 				handler.postDelayed(new Runnable() {
@@ -2994,7 +3075,8 @@ public class LaminaUnoActivity extends Activity {
 		btnArgentina.setEnabled(true);
 		btnActivo.setEnabled(false);
 	}
-	public void reseteaRutas(){
+
+	public void reseteaRutas() {
 		btn1 = 0;
 		btn2 = 0;
 		btn3 = 0;
