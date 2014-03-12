@@ -164,7 +164,6 @@ public class GameOverActivity extends Activity {
 			// INICIO VIDEO GAMEOVER //
 			sdBeginds = MediaPlayer.create(this, R.raw.a_life_begins);
 			sdBeginds.start();
-			LaminaTresActivity.mpFondo.stop();
 			videoGameOver = (VideoView) findViewById(R.id.video_game_over);
 			videoGameOver
 					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
