@@ -6,6 +6,7 @@ import java.util.TimerTask;
 
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -81,9 +82,9 @@ public class LaminaDosActivity extends Activity {
 	private ImageView flecha;
 	private ImageView flechaCarga;
 	private Animation animFlechaRebote;
-	private MediaPlayer mp;
-	private MediaPlayer mpFail;
-	private MediaPlayer mpOk;
+	//private MediaPlayer mp;
+	//private MediaPlayer mpFail;
+	//private MediaPlayer mpOk;
 	public static MediaPlayer mpDespegue;
 	private MediaPlayer mpMapaJuego;
 	
@@ -103,10 +104,30 @@ public class LaminaDosActivity extends Activity {
 		mpMapaJuego.start();
 
 		// LaminaUnoActivity.mpFondoUno.stop();
-		mpFail = MediaPlayer.create(this, R.raw.sonido_incorrecto);
-		mpOk = MediaPlayer.create(this, R.raw.sonido_correcto);
+		//mpFail = MediaPlayer.create(this, R.raw.sonido_incorrecto);
+		//mpOk = MediaPlayer.create(this, R.raw.sonido_correcto);
 		mpDespegue = MediaPlayer.create(this, R.raw.airplane_on_board);
-		mp = MediaPlayer.create(this, R.raw.cuenta_atras);
+		//mp = MediaPlayer.create(this, R.raw.cuenta_atras);
+		
+		/*
+		mpFail.setOnCompletionListener(new OnCompletionListener() {
+		    public void onCompletion(MediaPlayer mpFa) {
+		    	mpFa.release();
+
+		    };
+		});
+		mpOk.setOnCompletionListener(new OnCompletionListener() {
+		    public void onCompletion(MediaPlayer mpOk) {
+		    	mpOk.release();
+
+		    };
+		});
+		*/
+		mpDespegue.setOnCompletionListener(new OnCompletionListener() {
+		    public void onCompletion(MediaPlayer mpDes) {
+		    	mpDes.release();
+		    };
+		});
 
 		RelativeLayout layLineaRoja = (RelativeLayout) findViewById(R.id.img_back_barra);
 		Animation animLayBarra = AnimationUtils.loadAnimation(this,
@@ -251,7 +272,7 @@ public class LaminaDosActivity extends Activity {
 																		// thread
 										{
 											public void run() {
-												mpFail.start();
+												creaMpFail();
 												flecha.setVisibility(View.GONE);
 												despegueFail
 														.setVisibility(View.VISIBLE);
@@ -271,7 +292,7 @@ public class LaminaDosActivity extends Activity {
 																		// thread
 										{
 											public void run() {
-												mpOk.start();
+												creaMpOk();
 												despegueOk
 														.setVisibility(View.VISIBLE);
 												despegueOk
@@ -375,7 +396,7 @@ public class LaminaDosActivity extends Activity {
 		handlerCargaSound.postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				mp.start();
+				creaCuentaAtras();
 			}
 		}, 500);
 		final Handler handlerCargaUno = new Handler();
@@ -387,7 +408,7 @@ public class LaminaDosActivity extends Activity {
 						.setVisibility(View.GONE);
 				findViewById(R.id.txt_cuanta_atras_dos).setVisibility(
 						View.VISIBLE);
-				mp.start();
+				creaCuentaAtras();
 			}
 		}, 1500);
 		final Handler handlerCargaDos = new Handler();
@@ -440,7 +461,7 @@ public class LaminaDosActivity extends Activity {
 				tiempoParaCarga.setText("00");
 				activaCarga.setEnabled(false);
 				if (currentRotation < 60) {
-					mpFail.start();
+					creaMpFail();
 					cargaFail.setVisibility(View.VISIBLE);
 					cargaFail.startAnimation(animMensajesDespegueFailIn);
 					if (intentosCarga < 3) {
@@ -467,8 +488,7 @@ public class LaminaDosActivity extends Activity {
 										new Runnable() {
 											@Override
 											public void run() {
-												mp.stop();
-												mpFail.stop();
+												creaMpFail();
 												Intent act = new Intent(
 														LaminaDosActivity.this,
 														GameOverActivity.class);
@@ -504,7 +524,7 @@ public class LaminaDosActivity extends Activity {
 						}
 					});
 				} else if (currentRotation >= 60) {
-					mpOk.start();
+					creaMpOk();
 					cargaOk.setVisibility(View.VISIBLE);
 					cargaOk.startAnimation(animMensajesDespegueFailIn);
 					runOnUiThread(new Runnable() // run on ui thread
@@ -516,7 +536,6 @@ public class LaminaDosActivity extends Activity {
 								public void run() {
 									cargaOk.startAnimation(animMensajesDespegueFailOut);
 									cargaOk.setVisibility(View.GONE);
-									mp.stop();
 								}
 							}, 2400);
 							final Handler handlerCargaQuita = new Handler();
@@ -584,7 +603,7 @@ public class LaminaDosActivity extends Activity {
 						runOnUiThread(new Runnable() // run on ui thread
 						{
 							public void run() {
-								mpFail.start();
+								creaMpFail();
 								despegueFail.setVisibility(View.VISIBLE);
 								despegueFail
 										.startAnimation(animMensajesDespegueFailIn);
@@ -609,7 +628,7 @@ public class LaminaDosActivity extends Activity {
 						// thread
 						{
 							public void run() {
-								mpOk.start();
+								creaMpOk();
 								despegueOk.setVisibility(View.VISIBLE);
 								despegueOk.startAnimation(animMensajesDespegue);
 								imgLuzEstado
@@ -694,7 +713,7 @@ public class LaminaDosActivity extends Activity {
 						runOnUiThread(new Runnable() // run on ui thread
 						{
 							public void run() {
-								mpFail.start();
+								creaMpFail();
 								Intent act = new Intent(LaminaDosActivity.this,
 										GameOverActivity.class);
 								act.putExtra("game", 3);
@@ -709,7 +728,7 @@ public class LaminaDosActivity extends Activity {
 						// thread
 						{
 							public void run() {
-								mpOk.start();
+								creaMpOk();
 								despegueOk.setVisibility(View.VISIBLE);
 								despegueOk.startAnimation(animMensajesDespegue);
 								imgLuzEstado
@@ -1113,6 +1132,35 @@ public class LaminaDosActivity extends Activity {
 			findViewById(R.id.btn21).setEnabled(false);
 			findViewById(R.id.btn21).setBackgroundResource(R.drawable.btn_rutas_jugada);
 		}
+	}
+	public void creaMpOk(){
+		final MediaPlayer mpoK = MediaPlayer.create(this, R.raw.sonido_correcto);
+		mpoK.start();
+		mpoK.setOnCompletionListener(new OnCompletionListener() {
+		    public void onCompletion(MediaPlayer mp) {
+		        mp.release();
+
+		    };
+		});
+	}
+	public void creaMpFail(){
+		final MediaPlayer mpFail = MediaPlayer.create(this, R.raw.sonido_incorrecto);
+		mpFail.start();
+		mpFail.setOnCompletionListener(new OnCompletionListener() {
+		    public void onCompletion(MediaPlayer mp) {
+		        mp.release();
+
+		    };
+		});
+	}
+	public void creaCuentaAtras(){
+		final MediaPlayer mp = MediaPlayer.create(this, R.raw.cuenta_atras);
+		mp.start();
+		mp.setOnCompletionListener(new OnCompletionListener() {
+		    public void onCompletion(MediaPlayer mpCu) {
+		        mpCu.release();
+		    };
+		});
 	}
 
 	@Override

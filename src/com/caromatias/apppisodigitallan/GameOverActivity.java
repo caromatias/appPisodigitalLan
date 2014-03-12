@@ -120,7 +120,7 @@ public class GameOverActivity extends Activity {
 			// INICIO VIDEO GAMEOVER //
 			sdBeginds = MediaPlayer.create(this, R.raw.a_life_begins);
 			sdBeginds.start();
-			LaminaTresActivity.mpFondo.stop();
+			LaminaTresActivity.mpFondo.release();
 			videoGameOver = (VideoView) findViewById(R.id.video_game_over);
 			videoGameOver
 					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
@@ -131,7 +131,7 @@ public class GameOverActivity extends Activity {
 					.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 						public void onCompletion(MediaPlayer mp) {
 							//LaminaTresActivity.mpFondo.stop();
-							sdBeginds.stop();
+							sdBeginds.release();
 							Intent act = new Intent(GameOverActivity.this,
 									LaminaUnoActivity.class);
 							startActivity(act);
@@ -151,7 +151,7 @@ public class GameOverActivity extends Activity {
 			videoGameOver
 					.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 						public void onCompletion(MediaPlayer mp) {
-							LaminaTresActivity.mpFondo.stop();
+							LaminaTresActivity.mpFondo.release();
 							Intent act = new Intent(GameOverActivity.this,
 									LaminaDosActivity.class);
 							startActivity(act);
@@ -174,7 +174,7 @@ public class GameOverActivity extends Activity {
 					.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 						public void onCompletion(MediaPlayer mp) {
 							//LaminaTresActivity.mpFondo.stop();
-							sdBeginds.stop();
+							sdBeginds.release();
 							Intent act = new Intent(GameOverActivity.this,
 									LaminaUnoActivity.class);
 							startActivity(act);

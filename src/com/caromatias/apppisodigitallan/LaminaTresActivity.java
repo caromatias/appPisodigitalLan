@@ -6,6 +6,7 @@ import java.util.TimerTask;
 
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
 import android.os.Handler;
 import android.animation.ObjectAnimator;
@@ -50,10 +51,10 @@ public class LaminaTresActivity extends Activity {
 	private Animation animMundoRotacion;
 	private MediaPlayer mpTrivia;
 	public static MediaPlayer mpFondo;
-	private MediaPlayer mpMundo;
-	private MediaPlayer mpoK;
+	//private MediaPlayer mpMundo;
+	//private MediaPlayer mpoK;
 	private MediaPlayer mpFail;
-	private MediaPlayer mpSalidaTrivia;
+	//private MediaPlayer mpSalidaTrivia;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -61,12 +62,13 @@ public class LaminaTresActivity extends Activity {
 		setContentView(R.layout.activity_lamina_tres);
 
 		LaminaDosActivity.mpDespegue.stop();
-		mpoK = MediaPlayer.create(this, R.raw.sonido_correcto);
+		LaminaDosActivity.mpDespegue.release();
+		
 		mpFail = MediaPlayer.create(this, R.raw.sonido_incorrecto);
-		mpMundo = MediaPlayer.create(this, R.raw.engranaje_mundo);
+		//mpMundo = MediaPlayer.create(this, R.raw.engranaje_mundo);
 		mpTrivia = MediaPlayer.create(this, R.raw.reloj_trivia);
 		mpFondo = MediaPlayer.create(this, R.raw.jazz_dance);
-		mpSalidaTrivia = MediaPlayer.create(this, R.raw.igh_fast_swoosh);
+		//mpSalidaTrivia = MediaPlayer.create(this, R.raw.igh_fast_swoosh);
 		mpFondo.start();
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
@@ -84,6 +86,25 @@ public class LaminaTresActivity extends Activity {
 		respuestaUno = (Button) findViewById(R.id.btn_respuesta1);
 		respuestaDos = (Button) findViewById(R.id.btn_respuesta2);
 		respuestaTres = (Button) findViewById(R.id.btn_respuesta3);
+		
+		mpTrivia.setOnCompletionListener(new OnCompletionListener() {
+		    public void onCompletion(MediaPlayer mpTri) {
+		    	mpTri.release();
+
+		    };
+		});
+		mpFondo.setOnCompletionListener(new OnCompletionListener() {
+		    public void onCompletion(MediaPlayer mpFondo) {
+		    	mpFondo.release();
+
+		    };
+		});
+		mpFail.setOnCompletionListener(new OnCompletionListener() {
+		    public void onCompletion(MediaPlayer mpFa) {
+		    	mpFa.release();
+
+		    };
+		});		
 
 		imgBackTrivia = (RelativeLayout) findViewById(R.id.lay_img_back_trivia);
 		imgMundoTrivia = (ImageView) findViewById(R.id.img_mundo_back_trivia);
@@ -193,7 +214,7 @@ public class LaminaTresActivity extends Activity {
 				 * anim.setDuration(2000); layPregTrivia.startAnimation(anim);
 				 */
 				layPregTrivia.startAnimation(animMundoIn);
-				mpSalidaTrivia.start();
+				creaSalidaTrivia();
 			}
 		}, 15500);
 		final Handler handlerCinco = new Handler();
@@ -203,7 +224,7 @@ public class LaminaTresActivity extends Activity {
 				// Do something after 5s = 5000ms
 				// imgMundoTrivia.setVisibility(View.VISIBLE);
 				// imgMundoTrivia.startAnimation(animVideoMain);
-				mpSalidaTrivia.start();
+				creaSalidaTrivia();
 			}
 		}, 16500);
 		/*
@@ -377,7 +398,7 @@ public class LaminaTresActivity extends Activity {
 		respuestaTres.setEnabled(true);
 		layPregTrivia.startAnimation(animMundoOut);
 		imgMundoTrivia.startAnimation(animMundoOut);
-		mpSalidaTrivia.start();
+		creaSalidaTrivia();
 		int numeroRandom = generaRandom();
 		switch (numeroRandom) {
 		case 1:
@@ -406,7 +427,7 @@ public class LaminaTresActivity extends Activity {
 			handlerPregDosSonido.postDelayed(new Runnable() {
 				@Override
 				public void run() {
-					mpSalidaTrivia.start();
+					creaSalidaTrivia();
 				}
 			}, 2000);
 			break;
@@ -437,12 +458,22 @@ public class LaminaTresActivity extends Activity {
 			handlerPregTresSonido.postDelayed(new Runnable() {
 				@Override
 				public void run() {
-					mpSalidaTrivia.start();
+					creaSalidaTrivia();
 				}
 			}, 2000);
 
 			break;
 		}
+	}
+	public void creaMpOk(){
+		final MediaPlayer mpoK = MediaPlayer.create(this, R.raw.sonido_correcto);
+		mpoK.start();
+		mpoK.setOnCompletionListener(new OnCompletionListener() {
+		    public void onCompletion(MediaPlayer mp) {
+		        mp.release();
+
+		    };
+		});
 	}
 
 	public void btnRespuestas() {
@@ -450,7 +481,7 @@ public class LaminaTresActivity extends Activity {
 		findViewById(R.id.btn_respuesta1).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
-						mpMundo.start();
+						creaSonidoMundo();
 						respuestaUno
 								.setBackgroundResource(R.drawable.botoncomenzar);
 						imgMundoTrivia.setVisibility(View.VISIBLE);
@@ -473,7 +504,7 @@ public class LaminaTresActivity extends Activity {
 									savingAnimation.start();
 									ImageView imaCorrecta = (ImageView) findViewById(R.id.img_respuesta_correcta);
 									imaCorrecta.setVisibility(View.VISIBLE);
-									mpoK.start();
+									creaMpOk();
 									break;
 								case 2:
 									respuestaDos
@@ -550,7 +581,7 @@ public class LaminaTresActivity extends Activity {
 		findViewById(R.id.btn_respuesta2).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
-						mpMundo.start();
+						creaSonidoMundo();
 						respuestaDos
 								.setBackgroundResource(R.drawable.botoncomenzar);
 						respuestaUno.setEnabled(false);
@@ -582,7 +613,7 @@ public class LaminaTresActivity extends Activity {
 									savingAnimation.start();
 									ImageView imaCorrecta = (ImageView) findViewById(R.id.img_respuesta_correcta);
 									imaCorrecta.setVisibility(View.VISIBLE);
-									mpoK.start();
+									creaMpOk();
 									break;
 								case 3:
 									respuestaTres
@@ -607,7 +638,6 @@ public class LaminaTresActivity extends Activity {
 								public void run() {
 									// Do something after 5s = 5000ms
 									mpTrivia.stop();
-									mpTrivia.release();
 									Intent act = new Intent(
 											LaminaTresActivity.this,
 											GameOverActivity.class);
@@ -633,7 +663,6 @@ public class LaminaTresActivity extends Activity {
 									} else if (numeroDeRespuesta == 2) {
 										reconRutaJugada();
 										mpTrivia.stop();
-										mpTrivia.release();
 										Intent act = new Intent(
 												LaminaTresActivity.this,
 												GameOverActivity.class);
@@ -653,7 +682,7 @@ public class LaminaTresActivity extends Activity {
 		findViewById(R.id.btn_respuesta3).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
-						mpMundo.start();
+						creaSonidoMundo();
 						respuestaTres
 								.setBackgroundResource(R.drawable.botoncomenzar);
 						respuestaUno.setEnabled(false);
@@ -697,8 +726,7 @@ public class LaminaTresActivity extends Activity {
 									savingAnimation.start();
 									ImageView imaCorrecta = (ImageView) findViewById(R.id.img_respuesta_correcta);
 									imaCorrecta.setVisibility(View.VISIBLE);
-									mpoK.start();
-									mpoK.release();
+									creaMpOk();
 									break;
 								default:
 									break;
@@ -713,7 +741,6 @@ public class LaminaTresActivity extends Activity {
 								public void run() {
 									// Do something after 5s = 5000ms
 									mpTrivia.stop();
-									mpTrivia.release();
 									Intent act = new Intent(
 											LaminaTresActivity.this,
 											GameOverActivity.class);
@@ -740,7 +767,6 @@ public class LaminaTresActivity extends Activity {
 									} else if (numeroDeRespuesta == 2) {
 										reconRutaJugada();
 										mpTrivia.stop();
-										mpTrivia.release();
 										Intent act = new Intent(
 												LaminaTresActivity.this,
 												GameOverActivity.class);
@@ -834,6 +860,24 @@ public class LaminaTresActivity extends Activity {
 			LaminaUnoActivity.btn21 = 1;
 			break;
 		}
+	}
+	public void creaSalidaTrivia(){
+		MediaPlayer mpSalidaTrivia = MediaPlayer.create(this, R.raw.igh_fast_swoosh);
+		mpSalidaTrivia.start();
+		mpSalidaTrivia.setOnCompletionListener(new OnCompletionListener() {
+		    public void onCompletion(MediaPlayer mpSali) {
+		    	mpSali.release();
+		    };
+		});
+	}
+	public void creaSonidoMundo(){
+		MediaPlayer mpMundo = MediaPlayer.create(this, R.raw.engranaje_mundo);
+		mpMundo.start();
+		mpMundo.setOnCompletionListener(new OnCompletionListener() {
+		    public void onCompletion(MediaPlayer mpMundoS) {
+		    	mpMundoS.release();
+		    };
+		});
 	}
 
 	@Override
