@@ -86,8 +86,7 @@ public class LaminaDosActivity extends Activity {
 	private MediaPlayer mpOk;
 	public static MediaPlayer mpDespegue;
 	private MediaPlayer mpMapaJuego;
-
-	// ///////////////////////////////////
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -338,7 +337,7 @@ public class LaminaDosActivity extends Activity {
 				});
 
 		// ///////////////////////////////////////
-
+		desactivaRutas();
 		// //////////////////////////////////
 		goRutas();
 		// //////////////////////////////////
@@ -695,7 +694,7 @@ public class LaminaDosActivity extends Activity {
 						runOnUiThread(new Runnable() // run on ui thread
 						{
 							public void run() {
-								mpOk.start();
+								mpFail.start();
 								Intent act = new Intent(LaminaDosActivity.this,
 										GameOverActivity.class);
 								act.putExtra("game", 3);
@@ -1028,6 +1027,92 @@ public class LaminaDosActivity extends Activity {
 		float percent = 0.8f;
 		int seventyVolume = (int) (maxVolume * percent);
 		audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
+	}
+	public void desactivaRutas(){
+		if(LaminaUnoActivity.btn1 == 1){
+			findViewById(R.id.btnUno).setEnabled(false);
+			findViewById(R.id.btnUno).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
+		if(LaminaUnoActivity.btn2 == 1){
+			findViewById(R.id.btnDos).setEnabled(false);
+			findViewById(R.id.btnDos).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
+		if(LaminaUnoActivity.btn3 == 1){
+			findViewById(R.id.btnTres).setEnabled(false);
+			findViewById(R.id.btnTres).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
+		if(LaminaUnoActivity.btn4 == 1){
+			findViewById(R.id.btnCuatro).setEnabled(false);
+			findViewById(R.id.btnCuatro).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
+		if(LaminaUnoActivity.btn5 == 1){
+			findViewById(R.id.btnCinco).setEnabled(false);
+			findViewById(R.id.btnCinco).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
+		if(LaminaUnoActivity.btn6 == 1){
+			findViewById(R.id.btnSeis).setEnabled(false);
+			findViewById(R.id.btnSeis).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
+		if(LaminaUnoActivity.btn7 == 1){
+			findViewById(R.id.btnSiete).setEnabled(false);
+			findViewById(R.id.btnSiete).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
+		if(LaminaUnoActivity.btn8 == 1){
+			findViewById(R.id.btnOcho).setEnabled(false);
+			findViewById(R.id.btnOcho).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
+		if(LaminaUnoActivity.btn9 == 1){
+			findViewById(R.id.btnNueve).setEnabled(false);
+			findViewById(R.id.btnNueve).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
+		if(LaminaUnoActivity.btn10 == 1){
+			findViewById(R.id.btnDiez).setEnabled(false);
+			findViewById(R.id.btnDiez).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
+		if(LaminaUnoActivity.btn11 == 1){
+			findViewById(R.id.btnOnce).setEnabled(false);
+			findViewById(R.id.btnOnce).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
+		if(LaminaUnoActivity.btn12 == 1){
+			findViewById(R.id.btnDoce).setEnabled(false);
+			findViewById(R.id.btnDoce).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
+		if(LaminaUnoActivity.btn13 == 1){
+			findViewById(R.id.btnTrece).setEnabled(false);
+			findViewById(R.id.btnTrece).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
+		if(LaminaUnoActivity.btn14 == 1){
+			findViewById(R.id.btnCatorce).setEnabled(false);
+			findViewById(R.id.btnCatorce).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
+		if(LaminaUnoActivity.btn15 == 1){
+			findViewById(R.id.btnQuince).setEnabled(false);
+			findViewById(R.id.btnQuince).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
+		if(LaminaUnoActivity.btn16 == 1){
+			findViewById(R.id.btn16).setEnabled(false);
+			findViewById(R.id.btn16).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
+		if(LaminaUnoActivity.btn17 == 1){
+			findViewById(R.id.btn17).setEnabled(false);
+			findViewById(R.id.btn17).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
+		if(LaminaUnoActivity.btn18 == 1){
+			findViewById(R.id.btn18).setEnabled(false);
+			findViewById(R.id.btn18).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
+		if(LaminaUnoActivity.btn19 == 1){
+			findViewById(R.id.btn19).setEnabled(false);
+			findViewById(R.id.btn19).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
+		if(LaminaUnoActivity.btn20 == 1){
+			findViewById(R.id.btn20).setEnabled(false);
+			findViewById(R.id.btn20).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
+		if(LaminaUnoActivity.btn21 == 1){
+			findViewById(R.id.btn21).setEnabled(false);
+			findViewById(R.id.btn21).setBackgroundResource(R.drawable.btn_rutas_jugada);
+		}
 	}
 
 	@Override
