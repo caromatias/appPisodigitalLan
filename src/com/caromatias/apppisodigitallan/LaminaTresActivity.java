@@ -399,7 +399,7 @@ public class LaminaTresActivity extends Activity {
 					// layPregTrivia.startAnimation(animTriviaIn);
 					layPregTrivia.startAnimation(animMundoIn);
 					imgMundoTrivia.startAnimation(animMundoIn);
-					//mpSalidaTrivia.start();
+					// mpSalidaTrivia.start();
 				}
 			}, 1000);
 			final Handler handlerPregDosSonido = new Handler();
@@ -429,10 +429,10 @@ public class LaminaTresActivity extends Activity {
 					// layPregTrivia.startAnimation(animTriviaIn);
 					layPregTrivia.startAnimation(animMundoIn);
 					imgMundoTrivia.startAnimation(animMundoIn);
-					//mpSalidaTrivia.start();
+					// mpSalidaTrivia.start();
 				}
 			}, 1000);
-			
+
 			final Handler handlerPregTresSonido = new Handler();
 			handlerPregTresSonido.postDelayed(new Runnable() {
 				@Override
@@ -440,7 +440,7 @@ public class LaminaTresActivity extends Activity {
 					mpSalidaTrivia.start();
 				}
 			}, 2000);
-			
+
 			break;
 		}
 	}
@@ -451,7 +451,8 @@ public class LaminaTresActivity extends Activity {
 				new OnClickListener() {
 					public void onClick(View arg0) {
 						mpMundo.start();
-						respuestaUno.setBackgroundResource(R.drawable.botoncomenzar);
+						respuestaUno
+								.setBackgroundResource(R.drawable.botoncomenzar);
 						imgMundoTrivia.setVisibility(View.VISIBLE);
 						imgMundoTrivia.startAnimation(animMundoRotacion);
 						respuestaUno.setEnabled(false);
@@ -528,6 +529,7 @@ public class LaminaTresActivity extends Activity {
 										ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_correcta);
 										imaIncorrecta2.setVisibility(View.GONE);
 									} else if (numeroDeRespuesta == 2) {
+										reconRutaJugada();
 										Intent act = new Intent(
 												LaminaTresActivity.this,
 												GameOverActivity.class);
@@ -604,6 +606,8 @@ public class LaminaTresActivity extends Activity {
 								@Override
 								public void run() {
 									// Do something after 5s = 5000ms
+									mpTrivia.stop();
+									mpTrivia.release();
 									Intent act = new Intent(
 											LaminaTresActivity.this,
 											GameOverActivity.class);
@@ -612,8 +616,6 @@ public class LaminaTresActivity extends Activity {
 									overridePendingTransition(R.anim.fade_in,
 											R.anim.fade_out);
 									// mp.stop();
-									mpTrivia.stop();
-
 								}
 							}, 5000);
 						} else if (respuestaCorrecta == 2) {
@@ -629,6 +631,9 @@ public class LaminaTresActivity extends Activity {
 										ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_correcta);
 										imaIncorrecta2.setVisibility(View.GONE);
 									} else if (numeroDeRespuesta == 2) {
+										reconRutaJugada();
+										mpTrivia.stop();
+										mpTrivia.release();
 										Intent act = new Intent(
 												LaminaTresActivity.this,
 												GameOverActivity.class);
@@ -637,7 +642,6 @@ public class LaminaTresActivity extends Activity {
 										overridePendingTransition(
 												R.anim.fade_in, R.anim.fade_out);
 										// mp.stop();
-										mpTrivia.stop();
 									}
 								}
 							}, 5000);
@@ -672,6 +676,7 @@ public class LaminaTresActivity extends Activity {
 									ImageView imaIncorrecta = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
 									imaIncorrecta.setVisibility(View.VISIBLE);
 									mpFail.start();
+									mpFail.release();
 									break;
 								case 2:
 									respuestaDos
@@ -682,6 +687,7 @@ public class LaminaTresActivity extends Activity {
 									ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
 									imaIncorrecta2.setVisibility(View.VISIBLE);
 									mpFail.start();
+									mpFail.release();
 									break;
 								case 3:
 									respuestaTres
@@ -692,6 +698,7 @@ public class LaminaTresActivity extends Activity {
 									ImageView imaCorrecta = (ImageView) findViewById(R.id.img_respuesta_correcta);
 									imaCorrecta.setVisibility(View.VISIBLE);
 									mpoK.start();
+									mpoK.release();
 									break;
 								default:
 									break;
@@ -705,6 +712,8 @@ public class LaminaTresActivity extends Activity {
 								@Override
 								public void run() {
 									// Do something after 5s = 5000ms
+									mpTrivia.stop();
+									mpTrivia.release();
 									Intent act = new Intent(
 											LaminaTresActivity.this,
 											GameOverActivity.class);
@@ -713,7 +722,7 @@ public class LaminaTresActivity extends Activity {
 									overridePendingTransition(R.anim.fade_in,
 											R.anim.fade_out);
 									// mp.stop();
-									mpTrivia.stop();
+									
 								}
 							}, 5000);
 						} else if (respuestaCorrecta == 3) {
@@ -729,6 +738,9 @@ public class LaminaTresActivity extends Activity {
 										ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_correcta);
 										imaIncorrecta2.setVisibility(View.GONE);
 									} else if (numeroDeRespuesta == 2) {
+										reconRutaJugada();
+										mpTrivia.stop();
+										mpTrivia.release();
 										Intent act = new Intent(
 												LaminaTresActivity.this,
 												GameOverActivity.class);
@@ -737,7 +749,6 @@ public class LaminaTresActivity extends Activity {
 										overridePendingTransition(
 												R.anim.fade_in, R.anim.fade_out);
 										// mp.stop();
-										mpTrivia.stop();
 									}
 								}
 							}, 5000);
@@ -754,6 +765,75 @@ public class LaminaTresActivity extends Activity {
 		Random r = new Random();
 		int i1 = r.nextInt(max - min + 1) + min;
 		return i1;
+	}
+
+	public void reconRutaJugada() {
+		Bundle bundle = getIntent().getExtras();
+		switch (bundle.getInt("ruta")) {
+		case 1:
+			LaminaUnoActivity.btn1 = 1;
+			break;
+		case 2:
+			LaminaUnoActivity.btn2 = 1;
+			break;
+		case 3:
+			LaminaUnoActivity.btn3 = 1;
+			break;
+		case 4:
+			LaminaUnoActivity.btn4 = 1;
+			break;
+		case 5:
+			LaminaUnoActivity.btn5 = 1;
+			break;
+		case 6:
+			LaminaUnoActivity.btn6 = 1;
+			break;
+		case 7:
+			LaminaUnoActivity.btn7 = 1;
+			break;
+		case 8:
+			LaminaUnoActivity.btn8 = 1;
+			break;
+		case 9:
+			LaminaUnoActivity.btn9 = 1;
+			break;
+		case 10:
+			LaminaUnoActivity.btn10 = 1;
+			break;
+		case 11:
+			LaminaUnoActivity.btn11 = 1;
+			break;
+		case 12:
+			LaminaUnoActivity.btn12 = 1;
+			break;
+		case 13:
+			LaminaUnoActivity.btn13 = 1;
+			break;
+		case 14:
+			LaminaUnoActivity.btn14 = 1;
+			break;
+		case 15:
+			LaminaUnoActivity.btn15 = 1;
+			break;
+		case 16:
+			LaminaUnoActivity.btn16 = 1;
+			break;
+		case 17:
+			LaminaUnoActivity.btn17 = 1;
+			break;
+		case 18:
+			LaminaUnoActivity.btn18 = 1;
+			break;
+		case 19:
+			LaminaUnoActivity.btn19 = 1;
+			break;
+		case 20:
+			LaminaUnoActivity.btn20 = 1;
+			break;
+		case 21:
+			LaminaUnoActivity.btn21 = 1;
+			break;
+		}
 	}
 
 	@Override

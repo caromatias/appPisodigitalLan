@@ -43,11 +43,37 @@ public class LaminaUnoActivity extends Activity {
 	private RelativeLayout layFlota;
 	private RelativeLayout layDestinos;
 	private RelativeLayout layPopupInfo;
+	// ///////////////////////////////////
+	public static int btn1 = 0;
+	public static int btn2 = 0;
+	public static int btn3 = 0;
+	public static int btn4 = 0;
+	public static int btn5 = 0;
+	public static int btn6 = 0;
+	public static int btn7 = 0;
+	public static int btn8 = 0;
+	public static int btn9 = 0;
+	public static int btn10 = 0;
+	public static int btn11 = 0;
+	public static int btn12 = 0;
+	public static int btn13 = 0;
+	public static int btn14 = 0;
+	public static int btn15 = 0;
+	public static int btn16 = 0;
+	public static int btn17 = 0;
+	public static int btn18 = 0;
+	public static int btn19 = 0;
+	public static int btn20 = 0;
+	public static int btn21 = 0;
+
+	// ////////////////////////////////////
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lamina_uno);
+		
+		reseteaRutas();
 
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
@@ -87,7 +113,7 @@ public class LaminaUnoActivity extends Activity {
 		Animation animDes = AnimationUtils.loadAnimation(this,
 				R.anim.anim_lineas_brasil);
 		animLayDes.startAnimation(animDes);
-		
+
 		RelativeLayout animLayLogo = (RelativeLayout) findViewById(R.id.lay_logo_pasajero_virtual_dos);
 		Animation animLogo = AnimationUtils.loadAnimation(this,
 				R.anim.anim_lineas_brasil);
@@ -355,12 +381,14 @@ public class LaminaUnoActivity extends Activity {
 								case 4:
 									layMapaPeru.setVisibility(View.GONE);
 									layMapaInter.setVisibility(View.VISIBLE);
-									layMapaInter.startAnimation(animNuevoMapaInter);
+									layMapaInter
+											.startAnimation(animNuevoMapaInter);
 									break;
 								case 5:
 									layMapaBrasil.setVisibility(View.GONE);
 									layMapaInter.setVisibility(View.VISIBLE);
-									layMapaInter.startAnimation(animNuevoMapaInter);
+									layMapaInter
+											.startAnimation(animNuevoMapaInter);
 									break;
 								case 6:
 									layMapaEcuador.setVisibility(View.GONE);
@@ -2962,6 +2990,29 @@ public class LaminaUnoActivity extends Activity {
 		btnChile.setEnabled(true);
 		btnArgentina.setEnabled(true);
 		btnActivo.setEnabled(false);
+	}
+	public void reseteaRutas(){
+		btn1 = 0;
+		btn2 = 0;
+		btn3 = 0;
+		btn4 = 0;
+		btn5 = 0;
+		btn6 = 0;
+		btn7 = 0;
+		btn8 = 0;
+		btn9 = 0;
+		btn10 = 0;
+		btn11 = 0;
+		btn12 = 0;
+		btn13 = 0;
+		btn14 = 0;
+		btn15 = 0;
+		btn16 = 0;
+		btn17 = 0;
+		btn18 = 0;
+		btn19 = 0;
+		btn20 = 0;
+		btn21 = 0;
 	}
 
 	@Override
