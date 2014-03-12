@@ -203,8 +203,9 @@ public class LaminaTresActivity extends Activity {
 				// Do something after 5s = 5000ms
 				// imgMundoTrivia.setVisibility(View.VISIBLE);
 				// imgMundoTrivia.startAnimation(animVideoMain);
+				mpSalidaTrivia.start();
 			}
-		}, 16000);
+		}, 16500);
 		/*
 		 * TimerTask task = new TimerTask() {
 		 * 
