@@ -97,6 +97,8 @@ public class LaminaDosActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lamina_dos);
 
+		findViewById(R.id.btn_comenzar_juego_despegue).setEnabled(true);
+		findViewById(R.id.btn_comenzar_juego_carga).setEnabled(true);
 		mpMapaJuego = MediaPlayer.create(this, R.raw.a_life_begins);
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
@@ -214,6 +216,7 @@ public class LaminaDosActivity extends Activity {
 				new OnClickListener() {
 					public void onClick(View arg0) {
 						// mpDespegue.start();
+						findViewById(R.id.btn_comenzar_juego_despegue).setEnabled(false);
 						AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 						int currentVolume = audio
 								.getStreamVolume(AudioManager.STREAM_MUSIC);
@@ -335,6 +338,7 @@ public class LaminaDosActivity extends Activity {
 		findViewById(R.id.btn_comenzar_juego_carga).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
+						findViewById(R.id.btn_comenzar_juego_carga).setEnabled(false);
 						flechaCarga.setVisibility(View.VISIBLE);
 						activaCarga.setVisibility(View.VISIBLE);
 						flechaCarga.startAnimation(animFlechaRebote);
