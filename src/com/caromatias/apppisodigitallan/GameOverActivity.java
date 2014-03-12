@@ -13,20 +13,20 @@ import android.widget.VideoView;
 public class GameOverActivity extends Activity {
 
 	private VideoView videoGameOver;
+	private MediaPlayer sdBeginds;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_game_over);
 		// ///// AUDIO ////////
-		// mpFin = MediaPlayer.create(this, R.raw.jazz_dance);
+		// sdBeginds = MediaPlayer.create(this, R.raw.jazz_dance);
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
 		int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
 		float percent = 0.9f;
 		int seventyVolume = (int) (maxVolume * percent);
 		audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
-		;
 		// ///// AUDIO ////////
 		// ///// REDUCCION DE AUDIO /////////
 		Handler handlerReducUno = new Handler();
@@ -118,16 +118,20 @@ public class GameOverActivity extends Activity {
 		switch (bundle.getInt("game")) {
 		case 1:
 			// INICIO VIDEO GAMEOVER //
+			sdBeginds = MediaPlayer.create(this, R.raw.a_life_begins);
+			sdBeginds.start();
+			LaminaTresActivity.mpFondo.stop();
 			videoGameOver = (VideoView) findViewById(R.id.video_game_over);
 			videoGameOver
 					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
 							+ R.raw.game_over);
 			videoGameOver.start();
-			// /////////////////////////////////////
+			///////////////////////////////////////
 			videoGameOver
 					.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 						public void onCompletion(MediaPlayer mp) {
-							LaminaTresActivity.mpFondo.stop();
+							//LaminaTresActivity.mpFondo.stop();
+							sdBeginds.stop();
 							Intent act = new Intent(GameOverActivity.this,
 									LaminaUnoActivity.class);
 							startActivity(act);
@@ -143,7 +147,7 @@ public class GameOverActivity extends Activity {
 					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
 							+ R.raw.felicitaciones);
 			videoGameOver.start();
-			// /////////////////////////////////////
+			///////////////////////////////////////
 			videoGameOver
 					.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 						public void onCompletion(MediaPlayer mp) {
@@ -158,16 +162,20 @@ public class GameOverActivity extends Activity {
 			break;
 		case 3:
 			// INICIO VIDEO GAMEOVER //
+			sdBeginds = MediaPlayer.create(this, R.raw.a_life_begins);
+			sdBeginds.start();
+			LaminaTresActivity.mpFondo.stop();
 			videoGameOver = (VideoView) findViewById(R.id.video_game_over);
 			videoGameOver
 					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
 							+ R.raw.fail_prueba);
 			videoGameOver.start();
-			// /////////////////////////////////////
+			///////////////////////////////////////
 			videoGameOver
 					.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 						public void onCompletion(MediaPlayer mp) {
-							LaminaTresActivity.mpFondo.stop();
+							//LaminaTresActivity.mpFondo.stop();
+							sdBeginds.stop();
 							Intent act = new Intent(GameOverActivity.this,
 									LaminaUnoActivity.class);
 							startActivity(act);

@@ -204,7 +204,7 @@ public class LaminaDosActivity extends Activity {
 		findViewById(R.id.btn_comenzar_juego_despegue).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
-						//mpDespegue.start();
+						// mpDespegue.start();
 						AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 						int currentVolume = audio
 								.getStreamVolume(AudioManager.STREAM_MUSIC);
@@ -419,7 +419,9 @@ public class LaminaDosActivity extends Activity {
 	}
 
 	public void comienzaCuentaAtras() {
-		videoBackCarga.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.video_carga);
+		videoBackCarga
+				.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+						+ R.raw.video_carga);
 		videoBackCarga.start();
 		final Handler handlerCargaImg = new Handler();
 		handlerCargaImg.postDelayed(new Runnable() {
@@ -462,19 +464,22 @@ public class LaminaDosActivity extends Activity {
 						{
 							public void run() {
 								final Handler handlerCargaFinalTres = new Handler();
-								handlerCargaFinalTres.postDelayed(new Runnable() {
-									@Override
-									public void run() {
-										mp.stop();
-										mpFail.stop();
-										Intent act = new Intent(LaminaDosActivity.this,
-												GameOverActivity.class);
-										act.putExtra("game", 3);
-										startActivity(act);
-										overridePendingTransition(R.anim.fade_in,
-												R.anim.fade_out);
-									}
-								}, 1500);
+								handlerCargaFinalTres.postDelayed(
+										new Runnable() {
+											@Override
+											public void run() {
+												mp.stop();
+												mpFail.stop();
+												Intent act = new Intent(
+														LaminaDosActivity.this,
+														GameOverActivity.class);
+												act.putExtra("game", 3);
+												startActivity(act);
+												overridePendingTransition(
+														R.anim.fade_in,
+														R.anim.fade_out);
+											}
+										}, 1500);
 							}
 						});
 					}
@@ -608,8 +613,10 @@ public class LaminaDosActivity extends Activity {
 								mpOk.start();
 								despegueOk.setVisibility(View.VISIBLE);
 								despegueOk.startAnimation(animMensajesDespegue);
-								imgLuzEstado.setBackgroundResource(R.anim.anim_despegue_ok);
-								savingAnimationLuz = (AnimationDrawable) imgLuzEstado.getBackground();
+								imgLuzEstado
+										.setBackgroundResource(R.anim.anim_despegue_ok);
+								savingAnimationLuz = (AnimationDrawable) imgLuzEstado
+										.getBackground();
 								savingAnimationLuz.start();
 								Handler handlerDespegueOkUno = new Handler();
 								handlerDespegueOkUno.postDelayed(
@@ -617,8 +624,10 @@ public class LaminaDosActivity extends Activity {
 											@Override
 											public void run() {
 												videoBackDespegue.start();
-												ImagenBackDespegue.startAnimation(animImgBackDespegue);
-												ImagenBackDespegue.setVisibility(View.GONE);
+												ImagenBackDespegue
+														.startAnimation(animImgBackDespegue);
+												ImagenBackDespegue
+														.setVisibility(View.GONE);
 											}
 										}, 2000);
 							}
@@ -632,9 +641,9 @@ public class LaminaDosActivity extends Activity {
 					public void run() {
 						textoDos.setText(String.valueOf(mProgressStatus + "%"));
 						if (estadoProgress == 3 && mProgressStatus > 70) {
-							//ImagenBackDespegue.startAnimation(animImgBackDespegue);
+							// ImagenBackDespegue.startAnimation(animImgBackDespegue);
 							// videoBackDespegue.start();
-							//ImagenBackDespegue.setVisibility(View.GONE);
+							// ImagenBackDespegue.setVisibility(View.GONE);
 						}
 					}
 				});
@@ -732,18 +741,19 @@ public class LaminaDosActivity extends Activity {
 					public void run() {
 						textoDos.setText(String.valueOf(mProgressStatus + "%"));
 						if (estadoProgress == 3 && mProgressStatus > 70) {
-							//ImagenBackDespegue.startAnimation(animImgBackDespegue);
-							imgLuzEstado.setBackgroundResource(R.anim.anim_despegue_ok);
-							savingAnimationLuz = (AnimationDrawable) imgLuzEstado.getBackground();
+							// ImagenBackDespegue.startAnimation(animImgBackDespegue);
+							imgLuzEstado
+									.setBackgroundResource(R.anim.anim_despegue_ok);
+							savingAnimationLuz = (AnimationDrawable) imgLuzEstado
+									.getBackground();
 							savingAnimationLuz.start();
-							//ImagenBackDespegue.setVisibility(View.GONE);
+							// ImagenBackDespegue.setVisibility(View.GONE);
 						}
 					}
 				});
 			}
 		}, delay, period);
 	}
-
 	public void goRutas() {
 
 		final RelativeLayout layJuegoDespegue = (RelativeLayout) findViewById(R.id.lay_juego_master);
@@ -772,7 +782,7 @@ public class LaminaDosActivity extends Activity {
 				rutaSeleccionada = 1;
 				layMasterComp.setVisibility(View.GONE);
 				mpMapaJuego.stop();
-				//volumeJuego();
+				// volumeJuego();
 			}
 		});
 		// ////////////////////////////
@@ -795,7 +805,7 @@ public class LaminaDosActivity extends Activity {
 				rutaSeleccionada = 2;
 				layMasterComp.setVisibility(View.GONE);
 				mpMapaJuego.stop();
-				//volumeJuego();
+				// volumeJuego();
 			}
 		});
 		// ////////////////////////////
@@ -818,7 +828,7 @@ public class LaminaDosActivity extends Activity {
 				rutaSeleccionada = 3;
 				layMasterComp.setVisibility(View.GONE);
 				mpMapaJuego.stop();
-				//volumeJuego();
+				// volumeJuego();
 			}
 		});
 		// ////////////////////////////
@@ -841,7 +851,7 @@ public class LaminaDosActivity extends Activity {
 				rutaSeleccionada = 4;
 				layMasterComp.setVisibility(View.GONE);
 				mpMapaJuego.stop();
-				//volumeJuego();
+				// volumeJuego();
 			}
 		});
 		// ////////////////////////////
@@ -864,7 +874,7 @@ public class LaminaDosActivity extends Activity {
 				rutaSeleccionada = 5;
 				layMasterComp.setVisibility(View.GONE);
 				mpMapaJuego.stop();
-				//volumeJuego();
+				// volumeJuego();
 			}
 		});
 		// ////////////////////////////
@@ -887,7 +897,7 @@ public class LaminaDosActivity extends Activity {
 				rutaSeleccionada = 6;
 				layMasterComp.setVisibility(View.GONE);
 				mpMapaJuego.stop();
-				//volumeJuego();
+				// volumeJuego();
 			}
 		});
 		// ////////////////////////////
@@ -910,7 +920,7 @@ public class LaminaDosActivity extends Activity {
 				rutaSeleccionada = 7;
 				layMasterComp.setVisibility(View.GONE);
 				mpMapaJuego.stop();
-				//volumeJuego();
+				// volumeJuego();
 			}
 		});
 		// ////////////////////////////
@@ -933,7 +943,7 @@ public class LaminaDosActivity extends Activity {
 				rutaSeleccionada = 8;
 				layMasterComp.setVisibility(View.GONE);
 				mpMapaJuego.stop();
-				//volumeJuego();
+				// volumeJuego();
 			}
 		});
 		// ////////////////////////////
@@ -956,7 +966,7 @@ public class LaminaDosActivity extends Activity {
 				rutaSeleccionada = 9;
 				layMasterComp.setVisibility(View.GONE);
 				mpMapaJuego.stop();
-				//volumeJuego();
+				// volumeJuego();
 			}
 		});
 		// ////////////////////////////
@@ -1001,7 +1011,8 @@ public class LaminaDosActivity extends Activity {
 		int i1 = r.nextInt(max - min + 1) + min;
 		return i1;
 	}
-	public void volumeJuego(){
+
+	public void volumeJuego() {
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
 		int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
@@ -1009,7 +1020,8 @@ public class LaminaDosActivity extends Activity {
 		int seventyVolume = (int) (maxVolume * percent);
 		audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
 	}
-	public void volumeCabinaJuego(){
+
+	public void volumeCabinaJuego() {
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
 		int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
