@@ -2929,6 +2929,7 @@ public class LaminaUnoActivity extends Activity {
 						videoView.setVisibility(View.INVISIBLE);
 						imgWhite.setAnimation(animVideoMainOut);
 						imgWhite.setVisibility(View.GONE);
+						videoView.stopPlayback();
 					}
 				}, 800);
 
@@ -2950,6 +2951,7 @@ public class LaminaUnoActivity extends Activity {
 					public void run() {
 						// Do something after 5s = 5000ms
 						videoLaminaDos.setVisibility(View.GONE);
+						videoLaminaDos.stopPlayback();
 					}
 				}, 5000);
 
