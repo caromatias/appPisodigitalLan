@@ -53,6 +53,7 @@ public class LaminaTresActivity extends Activity {
 	private MediaPlayer mpMundo;
 	private MediaPlayer mpoK;
 	private MediaPlayer mpFail;
+	private MediaPlayer mpSalidaTrivia;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +66,7 @@ public class LaminaTresActivity extends Activity {
 		mpMundo = MediaPlayer.create(this, R.raw.engranaje_mundo);
 		mpTrivia = MediaPlayer.create(this, R.raw.reloj_trivia);
 		mpFondo = MediaPlayer.create(this, R.raw.jazz_dance);
+		mpSalidaTrivia = MediaPlayer.create(this, R.raw.igh_fast_swoosh);
 		mpFondo.start();
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
@@ -191,6 +193,7 @@ public class LaminaTresActivity extends Activity {
 				 * anim.setDuration(2000); layPregTrivia.startAnimation(anim);
 				 */
 				layPregTrivia.startAnimation(animMundoIn);
+				mpSalidaTrivia.start();
 			}
 		}, 15500);
 		final Handler handlerCinco = new Handler();
@@ -201,7 +204,7 @@ public class LaminaTresActivity extends Activity {
 				// imgMundoTrivia.setVisibility(View.VISIBLE);
 				// imgMundoTrivia.startAnimation(animVideoMain);
 			}
-		}, 14000);
+		}, 16000);
 		/*
 		 * TimerTask task = new TimerTask() {
 		 * 
@@ -373,6 +376,7 @@ public class LaminaTresActivity extends Activity {
 		respuestaTres.setEnabled(true);
 		layPregTrivia.startAnimation(animMundoOut);
 		imgMundoTrivia.startAnimation(animMundoOut);
+		mpSalidaTrivia.start();
 		int numeroRandom = generaRandom();
 		switch (numeroRandom) {
 		case 1:
@@ -394,8 +398,16 @@ public class LaminaTresActivity extends Activity {
 					// layPregTrivia.startAnimation(animTriviaIn);
 					layPregTrivia.startAnimation(animMundoIn);
 					imgMundoTrivia.startAnimation(animMundoIn);
+					//mpSalidaTrivia.start();
 				}
 			}, 1000);
+			final Handler handlerPregDosSonido = new Handler();
+			handlerPregDosSonido.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					mpSalidaTrivia.start();
+				}
+			}, 2000);
 			break;
 		case 2:
 			final Handler handlerPregDos = new Handler();
@@ -416,8 +428,18 @@ public class LaminaTresActivity extends Activity {
 					// layPregTrivia.startAnimation(animTriviaIn);
 					layPregTrivia.startAnimation(animMundoIn);
 					imgMundoTrivia.startAnimation(animMundoIn);
+					//mpSalidaTrivia.start();
 				}
 			}, 1000);
+			
+			final Handler handlerPregTresSonido = new Handler();
+			handlerPregTresSonido.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					mpSalidaTrivia.start();
+				}
+			}, 2000);
+			
 			break;
 		}
 	}
@@ -428,8 +450,7 @@ public class LaminaTresActivity extends Activity {
 				new OnClickListener() {
 					public void onClick(View arg0) {
 						mpMundo.start();
-						respuestaUno
-								.setBackgroundResource(R.drawable.botoncomenzar);
+						respuestaUno.setBackgroundResource(R.drawable.botoncomenzar);
 						imgMundoTrivia.setVisibility(View.VISIBLE);
 						imgMundoTrivia.startAnimation(animMundoRotacion);
 						respuestaUno.setEnabled(false);
