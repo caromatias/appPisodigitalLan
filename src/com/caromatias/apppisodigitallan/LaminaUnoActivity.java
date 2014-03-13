@@ -115,6 +115,8 @@ public class LaminaUnoActivity extends Activity {
 		eventosBotones();
 
 		cambiaActivity();
+		
+		animBotonesMapaInternacional();
 
 
 	}
@@ -1857,9 +1859,8 @@ public class LaminaUnoActivity extends Activity {
 						btnEcuador.setEnabled(false);
 					}
 				});
-		// //////////////////////////////////////////////////////////////////////
-		// ///////////////////// CLICK CIRCULO GUAYAQUIL //
-		// ////////////////////////////
+		////////////////////////////////////////////////////////////////////////
+		/////////////////////// CLICK CIRCULO GUAYAQUIL ////////////////////////
 		findViewById(R.id.image_internacional_guayaquil).setOnClickListener(
 				new OnClickListener() {
 					@Override
@@ -2273,6 +2274,7 @@ public class LaminaUnoActivity extends Activity {
 		Button animLayInterBogota = (Button) findViewById(R.id.button_internacional_bogota);
 		Animation animInterBogota = AnimationUtils.loadAnimation(this,
 				R.anim.anim_conoce_flota);
+		animLayInterBogota.setVisibility(View.VISIBLE);
 		animLayInterBogota.startAnimation(animInterBogota);
 
 		Button animLayInterGuayaquil = (Button) findViewById(R.id.button_internacional_guayaquil);
@@ -2408,114 +2410,6 @@ public class LaminaUnoActivity extends Activity {
 		animLayInterMadrid.startAnimation(animInterMadrid);
 	}
 	
-	public void animBotonesMapaInternacionaldos(){
-		
-		Button animLayInterSanFrancisco = (Button) findViewById(R.id.btn_inter_sanfrancisco);
-		Animation animInterSanFrancisco = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_20);
-		animLayInterSanFrancisco.startAnimation(animInterSanFrancisco);
-		
-		Button animLayInterLosAngeles = (Button) findViewById(R.id.btn_inter_losangeles);
-		Animation animInterLosAngeles = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_21);
-		animLayInterLosAngeles.startAnimation(animInterLosAngeles);
-		
-		Button animLayInterMexico = (Button) findViewById(R.id.btn_inter_mexico);
-		Animation animInterMexico = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_22);
-		animLayInterMexico.startAnimation(animInterMexico);
-		
-		Button animLayInterCancun = (Button) findViewById(R.id.btn_inter_cancun);
-		Animation animInterCancun = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_23);
-		animLayInterCancun.startAnimation(animInterCancun);
-		
-		Button animLayInterVeracruz = (Button) findViewById(R.id.btn_inter_veracruz);
-		Animation animInterVeracruz = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_24);
-		animLayInterVeracruz.startAnimation(animInterVeracruz);
-		
-		Button animLayInterOrlando = (Button) findViewById(R.id.btn_inter_orlando);
-		Animation animInterOrlando = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_25);
-		animLayInterOrlando.startAnimation(animInterOrlando);
-		
-		Button animLayInterMiami = (Button) findViewById(R.id.btn_inter_miami);
-		Animation animInterMiami = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_26);
-		animLayInterMiami.startAnimation(animInterMiami);
-		
-		Button animLayInterLaHabana = (Button) findViewById(R.id.btn_inter_laHabana);
-		Animation animInterLaHabana = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_27);
-		animLayInterLaHabana.startAnimation(animInterLaHabana);
-		
-		Button animLayInterPuntacana = (Button) findViewById(R.id.btn_inter_puntacana);
-		Animation animInterPunatacana = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_28);
-		animLayInterPuntacana.startAnimation(animInterPunatacana);
-		
-		Button animLayInterSanandres = (Button) findViewById(R.id.btn_inter_sanandres);
-		Animation animInterSanandres = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_29);
-		animLayInterSanandres.startAnimation(animInterSanandres);
-		
-		Button animLayInterNew = (Button) findViewById(R.id.btn_inter_newyork);
-		Animation animInterNew = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_30);
-		animLayInterNew.startAnimation(animInterNew);
-		
-		Button animLayInterSidney = (Button) findViewById(R.id.btn_inter_sidney);
-		Animation animInterSidney = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_31);
-		animLayInterSidney.startAnimation(animInterSidney);
-		
-		Button animLayInterOuckland = (Button) findViewById(R.id.btn_inter_ouckland);
-		Animation animInterOuckland = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_32);
-		animLayInterOuckland.startAnimation(animInterOuckland);
-		
-		Button animLayInterPapete = (Button) findViewById(R.id.btn_inter_papeete);
-		Animation animInterPapete = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_33);
-		animLayInterPapete.startAnimation(animInterPapete);
-		
-		Button animLayInterIslapascua = (Button) findViewById(R.id.btn_inter_islapascua);
-		Animation animInterIslapascua = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_34);
-		animLayInterIslapascua.startAnimation(animInterIslapascua);
-		
-		Button animLayInterRiogallegos = (Button) findViewById(R.id.btn_inter_riogallegos);
-		Animation animInterRiogllegos = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_35);
-		animLayInterRiogallegos.startAnimation(animInterRiogllegos);
-		
-		Button animLayInterLonderesAz = (Button) findViewById(R.id.btn_inter_londresaz);
-		Animation animInterLondresAz = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_36);
-		animLayInterLonderesAz.startAnimation(animInterLondresAz);
-		
-		Button animLayInterFrankfurt = (Button) findViewById(R.id.btn_inter_frankfurt);
-		Animation animInterFrankfurt = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_37);
-		animLayInterFrankfurt.startAnimation(animInterFrankfurt);
-		
-		Button animLayInterParis = (Button) findViewById(R.id.btn_inter_paris);     
-		Animation animInterParis = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_38);
-		animLayInterParis.startAnimation(animInterParis);
-		
-		Button animLayInterMilan = (Button) findViewById(R.id.btn_inter_milan);
-		Animation animInterMilan = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_39);
-		animLayInterMilan.startAnimation(animInterMilan);
-		
-		Button animLayInterMadrid = (Button) findViewById(R.id.btn_inter_madrid);
-		Animation animInterMadrid = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_40);
-		animLayInterMadrid.startAnimation(animInterMadrid);
-	}
-
 	public void animaCiudadesChile() {
 		RelativeLayout layArica = (RelativeLayout) findViewById(R.id.lay_chile_01);
 		Animation animArica = AnimationUtils.loadAnimation(this,
@@ -3208,7 +3102,7 @@ public class LaminaUnoActivity extends Activity {
 				animLayDes.startAnimation(animDes);
 
 				animLayLogo.startAnimation(animLogo);
-				animBotonesMapaInternacional();
+				
 
 				final Handler handler = new Handler();
 				handler.postDelayed(new Runnable() {
@@ -3271,7 +3165,6 @@ public class LaminaUnoActivity extends Activity {
 						// ///////////////////////////////////////////
 						layPanelRutas.bringToFront();
 						goGameMaster.bringToFront();
-						
 					}
 					
 				}, 6000);
