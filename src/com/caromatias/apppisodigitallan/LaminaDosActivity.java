@@ -108,7 +108,7 @@ public class LaminaDosActivity extends Activity {
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
 		int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-		float percent = 0.6f;
+		float percent = 0.5f;
 		int seventyVolume = (int) (maxVolume * percent);
 		audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
 		mpMapaJuego.start();
@@ -1286,7 +1286,23 @@ public class LaminaDosActivity extends Activity {
 							nextInterface.setVisibility(View.GONE);
 							videoInterface
 									.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+										@Override
+										public void onCompletion(MediaPlayer vmp) {
+											nextInterface.setVisibility(View.VISIBLE);
+											nextInterface.startAnimation(animNetxInterfaceIn);
+										}
+									});
 
+						}else if (paso == 4) {
+							paso = 5;
+							videoInterface
+									.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+											+ R.raw.interface_5);
+							videoInterface.start();
+							nextInterface.startAnimation(animNetxInterfaceOut);
+							nextInterface.setVisibility(View.GONE);
+							videoInterface
+									.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 										@Override
 										public void onCompletion(MediaPlayer vmp) {
 											imgWhiteDos.setVisibility(View.VISIBLE);
@@ -1298,7 +1314,7 @@ public class LaminaDosActivity extends Activity {
 													nextInterface.setVisibility(View.GONE);
 													videoInterface.setVisibility(View.GONE);
 												}
-											}, 500);
+											}, 800);
 											Handler handlerInterfaceDos = new Handler();
 											handlerInterfaceDos.postDelayed(new Runnable() {
 												@Override
@@ -1307,7 +1323,7 @@ public class LaminaDosActivity extends Activity {
 															.startAnimation(animVideoMainOut);
 													imgWhiteDos.setVisibility(View.GONE);
 												}
-											}, 1000);
+											}, 1500);
 										}
 									});
 
