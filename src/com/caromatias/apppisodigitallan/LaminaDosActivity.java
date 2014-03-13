@@ -108,7 +108,7 @@ public class LaminaDosActivity extends Activity {
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
 		int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-		float percent = 0.6f;
+		float percent = 0.5f;
 		int seventyVolume = (int) (maxVolume * percent);
 		audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
 		mpMapaJuego.start();
@@ -177,7 +177,7 @@ public class LaminaDosActivity extends Activity {
 		videoBackCarga = (VideoView) findViewById(R.id.video_back_carga);
 		imgBackCarga = (ImageView) findViewById(R.id.img_back_carga);
 		imgWhiteDos = (ImageView) findViewById(R.id.img_transicion_interface_uno);
-		
+
 		muestraInterfaceJuego();
 
 		findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
@@ -221,7 +221,8 @@ public class LaminaDosActivity extends Activity {
 				new OnClickListener() {
 					public void onClick(View arg0) {
 						// mpDespegue.start();
-						findViewById(R.id.btn_comenzar_juego_despegue).setEnabled(false);
+						findViewById(R.id.btn_comenzar_juego_despegue)
+								.setEnabled(false);
 						AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 						int currentVolume = audio
 								.getStreamVolume(AudioManager.STREAM_MUSIC);
@@ -343,7 +344,8 @@ public class LaminaDosActivity extends Activity {
 		findViewById(R.id.btn_comenzar_juego_carga).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
-						findViewById(R.id.btn_comenzar_juego_carga).setEnabled(false);
+						findViewById(R.id.btn_comenzar_juego_carga).setEnabled(
+								false);
 						flechaCarga.setVisibility(View.VISIBLE);
 						activaCarga.setVisibility(View.VISIBLE);
 						flechaCarga.startAnimation(animFlechaRebote);
@@ -480,14 +482,16 @@ public class LaminaDosActivity extends Activity {
 						{
 							public void run() {
 								final Handler handlerCargaQuitaUno = new Handler();
-								handlerCargaQuitaUno.postDelayed(new Runnable() {
-									@Override
-									public void run() {
-										cargaFail
-												.startAnimation(animMensajesDespegueFailOut);
-										cargaFail.setVisibility(View.GONE);
-									}
-								}, 1500);
+								handlerCargaQuitaUno.postDelayed(
+										new Runnable() {
+											@Override
+											public void run() {
+												cargaFail
+														.startAnimation(animMensajesDespegueFailOut);
+												cargaFail
+														.setVisibility(View.GONE);
+											}
+										}, 1500);
 								final Handler handlerCargaQuita = new Handler();
 								handlerCargaQuita.postDelayed(new Runnable() {
 									@Override
@@ -506,7 +510,7 @@ public class LaminaDosActivity extends Activity {
 										new Runnable() {
 											@Override
 											public void run() {
-												//creaMpFail();
+												// creaMpFail();
 												mpDespegue.release();
 												Intent act = new Intent(
 														LaminaDosActivity.this,
@@ -522,28 +526,20 @@ public class LaminaDosActivity extends Activity {
 						});
 					}
 					/*
-					runOnUiThread(new Runnable() // run on ui thread
-					{
-						public void run() {
-							final Handler handlerCargaQuitaUno = new Handler();
-							handlerCargaQuitaUno.postDelayed(new Runnable() {
-								@Override
-								public void run() {
-									cargaFail
-											.startAnimation(animMensajesDespegueFailOut);
-									cargaFail.setVisibility(View.GONE);
-								}
-							}, 1500);
-							final Handler handlerCargaQuita = new Handler();
-							handlerCargaQuita.postDelayed(new Runnable() {
-								@Override
-								public void run() {
-									muestraCuentaAtas();
-								}
-							}, 2100);
-						}
-					});
-					*/
+					 * runOnUiThread(new Runnable() // run on ui thread { public
+					 * void run() { final Handler handlerCargaQuitaUno = new
+					 * Handler(); handlerCargaQuitaUno.postDelayed(new
+					 * Runnable() {
+					 * 
+					 * @Override public void run() { cargaFail
+					 * .startAnimation(animMensajesDespegueFailOut);
+					 * cargaFail.setVisibility(View.GONE); } }, 1500); final
+					 * Handler handlerCargaQuita = new Handler();
+					 * handlerCargaQuita.postDelayed(new Runnable() {
+					 * 
+					 * @Override public void run() { muestraCuentaAtas(); } },
+					 * 2100); } });
+					 */
 				} else if (currentRotation >= 60) {
 					creaMpOk();
 					cargaOk.setVisibility(View.VISIBLE);
@@ -1217,140 +1213,122 @@ public class LaminaDosActivity extends Activity {
 
 		videoInterface = (VideoView) findViewById(R.id.video_interface_uno);
 		nextInterface = (RelativeLayout) findViewById(R.id.next_interface);
-		animNetxInterfaceIn = AnimationUtils.loadAnimation(this,R.anim.anim_translate_botone_next_in);
-		animNetxInterfaceOut = AnimationUtils.loadAnimation(this,R.anim.anim_translate_boton_next);
+		animNetxInterfaceIn = AnimationUtils.loadAnimation(this,
+				R.anim.anim_translate_botone_next_in);
+		animNetxInterfaceOut = AnimationUtils.loadAnimation(this,
+				R.anim.anim_translate_boton_next);
 		Bundle bundle = getIntent().getExtras();
 		if (bundle.getInt("isInterface") == 0) {
 			videoInterface
 					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
-							+ R.raw.interface_final);
+							+ R.raw.interface_1);
 			videoInterface.start();
-			
-			Handler handlerInterfacePasoUno = new Handler();
-			handlerInterfacePasoUno.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					videoInterface.pause();
-					pause = true;
-				}
-			}, 10000);
-			Handler handlerInterfaceBotonUno = new Handler();
-			handlerInterfaceBotonUno.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					nextInterface.setVisibility(View.VISIBLE);
-					nextInterface.startAnimation(animNetxInterfaceIn);
-				}
-			}, 9500);
-			/*
-			Handler handlerInterfaceUno = new Handler();
-			handlerInterfaceUno.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					imgWhiteDos.setVisibility(View.VISIBLE);
-					imgWhiteDos.startAnimation(animVideoMain);
-				}
-			}, 29500);
-			Handler handlerInterfaceVid = new Handler();
-			handlerInterfaceVid.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					videoInterface.setVisibility(View.GONE);
-				}
-			}, 30400);
-			Handler handlerInterfaceDos = new Handler();
-			handlerInterfaceDos.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					imgWhiteDos.startAnimation(animVideoMainOut);
-					imgWhiteDos.setVisibility(View.GONE);
-				}
-			}, 30900);
-			*/
-		}else{
+
+			videoInterface
+					.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+						@Override
+						public void onCompletion(MediaPlayer vmp) {
+							nextInterface.setVisibility(View.VISIBLE);
+							nextInterface.startAnimation(animNetxInterfaceIn);
+						}
+					});
+		} else {
 			videoInterface.setVisibility(View.GONE);
 		}
-		/////////////// evento boton pause //////////////
+		// ///////////// evento boton pause //////////////
 		findViewById(R.id.btn_next_interface).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
-						if(paso == 1){
+						if (paso == 1) {
 							paso = 2;
+							videoInterface
+									.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+											+ R.raw.interface_2);
+							videoInterface.start();
 							nextInterface.startAnimation(animNetxInterfaceOut);
 							nextInterface.setVisibility(View.GONE);
-							Handler handlerInterfaceBotonDos = new Handler();
-							handlerInterfaceBotonDos.postDelayed(new Runnable() {
-								@Override
-								public void run() {
-									nextInterface.setVisibility(View.VISIBLE);
-									nextInterface.startAnimation(animNetxInterfaceIn);
-								}
-							}, 6500);
-							Handler handlerInterfacePasoDos = new Handler();
-							handlerInterfacePasoDos.postDelayed(new Runnable() {
-								@Override
-								public void run() {
-									videoInterface.pause();
-									pause = true;
-								}
-							}, 7000);
-						} else if(paso == 2){
+							videoInterface
+									.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+										@Override
+										public void onCompletion(MediaPlayer vmp) {
+											nextInterface
+													.setVisibility(View.VISIBLE);
+											nextInterface
+													.startAnimation(animNetxInterfaceIn);
+										}
+									});
+						} else if (paso == 2) {
+							paso = 3;
+							videoInterface
+									.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+											+ R.raw.interface_3);
+							videoInterface.start();
 							nextInterface.startAnimation(animNetxInterfaceOut);
 							nextInterface.setVisibility(View.GONE);
-							Handler handlerInterfaceBotonTres = new Handler();
-							handlerInterfaceBotonTres.postDelayed(new Runnable() {
-								@Override
-								public void run() {
-									nextInterface.setVisibility(View.VISIBLE);
-									nextInterface.startAnimation(animNetxInterfaceIn);
-								}
-							}, 6000);
-							Handler handlerInterfacePasoTres = new Handler();
-							handlerInterfacePasoTres.postDelayed(new Runnable() {
-								@Override
-								public void run() {
-									paso = 3;
-									videoInterface.pause();
-									pause = true;
-								}
-							}, 6500);
-						}else if(paso == 3){
+							videoInterface.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+										@Override
+										public void onCompletion(MediaPlayer vmp) {
+											nextInterface.setVisibility(View.VISIBLE);
+											nextInterface.startAnimation(animNetxInterfaceIn);
+										}
+									});
+
+						} else if (paso == 3) {
+							paso = 4;
+							videoInterface
+									.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+											+ R.raw.interface_4);
+							videoInterface.start();
 							nextInterface.startAnimation(animNetxInterfaceOut);
 							nextInterface.setVisibility(View.GONE);
-							Handler handlerInterfaceBotonTres = new Handler();
-							handlerInterfaceBotonTres.postDelayed(new Runnable() {
-								@Override
-								public void run() {
-									nextInterface.setVisibility(View.VISIBLE);
-									nextInterface.startAnimation(animNetxInterfaceIn);
-								}
-							}, 7000);
-							////////////////////////////////////////
-							Handler handlerInterfaceUno = new Handler();
-							handlerInterfaceUno.postDelayed(new Runnable() {
-								@Override
-								public void run() {
-									imgWhiteDos.setVisibility(View.VISIBLE);
-									imgWhiteDos.startAnimation(animVideoMain);
-								}
-							}, 7500);
-							Handler handlerInterfaceVid = new Handler();
-							handlerInterfaceVid.postDelayed(new Runnable() {
-								@Override
-								public void run() {
-									videoInterface.setVisibility(View.GONE);
-								}
-							}, 8400);
-							Handler handlerInterfaceDos = new Handler();
-							handlerInterfaceDos.postDelayed(new Runnable() {
-								@Override
-								public void run() {
-									imgWhiteDos.startAnimation(animVideoMainOut);
-									imgWhiteDos.setVisibility(View.GONE);
-								}
-							}, 8900);
+							videoInterface
+									.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+										@Override
+										public void onCompletion(MediaPlayer vmp) {
+											nextInterface.setVisibility(View.VISIBLE);
+											nextInterface.startAnimation(animNetxInterfaceIn);
+										}
+									});
+
+						}else if (paso == 4) {
+							paso = 5;
+							videoInterface
+									.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+											+ R.raw.interface_5);
+							videoInterface.start();
+							nextInterface.startAnimation(animNetxInterfaceOut);
+							nextInterface.setVisibility(View.GONE);
+							videoInterface
+									.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+										@Override
+										public void onCompletion(MediaPlayer vmp) {
+											imgWhiteDos.setVisibility(View.VISIBLE);
+											imgWhiteDos.startAnimation(animVideoMain);
+											Handler handlerInterfaceVid = new Handler();
+											handlerInterfaceVid.postDelayed(new Runnable() {
+												@Override
+												public void run() {
+													nextInterface.setVisibility(View.GONE);
+													videoInterface.setVisibility(View.GONE);
+												}
+											}, 800);
+											Handler handlerInterfaceDos = new Handler();
+											handlerInterfaceDos.postDelayed(new Runnable() {
+												@Override
+												public void run() {
+													imgWhiteDos
+															.startAnimation(animVideoMainOut);
+													imgWhiteDos.setVisibility(View.GONE);
+												}
+											}, 1500);
+										}
+									});
+
 						}
-						if(pause == true){
+						if (pause == true) {
 							videoInterface.start();
 							pause = false;
 						}
