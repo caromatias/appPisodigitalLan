@@ -1724,7 +1724,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
-                android:text="Sao Luis"
+                android:text="São Luis"
                 android:textColor="#ffffff"
                 android:textSize="10dp"
                 android:textStyle="bold" />
@@ -1956,7 +1956,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
-                android:text="Joao Pessoa"
+                android:text="João Pessoa"
                 android:textColor="#ffffff"
                 android:textSize="10dp"
                 android:textStyle="bold" />
@@ -2507,7 +2507,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
-                android:text="Riberao Preto"
+                android:text="Riberão Preto"
                 android:textColor="#ffffff"
                 android:textSize="10dp"
                 android:textStyle="bold" />
@@ -2594,7 +2594,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/botoncomenzar"
-                android:text="Sao Paulo"
+                android:text="São Paulo"
                 android:textColor="#ffffff"
                 android:textSize="10dp"
                 android:textStyle="bold" />
