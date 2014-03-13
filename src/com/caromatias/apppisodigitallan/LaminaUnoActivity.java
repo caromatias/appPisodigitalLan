@@ -3030,7 +3030,7 @@ public class LaminaUnoActivity extends Activity {
 						btnFlota.bringToFront();
 						btnDestinos.bringToFront();
 					}
-				}, 4000);
+				}, 4400);
 
 				final Handler handlerTres = new Handler();
 				handlerTres.postDelayed(new Runnable() {

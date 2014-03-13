@@ -21,12 +21,54 @@ public class GameOverActivity extends Activity {
 		setContentView(R.layout.activity_game_over);
 		// ///// AUDIO ////////
 		// sdBeginds = MediaPlayer.create(this, R.raw.jazz_dance);
-		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
-		int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-		float percent = 0.9f;
-		int seventyVolume = (int) (maxVolume * percent);
-		audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
+		Handler handlerAumUno = new Handler();
+		handlerAumUno.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+				int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
+				int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+				float percent = 0.5f;
+				int seventyVolume = (int) (maxVolume * percent);
+				audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
+			}
+		}, 500);
+		Handler handlerAumDos = new Handler();
+		handlerAumDos.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+				int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
+				int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+				float percent = 0.6f;
+				int seventyVolume = (int) (maxVolume * percent);
+				audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
+			}
+		}, 1000);
+		Handler handlerAumTres = new Handler();
+		handlerAumTres.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+				int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
+				int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+				float percent = 0.7f;
+				int seventyVolume = (int) (maxVolume * percent);
+				audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
+			}
+		}, 1500);
+		Handler handlerAymCuatro = new Handler();
+		handlerAymCuatro.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+				int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
+				int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+				float percent = 0.8f;
+				int seventyVolume = (int) (maxVolume * percent);
+				audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
+			}
+		}, 2000);
 		// ///// AUDIO ////////
 		// ///// REDUCCION DE AUDIO /////////
 		Handler handlerReducUno = new Handler();
