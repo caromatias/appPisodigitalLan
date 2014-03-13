@@ -91,6 +91,11 @@ public class LaminaDosActivity extends Activity {
 	private ImageView imgWhiteDos;
 	private Animation animVideoMain;
 	private Animation animVideoMainOut;
+	private boolean pause = false;
+	private int paso = 1;
+	private RelativeLayout nextInterface;
+	private Animation animNetxInterfaceIn;
+	private Animation animNetxInterfaceOut;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -1211,13 +1216,33 @@ public class LaminaDosActivity extends Activity {
 	public void muestraInterfaceJuego() {
 
 		videoInterface = (VideoView) findViewById(R.id.video_interface_uno);
+		nextInterface = (RelativeLayout) findViewById(R.id.next_interface);
+		animNetxInterfaceIn = AnimationUtils.loadAnimation(this,R.anim.anim_translate_botone_next_in);
+		animNetxInterfaceOut = AnimationUtils.loadAnimation(this,R.anim.anim_translate_boton_next);
 		Bundle bundle = getIntent().getExtras();
 		if (bundle.getInt("isInterface") == 0) {
 			videoInterface
 					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
 							+ R.raw.interface_final);
 			videoInterface.start();
-
+			
+			Handler handlerInterfacePasoUno = new Handler();
+			handlerInterfacePasoUno.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					videoInterface.pause();
+					pause = true;
+				}
+			}, 10000);
+			Handler handlerInterfaceBotonUno = new Handler();
+			handlerInterfaceBotonUno.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					nextInterface.setVisibility(View.VISIBLE);
+					nextInterface.startAnimation(animNetxInterfaceIn);
+				}
+			}, 9500);
+			/*
 			Handler handlerInterfaceUno = new Handler();
 			handlerInterfaceUno.postDelayed(new Runnable() {
 				@Override
@@ -1241,9 +1266,96 @@ public class LaminaDosActivity extends Activity {
 					imgWhiteDos.setVisibility(View.GONE);
 				}
 			}, 30900);
+			*/
 		}else{
 			videoInterface.setVisibility(View.GONE);
 		}
+		/////////////// evento boton pause //////////////
+		findViewById(R.id.btn_next_interface).setOnClickListener(
+				new OnClickListener() {
+					public void onClick(View arg0) {
+						if(paso == 1){
+							paso = 2;
+							nextInterface.startAnimation(animNetxInterfaceOut);
+							nextInterface.setVisibility(View.GONE);
+							Handler handlerInterfaceBotonDos = new Handler();
+							handlerInterfaceBotonDos.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									nextInterface.setVisibility(View.VISIBLE);
+									nextInterface.startAnimation(animNetxInterfaceIn);
+								}
+							}, 6500);
+							Handler handlerInterfacePasoDos = new Handler();
+							handlerInterfacePasoDos.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									videoInterface.pause();
+									pause = true;
+								}
+							}, 7000);
+						} else if(paso == 2){
+							nextInterface.startAnimation(animNetxInterfaceOut);
+							nextInterface.setVisibility(View.GONE);
+							Handler handlerInterfaceBotonTres = new Handler();
+							handlerInterfaceBotonTres.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									nextInterface.setVisibility(View.VISIBLE);
+									nextInterface.startAnimation(animNetxInterfaceIn);
+								}
+							}, 6000);
+							Handler handlerInterfacePasoTres = new Handler();
+							handlerInterfacePasoTres.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									paso = 3;
+									videoInterface.pause();
+									pause = true;
+								}
+							}, 6500);
+						}else if(paso == 3){
+							nextInterface.startAnimation(animNetxInterfaceOut);
+							nextInterface.setVisibility(View.GONE);
+							Handler handlerInterfaceBotonTres = new Handler();
+							handlerInterfaceBotonTres.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									nextInterface.setVisibility(View.VISIBLE);
+									nextInterface.startAnimation(animNetxInterfaceIn);
+								}
+							}, 7000);
+							////////////////////////////////////////
+							Handler handlerInterfaceUno = new Handler();
+							handlerInterfaceUno.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									imgWhiteDos.setVisibility(View.VISIBLE);
+									imgWhiteDos.startAnimation(animVideoMain);
+								}
+							}, 7500);
+							Handler handlerInterfaceVid = new Handler();
+							handlerInterfaceVid.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									videoInterface.setVisibility(View.GONE);
+								}
+							}, 8400);
+							Handler handlerInterfaceDos = new Handler();
+							handlerInterfaceDos.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									imgWhiteDos.startAnimation(animVideoMainOut);
+									imgWhiteDos.setVisibility(View.GONE);
+								}
+							}, 8900);
+						}
+						if(pause == true){
+							videoInterface.start();
+							pause = false;
+						}
+					}
+				});
 	}
 
 	@Override
