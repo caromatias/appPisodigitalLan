@@ -21,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 public class LaminaUnoActivity extends Activity {
@@ -44,12 +45,14 @@ public class LaminaUnoActivity extends Activity {
 	private RelativeLayout layDestinos;
 	private RelativeLayout layPopupInfo;
 	private boolean doubleClick = false;
-	private RelativeLayout animLayLogo;
+	//private RelativeLayout animLayLogo;
 	private Animation animLogo;
 	private Button animLayDes;
 	private Animation animDes;
 	private Animation animFlota;
 	private RelativeLayout popNuestraFlota;
+	private TextView tituloPopInfo;
+	private TextView descPopInfo;
 	// ///////////////////////////////////
 	public static int btn1 = 0;
 	public static int btn2 = 0;
@@ -102,7 +105,7 @@ public class LaminaUnoActivity extends Activity {
 		lay_principal.addView(zoomView);
 		
 		popNuestraFlota = (RelativeLayout) findViewById(R.id.lay_img_flota);
-		animLayLogo = (RelativeLayout) findViewById(R.id.lay_logo_pasajero_virtual_dos);
+		//animLayLogo = (RelativeLayout) findViewById(R.id.lay_logo_pasajero_virtual_dos);
 		animLogo = AnimationUtils.loadAnimation(this,R.anim.anim_lineas_brasil);
 		animLayDes = (Button) findViewById(R.id.button_nuestros_destinos);
 		animDes = AnimationUtils.loadAnimation(this,
@@ -118,6 +121,8 @@ public class LaminaUnoActivity extends Activity {
 		
 		animBotonesMapaInternacional();
 
+		tituloPopInfo = (TextView) findViewById(R.id.txt_titulo_popup_info);
+		descPopInfo = (TextView) findViewById(R.id.txt_descripcion_popup_info);
 
 	}
 
@@ -165,6 +170,8 @@ public class LaminaUnoActivity extends Activity {
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
 						if(doubleClick == true){
+							tituloPopInfo.setText(getResources().getString(R.string.titulo_pop_info1));
+							descPopInfo.setText(getResources().getString(R.string.desc_pop_info1));
 							layPopupInfo.bringToFront();
 							layPopupInfo.setVisibility(View.VISIBLE);
 						}else {
@@ -185,6 +192,8 @@ public class LaminaUnoActivity extends Activity {
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
 						if(doubleClick == true){
+							tituloPopInfo.setText(getResources().getString(R.string.titulo_pop_info2));
+							descPopInfo.setText(getResources().getString(R.string.desc_pop_info2));
 							layPopupInfo.bringToFront();
 							layPopupInfo.setVisibility(View.VISIBLE);
 						}else {
@@ -205,6 +214,8 @@ public class LaminaUnoActivity extends Activity {
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
 						if(doubleClick == true){
+							tituloPopInfo.setText(getResources().getString(R.string.titulo_pop_info3));
+							descPopInfo.setText(getResources().getString(R.string.desc_pop_info3));
 							layPopupInfo.bringToFront();
 							layPopupInfo.setVisibility(View.VISIBLE);
 						}else {
@@ -225,6 +236,8 @@ public class LaminaUnoActivity extends Activity {
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
 						if(doubleClick == true){
+							tituloPopInfo.setText(getResources().getString(R.string.titulo_pop_info4));
+							descPopInfo.setText(getResources().getString(R.string.desc_pop_info4));
 							layPopupInfo.bringToFront();
 							layPopupInfo.setVisibility(View.VISIBLE);
 						}else {
@@ -245,6 +258,8 @@ public class LaminaUnoActivity extends Activity {
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
 						if(doubleClick == true){
+							tituloPopInfo.setText(getResources().getString(R.string.titulo_pop_info5));
+							descPopInfo.setText(getResources().getString(R.string.desc_pop_info5));
 							layPopupInfo.bringToFront();
 							layPopupInfo.setVisibility(View.VISIBLE);
 						}else {
@@ -265,6 +280,8 @@ public class LaminaUnoActivity extends Activity {
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
 						if(doubleClick == true){
+							tituloPopInfo.setText(getResources().getString(R.string.titulo_pop_info6));
+							descPopInfo.setText(getResources().getString(R.string.desc_pop_info6));
 							layPopupInfo.bringToFront();
 							layPopupInfo.setVisibility(View.VISIBLE);
 						}else {
@@ -3101,7 +3118,7 @@ public class LaminaUnoActivity extends Activity {
 				
 				animLayDes.startAnimation(animDes);
 
-				animLayLogo.startAnimation(animLogo);
+				//animLayLogo.startAnimation(animLogo);
 				
 
 				final Handler handler = new Handler();

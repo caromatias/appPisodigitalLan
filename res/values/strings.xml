@@ -14,11 +14,39 @@
     <string name="title_activity_game_over">GameOverActivity</string>
     <!-- Strings preguntas LAN -->
     <string name ="plan1">¿Cúal es la capacidad de pasajeros de un Airbus 319?</string>
+    <string name ="plan2">¿En que año se fundo la compañia LAN?</string>
+    <string name ="plan3">¿Qué significa la sigla LAN?</string>
+    <string name ="plan4">¿Cúal es la flota operativa de LAN a inicios del 2014?</string>
+    <string name ="plan5">¿Qué año se funco LAN Perú?</string>
+    <string name ="plan6">¿Qué año se fundo LAN Argentina?</string>
+    <string name ="plan7">¿Cúal de estas categorias no pertenece al programa LANPASS?</string>
+    <string name ="plan8">¿Cúantos aviones opera LAN CARGO?</string>
     <!-- Strings preguntas LAN -->
     <!-- Strings respuestas LAN -->
     <string name ="rlan1_1">144</string>
     <string name ="rlan1_2">200</string>
     <string name ="rlan1_3">120</string>
+    <string name ="rlan2_1">1929</string>
+    <string name ="rlan2_2">1928</string>
+    <string name ="rlan2_3">1946</string>
+    <string name ="rlan3_1">Apellido de los dueños</string>
+    <string name ="rlan3_2">Línea Aérea Nacional</string>
+    <string name ="rlan3_3">Los Andes Nacional</string>
+    <string name ="rlan4_1">155</string>
+    <string name ="rlan4_2">180</string>
+    <string name ="rlan4_3">200</string>
+    <string name ="rlan5_1">1992</string>
+    <string name ="rlan5_2">1995</string>
+    <string name ="rlan5_3">1998</string>
+    <string name ="rlan6_1">2006</string>
+    <string name ="rlan6_2">2005</string>
+    <string name ="rlan6_3">2002</string>
+    <string name ="rlan7_1">Good Flyer</string>
+    <string name ="rlan7_2">Premium</string>
+    <string name ="rlan7_3">Comodoro</string>
+    <string name ="rlan8_1">13</string>
+    <string name ="rlan8_2">30</string>
+    <string name ="rlan8_3">18</string>
     <!-- Strings respuestas LAN -->
     <!-- Strings preguntas Trivias -->
     <string name ="baires">¿Cómo se conoce a la sede de Gobierno de Argentina?</string>
@@ -60,4 +88,17 @@
     <string name ="rmiami2">Ocean Dr.</string>
     <string name ="rmiami3">Bayshore Dr.</string>
 	<!-- Strings respuestas trivias -->
+	<!-- Strings textos info popup -->
+	<string name ="titulo_pop_info1">CHILE</string>
+	<string name ="titulo_pop_info2">ARGENTINA</string>
+	<string name ="titulo_pop_info3">PERÚ</string>
+	<string name ="titulo_pop_info4">BRASIL</string>
+	<string name ="titulo_pop_info5">ECUADOR</string>
+	<string name ="titulo_pop_info6">COLOMBIA</string>
+	<string name ="desc_pop_info1">En Chile LAN opera X rutas internas con X aviones</string>
+	<string name ="desc_pop_info2">en Argentina LAN opera X rutas internas con X aviones</string>
+	<string name ="desc_pop_info3">en Perú LAN opera X rutas internas con X aviones</string>
+	<string name ="desc_pop_info4">en brasil TAM opera X rutas internas con X aviones</string>
+	<string name ="desc_pop_info5">en Ecuador LAN opera X rutas internas con X aviones</string>
+	<string name ="desc_pop_info6">en COLOMBIA LAN opera X rutas internas con X aviones</string>
 </resources>
