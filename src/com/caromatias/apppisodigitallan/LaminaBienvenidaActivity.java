@@ -118,6 +118,61 @@ public class LaminaBienvenidaActivity extends Activity {
 						}, 1000);
 					}
 				});
+		
+		findViewById(R.id.btn_chile).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				btnChile.setBackgroundResource(R.drawable.botonrojo);
+				imgMapaBienvenida.startAnimation(animMapaInter);
+				btnChile.setEnabled(false);
+				final Handler handler = new Handler();
+				handler.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						Intent act = new Intent(LaminaBienvenidaActivity.this,	LaminaChileActivity.class);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+					}
+				}, 1000);
+				btnChile.setEnabled(false);
+			}
+		});
+		findViewById(R.id.btn_colombia).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				btnColombia.setBackgroundResource(R.drawable.botonrojo);
+				imgMapaBienvenida.startAnimation(animMapaInter);
+				btnColombia.setEnabled(false);
+				final Handler handler = new Handler();
+				handler.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						Intent act = new Intent(LaminaBienvenidaActivity.this,	LaminaChileActivity.class);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+					}
+				}, 1000);
+				btnColombia.setEnabled(false);
+			}
+		});
+		findViewById(R.id.btn_ecuador).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				btnEcuador.setBackgroundResource(R.drawable.botonrojo);
+				imgMapaBienvenida.startAnimation(animMapaInter);
+				btnEcuador.setEnabled(false);
+				final Handler handler = new Handler();
+				handler.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						Intent act = new Intent(LaminaBienvenidaActivity.this,	LaminaEcuadorActivity.class);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+					}
+				}, 1000);
+				btnEcuador.setEnabled(false);
+			}
+		});
 	}
 
 	public void initVar() {

@@ -104,5 +104,7 @@
     <string name="title_activity_lamina_bienvenida">LaminaBienvenidaActivity</string>
     <string name="title_activity_lamina_argentina">LaminaArgentinaActivity</string>
     <string name="title_activity_lamina_brasil">LaminaBrasilActivity</string>
+    <string name="title_activity_lamina_chile">LaminaChileActivity</string>
+    <string name="title_activity_lamina_ecuador">LaminaEcuadorActivity</string>
 
 </resources>
