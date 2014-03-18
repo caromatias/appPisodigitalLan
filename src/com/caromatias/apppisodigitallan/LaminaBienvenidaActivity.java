@@ -100,6 +100,24 @@ public class LaminaBienvenidaActivity extends Activity {
 						}, 1000);
 					}
 				});
+		findViewById(R.id.btn_brasil).setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						btnBrasil.setBackgroundResource(R.drawable.botonrojo);
+						imgMapaBienvenida.startAnimation(animMapaInter);
+						btnBrasil.setEnabled(false);
+						final Handler handler = new Handler();
+						handler.postDelayed(new Runnable() {
+							@Override
+							public void run() {
+								Intent act = new Intent(LaminaBienvenidaActivity.this,	LaminaBrasilActivity.class);
+								startActivity(act);
+								overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+							}
+						}, 1000);
+					}
+				});
 	}
 
 	public void initVar() {
