@@ -42,6 +42,14 @@
             android:name="com.caromatias.apppisodigitallan.GameOverActivity"
             android:label="@string/title_activity_game_over" >
         </activity>
+        <activity
+            android:name="com.caromatias.apppisodigitallan.LaminaBienvenidaActivity"
+            android:label="@string/title_activity_lamina_bienvenida" >
+        </activity>
+        <activity
+            android:name="com.caromatias.apppisodigitallan.LaminaArgentinaActivity"
+            android:label="@string/title_activity_lamina_argentina" >
+        </activity>
     </application>
 
 </manifest>
