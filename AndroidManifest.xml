@@ -50,6 +50,10 @@
             android:name="com.caromatias.apppisodigitallan.LaminaArgentinaActivity"
             android:label="@string/title_activity_lamina_argentina" >
         </activity>
+        <activity
+            android:name="com.caromatias.apppisodigitallan.LaminaBrasilActivity"
+            android:label="@string/title_activity_lamina_brasil" >
+        </activity>
     </application>
 
 </manifest>

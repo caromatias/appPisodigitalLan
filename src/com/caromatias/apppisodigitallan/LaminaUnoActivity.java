@@ -839,10 +839,8 @@ public class LaminaUnoActivity extends Activity {
 								switch (posicionMenu) {
 								case 1:
 									layMapaInter.setVisibility(View.GONE);
-									layMapaArgentina
-											.setVisibility(View.VISIBLE);
-									layMapaArgentina
-											.startAnimation(animMapaArgentina);
+									layMapaArgentina.setVisibility(View.VISIBLE);
+									layMapaArgentina.startAnimation(animMapaArgentina);
 									break;
 								case 2:
 									layMapaChile.setVisibility(View.GONE);

@@ -103,5 +103,6 @@
     <string name="desc_pop_info6">en COLOMBIA LAN opera X rutas internas con X aviones</string>
     <string name="title_activity_lamina_bienvenida">LaminaBienvenidaActivity</string>
     <string name="title_activity_lamina_argentina">LaminaArgentinaActivity</string>
+    <string name="title_activity_lamina_brasil">LaminaBrasilActivity</string>
 
 </resources>
