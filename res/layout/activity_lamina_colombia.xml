@@ -1,0 +1,623 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    tools:context=".LaminaColombiaActivity" >
+    
+    <ImageView
+        android:id="@+id/img_fondo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/desc"
+        android:scaleType="fitXY"
+        android:src="@drawable/fondo_mapas" />
+
+    <com.caromatias.apppisodigitallan.zoom
+        android:id="@+id/mapa_colombia"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/mapa_colombia" />
+
+    <ImageView
+        android:id="@+id/img_lineas_colombia"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/img_lineas_colombia" />
+
+    <RelativeLayout
+        android:id="@+id/lay_colombia_01"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="505dp"
+        android:layout_marginTop="170dp" >
+
+        <Button
+            android:id="@+id/button_colombia_01"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Barranquilla"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_colombia_01"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_colombia_02"
+        android:layout_width="100dp"
+        android:layout_height="17dp"
+        android:layout_marginLeft="616dp"
+        android:layout_marginTop="85dp" >
+
+        <Button
+            android:id="@+id/button_colombia_02"
+            android:layout_width="80dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="San Andrés"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_colombia_02"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_colombia_03"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="617dp"
+        android:layout_marginTop="166dp" >
+
+        <Button
+            android:id="@+id/button_colombia_03"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Santa Marta"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_colombia_03"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_colombia_04"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="490dp"
+        android:layout_marginTop="205dp" >
+
+        <Button
+            android:id="@+id/button_colombia_04"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Cartagena"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_colombia_04"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_colombia_05"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="484dp"
+        android:layout_marginTop="233dp" >
+
+        <Button
+            android:id="@+id/button_colombia_05"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Monteria"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_colombia_05"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_colombia_06"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="447dp"
+        android:layout_marginTop="260dp" >
+
+        <Button
+            android:id="@+id/button_colombia_06"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Apartadó"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_colombia_06"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="05dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_colombia_07"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="483dp"
+        android:layout_marginTop="297dp" >
+
+        <Button
+            android:id="@+id/button_colombia_07"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Medellin"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_colombia_07"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="05dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_colombia_08"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="435dp"
+        android:layout_marginTop="342dp" >
+
+        <Button
+            android:id="@+id/button_colombia_08"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Quibdó"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_colombia_08"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="05dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_colombia_09"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="525dp"
+        android:layout_marginTop="360dp" >
+
+        <Button
+            android:id="@+id/button_colombia_09"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Ibaque"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_colombia_09"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_colombia_10"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="508dp"
+        android:layout_marginTop="387dp" >
+
+        <Button
+            android:id="@+id/button_colombia_10"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="05dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Piera"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_colombia_10"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_colombia_11"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="450dp"
+        android:layout_marginTop="430dp" >
+
+        <Button
+            android:id="@+id/button_colombia_11"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Cali"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_colombia_11"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="05dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_colombia_12"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="477dp"
+        android:layout_marginTop="457dp" >
+
+        <Button
+            android:id="@+id/button_colombia_12"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Neiva"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_colombia_12"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="05dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_colombia_13"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="545dp"
+        android:layout_marginTop="507dp" >
+
+        <Button
+            android:id="@+id/button_colombia_13"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Puerto Asís"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_colombia_14"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="775dp"
+        android:layout_marginTop="610dp" >
+
+        <Button
+            android:id="@+id/button_colombia_14"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Leticia"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_colombia_14"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_colombia_15"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="680dp"
+        android:layout_marginTop="420dp" >
+
+        <Button
+            android:id="@+id/button_colombia_15"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Villavicencio"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_colombia_15"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_colombia_16"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="639dp"
+        android:layout_marginTop="374dp" >
+
+        <Button
+            android:id="@+id/button_colombia_16"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Bogotá"
+            android:textColor="#ffffff"
+            android:textSize="13dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_colombia_16"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_colombia_17"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="715dp"
+        android:layout_marginTop="342dp" >
+
+        <Button
+            android:id="@+id/button_colombia_17"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Yopal"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_colombia_17"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_colombia_18"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="695dp"
+        android:layout_marginTop="305dp" >
+
+        <Button
+            android:id="@+id/button_colombia_18"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Bucaramanga"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_colombia_18"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_colombia_19"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="670dp"
+        android:layout_marginTop="265dp" >
+
+        <Button
+            android:id="@+id/button_colombia_19"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Cucuta"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_colombia_19"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_colombia_20"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="650dp"
+        android:layout_marginTop="220dp" >
+
+        <Button
+            android:id="@+id/button_colombia_20"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Valledupar"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_colombia_20"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_apretable_colombia"
+        android:layout_width="410dp"
+        android:layout_height="550dp"
+        android:layout_marginLeft="460dp"
+        android:layout_marginTop="80dp" >
+    </RelativeLayout>
+
+</RelativeLayout>
