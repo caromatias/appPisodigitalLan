@@ -67,7 +67,7 @@ public class LaminaMundialActivity extends Activity {
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
 						btnArgentina.setBackgroundResource(R.drawable.botonrojo);
-						lay_principal.startAnimation(animMapaInter);
+						lay_principal.startAnimation(animMapaInterOut);
 						btnArgentina.setEnabled(false);
 						final Handler handler = new Handler();
 						handler.postDelayed(new Runnable() {
@@ -85,7 +85,7 @@ public class LaminaMundialActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						btnBrasil.setBackgroundResource(R.drawable.botonrojo);
-						lay_principal.startAnimation(animMapaInter);
+						lay_principal.startAnimation(animMapaInterOut);
 						btnBrasil.setEnabled(false);
 						final Handler handler = new Handler();
 						handler.postDelayed(new Runnable() {
@@ -103,7 +103,7 @@ public class LaminaMundialActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				btnChile.setBackgroundResource(R.drawable.botonrojo);
-				lay_principal.startAnimation(animMapaInter);
+				lay_principal.startAnimation(animMapaInterOut);
 				btnChile.setEnabled(false);
 				final Handler handler = new Handler();
 				handler.postDelayed(new Runnable() {
@@ -121,7 +121,7 @@ public class LaminaMundialActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				btnColombia.setBackgroundResource(R.drawable.botonrojo);
-				lay_principal.startAnimation(animMapaInter);
+				lay_principal.startAnimation(animMapaInterOut);
 				btnColombia.setEnabled(false);
 				final Handler handler = new Handler();
 				handler.postDelayed(new Runnable() {
@@ -139,7 +139,7 @@ public class LaminaMundialActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				btnEcuador.setBackgroundResource(R.drawable.botonrojo);
-				lay_principal.startAnimation(animMapaInter);
+				lay_principal.startAnimation(animMapaInterOut);
 				btnEcuador.setEnabled(false);
 				final Handler handler = new Handler();
 				handler.postDelayed(new Runnable() {
@@ -157,7 +157,7 @@ public class LaminaMundialActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				btnPeru.setBackgroundResource(R.drawable.botonrojo);
-				lay_principal.startAnimation(animMapaInter);
+				lay_principal.startAnimation(animMapaInterOut);
 				btnPeru.setEnabled(false);
 				final Handler handler = new Handler();
 				handler.postDelayed(new Runnable() {

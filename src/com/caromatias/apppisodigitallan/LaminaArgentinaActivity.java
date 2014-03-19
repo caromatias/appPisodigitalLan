@@ -5,7 +5,12 @@ import android.os.Handler;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
+import android.view.GestureDetector;
+import android.view.GestureDetector.OnDoubleTapListener;
+import android.view.GestureDetector.OnGestureListener;
 import android.view.Menu;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
@@ -43,8 +48,8 @@ public class LaminaArgentinaActivity extends Activity {
 		animaCiudadesArgentina();
 		activeButton();
 		cambioImagen();
+		
 	}
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -294,7 +299,5 @@ public class LaminaArgentinaActivity extends Activity {
 				//imgArgentinaView.setVisibility(View.VISIBLE);
 			}
 		}, 5000);
-
 	}
-
 }
