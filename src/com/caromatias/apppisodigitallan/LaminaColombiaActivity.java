@@ -347,8 +347,12 @@ public class LaminaColombiaActivity extends Activity {
 	public void onBackPressed() {
 		return;
 	}
+<<<<<<< HEAD
 
 	public void cambioImagen() {
+=======
+	public void cambioImagen(){
+>>>>>>> 6b8f3e2ce5ada84cba67bd5e0ade6fc3f6ecfd71
 		final Handler handlerTres = new Handler();
 		handlerTres.postDelayed(new Runnable() {
 			@Override
@@ -361,7 +365,10 @@ public class LaminaColombiaActivity extends Activity {
 			}
 		}, 6000);
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6b8f3e2ce5ada84cba67bd5e0ade6fc3f6ecfd71
 	public void popUpInfo() {
 		findViewById(R.id.btn_cerrar_popup_info).setOnClickListener(
 				new OnClickListener() {

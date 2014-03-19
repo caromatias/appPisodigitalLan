@@ -226,8 +226,12 @@ public class LaminaPeruActivity extends Activity {
 		layPopupInfo = (RelativeLayout) findViewById(R.id.lay_popup_info);
 		tituloPopInfo = (TextView) findViewById(R.id.txt_titulo_popup_info);
 		descPopInfo = (TextView) findViewById(R.id.txt_descripcion_popup_info);
+<<<<<<< HEAD
 		animMapaInter = AnimationUtils.loadAnimation(this,
 				R.anim.anim_mapa_inter_out);
+=======
+		animMapaInter = AnimationUtils.loadAnimation(this,R.anim.anim_mapa_inter_out);
+>>>>>>> 6b8f3e2ce5ada84cba67bd5e0ade6fc3f6ecfd71
 	}
 
 	public void animaCiudadesPeru() {
@@ -316,8 +320,12 @@ public class LaminaPeruActivity extends Activity {
 	public void onBackPressed() {
 		return;
 	}
+<<<<<<< HEAD
 
 	public void cambioImagen() {
+=======
+	public void cambioImagen(){
+>>>>>>> 6b8f3e2ce5ada84cba67bd5e0ade6fc3f6ecfd71
 		final Handler handlerTres = new Handler();
 		handlerTres.postDelayed(new Runnable() {
 			@Override
@@ -330,7 +338,10 @@ public class LaminaPeruActivity extends Activity {
 			}
 		}, 7000);
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6b8f3e2ce5ada84cba67bd5e0ade6fc3f6ecfd71
 	public void popUpInfo() {
 		findViewById(R.id.btn_cerrar_popup_info).setOnClickListener(
 				new OnClickListener() {
