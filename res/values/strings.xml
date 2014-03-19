@@ -108,5 +108,6 @@
     <string name="title_activity_lamina_ecuador">LaminaEcuadorActivity</string>
     <string name="title_activity_lamina_colombia">LaminaColombiaActivity</string>
     <string name="title_activity_lamina_peru">LaminaPeruActivity</string>
+    <string name="title_activity_lamina_mundial">LaminaMundialActivity</string>
 
 </resources>
