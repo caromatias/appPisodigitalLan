@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -28,6 +29,8 @@ public class LaminaArgentinaActivity extends Activity {
 	private Button btnChile;
 	private Button btnArgentina;
 	private Animation animMapaInter;
+	private ImageView imgArgentinaView;
+	private RelativeLayout contenedorBotones;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +39,10 @@ public class LaminaArgentinaActivity extends Activity {
 		initVars();
 		imgMapaArgentina.startAnimation(animMapaArgentina);
 		btnGoGame.startAnimation(animGoGame);
-		animaCiudadesArgentina();
 		initButtons();
+		animaCiudadesArgentina();
 		activeButton();
+		cambioImagen();
 	}
 
 	@Override
@@ -173,6 +177,8 @@ public class LaminaArgentinaActivity extends Activity {
 		btnColombia = (Button) findViewById(R.id.btn_colombia);
 		btnChile = (Button) findViewById(R.id.btn_chile);
 		btnArgentina = (Button) findViewById(R.id.btn_argentina);
+		imgArgentinaView = (ImageView) findViewById(R.drawable.fondo_mapas);
+		contenedorBotones = (RelativeLayout) findViewById(R.id.botones_mapa_argentina);
 	}
 	public void animaCiudadesArgentina() {
 		RelativeLayout laySalta = (RelativeLayout) findViewById(R.id.lay_argentina_01);
@@ -257,6 +263,20 @@ public class LaminaArgentinaActivity extends Activity {
 	@Override
 	public void onBackPressed() {
 		return;
+	}
+	public void cambioImagen(){
+		final Handler handlerTres = new Handler();
+		handlerTres.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				// Do something after 5s = 5000ms
+				//imgMapaArgentina.setVisibility(View.GONE);
+				imgMapaArgentina.setImageResource(R.drawable.mapa_argentina_dos);      
+				contenedorBotones.setVisibility(View.GONE);
+				//imgArgentinaView.setVisibility(View.VISIBLE);
+			}
+		}, 5000);
+
 	}
 
 }
