@@ -28,6 +28,7 @@ public class LaminaPeruActivity extends Activity {
 	private Button btnChile;
 	private Button btnArgentina;
 	private Animation animMapaInter;
+	private RelativeLayout contenedorBotones;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class LaminaPeruActivity extends Activity {
 		animaCiudadesPeru();
 		initButtons();
 		activeButton();
+		cambioImagen();
 	}
 
 	@Override
@@ -191,6 +193,7 @@ public class LaminaPeruActivity extends Activity {
 		btnColombia = (Button) findViewById(R.id.btn_colombia);
 		btnChile = (Button) findViewById(R.id.btn_chile);
 		btnArgentina = (Button) findViewById(R.id.btn_argentina);
+		contenedorBotones = (RelativeLayout) findViewById(R.id.lay_mapa_peru);
 	}
 	
 	public void animaCiudadesPeru() {
@@ -276,5 +279,19 @@ public class LaminaPeruActivity extends Activity {
 	@Override
 	public void onBackPressed() {
 		return;
+	}
+	public void cambioImagen(){
+		final Handler handlerTres = new Handler();
+		handlerTres.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				// Do something after 5s = 5000ms
+				//imgMapaArgentina.setVisibility(View.GONE);
+				imgMapaPeru.setImageResource(R.drawable.mapa_peru_dos);      
+				contenedorBotones.setVisibility(View.GONE);
+				//imgArgentinaView.setVisibility(View.VISIBLE);
+			}
+		}, 7000);
+
 	}
 }

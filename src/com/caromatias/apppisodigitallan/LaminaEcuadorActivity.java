@@ -28,6 +28,7 @@ public class LaminaEcuadorActivity extends Activity {
 	private Button btnChile;
 	private Button btnArgentina;
 	private Animation animMapaInter;
+	private RelativeLayout contenedorBotones;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class LaminaEcuadorActivity extends Activity {
 		animaCiudadesEcuador();
 		initButtons();
 		activeButton();
+		cambioImagen();
 	}
 
 	@Override
@@ -192,6 +194,7 @@ public class LaminaEcuadorActivity extends Activity {
 		btnColombia = (Button) findViewById(R.id.btn_colombia);
 		btnChile = (Button) findViewById(R.id.btn_chile);
 		btnArgentina = (Button) findViewById(R.id.btn_argentina);
+		contenedorBotones = (RelativeLayout) findViewById(R.id.lay_mapa_ecuador);
 	}
 	public void animaCiudadesEcuador() {
 		RelativeLayout layIslaGalapagos = (RelativeLayout) findViewById(R.id.lay_ecuador_01);
@@ -236,5 +239,19 @@ public class LaminaEcuadorActivity extends Activity {
 	@Override
 	public void onBackPressed() {
 		return;
+	}
+	public void cambioImagen(){
+		final Handler handlerTres = new Handler();
+		handlerTres.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				// Do something after 5s = 5000ms
+				//imgMapaArgentina.setVisibility(View.GONE);
+				imgMapaEcuador.setImageResource(R.drawable.mapa_ecuador_dos);      
+				contenedorBotones.setVisibility(View.GONE);
+				//imgArgentinaView.setVisibility(View.VISIBLE);
+			}
+		}, 10000);
+
 	}
 }
