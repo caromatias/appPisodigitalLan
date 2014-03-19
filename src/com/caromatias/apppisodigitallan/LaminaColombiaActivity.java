@@ -158,6 +158,24 @@ public class LaminaColombiaActivity extends Activity {
 				btnPeru.setEnabled(false);
 			}
 		});
+		findViewById(R.id.btn_internacional).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				btnInter.setBackgroundResource(R.drawable.botonrojo);
+				imgMapaColombia.startAnimation(animMapaInter);
+				btnInter.setEnabled(false);
+				final Handler handler = new Handler();
+				handler.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						Intent act = new Intent(LaminaColombiaActivity.this,LaminaMundialActivity.class);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+					}
+				}, 1000);
+				btnInter.setEnabled(false);
+			}
+		});
 	}
 	public void initVars(){
 		imgMapaColombia = (ImageView) findViewById(R.id.mapa_colombia);

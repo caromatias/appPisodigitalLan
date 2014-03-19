@@ -158,6 +158,24 @@ public class LaminaBrasilActivity extends Activity {
 				btnPeru.setEnabled(false);
 			}
 		});
+		findViewById(R.id.btn_internacional).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				btnInter.setBackgroundResource(R.drawable.botonrojo);
+				imgMapaBrasil.startAnimation(animMapaInter);
+				btnInter.setEnabled(false);
+				final Handler handler = new Handler();
+				handler.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						Intent act = new Intent(LaminaBrasilActivity.this,LaminaMundialActivity.class);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+					}
+				}, 1000);
+				btnInter.setEnabled(false);
+			}
+		});
 	}
 	
 	public void initVars(){
