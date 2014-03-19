@@ -8,7 +8,10 @@ import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 /**
  * @author jmartinez
@@ -18,8 +21,13 @@ import android.widget.ImageView;
  */
 public class zoom extends ImageView {
 
-	private float maxScale = 3f;
+	private float maxScale = 2f;
 	private float minScale = 1f;
+	
+	private RelativeLayout layPopupInfo;
+	private boolean doubleClick = false;
+	private TextView tituloPopInfo;
+	private TextView descPopInfo;
 
 	private enum State {
 		INIT, DRAG, ZOOM
@@ -310,7 +318,16 @@ public class zoom extends ImageView {
 			 * 
 			 * } else { scale(e.getX(), e.getY(), maxScale); } return true;
 			 */
-			return false;
+			layPopupInfo = (RelativeLayout) findViewById(R.id.lay_popup_info);
+			tituloPopInfo = (TextView) findViewById(R.id.txt_titulo_popup_info);
+			descPopInfo = (TextView) findViewById(R.id.txt_descripcion_popup_info);
+			tituloPopInfo.setText(getResources().getString(
+					R.string.titulo_pop_info1));
+			descPopInfo.setText(getResources().getString(
+					R.string.desc_pop_info1));
+			layPopupInfo.bringToFront();
+			layPopupInfo.setVisibility(View.VISIBLE);
+			return true;
 		}
 
 	}
