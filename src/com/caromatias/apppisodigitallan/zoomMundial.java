@@ -16,7 +16,7 @@ import android.widget.ImageView;
  *         Simple Android ImageView that enables dragging and zooming.
  * 
  */
-public class zoom extends ImageView {
+public class zoomMundial extends ImageView {
 
 	private float maxScale = 3f;
 	private float minScale = 1f;
@@ -41,17 +41,17 @@ public class zoom extends ImageView {
 
 	private GestureDetector doubleTapDetecture;
 
-	public zoom(Context context) {
+	public zoomMundial(Context context) {
 		super(context);
 		setUp(context);
 	}
 
-	public zoom(Context context, AttributeSet attrs) {
+	public zoomMundial(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		setUp(context);
 	}
 
-	public zoom(Context context, AttributeSet attrs, int defStyle) {
+	public zoomMundial(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		setUp(context);
 	}
@@ -124,9 +124,9 @@ public class zoom extends ImageView {
 
 		// Center Image
 		float marginY = ((float) viewHeight - (scale * getDrawable()
-				.getIntrinsicHeight())) / 2;
+				.getIntrinsicHeight())) / 1;
 		float marginX = ((float) viewWidth - (scale * getDrawable()
-				.getIntrinsicWidth())) / 2;
+				.getIntrinsicWidth())) / 1;
 		matrix.postTranslate(marginX, marginY);
 
 		afterScaleDrawableWidth = (float) viewWidth - 2 * marginX;
