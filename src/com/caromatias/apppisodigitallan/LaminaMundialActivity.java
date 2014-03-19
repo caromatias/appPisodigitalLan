@@ -58,7 +58,7 @@ public class LaminaMundialActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.lamina_mundial, menu);
-		return true;
+		return true; 
 	}
 	public void initButtons() {
 		findViewById(R.id.btn_argentina).setOnClickListener(
