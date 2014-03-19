@@ -175,7 +175,6 @@ public final class R {
         public static final int mapa_ecuador_dos=0x7f02004a;
         public static final int mapa_inter=0x7f02004b;
         public static final int mapa_peru=0x7f02004c;
-<<<<<<< HEAD
         public static final int mapa_peru_dos=0x7f02004d;
         public static final int panel_final=0x7f02004e;
         public static final int panel_final_2=0x7f02004f;
@@ -186,17 +185,6 @@ public final class R {
         public static final int tac_despegar=0x7f020054;
         public static final int tacometro_carga=0x7f020055;
         public static final int titulo_acelerador_despegue=0x7f020056;
-=======
-        public static final int panel_final=0x7f02004d;
-        public static final int panel_final_2=0x7f02004e;
-        public static final int pop_up_info=0x7f02004f;
-        public static final int popup_transp=0x7f020050;
-        public static final int puntoamarillo=0x7f020051;
-        public static final int splashscreen=0x7f020052;
-        public static final int tac_despegar=0x7f020053;
-        public static final int tacometro_carga=0x7f020054;
-        public static final int titulo_acelerador_despegue=0x7f020055;
->>>>>>> 256e91fd3d8ba2516d80f7df903b2146abb0c392
     }
     public static final class id {
         public static final int ProgressBar_carga=0x7f0a0156;

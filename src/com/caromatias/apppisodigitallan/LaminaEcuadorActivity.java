@@ -29,14 +29,11 @@ public class LaminaEcuadorActivity extends Activity {
 	private Button btnChile;
 	private Button btnArgentina;
 	private Animation animMapaInter;
-<<<<<<< HEAD
 	private RelativeLayout contenedorBotones;
-=======
 	private RelativeLayout layPopupInfo;
 	private boolean doubleClick = false;
 	private TextView tituloPopInfo;
 	private TextView descPopInfo;
->>>>>>> 256e91fd3d8ba2516d80f7df903b2146abb0c392
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +45,8 @@ public class LaminaEcuadorActivity extends Activity {
 		animaCiudadesEcuador();
 		initButtons();
 		activeButton();
-<<<<<<< HEAD
 		cambioImagen();
-=======
 		popUpInfo();
->>>>>>> 256e91fd3d8ba2516d80f7df903b2146abb0c392
 	}
 
 	@Override
@@ -206,13 +200,10 @@ public class LaminaEcuadorActivity extends Activity {
 		btnColombia = (Button) findViewById(R.id.btn_colombia);
 		btnChile = (Button) findViewById(R.id.btn_chile);
 		btnArgentina = (Button) findViewById(R.id.btn_argentina);
-<<<<<<< HEAD
 		contenedorBotones = (RelativeLayout) findViewById(R.id.lay_mapa_ecuador);
-=======
 		layPopupInfo = (RelativeLayout) findViewById(R.id.lay_popup_info);
 		tituloPopInfo = (TextView) findViewById(R.id.txt_titulo_popup_info);
 		descPopInfo = (TextView) findViewById(R.id.txt_descripcion_popup_info);
->>>>>>> 256e91fd3d8ba2516d80f7df903b2146abb0c392
 	}
 	public void animaCiudadesEcuador() {
 		RelativeLayout layIslaGalapagos = (RelativeLayout) findViewById(R.id.lay_ecuador_01);
@@ -258,7 +249,6 @@ public class LaminaEcuadorActivity extends Activity {
 	public void onBackPressed() {
 		return;
 	}
-<<<<<<< HEAD
 	public void cambioImagen(){
 		final Handler handlerTres = new Handler();
 		handlerTres.postDelayed(new Runnable() {
@@ -271,8 +261,7 @@ public class LaminaEcuadorActivity extends Activity {
 				//imgArgentinaView.setVisibility(View.VISIBLE);
 			}
 		}, 10000);
-
-=======
+	}
 	public void popUpInfo() {
 		findViewById(R.id.btn_cerrar_popup_info).setOnClickListener(
 				new OnClickListener() {
@@ -307,6 +296,5 @@ public class LaminaEcuadorActivity extends Activity {
 						}
 					}
 				});
->>>>>>> 256e91fd3d8ba2516d80f7df903b2146abb0c392
 	}
 }

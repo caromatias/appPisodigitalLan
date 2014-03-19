@@ -337,6 +337,8 @@ public class LaminaArgentinaActivity extends Activity {
 				// imgMapaArgentina.setVisibility(View.GONE);
 				imgMapaArgentina
 						.setImageResource(R.drawable.mapa_argentina_dos);
+				
+				
 				contenedorBotones.setVisibility(View.GONE);
 				// imgArgentinaView.setVisibility(View.VISIBLE);
 			}
