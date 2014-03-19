@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.app.Activity;
 import android.content.Intent;
+import android.view.GestureDetector;
 import android.view.Menu;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
@@ -13,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LaminaBrasilActivity extends Activity {
 
@@ -29,14 +32,12 @@ public class LaminaBrasilActivity extends Activity {
 	private Button btnChile;
 	private Button btnArgentina;
 	private Animation animMapaInter;
-<<<<<<< HEAD
 	private RelativeLayout contenedorBotones;
-=======
 	private RelativeLayout layPopupInfo;
 	private boolean doubleClick = false;
 	private TextView tituloPopInfo;
 	private TextView descPopInfo;
->>>>>>> 256e91fd3d8ba2516d80f7df903b2146abb0c392
+	private GestureDetector gestureDetector;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +49,16 @@ public class LaminaBrasilActivity extends Activity {
 		animaCiudadesBrasil();
 		initButtons();
 		activeButton();
-<<<<<<< HEAD
 		cambioImagen();
-=======
-		popUpInfo();
->>>>>>> 256e91fd3d8ba2516d80f7df903b2146abb0c392
+		//popUpInfo();
+		
+		gestureDetector = new GestureDetector(this, new GestureDetector.SimpleOnGestureListener() {
+            @Override
+            public boolean onDoubleTap(MotionEvent e) {
+                Toast.makeText(LaminaBrasilActivity.this, "double tap", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
 	}
 
 	@Override
@@ -206,13 +212,10 @@ public class LaminaBrasilActivity extends Activity {
 		btnColombia = (Button) findViewById(R.id.btn_colombia);
 		btnChile = (Button) findViewById(R.id.btn_chile);
 		btnArgentina = (Button) findViewById(R.id.btn_argentina);
-<<<<<<< HEAD
 		contenedorBotones = (RelativeLayout) findViewById(R.id.lay_mapa_brasil);
-=======
 		layPopupInfo = (RelativeLayout) findViewById(R.id.lay_popup_info);
 		tituloPopInfo = (TextView) findViewById(R.id.txt_titulo_popup_info);
 		descPopInfo = (TextView) findViewById(R.id.txt_descripcion_popup_info);
->>>>>>> 256e91fd3d8ba2516d80f7df903b2146abb0c392
 	}
 	public void animaCiudadesBrasil() {
 		RelativeLayout layBuenaVista = (RelativeLayout) findViewById(R.id.lay_brasil_01);
@@ -433,7 +436,6 @@ public class LaminaBrasilActivity extends Activity {
 	public void onBackPressed() {
 		return;
 	}
-<<<<<<< HEAD
 	public void cambioImagen(){
 		final Handler handlerTres = new Handler();
 		handlerTres.postDelayed(new Runnable() {
@@ -446,8 +448,7 @@ public class LaminaBrasilActivity extends Activity {
 				//imgArgentinaView.setVisibility(View.VISIBLE);
 			}
 		}, 10000);
-
-=======
+}
 	public void popUpInfo() {
 		findViewById(R.id.btn_cerrar_popup_info).setOnClickListener(
 				new OnClickListener() {
@@ -482,7 +483,11 @@ public class LaminaBrasilActivity extends Activity {
 						}
 					}
 				});
->>>>>>> 256e91fd3d8ba2516d80f7df903b2146abb0c392
 	}
-
+	@Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (!gestureDetector.onTouchEvent(event))
+            return super.onTouchEvent(event);
+        return true;
+    }
 }

@@ -29,14 +29,11 @@ public class LaminaPeruActivity extends Activity {
 	private Button btnChile;
 	private Button btnArgentina;
 	private Animation animMapaInter;
-<<<<<<< HEAD
 	private RelativeLayout contenedorBotones;
-=======
 	private RelativeLayout layPopupInfo;
 	private boolean doubleClick = false;
 	private TextView tituloPopInfo;
 	private TextView descPopInfo;
->>>>>>> 256e91fd3d8ba2516d80f7df903b2146abb0c392
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +45,8 @@ public class LaminaPeruActivity extends Activity {
 		animaCiudadesPeru();
 		initButtons();
 		activeButton();
-<<<<<<< HEAD
 		cambioImagen();
-=======
 		popUpInfo();
->>>>>>> 256e91fd3d8ba2516d80f7df903b2146abb0c392
 	}
 
 	@Override
@@ -205,14 +199,11 @@ public class LaminaPeruActivity extends Activity {
 		btnColombia = (Button) findViewById(R.id.btn_colombia);
 		btnChile = (Button) findViewById(R.id.btn_chile);
 		btnArgentina = (Button) findViewById(R.id.btn_argentina);
-<<<<<<< HEAD
 		contenedorBotones = (RelativeLayout) findViewById(R.id.lay_mapa_peru);
-=======
 		layPopupInfo = (RelativeLayout) findViewById(R.id.lay_popup_info);
 		tituloPopInfo = (TextView) findViewById(R.id.txt_titulo_popup_info);
 		descPopInfo = (TextView) findViewById(R.id.txt_descripcion_popup_info);
 		animMapaInter = AnimationUtils.loadAnimation(this,R.anim.anim_mapa_inter_out);
->>>>>>> 256e91fd3d8ba2516d80f7df903b2146abb0c392
 	}
 	
 	public void animaCiudadesPeru() {
@@ -299,7 +290,6 @@ public class LaminaPeruActivity extends Activity {
 	public void onBackPressed() {
 		return;
 	}
-<<<<<<< HEAD
 	public void cambioImagen(){
 		final Handler handlerTres = new Handler();
 		handlerTres.postDelayed(new Runnable() {
@@ -312,8 +302,7 @@ public class LaminaPeruActivity extends Activity {
 				//imgArgentinaView.setVisibility(View.VISIBLE);
 			}
 		}, 7000);
-
-=======
+	}
 	public void popUpInfo() {
 		findViewById(R.id.btn_cerrar_popup_info).setOnClickListener(
 				new OnClickListener() {
@@ -348,6 +337,5 @@ public class LaminaPeruActivity extends Activity {
 						}
 					}
 				});
->>>>>>> 256e91fd3d8ba2516d80f7df903b2146abb0c392
 	}
 }
