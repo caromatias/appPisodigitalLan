@@ -50,15 +50,7 @@ public class LaminaBrasilActivity extends Activity {
 		initButtons();
 		activeButton();
 		cambioImagen();
-		//popUpInfo();
-		
-		gestureDetector = new GestureDetector(this, new GestureDetector.SimpleOnGestureListener() {
-            @Override
-            public boolean onDoubleTap(MotionEvent e) {
-                Toast.makeText(LaminaBrasilActivity.this, "double tap", Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });
+		popUpInfo();
 	}
 
 	@Override
@@ -484,10 +476,4 @@ public class LaminaBrasilActivity extends Activity {
 					}
 				});
 	}
-	@Override
-    public boolean onTouchEvent(MotionEvent event) {
-        if (!gestureDetector.onTouchEvent(event))
-            return super.onTouchEvent(event);
-        return true;
-    }
 }
