@@ -5,8 +5,8 @@
     android:paddingBottom="0dp"
     android:paddingLeft="0dp"
     android:paddingRight="0dp"
-    android:paddingTop="0dp" 
-    tools:context=".LaminaPeruActivity" >
+    android:paddingTop="0dp"
+    tools:context=".LaminaUnoActivity" >
 
     <ImageView
         android:id="@+id/img_fondo"
@@ -22,427 +22,663 @@
         android:layout_height="match_parent"
         android:scaleType="fitXY"
         android:src="@drawable/mapa_peru" />
+    
+   <RelativeLayout
+        android:id="@+id/lay_mapa_peru"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible" >
+
+        <ImageView
+            android:id="@+id/img_lineas_peru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/img_lineas_peru" />
+
+        <RelativeLayout
+            android:id="@+id/lay_peru_01"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="510dp"
+            android:layout_marginTop="240dp" >
+
+            <Button
+                android:id="@+id/btn_peru_01"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Tumbes"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_btn_peru_01"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_peru_02"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="508dp"
+            android:layout_marginTop="265dp" >
+
+            <Button
+                android:id="@+id/btn_peru_02"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Piura"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_btn_peru_02"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_peru_03"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="525dp"
+            android:layout_marginTop="294dp" >
+
+            <Button
+                android:id="@+id/btn_peru_03"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Chiclayo"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_btn_peru_03"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_peru_04"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="543dp"
+            android:layout_marginTop="330dp" >
+
+            <Button
+                android:id="@+id/btn_peru_04"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Trujillo"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_btn_peru_04"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_peru_05"
+            android:layout_width="130dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="533dp"
+            android:layout_marginTop="367dp" >
+
+            <Button
+                android:id="@+id/btn_peru_05"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Lima"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_btn_peru_05"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_peru_06"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="615dp"
+            android:layout_marginTop="435dp" >
+
+            <Button
+                android:id="@+id/btn_peru_06"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Arequipa"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_btn_peru_06"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_peru_07"
+            android:layout_width="100dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="710dp"
+            android:layout_marginTop="240dp" >
+
+            <Button
+                android:id="@+id/btn_peru_07"
+                android:layout_width="80dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Iquitos"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_btn_peru_07"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_peru_08"
+            android:layout_width="100dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="670dp"
+            android:layout_marginTop="275dp" >
+
+            <Button
+                android:id="@+id/btn_peru_08"
+                android:layout_width="80dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Taraporo"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_btn_peru_08"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_peru_09"
+            android:layout_width="100dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="642dp"
+            android:layout_marginTop="308dp" >
+
+            <Button
+                android:id="@+id/btn_peru_09"
+                android:layout_width="80dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Cajamarca"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_btn_peru_09"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_peru_10"
+            android:layout_width="100dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="692dp"
+            android:layout_marginTop="332dp" >
+
+            <Button
+                android:id="@+id/btn_peru_10"
+                android:layout_width="80dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Pucallpa"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_btn_peru_10"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_peru_11"
+            android:layout_width="150dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="768dp"
+            android:layout_marginTop="358dp" >
+
+            <Button
+                android:id="@+id/btn_peru_11"
+                android:layout_width="130dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Puerto Maldonado"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_btn_peru_11"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_peru_12"
+            android:layout_width="100dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="715dp"
+            android:layout_marginTop="380dp" >
+
+            <Button
+                android:id="@+id/btn_peru_12"
+                android:layout_width="80dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Cusco"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_btn_peru_12"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_peru_13"
+            android:layout_width="100dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="770dp"
+            android:layout_marginTop="427dp" >
+
+            <Button
+                android:id="@+id/btn_peru_13"
+                android:layout_width="80dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Julianca"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_btn_peru_13"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_peru_14"
+            android:layout_width="100dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="765dp"
+            android:layout_marginTop="467dp" >
+
+            <Button
+                android:id="@+id/btn_peru_14"
+                android:layout_width="80dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/botoncomenzar"
+                android:text="Tacna"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_btn_peru_14"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_punto" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_apretable_peru"
+            android:layout_width="400dp"
+            android:layout_height="300dp"
+            android:layout_marginLeft="520dp"
+            android:layout_marginTop="200dp" >
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/panel"
+        android:layout_width="170dp"
+        android:layout_height="460dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="-7dp"        
+        android:background="@drawable/panel_final"
+        android:visibility="visible" >
+
+        <Button
+            android:id="@+id/btn_chile"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="130dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="257dp"
+            android:background="@drawable/boton"
+            android:text="CHILE"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_argentina"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="130dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="190dp"
+            android:background="@drawable/boton"
+            android:text="ARGENTINA"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_peru"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="130dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="358dp"
+            android:background="@drawable/boton"
+            android:text="PERÚ"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_brasil"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="130dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="223dp"
+            android:background="@drawable/boton"
+            android:text="BRASIL"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_ecuador"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="130dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="325dp"
+            android:background="@drawable/boton"
+            android:text="ECUADOR"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_colombia"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="130dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="291dp"
+            android:background="@drawable/boton"
+            android:text="COLOMBIA"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_internacional"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="130dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="392dp"
+            android:background="@drawable/boton"
+            android:text="OTROS DESTINOS"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_img_flota"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/flota"
+        android:scaleType="fitXY"
+        android:visibility="gone" >
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button_nuestra_flota"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="670dp"
+        android:background="@drawable/botoncomenzar"
+        android:text="Conoce Nuestra Flota"
+        android:textColor="#ffffff"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button_nuestros_destinos"
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="175dp"
+        android:layout_marginTop="670dp"
+        android:background="@drawable/btn_azul"
+        android:text="Conoce Nuestros Destinos"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/go_game_master"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginLeft="990dp"
+        android:layout_marginTop="520dp"
+        android:visibility="visible" >
+
+        <RelativeLayout
+            android:id="@+id/go_game_texto"
+            android:layout_width="220dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="65dp" >
+
+            <Button
+                android:id="@+id/btn_ir_al_juego_text"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="-20dp"
+                android:background="@drawable/etiqueta_despegar" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/go_game_circulo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="20dp" >
+
+            <Button
+                android:id="@+id/btn_ir_al_juego"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/circulo_avion" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
 
     <ImageView
-        android:id="@+id/img_lineas_peru"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/img_lineas_peru" />
+        android:id="@+id/img_fade_white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/fade_white"
+        android:visibility="gone" />
 
     <RelativeLayout
-        android:id="@+id/lay_peru_01"
-        android:layout_width="100dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="510dp"
-        android:layout_marginTop="240dp" >
+        android:id="@+id/lay_popup_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/pop_up_info"
+        android:visibility="gone" >
 
-        <Button
-            android:id="@+id/btn_peru_01"
-            android:layout_width="80dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/botoncomenzar"
-            android:text="Tumbes"
-            android:textColor="#ffffff"
-            android:textSize="12dp"
+        <TextView
+            android:id="@+id/txt_titulo_popup_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="571dp"
+            android:layout_marginTop="207dp"
+            android:text="Brasilia"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/img_btn_peru_01"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="90dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/img_punto" >
-        </ImageView>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/lay_peru_02"
-        android:layout_width="100dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="508dp"
-        android:layout_marginTop="265dp" >
+        <TextView
+            android:id="@+id/txt_descripcion_popup_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/txt_titulo_popup_info"
+            android:layout_below="@+id/txt_titulo_popup_info"
+            android:layout_marginTop="11dp"
+            android:text="TEXTO"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFFFFF" />
 
         <Button
-            android:id="@+id/btn_peru_02"
-            android:layout_width="80dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/botoncomenzar"
-            android:text="Piura"
-            android:textColor="#ffffff"
-            android:textSize="12dp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img_btn_peru_02"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="90dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/img_punto" >
-        </ImageView>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/lay_peru_03"
-        android:layout_width="100dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="525dp"
-        android:layout_marginTop="294dp" >
-
-        <Button
-            android:id="@+id/btn_peru_03"
-            android:layout_width="80dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/botoncomenzar"
-            android:text="Chiclayo"
-            android:textColor="#ffffff"
-            android:textSize="12dp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img_btn_peru_03"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="90dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/img_punto" >
-        </ImageView>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/lay_peru_04"
-        android:layout_width="100dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="543dp"
-        android:layout_marginTop="330dp" >
-
-        <Button
-            android:id="@+id/btn_peru_04"
-            android:layout_width="80dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/botoncomenzar"
-            android:text="Trujillo"
-            android:textColor="#ffffff"
-            android:textSize="12dp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img_btn_peru_04"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="90dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/img_punto" >
-        </ImageView>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/lay_peru_05"
-        android:layout_width="130dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="533dp"
-        android:layout_marginTop="367dp" >
-
-        <Button
-            android:id="@+id/btn_peru_05"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/botoncomenzar"
-            android:text="Lima"
-            android:textColor="#ffffff"
-            android:textSize="12dp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img_btn_peru_05"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="120dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/img_punto" >
-        </ImageView>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/lay_peru_06"
-        android:layout_width="100dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="615dp"
-        android:layout_marginTop="435dp" >
-
-        <Button
-            android:id="@+id/btn_peru_06"
-            android:layout_width="80dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/botoncomenzar"
-            android:text="Arequipa"
-            android:textColor="#ffffff"
-            android:textSize="12dp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img_btn_peru_06"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="90dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/img_punto" >
-        </ImageView>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/lay_peru_07"
-        android:layout_width="100dp"
-        android:layout_height="17dp"
-        android:layout_marginLeft="710dp"
-        android:layout_marginTop="240dp" >
-
-        <Button
-            android:id="@+id/btn_peru_07"
-            android:layout_width="80dp"
-            android:layout_height="17dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/botoncomenzar"
-            android:text="Iquitos"
-            android:textColor="#ffffff"
-            android:textSize="12dp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img_btn_peru_07"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/img_punto" >
-        </ImageView>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/lay_peru_08"
-        android:layout_width="100dp"
-        android:layout_height="17dp"
-        android:layout_marginLeft="670dp"
-        android:layout_marginTop="275dp" >
-
-        <Button
-            android:id="@+id/btn_peru_08"
-            android:layout_width="80dp"
-            android:layout_height="17dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/botoncomenzar"
-            android:text="Taraporo"
-            android:textColor="#ffffff"
-            android:textSize="12dp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img_btn_peru_08"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/img_punto" >
-        </ImageView>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/lay_peru_09"
-        android:layout_width="100dp"
-        android:layout_height="17dp"
-        android:layout_marginLeft="642dp"
-        android:layout_marginTop="308dp" >
-
-        <Button
-            android:id="@+id/btn_peru_09"
-            android:layout_width="80dp"
-            android:layout_height="17dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/botoncomenzar"
-            android:text="Cajamarca"
-            android:textColor="#ffffff"
-            android:textSize="12dp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img_btn_peru_09"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/img_punto" >
-        </ImageView>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/lay_peru_10"
-        android:layout_width="100dp"
-        android:layout_height="17dp"
-        android:layout_marginLeft="692dp"
-        android:layout_marginTop="332dp" >
-
-        <Button
-            android:id="@+id/btn_peru_10"
-            android:layout_width="80dp"
-            android:layout_height="17dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/botoncomenzar"
-            android:text="Pucallpa"
-            android:textColor="#ffffff"
-            android:textSize="12dp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img_btn_peru_10"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/img_punto" >
-        </ImageView>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/lay_peru_11"
-        android:layout_width="150dp"
-        android:layout_height="17dp"
-        android:layout_marginLeft="768dp"
-        android:layout_marginTop="358dp" >
-
-        <Button
-            android:id="@+id/btn_peru_11"
-            android:layout_width="130dp"
-            android:layout_height="17dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/botoncomenzar"
-            android:text="Puerto Maldonado"
-            android:textColor="#ffffff"
-            android:textSize="12dp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img_btn_peru_11"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/img_punto" >
-        </ImageView>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/lay_peru_12"
-        android:layout_width="100dp"
-        android:layout_height="17dp"
-        android:layout_marginLeft="715dp"
-        android:layout_marginTop="380dp" >
-
-        <Button
-            android:id="@+id/btn_peru_12"
-            android:layout_width="80dp"
-            android:layout_height="17dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/botoncomenzar"
-            android:text="Cusco"
-            android:textColor="#ffffff"
-            android:textSize="12dp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img_btn_peru_12"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/img_punto" >
-        </ImageView>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/lay_peru_13"
-        android:layout_width="100dp"
-        android:layout_height="17dp"
-        android:layout_marginLeft="770dp"
-        android:layout_marginTop="427dp" >
-
-        <Button
-            android:id="@+id/btn_peru_13"
-            android:layout_width="80dp"
-            android:layout_height="17dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/botoncomenzar"
-            android:text="Julianca"
-            android:textColor="#ffffff"
-            android:textSize="12dp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img_btn_peru_13"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/img_punto" >
-        </ImageView>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/lay_peru_14"
-        android:layout_width="100dp"
-        android:layout_height="17dp"
-        android:layout_marginLeft="765dp"
-        android:layout_marginTop="467dp" >
-
-        <Button
-            android:id="@+id/btn_peru_14"
-            android:layout_width="80dp"
-            android:layout_height="17dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/botoncomenzar"
-            android:text="Tacna"
-            android:textColor="#ffffff"
-            android:textSize="12dp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img_btn_peru_14"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/img_punto" >
-        </ImageView>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/lay_apretable_peru"
-        android:layout_width="400dp"
-        android:layout_height="300dp"
-        android:layout_marginLeft="520dp"
-        android:layout_marginTop="200dp" >
+            android:id="@+id/btn_cerrar_popup_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/txt_titulo_popup_info"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="42dp"
+            android:layout_marginRight="244dp"
+            android:background="@drawable/btn_cerrar_popup" />
     </RelativeLayout>
 
 </RelativeLayout>

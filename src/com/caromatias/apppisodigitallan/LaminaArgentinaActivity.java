@@ -1,9 +1,12 @@
 package com.caromatias.apppisodigitallan;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -17,6 +20,14 @@ public class LaminaArgentinaActivity extends Activity {
 	private ImageView imgMapaArgentina;
 	private Animation animMapaArgentina;
 	private Animation animMapaArgentinaOut;
+	private Button btnInter;
+	private Button btnPeru;
+	private Button btnBrasil;
+	private Button btnEcuador;
+	private Button btnColombia;
+	private Button btnChile;
+	private Button btnArgentina;
+	private Animation animMapaInter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +37,8 @@ public class LaminaArgentinaActivity extends Activity {
 		imgMapaArgentina.startAnimation(animMapaArgentina);
 		btnGoGame.startAnimation(animGoGame);
 		animaCiudadesArgentina();
+		initButtons();
+		activeButton();
 	}
 
 	@Override
@@ -34,12 +47,132 @@ public class LaminaArgentinaActivity extends Activity {
 		getMenuInflater().inflate(R.menu.lamina_argentina, menu);
 		return true;
 	}
+	public void initButtons() {
+		findViewById(R.id.btn_argentina).setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						btnArgentina.setBackgroundResource(R.drawable.botonrojo);
+						imgMapaArgentina.startAnimation(animMapaInter);
+						btnArgentina.setEnabled(false);
+						final Handler handler = new Handler();
+						handler.postDelayed(new Runnable() {
+							@Override
+							public void run() {
+								Intent act = new Intent(LaminaArgentinaActivity.this,	LaminaArgentinaActivity.class);
+								startActivity(act);
+								overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+							}
+						}, 1000);
+					}
+				});
+		findViewById(R.id.btn_brasil).setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						btnBrasil.setBackgroundResource(R.drawable.botonrojo);
+						imgMapaArgentina.startAnimation(animMapaInter);
+						btnBrasil.setEnabled(false);
+						final Handler handler = new Handler();
+						handler.postDelayed(new Runnable() {
+							@Override
+							public void run() {
+								Intent act = new Intent(LaminaArgentinaActivity.this,	LaminaBrasilActivity.class);
+								startActivity(act);
+								overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+							}
+						}, 1000);
+					}
+				});
+		
+		findViewById(R.id.btn_chile).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				btnChile.setBackgroundResource(R.drawable.botonrojo);
+				imgMapaArgentina.startAnimation(animMapaInter);
+				btnChile.setEnabled(false);
+				final Handler handler = new Handler();
+				handler.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						Intent act = new Intent(LaminaArgentinaActivity.this,	LaminaChileActivity.class);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+					}
+				}, 1000);
+				btnChile.setEnabled(false);
+			}
+		}); 
+		findViewById(R.id.btn_colombia).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				btnColombia.setBackgroundResource(R.drawable.botonrojo);
+				imgMapaArgentina.startAnimation(animMapaInter);
+				btnColombia.setEnabled(false);
+				final Handler handler = new Handler();
+				handler.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						Intent act = new Intent(LaminaArgentinaActivity.this,	LaminaColombiaActivity.class);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+					}
+				}, 1000);
+				btnColombia.setEnabled(false);  
+			}
+		});
+		findViewById(R.id.btn_ecuador).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				btnEcuador.setBackgroundResource(R.drawable.botonrojo);
+				imgMapaArgentina.startAnimation(animMapaInter);
+				btnEcuador.setEnabled(false);
+				final Handler handler = new Handler();
+				handler.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						Intent act = new Intent(LaminaArgentinaActivity.this,	LaminaEcuadorActivity.class);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+					}
+				}, 1000);
+				btnEcuador.setEnabled(false);
+			}
+		});
+		findViewById(R.id.btn_peru).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				btnPeru.setBackgroundResource(R.drawable.botonrojo);
+				imgMapaArgentina.startAnimation(animMapaInter);
+				btnPeru.setEnabled(false);
+				final Handler handler = new Handler();
+				handler.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						Intent act = new Intent(LaminaArgentinaActivity.this,	LaminaPeruActivity.class);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+					}
+				}, 1000);
+				btnPeru.setEnabled(false);
+			}
+		});
+	}
 	public void initVars(){
 		imgMapaArgentina = (ImageView) findViewById(R.id.mapa_argentina);
 		animMapaArgentina = AnimationUtils.loadAnimation(this,R.anim.anim_mapa_in);
 		animMapaArgentinaOut = AnimationUtils.loadAnimation(this, R.anim.anim_mapa_inter_out);
 		btnGoGame = (Button) findViewById(R.id.btn_ir_al_juego);
 		animGoGame = AnimationUtils.loadAnimation(this, R.anim.animacion);
+		animMapaInter = AnimationUtils.loadAnimation(this,R.anim.anim_mapa_inter_out);
+		btnInter = (Button) findViewById(R.id.btn_internacional);
+		btnPeru = (Button) findViewById(R.id.btn_peru);
+		btnBrasil = (Button) findViewById(R.id.btn_brasil);
+		btnEcuador = (Button) findViewById(R.id.btn_ecuador);
+		btnColombia = (Button) findViewById(R.id.btn_colombia);
+		btnChile = (Button) findViewById(R.id.btn_chile);
+		btnArgentina = (Button) findViewById(R.id.btn_argentina);
 	}
 	public void animaCiudadesArgentina() {
 		RelativeLayout laySalta = (RelativeLayout) findViewById(R.id.lay_argentina_01);
@@ -116,6 +249,14 @@ public class LaminaArgentinaActivity extends Activity {
 		Animation animLineasArgentina = AnimationUtils.loadAnimation(this,
 				R.anim.anim_lineas_argentina);
 		layAnimArgentina.startAnimation(animLineasArgentina);
+	}
+	public void activeButton(){
+		btnArgentina.setBackgroundResource(R.drawable.botonrojo);
+		btnArgentina.setEnabled(false);
+	}
+	@Override
+	public void onBackPressed() {
+		return;
 	}
 
 }

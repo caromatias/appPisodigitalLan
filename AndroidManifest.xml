@@ -55,21 +55,20 @@
             android:label="@string/title_activity_lamina_brasil" >
         </activity>
         <activity
-<<<<<<< HEAD
             android:name="com.caromatias.apppisodigitallan.LaminaColombiaActivity"
             android:label="@string/title_activity_lamina_colombia" >
         </activity>
         <activity
-            android:name="com.caromatias.apppisodigitallan.LaminaPeruActivity"
-            android:label="@string/title_activity_lamina_peru" >
-=======
             android:name="com.caromatias.apppisodigitallan.LaminaChileActivity"
             android:label="@string/title_activity_lamina_chile" >
         </activity>
         <activity
             android:name="com.caromatias.apppisodigitallan.LaminaEcuadorActivity"
             android:label="@string/title_activity_lamina_ecuador" >
->>>>>>> 1a4adcba13228c1fb8c04aa5e2f89b10ac6d98f6
+        </activity>
+        <activity
+            android:name="com.caromatias.apppisodigitallan.LaminaPeruActivity"
+            android:label="@string/title_activity_lamina_peru" >
         </activity>
     </application>
 

@@ -61,6 +61,29 @@ public class LaminaBienvenidaActivity extends Activity {
 	private TextView tituloPopInfo;
 	private TextView descPopInfo;
 	private Animation animMapaInter;
+	// ///////////////////////////////////
+	public static int btn1 = 0;
+	public static int btn2 = 0;
+	public static int btn3 = 0;
+	public static int btn4 = 0;
+	public static int btn5 = 0;
+	public static int btn6 = 0;
+	public static int btn7 = 0;
+	public static int btn8 = 0;
+	public static int btn9 = 0;
+	public static int btn10 = 0;
+	public static int btn11 = 0;
+	public static int btn12 = 0;
+	public static int btn13 = 0;
+	public static int btn14 = 0;
+	public static int btn15 = 0;
+	public static int btn16 = 0;
+	public static int btn17 = 0;
+	public static int btn18 = 0;
+	public static int btn19 = 0;
+	public static int btn20 = 0;
+	public static int btn21 = 0;
+	// ////////////////////////////////////
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +94,7 @@ public class LaminaBienvenidaActivity extends Activity {
 		// EJECUCIÓN
 		exMain();
 		initButtons();
+		reseteaRutas();
 	}
 
 	@Override
@@ -86,39 +110,44 @@ public class LaminaBienvenidaActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						btnArgentina.setBackgroundResource(R.drawable.botonrojo);
+						btnArgentina
+								.setBackgroundResource(R.drawable.botonrojo);
 						imgMapaBienvenida.startAnimation(animMapaInter);
 						btnArgentina.setEnabled(false);
 						final Handler handler = new Handler();
 						handler.postDelayed(new Runnable() {
 							@Override
 							public void run() {
-								Intent act = new Intent(LaminaBienvenidaActivity.this,	LaminaArgentinaActivity.class);
+								Intent act = new Intent(
+										LaminaBienvenidaActivity.this,
+										LaminaArgentinaActivity.class);
 								startActivity(act);
-								overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+								overridePendingTransition(R.anim.fade_in,
+										R.anim.fade_out);
 							}
 						}, 1000);
 					}
 				});
-		findViewById(R.id.btn_brasil).setOnClickListener(
-				new OnClickListener() {
+		findViewById(R.id.btn_brasil).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				btnBrasil.setBackgroundResource(R.drawable.botonrojo);
+				imgMapaBienvenida.startAnimation(animMapaInter);
+				btnBrasil.setEnabled(false);
+				final Handler handler = new Handler();
+				handler.postDelayed(new Runnable() {
 					@Override
-					public void onClick(View v) {
-						btnBrasil.setBackgroundResource(R.drawable.botonrojo);
-						imgMapaBienvenida.startAnimation(animMapaInter);
-						btnBrasil.setEnabled(false);
-						final Handler handler = new Handler();
-						handler.postDelayed(new Runnable() {
-							@Override
-							public void run() {
-								Intent act = new Intent(LaminaBienvenidaActivity.this,	LaminaBrasilActivity.class);
-								startActivity(act);
-								overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-							}
-						}, 1000);
+					public void run() {
+						Intent act = new Intent(LaminaBienvenidaActivity.this,
+								LaminaBrasilActivity.class);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in,
+								R.anim.fade_out);
 					}
-				});
-		
+				}, 1000);
+			}
+		});
+
 		findViewById(R.id.btn_chile).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -129,48 +158,78 @@ public class LaminaBienvenidaActivity extends Activity {
 				handler.postDelayed(new Runnable() {
 					@Override
 					public void run() {
-						Intent act = new Intent(LaminaBienvenidaActivity.this,	LaminaChileActivity.class);
+						Intent act = new Intent(LaminaBienvenidaActivity.this,
+								LaminaChileActivity.class);
 						startActivity(act);
-						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+						overridePendingTransition(R.anim.fade_in,
+								R.anim.fade_out);
 					}
 				}, 1000);
 				btnChile.setEnabled(false);
 			}
 		});
-		findViewById(R.id.btn_colombia).setOnClickListener(new OnClickListener() {
+		findViewById(R.id.btn_colombia).setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						btnColombia.setBackgroundResource(R.drawable.botonrojo);
+						imgMapaBienvenida.startAnimation(animMapaInter);
+						btnColombia.setEnabled(false);
+						final Handler handler = new Handler();
+						handler.postDelayed(new Runnable() {
+							@Override
+							public void run() {
+								Intent act = new Intent(
+										LaminaBienvenidaActivity.this,
+										LaminaColombiaActivity.class);
+								startActivity(act);
+								overridePendingTransition(R.anim.fade_in,
+										R.anim.fade_out);
+							}
+						}, 1000);
+						btnColombia.setEnabled(false);
+					}
+				});
+		findViewById(R.id.btn_ecuador).setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						btnEcuador.setBackgroundResource(R.drawable.botonrojo);
+						imgMapaBienvenida.startAnimation(animMapaInter);
+						btnEcuador.setEnabled(false);
+						final Handler handler = new Handler();
+						handler.postDelayed(new Runnable() {
+							@Override
+							public void run() {
+								Intent act = new Intent(
+										LaminaBienvenidaActivity.this,
+										LaminaEcuadorActivity.class);
+								startActivity(act);
+								overridePendingTransition(R.anim.fade_in,
+										R.anim.fade_out);
+							}
+						}, 1000);
+						btnEcuador.setEnabled(false);
+					}
+				});
+		findViewById(R.id.btn_peru).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				btnColombia.setBackgroundResource(R.drawable.botonrojo);
+				btnPeru.setBackgroundResource(R.drawable.botonrojo);
 				imgMapaBienvenida.startAnimation(animMapaInter);
-				btnColombia.setEnabled(false);
+				btnPeru.setEnabled(false);
 				final Handler handler = new Handler();
 				handler.postDelayed(new Runnable() {
 					@Override
 					public void run() {
-						Intent act = new Intent(LaminaBienvenidaActivity.this,	LaminaChileActivity.class);
+						Intent act = new Intent(LaminaBienvenidaActivity.this,
+								LaminaPeruActivity.class);
 						startActivity(act);
-						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+						overridePendingTransition(R.anim.fade_in,
+								R.anim.fade_out);
 					}
 				}, 1000);
-				btnColombia.setEnabled(false);
-			}
-		});
-		findViewById(R.id.btn_ecuador).setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				btnEcuador.setBackgroundResource(R.drawable.botonrojo);
-				imgMapaBienvenida.startAnimation(animMapaInter);
-				btnEcuador.setEnabled(false);
-				final Handler handler = new Handler();
-				handler.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						Intent act = new Intent(LaminaBienvenidaActivity.this,	LaminaEcuadorActivity.class);
-						startActivity(act);
-						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-					}
-				}, 1000);
-				btnEcuador.setEnabled(false);
+				btnPeru.setEnabled(false);
 			}
 		});
 	}
@@ -204,7 +263,8 @@ public class LaminaBienvenidaActivity extends Activity {
 		imgWhite = (ImageView) findViewById(R.id.img_fade_white);
 		layVideoMain = (RelativeLayout) findViewById(R.id.lay_video_main);
 		animLayFlota = (Button) findViewById(R.id.button_nuestra_flota);
-		animMapaInter = AnimationUtils.loadAnimation(this,R.anim.anim_mapa_inter_out);
+		animMapaInter = AnimationUtils.loadAnimation(this,
+				R.anim.anim_mapa_inter_out);
 		btnFlota = (Button) findViewById(R.id.button_nuestra_flota);
 		btnDestinos = (Button) findViewById(R.id.button_nuestros_destinos);
 		btnPeru = (Button) findViewById(R.id.btn_peru);
@@ -213,7 +273,7 @@ public class LaminaBienvenidaActivity extends Activity {
 		btnColombia = (Button) findViewById(R.id.btn_colombia);
 		btnChile = (Button) findViewById(R.id.btn_chile);
 		btnArgentina = (Button) findViewById(R.id.btn_argentina);
-		//layPopupInfo = (RelativeLayout) findViewById(R.id.lay_popup_info);
+		// layPopupInfo = (RelativeLayout) findViewById(R.id.lay_popup_info);
 	}
 
 	public void exMain() {
@@ -319,5 +379,32 @@ public class LaminaBienvenidaActivity extends Activity {
 
 			}
 		});
+	}
+	public void reseteaRutas() {
+		btn1 = 0;
+		btn2 = 0;
+		btn3 = 0;
+		btn4 = 0;
+		btn5 = 0;
+		btn6 = 0;
+		btn7 = 0;
+		btn8 = 0;
+		btn9 = 0;
+		btn10 = 0;
+		btn11 = 0;
+		btn12 = 0;
+		btn13 = 0;
+		btn14 = 0;
+		btn15 = 0;
+		btn16 = 0;
+		btn17 = 0;
+		btn18 = 0;
+		btn19 = 0;
+		btn20 = 0;
+		btn21 = 0;
+	}
+	@Override
+	public void onBackPressed() {
+		return;
 	}
 }

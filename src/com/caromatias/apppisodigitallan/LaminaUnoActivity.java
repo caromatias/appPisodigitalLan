@@ -75,7 +75,6 @@ public class LaminaUnoActivity extends Activity {
 	public static int btn19 = 0;
 	public static int btn20 = 0;
 	public static int btn21 = 0;
-
 	// ////////////////////////////////////
 
 	@Override
@@ -150,8 +149,7 @@ public class LaminaUnoActivity extends Activity {
 		btnFlota = (Button) findViewById(R.id.button_nuestra_flota);
 		btnDestinos = (Button) findViewById(R.id.button_nuestros_destinos);
 		layPopupInfo = (RelativeLayout) findViewById(R.id.lay_popup_info);
-		final Animation animNuevoMapaInter = AnimationUtils.loadAnimation(this,
-				R.anim.anim_in_juego);
+		final Animation animNuevoMapaInter = AnimationUtils.loadAnimation(this,R.anim.anim_in_juego);
 		
 
 		findViewById(R.id.btn_cerrar_popup_info).setOnClickListener(
