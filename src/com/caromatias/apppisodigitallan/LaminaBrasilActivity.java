@@ -52,6 +52,7 @@ public class LaminaBrasilActivity extends Activity {
 		activeButton();
 		cambioImagen();
 		popUpInfo();
+<<<<<<< HEAD
 		// popUpInfo();
 
 		gestureDetector = new GestureDetector(this,
@@ -63,6 +64,23 @@ public class LaminaBrasilActivity extends Activity {
 						return true;
 					}
 				});
+=======
+=======
+<<<<<<< HEAD
+		popUpInfo();
+=======
+		//popUpInfo();
+		
+		gestureDetector = new GestureDetector(this, new GestureDetector.SimpleOnGestureListener() {
+            @Override
+            public boolean onDoubleTap(MotionEvent e) {
+                Toast.makeText(LaminaBrasilActivity.this, "double tap", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
+>>>>>>> 6b8f3e2ce5ada84cba67bd5e0ade6fc3f6ecfd71
+>>>>>>> 68a14526e149f28d9a938f266c25c8aa5ac4b682
+>>>>>>> 08be1a8fbfb62f297aaece5c312c7c9b3e529838
 	}
 
 	@Override
@@ -518,6 +536,7 @@ public class LaminaBrasilActivity extends Activity {
 					}
 				});
 	}
+<<<<<<< HEAD
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
@@ -525,4 +544,6 @@ public class LaminaBrasilActivity extends Activity {
 			return super.onTouchEvent(event);
 		return true;
 	}
+=======
+>>>>>>> 08be1a8fbfb62f297aaece5c312c7c9b3e529838
 }
