@@ -261,7 +261,10 @@ public class LaminaEcuadorActivity extends Activity {
 				//imgArgentinaView.setVisibility(View.VISIBLE);
 			}
 		}, 10000);
+<<<<<<< HEAD
+=======
 		
+>>>>>>> 6b8f3e2ce5ada84cba67bd5e0ade6fc3f6ecfd71
 	}
 	public void popUpInfo() {
 		findViewById(R.id.btn_cerrar_popup_info).setOnClickListener(
