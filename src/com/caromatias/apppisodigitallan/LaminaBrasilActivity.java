@@ -12,6 +12,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class LaminaBrasilActivity extends Activity {
 
@@ -28,7 +29,14 @@ public class LaminaBrasilActivity extends Activity {
 	private Button btnChile;
 	private Button btnArgentina;
 	private Animation animMapaInter;
+<<<<<<< HEAD
 	private RelativeLayout contenedorBotones;
+=======
+	private RelativeLayout layPopupInfo;
+	private boolean doubleClick = false;
+	private TextView tituloPopInfo;
+	private TextView descPopInfo;
+>>>>>>> 256e91fd3d8ba2516d80f7df903b2146abb0c392
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +48,11 @@ public class LaminaBrasilActivity extends Activity {
 		animaCiudadesBrasil();
 		initButtons();
 		activeButton();
+<<<<<<< HEAD
 		cambioImagen();
+=======
+		popUpInfo();
+>>>>>>> 256e91fd3d8ba2516d80f7df903b2146abb0c392
 	}
 
 	@Override
@@ -194,7 +206,13 @@ public class LaminaBrasilActivity extends Activity {
 		btnColombia = (Button) findViewById(R.id.btn_colombia);
 		btnChile = (Button) findViewById(R.id.btn_chile);
 		btnArgentina = (Button) findViewById(R.id.btn_argentina);
+<<<<<<< HEAD
 		contenedorBotones = (RelativeLayout) findViewById(R.id.lay_mapa_brasil);
+=======
+		layPopupInfo = (RelativeLayout) findViewById(R.id.lay_popup_info);
+		tituloPopInfo = (TextView) findViewById(R.id.txt_titulo_popup_info);
+		descPopInfo = (TextView) findViewById(R.id.txt_descripcion_popup_info);
+>>>>>>> 256e91fd3d8ba2516d80f7df903b2146abb0c392
 	}
 	public void animaCiudadesBrasil() {
 		RelativeLayout layBuenaVista = (RelativeLayout) findViewById(R.id.lay_brasil_01);
@@ -415,6 +433,7 @@ public class LaminaBrasilActivity extends Activity {
 	public void onBackPressed() {
 		return;
 	}
+<<<<<<< HEAD
 	public void cambioImagen(){
 		final Handler handlerTres = new Handler();
 		handlerTres.postDelayed(new Runnable() {
@@ -428,6 +447,42 @@ public class LaminaBrasilActivity extends Activity {
 			}
 		}, 10000);
 
+=======
+	public void popUpInfo() {
+		findViewById(R.id.btn_cerrar_popup_info).setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						layPopupInfo.setVisibility(View.GONE);
+					}
+				});
+
+		findViewById(R.id.lay_apretable_brasil).setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						if (doubleClick == true) {
+							tituloPopInfo.setText(getResources().getString(
+									R.string.titulo_pop_info1));
+							descPopInfo.setText(getResources().getString(
+									R.string.desc_pop_info1));
+							layPopupInfo.bringToFront();
+							layPopupInfo.setVisibility(View.VISIBLE);
+						} else {
+							doubleClick = true;
+							Handler handlerDoubleClickUno = new Handler();
+							handlerDoubleClickUno.postDelayed(new Runnable() {
+								@Override
+								public void run() {
+									doubleClick = false;
+								}
+							}, 600);
+						}
+					}
+				});
+>>>>>>> 256e91fd3d8ba2516d80f7df903b2146abb0c392
 	}
 
 }
