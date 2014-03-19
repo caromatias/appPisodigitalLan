@@ -232,6 +232,24 @@ public class LaminaBienvenidaActivity extends Activity {
 				btnPeru.setEnabled(false);
 			}
 		});
+		findViewById(R.id.btn_internacional).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				btnInter.setBackgroundResource(R.drawable.botonrojo);
+				imgMapaBienvenida.startAnimation(animMapaInter);
+				btnInter.setEnabled(false);
+				final Handler handler = new Handler();
+				handler.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						Intent act = new Intent(LaminaBienvenidaActivity.this,LaminaMundialActivity.class);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+					}
+				}, 1000);
+				btnInter.setEnabled(false);
+			}
+		});
 	}
 
 	public void initVar() {
@@ -273,6 +291,7 @@ public class LaminaBienvenidaActivity extends Activity {
 		btnColombia = (Button) findViewById(R.id.btn_colombia);
 		btnChile = (Button) findViewById(R.id.btn_chile);
 		btnArgentina = (Button) findViewById(R.id.btn_argentina);
+		btnInter = (Button) findViewById(R.id.btn_internacional);
 		// layPopupInfo = (RelativeLayout) findViewById(R.id.lay_popup_info);
 	}
 

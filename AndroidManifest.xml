@@ -70,6 +70,10 @@
             android:name="com.caromatias.apppisodigitallan.LaminaPeruActivity"
             android:label="@string/title_activity_lamina_peru" >
         </activity>
+        <activity
+            android:name="com.caromatias.apppisodigitallan.LaminaMundialActivity"
+            android:label="@string/title_activity_lamina_mundial" >
+        </activity>
     </application>
 
 </manifest>
