@@ -33,20 +33,13 @@ public class LaminaBrasilActivity extends Activity {
 	private Button btnArgentina;
 	private Animation animMapaInter;
 	private RelativeLayout contenedorBotones;
-<<<<<<< HEAD
 
-=======
->>>>>>> 6b8f3e2ce5ada84cba67bd5e0ade6fc3f6ecfd71
 	private RelativeLayout layPopupInfo;
 	private boolean doubleClick = false;
 	private TextView tituloPopInfo;
 	private TextView descPopInfo;
-<<<<<<< HEAD
-
-=======
 	private GestureDetector gestureDetector;
-	
->>>>>>> 6b8f3e2ce5ada84cba67bd5e0ade6fc3f6ecfd71
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -58,19 +51,18 @@ public class LaminaBrasilActivity extends Activity {
 		initButtons();
 		activeButton();
 		cambioImagen();
-<<<<<<< HEAD
 		popUpInfo();
-=======
-		//popUpInfo();
-		
-		gestureDetector = new GestureDetector(this, new GestureDetector.SimpleOnGestureListener() {
-            @Override
-            public boolean onDoubleTap(MotionEvent e) {
-                Toast.makeText(LaminaBrasilActivity.this, "double tap", Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });
->>>>>>> 6b8f3e2ce5ada84cba67bd5e0ade6fc3f6ecfd71
+		// popUpInfo();
+
+		gestureDetector = new GestureDetector(this,
+				new GestureDetector.SimpleOnGestureListener() {
+					@Override
+					public boolean onDoubleTap(MotionEvent e) {
+						Toast.makeText(LaminaBrasilActivity.this, "double tap",
+								Toast.LENGTH_SHORT).show();
+						return true;
+					}
+				});
 	}
 
 	@Override
@@ -476,12 +468,8 @@ public class LaminaBrasilActivity extends Activity {
 	public void onBackPressed() {
 		return;
 	}
-<<<<<<< HEAD
 
 	public void cambioImagen() {
-=======
-	public void cambioImagen(){
->>>>>>> 6b8f3e2ce5ada84cba67bd5e0ade6fc3f6ecfd71
 		final Handler handlerTres = new Handler();
 		handlerTres.postDelayed(new Runnable() {
 			@Override
@@ -493,12 +481,8 @@ public class LaminaBrasilActivity extends Activity {
 				// imgArgentinaView.setVisibility(View.VISIBLE);
 			}
 		}, 10000);
-<<<<<<< HEAD
 	}
 
-=======
-}
->>>>>>> 6b8f3e2ce5ada84cba67bd5e0ade6fc3f6ecfd71
 	public void popUpInfo() {
 		findViewById(R.id.btn_cerrar_popup_info).setOnClickListener(
 				new OnClickListener() {
@@ -534,10 +518,11 @@ public class LaminaBrasilActivity extends Activity {
 					}
 				});
 	}
+
 	@Override
-    public boolean onTouchEvent(MotionEvent event) {
-        if (!gestureDetector.onTouchEvent(event))
-            return super.onTouchEvent(event);
-        return true;
-    }
+	public boolean onTouchEvent(MotionEvent event) {
+		if (!gestureDetector.onTouchEvent(event))
+			return super.onTouchEvent(event);
+		return true;
+	}
 }
