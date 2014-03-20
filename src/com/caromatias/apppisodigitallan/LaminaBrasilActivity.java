@@ -462,10 +462,12 @@ public class LaminaBrasilActivity extends Activity {
 				R.anim.anim_botones_41);
 		layFoz3.startAnimation(animFoz3);
 
+		/*
 		ImageView layAnimBrasil = (ImageView) findViewById(R.id.img_lineas_brasil);
 		Animation animLineasBrasil = AnimationUtils.loadAnimation(this,
 				R.anim.anim_lineas_brasil);
 		layAnimBrasil.startAnimation(animLineasBrasil);
+		*/
 	}
 
 	public void activeButton() {
