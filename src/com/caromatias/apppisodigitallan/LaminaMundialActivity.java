@@ -53,6 +53,7 @@ public class LaminaMundialActivity extends Activity {
 		initButtons();
 		initVars();
 		activeButton();
+		cambiaActivity();
 	}
 
 	@Override
@@ -555,5 +556,20 @@ public class LaminaMundialActivity extends Activity {
 	public void activeButton(){
 		btnInter.setBackgroundResource(R.drawable.botonrojo);
 		btnInter.setEnabled(false);
+	}
+	public void cambiaActivity() {
+		btnGoGame.setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						LaminaBienvenidaActivity.mpFondoUno.stop();
+						LaminaBienvenidaActivity.mpFondoUno.release();
+						Intent act = new Intent(LaminaMundialActivity.this,LaminaDosActivity.class);
+						act.putExtra("isInterface", 0);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+					}
+				});
 	}
 }

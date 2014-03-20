@@ -8,16 +8,16 @@
     <string name="title_activity_lamina_uno">LaminaUnoActivity</string>
     <string name="desc">Imagen</string>
     <string name="title_activity_lamina_dos">LaminaDosActivity</string>
-    <string name="desc_despegue">PARA EL DESPEGUE NECESITAS TODA LA POTENCIA DE LOS MOTORES.\nPRESIONA EL BOTÓN DEL ACELCERADOR CUANDO LA POTENCIA ESTÉ\nSOBRE EL 70%. TIENES 3 OPORTUNIDADES PARA LOGRARLO.</string>
+    <string name="desc_despegue">PARA EL DESPEGUE NECESITAS TODA LA POTENCIA DE LOS MOTORES.\nPRESIONA EL BOTÓN DEL ACELERADOR CUANDO LA POTENCIA ESTÉ\nSOBRE EL 70%. TIENES 3 OPORTUNIDADES PARA LOGRARLO.</string>
     <string name="desc_carga">PARA LLEGAR A TU DESTINO, DEBES TENER EL COMBUSTIBLE NECESARIO.\nPRESIONA EL BOTÓN LA MAYOR CANTIDAD DE VECES EN 10 SEGUNDOS.\nTIENES 3 OPORTUNIDADES PARA LLENAR EL ESTANQUE AL 60%.</string>
     <string name="title_activity_lamina_tres">LaminaTresActivity</string>
     <string name="title_activity_game_over">GameOverActivity</string>
     <!-- Strings preguntas LAN -->
     <string name="plan1">¿Cúal es la capacidad de pasajeros de un Airbus 319?</string>
     <string name="plan3">¿Qué significa la sigla LAN?</string>
-    <string name="plan7">¿Cúal de estas categorias no pertenece al programa LANPASS?</string>
+    <string name="plan7">¿Cúal de estas categorias NO pertenece al programa LANPASS?</string>
     <string name="plan9">¿Cuándo nace LAN como empresa estatal?</string>
-    <string name="plan10">¿Cuántos pasajeros transportó LAN y TAM el primer semestre del  2013?</string>
+    <string name="plan10">¿Cuántos pasajeros transportó LAN y TAM el primer semestre del 2013?</string>
     <string name="plan11">¿Cuántos aviones cargueros tiene LAN TAM?</string>
     <string name="plan12">¿En qué consistía la peculiar carga proveniente de Chile que llegó a una tienda de mascotas en Miami?</string>
     <string name="plan13">¿Qué año se incorpora LAN a one world?</string>
@@ -26,7 +26,7 @@
     <string name="planSao">¿Cuántos vuelos diarios tiene en promedio LAN y TAM?</string>
     <string name="planRio">¿Cuántos aviones sumarán LAN y TAM al 2015?</string>
     <string name="planLimaCuz">¿Qué año comenzó a volar LAN dentro de Perú?</string>
-    <string name="planBogota">¿Qué año comenzó a volar LAN dentro de Perú?</string>
+    <string name="planBogota">¿Qué año inicia LAN sus operaciones dentro de Colombia?</string>
     <string name="planLosAngeles">¿Cuál es la distancia aproximada entre Santiago de Chile(SCL) y Los Ángeles, California (LAX)?</string>
     <string name="planMexico">¿Qué animal en peligro de extinción fue trasladado hasta la ciudad de Puebla en México?</string>
     <!-- Strings preguntas LAN -->
@@ -34,32 +34,17 @@
     <string name="rlan1_1">144</string>
     <string name="rlan1_2">200</string>
     <string name="rlan1_3">120</string>
-    <string name="rlan2_1">1929</string>
-    <string name="rlan2_2">1928</string>
-    <string name="rlan2_3">1946</string>
-    <string name="rlan3_1">Apellido de los dueños</string>
-    <string name="rlan3_2">Línea Aérea Nacional</string>
+    <string name="rlan3_1">Linea Atlántica Nacional</string>
+    <string name="rlan3_2">Linea Aérea Nacional</string>
     <string name="rlan3_3">Los Andes Nacional</string>
-    <string name="rlan4_1">155</string>
-    <string name="rlan4_2">180</string>
-    <string name="rlan4_3">200</string>
-    <string name="rlan5_1">Más de 50 destinos en 10 países</string>
-    <string name="rlan5_2">Más de 200 destinos en 28 países</string>
-    <string name="rlan5_3">Más de 150 destinos en 22 países</string>
-    <string name="rlan6_1">2006</string>
-    <string name="rlan6_2">2005</string>
-    <string name="rlan6_3">2002</string>
     <string name="rlan7_1">Good Flyer</string>
     <string name="rlan7_2">Premium</string>
     <string name="rlan7_3">Comodoro</string>
-    <string name="rlan8_1">13</string>
-    <string name="rlan8_2">30</string>
-    <string name="rlan8_3">18</string>
     <string name="rlan9_1">1932</string>
     <string name="rlan9_2">1929</string>
     <string name="rlan9_3">1925</string>
     <string name="rlan10_1">Más de 32 millones</string>
-    <string name="rlan10_2">Más de 25 millones</string>
+    <string name="rlan10_2">Más de 35 millones</string>
     <string name="rlan10_3">Más de 50 millones</string>
     <string name="rlan11_1">25</string>
     <string name="rlan11_2">14</string>
@@ -82,9 +67,9 @@
     <string name="rlanRio_1">325</string>
     <string name="rlanRio_2">334</string>
     <string name="rlanRio_3">352</string>
-    <string name="rlanLimaCuz_1">352</string>
-    <string name="rlanLimaCuz_2">352</string>
-    <string name="rlanLimaCuz_3">352</string>
+    <string name="rlanLimaCuz_1">1997</string>
+    <string name="rlanLimaCuz_2">1999</string>
+    <string name="rlanLimaCuz_3">2004</string>
     <string name="rlanBogota_1">2011</string>
     <string name="rlanBogota_2">2001</string>
     <string name="rlanBogota_3">2010</string>
@@ -96,8 +81,8 @@
     <string name="rlanMexico_3">Rinoceronte negro</string>
     <!-- Strings respuestas LAN -->
     <!-- Strings preguntas Trivias -->
-    <string name="baires">¿Cómo se conoce a la sede de Gobierno de Argentina?</string>
-    <string name="sao_paulo">¿Cúal es la población aproximada de Sao Paulo Metropolitano?</string>
+    <string name="baires">¿Cómo se llama la sede de Gobierno de Argentina?</string>
+    <string name="sao_paulo">¿Cúal es la población aproximada de São Paulo Metropolitano?</string>
     <string name="rio_janeiro">¿Cúal de estas playas es conocida por sus eventos masivos al aire libre?</string>
     <string name="bogota">¿Qué tipo de clima presenta Bogotá?</string>
     <string name="quito">¿Cuál de estas iglesias es conocida por sus muros de oro?</string>
