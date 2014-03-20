@@ -54,8 +54,8 @@ public class LaminaArgentinaActivity extends Activity {
 		animaCiudadesArgentina();
 		activeButton();
 		cambioImagen();
-		//popUpInfo();
-		
+		popUpInfo();
+		cambiaActivity();
 	}
 
 	@Override
@@ -224,7 +224,7 @@ public class LaminaArgentinaActivity extends Activity {
 		animMapaArgentinaOut = AnimationUtils.loadAnimation(this,
 				R.anim.anim_mapa_inter_out);
 		btnGoGame = (Button) findViewById(R.id.btn_ir_al_juego);
-		animGoGame = AnimationUtils.loadAnimation(this, R.anim.animacion);
+		animGoGame = AnimationUtils.loadAnimation(this, R.anim.animacion_sin_fade);
 		animMapaInter = AnimationUtils.loadAnimation(this,
 				R.anim.anim_mapa_inter_out);
 		btnInter = (Button) findViewById(R.id.btn_internacional);
@@ -335,10 +335,7 @@ public class LaminaArgentinaActivity extends Activity {
 			public void run() {
 				// Do something after 5s = 5000ms
 				// imgMapaArgentina.setVisibility(View.GONE);
-				imgMapaArgentina
-						.setImageResource(R.drawable.mapa_argentina_dos);
-				
-				
+				imgMapaArgentina.setImageResource(R.drawable.mapa_argentina_dos);
 				contenedorBotones.setVisibility(View.GONE);
 				// imgArgentinaView.setVisibility(View.VISIBLE);
 			}
@@ -362,9 +359,9 @@ public class LaminaArgentinaActivity extends Activity {
 						// TODO Auto-generated method stub
 						if (doubleClick == true) {
 							tituloPopInfo.setText(getResources().getString(
-									R.string.titulo_pop_info1));
+									R.string.titulo_pop_info2));
 							descPopInfo.setText(getResources().getString(
-									R.string.desc_pop_info1));
+									R.string.desc_pop_info2));
 							layPopupInfo.bringToFront();
 							layPopupInfo.setVisibility(View.VISIBLE);
 						} else {
@@ -377,6 +374,21 @@ public class LaminaArgentinaActivity extends Activity {
 								}
 							}, 600);
 						}
+					}
+				});
+	}
+	public void cambiaActivity() {
+		btnGoGame.setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						LaminaBienvenidaActivity.mpFondoUno.stop();
+						LaminaBienvenidaActivity.mpFondoUno.release();
+						Intent act = new Intent(LaminaArgentinaActivity.this,LaminaDosActivity.class);
+						act.putExtra("isInterface", 0);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
 					}
 				});
 	}

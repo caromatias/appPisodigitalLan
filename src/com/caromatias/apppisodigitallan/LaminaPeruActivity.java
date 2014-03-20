@@ -47,6 +47,7 @@ public class LaminaPeruActivity extends Activity {
 		activeButton();
 		cambioImagen();
 		popUpInfo();
+		cambiaActivity();
 	}
 
 	@Override
@@ -214,7 +215,7 @@ public class LaminaPeruActivity extends Activity {
 		animMapaPeruOut = AnimationUtils.loadAnimation(this,
 				R.anim.anim_mapa_inter_out);
 		btnGoGame = (Button) findViewById(R.id.btn_ir_al_juego);
-		animGoGame = AnimationUtils.loadAnimation(this, R.anim.animacion);
+		animGoGame = AnimationUtils.loadAnimation(this, R.anim.animacion_sin_fade);
 		btnInter = (Button) findViewById(R.id.btn_internacional);
 		btnPeru = (Button) findViewById(R.id.btn_peru);
 		btnBrasil = (Button) findViewById(R.id.btn_brasil);
@@ -330,7 +331,7 @@ public class LaminaPeruActivity extends Activity {
 				contenedorBotones.setVisibility(View.GONE);
 				// imgArgentinaView.setVisibility(View.VISIBLE);
 			}
-		}, 7000);
+		}, 5000);
 	}
 
 	public void popUpInfo() {
@@ -365,6 +366,21 @@ public class LaminaPeruActivity extends Activity {
 								}
 							}, 600);
 						}
+					}
+				});
+	}
+	public void cambiaActivity() {
+		btnGoGame.setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						LaminaBienvenidaActivity.mpFondoUno.stop();
+						LaminaBienvenidaActivity.mpFondoUno.release();
+						Intent act = new Intent(LaminaPeruActivity.this,LaminaDosActivity.class);
+						act.putExtra("isInterface", 0);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
 					}
 				});
 	}

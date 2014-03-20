@@ -450,9 +450,17 @@
                     android:layout_marginTop="19dp"
                     android:background="@drawable/img_punto" >
                 </ImageView>
-            </RelativeLayout>
+            </RelativeLayout>    
         </RelativeLayout>
 
+    <RelativeLayout
+            android:id="@+id/lay_apretable_argentina"
+            android:layout_width="240dp"
+            android:layout_height="410dp"
+            android:layout_marginLeft="580dp"
+            android:layout_marginTop="80dp">
+        </RelativeLayout>
+    
     <RelativeLayout
         android:id="@+id/panel"
         android:layout_width="170dp"

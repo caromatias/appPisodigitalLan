@@ -8,13 +8,10 @@
         android:toAlpha="1" /> 
     <scale
         android:duration="1500"
-        android:fromXScale="30.9"
-        android:fromYScale="30.9"
-        android:pivotX="60%"
+        android:fromXScale="35.9"
+        android:fromYScale="35.9"
+        android:pivotX="65%"
         android:pivotY="50%"
         android:toXScale="1"
         android:toYScale="1" />
-
-    
-
 </set>

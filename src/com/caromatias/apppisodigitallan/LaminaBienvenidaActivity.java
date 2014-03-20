@@ -95,6 +95,7 @@ public class LaminaBienvenidaActivity extends Activity {
 		exMain();
 		initButtons();
 		reseteaRutas();
+		cambiaActivity();
 	}
 
 	@Override
@@ -296,13 +297,9 @@ public class LaminaBienvenidaActivity extends Activity {
 	}
 
 	public void exMain() {
-		videoView
-				.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
-						+ R.raw.back_a_2);
+		videoView.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.back_a_2);
 		videoLaminaDos = (VideoView) findViewById(R.id.video_lamina_uno);
-		videoLaminaDos
-				.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
-						+ R.raw.world_transition);
+		videoLaminaDos.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.world_transition);
 		videoView.start();
 		videoView.setOnPreparedListener(new OnPreparedListener() {
 			@Override
@@ -366,7 +363,7 @@ public class LaminaBienvenidaActivity extends Activity {
 						btnFlota.bringToFront();
 						btnDestinos.bringToFront();
 					}
-				}, 4400);
+				}, 4600);
 
 				final Handler handlerTres = new Handler();
 				handlerTres.postDelayed(new Runnable() {
@@ -376,7 +373,7 @@ public class LaminaBienvenidaActivity extends Activity {
 						videoLaminaDos.setVisibility(View.GONE);
 						videoLaminaDos.stopPlayback();
 					}
-				}, 5000);
+				}, 5500);
 
 				final Handler handlerCuatro = new Handler();
 				handlerCuatro.postDelayed(new Runnable() {
@@ -421,6 +418,21 @@ public class LaminaBienvenidaActivity extends Activity {
 		btn19 = 0;
 		btn20 = 0;
 		btn21 = 0;
+	}
+	public void cambiaActivity() {
+		btnGoGame.setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						LaminaBienvenidaActivity.mpFondoUno.stop();
+						LaminaBienvenidaActivity.mpFondoUno.release();
+						Intent act = new Intent(LaminaBienvenidaActivity.this,LaminaDosActivity.class);
+						act.putExtra("isInterface", 0);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+					}
+				});
 	}
 	@Override
 	public void onBackPressed() {

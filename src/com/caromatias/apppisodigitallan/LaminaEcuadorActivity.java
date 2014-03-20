@@ -47,6 +47,7 @@ public class LaminaEcuadorActivity extends Activity {
 		activeButton();
 		cambioImagen();
 		popUpInfo();
+		cambiaActivity();
 	}
 
 	@Override
@@ -215,7 +216,7 @@ public class LaminaEcuadorActivity extends Activity {
 		animMapaEcuadorOut = AnimationUtils.loadAnimation(this,
 				R.anim.anim_mapa_inter_out);
 		btnGoGame = (Button) findViewById(R.id.btn_ir_al_juego);
-		animGoGame = AnimationUtils.loadAnimation(this, R.anim.animacion);
+		animGoGame = AnimationUtils.loadAnimation(this, R.anim.animacion_sin_fade);
 		animMapaInter = AnimationUtils.loadAnimation(this,
 				R.anim.anim_mapa_inter_out);
 		btnInter = (Button) findViewById(R.id.btn_internacional);
@@ -289,7 +290,7 @@ public class LaminaEcuadorActivity extends Activity {
 				contenedorBotones.setVisibility(View.GONE);
 				// imgArgentinaView.setVisibility(View.VISIBLE);
 			}
-		}, 10000);
+		}, 4000);
 	}
 
 	public void popUpInfo() {
@@ -324,6 +325,21 @@ public class LaminaEcuadorActivity extends Activity {
 								}
 							}, 600);
 						}
+					}
+				});
+	}
+	public void cambiaActivity() {
+		btnGoGame.setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						LaminaBienvenidaActivity.mpFondoUno.stop();
+						LaminaBienvenidaActivity.mpFondoUno.release();
+						Intent act = new Intent(LaminaEcuadorActivity.this,LaminaDosActivity.class);
+						act.putExtra("isInterface", 0);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
 					}
 				});
 	}

@@ -444,15 +444,17 @@
             </ImageView>
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/lay_apretable_peru"
-            android:layout_width="400dp"
-            android:layout_height="300dp"
-            android:layout_marginLeft="520dp"
-            android:layout_marginTop="200dp" >
-        </RelativeLayout>
+
     </RelativeLayout>
 
+   <RelativeLayout
+            android:id="@+id/lay_apretable_peru"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="580dp"
+            android:layout_marginTop="280dp" >
+        </RelativeLayout>
+   
     <RelativeLayout
         android:id="@+id/panel"
         android:layout_width="170dp"
