@@ -33,7 +33,6 @@ public class LaminaBrasilActivity extends Activity {
 	private Button btnArgentina;
 	private Animation animMapaInter;
 	private RelativeLayout contenedorBotones;
-
 	private RelativeLayout layPopupInfo;
 	private boolean doubleClick = false;
 	private TextView tituloPopInfo;
