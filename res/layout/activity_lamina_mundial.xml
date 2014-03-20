@@ -146,7 +146,8 @@
         android:text="Conoce Nuestra Flota"
         android:textColor="#ffffff"
         android:textSize="14sp"
-        android:textStyle="bold" />
+        android:textStyle="bold" 
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/button_nuestros_destinos"
@@ -158,7 +159,8 @@
         android:text="Conoce Nuestros Destinos"
         android:textColor="#ffffff"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:visibility="gone"  />
 
     <RelativeLayout
         android:id="@+id/go_game_master"
