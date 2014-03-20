@@ -52,6 +52,7 @@ public class LaminaMundialActivity extends Activity {
 		animBotonesMapaInternacional();
 		initButtons();
 		initVars();
+		activeButton();
 	}
 
 	@Override
