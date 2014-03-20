@@ -175,7 +175,7 @@ public class GameOverActivity extends Activity {
 							//LaminaTresActivity.mpFondo.stop();
 							sdBeginds.release();
 							Intent act = new Intent(GameOverActivity.this,
-									LaminaUnoActivity.class);
+									LaminaBienvenidaActivity.class);
 							startActivity(act);
 							overridePendingTransition(R.anim.fade_in,
 									R.anim.fade_out);
@@ -219,7 +219,7 @@ public class GameOverActivity extends Activity {
 							//LaminaTresActivity.mpFondo.stop();
 							sdBeginds.release();
 							Intent act = new Intent(GameOverActivity.this,
-									LaminaUnoActivity.class);
+									LaminaBienvenidaActivity.class);
 							startActivity(act);
 							overridePendingTransition(R.anim.fade_in,
 									R.anim.fade_out);
