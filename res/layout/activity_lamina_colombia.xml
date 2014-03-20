@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/mapa_colombia" />
+        android:src="@drawable/mapa_colombia_dos" />
     
   <RelativeLayout
         android:id="@+id/lay_mapa_colombia"
@@ -41,27 +41,27 @@
             android:id="@+id/lay_colombia_01"
             android:layout_width="100dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="505dp"
-            android:layout_marginTop="170dp" >
+            android:layout_marginLeft="510dp"
+            android:layout_marginTop="172dp" >
 
             <Button
                 android:id="@+id/button_colombia_01"
-                android:layout_width="80dp"
-                android:layout_height="20dp"
+                android:layout_width="85dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Barranquilla"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="10dp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/image_colombia_01"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
-                android:layout_marginLeft="90dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginLeft="83dp"
+                android:layout_marginTop="16dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -70,27 +70,27 @@
             android:id="@+id/lay_colombia_02"
             android:layout_width="100dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="616dp"
-            android:layout_marginTop="85dp" >
+            android:layout_marginLeft="615dp"
+            android:layout_marginTop="89.5dp" >
 
             <Button
                 android:id="@+id/button_colombia_02"
-                android:layout_width="80dp"
-                android:layout_height="17dp"
+                android:layout_width="85dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="San Andrés"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="9dp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/image_colombia_02"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="3dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -99,27 +99,27 @@
             android:id="@+id/lay_colombia_03"
             android:layout_width="100dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="617dp"
-            android:layout_marginTop="166dp" >
+            android:layout_marginLeft="600dp"
+            android:layout_marginTop="162.5dp" >
 
             <Button
                 android:id="@+id/button_colombia_03"
-                android:layout_width="80dp"
-                android:layout_height="20dp"
+                android:layout_width="85dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Santa Marta"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="9dp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/image_colombia_03"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="18dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -129,26 +129,26 @@
             android:layout_width="100dp"
             android:layout_height="20dp"
             android:layout_marginLeft="490dp"
-            android:layout_marginTop="205dp" >
+            android:layout_marginTop="200dp" >
 
             <Button
                 android:id="@+id/button_colombia_04"
-                android:layout_width="80dp"
-                android:layout_height="20dp"
+                android:layout_width="85dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Cartagena"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="9dp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/image_colombia_04"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
-                android:layout_marginLeft="90dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginLeft="89dp"
+                android:layout_marginTop="2dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -157,19 +157,19 @@
             android:id="@+id/lay_colombia_05"
             android:layout_width="100dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="484dp"
-            android:layout_marginTop="233dp" >
+            android:layout_marginLeft="485dp"
+            android:layout_marginTop="241dp" >
 
             <Button
                 android:id="@+id/button_colombia_05"
-                android:layout_width="80dp"
-                android:layout_height="20dp"
+                android:layout_width="86dp"
+                android:layout_height="15.5dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Monteria"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="10dp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -177,7 +177,7 @@
                 android:layout_width="10dp"
                 android:layout_height="10dp"
                 android:layout_marginLeft="90dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -186,19 +186,19 @@
             android:id="@+id/lay_colombia_06"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="447dp"
-            android:layout_marginTop="260dp" >
+            android:layout_marginLeft="449dp"
+            android:layout_marginTop="267dp" >
 
             <Button
                 android:id="@+id/button_colombia_06"
-                android:layout_width="80dp"
-                android:layout_height="20dp"
+                android:layout_width="86dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Apartadó"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="10dp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -206,7 +206,7 @@
                 android:layout_width="10dp"
                 android:layout_height="10dp"
                 android:layout_marginLeft="90dp"
-                android:layout_marginTop="05dp"
+                android:layout_marginTop="3dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -220,14 +220,14 @@
 
             <Button
                 android:id="@+id/button_colombia_07"
-                android:layout_width="80dp"
-                android:layout_height="20dp"
+                android:layout_width="86dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
-                android:text="Medellin"
+                android:text="Medellín"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="10dp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -235,7 +235,7 @@
                 android:layout_width="10dp"
                 android:layout_height="10dp"
                 android:layout_marginLeft="90dp"
-                android:layout_marginTop="05dp"
+                android:layout_marginTop="3dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -244,27 +244,27 @@
             android:id="@+id/lay_colombia_08"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="435dp"
-            android:layout_marginTop="342dp" >
+            android:layout_marginLeft="443dp"
+            android:layout_marginTop="344dp" >
 
             <Button
                 android:id="@+id/button_colombia_08"
-                android:layout_width="60dp"
-                android:layout_height="20dp"
+                android:layout_width="59dp"
+                android:layout_height="16dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Quibdó"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="10dp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/image_colombia_08"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
-                android:layout_marginLeft="90dp"
-                android:layout_marginTop="05dp"
+                android:layout_marginLeft="83dp"
+                android:layout_marginTop="2dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -273,27 +273,27 @@
             android:id="@+id/lay_colombia_09"
             android:layout_width="100dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="525dp"
-            android:layout_marginTop="360dp" >
+            android:layout_marginLeft="543dp"
+            android:layout_marginTop="357dp" >
 
             <Button
                 android:id="@+id/button_colombia_09"
                 android:layout_width="60dp"
-                android:layout_height="20dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Ibaque"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="10dp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/image_colombia_09"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
-                android:layout_marginLeft="85dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginLeft="67dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -301,28 +301,28 @@
         <RelativeLayout
             android:id="@+id/lay_colombia_10"
             android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="508dp"
-            android:layout_marginTop="387dp" >
+            android:layout_height="50dp"
+            android:layout_marginLeft="512dp"
+            android:layout_marginTop="375dp" >
 
             <Button
                 android:id="@+id/button_colombia_10"
                 android:layout_width="60dp"
-                android:layout_height="20dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="05dp"
+                android:layout_marginTop="25dp"
                 android:background="@drawable/botoncomenzar"
-                android:text="Piera"
+                android:text="Pereira"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="10dp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/image_colombia_10"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
-                android:layout_marginLeft="85dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginLeft="79dp"
+                android:layout_marginTop="12dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -331,27 +331,27 @@
             android:id="@+id/lay_colombia_11"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="450dp"
-            android:layout_marginTop="430dp" >
+            android:layout_marginLeft="459dp"
+            android:layout_marginTop="435dp" >
 
             <Button
                 android:id="@+id/button_colombia_11"
-                android:layout_width="60dp"
-                android:layout_height="20dp"
+                android:layout_width="59dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Cali"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="10dp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/image_colombia_11"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
-                android:layout_marginLeft="90dp"
-                android:layout_marginTop="05dp"
+                android:layout_marginLeft="82dp"
+                android:layout_marginTop="3dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -359,57 +359,57 @@
         <RelativeLayout
             android:id="@+id/lay_colombia_12"
             android:layout_width="100dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="477dp"
-            android:layout_marginTop="457dp" >
+            android:layout_height="40dp"
+            android:layout_marginLeft="476dp"
+            android:layout_marginTop="458dp" >
 
             <Button
                 android:id="@+id/button_colombia_12"
-                android:layout_width="60dp"
-                android:layout_height="20dp"
+                android:layout_width="59dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Neiva"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="10dp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/image_colombia_12"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
-                android:layout_marginLeft="90dp"
-                android:layout_marginTop="05dp"
+                android:layout_marginLeft="85dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/lay_colombia_13"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="545dp"
-            android:layout_marginTop="507dp" >
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="541dp"
+            android:layout_marginTop="500dp" >
 
             <Button
                 android:id="@+id/button_colombia_13"
-                android:layout_width="80dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="5dp"
+                android:layout_width="85dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Puerto Asís"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="10dp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/imageView13"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -418,27 +418,27 @@
             android:id="@+id/lay_colombia_14"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="775dp"
-            android:layout_marginTop="610dp" >
+            android:layout_marginLeft="767dp"
+            android:layout_marginTop="611dp" >
 
             <Button
                 android:id="@+id/button_colombia_14"
-                android:layout_width="80dp"
-                android:layout_height="20dp"
+                android:layout_width="60dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Leticia"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="10dp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/image_colombia_14"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="1dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -447,26 +447,26 @@
             android:id="@+id/lay_colombia_15"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="680dp"
-            android:layout_marginTop="420dp" >
+            android:layout_marginLeft="673dp"
+            android:layout_marginTop="422dp" >
 
             <Button
                 android:id="@+id/button_colombia_15"
-                android:layout_width="80dp"
-                android:layout_height="20dp"
+                android:layout_width="85dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Villavicencio"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="10dp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/image_colombia_15"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
-                android:layout_marginLeft="0dp"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
@@ -476,27 +476,27 @@
             android:id="@+id/lay_colombia_16"
             android:layout_width="120dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="639dp"
-            android:layout_marginTop="374dp" >
+            android:layout_marginLeft="637dp"
+            android:layout_marginTop="379dp" >
 
             <Button
                 android:id="@+id/button_colombia_16"
                 android:layout_width="100dp"
-                android:layout_height="30dp"
+                android:layout_height="22dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Bogotá"
                 android:textColor="#ffffff"
-                android:textSize="13dp"
+                android:textSize="12dp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/image_colombia_16"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="5dp"
+                android:layout_width="11dp"
+                android:layout_height="11dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="1dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -511,13 +511,13 @@
             <Button
                 android:id="@+id/button_colombia_17"
                 android:layout_width="80dp"
-                android:layout_height="20dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Yopal"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="10dp"
                 android:textStyle="bold" />
 
             <ImageView
