@@ -690,7 +690,7 @@ public class LaminaTresActivity extends Activity {
 								+ getResources().getString(R.string.rlan3_2));
 						respuestaTres.setText("c) "
 								+ getResources().getString(R.string.rlan3_3));
-						respuestaCorrecta = 1;
+						respuestaCorrecta = 2;
 						numeroDeRespuesta = 2;
 						// layPregTrivia.startAnimation(animTriviaIn);
 						layPregTrivia.startAnimation(animMundoIn);
