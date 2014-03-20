@@ -312,8 +312,10 @@ public class LaminaDosActivity extends Activity {
 																				.startAnimation(animImgBackDespegue);
 																		ImagenBackDespegue
 																				.setVisibility(View.GONE);
-																		despegueOk.startAnimation(animMensajesDespegueOut);
-																		despegueOk.setVisibility(View.GONE);
+																		despegueOk
+																				.startAnimation(animMensajesDespegueOut);
+																		despegueOk
+																				.setVisibility(View.GONE);
 																	}
 																}, 2000);
 											}
@@ -665,8 +667,10 @@ public class LaminaDosActivity extends Activity {
 														.startAnimation(animImgBackDespegue);
 												ImagenBackDespegue
 														.setVisibility(View.GONE);
-												despegueOk.startAnimation(animMensajesDespegueOut);
-												despegueOk.setVisibility(View.GONE);
+												despegueOk
+														.startAnimation(animMensajesDespegueOut);
+												despegueOk
+														.setVisibility(View.GONE);
 											}
 										}, 2000);
 							}
@@ -768,8 +772,10 @@ public class LaminaDosActivity extends Activity {
 														.startAnimation(animImgBackDespegue);
 												ImagenBackDespegue
 														.setVisibility(View.GONE);
-												despegueOk.startAnimation(animMensajesDespegueOut);
-												despegueOk.setVisibility(View.GONE);
+												despegueOk
+														.startAnimation(animMensajesDespegueOut);
+												despegueOk
+														.setVisibility(View.GONE);
 											}
 										}, 2000);
 							}
@@ -1022,6 +1028,318 @@ public class LaminaDosActivity extends Activity {
 			}
 		});
 		// ////////////////////////////
+		// /////// BOTON DIEZ //////////
+		findViewById(R.id.btnDiez).setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
+				switch (LaminaBienvenidaActivity.juego) {
+				case 1:
+					layJuegoDespegue.setVisibility(View.VISIBLE);
+					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
+					break;
+				case 2:
+					layJuegoCarga.setVisibility(View.VISIBLE);
+					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
+					break;
+				}
+				rutaSeleccionada = 10;
+				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
+				// volumeJuego();
+			}
+		});
+		// ////////////////////////////
+		// /////// BOTON ONCE //////////
+		findViewById(R.id.btnOnce).setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
+				switch (LaminaBienvenidaActivity.juego) {
+				case 1:
+					layJuegoDespegue.setVisibility(View.VISIBLE);
+					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
+					break;
+				case 2:
+					layJuegoCarga.setVisibility(View.VISIBLE);
+					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
+					break;
+				}
+				rutaSeleccionada = 11;
+				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
+				// volumeJuego();
+			}
+		});
+		// ////////////////////////////
+		// /////// BOTON DOCE //////////
+		findViewById(R.id.btnDoce).setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
+				switch (LaminaBienvenidaActivity.juego) {
+				case 1:
+					layJuegoDespegue.setVisibility(View.VISIBLE);
+					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
+					break;
+				case 2:
+					layJuegoCarga.setVisibility(View.VISIBLE);
+					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
+					break;
+				}
+				rutaSeleccionada = 12;
+				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
+				// volumeJuego();
+			}
+		});
+		// ////////////////////////////
+		// /////// BOTON TRECE //////////
+		findViewById(R.id.btnTrece).setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
+				switch (LaminaBienvenidaActivity.juego) {
+				case 1:
+					layJuegoDespegue.setVisibility(View.VISIBLE);
+					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
+					break;
+				case 2:
+					layJuegoCarga.setVisibility(View.VISIBLE);
+					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
+					break;
+				}
+				rutaSeleccionada = 13;
+				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
+				// volumeJuego();
+			}
+		});
+		// ////////////////////////////
+		// /////// BOTON CATORCE //////////
+		findViewById(R.id.btnCatorce).setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
+				switch (LaminaBienvenidaActivity.juego) {
+				case 1:
+					layJuegoDespegue.setVisibility(View.VISIBLE);
+					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
+					break;
+				case 2:
+					layJuegoCarga.setVisibility(View.VISIBLE);
+					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
+					break;
+				}
+				rutaSeleccionada = 14;
+				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
+				// volumeJuego();
+			}
+		});
+		// ////////////////////////////
+		// /////// BOTON QUINCE //////////
+		findViewById(R.id.btnQuince).setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
+				switch (LaminaBienvenidaActivity.juego) {
+				case 1:
+					layJuegoDespegue.setVisibility(View.VISIBLE);
+					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
+					break;
+				case 2:
+					layJuegoCarga.setVisibility(View.VISIBLE);
+					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
+					break;
+				}
+				rutaSeleccionada = 15;
+				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
+				// volumeJuego();
+			}
+		});
+		// ////////////////////////////
+		// /////// BOTON 16 //////////
+		findViewById(R.id.btn16).setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
+				switch (LaminaBienvenidaActivity.juego) {
+				case 1:
+					layJuegoDespegue.setVisibility(View.VISIBLE);
+					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
+					break;
+				case 2:
+					layJuegoCarga.setVisibility(View.VISIBLE);
+					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
+					break;
+				}
+				rutaSeleccionada = 16;
+				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
+				// volumeJuego();
+			}
+		});
+		// ////////////////////////////
+		// /////// BOTON 17 //////////
+		findViewById(R.id.btn17).setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
+				switch (LaminaBienvenidaActivity.juego) {
+				case 1:
+					layJuegoDespegue.setVisibility(View.VISIBLE);
+					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
+					break;
+				case 2:
+					layJuegoCarga.setVisibility(View.VISIBLE);
+					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
+					break;
+				}
+				rutaSeleccionada = 17;
+				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
+				// volumeJuego();
+			}
+		});
+		// ////////////////////////////
+		// /////// BOTON 18 //////////
+		findViewById(R.id.btn18).setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
+				switch (LaminaBienvenidaActivity.juego) {
+				case 1:
+					layJuegoDespegue.setVisibility(View.VISIBLE);
+					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
+					break;
+				case 2:
+					layJuegoCarga.setVisibility(View.VISIBLE);
+					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
+					break;
+				}
+				rutaSeleccionada = 18;
+				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
+				// volumeJuego();
+			}
+		});
+		// ////////////////////////////
+		// /////// BOTON 19 //////////
+		findViewById(R.id.btn19).setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
+				switch (LaminaBienvenidaActivity.juego) {
+				case 1:
+					layJuegoDespegue.setVisibility(View.VISIBLE);
+					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
+					break;
+				case 2:
+					layJuegoCarga.setVisibility(View.VISIBLE);
+					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
+					break;
+				}
+				rutaSeleccionada = 19;
+				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
+				// volumeJuego();
+			}
+		});
+		// ////////////////////////////
+		// /////// BOTON 20 //////////
+		findViewById(R.id.btn20).setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
+				switch (LaminaBienvenidaActivity.juego) {
+				case 1:
+					layJuegoDespegue.setVisibility(View.VISIBLE);
+					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
+					break;
+				case 2:
+					layJuegoCarga.setVisibility(View.VISIBLE);
+					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
+					break;
+				}
+				rutaSeleccionada = 20;
+				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
+				// volumeJuego();
+			}
+		});
+		// ////////////////////////////
+		// /////// BOTON 20 //////////
+		findViewById(R.id.btn20).setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
+				switch (LaminaBienvenidaActivity.juego) {
+				case 1:
+					layJuegoDespegue.setVisibility(View.VISIBLE);
+					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
+					break;
+				case 2:
+					layJuegoCarga.setVisibility(View.VISIBLE);
+					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
+					break;
+				}
+				rutaSeleccionada = 20;
+				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
+				// volumeJuego();
+			}
+		});
+		// ////////////////////////////
+		// /////// BOTON 21 //////////
+		findViewById(R.id.btn21).setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				volumeCabinaJuego();
+				mpDespegue.start();
+				switch (LaminaBienvenidaActivity.juego) {
+				case 1:
+					layJuegoDespegue.setVisibility(View.VISIBLE);
+					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
+					break;
+				case 2:
+					layJuegoCarga.setVisibility(View.VISIBLE);
+					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
+					break;
+				}
+				rutaSeleccionada = 21;
+				layMasterComp.setVisibility(View.GONE);
+				mpMapaJuego.stop();
+				// volumeJuego();
+			}
+		});
+		// ////////////////////////////
 
 		findViewById(R.id.btn_activa_carga).setOnClickListener(
 				new OnClickListener() {
@@ -1226,7 +1544,7 @@ public class LaminaDosActivity extends Activity {
 
 	public void muestraInterfaceJuego() {
 
-		layMasterComp.setVisibility(View.GONE); 
+		layMasterComp.setVisibility(View.GONE);
 		videoInterface = (VideoView) findViewById(R.id.video_interface_uno);
 		nextInterface = (RelativeLayout) findViewById(R.id.next_interface);
 		animNetxInterfaceIn = AnimationUtils.loadAnimation(this,
@@ -1260,36 +1578,51 @@ public class LaminaDosActivity extends Activity {
 						findViewById(R.id.btn_next_interface).setEnabled(false);
 						if (paso == 1) {
 							paso = 2;
-							videoInterface.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.interface_2);
+							videoInterface
+									.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+											+ R.raw.interface_2);
 							videoInterface.start();
 							nextInterface.startAnimation(animNetxInterfaceOut);
 							nextInterface.setVisibility(View.GONE);
-							videoInterface.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+							videoInterface
+									.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 
 										@Override
 										public void onCompletion(MediaPlayer vmp) {
-											nextInterface.setVisibility(View.VISIBLE);
-											nextInterface.startAnimation(animNetxInterfaceIn);
-											findViewById(R.id.btn_next_interface).setEnabled(true);
+											nextInterface
+													.setVisibility(View.VISIBLE);
+											nextInterface
+													.startAnimation(animNetxInterfaceIn);
+											findViewById(
+													R.id.btn_next_interface)
+													.setEnabled(true);
 										}
 									});
 						} else if (paso == 2) {
 							paso = 3;
-							videoInterface.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.interface_3);
+							videoInterface
+									.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+											+ R.raw.interface_3);
 							videoInterface.start();
 							nextInterface.startAnimation(animNetxInterfaceOut);
 							nextInterface.setVisibility(View.GONE);
-							videoInterface.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+							videoInterface
+									.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 										@Override
 										public void onCompletion(MediaPlayer vmp) {
-											nextInterface.setVisibility(View.VISIBLE);
-											nextInterface.startAnimation(animNetxInterfaceIn);
-											findViewById(R.id.btn_next_interface).setEnabled(true);
+											nextInterface
+													.setVisibility(View.VISIBLE);
+											nextInterface
+													.startAnimation(animNetxInterfaceIn);
+											findViewById(
+													R.id.btn_next_interface)
+													.setEnabled(true);
 										}
 									});
 						} else if (paso == 3) {
 							paso = 4;
-							videoInterface.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							videoInterface
+									.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
 											+ R.raw.interface_4);
 							videoInterface.start();
 							nextInterface.startAnimation(animNetxInterfaceOut);
@@ -1298,40 +1631,56 @@ public class LaminaDosActivity extends Activity {
 									.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 										@Override
 										public void onCompletion(MediaPlayer vmp) {
-											nextInterface.setVisibility(View.VISIBLE);
-											nextInterface.startAnimation(animNetxInterfaceIn);
-											findViewById(R.id.btn_next_interface).setEnabled(true);
+											nextInterface
+													.setVisibility(View.VISIBLE);
+											nextInterface
+													.startAnimation(animNetxInterfaceIn);
+											findViewById(
+													R.id.btn_next_interface)
+													.setEnabled(true);
 										}
 									});
 
-						}else if (paso == 4) {
+						} else if (paso == 4) {
 							paso = 5;
-							videoInterface.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.interface_5);
+							videoInterface
+									.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+											+ R.raw.interface_5);
 							videoInterface.start();
 							nextInterface.startAnimation(animNetxInterfaceOut);
 							nextInterface.setVisibility(View.GONE);
-							videoInterface.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+							videoInterface
+									.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 										@Override
 										public void onCompletion(MediaPlayer vmp) {
-											imgWhiteDos.setVisibility(View.VISIBLE);
-											imgWhiteDos.startAnimation(animVideoMain);
+											imgWhiteDos
+													.setVisibility(View.VISIBLE);
+											imgWhiteDos
+													.startAnimation(animVideoMain);
 											Handler handlerInterfaceVid = new Handler();
-											handlerInterfaceVid.postDelayed(new Runnable() {
-												@Override
-												public void run() {
-													nextInterface.setVisibility(View.GONE);
-													videoInterface.setVisibility(View.GONE);
-												}
-											}, 800);
+											handlerInterfaceVid.postDelayed(
+													new Runnable() {
+														@Override
+														public void run() {
+															nextInterface
+																	.setVisibility(View.GONE);
+															videoInterface
+																	.setVisibility(View.GONE);
+														}
+													}, 800);
 											Handler handlerInterfaceDos = new Handler();
-											handlerInterfaceDos.postDelayed(new Runnable() {
-												@Override
-												public void run() {
-													imgWhiteDos.startAnimation(animVideoMainOut);
-													imgWhiteDos.setVisibility(View.GONE);
-													layMasterComp.setVisibility(View.VISIBLE);
-												}
-											}, 1500);
+											handlerInterfaceDos.postDelayed(
+													new Runnable() {
+														@Override
+														public void run() {
+															imgWhiteDos
+																	.startAnimation(animVideoMainOut);
+															imgWhiteDos
+																	.setVisibility(View.GONE);
+															layMasterComp
+																	.setVisibility(View.VISIBLE);
+														}
+													}, 1500);
 										}
 									});
 
