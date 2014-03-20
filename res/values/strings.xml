@@ -14,13 +14,8 @@
     <string name="title_activity_game_over">GameOverActivity</string>
     <!-- Strings preguntas LAN -->
     <string name="plan1">¿Cúal es la capacidad de pasajeros de un Airbus 319?</string>
-    <string name="plan2">¿En que año se fundo la compañia LAN?</string>
     <string name="plan3">¿Qué significa la sigla LAN?</string>
-    <string name="plan4">¿Cúal es la flota operativa de LAN a inicios del 2014?</string>
-    <string name="plan5">¿A cuántos destinos llega LAN y TAM?</string>
-    <string name="plan6">¿Qué año se fundo LAN Argentina?</string>
     <string name="plan7">¿Cúal de estas categorias no pertenece al programa LANPASS?</string>
-    <string name="plan8">¿Cúantos aviones opera LAN CARGO?</string>
     <string name="plan9">¿Cuándo nace LAN como empresa estatal?</string>
     <string name="plan10">¿Cuántos pasajeros transportó LAN y TAM el primer semestre del  2013?</string>
     <string name="plan11">¿Cuántos aviones cargueros tiene LAN TAM?</string>

@@ -419,7 +419,7 @@ public class LaminaBienvenidaActivity extends Activity {
 		btn19 = 0;
 		btn20 = 0;
 		btn21 = 0;
-		juego = 1;
+		//juego = 1;
 	}
 	public void cambiaActivity() {
 		btnGoGame.setOnClickListener(

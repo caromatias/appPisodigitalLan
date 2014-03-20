@@ -312,6 +312,7 @@ public class LaminaDosActivity extends Activity {
 																				.startAnimation(animImgBackDespegue);
 																		ImagenBackDespegue
 																				.setVisibility(View.GONE);
+																		despegueOk.startAnimation(animMensajesDespegueOut);
 																	}
 																}, 2000);
 											}
@@ -663,6 +664,7 @@ public class LaminaDosActivity extends Activity {
 														.startAnimation(animImgBackDespegue);
 												ImagenBackDespegue
 														.setVisibility(View.GONE);
+												despegueOk.startAnimation(animMensajesDespegueOut);
 											}
 										}, 2000);
 							}
@@ -764,6 +766,7 @@ public class LaminaDosActivity extends Activity {
 														.startAnimation(animImgBackDespegue);
 												ImagenBackDespegue
 														.setVisibility(View.GONE);
+												despegueOk.startAnimation(animMensajesDespegueOut);
 											}
 										}, 2000);
 							}
