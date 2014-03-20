@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/mapa_peru" />
+        android:src="@drawable/mapa_peru_dos" />
     
    <RelativeLayout
         android:id="@+id/lay_mapa_peru"
@@ -42,19 +42,19 @@
             android:id="@+id/lay_peru_01"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="510dp"
+            android:layout_marginLeft="497dp"
             android:layout_marginTop="240dp" >
 
             <Button
                 android:id="@+id/btn_peru_01"
-                android:layout_width="80dp"
-                android:layout_height="20dp"
+                android:layout_width="64dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Tumbes"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="10dp"
                 android:textStyle="bold" />
 
             <ImageView
