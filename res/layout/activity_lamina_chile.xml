@@ -502,14 +502,15 @@
             </ImageView>
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/lay_apretable_chile"
-            android:layout_width="300dp"
-            android:layout_height="700dp"
-            android:layout_marginLeft="500dp"
-            android:layout_marginTop="20dp" >
-        </RelativeLayout>
     </RelativeLayout>
+    
+    <RelativeLayout
+            android:id="@+id/lay_apretable_chile"
+            android:layout_width="120dp"
+            android:layout_height="410dp"
+            android:layout_marginLeft="620dp"
+            android:layout_marginTop="80dp" >
+        </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/panel"

@@ -1211,6 +1211,7 @@ public class LaminaDosActivity extends Activity {
 
 	public void muestraInterfaceJuego() {
 
+		layMasterComp.setVisibility(View.GONE);
 		videoInterface = (VideoView) findViewById(R.id.video_interface_uno);
 		nextInterface = (RelativeLayout) findViewById(R.id.next_interface);
 		animNetxInterfaceIn = AnimationUtils.loadAnimation(this,
@@ -1235,35 +1236,16 @@ public class LaminaDosActivity extends Activity {
 					});
 		} else {
 			videoInterface.setVisibility(View.GONE);
+			layMasterComp.setVisibility(View.VISIBLE);
 		}
 		// ///////////// evento boton pause //////////////
 		findViewById(R.id.btn_next_interface).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
+						findViewById(R.id.btn_next_interface).setEnabled(false);
 						if (paso == 1) {
 							paso = 2;
-							videoInterface
-									.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
-											+ R.raw.interface_2);
-							videoInterface.start();
-							nextInterface.startAnimation(animNetxInterfaceOut);
-							nextInterface.setVisibility(View.GONE);
-							videoInterface
-									.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-
-										@Override
-										public void onCompletion(MediaPlayer vmp) {
-											nextInterface
-													.setVisibility(View.VISIBLE);
-											nextInterface
-													.startAnimation(animNetxInterfaceIn);
-										}
-									});
-						} else if (paso == 2) {
-							paso = 3;
-							videoInterface
-									.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
-											+ R.raw.interface_3);
+							videoInterface.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.interface_2);
 							videoInterface.start();
 							nextInterface.startAnimation(animNetxInterfaceOut);
 							nextInterface.setVisibility(View.GONE);
@@ -1273,13 +1255,26 @@ public class LaminaDosActivity extends Activity {
 										public void onCompletion(MediaPlayer vmp) {
 											nextInterface.setVisibility(View.VISIBLE);
 											nextInterface.startAnimation(animNetxInterfaceIn);
+											findViewById(R.id.btn_next_interface).setEnabled(true);
 										}
 									});
-
+						} else if (paso == 2) {
+							paso = 3;
+							videoInterface.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.interface_3);
+							videoInterface.start();
+							nextInterface.startAnimation(animNetxInterfaceOut);
+							nextInterface.setVisibility(View.GONE);
+							videoInterface.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+										@Override
+										public void onCompletion(MediaPlayer vmp) {
+											nextInterface.setVisibility(View.VISIBLE);
+											nextInterface.startAnimation(animNetxInterfaceIn);
+											findViewById(R.id.btn_next_interface).setEnabled(true);
+										}
+									});
 						} else if (paso == 3) {
 							paso = 4;
-							videoInterface
-									.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							videoInterface.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
 											+ R.raw.interface_4);
 							videoInterface.start();
 							nextInterface.startAnimation(animNetxInterfaceOut);
@@ -1290,19 +1285,17 @@ public class LaminaDosActivity extends Activity {
 										public void onCompletion(MediaPlayer vmp) {
 											nextInterface.setVisibility(View.VISIBLE);
 											nextInterface.startAnimation(animNetxInterfaceIn);
+											findViewById(R.id.btn_next_interface).setEnabled(true);
 										}
 									});
 
 						}else if (paso == 4) {
 							paso = 5;
-							videoInterface
-									.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
-											+ R.raw.interface_5);
+							videoInterface.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.interface_5);
 							videoInterface.start();
 							nextInterface.startAnimation(animNetxInterfaceOut);
 							nextInterface.setVisibility(View.GONE);
-							videoInterface
-									.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+							videoInterface.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 										@Override
 										public void onCompletion(MediaPlayer vmp) {
 											imgWhiteDos.setVisibility(View.VISIBLE);
@@ -1319,9 +1312,9 @@ public class LaminaDosActivity extends Activity {
 											handlerInterfaceDos.postDelayed(new Runnable() {
 												@Override
 												public void run() {
-													imgWhiteDos
-															.startAnimation(animVideoMainOut);
+													imgWhiteDos.startAnimation(animVideoMainOut);
 													imgWhiteDos.setVisibility(View.GONE);
+													layMasterComp.setVisibility(View.VISIBLE);
 												}
 											}, 1500);
 										}

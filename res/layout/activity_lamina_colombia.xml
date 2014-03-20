@@ -23,7 +23,7 @@
         android:scaleType="fitXY"
         android:src="@drawable/mapa_colombia" />
     
-   <RelativeLayout
+  <RelativeLayout
         android:id="@+id/lay_mapa_colombia"
         android:layout_width="1280dp"
         android:layout_height="800dp"
@@ -617,14 +617,16 @@
             </ImageView>
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/lay_apretable_colombia"
-            android:layout_width="410dp"
-            android:layout_height="550dp"
-            android:layout_marginLeft="460dp"
-            android:layout_marginTop="80dp" >
-        </RelativeLayout>
+
     </RelativeLayout>
+    
+   <RelativeLayout
+            android:id="@+id/lay_apretable_colombia"
+            android:layout_width="210dp"
+            android:layout_height="250dp"
+            android:layout_marginLeft="520dp"
+            android:layout_marginTop="220dp">
+        </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/panel"

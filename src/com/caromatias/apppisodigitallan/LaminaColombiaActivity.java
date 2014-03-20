@@ -47,6 +47,7 @@ public class LaminaColombiaActivity extends Activity {
 		activeButton();
 		cambioImagen();
 		popUpInfo();
+		cambiaActivity();
 	}
 
 	@Override
@@ -215,7 +216,7 @@ public class LaminaColombiaActivity extends Activity {
 		animMapaColombiaOut = AnimationUtils.loadAnimation(this,
 				R.anim.anim_mapa_inter_out);
 		btnGoGame = (Button) findViewById(R.id.btn_ir_al_juego);
-		animGoGame = AnimationUtils.loadAnimation(this, R.anim.animacion);
+		animGoGame = AnimationUtils.loadAnimation(this, R.anim.animacion_sin_fade);
 		animMapaInter = AnimationUtils.loadAnimation(this,
 				R.anim.anim_mapa_inter_out);
 		btnInter = (Button) findViewById(R.id.btn_internacional);
@@ -395,5 +396,19 @@ public class LaminaColombiaActivity extends Activity {
 					}
 				});
 	}
-
+	public void cambiaActivity() {
+		btnGoGame.setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						LaminaBienvenidaActivity.mpFondoUno.stop();
+						LaminaBienvenidaActivity.mpFondoUno.release();
+						Intent act = new Intent(LaminaColombiaActivity.this,LaminaDosActivity.class);
+						act.putExtra("isInterface", 0);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+					}
+				});
+	}
 }
