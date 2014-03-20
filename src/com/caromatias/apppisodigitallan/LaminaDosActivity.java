@@ -805,15 +805,16 @@ public class LaminaDosActivity extends Activity {
 			public void onClick(View arg0) {
 				volumeCabinaJuego();
 				mpDespegue.start();
-				int numeroRandom = generaRandom();
-				switch (numeroRandom) {
+				switch (LaminaBienvenidaActivity.juego) {
 				case 1:
 					layJuegoDespegue.setVisibility(View.VISIBLE);
 					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
 					break;
 				case 2:
 					layJuegoCarga.setVisibility(View.VISIBLE);
 					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
 					break;
 				}
 				rutaSeleccionada = 1;
@@ -828,15 +829,16 @@ public class LaminaDosActivity extends Activity {
 			public void onClick(View arg0) {
 				volumeCabinaJuego();
 				mpDespegue.start();
-				int numeroRandom = generaRandom();
-				switch (numeroRandom) {
+				switch (LaminaBienvenidaActivity.juego) {
 				case 1:
 					layJuegoDespegue.setVisibility(View.VISIBLE);
 					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
 					break;
 				case 2:
 					layJuegoCarga.setVisibility(View.VISIBLE);
 					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
 					break;
 				}
 				rutaSeleccionada = 2;
@@ -851,15 +853,16 @@ public class LaminaDosActivity extends Activity {
 			public void onClick(View arg0) {
 				volumeCabinaJuego();
 				mpDespegue.start();
-				int numeroRandom = generaRandom();
-				switch (numeroRandom) {
+				switch (LaminaBienvenidaActivity.juego) {
 				case 1:
 					layJuegoDespegue.setVisibility(View.VISIBLE);
 					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
 					break;
 				case 2:
 					layJuegoCarga.setVisibility(View.VISIBLE);
 					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
 					break;
 				}
 				rutaSeleccionada = 3;
@@ -874,15 +877,16 @@ public class LaminaDosActivity extends Activity {
 			public void onClick(View arg0) {
 				volumeCabinaJuego();
 				mpDespegue.start();
-				int numeroRandom = generaRandom();
-				switch (numeroRandom) {
+				switch (LaminaBienvenidaActivity.juego) {
 				case 1:
 					layJuegoDespegue.setVisibility(View.VISIBLE);
 					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
 					break;
 				case 2:
 					layJuegoCarga.setVisibility(View.VISIBLE);
 					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
 					break;
 				}
 				rutaSeleccionada = 4;
@@ -897,15 +901,16 @@ public class LaminaDosActivity extends Activity {
 			public void onClick(View arg0) {
 				volumeCabinaJuego();
 				mpDespegue.start();
-				int numeroRandom = generaRandom();
-				switch (numeroRandom) {
+				switch (LaminaBienvenidaActivity.juego) {
 				case 1:
 					layJuegoDespegue.setVisibility(View.VISIBLE);
 					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
 					break;
 				case 2:
 					layJuegoCarga.setVisibility(View.VISIBLE);
 					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
 					break;
 				}
 				rutaSeleccionada = 5;
@@ -920,15 +925,16 @@ public class LaminaDosActivity extends Activity {
 			public void onClick(View arg0) {
 				volumeCabinaJuego();
 				mpDespegue.start();
-				int numeroRandom = generaRandom();
-				switch (numeroRandom) {
+				switch (LaminaBienvenidaActivity.juego) {
 				case 1:
 					layJuegoDespegue.setVisibility(View.VISIBLE);
 					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
 					break;
 				case 2:
 					layJuegoCarga.setVisibility(View.VISIBLE);
 					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
 					break;
 				}
 				rutaSeleccionada = 6;
@@ -943,15 +949,16 @@ public class LaminaDosActivity extends Activity {
 			public void onClick(View arg0) {
 				volumeCabinaJuego();
 				mpDespegue.start();
-				int numeroRandom = generaRandom();
-				switch (numeroRandom) {
+				switch (LaminaBienvenidaActivity.juego) {
 				case 1:
 					layJuegoDespegue.setVisibility(View.VISIBLE);
 					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
 					break;
 				case 2:
 					layJuegoCarga.setVisibility(View.VISIBLE);
 					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
 					break;
 				}
 				rutaSeleccionada = 7;
@@ -966,15 +973,16 @@ public class LaminaDosActivity extends Activity {
 			public void onClick(View arg0) {
 				volumeCabinaJuego();
 				mpDespegue.start();
-				int numeroRandom = generaRandom();
-				switch (numeroRandom) {
+				switch (LaminaBienvenidaActivity.juego) {
 				case 1:
 					layJuegoDespegue.setVisibility(View.VISIBLE);
 					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
 					break;
 				case 2:
 					layJuegoCarga.setVisibility(View.VISIBLE);
 					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
 					break;
 				}
 				rutaSeleccionada = 8;
@@ -989,15 +997,16 @@ public class LaminaDosActivity extends Activity {
 			public void onClick(View arg0) {
 				volumeCabinaJuego();
 				mpDespegue.start();
-				int numeroRandom = generaRandom();
-				switch (numeroRandom) {
+				switch (LaminaBienvenidaActivity.juego) {
 				case 1:
 					layJuegoDespegue.setVisibility(View.VISIBLE);
 					layJuegoDespegue.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 2;
 					break;
 				case 2:
 					layJuegoCarga.setVisibility(View.VISIBLE);
 					layJuegoCarga.startAnimation(animJuego);
+					LaminaBienvenidaActivity.juego = 1;
 					break;
 				}
 				rutaSeleccionada = 9;
@@ -1068,107 +1077,107 @@ public class LaminaDosActivity extends Activity {
 	}
 
 	public void desactivaRutas() {
-		if (LaminaUnoActivity.btn1 == 1) {
+		if (LaminaBienvenidaActivity.btn1 == 1) {
 			findViewById(R.id.btnUno).setEnabled(false);
 			findViewById(R.id.btnUno).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
 		}
-		if (LaminaUnoActivity.btn2 == 1) {
+		if (LaminaBienvenidaActivity.btn2 == 1) {
 			findViewById(R.id.btnDos).setEnabled(false);
 			findViewById(R.id.btnDos).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
 		}
-		if (LaminaUnoActivity.btn3 == 1) {
+		if (LaminaBienvenidaActivity.btn3 == 1) {
 			findViewById(R.id.btnTres).setEnabled(false);
 			findViewById(R.id.btnTres).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
 		}
-		if (LaminaUnoActivity.btn4 == 1) {
+		if (LaminaBienvenidaActivity.btn4 == 1) {
 			findViewById(R.id.btnCuatro).setEnabled(false);
 			findViewById(R.id.btnCuatro).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
 		}
-		if (LaminaUnoActivity.btn5 == 1) {
+		if (LaminaBienvenidaActivity.btn5 == 1) {
 			findViewById(R.id.btnCinco).setEnabled(false);
 			findViewById(R.id.btnCinco).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
 		}
-		if (LaminaUnoActivity.btn6 == 1) {
+		if (LaminaBienvenidaActivity.btn6 == 1) {
 			findViewById(R.id.btnSeis).setEnabled(false);
 			findViewById(R.id.btnSeis).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
 		}
-		if (LaminaUnoActivity.btn7 == 1) {
+		if (LaminaBienvenidaActivity.btn7 == 1) {
 			findViewById(R.id.btnSiete).setEnabled(false);
 			findViewById(R.id.btnSiete).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
 		}
-		if (LaminaUnoActivity.btn8 == 1) {
+		if (LaminaBienvenidaActivity.btn8 == 1) {
 			findViewById(R.id.btnOcho).setEnabled(false);
 			findViewById(R.id.btnOcho).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
 		}
-		if (LaminaUnoActivity.btn9 == 1) {
+		if (LaminaBienvenidaActivity.btn9 == 1) {
 			findViewById(R.id.btnNueve).setEnabled(false);
 			findViewById(R.id.btnNueve).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
 		}
-		if (LaminaUnoActivity.btn10 == 1) {
+		if (LaminaBienvenidaActivity.btn10 == 1) {
 			findViewById(R.id.btnDiez).setEnabled(false);
 			findViewById(R.id.btnDiez).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
 		}
-		if (LaminaUnoActivity.btn11 == 1) {
+		if (LaminaBienvenidaActivity.btn11 == 1) {
 			findViewById(R.id.btnOnce).setEnabled(false);
 			findViewById(R.id.btnOnce).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
 		}
-		if (LaminaUnoActivity.btn12 == 1) {
+		if (LaminaBienvenidaActivity.btn12 == 1) {
 			findViewById(R.id.btnDoce).setEnabled(false);
 			findViewById(R.id.btnDoce).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
 		}
-		if (LaminaUnoActivity.btn13 == 1) {
+		if (LaminaBienvenidaActivity.btn13 == 1) {
 			findViewById(R.id.btnTrece).setEnabled(false);
 			findViewById(R.id.btnTrece).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
 		}
-		if (LaminaUnoActivity.btn14 == 1) {
+		if (LaminaBienvenidaActivity.btn14 == 1) {
 			findViewById(R.id.btnCatorce).setEnabled(false);
 			findViewById(R.id.btnCatorce).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
 		}
-		if (LaminaUnoActivity.btn15 == 1) {
+		if (LaminaBienvenidaActivity.btn15 == 1) {
 			findViewById(R.id.btnQuince).setEnabled(false);
 			findViewById(R.id.btnQuince).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
 		}
-		if (LaminaUnoActivity.btn16 == 1) {
+		if (LaminaBienvenidaActivity.btn16 == 1) {
 			findViewById(R.id.btn16).setEnabled(false);
 			findViewById(R.id.btn16).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
 		}
-		if (LaminaUnoActivity.btn17 == 1) {
+		if (LaminaBienvenidaActivity.btn17 == 1) {
 			findViewById(R.id.btn17).setEnabled(false);
 			findViewById(R.id.btn17).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
 		}
-		if (LaminaUnoActivity.btn18 == 1) {
+		if (LaminaBienvenidaActivity.btn18 == 1) {
 			findViewById(R.id.btn18).setEnabled(false);
 			findViewById(R.id.btn18).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
 		}
-		if (LaminaUnoActivity.btn19 == 1) {
+		if (LaminaBienvenidaActivity.btn19 == 1) {
 			findViewById(R.id.btn19).setEnabled(false);
 			findViewById(R.id.btn19).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
 		}
-		if (LaminaUnoActivity.btn20 == 1) {
+		if (LaminaBienvenidaActivity.btn20 == 1) {
 			findViewById(R.id.btn20).setEnabled(false);
 			findViewById(R.id.btn20).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
 		}
-		if (LaminaUnoActivity.btn21 == 1) {
+		if (LaminaBienvenidaActivity.btn21 == 1) {
 			findViewById(R.id.btn21).setEnabled(false);
 			findViewById(R.id.btn21).setBackgroundResource(
 					R.drawable.btn_rutas_jugada);
@@ -1211,7 +1220,7 @@ public class LaminaDosActivity extends Activity {
 
 	public void muestraInterfaceJuego() {
 
-		layMasterComp.setVisibility(View.GONE);
+		layMasterComp.setVisibility(View.GONE); 
 		videoInterface = (VideoView) findViewById(R.id.video_interface_uno);
 		nextInterface = (RelativeLayout) findViewById(R.id.next_interface);
 		animNetxInterfaceIn = AnimationUtils.loadAnimation(this,
