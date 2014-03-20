@@ -43,6 +43,7 @@ public class LaminaArgentinaActivity extends Activity {
 	private TextView tituloPopInfo;
 	private TextView descPopInfo;
 	private Animation animaciones;
+	private Animation animacionesdos;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -241,6 +242,7 @@ public class LaminaArgentinaActivity extends Activity {
 		tituloPopInfo = (TextView) findViewById(R.id.txt_titulo_popup_info);
 		descPopInfo = (TextView) findViewById(R.id.txt_descripcion_popup_info);
 		animaciones = AnimationUtils.loadAnimation(this, R.anim.fade_out);
+		animacionesdos = AnimationUtils.loadAnimation(this, R.anim.fade_in);
 	}
 
 	public void animaCiudadesArgentina() {
@@ -339,6 +341,7 @@ public class LaminaArgentinaActivity extends Activity {
 				// imgMapaArgentina.setVisibility(View.GONE);
 				imgMapaArgentina.setImageResource(R.drawable.mapa_argentina_dos);
 				contenedorBotones.startAnimation(animaciones);
+				imgMapaArgentina.startAnimation(animacionesdos);
 				contenedorBotones.setVisibility(View.GONE);
 				// imgArgentinaView.setVisibility(View.VISIBLE);
 			}
