@@ -62,6 +62,7 @@ public class LaminaBienvenidaActivity extends Activity {
 	private TextView descPopInfo;
 	private Animation animMapaInter;
 	// ///////////////////////////////////
+	public static int juego = 1;
 	public static int btn1 = 0;
 	public static int btn2 = 0;
 	public static int btn3 = 0;
@@ -418,6 +419,7 @@ public class LaminaBienvenidaActivity extends Activity {
 		btn19 = 0;
 		btn20 = 0;
 		btn21 = 0;
+		juego = 1;
 	}
 	public void cambiaActivity() {
 		btnGoGame.setOnClickListener(
