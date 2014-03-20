@@ -830,7 +830,8 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#FFFFFF"
             android:textSize="25sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="gone"  />
 
         <TextView
             android:id="@+id/txt_descripcion_popup_info"
@@ -841,7 +842,8 @@
             android:layout_marginTop="11dp"
             android:text="TEXTO"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:visibility="gone"  />
 
         <Button
             android:id="@+id/btn_cerrar_popup_info"
