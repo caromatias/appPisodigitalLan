@@ -408,13 +408,43 @@ public class LaminaTresActivity extends Activity {
 				public void run() {
 					// Do something after 5s = 5000ms
 					preguntaTrivia.setText(getResources().getString(
-							R.string.plan1));
+							R.string.planArg));
 					respuestaUno.setText("a) "
-							+ getResources().getString(R.string.rlan1_1));
+							+ getResources().getString(R.string.rlanArg_1));
 					respuestaDos.setText("b) "
-							+ getResources().getString(R.string.rlan1_2));
+							+ getResources().getString(R.string.rlanArg_2));
 					respuestaTres.setText("c) "
-							+ getResources().getString(R.string.rlan1_3));
+							+ getResources().getString(R.string.rlanArg_3));
+					respuestaCorrecta = 3;
+					numeroDeRespuesta = 2;
+					// layPregTrivia.startAnimation(animTriviaIn);
+					layPregTrivia.startAnimation(animMundoIn);
+					imgMundoTrivia.startAnimation(animMundoIn);
+					// mpSalidaTrivia.start();
+				}
+			}, 1000);
+			final Handler handlerPregArgSonido = new Handler();
+			handlerPregArgSonido.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					creaSalidaTrivia();
+				}
+			}, 2000);
+			break;
+		case 2:
+			final Handler handlerPregUnoSao = new Handler();
+			handlerPregUnoSao.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					// Do something after 5s = 5000ms
+					preguntaTrivia.setText(getResources().getString(
+							R.string.planSao));
+					respuestaUno.setText("a) "
+							+ getResources().getString(R.string.rlanSao_1));
+					respuestaDos.setText("b) "
+							+ getResources().getString(R.string.rlanSao_2));
+					respuestaTres.setText("c) "
+							+ getResources().getString(R.string.rlanSao_3));
 					respuestaCorrecta = 1;
 					numeroDeRespuesta = 2;
 					// layPregTrivia.startAnimation(animTriviaIn);
@@ -423,9 +453,166 @@ public class LaminaTresActivity extends Activity {
 					// mpSalidaTrivia.start();
 				}
 			}, 1000);
+			final Handler handlerPregSaoSonido = new Handler();
+			handlerPregSaoSonido.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					creaSalidaTrivia();
+				}
+			}, 2000);
+			break;
+		case 3:
+			final Handler handlerPregUnoRio = new Handler();
+			handlerPregUnoRio.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					// Do something after 5s = 5000ms
+					preguntaTrivia.setText(getResources().getString(
+							R.string.planRio));
+					respuestaUno.setText("a) "
+							+ getResources().getString(R.string.rlanRio_1));
+					respuestaDos.setText("b) "
+							+ getResources().getString(R.string.rlanRio_2));
+					respuestaTres.setText("c) "
+							+ getResources().getString(R.string.rlanRio_3));
+					respuestaCorrecta = 2;
+					numeroDeRespuesta = 2;
+					// layPregTrivia.startAnimation(animTriviaIn);
+					layPregTrivia.startAnimation(animMundoIn);
+					imgMundoTrivia.startAnimation(animMundoIn);
+					// mpSalidaTrivia.start();
+				}
+			}, 1000);
+			final Handler handlerPregRioSonido = new Handler();
+			handlerPregRioSonido.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					creaSalidaTrivia();
+				}
+			}, 2000);
+			break;
+		case 4:
+			final Handler handlerPregUnoBogota = new Handler();
+			handlerPregUnoBogota.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					// Do something after 5s = 5000ms
+					preguntaTrivia.setText(getResources().getString(
+							R.string.planBogota));
+					respuestaUno.setText("a) "
+							+ getResources().getString(R.string.rlanBogota_1));
+					respuestaDos.setText("b) "
+							+ getResources().getString(R.string.rlanBogota_2));
+					respuestaTres.setText("c) "
+							+ getResources().getString(R.string.rlanBogota_3));
+					respuestaCorrecta = 1;
+					numeroDeRespuesta = 2;
+					// layPregTrivia.startAnimation(animTriviaIn);
+					layPregTrivia.startAnimation(animMundoIn);
+					imgMundoTrivia.startAnimation(animMundoIn);
+					// mpSalidaTrivia.start();
+				}
+			}, 1000);
+			final Handler handlerPregBogotaSonido = new Handler();
+			handlerPregBogotaSonido.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					creaSalidaTrivia();
+				}
+			}, 2000);
+			break;
+		case 11:
+			final Handler handlerPregLosAngeles = new Handler();
+			handlerPregLosAngeles.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					// Do something after 5s = 5000ms
+					preguntaTrivia.setText(getResources().getString(
+							R.string.planLosAngeles));
+					respuestaUno.setText("a) "
+							+ getResources().getString(R.string.rlanLosAngeles_1));
+					respuestaDos.setText("b) "
+							+ getResources().getString(R.string.rlanLosAngeles_2));
+					respuestaTres.setText("c) "
+							+ getResources().getString(R.string.rlanLosAngeles_3));
+					respuestaCorrecta = 2;
+					numeroDeRespuesta = 2;
+					// layPregTrivia.startAnimation(animTriviaIn);
+					layPregTrivia.startAnimation(animMundoIn);
+					imgMundoTrivia.startAnimation(animMundoIn);
+					// mpSalidaTrivia.start();
+				}
+			}, 1000);
+			final Handler handlerPregLosAngelesSonido = new Handler();
+			handlerPregLosAngelesSonido.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					creaSalidaTrivia();
+				}
+			}, 2000);
+			break;
+		case 13:
+			final Handler handlerPregMexico = new Handler();
+			handlerPregMexico.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					// Do something after 5s = 5000ms
+					preguntaTrivia.setText(getResources().getString(
+							R.string.planMexico));
+					respuestaUno.setText("a) "
+							+ getResources().getString(R.string.rlanMexico_1));
+					respuestaDos.setText("b) "
+							+ getResources().getString(R.string.rlanMexico_2));
+					respuestaTres.setText("c) "
+							+ getResources().getString(R.string.rlanMexico_3));
+					respuestaCorrecta = 3;
+					numeroDeRespuesta = 2;
+					// layPregTrivia.startAnimation(animTriviaIn);
+					layPregTrivia.startAnimation(animMundoIn);
+					imgMundoTrivia.startAnimation(animMundoIn);
+					// mpSalidaTrivia.start();
+				}
+			}, 1000);
+			final Handler handlerPregMexicoSonido = new Handler();
+			handlerPregMexicoSonido.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					creaSalidaTrivia();
+				}
+			}, 2000);
+			break;
+		case 21:
+			final Handler handlerPregUnoLimaCuz = new Handler();
+			handlerPregUnoLimaCuz.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					// Do something after 5s = 5000ms
+					preguntaTrivia.setText(getResources().getString(
+							R.string.planLimaCuz));
+					respuestaUno.setText("a) "
+							+ getResources().getString(R.string.rlanLimaCuz_1));
+					respuestaDos.setText("b) "
+							+ getResources().getString(R.string.rlanLimaCuz_2));
+					respuestaTres.setText("c) "
+							+ getResources().getString(R.string.rlanLimaCuz_3));
+					respuestaCorrecta = 2;
+					numeroDeRespuesta = 2;
+					// layPregTrivia.startAnimation(animTriviaIn);
+					layPregTrivia.startAnimation(animMundoIn);
+					imgMundoTrivia.startAnimation(animMundoIn);
+					// mpSalidaTrivia.start();
+				}
+			}, 1000);
+			final Handler handlerPregLimaSonido = new Handler();
+			handlerPregLimaSonido.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					creaSalidaTrivia();
+				}
+			}, 2000);
 			break;
 		default:
-			int numeroRandom = generaRandom(8);
+			int numeroRandom = generaRandom(14);
 			switch (numeroRandom) {
 			case 1:
 				final Handler handlerPregUno = new Handler();
@@ -674,6 +861,198 @@ public class LaminaTresActivity extends Activity {
 
 				final Handler handlerPregNueveSonido = new Handler();
 				handlerPregNueveSonido.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						creaSalidaTrivia();
+					}
+				}, 2000);
+
+				break;
+			case 9:
+				final Handler handlerPregNueve = new Handler();
+				handlerPregNueve.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						// Do something after 5s = 5000ms
+						preguntaTrivia.setText(getResources().getString(
+								R.string.plan9));
+						respuestaUno.setText("a) "
+								+ getResources().getString(R.string.rlan9_1));
+						respuestaDos.setText("b) "
+								+ getResources().getString(R.string.rlan9_2));
+						respuestaTres.setText("c) "
+								+ getResources().getString(R.string.rlan9_3));
+						respuestaCorrecta = 2;
+						numeroDeRespuesta = 2;
+						// layPregTrivia.startAnimation(animTriviaIn);
+						layPregTrivia.startAnimation(animMundoIn);
+						imgMundoTrivia.startAnimation(animMundoIn);
+						// mpSalidaTrivia.start();
+					}
+				}, 1000);
+
+				final Handler handlerPregDiezSonido = new Handler();
+				handlerPregDiezSonido.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						creaSalidaTrivia();
+					}
+				}, 2000);
+
+				break;
+			case 10:
+				final Handler handlerPregDiez = new Handler();
+				handlerPregDiez.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						// Do something after 5s = 5000ms
+						preguntaTrivia.setText(getResources().getString(
+								R.string.plan10));
+						respuestaUno.setText("a) "
+								+ getResources().getString(R.string.rlan10_1));
+						respuestaDos.setText("b) "
+								+ getResources().getString(R.string.rlan10_2));
+						respuestaTres.setText("c) "
+								+ getResources().getString(R.string.rlan10_3));
+						respuestaCorrecta = 1;
+						numeroDeRespuesta = 2;
+						// layPregTrivia.startAnimation(animTriviaIn);
+						layPregTrivia.startAnimation(animMundoIn);
+						imgMundoTrivia.startAnimation(animMundoIn);
+						// mpSalidaTrivia.start();
+					}
+				}, 1000);
+
+				final Handler handlerPregOnceSonido = new Handler();
+				handlerPregOnceSonido.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						creaSalidaTrivia();
+					}
+				}, 2000);
+
+				break;
+			case 11:
+				final Handler handlerPregOnce = new Handler();
+				handlerPregOnce.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						// Do something after 5s = 5000ms
+						preguntaTrivia.setText(getResources().getString(
+								R.string.plan11));
+						respuestaUno.setText("a) "
+								+ getResources().getString(R.string.rlan11_1));
+						respuestaDos.setText("b) "
+								+ getResources().getString(R.string.rlan11_2));
+						respuestaTres.setText("c) "
+								+ getResources().getString(R.string.rlan11_3));
+						respuestaCorrecta = 3;
+						numeroDeRespuesta = 2;
+						// layPregTrivia.startAnimation(animTriviaIn);
+						layPregTrivia.startAnimation(animMundoIn);
+						imgMundoTrivia.startAnimation(animMundoIn);
+						// mpSalidaTrivia.start();
+					}
+				}, 1000);
+
+				final Handler handlerPreDoceSonido = new Handler();
+				handlerPreDoceSonido.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						creaSalidaTrivia();
+					}
+				}, 2000);
+
+				break;
+			case 12:
+				final Handler handlerPregDoce = new Handler();
+				handlerPregDoce.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						// Do something after 5s = 5000ms
+						preguntaTrivia.setText(getResources().getString(
+								R.string.plan12));
+						respuestaUno.setText("a) "
+								+ getResources().getString(R.string.rlan12_1));
+						respuestaDos.setText("b) "
+								+ getResources().getString(R.string.rlan12_2));
+						respuestaTres.setText("c) "
+								+ getResources().getString(R.string.rlan12_3));
+						respuestaCorrecta = 2;
+						numeroDeRespuesta = 2;
+						// layPregTrivia.startAnimation(animTriviaIn);
+						layPregTrivia.startAnimation(animMundoIn);
+						imgMundoTrivia.startAnimation(animMundoIn);
+						// mpSalidaTrivia.start();
+					}
+				}, 1000);
+
+				final Handler handlerPreTreceSonido = new Handler();
+				handlerPreTreceSonido.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						creaSalidaTrivia();
+					}
+				}, 2000);
+
+				break;
+			case 13:
+				final Handler handlerPregTrece = new Handler();
+				handlerPregTrece.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						// Do something after 5s = 5000ms
+						preguntaTrivia.setText(getResources().getString(
+								R.string.plan13));
+						respuestaUno.setText("a) "
+								+ getResources().getString(R.string.rlan13_1));
+						respuestaDos.setText("b) "
+								+ getResources().getString(R.string.rlan13_2));
+						respuestaTres.setText("c) "
+								+ getResources().getString(R.string.rlan13_3));
+						respuestaCorrecta = 1;
+						numeroDeRespuesta = 2;
+						// layPregTrivia.startAnimation(animTriviaIn);
+						layPregTrivia.startAnimation(animMundoIn);
+						imgMundoTrivia.startAnimation(animMundoIn);
+						// mpSalidaTrivia.start();
+					}
+				}, 1000);
+
+				final Handler handlerPreCatorceSonido = new Handler();
+				handlerPreCatorceSonido.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						creaSalidaTrivia();
+					}
+				}, 2000);
+
+				break;
+			case 14:
+				final Handler handlerPregCatorce = new Handler();
+				handlerPregCatorce.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						// Do something after 5s = 5000ms
+						preguntaTrivia.setText(getResources().getString(
+								R.string.plan14));
+						respuestaUno.setText("a) "
+								+ getResources().getString(R.string.rlan14_1));
+						respuestaDos.setText("b) "
+								+ getResources().getString(R.string.rlan14_2));
+						respuestaTres.setText("c) "
+								+ getResources().getString(R.string.rlan14_3));
+						respuestaCorrecta = 1;
+						numeroDeRespuesta = 2;
+						// layPregTrivia.startAnimation(animTriviaIn);
+						layPregTrivia.startAnimation(animMundoIn);
+						imgMundoTrivia.startAnimation(animMundoIn);
+						// mpSalidaTrivia.start();
+					}
+				}, 1000);
+
+				final Handler handlerPreQuinceSonido = new Handler();
+				handlerPreQuinceSonido.postDelayed(new Runnable() {
 					@Override
 					public void run() {
 						creaSalidaTrivia();
