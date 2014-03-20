@@ -245,19 +245,19 @@
             android:id="@+id/lay_peru_08"
             android:layout_width="100dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="670dp"
-            android:layout_marginTop="275dp" >
+            android:layout_marginLeft="653dp"
+            android:layout_marginTop="273dp" >
 
             <Button
                 android:id="@+id/btn_peru_08"
-                android:layout_width="80dp"
-                android:layout_height="17dp"
+                android:layout_width="65dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Taraporo"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="9dp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -265,7 +265,7 @@
                 android:layout_width="10dp"
                 android:layout_height="10dp"
                 android:layout_marginLeft="0dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="4dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -274,27 +274,27 @@
             android:id="@+id/lay_peru_09"
             android:layout_width="100dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="642dp"
+            android:layout_marginLeft="614dp"
             android:layout_marginTop="308dp" >
 
             <Button
                 android:id="@+id/btn_peru_09"
-                android:layout_width="80dp"
-                android:layout_height="17dp"
+                android:layout_width="65dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Cajamarca"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="9dp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/img_btn_peru_09"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="3dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -303,27 +303,27 @@
             android:id="@+id/lay_peru_10"
             android:layout_width="100dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="692dp"
-            android:layout_marginTop="332dp" >
+            android:layout_marginLeft="679dp"
+            android:layout_marginTop="342dp" >
 
             <Button
                 android:id="@+id/btn_peru_10"
-                android:layout_width="80dp"
-                android:layout_height="17dp"
+                android:layout_width="65dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Pucallpa"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="9dp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/img_btn_peru_10"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -332,27 +332,27 @@
             android:id="@+id/lay_peru_11"
             android:layout_width="150dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="768dp"
-            android:layout_marginTop="358dp" >
+            android:layout_marginLeft="792dp"
+            android:layout_marginTop="385dp" >
 
             <Button
                 android:id="@+id/btn_peru_11"
-                android:layout_width="130dp"
-                android:layout_height="17dp"
+                android:layout_width="91dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Puerto Maldonado"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="9dp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/img_btn_peru_11"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="1dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -360,28 +360,28 @@
         <RelativeLayout
             android:id="@+id/lay_peru_12"
             android:layout_width="100dp"
-            android:layout_height="17dp"
-            android:layout_marginLeft="715dp"
-            android:layout_marginTop="380dp" >
+            android:layout_height="30dp"
+            android:layout_marginLeft="714dp"
+            android:layout_marginTop="407dp" >
 
             <Button
                 android:id="@+id/btn_peru_12"
-                android:layout_width="80dp"
-                android:layout_height="17dp"
+                android:layout_width="63dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Cusco"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="9dp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/img_btn_peru_12"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -390,19 +390,19 @@
             android:id="@+id/lay_peru_13"
             android:layout_width="100dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="770dp"
-            android:layout_marginTop="427dp" >
+            android:layout_marginLeft="793dp"
+            android:layout_marginTop="478dp" >
 
             <Button
                 android:id="@+id/btn_peru_13"
-                android:layout_width="80dp"
-                android:layout_height="17dp"
+                android:layout_width="64dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Julianca"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="9dp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -410,7 +410,7 @@
                 android:layout_width="10dp"
                 android:layout_height="10dp"
                 android:layout_marginLeft="0dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="0dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -418,28 +418,28 @@
         <RelativeLayout
             android:id="@+id/lay_peru_14"
             android:layout_width="100dp"
-            android:layout_height="17dp"
-            android:layout_marginLeft="765dp"
-            android:layout_marginTop="467dp" >
+            android:layout_height="30dp"
+            android:layout_marginLeft="779dp"
+            android:layout_marginTop="523dp" >
 
             <Button
                 android:id="@+id/btn_peru_14"
-                android:layout_width="80dp"
-                android:layout_height="17dp"
+                android:layout_width="65dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Tacna"
                 android:textColor="#ffffff"
-                android:textSize="12dp"
+                android:textSize="9dp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/img_btn_peru_14"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
