@@ -1189,16 +1189,16 @@
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
+    </RelativeLayout>
 
-        <RelativeLayout
+   <RelativeLayout
             android:id="@+id/lay_apretable_brasil"
             android:layout_width="450dp"
             android:layout_height="400dp"
             android:layout_marginLeft="480dp"
             android:layout_marginTop="150dp" >
         </RelativeLayout>
-    </RelativeLayout>
-
+   
     <RelativeLayout
         android:id="@+id/panel"
         android:layout_width="170dp"

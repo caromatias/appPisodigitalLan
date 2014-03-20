@@ -63,7 +63,7 @@ public class MainActivity extends Activity {
 				cargando.setVisibility(View.VISIBLE);
 				Button botonAnimado = (Button) findViewById(R.id.btn_com);
 				botonAnimado.setBackgroundResource(R.drawable.botoncomenzar);
-				Intent act = new Intent(MainActivity.this, LaminaUnoActivity.class);
+				Intent act = new Intent(MainActivity.this, LaminaBienvenidaActivity.class);
 				startActivity(act);
 				overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 			}
