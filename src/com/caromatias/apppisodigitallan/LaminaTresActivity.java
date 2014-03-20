@@ -651,13 +651,13 @@ public class LaminaTresActivity extends Activity {
 					public void run() {
 						// Do something after 5s = 5000ms
 						preguntaTrivia.setText(getResources().getString(
-								R.string.plan8));
+								R.string.plan7));
 						respuestaUno.setText("a) "
-								+ getResources().getString(R.string.rlan8_1));
+								+ getResources().getString(R.string.rlan7_1));
 						respuestaDos.setText("b) "
-								+ getResources().getString(R.string.rlan8_2));
+								+ getResources().getString(R.string.rlan7_2));
 						respuestaTres.setText("c) "
-								+ getResources().getString(R.string.rlan8_3));
+								+ getResources().getString(R.string.rlan7_3));
 						respuestaCorrecta = 1;
 						numeroDeRespuesta = 2;
 						// layPregTrivia.startAnimation(animTriviaIn);
@@ -683,13 +683,13 @@ public class LaminaTresActivity extends Activity {
 					public void run() {
 						// Do something after 5s = 5000ms
 						preguntaTrivia.setText(getResources().getString(
-								R.string.plan2));
+								R.string.plan3));
 						respuestaUno.setText("a) "
-								+ getResources().getString(R.string.rlan2_1));
+								+ getResources().getString(R.string.rlan3_1));
 						respuestaDos.setText("b) "
-								+ getResources().getString(R.string.rlan2_2));
+								+ getResources().getString(R.string.rlan3_2));
 						respuestaTres.setText("c) "
-								+ getResources().getString(R.string.rlan2_3));
+								+ getResources().getString(R.string.rlan3_3));
 						respuestaCorrecta = 1;
 						numeroDeRespuesta = 2;
 						// layPregTrivia.startAnimation(animTriviaIn);
@@ -747,13 +747,13 @@ public class LaminaTresActivity extends Activity {
 					public void run() {
 						// Do something after 5s = 5000ms
 						preguntaTrivia.setText(getResources().getString(
-								R.string.plan4));
+								R.string.plan9));
 						respuestaUno.setText("a) "
-								+ getResources().getString(R.string.rlan4_1));
+								+ getResources().getString(R.string.rlan9_1));
 						respuestaDos.setText("b) "
-								+ getResources().getString(R.string.rlan4_2));
+								+ getResources().getString(R.string.rlan9_2));
 						respuestaTres.setText("c) "
-								+ getResources().getString(R.string.rlan4_3));
+								+ getResources().getString(R.string.rlan9_3));
 						respuestaCorrecta = 3;
 						numeroDeRespuesta = 2;
 						// layPregTrivia.startAnimation(animTriviaIn);
@@ -779,13 +779,13 @@ public class LaminaTresActivity extends Activity {
 					public void run() {
 						// Do something after 5s = 5000ms
 						preguntaTrivia.setText(getResources().getString(
-								R.string.plan5));
+								R.string.plan12));
 						respuestaUno.setText("a) "
-								+ getResources().getString(R.string.rlan5_1));
+								+ getResources().getString(R.string.rlan12_1));
 						respuestaDos.setText("b) "
-								+ getResources().getString(R.string.rlan5_2));
+								+ getResources().getString(R.string.rlan12_2));
 						respuestaTres.setText("c) "
-								+ getResources().getString(R.string.rlan5_3));
+								+ getResources().getString(R.string.rlan12_3));
 						respuestaCorrecta = 3;
 						numeroDeRespuesta = 2;
 						// layPregTrivia.startAnimation(animTriviaIn);
@@ -811,13 +811,13 @@ public class LaminaTresActivity extends Activity {
 					public void run() {
 						// Do something after 5s = 5000ms
 						preguntaTrivia.setText(getResources().getString(
-								R.string.plan6));
+								R.string.plan14));
 						respuestaUno.setText("a) "
-								+ getResources().getString(R.string.rlan6_1));
+								+ getResources().getString(R.string.rlan14_1));
 						respuestaDos.setText("b) "
-								+ getResources().getString(R.string.rlan6_2));
+								+ getResources().getString(R.string.rlan14_2));
 						respuestaTres.setText("c) "
-								+ getResources().getString(R.string.rlan6_3));
+								+ getResources().getString(R.string.rlan14_3));
 						respuestaCorrecta = 2;
 						numeroDeRespuesta = 2;
 						// layPregTrivia.startAnimation(animTriviaIn);
@@ -850,7 +850,7 @@ public class LaminaTresActivity extends Activity {
 								+ getResources().getString(R.string.rlan7_2));
 						respuestaTres.setText("c) "
 								+ getResources().getString(R.string.rlan7_3));
-						respuestaCorrecta = 2;
+						respuestaCorrecta = 1;
 						numeroDeRespuesta = 2;
 						// layPregTrivia.startAnimation(animTriviaIn);
 						layPregTrivia.startAnimation(animMundoIn);
