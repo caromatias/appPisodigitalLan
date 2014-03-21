@@ -320,7 +320,7 @@ public class LaminaChileActivity extends Activity {
 				contenedorBotones.setVisibility(View.GONE);
 				//imgArgentinaView.setVisibility(View.VISIBLE);
 			}
-		}, 6000);
+		}, 5000);
 	}
 	public void popUpInfo() {
 		findViewById(R.id.btn_cerrar_popup_info).setOnClickListener(
