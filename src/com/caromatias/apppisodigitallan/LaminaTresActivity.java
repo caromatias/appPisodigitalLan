@@ -60,9 +60,6 @@ public class LaminaTresActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lamina_tres);
-
-		LaminaDosActivity.mpDespegue.stop();
-		LaminaDosActivity.mpDespegue.release();
 		
 		mpFail = MediaPlayer.create(this, R.raw.sonido_incorrecto);
 		//mpMundo = MediaPlayer.create(this, R.raw.engranaje_mundo);
