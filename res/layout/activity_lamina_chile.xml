@@ -20,14 +20,14 @@
         android:id="@+id/mapa_chile_ant"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/mapa_chile" />
+        android:src="@drawable/mapa_chile_dos" />
 
     <com.caromatias.apppisodigitallan.zoom
         android:id="@+id/mapa_chile"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/mapa_chile_dos"
+        android:src="@drawable/mapa_chile"
         android:visibility="gone" />
     
     <RelativeLayout
@@ -70,8 +70,8 @@
                 android:id="@+id/imageView2"
                 android:layout_width="9dp"
                 android:layout_height="9dp"
-                android:layout_marginLeft="63dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginLeft="68dp"
+                android:layout_marginTop="4dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -99,7 +99,7 @@
                 android:id="@+id/imageView3"
                 android:layout_width="9dp"
                 android:layout_height="9dp"
-                android:layout_marginLeft="62dp"
+                android:layout_marginLeft="65dp"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
@@ -128,7 +128,7 @@
                 android:id="@+id/imageView4"
                 android:layout_width="9dp"
                 android:layout_height="9dp"
-                android:layout_marginLeft="77dp"
+                android:layout_marginLeft="78dp"
                 android:layout_marginTop="2dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
@@ -157,7 +157,7 @@
                 android:id="@+id/imageView5"
                 android:layout_width="9dp"
                 android:layout_height="9dp"
-                android:layout_marginLeft="73dp"
+                android:layout_marginLeft="77dp"
                 android:layout_marginTop="3dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
@@ -196,15 +196,15 @@
             android:id="@+id/lay_chile_06"
             android:layout_width="120dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="613dp"
-            android:layout_marginTop="290dp" >
+            android:layout_marginLeft="622dp"
+            android:layout_marginTop="283dp" >
 
             <Button
                 android:id="@+id/button6"
-                android:layout_width="100dp"
-                android:layout_height="25dp"
+                android:layout_width="98dp"
+                android:layout_height="22dp"
                 android:layout_marginLeft="0dp"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="13dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Santiago"
                 android:textColor="#ffffff"
@@ -215,8 +215,8 @@
                 android:id="@+id/imageView7"
                 android:layout_width="11dp"
                 android:layout_height="11dp"
-                android:layout_marginLeft="103dp"
-                android:layout_marginTop="2dp"
+                android:layout_marginLeft="101dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
         </RelativeLayout>
@@ -244,7 +244,7 @@
                 android:id="@+id/imageView8"
                 android:layout_width="9dp"
                 android:layout_height="9dp"
-                android:layout_marginLeft="75dp"
+                android:layout_marginLeft="77dp"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
@@ -447,7 +447,7 @@
                 android:id="@+id/imageView15"
                 android:layout_width="9dp"
                 android:layout_height="9dp"
-                android:layout_marginLeft="0dp"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="3dp"
                 android:background="@drawable/img_punto" >
             </ImageView>
