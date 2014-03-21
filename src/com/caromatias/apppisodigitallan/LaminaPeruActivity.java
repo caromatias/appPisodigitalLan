@@ -304,10 +304,10 @@ public class LaminaPeruActivity extends Activity {
 				R.anim.anim_botones_14);
 		layIquito.startAnimation(animIquitos);
 
-		ImageView layAnimPeru = (ImageView) findViewById(R.id.mapa_peru);
-		Animation animLineasPeru = AnimationUtils.loadAnimation(this,
-				R.anim.anim_lineas_ecuador);
-		layAnimPeru.startAnimation(animLineasPeru);
+		//ImageView layAnimPeru = (ImageView) findViewById(R.id.mapa_peru);
+		//Animation animLineasPeru = AnimationUtils.loadAnimation(this,
+		//		R.anim.anim_lineas_ecuador);
+		//layAnimPeru.startAnimation(animLineasPeru);
 	}
 
 	public void activeButton() {

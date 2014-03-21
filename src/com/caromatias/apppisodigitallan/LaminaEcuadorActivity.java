@@ -263,10 +263,10 @@ public class LaminaEcuadorActivity extends Activity {
 				R.anim.anim_botones_06);
 		layCuenca.startAnimation(animCuenca);
 
-		ImageView layAnimEcuador = (ImageView) findViewById(R.id.img_lineas_ecuador);
-		Animation animLineasEcuador = AnimationUtils.loadAnimation(this,
-				R.anim.anim_lineas_ecuador);
-		layAnimEcuador.startAnimation(animLineasEcuador);
+		//ImageView layAnimEcuador = (ImageView) findViewById(R.id.img_lineas_ecuador);
+		//Animation animLineasEcuador = AnimationUtils.loadAnimation(this,
+		//		R.anim.anim_lineas_ecuador);
+		//layAnimEcuador.startAnimation(animLineasEcuador);
 	}
 
 	public void activeButton() {

@@ -241,8 +241,8 @@ public class LaminaArgentinaActivity extends Activity {
 		layPopupInfo = (RelativeLayout) findViewById(R.id.lay_popup_info);
 		tituloPopInfo = (TextView) findViewById(R.id.txt_titulo_popup_info);
 		descPopInfo = (TextView) findViewById(R.id.txt_descripcion_popup_info);
-		animaciones = AnimationUtils.loadAnimation(this, R.anim.fade_out);
-		animacionesdos = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+		animaciones = AnimationUtils.loadAnimation(this, R.anim.fade_out_mapas);
+		animacionesdos = AnimationUtils.loadAnimation(this, R.anim.fade_in_mapas);
 	}
 
 	public void animaCiudadesArgentina() {
@@ -316,10 +316,10 @@ public class LaminaArgentinaActivity extends Activity {
 				R.anim.anim_botones_14);
 		layUshuai.startAnimation(animUshuai);
 
-		ImageView layAnimArgentina = (ImageView) findViewById(R.id.img_lineas_argentina);
-		Animation animLineasArgentina = AnimationUtils.loadAnimation(this,
-				R.anim.anim_lineas_argentina);
-		layAnimArgentina.startAnimation(animLineasArgentina);
+		//ImageView layAnimArgentina = (ImageView) findViewById(R.id.img_lineas_argentina);
+		//Animation animLineasArgentina = AnimationUtils.loadAnimation(this,
+		//		R.anim.anim_lineas_argentina);
+		//layAnimArgentina.startAnimation(animLineasArgentina);
 	}
 
 	public void activeButton() {

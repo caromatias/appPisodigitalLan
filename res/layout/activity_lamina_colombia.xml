@@ -35,7 +35,8 @@
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/img_lineas_colombia" />
+            android:src="@drawable/img_lineas_colombia"
+            android:visibility="gone" />
 
         <RelativeLayout
             android:id="@+id/lay_colombia_01"
