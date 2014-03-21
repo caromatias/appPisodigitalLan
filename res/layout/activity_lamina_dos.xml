@@ -267,7 +267,7 @@
                 android:layout_marginLeft="790dp"
                 android:layout_marginTop="105dp"
                 android:background="@drawable/boton_rutas"
-                android:text="ISLA DE PASCUA / TAHITÍ"
+                android:text="ISLA DE PASCUA / PAPEETE"
                 android:textColor="#FFFFFF"
                 android:textSize="10sp"
                 android:textStyle="bold" />
