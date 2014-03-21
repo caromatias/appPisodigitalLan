@@ -337,15 +337,20 @@ public class LaminaArgentinaActivity extends Activity {
 		handlerTres.postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				// Do something after 5s = 5000ms
-				// imgMapaArgentina.setVisibility(View.GONE);
-				imgMapaArgentina.setImageResource(R.drawable.mapa_argentina_dos);
-				contenedorBotones.startAnimation(animaciones);
+				imgMapaArgentina.setVisibility(View.VISIBLE);
 				imgMapaArgentina.startAnimation(animacionesdos);
-				contenedorBotones.setVisibility(View.GONE);
-				// imgArgentinaView.setVisibility(View.VISIBLE);
 			}
 		}, 5000);
+		final Handler handlerEscond = new Handler();
+		handlerEscond.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				findViewById(R.id.mapa_argentina_ant).startAnimation(animaciones);
+				contenedorBotones.startAnimation(animaciones);
+				findViewById(R.id.mapa_argentina_ant).setVisibility(View.GONE);
+				contenedorBotones.setVisibility(View.GONE);
+			}
+		}, 5500);
 	}
 
 	public void popUpInfo() {

@@ -331,10 +331,12 @@ public class LaminaChileActivity extends Activity {
 		handlerEscond.postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				findViewById(R.id.lay_apretable_chile).startAnimation(animaciones);
+				findViewById(R.id.mapa_chile_ant).startAnimation(animaciones);
 				contenedorBotones.startAnimation(animaciones);
+				findViewById(R.id.mapa_chile_ant).setVisibility(View.GONE);
+				contenedorBotones.setVisibility(View.GONE);
 			}
-		}, 6000);
+		}, 5500);
 	}
 	public void popUpInfo() {
 		findViewById(R.id.btn_cerrar_popup_info).setOnClickListener(

@@ -38,6 +38,8 @@ public class LaminaBrasilActivity extends Activity {
 	private TextView tituloPopInfo;
 	private TextView descPopInfo;
 	private GestureDetector gestureDetector;
+	private Animation animaciones;
+	private Animation animacionesdos;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -254,6 +256,8 @@ public class LaminaBrasilActivity extends Activity {
 		layPopupInfo = (RelativeLayout) findViewById(R.id.lay_popup_info);
 		tituloPopInfo = (TextView) findViewById(R.id.txt_titulo_popup_info);
 		descPopInfo = (TextView) findViewById(R.id.txt_descripcion_popup_info);
+		animaciones = AnimationUtils.loadAnimation(this, R.anim.fade_out_mapas);
+		animacionesdos = AnimationUtils.loadAnimation(this, R.anim.fade_in_mapas);
 	}
 
 	public void animaCiudadesBrasil() {
@@ -485,13 +489,20 @@ public class LaminaBrasilActivity extends Activity {
 		handlerTres.postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				// Do something after 5s = 5000ms
-				// imgMapaArgentina.setVisibility(View.GONE);
-				imgMapaBrasil.setImageResource(R.drawable.mapa_brasil_dos);
-				contenedorBotones.setVisibility(View.GONE);
-				// imgArgentinaView.setVisibility(View.VISIBLE);
+				imgMapaBrasil.setVisibility(View.VISIBLE);
+				imgMapaBrasil.startAnimation(animacionesdos);
 			}
 		}, 10000);
+		final Handler handlerEscond = new Handler();
+		handlerEscond.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				findViewById(R.id.mapa_brasil_ant).startAnimation(animaciones);
+				contenedorBotones.startAnimation(animaciones);
+				findViewById(R.id.mapa_brasil_ant).setVisibility(View.GONE);
+				contenedorBotones.setVisibility(View.GONE);
+			}
+		}, 10500);
 	}
 
 	public void popUpInfo() {
