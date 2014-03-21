@@ -143,8 +143,8 @@ public class LaminaBienvenidaActivity extends Activity {
 						Intent act = new Intent(LaminaBienvenidaActivity.this,
 								LaminaBrasilActivity.class);
 						startActivity(act);
-						overridePendingTransition(R.anim.fade_in,
-								R.anim.fade_out);
+						overridePendingTransition(R.anim.fade_in_paises,
+								R.anim.fade_out_paises);
 					}
 				}, 1000);
 			}
@@ -163,8 +163,8 @@ public class LaminaBienvenidaActivity extends Activity {
 						Intent act = new Intent(LaminaBienvenidaActivity.this,
 								LaminaChileActivity.class);
 						startActivity(act);
-						overridePendingTransition(R.anim.fade_in,
-								R.anim.fade_out);
+						overridePendingTransition(R.anim.fade_in_paises,
+								R.anim.fade_out_paises);
 					}
 				}, 1000);
 				btnChile.setEnabled(false);
@@ -185,8 +185,8 @@ public class LaminaBienvenidaActivity extends Activity {
 										LaminaBienvenidaActivity.this,
 										LaminaColombiaActivity.class);
 								startActivity(act);
-								overridePendingTransition(R.anim.fade_in,
-										R.anim.fade_out);
+								overridePendingTransition(R.anim.fade_in_paises,
+										R.anim.fade_out_paises);
 							}
 						}, 1000);
 						btnColombia.setEnabled(false);
@@ -207,8 +207,8 @@ public class LaminaBienvenidaActivity extends Activity {
 										LaminaBienvenidaActivity.this,
 										LaminaEcuadorActivity.class);
 								startActivity(act);
-								overridePendingTransition(R.anim.fade_in,
-										R.anim.fade_out);
+								overridePendingTransition(R.anim.fade_in_paises,
+										R.anim.fade_out_paises);
 							}
 						}, 1000);
 						btnEcuador.setEnabled(false);
@@ -227,8 +227,8 @@ public class LaminaBienvenidaActivity extends Activity {
 						Intent act = new Intent(LaminaBienvenidaActivity.this,
 								LaminaPeruActivity.class);
 						startActivity(act);
-						overridePendingTransition(R.anim.fade_in,
-								R.anim.fade_out);
+						overridePendingTransition(R.anim.fade_in_paises,
+								R.anim.fade_out_paises);
 					}
 				}, 1000);
 				btnPeru.setEnabled(false);
@@ -246,7 +246,8 @@ public class LaminaBienvenidaActivity extends Activity {
 					public void run() {
 						Intent act = new Intent(LaminaBienvenidaActivity.this,LaminaMundialActivity.class);
 						startActivity(act);
-						overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+						overridePendingTransition(R.anim.fade_in_paises,
+								R.anim.fade_out_paises);
 					}
 				}, 1000);
 				btnInter.setEnabled(false);
