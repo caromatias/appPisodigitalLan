@@ -15,13 +15,19 @@
         android:contentDescription="@string/desc"
         android:scaleType="fitXY"
         android:src="@drawable/fondo_mapas" />
+    
+    <ImageView
+        android:id="@+id/mapa_ecuador_ant"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/mapa_ecuador" />
 
     <com.caromatias.apppisodigitallan.zoom
         android:id="@+id/mapa_ecuador"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/mapa_ecuador" />
+        android:src="@drawable/mapa_ecuador_dos" />
     
    <RelativeLayout
         android:id="@+id/lay_mapa_ecuador"
