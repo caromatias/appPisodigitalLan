@@ -292,12 +292,19 @@ public class LaminaChileActivity extends Activity {
 				R.anim.anim_botones_16);
 		layArenas.startAnimation(animArenas);
 
+<<<<<<< HEAD
+		//ImageView layAnimChile = (ImageView) findViewById(R.id.img_lineas_chile);
+		//Animation animLineasChile = AnimationUtils.loadAnimation(this,
+		//		R.anim.anim_lineas_chile);
+		//layAnimChile.startAnimation(animLineasChile);
+=======
 		/*
 		ImageView layAnimChile = (ImageView) findViewById(R.id.img_lineas_chile);
 		Animation animLineasChile = AnimationUtils.loadAnimation(this,
 				R.anim.anim_lineas_chile);
 		layAnimChile.startAnimation(animLineasChile);
 		*/
+>>>>>>> 6eef4156954331b6e1bc6f0cb613e09210f2a88e
 	}
 	public void activeButton(){
 		btnChile.setBackgroundResource(R.drawable.botonrojo);

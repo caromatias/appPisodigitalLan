@@ -17,12 +17,22 @@
         android:src="@drawable/fondo_mapas" />
     
     <ImageView
+<<<<<<< HEAD
+        android:id="@+id/img_fondo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/desc"
+        android:scaleType="fitXY"
+        android:src="@drawable/mapa_chile" />
+    
+=======
         android:id="@+id/mapa_chile_ant"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
         android:src="@drawable/mapa_chile" />
 
+>>>>>>> 6eef4156954331b6e1bc6f0cb613e09210f2a88e
     <com.caromatias.apppisodigitallan.zoom
         android:id="@+id/mapa_chile"
         android:layout_width="match_parent"
@@ -44,8 +54,13 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+<<<<<<< HEAD
+            android:src="@drawable/img_lineas_chile" 
+            android:visibility="gone"/>
+=======
             android:src="@drawable/img_lineas_chile"
             android:visibility="gone" />
+>>>>>>> 6eef4156954331b6e1bc6f0cb613e09210f2a88e
 
         <RelativeLayout
             android:id="@+id/lay_chile_01"

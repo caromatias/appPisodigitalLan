@@ -80,11 +80,13 @@ public final class R {
         public static final int animacion=0x7f040044;
         public static final int animacion_sin_fade=0x7f040045;
         public static final int fade_in=0x7f040046;
-        public static final int fade_out=0x7f040047;
-        public static final int in_mapa_inter=0x7f040048;
-        public static final int slide_down=0x7f040049;
-        public static final int slide_out=0x7f04004a;
-        public static final int slide_rutas=0x7f04004b;
+        public static final int fade_in_mapas=0x7f040047;
+        public static final int fade_out=0x7f040048;
+        public static final int fade_out_mapas=0x7f040049;
+        public static final int in_mapa_inter=0x7f04004a;
+        public static final int slide_down=0x7f04004b;
+        public static final int slide_out=0x7f04004c;
+        public static final int slide_rutas=0x7f04004d;
     }
     public static final class attr {
     }

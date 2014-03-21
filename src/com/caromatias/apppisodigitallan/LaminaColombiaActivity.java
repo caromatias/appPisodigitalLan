@@ -333,10 +333,10 @@ public class LaminaColombiaActivity extends Activity {
 				R.anim.anim_botones_20);
 		layLeticia.startAnimation(animLeticia);
 
-		ImageView layAnimColombia = (ImageView) findViewById(R.id.img_lineas_colombia);
-		Animation animLineasColombia = AnimationUtils.loadAnimation(this,
-				R.anim.anim_lineas_colombia);
-		layAnimColombia.startAnimation(animLineasColombia);
+		//ImageView layAnimColombia = (ImageView) findViewById(R.id.img_lineas_colombia);
+		//Animation animLineasColombia = AnimationUtils.loadAnimation(this,
+		//		R.anim.anim_lineas_colombia);
+		//layAnimColombia.startAnimation(animLineasColombia);
 	}
 
 	public void activeButton() {
