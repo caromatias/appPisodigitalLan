@@ -27,7 +27,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/mapa_peru_dos" />
+        android:src="@drawable/mapa_peru_dos" 
+        android:visibility="gone"/>
     
    <RelativeLayout
         android:id="@+id/lay_mapa_peru"

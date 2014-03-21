@@ -124,8 +124,8 @@ public class LaminaBienvenidaActivity extends Activity {
 										LaminaBienvenidaActivity.this,
 										LaminaArgentinaActivity.class);
 								startActivity(act);
-								overridePendingTransition(R.anim.fade_in,
-										R.anim.fade_out);
+								overridePendingTransition(R.anim.fade_in_paises,
+										R.anim.fade_out_paises);
 							}
 						}, 1000);
 					}
@@ -341,7 +341,7 @@ public class LaminaBienvenidaActivity extends Activity {
 								.getStreamVolume(AudioManager.STREAM_MUSIC);
 						int maxVolume = audio
 								.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-						float percent = 0.4f;
+						float percent = 0.3f;
 						int seventyVolume = (int) (maxVolume * percent);
 						audio.setStreamVolume(AudioManager.STREAM_MUSIC,
 								seventyVolume, 0);
