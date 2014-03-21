@@ -90,6 +90,18 @@
     <string name="lima">¿Cúal de estos barrios no pertenece a Lima?</string>
     <string name="madrid">¿Cúal de estos museos se encuentra en Madrid?</string>
     <string name="miami">¿Cúal de estas calles se encuentra en Miami Beach?</string>
+    <string name="nuevayork">¿Qué significa el nombre del barrio conocido como SOHO?</string>
+    <string name="langeles">¿Cómo de llama el equipo de Baseball de Los Angeles?</string>
+    <string name="pcana">¿Cuál de estas playas se encuentra en Punta Cana?</string>
+    <string name="mexico">¿Cuál de estos pintores nació en Ciudad de México?</string>
+    <string name="sidney">¿Cuál de estos edificios se encuentra en Sídney?</string>
+    <string name="auckland">¿Cuál de estos estadios de Rugby se encuentra en Auckland?</string>
+    <string name="ipascua">¿Cuál de estos volcanes se encuentra en Isla de Pascua?</string>
+    <string name="chiloe">¿Cuál de estas fiestas costumbristas se realiza en Chiloé?</string>
+    <string name="papeete">¿En qué oceano se encuentra Papeete?</string>
+    <string name="frankfurt">¿Cuál es la bebida que más toman los habitantes de Frankfurt?</string>
+    <string name="londres">¿Cuánto mide la torre llamada Big Ben?</string>
+    <string name="cuzco">¿De que antiguo imperio fue Cuzco la capital?</string>
     <!-- Strings preguntas Trivias -->
     <!-- Strings respuestas trivias -->
     <string name="rbaires1">Casa Blanca</string>
@@ -119,6 +131,42 @@
     <string name="rmiami1">Brickell Key Dr.</string>
     <string name="rmiami2">Ocean Dr.</string>
     <string name="rmiami3">Bayshore Dr.</string>
+    <string name="rnuevayork1">South Houston</string>
+    <string name="rnuevayork2">South Home</string>
+    <string name="rnuevayork3">South Hollywood</string>
+    <string name="rlangeles1">Oriols</string>
+    <string name="rlangeles2">Red Sox</string>
+    <string name="rlangeles3">Dodgers</string>
+    <string name="pcana1">Playa Cozumel</string>
+    <string name="pcana2">Playa do Forte</string>
+    <string name="pcana3">Playa Bávaro</string>
+    <string name="mexico1">Guayasamín</string>
+    <string name="mexico2">Diego Rivera</string>
+    <string name="mexico3">Frida Kahlo</string>
+    <string name="sidney1">Opera House</string>
+    <string name="sidney2">Taj Mahal</string>
+    <string name="sidney3">Big Ben</string>
+    <string name="auckland1">Eden Park</string>
+    <string name="auckland2">Twickenham</string>
+    <string name="auckland3">Wembley</string>
+    <string name="ipascua1">Rano Kau</string>
+    <string name="ipascua2">Quetrupillan</string>
+    <string name="ipascua3">Mauna Loa</string>
+    <string name="chiloe1">La Tirana</string>
+    <string name="chiloe2">Fiesta del Sol</string>
+    <string name="chiloe3">La Minga</string>
+    <string name="papeete1">Oceanía</string>
+    <string name="papeete2">Índico</string>
+    <string name="papeete3">Pacífico</string>
+    <string name="frankfurt1">Vino</string>
+    <string name="frankfurt2">Brandy</string>
+    <string name="frankfurt3">Cerveza</string>
+    <string name="londres1">96.3 mts</string>
+    <string name="londres2">102 mts</string>
+    <string name="londres3">99.5 mts</string>
+    <string name="cuzco1">Imperio Inca</string>
+    <string name="cuzco2">Imperio Azteca</string>
+    <string name="cuzco3">Imperio Asirio</string>
     <!-- Strings respuestas trivias -->
     <!-- Strings textos info popup -->
     <string name="titulo_pop_info1">CHILE</string>

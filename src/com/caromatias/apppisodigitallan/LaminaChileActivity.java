@@ -19,6 +19,7 @@ public class LaminaChileActivity extends Activity {
 	private Button btnGoGame;
 	private Animation animGoGame;
 	private ImageView imgMapaChile;
+	private ImageView imgMapaChileAnt;
 	private Animation animMapaChile;
 	private Animation animMapaChileOut;
 	private Button btnInter;
@@ -34,6 +35,8 @@ public class LaminaChileActivity extends Activity {
 	private boolean doubleClick = false;
 	private TextView tituloPopInfo;
 	private TextView descPopInfo;
+	private Animation animaciones;
+	private Animation animacionesdos;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -189,6 +192,7 @@ public class LaminaChileActivity extends Activity {
 
 	public void initVars(){
 		imgMapaChile = (ImageView) findViewById(R.id.mapa_chile);
+		imgMapaChileAnt = (ImageView) findViewById(R.id.mapa_chile);
 		animMapaChile = AnimationUtils.loadAnimation(this,R.anim.anim_mapa_in);
 		animMapaChileOut = AnimationUtils.loadAnimation(this, R.anim.anim_mapa_inter_out);
 		btnGoGame = (Button) findViewById(R.id.btn_ir_al_juego);
@@ -205,6 +209,8 @@ public class LaminaChileActivity extends Activity {
 		layPopupInfo = (RelativeLayout) findViewById(R.id.lay_popup_info);
 		tituloPopInfo = (TextView) findViewById(R.id.txt_titulo_popup_info);
 		descPopInfo = (TextView) findViewById(R.id.txt_descripcion_popup_info);
+		animaciones = AnimationUtils.loadAnimation(this, R.anim.fade_out);
+		animacionesdos = AnimationUtils.loadAnimation(this, R.anim.fade_in);
 	}
 	public void animaCiudadesChile() {
 		RelativeLayout layArica = (RelativeLayout) findViewById(R.id.lay_chile_01);
@@ -286,10 +292,19 @@ public class LaminaChileActivity extends Activity {
 				R.anim.anim_botones_16);
 		layArenas.startAnimation(animArenas);
 
+<<<<<<< HEAD
 		//ImageView layAnimChile = (ImageView) findViewById(R.id.img_lineas_chile);
 		//Animation animLineasChile = AnimationUtils.loadAnimation(this,
 		//		R.anim.anim_lineas_chile);
 		//layAnimChile.startAnimation(animLineasChile);
+=======
+		/*
+		ImageView layAnimChile = (ImageView) findViewById(R.id.img_lineas_chile);
+		Animation animLineasChile = AnimationUtils.loadAnimation(this,
+				R.anim.anim_lineas_chile);
+		layAnimChile.startAnimation(animLineasChile);
+		*/
+>>>>>>> 6eef4156954331b6e1bc6f0cb613e09210f2a88e
 	}
 	public void activeButton(){
 		btnChile.setBackgroundResource(R.drawable.botonrojo);
@@ -306,11 +321,13 @@ public class LaminaChileActivity extends Activity {
 			public void run() {
 				// Do something after 5s = 5000ms
 				//imgMapaArgentina.setVisibility(View.GONE);
-				imgMapaChile.setImageResource(R.drawable.mapa_chile_dos);      
+				imgMapaChile.setVisibility(View.VISIBLE);
+				imgMapaChile.startAnimation(animacionesdos);
+				//imgMapaChile.setImageResource(R.drawable.mapa_chile_dos);  
 				contenedorBotones.setVisibility(View.GONE);
 				//imgArgentinaView.setVisibility(View.VISIBLE);
 			}
-		}, 7000);
+		}, 5000);
 	}
 	public void popUpInfo() {
 		findViewById(R.id.btn_cerrar_popup_info).setOnClickListener(

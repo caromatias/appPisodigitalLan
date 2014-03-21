@@ -387,6 +387,171 @@ public class LaminaTresActivity extends Activity {
 			respuestaCorrecta = 2;
 			numeroDeRespuesta = 1;
 			break;
+		case 10:
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.nuevayork);
+			preguntaTrivia.setText(getResources().getString(R.string.nuevayork));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.rnuevayork1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.rnuevayork2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.rnuevayork3));
+			respuestaCorrecta = 1;
+			numeroDeRespuesta = 1;
+			break;
+		case 11:
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.langeles);
+			preguntaTrivia.setText(getResources().getString(R.string.langeles));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.rlangeles1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.rlangeles2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.rlangeles3));
+			respuestaCorrecta = 3;
+			numeroDeRespuesta = 1;
+			break;
+		case 12:
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.pcana);
+			preguntaTrivia.setText(getResources().getString(R.string.pcana));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.pcana1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.pcana2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.pcana3));
+			respuestaCorrecta = 3;
+			numeroDeRespuesta = 1;
+			break;
+		case 13:
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.mexico);
+			preguntaTrivia.setText(getResources().getString(R.string.mexico));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.mexico1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.mexico2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.mexico3));
+			respuestaCorrecta = 2;
+			numeroDeRespuesta = 1;
+			break;
+		case 14:
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.sidney);
+			preguntaTrivia.setText(getResources().getString(R.string.sidney));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.sidney1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.sidney2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.sidney3));
+			respuestaCorrecta = 1;
+			numeroDeRespuesta = 1;
+			break;
+		case 15:
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.auckland);
+			preguntaTrivia.setText(getResources().getString(R.string.auckland));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.auckland1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.auckland2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.auckland3));
+			respuestaCorrecta = 1;
+			numeroDeRespuesta = 1;
+			break;
+		case 16:
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.ipascua);
+			preguntaTrivia.setText(getResources().getString(R.string.ipascua));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.ipascua1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.ipascua2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.ipascua3));
+			respuestaCorrecta = 1;
+			numeroDeRespuesta = 1;
+			break;
+		case 17:
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.chiloe);
+			preguntaTrivia.setText(getResources().getString(R.string.chiloe));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.chiloe1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.chiloe2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.chiloe3));
+			respuestaCorrecta = 3;
+			numeroDeRespuesta = 1;
+			break;
+		case 18:
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.papeete);
+			preguntaTrivia.setText(getResources().getString(R.string.papeete));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.papeete1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.papeete2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.papeete3));
+			respuestaCorrecta = 3;
+			numeroDeRespuesta = 1;
+			break;
+		case 19:
+			videoBackTrivia.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.frankfurt);
+			preguntaTrivia.setText(getResources().getString(R.string.frankfurt));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.frankfurt1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.frankfurt2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.frankfurt3));
+			respuestaCorrecta = 3;
+			numeroDeRespuesta = 1;
+			break;
+		case 20:
+			videoBackTrivia.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.londres);
+			preguntaTrivia.setText(getResources().getString(R.string.londres));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.londres1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.londres2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.londres3));
+			respuestaCorrecta = 1;
+			numeroDeRespuesta = 1;
+			break;
+		case 21:
+			videoBackTrivia.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+							+ R.raw.cuzco);
+			preguntaTrivia.setText(getResources().getString(R.string.cuzco));
+			respuestaUno.setText("a) "
+					+ getResources().getString(R.string.cuzco1));
+			respuestaDos.setText("b) "
+					+ getResources().getString(R.string.cuzco2));
+			respuestaTres.setText("c) "
+					+ getResources().getString(R.string.cuzco3));
+			respuestaCorrecta = 1;
+			numeroDeRespuesta = 1;
+			break;
 		default:
 			break;
 		}
