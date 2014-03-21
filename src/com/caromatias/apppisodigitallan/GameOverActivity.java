@@ -164,16 +164,15 @@ public class GameOverActivity extends Activity {
 			sdBeginds.start();
 			LaminaTresActivity.mpFondo.release();
 			videoGameOver = (VideoView) findViewById(R.id.video_game_over);
-			videoGameOver
-					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
-							+ R.raw.game_over);
+			videoGameOver.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.game_over);
 			videoGameOver.start();
 			///////////////////////////////////////
-			videoGameOver
-					.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+			videoGameOver.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 						public void onCompletion(MediaPlayer mp) {
 							//LaminaTresActivity.mpFondo.stop();
 							sdBeginds.release();
+							mp.release();
+							videoGameOver.stopPlayback();
 							Intent act = new Intent(GameOverActivity.this,
 									LaminaBienvenidaActivity.class);
 							startActivity(act);
@@ -194,6 +193,8 @@ public class GameOverActivity extends Activity {
 					.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 						public void onCompletion(MediaPlayer mp) {
 							LaminaTresActivity.mpFondo.release();
+							videoGameOver.stopPlayback();
+							mp.release();
 							Intent act = new Intent(GameOverActivity.this,
 									LaminaDosActivity.class);
 							act.putExtra("isInterface", 1);
@@ -218,6 +219,8 @@ public class GameOverActivity extends Activity {
 						public void onCompletion(MediaPlayer mp) {
 							//LaminaTresActivity.mpFondo.stop();
 							sdBeginds.release();
+							videoGameOver.stopPlayback();
+							mp.release();
 							Intent act = new Intent(GameOverActivity.this,
 									LaminaBienvenidaActivity.class);
 							startActivity(act);

@@ -112,8 +112,7 @@ public class LaminaBienvenidaActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						btnArgentina
-								.setBackgroundResource(R.drawable.botonrojo);
+						btnArgentina.setBackgroundResource(R.drawable.botonrojo);
 						imgMapaBienvenida.startAnimation(animMapaInter);
 						btnArgentina.setEnabled(false);
 						final Handler handler = new Handler();
@@ -309,6 +308,14 @@ public class LaminaBienvenidaActivity extends Activity {
 				mp.setLooping(true);
 			}
 		});
+		
+		videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+			public void onCompletion(MediaPlayer mp) {
+				//LaminaTresActivity.mpFondo.stop();
+				mp.release();
+				videoView.stopPlayback();
+			}
+		});
 
 		botonAnimado.startAnimation(animacion);
 
@@ -441,4 +448,12 @@ public class LaminaBienvenidaActivity extends Activity {
 	public void onBackPressed() {
 		return;
 	}
+	@Override
+    protected void onDestroy() {
+        // TODO Auto-generated method stub
+        super.onDestroy();
+        videoLaminaDos.stopPlayback();
+        videoView.stopPlayback();
+        mpFondoUno.release();
+    }
 }
