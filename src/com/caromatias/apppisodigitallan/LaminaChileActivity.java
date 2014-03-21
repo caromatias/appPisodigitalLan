@@ -317,10 +317,18 @@ public class LaminaChileActivity extends Activity {
 				imgMapaChile.setVisibility(View.VISIBLE);
 				imgMapaChile.startAnimation(animacionesdos);
 				//imgMapaChile.setImageResource(R.drawable.mapa_chile_dos);  
-				contenedorBotones.setVisibility(View.GONE);
+				//contenedorBotones.setVisibility(View.GONE);
 				//imgArgentinaView.setVisibility(View.VISIBLE);
 			}
 		}, 5000);
+		final Handler handlerEscond = new Handler();
+		handlerEscond.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				findViewById(R.id.lay_apretable_chile).startAnimation(animaciones);
+				contenedorBotones.startAnimation(animaciones);
+			}
+		}, 6000);
 	}
 	public void popUpInfo() {
 		findViewById(R.id.btn_cerrar_popup_info).setOnClickListener(
