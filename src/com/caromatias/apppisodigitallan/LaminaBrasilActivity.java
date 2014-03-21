@@ -53,6 +53,7 @@ public class LaminaBrasilActivity extends Activity {
 		activeButton();
 		cambioImagen();
 		popUpInfo();
+		cambiaActivity();
 		// popUpInfo();
 
 		gestureDetector = new GestureDetector(this,
@@ -542,6 +543,21 @@ public class LaminaBrasilActivity extends Activity {
 								}
 							}, 600);
 						}
+					}
+				});
+	}
+	public void cambiaActivity() {
+		btnGoGame.setOnClickListener(
+				new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						LaminaBienvenidaActivity.mpFondoUno.stop();
+						LaminaBienvenidaActivity.mpFondoUno.release();
+						Intent act = new Intent(LaminaBrasilActivity.this,LaminaDosActivity.class);
+						act.putExtra("isInterface", 0);
+						startActivity(act);
+						overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
 					}
 				});
 	}
