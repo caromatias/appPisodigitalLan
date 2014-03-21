@@ -68,6 +68,7 @@ public class LaminaMundialActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
+						btnInter.setBackgroundResource(R.drawable.boton);
 						btnArgentina.setBackgroundResource(R.drawable.botonrojo);
 						lay_principal.startAnimation(animMapaInterOut);
 						btnArgentina.setEnabled(false);
@@ -77,7 +78,8 @@ public class LaminaMundialActivity extends Activity {
 							public void run() {
 								Intent act = new Intent(LaminaMundialActivity.this,	LaminaArgentinaActivity.class);
 								startActivity(act);
-								overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+								overridePendingTransition(R.anim.fade_in_paises,
+										R.anim.fade_out_paises);
 							}
 						}, 1000);
 					}
@@ -86,6 +88,7 @@ public class LaminaMundialActivity extends Activity {
 				new OnClickListener() {
 					@Override
 					public void onClick(View v) {
+						btnInter.setBackgroundResource(R.drawable.boton);
 						btnBrasil.setBackgroundResource(R.drawable.botonrojo);
 						lay_principal.startAnimation(animMapaInterOut);
 						btnBrasil.setEnabled(false);
@@ -95,7 +98,8 @@ public class LaminaMundialActivity extends Activity {
 							public void run() {
 								Intent act = new Intent(LaminaMundialActivity.this,	LaminaBrasilActivity.class);
 								startActivity(act);
-								overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+								overridePendingTransition(R.anim.fade_in_paises,
+										R.anim.fade_out_paises);
 							}
 						}, 1000);
 					}
@@ -104,6 +108,7 @@ public class LaminaMundialActivity extends Activity {
 		findViewById(R.id.btn_chile).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				btnInter.setBackgroundResource(R.drawable.boton);
 				btnChile.setBackgroundResource(R.drawable.botonrojo);
 				lay_principal.startAnimation(animMapaInterOut);
 				btnChile.setEnabled(false);
@@ -113,7 +118,8 @@ public class LaminaMundialActivity extends Activity {
 					public void run() {
 						Intent act = new Intent(LaminaMundialActivity.this,	LaminaChileActivity.class);
 						startActivity(act);
-						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+						overridePendingTransition(R.anim.fade_in_paises,
+								R.anim.fade_out_paises);
 					}
 				}, 1000);
 				btnChile.setEnabled(false);
@@ -122,6 +128,7 @@ public class LaminaMundialActivity extends Activity {
 		findViewById(R.id.btn_colombia).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				btnInter.setBackgroundResource(R.drawable.boton);
 				btnColombia.setBackgroundResource(R.drawable.botonrojo);
 				lay_principal.startAnimation(animMapaInterOut);
 				btnColombia.setEnabled(false);
@@ -131,7 +138,8 @@ public class LaminaMundialActivity extends Activity {
 					public void run() {
 						Intent act = new Intent(LaminaMundialActivity.this,	LaminaColombiaActivity.class);
 						startActivity(act);
-						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+						overridePendingTransition(R.anim.fade_in_paises,
+								R.anim.fade_out_paises);
 					}
 				}, 1000);
 				btnColombia.setEnabled(false);  
@@ -140,6 +148,7 @@ public class LaminaMundialActivity extends Activity {
 		findViewById(R.id.btn_ecuador).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				btnInter.setBackgroundResource(R.drawable.boton);
 				btnEcuador.setBackgroundResource(R.drawable.botonrojo);
 				lay_principal.startAnimation(animMapaInterOut);
 				btnEcuador.setEnabled(false);
@@ -149,7 +158,8 @@ public class LaminaMundialActivity extends Activity {
 					public void run() {
 						Intent act = new Intent(LaminaMundialActivity.this,	LaminaEcuadorActivity.class);
 						startActivity(act);
-						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+						overridePendingTransition(R.anim.fade_in_paises,
+								R.anim.fade_out_paises);
 					}
 				}, 1000);
 				btnEcuador.setEnabled(false);
@@ -158,6 +168,7 @@ public class LaminaMundialActivity extends Activity {
 		findViewById(R.id.btn_peru).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				btnInter.setBackgroundResource(R.drawable.boton);
 				btnPeru.setBackgroundResource(R.drawable.botonrojo);
 				lay_principal.startAnimation(animMapaInterOut);
 				btnPeru.setEnabled(false);
@@ -167,7 +178,8 @@ public class LaminaMundialActivity extends Activity {
 					public void run() {
 						Intent act = new Intent(LaminaMundialActivity.this,	LaminaPeruActivity.class);
 						startActivity(act);
-						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+						overridePendingTransition(R.anim.fade_in_paises,
+								R.anim.fade_out_paises);
 					}
 				}, 1000);
 				btnPeru.setEnabled(false);
@@ -189,7 +201,8 @@ public class LaminaMundialActivity extends Activity {
 							public void run() {
 								Intent act = new Intent(LaminaMundialActivity.this,	LaminaArgentinaActivity.class);
 								startActivity(act);
-								overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+								overridePendingTransition(R.anim.fade_in_paises,
+										R.anim.fade_out_paises);
 							}
 						}, 1000);
 					}
@@ -207,7 +220,8 @@ public class LaminaMundialActivity extends Activity {
 							public void run() {
 								Intent act = new Intent(LaminaMundialActivity.this,	LaminaBrasilActivity.class);
 								startActivity(act);
-								overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+								overridePendingTransition(R.anim.fade_in_paises,
+										R.anim.fade_out_paises);
 							}
 						}, 1000);
 					}
@@ -225,7 +239,8 @@ public class LaminaMundialActivity extends Activity {
 					public void run() {
 						Intent act = new Intent(LaminaMundialActivity.this,	LaminaChileActivity.class);
 						startActivity(act);
-						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+						overridePendingTransition(R.anim.fade_in_paises,
+								R.anim.fade_out_paises);
 					}
 				}, 1000);
 				btnChile.setEnabled(false);
@@ -243,7 +258,8 @@ public class LaminaMundialActivity extends Activity {
 					public void run() {
 						Intent act = new Intent(LaminaMundialActivity.this,	LaminaColombiaActivity.class);
 						startActivity(act);
-						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+						overridePendingTransition(R.anim.fade_in_paises,
+								R.anim.fade_out_paises);
 					}
 				}, 1000);
 				btnColombia.setEnabled(false);  
@@ -261,7 +277,8 @@ public class LaminaMundialActivity extends Activity {
 					public void run() {
 						Intent act = new Intent(LaminaMundialActivity.this,	LaminaEcuadorActivity.class);
 						startActivity(act);
-						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+						overridePendingTransition(R.anim.fade_in_paises,
+								R.anim.fade_out_paises);
 					}
 				}, 1000);
 				btnEcuador.setEnabled(false);
@@ -279,7 +296,8 @@ public class LaminaMundialActivity extends Activity {
 					public void run() {
 						Intent act = new Intent(LaminaMundialActivity.this,	LaminaPeruActivity.class);
 						startActivity(act);
-						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+						overridePendingTransition(R.anim.fade_in_paises,
+								R.anim.fade_out_paises);
 					}
 				}, 1000);
 				btnPeru.setEnabled(false);
@@ -301,7 +319,8 @@ public class LaminaMundialActivity extends Activity {
 							public void run() {
 								Intent act = new Intent(LaminaMundialActivity.this,	LaminaArgentinaActivity.class);
 								startActivity(act);
-								overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+								overridePendingTransition(R.anim.fade_in_paises,
+										R.anim.fade_out_paises);
 							}
 						}, 1000);
 					}
@@ -319,7 +338,8 @@ public class LaminaMundialActivity extends Activity {
 							public void run() {
 								Intent act = new Intent(LaminaMundialActivity.this,	LaminaBrasilActivity.class);
 								startActivity(act);
-								overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+								overridePendingTransition(R.anim.fade_in_paises,
+										R.anim.fade_out_paises);
 							}
 						}, 1000);
 					}
@@ -337,7 +357,8 @@ public class LaminaMundialActivity extends Activity {
 					public void run() {
 						Intent act = new Intent(LaminaMundialActivity.this,	LaminaChileActivity.class);
 						startActivity(act);
-						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+						overridePendingTransition(R.anim.fade_in_paises,
+								R.anim.fade_out_paises);
 					}
 				}, 1000);
 				btnChile.setEnabled(false);
@@ -355,7 +376,8 @@ public class LaminaMundialActivity extends Activity {
 					public void run() {
 						Intent act = new Intent(LaminaMundialActivity.this,	LaminaColombiaActivity.class);
 						startActivity(act);
-						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+						overridePendingTransition(R.anim.fade_in_paises,
+								R.anim.fade_out_paises);
 					}
 				}, 1000);
 				btnColombia.setEnabled(false);  
@@ -373,7 +395,8 @@ public class LaminaMundialActivity extends Activity {
 					public void run() {
 						Intent act = new Intent(LaminaMundialActivity.this,	LaminaEcuadorActivity.class);
 						startActivity(act);
-						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+						overridePendingTransition(R.anim.fade_in_paises,
+								R.anim.fade_out_paises);
 					}
 				}, 1000);
 				btnEcuador.setEnabled(false);
@@ -391,7 +414,8 @@ public class LaminaMundialActivity extends Activity {
 					public void run() {
 						Intent act = new Intent(LaminaMundialActivity.this,	LaminaPeruActivity.class);
 						startActivity(act);
-						overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+						overridePendingTransition(R.anim.fade_in_paises,
+								R.anim.fade_out_paises);
 					}
 				}, 1000);
 				btnPeru.setEnabled(false);
