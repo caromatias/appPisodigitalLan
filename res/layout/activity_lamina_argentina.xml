@@ -20,7 +20,6 @@
         android:id="@+id/mapa_argentina_ant"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitXY"
         android:src="@drawable/mapa_argentina" />
 
     <com.caromatias.apppisodigitallan.zoom

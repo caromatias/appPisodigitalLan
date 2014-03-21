@@ -15,13 +15,19 @@
         android:contentDescription="@string/desc"
         android:scaleType="fitXY"
         android:src="@drawable/fondo_mapas" />
+    
+    <ImageView
+        android:id="@+id/mapa_colombia_ant"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/mapa_colombia" />
 
     <com.caromatias.apppisodigitallan.zoom
         android:id="@+id/mapa_colombia"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/mapa_colombia" />
+        android:src="@drawable/mapa_colombia_dos" />
     
   <RelativeLayout
         android:id="@+id/lay_mapa_colombia"

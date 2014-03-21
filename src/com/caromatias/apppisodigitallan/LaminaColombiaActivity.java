@@ -34,6 +34,8 @@ public class LaminaColombiaActivity extends Activity {
 	private boolean doubleClick = false;
 	private TextView tituloPopInfo;
 	private TextView descPopInfo;
+	private Animation animaciones;
+	private Animation animacionesdos;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -230,6 +232,8 @@ public class LaminaColombiaActivity extends Activity {
 		layPopupInfo = (RelativeLayout) findViewById(R.id.lay_popup_info);
 		tituloPopInfo = (TextView) findViewById(R.id.txt_titulo_popup_info);
 		descPopInfo = (TextView) findViewById(R.id.txt_descripcion_popup_info);
+		animaciones = AnimationUtils.loadAnimation(this, R.anim.fade_out);
+		animacionesdos = AnimationUtils.loadAnimation(this, R.anim.fade_in);
 	}
 
 	public void animaCiudadesColombia() {
@@ -353,13 +357,20 @@ public class LaminaColombiaActivity extends Activity {
 		handlerTres.postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				// Do something after 5s = 5000ms
-				// imgMapaArgentina.setVisibility(View.GONE);
-				imgMapaColombia.setImageResource(R.drawable.mapa_colombia_dos);
-				contenedorBotones.setVisibility(View.GONE);
-				// imgArgentinaView.setVisibility(View.VISIBLE);
+				imgMapaColombia.setVisibility(View.VISIBLE);
+				imgMapaColombia.startAnimation(animacionesdos);
 			}
 		}, 6000);
+		final Handler handlerEscond = new Handler();
+		handlerEscond.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				findViewById(R.id.mapa_colombia_ant).startAnimation(animaciones);
+				contenedorBotones.startAnimation(animaciones);
+				findViewById(R.id.mapa_colombia_ant).setVisibility(View.GONE);
+				contenedorBotones.setVisibility(View.GONE);
+			}
+		}, 6500);
 	}
 	public void popUpInfo() {
 		findViewById(R.id.btn_cerrar_popup_info).setOnClickListener(

@@ -34,6 +34,8 @@ public class LaminaPeruActivity extends Activity {
 	private boolean doubleClick = false;
 	private TextView tituloPopInfo;
 	private TextView descPopInfo;
+	private Animation animaciones;
+	private Animation animacionesdos;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -231,6 +233,8 @@ public class LaminaPeruActivity extends Activity {
 				R.anim.anim_mapa_inter_out);
 		animMapaInter = AnimationUtils.loadAnimation(this,
 				R.anim.anim_mapa_inter_out);
+		animaciones = AnimationUtils.loadAnimation(this, R.anim.fade_out);
+		animacionesdos = AnimationUtils.loadAnimation(this, R.anim.fade_in);
 	}
 
 	public void animaCiudadesPeru() {
@@ -325,13 +329,20 @@ public class LaminaPeruActivity extends Activity {
 		handlerTres.postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				// Do something after 5s = 5000ms
-				// imgMapaArgentina.setVisibility(View.GONE);
-				imgMapaPeru.setImageResource(R.drawable.mapa_peru_dos);
-				contenedorBotones.setVisibility(View.GONE);
-				// imgArgentinaView.setVisibility(View.VISIBLE);
+				imgMapaPeru.setVisibility(View.VISIBLE);
+				imgMapaPeru.startAnimation(animacionesdos);
 			}
 		}, 5000);
+		final Handler handlerEscond = new Handler();
+		handlerEscond.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				findViewById(R.id.mapa_peru_ant).startAnimation(animaciones);
+				contenedorBotones.startAnimation(animaciones);
+				findViewById(R.id.mapa_peru_ant).setVisibility(View.GONE);
+				contenedorBotones.setVisibility(View.GONE);
+			}
+		}, 5500);
 	}
 
 	public void popUpInfo() {
