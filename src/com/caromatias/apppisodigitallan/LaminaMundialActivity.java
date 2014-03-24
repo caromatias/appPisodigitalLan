@@ -49,7 +49,7 @@ public class LaminaMundialActivity extends Activity {
 		lay_principal.addView(zoomView);
 		
 		animBotonesMapaInternacional();
-		animBotonesMapaInternacionalaparecer();
+		//animBotonesMapaInternacionalaparecer();
 		initVars();
 		initButtons();
 		activeButton();

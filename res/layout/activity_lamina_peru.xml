@@ -20,7 +20,7 @@
         android:id="@+id/mapa_peru_ant"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/mapa_peru" />
+        android:src="@drawable/mapa_peru_dos" />
 
     <com.caromatias.apppisodigitallan.zoom
         android:id="@+id/mapa_peru"
@@ -165,16 +165,16 @@
         <RelativeLayout
             android:id="@+id/lay_peru_05"
             android:layout_width="130dp"
-            android:layout_height="30dp"
+            android:layout_height="45dp"
             android:layout_marginLeft="528dp"
             android:layout_marginTop="396dp" >
 
             <Button
                 android:id="@+id/btn_peru_05"
-                android:layout_width="98dp"
+                android:layout_width="80dp"
                 android:layout_height="22dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="25dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Lima"
                 android:textColor="#ffffff"
@@ -379,7 +379,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/botoncomenzar"
-                android:text="Cusco"
+                android:text="Cuzco"
                 android:textColor="#ffffff"
                 android:textSize="9dp"
                 android:textStyle="bold" />
