@@ -163,32 +163,32 @@ public class LaminaEcuadorActivity extends Activity {
 	public void animaCiudadesEcuador() {
 		RelativeLayout layIslaGalapagos = (RelativeLayout) findViewById(R.id.lay_ecuador_01);
 		Animation animIslaGalapagos = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_01);
+				R.anim.anim_botones_08);
 		layIslaGalapagos.startAnimation(animIslaGalapagos);
 
 		RelativeLayout layBaltro = (RelativeLayout) findViewById(R.id.lay_ecuador_02);
 		Animation animBaltro = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_02);
+				R.anim.anim_botones_09);
 		layBaltro.startAnimation(animBaltro);
 
 		RelativeLayout laySanCristobal = (RelativeLayout) findViewById(R.id.lay_ecuador_03);
 		Animation animSanCristobal = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_03);
+				R.anim.anim_botones_10);
 		laySanCristobal.startAnimation(animSanCristobal);
 
 		RelativeLayout layGuayaquil = (RelativeLayout) findViewById(R.id.lay_ecuador_04);
 		Animation animGuayaquil = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_04);
+				R.anim.anim_botones_11);
 		layGuayaquil.startAnimation(animGuayaquil);
 
 		RelativeLayout layQuito = (RelativeLayout) findViewById(R.id.lay_ecuador_05);
 		Animation animQuito = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_05);
+				R.anim.anim_botones_12);
 		layQuito.startAnimation(animQuito);
 
 		RelativeLayout layCuenca = (RelativeLayout) findViewById(R.id.lay_ecuador_06);
 		Animation animCuenca = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_06);
+				R.anim.anim_botones_13);
 		animCuenca.setAnimationListener(new Animation.AnimationListener() {
 			@Override
 			public void onAnimationEnd(Animation animation) {
