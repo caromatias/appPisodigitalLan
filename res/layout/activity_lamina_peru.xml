@@ -171,10 +171,10 @@
 
             <Button
                 android:id="@+id/btn_peru_05"
-                android:layout_width="80dp"
+                android:layout_width="74dp"
                 android:layout_height="22dp"
-                android:layout_marginLeft="26dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="3dp"
                 android:background="@drawable/botoncomenzar"
                 android:text="Lima"
                 android:textColor="#ffffff"
