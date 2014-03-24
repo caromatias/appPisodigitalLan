@@ -13,4 +13,12 @@
         android:layout_width="1280dp"
         android:layout_height="match_parent" />
 
+    <ImageView
+        android:id="@+id/img_diez_rutas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/fel_diez"
+        android:visibility="gone" />
+
 </RelativeLayout>

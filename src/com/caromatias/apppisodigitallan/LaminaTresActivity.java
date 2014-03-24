@@ -224,16 +224,11 @@ public class LaminaTresActivity extends Activity {
 		Bundle bundle = getIntent().getExtras();
 		switch (bundle.getInt("ruta")) {
 		case 1:
-			videoBackTrivia
-					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
-							+ R.raw.buenos_aires);
+			videoBackTrivia.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.buenos_aires);
 			preguntaTrivia.setText(getResources().getString(R.string.baires));
-			respuestaUno.setText("a) "
-					+ getResources().getString(R.string.rbaires1));
-			respuestaDos.setText("b) "
-					+ getResources().getString(R.string.rbaires2));
-			respuestaTres.setText("c) "
-					+ getResources().getString(R.string.rbaires3));
+			respuestaUno.setText("a) "+ getResources().getString(R.string.rbaires1));
+			respuestaDos.setText("b) "+ getResources().getString(R.string.rbaires2));
+			respuestaTres.setText("c) "+ getResources().getString(R.string.rbaires3));
 			respuestaCorrecta = 3;
 			numeroDeRespuesta = 1;
 			break;
@@ -1303,14 +1298,10 @@ public class LaminaTresActivity extends Activity {
 				animMundoOut.setAnimationListener(new Animation.AnimationListener() {
 					@Override
 					public void onAnimationEnd(Animation animation) {
-						preguntaTrivia.setText(getResources().getString(
-								R.string.plan3));
-						respuestaUno.setText("a) "
-								+ getResources().getString(R.string.rlan3_1));
-						respuestaDos.setText("b) "
-								+ getResources().getString(R.string.rlan3_2));
-						respuestaTres.setText("c) "
-								+ getResources().getString(R.string.rlan3_3));
+						preguntaTrivia.setText(getResources().getString(R.string.plan3));
+						respuestaUno.setText("a) "+ getResources().getString(R.string.rlan3_1));
+						respuestaDos.setText("b) "+ getResources().getString(R.string.rlan3_2));
+						respuestaTres.setText("c) "+ getResources().getString(R.string.rlan3_3));
 						respuestaCorrecta = 2;
 						numeroDeRespuesta = 2;
 						// layPregTrivia.startAnimation(animTriviaIn);

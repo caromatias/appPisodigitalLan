@@ -189,5 +189,15 @@
     <string name="title_activity_lamina_colombia">LaminaColombiaActivity</string>
     <string name="title_activity_lamina_peru">LaminaPeruActivity</string>
     <string name="title_activity_lamina_mundial">LaminaMundialActivity</string>
+    <!-- RANDOM A TRIVIAS LAN -->
+    <string name="plan1_b">¿Cúal es la capacidad de pasajeros de un Airbus 319?</string>
+    <string name="plan3_b">¿Qué significa la sigla LAN?</string>
+    <string name="plan7_b">¿Cúal de estas categorias NO pertenece al programa LANPASS?</string>
+    <string name="plan9_b">¿Cuándo nace LAN como empresa estatal?</string>
+    <string name="plan10_b">¿Cuántos pasajeros transportó LAN y TAM el primer semestre del 2013?</string>
+    <string name="plan11_b">¿Cuántos aviones cargueros tiene LAN TAM?</string>
+    <string name="plan12_b">¿En qué consistía la peculiar carga proveniente de Chile que llegó a una tienda de mascotas en Miami?</string>
+    <string name="plan13_b">¿Qué año se incorpora LAN a one world?</string>
+    <string name="plan14_b">¿Cuánta gente trabaja actualmente en LAN y TAM?</string>
 
 </resources>

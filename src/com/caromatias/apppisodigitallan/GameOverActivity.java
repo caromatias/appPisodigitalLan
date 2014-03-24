@@ -3,12 +3,15 @@ package com.caromatias.apppisodigitallan;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.os.Bundle;
+import android.os.Handler;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
+import android.view.View;
 import android.widget.VideoView;
 
 public class GameOverActivity extends Activity {
@@ -20,6 +23,9 @@ public class GameOverActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_game_over);
+		
+		LaminaBienvenidaActivity.cantidad += 1;
+		Log.d("DEBUG", "Juego Numero:"+ LaminaBienvenidaActivity.cantidad);
 		// ///// AUDIO ////////
 		// sdBeginds = MediaPlayer.create(this, R.raw.jazz_dance);
 		/*
@@ -199,27 +205,42 @@ public class GameOverActivity extends Activity {
 			break;
 		case 2:
 			// INICIO VIDEO GAMEOVER //
-			videoGameOver = (VideoView) findViewById(R.id.video_game_over);
-			videoGameOver.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.felicitaciones);
-			videoGameOver.setOnPreparedListener(new OnPreparedListener() {
-	            @Override
-	            public void onPrepared(MediaPlayer mp) {
-	                videoGameOver.start();
-	            }
-	        });
-			///////////////////////////////////////
-			videoGameOver.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-						public void onCompletion(MediaPlayer mp) {
-							System.gc();
-							LaminaTresActivity.mpFondo.release();
-							videoGameOver.stopPlayback();
-							mp.release();
-							Intent act = new Intent(GameOverActivity.this,LaminaDosActivity.class);
-							act.putExtra("isInterface", 1);
-							startActivity(act);
-							overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
-						}
-					});
+			if(LaminaBienvenidaActivity.cantidad == 2){
+				findViewById(R.id.img_diez_rutas).setVisibility(View.VISIBLE);
+				final Handler handlerTres = new Handler();
+				 handlerTres.postDelayed(new Runnable() {
+					 @Override public void run() { // Do something after 5s =
+						 Intent mStartActivity = new Intent(GameOverActivity.this, SplashScreenActivity.class);
+							int mPendingIntentId = 123456;
+							PendingIntent mPendingIntent = PendingIntent.getActivity(GameOverActivity.this, mPendingIntentId,    mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
+							AlarmManager mgr = (AlarmManager)GameOverActivity.this.getSystemService(Context.ALARM_SERVICE);
+							mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
+							System.exit(0);
+						 }
+					 }, 5000);
+			}else{
+				videoGameOver = (VideoView) findViewById(R.id.video_game_over);
+				videoGameOver.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.felicitaciones);
+				videoGameOver.setOnPreparedListener(new OnPreparedListener() {
+		            @Override
+		            public void onPrepared(MediaPlayer mp) {
+		                videoGameOver.start();
+		            }
+		        });
+				///////////////////////////////////////
+				videoGameOver.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+							public void onCompletion(MediaPlayer mp) {
+								System.gc();
+								LaminaTresActivity.mpFondo.release();
+								videoGameOver.stopPlayback();
+								mp.release();
+								Intent act = new Intent(GameOverActivity.this,LaminaDosActivity.class);
+								act.putExtra("isInterface", 1);
+								startActivity(act);
+								overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+							}
+						});
+			}
 			break;
 		case 3:
 			// INICIO VIDEO GAMEOVER //

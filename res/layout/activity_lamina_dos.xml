@@ -7,6 +7,7 @@
     android:paddingLeft="0dp"
     android:paddingRight="0dp"
     android:paddingTop="0dp"
+    android:id="@+id/master_lay"
     tools:context=".LaminaDosActivity" >
 
     <RelativeLayout
@@ -993,7 +994,7 @@
         android:layout_height="200dp"
         android:layout_marginTop="520dp"
         android:layout_marginLeft="1050dp"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <ImageView
             android:id="@+id/btn_next_interface"
@@ -1012,6 +1013,37 @@
             android:layout_alignRight="@+id/btn_next_interface"
             android:layout_marginBottom="12dp"
             android:text="Siguiente"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/ant_interface"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="520dp"
+        android:layout_marginLeft="0dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/btn_ant_interface"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="17dp"
+            android:src="@drawable/btn_ant_interface" />
+
+        <TextView
+            android:id="@+id/txt_ant_interface"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_ant_interface"
+            android:layout_alignRight="@+id/btn_ant_interface"
+            android:layout_marginBottom="12dp"
+            android:text="Anterior"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#FFFFFF"
             android:textSize="25sp"
