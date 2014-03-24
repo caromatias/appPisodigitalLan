@@ -30,6 +30,7 @@ public class LaminaBienvenidaActivity extends Activity {
 	private ImageView imgMapaBienvenida;
 	private ImageView imgWhite;
 	private RelativeLayout lay_principal;
+	private RelativeLayout lay_bienvenida_botones;
 	private Button btnInter;
 	private Button btnPeru;
 	private Button btnBrasil;
@@ -99,6 +100,7 @@ public class LaminaBienvenidaActivity extends Activity {
 		initVar();
 		// EJECUCIÓN
 		exMain();
+		animaciones();
 		initButtons();
 		reseteaRutas();
 		cambiaActivity();
@@ -180,6 +182,44 @@ public class LaminaBienvenidaActivity extends Activity {
 			}
 		});
 	}
+	
+	public void animaciones(){
+		Button animLayInterColombia = (Button) findViewById(R.id.button_bienvenida_colombia);
+		Animation animInterColombia = AnimationUtils.loadAnimation(this,
+				R.anim.anim_botones_20);
+		animLayInterColombia.startAnimation(animInterColombia);
+		animLayInterColombia.setVisibility(View.VISIBLE);
+		
+		Button animLayInterEcuador = (Button) findViewById(R.id.button_bienvenida_ecuador);
+		Animation animInterEcuador = AnimationUtils.loadAnimation(this,
+				R.anim.anim_botones_20);
+		animLayInterEcuador.startAnimation(animInterEcuador);
+		animLayInterEcuador.setVisibility(View.VISIBLE);
+		
+		Button animLayInterPeru = (Button) findViewById(R.id.button_bienvenida_peru);
+		Animation animInterPeru = AnimationUtils.loadAnimation(this,
+				R.anim.anim_botones_20);
+		animLayInterPeru.startAnimation(animInterPeru);
+		animLayInterPeru.setVisibility(View.VISIBLE);
+		
+		Button animLayInterChile = (Button) findViewById(R.id.button_bienvenida_chile);
+		Animation animInterChile = AnimationUtils.loadAnimation(this,
+				R.anim.anim_botones_20);
+		animLayInterChile.startAnimation(animInterChile);
+		animLayInterChile.setVisibility(View.VISIBLE);
+		
+		Button animLayInterArgentina = (Button) findViewById(R.id.button_bienvenida_argentina);
+		Animation animInterArgentina = AnimationUtils.loadAnimation(this,
+				R.anim.anim_botones_20);
+		animLayInterArgentina.startAnimation(animInterArgentina);
+		animLayInterArgentina.setVisibility(View.VISIBLE);
+		
+		Button animLayInterBrasil = (Button) findViewById(R.id.button_bienvenida_brasil);
+		Animation animInterBrasil = AnimationUtils.loadAnimation(this,
+				R.anim.anim_botones_20);
+		animLayInterBrasil.startAnimation(animInterBrasil);
+		animLayInterBrasil.setVisibility(View.VISIBLE);
+	}
 
 	public void initVar() {
 		videoView = (VideoView) findViewById(R.id.video_main);
@@ -194,6 +234,7 @@ public class LaminaBienvenidaActivity extends Activity {
 		tituloPopInfo = (TextView) findViewById(R.id.txt_titulo_popup_info);
 		descPopInfo = (TextView) findViewById(R.id.txt_descripcion_popup_info);
 		layPanelRutas = (RelativeLayout) findViewById(R.id.panel);
+		lay_bienvenida_botones = (RelativeLayout) findViewById(R.id.botones_bienvenida);
 		botonAnimado = (Button) findViewById(R.id.btn_com);
 		animacion = AnimationUtils.loadAnimation(this, R.anim.animacion);
 		goGameMaster = (RelativeLayout) findViewById(R.id.go_game_master);
@@ -222,6 +263,7 @@ public class LaminaBienvenidaActivity extends Activity {
 		btnInter = (Button) findViewById(R.id.btn_internacional);
 		// layPopupInfo = (RelativeLayout) findViewById(R.id.lay_popup_info);
 	}
+	
 
 	public void exMain() {
 		videoView.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.back_a_2);
@@ -398,6 +440,7 @@ public class LaminaBienvenidaActivity extends Activity {
 				// ///////////////////////////////////////////
 				layPanelRutas.bringToFront();
 				goGameMaster.bringToFront();
+				lay_bienvenida_botones.bringToFront();
             }
 			@Override
 			public void onAnimationRepeat(Animation arg0) {
