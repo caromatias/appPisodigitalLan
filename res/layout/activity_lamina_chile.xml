@@ -626,7 +626,6 @@
         android:id="@+id/lay_img_flota"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/flota"
         android:scaleType="fitXY"
         android:visibility="gone" >
     </RelativeLayout>

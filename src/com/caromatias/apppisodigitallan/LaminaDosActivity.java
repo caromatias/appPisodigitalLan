@@ -33,7 +33,6 @@ import android.widget.VideoView;
 
 public class LaminaDosActivity extends Activity {
 
-	private ImageView ivAnimacion;
 	private AnimationDrawable savingAnimation;
 	private AnimationDrawable savingAnimationLuz;
 	// ///////////////////////////////////////
@@ -42,12 +41,21 @@ public class LaminaDosActivity extends Activity {
 	private int terminaProceso = 0;
 	private int estadoProgress = 1;
 	private Button botonStop;
+	private ImageView ivAnimacion;
 	private ImageView intentoUno;
 	private ImageView intentoDos;
 	private ImageView intentoTres;
+	private ImageView ImagenBackDespegue;
+	private ImageView despegueOk;
+	private ImageView despegueFail;
+	private ImageView cargaOk;
+	private ImageView cargaFail;
+	private ImageView flecha;
+	private ImageView flechaCarga;
+	private ImageView imgBackCarga;
+	private ImageView imgWhiteDos;
 	private int intentos = 1;
 	private VideoView videoBackDespegue;
-	private ImageView ImagenBackDespegue;
 	private Animation animImgBackDespegue;
 	// ///////////////////////////////////
 	public int rutaSeleccionada = 0;
@@ -60,19 +68,12 @@ public class LaminaDosActivity extends Activity {
 	private Button activaCarga;
 	private int intentosCarga = 0;
 	private RelativeLayout layMasterComp;
-	private ImageView despegueOk;
-	private ImageView despegueFail;
-	private ImageView cargaOk;
-	private ImageView cargaFail;
 	private VideoView videoBackCarga;
-	private ImageView imgBackCarga;
 	private Animation animMensajesDespegue;
 	private Animation animMensajesDespegueOut;
 	private Animation animMensajesDespegueFailIn;
 	private Animation animMensajesDespegueFailOut;
 	private RelativeLayout imgLuzEstado;
-	private ImageView flecha;
-	private ImageView flechaCarga;
 	private Animation animFlechaRebote;
 	// private MediaPlayer mp;
 	// private MediaPlayer mpFail;
@@ -80,7 +81,6 @@ public class LaminaDosActivity extends Activity {
 	public static MediaPlayer mpDespegue;
 	private MediaPlayer mpMapaJuego;
 	private VideoView videoInterface;
-	private ImageView imgWhiteDos;
 	private Animation animVideoMain;
 	private Animation animVideoMainOut;
 	private boolean pause = false;
@@ -350,7 +350,8 @@ public class LaminaDosActivity extends Activity {
 
 		videoBackDespegue.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 					public void onCompletion(MediaPlayer mp) {
-						mp.release();
+						//mp.release();
+						resetImages();
 						System.gc();
 						Intent act = new Intent(LaminaDosActivity.this,
 								LaminaTresActivity.class);
@@ -1580,7 +1581,6 @@ public class LaminaDosActivity extends Activity {
 										@Override
 										public void onCompletion(MediaPlayer vmp) {
 											fadeInWhite();
-											vmp.release();
 										}
 									});
 
@@ -1733,6 +1733,8 @@ public class LaminaDosActivity extends Activity {
 					@Override
 					public void onAnimationEnd(Animation animation) {
 						cargaOk.setVisibility(View.GONE);
+						resetImages();
+						System.gc();
 						Intent act = new Intent(LaminaDosActivity.this,LaminaTresActivity.class);
 						act.putExtra("ruta", rutaSeleccionada);
 						startActivity(act);
@@ -1895,6 +1897,21 @@ public class LaminaDosActivity extends Activity {
 						layMasterComp.setVisibility(View.VISIBLE);
 					}
 				});
+	}
+	public void resetImages(){
+		ivAnimacion.setImageDrawable(null);
+		intentoUno.setImageDrawable(null);
+		intentoDos.setImageDrawable(null);
+		intentoTres.setImageDrawable(null);
+		ImagenBackDespegue.setImageDrawable(null);
+		despegueOk.setImageDrawable(null);
+		despegueFail.setImageDrawable(null);
+		cargaOk.setImageDrawable(null);
+		cargaFail.setImageDrawable(null);
+		flecha.setImageDrawable(null);
+		flechaCarga.setImageDrawable(null);
+		imgBackCarga.setImageDrawable(null);
+		imgWhiteDos.setImageDrawable(null);
 	}
 
 	@Override
