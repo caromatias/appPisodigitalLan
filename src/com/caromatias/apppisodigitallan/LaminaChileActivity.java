@@ -160,81 +160,81 @@ public class LaminaChileActivity extends Activity {
 	}
 	public void animaCiudadesChile() {
 		RelativeLayout layArica = (RelativeLayout) findViewById(R.id.lay_chile_01);
-		Animation animArica = AnimationUtils.loadAnimation(this,R.anim.anim_botones_01);
+		Animation animArica = AnimationUtils.loadAnimation(this,R.anim.anim_botones_08);
 		layArica.startAnimation(animArica);
 
 		RelativeLayout layIquique = (RelativeLayout) findViewById(R.id.lay_chile_02);
 		Animation animIquique = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_02);
+				R.anim.anim_botones_09);
 		layIquique.startAnimation(animIquique);
 
 		RelativeLayout layCalama = (RelativeLayout) findViewById(R.id.lay_chile_14);
 		Animation animCalama = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_03);
+				R.anim.anim_botones_10);
 		layCalama.startAnimation(animCalama);
 
 		RelativeLayout layAntofagasta = (RelativeLayout) findViewById(R.id.lay_chile_03);
 		Animation animAntofagasta = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_04);
+				R.anim.anim_botones_11);
 		layAntofagasta.startAnimation(animAntofagasta);
 
 		RelativeLayout layCopiapo = (RelativeLayout) findViewById(R.id.lay_chile_04);
 		Animation animCopiapo = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_05);
+				R.anim.anim_botones_12);
 		layCopiapo.startAnimation(animCopiapo);
 
 		RelativeLayout laySerena = (RelativeLayout) findViewById(R.id.lay_chile_05);
 		Animation animSerena = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_06);
+				R.anim.anim_botones_13);
 		laySerena.startAnimation(animSerena);
 
 		RelativeLayout laySantiago = (RelativeLayout) findViewById(R.id.lay_chile_06);
 		Animation animSantiago = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_07);
+				R.anim.anim_botones_14);
 		laySantiago.startAnimation(animSantiago);
 
 		RelativeLayout layPascua = (RelativeLayout) findViewById(R.id.lay_chile_16);
 		Animation animPascua = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_08);
+				R.anim.anim_botones_15);
 		layPascua.startAnimation(animPascua);
 
 		RelativeLayout layConcepcion = (RelativeLayout) findViewById(R.id.lay_chile_07);
 		Animation animConcepcion = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_09);
+				R.anim.anim_botones_16);
 		layConcepcion.startAnimation(animConcepcion);
 
 		RelativeLayout layTemuco = (RelativeLayout) findViewById(R.id.lay_chile_08);
 		Animation animTemuco = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_10);
+				R.anim.anim_botones_17);
 		layTemuco.startAnimation(animTemuco);
 
 		RelativeLayout layValdivia = (RelativeLayout) findViewById(R.id.lay_chile_09);
 		Animation animValdivia = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_11);
+				R.anim.anim_botones_18);
 		layValdivia.startAnimation(animValdivia);
 
 		RelativeLayout layOsorno = (RelativeLayout) findViewById(R.id.lay_chile_10);
 		Animation animOsorno = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_12);
+				R.anim.anim_botones_20);
 		layOsorno.startAnimation(animOsorno);
 
 		RelativeLayout layMontt = (RelativeLayout) findViewById(R.id.lay_chile_11);
 		Animation animMontt = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_13);
+				R.anim.anim_botones_21);
 		layMontt.startAnimation(animMontt);
 
 		RelativeLayout layChiloe = (RelativeLayout) findViewById(R.id.lay_chile_12);
 		Animation animChileo = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_14);
+				R.anim.anim_botones_22);
 		layChiloe.startAnimation(animChileo);
 
 		RelativeLayout layBalmaceda = (RelativeLayout) findViewById(R.id.lay_chile_15);
 		Animation animBalmaceda = AnimationUtils.loadAnimation(this,
-				R.anim.anim_botones_15);
+				R.anim.anim_botones_23);
 		layBalmaceda.startAnimation(animBalmaceda);
 
 		RelativeLayout layArenas = (RelativeLayout) findViewById(R.id.lay_chile_13);
-		Animation animArenas = AnimationUtils.loadAnimation(this,R.anim.anim_botones_16);
+		Animation animArenas = AnimationUtils.loadAnimation(this,R.anim.anim_botones_24);
 		animArenas.setAnimationListener(new Animation.AnimationListener() {
 			@Override
 			public void onAnimationEnd(Animation animation) {

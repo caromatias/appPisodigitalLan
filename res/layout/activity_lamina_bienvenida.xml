@@ -24,11 +24,185 @@
         android:src="@drawable/mapa_bienvenida" />
 
     <RelativeLayout
+        android:id="@+id/lay_bienvenida_colombia"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="604dp"
+        android:layout_marginTop="270.5dp" >
+
+        <Button
+            android:id="@+id/button_bienvenida_colombia"
+            android:layout_width="62dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Colombia"
+            android:textColor="#ffffff"
+            android:textSize="8dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_punto_colombia"
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:layout_marginLeft="93dp"
+            android:layout_marginTop="10.5dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_bienvenida_ecuador"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="528dp"
+        android:layout_marginTop="400dp" >
+
+        <Button
+            android:id="@+id/button_bienvenida_ecuador"
+            android:layout_width="62dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Ecuador"
+            android:textColor="#ffffff"
+            android:textSize="8dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_punto_ecuador"
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:layout_marginLeft="67dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_bienvenida_peru"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="528dp"
+        android:layout_marginTop="425dp" >
+
+        <Button
+            android:id="@+id/button_bienvenida_peru"
+            android:layout_width="80dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Peru"
+            android:textColor="#ffffff"
+            android:textSize="10dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_punto_peru"
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:layout_marginLeft="67dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_bienvenida_chile"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="528dp"
+        android:layout_marginTop="450dp" >
+
+        <Button
+            android:id="@+id/button_bienvenida_chile"
+            android:layout_width="80dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Chile"
+            android:textColor="#ffffff"
+            android:textSize="10dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_punto_chile"
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:layout_marginLeft="67dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_bienvenida_argentina"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="528dp"
+        android:layout_marginTop="475dp" >
+
+        <Button
+            android:id="@+id/button_bienvenida_argentina"
+            android:layout_width="80dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Argentina"
+            android:textColor="#ffffff"
+            android:textSize="10dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_punto_argentina"
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:layout_marginLeft="67dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_bienvenida_brasil"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="528dp"
+        android:layout_marginTop="500dp" >
+
+        <Button
+            android:id="@+id/button_bienvenida_brasil"
+            android:layout_width="80dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/botoncomenzar"
+            android:text="Brasil"
+            android:textColor="#ffffff"
+            android:textSize="10dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_punto_brasil"
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:layout_marginLeft="67dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/img_punto" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/panel"
         android:layout_width="170dp"
         android:layout_height="460dp"
         android:layout_marginLeft="70dp"
-        android:layout_marginTop="-7dp"        
+        android:layout_marginTop="-7dp"
         android:background="@drawable/panel_final"
         android:visibility="gone" >
 
@@ -144,7 +318,7 @@
         android:textColor="#ffffff"
         android:textSize="14sp"
         android:textStyle="bold"
-        android:visibility="gone"  />
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/button_nuestros_destinos"
@@ -157,7 +331,7 @@
         android:textColor="#ffffff"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:visibility="gone"  />
+        android:visibility="gone" />
 
     <RelativeLayout
         android:id="@+id/go_game_master"
@@ -204,18 +378,19 @@
         android:id="@+id/video_lamina_uno"
         android:layout_width="1280dp"
         android:layout_height="match_parent"
-        android:visibility="visible" />
+        android:visibility="gone" />
 
     <RelativeLayout
         android:id="@+id/lay_video_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible" >
+        android:visibility="gone" >
 
         <VideoView
             android:id="@+id/video_main"
             android:layout_width="1280dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:visibility="gone" />
 
         <RelativeLayout
             android:id="@+id/lay_btn_comenzar"
@@ -233,7 +408,7 @@
                 android:background="@drawable/btn_comenzar"
                 android:text="COMENZAR"
                 android:textColor="#FFFFFF"
-                android:textSize="25dp" /> 
+                android:textSize="25dp" />
         </RelativeLayout>
     </RelativeLayout>
 
