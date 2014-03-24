@@ -53,6 +53,7 @@ public class LaminaBrasilActivity extends Activity {
 		activeButton();
 		popUpInfo();
 		cambiaActivity();
+		desactivaBotones();
 		// popUpInfo();
 
 		gestureDetector = new GestureDetector(this,
@@ -398,6 +399,7 @@ public class LaminaBrasilActivity extends Activity {
 				contenedorBotones.startAnimation(animaciones);
 				findViewById(R.id.mapa_brasil_ant).setVisibility(View.GONE);
 				contenedorBotones.setVisibility(View.GONE);
+				activaBotones();
 			}
 
 			@Override
@@ -623,6 +625,24 @@ public class LaminaBrasilActivity extends Activity {
 		btnEcuador.setBackgroundResource(R.drawable.botongris);
 		btnPeru.setBackgroundResource(R.drawable.botongris);
 		btnInter.setBackgroundResource(R.drawable.botongris);
+	}
+	public void desactivaBotones(){
+		btnArgentina.setEnabled(false);
+		btnBrasil.setEnabled(false);
+		btnChile.setEnabled(false);
+		btnColombia.setEnabled(false);
+		btnEcuador.setEnabled(false);
+		btnPeru.setEnabled(false);
+		btnInter.setEnabled(false);
+	}
+	public void activaBotones(){
+		btnArgentina.setEnabled(true);
+		btnBrasil.setEnabled(true);
+		btnChile.setEnabled(true);
+		btnColombia.setEnabled(true);
+		btnEcuador.setEnabled(true);
+		btnPeru.setEnabled(true);
+		btnInter.setEnabled(true);
 	}
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {

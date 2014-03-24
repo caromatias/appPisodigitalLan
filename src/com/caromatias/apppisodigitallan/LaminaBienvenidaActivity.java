@@ -394,8 +394,7 @@ public class LaminaBienvenidaActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						btnPeru.setBackgroundResource(R.drawable.botonrojo);
-						animMapaInterOut
-								.setAnimationListener(new Animation.AnimationListener() {
+						animMapaInterOut.setAnimationListener(new Animation.AnimationListener() {
 									@Override
 									public void onAnimationEnd(
 											Animation animation) {
@@ -408,13 +407,11 @@ public class LaminaBienvenidaActivity extends Activity {
 												R.anim.fade_in_paises,
 												R.anim.fade_out_paises);
 									}
-
 									@Override
 									public void onAnimationRepeat(Animation arg0) {
 										// TODO Auto-generated method stub
 
 									}
-
 									@Override
 									public void onAnimationStart(
 											Animation animation) {
