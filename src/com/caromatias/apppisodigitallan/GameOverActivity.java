@@ -205,7 +205,7 @@ public class GameOverActivity extends Activity {
 			break;
 		case 2:
 			// INICIO VIDEO GAMEOVER //
-			if(LaminaBienvenidaActivity.cantidad == 2){
+			if(LaminaBienvenidaActivity.cantidad == 10){
 				findViewById(R.id.img_diez_rutas).setVisibility(View.VISIBLE);
 				final Handler handlerTres = new Handler();
 				 handlerTres.postDelayed(new Runnable() {
@@ -217,7 +217,7 @@ public class GameOverActivity extends Activity {
 							mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
 							System.exit(0);
 						 }
-					 }, 5000);
+					 }, 8000);
 			}else{
 				videoGameOver = (VideoView) findViewById(R.id.video_game_over);
 				videoGameOver.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.felicitaciones);
