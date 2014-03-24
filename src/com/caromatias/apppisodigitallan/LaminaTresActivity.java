@@ -125,6 +125,7 @@ public class LaminaTresActivity extends Activity {
 								seventyVolume, 0);
 						mpTrivia.start();
 						mpTrivia.setLooping(true);
+						//mp.release();
 					}
 				});
 		videoBackTriviaB.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -134,6 +135,7 @@ public class LaminaTresActivity extends Activity {
 				layPregTrivia.setVisibility(View.VISIBLE);
 				layPregTrivia.startAnimation(animMundoIn);
 				creaSalidaTrivia();
+				//mp.release();
 			}
 		});
 
@@ -1826,9 +1828,6 @@ public class LaminaTresActivity extends Activity {
 		imgWhiteTres.setImageDrawable(null);
 		imgBackTriviaUno.setImageDrawable(null);
 		imgMundoTrivia.setImageDrawable(null);
-		((BitmapDrawable) imgWhiteTres.getDrawable()).setCallback(null);
-		((BitmapDrawable) imgBackTriviaUno.getDrawable()).setCallback(null);
-		((BitmapDrawable) imgMundoTrivia.getDrawable()).setCallback(null);
 	}
 
 	@Override
