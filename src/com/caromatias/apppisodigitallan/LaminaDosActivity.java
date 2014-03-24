@@ -180,6 +180,7 @@ public class LaminaDosActivity extends Activity {
 					break;
 				}
 				flecha.setVisibility(View.GONE);
+				System.gc();
 			}
 		});
 
@@ -307,12 +308,14 @@ public class LaminaDosActivity extends Activity {
 									public void run() {
 										textoDos.setText(String
 												.valueOf(mProgressStatus + "%"));
+										/*
 										if (estadoProgress == 3
 												&& mProgressStatus > 70) {
 											// ImagenBackDespegue.startAnimation(animImgBackDespegue);
 											// videoBackDespegue.start();
 											// ImagenBackDespegue.setVisibility(View.GONE);
 										}
+										*/
 									}
 								});
 							}
@@ -347,6 +350,8 @@ public class LaminaDosActivity extends Activity {
 
 		videoBackDespegue.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 					public void onCompletion(MediaPlayer mp) {
+						mp.release();
+						System.gc();
 						Intent act = new Intent(LaminaDosActivity.this,
 								LaminaTresActivity.class);
 						act.putExtra("ruta", rutaSeleccionada);
@@ -508,6 +513,7 @@ public class LaminaDosActivity extends Activity {
 							}
 						});
 						*/
+						System.gc();
 						mpDespegue.release();
 						Intent act = new Intent(LaminaDosActivity.this,GameOverActivity.class);
 						act.putExtra("game", 3);
@@ -531,6 +537,7 @@ public class LaminaDosActivity extends Activity {
 					 */
 				} else if (currentRotation >= 60) {
 					creaMpOk();
+					System.gc();
 					cargaOk.setVisibility(View.VISIBLE);
 					setAnimacionListenerOkCargaIn();
 					cargaOk.startAnimation(animMensajesDespegueFailIn);
@@ -1433,7 +1440,7 @@ public class LaminaDosActivity extends Activity {
 		mpoK.setOnCompletionListener(new OnCompletionListener() {
 			public void onCompletion(MediaPlayer mp) {
 				mp.release();
-
+				mpoK.release();
 			};
 		});
 	}
@@ -1445,7 +1452,7 @@ public class LaminaDosActivity extends Activity {
 		mpFail.setOnCompletionListener(new OnCompletionListener() {
 			public void onCompletion(MediaPlayer mp) {
 				mp.release();
-
+				mpFail.release();
 			};
 		});
 	}
@@ -1456,6 +1463,7 @@ public class LaminaDosActivity extends Activity {
 		mp.setOnCompletionListener(new OnCompletionListener() {
 			public void onCompletion(MediaPlayer mpCu) {
 				mpCu.release();
+				mp.release();
 			};
 		});
 	}
@@ -1476,8 +1484,7 @@ public class LaminaDosActivity extends Activity {
 							+ R.raw.interface_1);
 			videoInterface.start();
 
-			videoInterface
-					.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+			videoInterface.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 
 						@Override
 						public void onCompletion(MediaPlayer vmp) {
@@ -1493,6 +1500,7 @@ public class LaminaDosActivity extends Activity {
 		findViewById(R.id.btn_next_interface).setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View arg0) {
+						System.gc();
 						findViewById(R.id.btn_next_interface).setEnabled(false);
 						if (paso == 1) {
 							paso = 2;
@@ -1572,6 +1580,7 @@ public class LaminaDosActivity extends Activity {
 										@Override
 										public void onCompletion(MediaPlayer vmp) {
 											fadeInWhite();
+											vmp.release();
 										}
 									});
 

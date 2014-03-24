@@ -59,6 +59,7 @@ public class LaminaTresActivity extends Activity {
 		mpTrivia = MediaPlayer.create(this, R.raw.reloj_trivia);
 		mpFondo = MediaPlayer.create(this, R.raw.jazz_dance);
 		mpFondo.start();
+		mpFondo.setLooping(true);
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
 		int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
@@ -75,7 +76,6 @@ public class LaminaTresActivity extends Activity {
 		respuestaUno = (Button) findViewById(R.id.btn_respuesta1);
 		respuestaDos = (Button) findViewById(R.id.btn_respuesta2);
 		respuestaTres = (Button) findViewById(R.id.btn_respuesta3);
-
 		mpTrivia.setOnCompletionListener(new OnCompletionListener() {
 			public void onCompletion(MediaPlayer mpTri) {
 				mpTri.release();
@@ -797,6 +797,7 @@ public class LaminaTresActivity extends Activity {
 						respuestaDos.setEnabled(false);
 						respuestaTres.setEnabled(false);
 						// //////////////////////
+						System.gc();
 					}
 				});
 		// /////////////////////////////////
@@ -812,6 +813,7 @@ public class LaminaTresActivity extends Activity {
 						setAnimationListenerRotacionMundoDos();
 						imgMundoTrivia.startAnimation(animMundoRotacion);
 						// //////////////////////
+						System.gc();
 					}
 				});
 		// /////////////////////////////////
@@ -820,14 +822,14 @@ public class LaminaTresActivity extends Activity {
 				new OnClickListener() {
 					public void onClick(View arg0) {
 						creaSonidoMundo();
-						respuestaTres
-								.setBackgroundResource(R.drawable.botoncomenzar);
+						respuestaTres.setBackgroundResource(R.drawable.botoncomenzar);
 						respuestaUno.setEnabled(false);
 						respuestaDos.setEnabled(false);
 						respuestaTres.setEnabled(false);
 						setAnimationListenerRotacionMundoTres();
 						imgMundoTrivia.startAnimation(animMundoRotacion);
 						// //////////////////////
+						System.gc();
 					}
 				});
 		// /////////////////////////////////
