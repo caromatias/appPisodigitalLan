@@ -17,6 +17,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.BitmapDrawable;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -378,7 +379,7 @@ public class LaminaDosActivity extends Activity {
 		flechaCarga.startAnimation(animFlechaRebote);
 		findViewById(R.id.txt_cuanta_atras_uno).setVisibility(View.VISIBLE);
 		findViewById(R.id.lay_pop_cuenta_atras).setVisibility(View.VISIBLE);
-		txtPorcentajeCarga.setText("0%");
+		txtPorcentajeCarga.setText("0%"); 
 		
 		setAnimacionListenerCuentaAtras();
 		findViewById(R.id.txt_cuanta_atras_uno).startAnimation(animCuentasAtras);
@@ -1912,6 +1913,19 @@ public class LaminaDosActivity extends Activity {
 		flechaCarga.setImageDrawable(null);
 		imgBackCarga.setImageDrawable(null);
 		imgWhiteDos.setImageDrawable(null);
+		((BitmapDrawable) ivAnimacion.getDrawable()).setCallback(null);
+		((BitmapDrawable) intentoUno.getDrawable()).setCallback(null);
+		((BitmapDrawable) intentoDos.getDrawable()).setCallback(null);
+		((BitmapDrawable) intentoTres.getDrawable()).setCallback(null);
+		((BitmapDrawable) ImagenBackDespegue.getDrawable()).setCallback(null);
+		((BitmapDrawable) despegueOk.getDrawable()).setCallback(null);
+		((BitmapDrawable) despegueFail.getDrawable()).setCallback(null);
+		((BitmapDrawable) cargaOk.getDrawable()).setCallback(null);
+		((BitmapDrawable) cargaFail.getDrawable()).setCallback(null);
+		((BitmapDrawable) flecha.getDrawable()).setCallback(null);
+		((BitmapDrawable) flechaCarga.getDrawable()).setCallback(null);
+		((BitmapDrawable) imgBackCarga.getDrawable()).setCallback(null);
+		((BitmapDrawable) imgWhiteDos.getDrawable()).setCallback(null);
 	}
 
 	@Override

@@ -12,6 +12,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.BitmapDrawable;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -29,6 +30,8 @@ public class LaminaTresActivity extends Activity {
 	private VideoView videoBackTrivia;
 	private VideoView videoBackTriviaB;
 	private ImageView imgWhiteTres;
+	private ImageView imgBackTriviaUno;
+	private ImageView imgMundoTrivia;
 	private RelativeLayout layPregTrivia;
 	private TextView preguntaTrivia;
 	private Button respuestaUno;
@@ -40,8 +43,6 @@ public class LaminaTresActivity extends Activity {
 	private Animation animTriviaIn;
 	private Animation animTriviaOut;
 	private RelativeLayout imgBackTrivia;
-	private ImageView imgBackTriviaUno;
-	private ImageView imgMundoTrivia;
 	private Animation animMundoIn;
 	private Animation animMundoOut;
 	private Animation animMundoRotacion;
@@ -555,9 +556,8 @@ public class LaminaTresActivity extends Activity {
 			public void onCompletion(MediaPlayer mp) {
 				mp.release();
 				if (respuestaCorrecta != 1) {
-					Intent act = new Intent(
-							LaminaTresActivity.this,
-							GameOverActivity.class);
+					reseteaImages();
+					Intent act = new Intent(LaminaTresActivity.this,GameOverActivity.class);
 					act.putExtra("game", 1);
 					startActivity(act);
 					overridePendingTransition(R.anim.fade_in,
@@ -572,6 +572,7 @@ public class LaminaTresActivity extends Activity {
 						imaIncorrecta2.setVisibility(View.GONE);
 					} else if (numeroDeRespuesta == 2) {
 						reconRutaJugada();
+						reseteaImages();
 						Intent act = new Intent(
 								LaminaTresActivity.this,
 								GameOverActivity.class);
@@ -593,6 +594,7 @@ public class LaminaTresActivity extends Activity {
 			public void onCompletion(MediaPlayer mp) {
 				mp.release();
 				if (respuestaCorrecta != 1) {
+					reseteaImages();
 					Intent act = new Intent(
 							LaminaTresActivity.this,
 							GameOverActivity.class);
@@ -610,6 +612,7 @@ public class LaminaTresActivity extends Activity {
 						imaIncorrecta2.setVisibility(View.GONE);
 					} else if (numeroDeRespuesta == 2) {
 						reconRutaJugada();
+						reseteaImages();
 						Intent act = new Intent(
 								LaminaTresActivity.this,
 								GameOverActivity.class);
@@ -633,6 +636,7 @@ public class LaminaTresActivity extends Activity {
 				mp.release();
 				if (respuestaCorrecta != 2) {
 					mpTrivia.stop();
+					reseteaImages();
 					Intent act = new Intent(
 							LaminaTresActivity.this,
 							GameOverActivity.class);
@@ -651,6 +655,7 @@ public class LaminaTresActivity extends Activity {
 					} else if (numeroDeRespuesta == 2) {
 						reconRutaJugada();
 						mpTrivia.stop();
+						reseteaImages();
 						Intent act = new Intent(
 								LaminaTresActivity.this,
 								GameOverActivity.class);
@@ -672,6 +677,7 @@ public class LaminaTresActivity extends Activity {
 				mp.release();
 				if (respuestaCorrecta != 2) {
 					mpTrivia.stop();
+					reseteaImages();
 					Intent act = new Intent(
 							LaminaTresActivity.this,
 							GameOverActivity.class);
@@ -690,6 +696,7 @@ public class LaminaTresActivity extends Activity {
 					} else if (numeroDeRespuesta == 2) {
 						reconRutaJugada();
 						mpTrivia.stop();
+						reseteaImages();
 						Intent act = new Intent(
 								LaminaTresActivity.this,
 								GameOverActivity.class);
@@ -712,6 +719,7 @@ public class LaminaTresActivity extends Activity {
 				mp.release();
 				if (respuestaCorrecta != 3) {
 					mpTrivia.stop();
+					reseteaImages();
 					Intent act = new Intent(
 							LaminaTresActivity.this,
 							GameOverActivity.class);
@@ -730,6 +738,7 @@ public class LaminaTresActivity extends Activity {
 					} else if (numeroDeRespuesta == 2) {
 						reconRutaJugada();
 						mpTrivia.stop();
+						reseteaImages();
 						Intent act = new Intent(
 								LaminaTresActivity.this,
 								GameOverActivity.class);
@@ -751,6 +760,7 @@ public class LaminaTresActivity extends Activity {
 				mp.release();
 				if (respuestaCorrecta != 3) {
 					mpTrivia.stop();
+					reseteaImages();
 					Intent act = new Intent(
 							LaminaTresActivity.this,
 							GameOverActivity.class);
@@ -769,6 +779,7 @@ public class LaminaTresActivity extends Activity {
 					} else if (numeroDeRespuesta == 2) {
 						reconRutaJugada();
 						mpTrivia.stop();
+						reseteaImages();
 						Intent act = new Intent(
 								LaminaTresActivity.this,
 								GameOverActivity.class);
@@ -1810,6 +1821,14 @@ public class LaminaTresActivity extends Activity {
 
 					}
 				});
+	}
+	public void reseteaImages(){
+		imgWhiteTres.setImageDrawable(null);
+		imgBackTriviaUno.setImageDrawable(null);
+		imgMundoTrivia.setImageDrawable(null);
+		((BitmapDrawable) imgWhiteTres.getDrawable()).setCallback(null);
+		((BitmapDrawable) imgBackTriviaUno.getDrawable()).setCallback(null);
+		((BitmapDrawable) imgMundoTrivia.getDrawable()).setCallback(null);
 	}
 
 	@Override
