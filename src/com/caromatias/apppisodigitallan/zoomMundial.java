@@ -3,6 +3,7 @@ package com.caromatias.apppisodigitallan;
 import android.content.Context;
 import android.graphics.Matrix;
 import android.graphics.PointF;
+import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -10,8 +11,9 @@ import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.widget.ImageView;
 
+
 /**
- * @author jmartinez
+ * @author 
  * 
  *         Simple Android ImageView that enables dragging and zooming.
  * 
@@ -26,19 +28,15 @@ public class zoomMundial extends ImageView {
 	}
 
 	private State state;
-
 	private Matrix matrix;
 	private float[] finalTransformation = new float[9];
 	private PointF last = new PointF();
 	private float currentScale = 1f;
-
 	private int viewWidth;
 	private int viewHeight;
 	private float afterScaleDrawableWidth;
 	private float afterScaleDrawableHeight;
-
 	private ScaleGestureDetector scaleDetector;
-
 	private GestureDetector doubleTapDetecture;
 
 	public zoomMundial(Context context) {
@@ -276,7 +274,7 @@ public class zoomMundial extends ImageView {
 	/**
 	 * Listener for detecting scale.
 	 * 
-	 * @author jmartinez
+	 * @author 
 	 */
 	private class ScaleListener extends
 			ScaleGestureDetector.SimpleOnScaleGestureListener {
@@ -297,7 +295,7 @@ public class zoomMundial extends ImageView {
 	/**
 	 * Listener for double tap detection
 	 * 
-	 * @author jmartinez
+	 * @author 
 	 */
 	private class GestureListener extends
 			GestureDetector.SimpleOnGestureListener {

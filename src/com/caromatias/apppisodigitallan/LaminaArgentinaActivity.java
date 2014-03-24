@@ -24,7 +24,7 @@ import android.widget.Toast;
 public class LaminaArgentinaActivity extends Activity {
 
 	private Button btnGoGame;
-	private Animation animGoGame;
+	private Animation animGoGame; 
 	private ImageView imgMapaArgentina;
 	private Animation animMapaArgentina;
 	private Animation animMapaArgentinaOut;
