@@ -328,6 +328,7 @@ public class LaminaBienvenidaActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
+						System.gc();
 						LaminaBienvenidaActivity.mpFondoUno.stop();
 						LaminaBienvenidaActivity.mpFondoUno.release();
 						Intent act = new Intent(LaminaBienvenidaActivity.this,LaminaDosActivity.class);
@@ -561,8 +562,8 @@ public class LaminaBienvenidaActivity extends Activity {
     protected void onDestroy() {
         // TODO Auto-generated method stub
         super.onDestroy();
-        videoLaminaDos.stopPlayback();
-        videoView.stopPlayback();
+        //videoLaminaDos.stopPlayback();
+        //videoView.stopPlayback();
         mpFondoUno.release();
         Log.d("Debug", "onDestroy() has been called!");
     }
