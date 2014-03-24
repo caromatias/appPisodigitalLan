@@ -528,6 +528,9 @@ public class LaminaTresActivity extends Activity {
 		respuestaUno.setEnabled(true);
 		respuestaDos.setEnabled(true);
 		respuestaTres.setEnabled(true);
+		respuestaUno.setBackgroundResource(R.drawable.btn_azul);
+		respuestaDos.setBackgroundResource(R.drawable.btn_azul);
+		respuestaTres.setBackgroundResource(R.drawable.btn_azul);
 		Bundle bundle = getIntent().getExtras();
 		setAnimacionListener(bundle.getInt("ruta"));
 		layPregTrivia.startAnimation(animMundoOut);

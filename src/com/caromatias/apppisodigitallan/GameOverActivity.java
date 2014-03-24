@@ -3,6 +3,9 @@ package com.caromatias.apppisodigitallan;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
 import android.widget.VideoView;
@@ -172,11 +175,19 @@ public class GameOverActivity extends Activity {
 							sdBeginds.release();
 							//mp.release();
 							//videoGameOver.stopPlayback();
+							/*
 							Intent act = new Intent(GameOverActivity.this,
 									LaminaBienvenidaActivity.class);
 							startActivity(act);
 							overridePendingTransition(R.anim.fade_in,
 									R.anim.fade_out);
+							*/
+							Intent mStartActivity = new Intent(GameOverActivity.this, SplashScreenActivity.class);
+							int mPendingIntentId = 123456;
+							PendingIntent mPendingIntent = PendingIntent.getActivity(GameOverActivity.this, mPendingIntentId,    mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
+							AlarmManager mgr = (AlarmManager)GameOverActivity.this.getSystemService(Context.ALARM_SERVICE);
+							mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
+							System.exit(0);
 						}
 					});
 			break;
@@ -217,6 +228,7 @@ public class GameOverActivity extends Activity {
 					.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 						public void onCompletion(MediaPlayer mp) {
 							//LaminaTresActivity.mpFondo.stop();
+							/*
 							sdBeginds.release();
 							videoGameOver.stopPlayback();
 							mp.release();
@@ -225,6 +237,13 @@ public class GameOverActivity extends Activity {
 							startActivity(act);
 							overridePendingTransition(R.anim.fade_in,
 									R.anim.fade_out);
+									*/
+							Intent mStartActivity = new Intent(GameOverActivity.this, SplashScreenActivity.class);
+							int mPendingIntentId = 123456;
+							PendingIntent mPendingIntent = PendingIntent.getActivity(GameOverActivity.this, mPendingIntentId,    mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
+							AlarmManager mgr = (AlarmManager)GameOverActivity.this.getSystemService(Context.ALARM_SERVICE);
+							mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
+							System.exit(0);
 						}
 					});
 			break;
