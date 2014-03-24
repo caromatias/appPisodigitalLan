@@ -9,12 +9,17 @@ import android.os.Handler;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -70,6 +75,7 @@ public class LaminaBienvenidaActivity extends Activity {
 	private Animation animMapaInter;
 	// ///////////////////////////////////
 	public static int juego = 1;
+	public static int cantidad = 0;
 	public static int btn1 = 0;
 	public static int btn2 = 0;
 	public static int btn3 = 0;
@@ -879,8 +885,7 @@ public class LaminaBienvenidaActivity extends Activity {
 	}
 
 	public void animEntradaMundo() {
-		videoLaminaDos
-				.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+		videoLaminaDos.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 					public void onCompletion(MediaPlayer mp) {
 						// imgMapaBienvenida.bringToFront();
 						lay_principal.bringToFront();
@@ -917,8 +922,13 @@ public class LaminaBienvenidaActivity extends Activity {
 			@Override
 			public void onAnimationStart(Animation animation) {
 				// TODO Auto-generated method stub
-				videoLaminaDos.setVisibility(View.GONE);
-				videoLaminaDos.stopPlayback();
+				final Handler handlerTres = new Handler();
+				 handlerTres.postDelayed(new Runnable() {
+					 @Override public void run() { // Do something after 5s =
+						 videoLaminaDos.setVisibility(View.GONE);
+						 videoLaminaDos.stopPlayback();
+						 }
+					 }, 750);
 			}
 		});
 	}
