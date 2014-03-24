@@ -18,6 +18,7 @@ import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.BitmapDrawable;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -79,8 +80,8 @@ public class LaminaDosActivity extends Activity {
 	// private MediaPlayer mp;
 	// private MediaPlayer mpFail;
 	// private MediaPlayer mpOk;
-	public static MediaPlayer mpDespegue;
 	private MediaPlayer mpMapaJuego;
+	public static MediaPlayer mpDespegue;
 	private VideoView videoInterface;
 	private Animation animVideoMain;
 	private Animation animVideoMainOut;
@@ -98,15 +99,13 @@ public class LaminaDosActivity extends Activity {
 
 		findViewById(R.id.btn_comenzar_juego_despegue).setEnabled(true);
 		findViewById(R.id.btn_comenzar_juego_carga).setEnabled(true);
-		mpMapaJuego = MediaPlayer.create(this, R.raw.a_life_begins);
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
 		int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
 		float percent = 0.6f;
 		int seventyVolume = (int) (maxVolume * percent);
 		audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
-		mpMapaJuego.start();
-
+		creaSonidoFondo();
 		mpDespegue = MediaPlayer.create(this, R.raw.airplane_on_board);
 		mpDespegue.setOnCompletionListener(new OnCompletionListener() {
 			public void onCompletion(MediaPlayer mpDes) {
@@ -1899,6 +1898,16 @@ public class LaminaDosActivity extends Activity {
 					}
 				});
 	}
+	public void creaSonidoFondo() {
+		mpMapaJuego = MediaPlayer.create(this, R.raw.a_life_begins);
+		mpMapaJuego.start();
+		mpMapaJuego.setOnCompletionListener(new OnCompletionListener() {
+			public void onCompletion(MediaPlayer mpMapa) {
+				Log.d("DEBUG","ejecutado completo release");
+				mpMapa.release();
+			};
+		});
+	}
 	public void resetImages(){
 		ivAnimacion.setImageDrawable(null);
 		intentoUno.setImageDrawable(null);
@@ -1913,6 +1922,7 @@ public class LaminaDosActivity extends Activity {
 		flechaCarga.setImageDrawable(null);
 		imgBackCarga.setImageDrawable(null);
 		imgWhiteDos.setImageDrawable(null);
+		/*
 		((BitmapDrawable) ivAnimacion.getDrawable()).setCallback(null);
 		((BitmapDrawable) intentoUno.getDrawable()).setCallback(null);
 		((BitmapDrawable) intentoDos.getDrawable()).setCallback(null);
@@ -1926,6 +1936,7 @@ public class LaminaDosActivity extends Activity {
 		((BitmapDrawable) flechaCarga.getDrawable()).setCallback(null);
 		((BitmapDrawable) imgBackCarga.getDrawable()).setCallback(null);
 		((BitmapDrawable) imgWhiteDos.getDrawable()).setCallback(null);
+		*/
 	}
 
 	@Override
