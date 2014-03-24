@@ -35,7 +35,7 @@
             android:id="@+id/lay_bienvenida_colombia"
             android:layout_width="150dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="604dp"
+            android:layout_marginLeft="567dp"
             android:layout_marginTop="270.5dp" >
 
             <Button
@@ -64,8 +64,8 @@
             android:id="@+id/lay_bienvenida_ecuador"
             android:layout_width="150dp"
             android:layout_height="60dp"
-            android:layout_marginLeft="590dp"
-            android:layout_marginTop="300.5dp" >
+            android:layout_marginLeft="552dp"
+            android:layout_marginTop="300dp" >
 
             <Button
                 android:id="@+id/button_bienvenida_ecuador"
@@ -93,8 +93,8 @@
             android:id="@+id/lay_bienvenida_peru"
             android:layout_width="150dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="610dp"
-            android:layout_marginTop="372.5dp" >
+            android:layout_marginLeft="573dp"
+            android:layout_marginTop="371dp" >
 
             <Button
                 android:id="@+id/button_bienvenida_peru"
@@ -122,8 +122,8 @@
             android:id="@+id/lay_bienvenida_chile"
             android:layout_width="150dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="658dp"
-            android:layout_marginTop="498.5dp" >
+            android:layout_marginLeft="623dp"
+            android:layout_marginTop="497dp" >
 
             <Button
                 android:id="@+id/button_bienvenida_chile"
@@ -151,7 +151,7 @@
             android:id="@+id/lay_bienvenida_argentina"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="775dp"
+            android:layout_marginLeft="744dp"
             android:layout_marginTop="500dp" >
 
             <Button
@@ -180,7 +180,7 @@
             android:id="@+id/lay_bienvenida_brasil"
             android:layout_width="150dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="830dp"
+            android:layout_marginLeft="802dp"
             android:layout_marginTop="387dp" >
 
             <Button

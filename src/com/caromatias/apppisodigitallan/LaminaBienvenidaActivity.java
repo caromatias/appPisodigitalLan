@@ -422,6 +422,227 @@ public class LaminaBienvenidaActivity extends Activity {
 						btnPeru.setEnabled(false);
 					}
 				});
+		// //////////////////////////////////////////////////////////////////////////
+				// ///////////////////// PUNTOS MAPA MUNDIAL BIENVENIDA ////////////////////
+				findViewById(R.id.img_punto_argentina)
+						.setOnClickListener(new OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								// TODO Auto-generated method stub
+								btnArgentina
+										.setBackgroundResource(R.drawable.botonrojo);
+								animMapaInterOut
+										.setAnimationListener(new Animation.AnimationListener() {
+											@Override
+											public void onAnimationEnd(
+													Animation animation) {
+												lay_principal.setVisibility(View.GONE);
+												Intent act = new Intent(
+														LaminaBienvenidaActivity.this,
+														LaminaArgentinaActivity.class);
+												startActivity(act);
+												overridePendingTransition(
+														R.anim.fade_in_paises,
+														R.anim.fade_out_paises);
+											}
+
+											@Override
+											public void onAnimationRepeat(Animation arg0) {
+												// TODO Auto-generated method stub
+
+											}
+
+											@Override
+											public void onAnimationStart(
+													Animation animation) {
+												// creaCuentaAtras();
+											}
+										});
+								lay_principal.startAnimation(animMapaInterOut);
+								btnArgentina.setEnabled(false);
+							}
+						});
+				findViewById(R.id.img_punto_brasil).setOnClickListener(
+						new OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								btnBrasil.setBackgroundResource(R.drawable.botonrojo);
+								animMapaInterOut
+										.setAnimationListener(new Animation.AnimationListener() {
+											@Override
+											public void onAnimationEnd(
+													Animation animation) {
+												lay_principal.setVisibility(View.GONE);
+												Intent act = new Intent(
+														LaminaBienvenidaActivity.this,
+														LaminaBrasilActivity.class);
+												startActivity(act);
+												overridePendingTransition(
+														R.anim.fade_in_paises,
+														R.anim.fade_out_paises);
+											}
+
+											@Override
+											public void onAnimationRepeat(Animation arg0) {
+												// TODO Auto-generated method stub
+
+											}
+
+											@Override
+											public void onAnimationStart(
+													Animation animation) {
+												// creaCuentaAtras();
+											}
+										});
+								lay_principal.startAnimation(animMapaInterOut);
+								btnBrasil.setEnabled(false);
+							}
+						});
+
+				findViewById(R.id.img_punto_chile).setOnClickListener(
+						new OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								btnChile.setBackgroundResource(R.drawable.botonrojo);
+								animMapaInterOut
+										.setAnimationListener(new Animation.AnimationListener() {
+											@Override
+											public void onAnimationEnd(
+													Animation animation) {
+												lay_principal.setVisibility(View.GONE);
+												Intent act = new Intent(
+														LaminaBienvenidaActivity.this,
+														LaminaChileActivity.class);
+												startActivity(act);
+												overridePendingTransition(
+														R.anim.fade_in_paises,
+														R.anim.fade_out_paises);
+											}
+
+											@Override
+											public void onAnimationRepeat(Animation arg0) {
+												// TODO Auto-generated method stub
+
+											}
+
+											@Override
+											public void onAnimationStart(
+													Animation animation) {
+												// creaCuentaAtras();
+											}
+										});
+								lay_principal.startAnimation(animMapaInterOut);
+								btnChile.setEnabled(false);
+							}
+						});
+				findViewById(R.id.img_punto_colombia).setOnClickListener(
+						new OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								btnColombia.setBackgroundResource(R.drawable.botonrojo);
+								animMapaInterOut
+										.setAnimationListener(new Animation.AnimationListener() {
+											@Override
+											public void onAnimationEnd(
+													Animation animation) {
+												lay_principal.setVisibility(View.GONE);
+												Intent act = new Intent(
+														LaminaBienvenidaActivity.this,
+														LaminaColombiaActivity.class);
+												startActivity(act);
+												overridePendingTransition(
+														R.anim.fade_in_paises,
+														R.anim.fade_out_paises);
+											}
+
+											@Override
+											public void onAnimationRepeat(Animation arg0) {
+												// TODO Auto-generated method stub
+
+											}
+
+											@Override
+											public void onAnimationStart(
+													Animation animation) {
+												// creaCuentaAtras();
+											}
+										});
+								lay_principal.startAnimation(animMapaInterOut);
+								btnColombia.setEnabled(false);
+							}
+						});
+				findViewById(R.id.img_punto_ecuador).setOnClickListener(
+						new OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								btnEcuador.setBackgroundResource(R.drawable.botonrojo);
+								animMapaInterOut
+										.setAnimationListener(new Animation.AnimationListener() {
+											@Override
+											public void onAnimationEnd(
+													Animation animation) {
+												lay_principal.setVisibility(View.GONE);
+												Intent act = new Intent(
+														LaminaBienvenidaActivity.this,
+														LaminaEcuadorActivity.class);
+												startActivity(act);
+												overridePendingTransition(
+														R.anim.fade_in_paises,
+														R.anim.fade_out_paises);
+											}
+
+											@Override
+											public void onAnimationRepeat(Animation arg0) {
+												// TODO Auto-generated method stub
+
+											}
+
+											@Override
+											public void onAnimationStart(
+													Animation animation) {
+												// creaCuentaAtras();
+											}
+										});
+								lay_principal.startAnimation(animMapaInterOut);
+								btnEcuador.setEnabled(false);
+							}
+						});
+				findViewById(R.id.img_punto_peru).setOnClickListener(
+						new OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								btnPeru.setBackgroundResource(R.drawable.botonrojo);
+								animMapaInterOut
+										.setAnimationListener(new Animation.AnimationListener() {
+											@Override
+											public void onAnimationEnd(
+													Animation animation) {
+												lay_principal.setVisibility(View.GONE);
+												Intent act = new Intent(
+														LaminaBienvenidaActivity.this,
+														LaminaPeruActivity.class);
+												startActivity(act);
+												overridePendingTransition(
+														R.anim.fade_in_paises,
+														R.anim.fade_out_paises);
+											}
+
+											@Override
+											public void onAnimationRepeat(Animation arg0) {
+												// TODO Auto-generated method stub
+
+											}
+
+											@Override
+											public void onAnimationStart(
+													Animation animation) {
+												// creaCuentaAtras();
+											}
+										});
+								lay_principal.startAnimation(animMapaInterOut);
+								btnPeru.setEnabled(false);
+							}
+						});
 	}
 
 	public void animaciones() {
@@ -682,7 +903,7 @@ public class LaminaBienvenidaActivity extends Activity {
 				layPanelRutas.startAnimation(animPanel);
 				// ////////// ANIMACION GOGAME ///////////////
 				btnGoGame.startAnimation(animGoGame);
-				btnGoGameText.startAnimation(animGoGameText);
+				btnGoGameText.startAnimation(animGoGameText);     
 				// ///////////////////////////////////////////
 				layPanelRutas.bringToFront();
 				goGameMaster.bringToFront();
