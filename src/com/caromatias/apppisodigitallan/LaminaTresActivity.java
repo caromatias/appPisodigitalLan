@@ -1,15 +1,13 @@
 package com.caromatias.apppisodigitallan;
 
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
-import android.os.Handler;
-import android.animation.ObjectAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -19,8 +17,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.BounceInterpolator;
-import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -49,23 +45,19 @@ public class LaminaTresActivity extends Activity {
 	private Animation animMundoIn;
 	private Animation animMundoOut;
 	private Animation animMundoRotacion;
+	private Animation animMundoOutMundo;
 	private MediaPlayer mpTrivia;
 	public static MediaPlayer mpFondo;
-	//private MediaPlayer mpMundo;
-	//private MediaPlayer mpoK;
 	private MediaPlayer mpFail;
-	//private MediaPlayer mpSalidaTrivia;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lamina_tres);
-		
+
 		mpFail = MediaPlayer.create(this, R.raw.sonido_incorrecto);
-		//mpMundo = MediaPlayer.create(this, R.raw.engranaje_mundo);
 		mpTrivia = MediaPlayer.create(this, R.raw.reloj_trivia);
 		mpFondo = MediaPlayer.create(this, R.raw.jazz_dance);
-		//mpSalidaTrivia = MediaPlayer.create(this, R.raw.igh_fast_swoosh);
 		mpFondo.start();
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
@@ -83,25 +75,23 @@ public class LaminaTresActivity extends Activity {
 		respuestaUno = (Button) findViewById(R.id.btn_respuesta1);
 		respuestaDos = (Button) findViewById(R.id.btn_respuesta2);
 		respuestaTres = (Button) findViewById(R.id.btn_respuesta3);
-		
-		mpTrivia.setOnCompletionListener(new OnCompletionListener() {
-		    public void onCompletion(MediaPlayer mpTri) {
-		    	mpTri.release();
 
-		    };
+		mpTrivia.setOnCompletionListener(new OnCompletionListener() {
+			public void onCompletion(MediaPlayer mpTri) {
+				mpTri.release();
+			};
 		});
 		mpFondo.setOnCompletionListener(new OnCompletionListener() {
-		    public void onCompletion(MediaPlayer mpFondo) {
-		    	mpFondo.release();
+			public void onCompletion(MediaPlayer mpFondo) {
+				mpFondo.release();
 
-		    };
+			};
 		});
 		mpFail.setOnCompletionListener(new OnCompletionListener() {
-		    public void onCompletion(MediaPlayer mpFa) {
-		    	mpFa.release();
-
-		    };
-		});		
+			public void onCompletion(MediaPlayer mpFa) {
+				mpFa.release();
+			};
+		});
 
 		imgBackTrivia = (RelativeLayout) findViewById(R.id.lay_img_back_trivia);
 		imgMundoTrivia = (ImageView) findViewById(R.id.img_mundo_back_trivia);
@@ -118,19 +108,11 @@ public class LaminaTresActivity extends Activity {
 				R.anim.anim_trivia_out);
 		animMundoIn = AnimationUtils.loadAnimation(this,
 				R.anim.anim_scale_translation_world);
-		animMundoOut = AnimationUtils.loadAnimation(this,
-				R.anim.anim_translate_mundo_out);
-		animMundoRotacion = AnimationUtils.loadAnimation(this,
-				R.anim.anim_rotacion_mundo);
+		animMundoOutMundo = AnimationUtils.loadAnimation(this,R.anim.anim_translate_mundo_out);
 		// /////////////////////////////////////
-		videoBackTrivia
-				.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+		videoBackTrivia.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 					public void onCompletion(MediaPlayer mp) {
-						videoBackTrivia.setVisibility(View.GONE);
-						videoBackTriviaB
-								.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
-										+ R.raw.back_trivia);
-						videoBackTriviaB.start();
+						fadeInWhite();
 						AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 						int currentVolume = audio
 								.getStreamVolume(AudioManager.STREAM_MUSIC);
@@ -144,19 +126,15 @@ public class LaminaTresActivity extends Activity {
 						mpTrivia.setLooping(true);
 					}
 				});
-
-		/*
-		 * videoBackTriviaB .setOnCompletionListener(new
-		 * MediaPlayer.OnCompletionListener() { public void
-		 * onCompletion(MediaPlayer mp) {
-		 * imgBackTrivia.setVisibility(View.VISIBLE);
-		 * imgBackTrivia.startAnimation(animVideoMain); final Handler
-		 * handlerVideoBack = new Handler(); handlerVideoBack.postDelayed(new
-		 * Runnable() {
-		 * 
-		 * @Override public void run() { // Do something after 5s = 5000ms
-		 * videoBackTriviaB.setVisibility(View.GONE); } }, 2000); } });
-		 */
+		videoBackTriviaB.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+			public void onCompletion(MediaPlayer mp) {
+				imgMundoTrivia.setVisibility(View.VISIBLE);
+				imgMundoTrivia.startAnimation(animMundoIn);
+				layPregTrivia.setVisibility(View.VISIBLE);
+				layPregTrivia.startAnimation(animMundoIn);
+				creaSalidaTrivia();
+			}
+		});
 
 		findViewById(R.id.btn_abre).setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
@@ -172,48 +150,34 @@ public class LaminaTresActivity extends Activity {
 			}
 		});
 
-		final Handler handlerDos = new Handler();
-		handlerDos.postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				// Do something after 5s = 5000ms
-				imgWhiteTres.setVisibility(View.VISIBLE);
-				imgWhiteTres.startAnimation(animVideoMain);
-			}
-		}, 9800);
-		final Handler handlerTres = new Handler();
-		handlerTres.postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				// Do something after 5s = 5000ms
-				imgWhiteTres.startAnimation(animVideoMainOut);
-				imgWhiteTres.setVisibility(View.GONE);
-				// layPregTrivia.setVisibility(View.VISIBLE);
-				// layPregTrivia.startAnimation(animTriviaIn);
-			}
-		}, 11000);
+		/*
+		 * final Handler handlerDos = new Handler(); handlerDos.postDelayed(new
+		 * Runnable() {
+		 * 
+		 * @Override public void run() { // Do something after 5s = 5000ms
+		 * imgWhiteTres.setVisibility(View.VISIBLE);
+		 * imgWhiteTres.startAnimation(animVideoMain); } }, 9800); final Handler
+		 * handlerTres = new Handler(); handlerTres.postDelayed(new Runnable() {
+		 * 
+		 * @Override public void run() { // Do something after 5s = 5000ms
+		 * imgWhiteTres.startAnimation(animVideoMainOut);
+		 * imgWhiteTres.setVisibility(View.GONE); //
+		 * layPregTrivia.setVisibility(View.VISIBLE); //
+		 * layPregTrivia.startAnimation(animTriviaIn); } }, 11000);
+		 */
+		/*
 		final Handler handlerCuatro = new Handler();
 		handlerCuatro.postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				// Do something after 5s = 5000ms
-				/*
-				 * imgBackTrivia.setVisibility(View.VISIBLE);
-				 * imgBackTriviaUno.setVisibility(View.VISIBLE);
-				 * imgBackTriviaUno.startAnimation(animVideoMain);
-				 */
 				imgMundoTrivia.setVisibility(View.VISIBLE);
 				imgMundoTrivia.startAnimation(animMundoIn);
 				layPregTrivia.setVisibility(View.VISIBLE);
-				/*
-				 * ResizeWidthAnimation anim = new
-				 * ResizeWidthAnimation(layPregTrivia, 1200);
-				 * anim.setDuration(2000); layPregTrivia.startAnimation(anim);
-				 */
 				layPregTrivia.startAnimation(animMundoIn);
 				creaSalidaTrivia();
 			}
 		}, 15500);
+		
 		final Handler handlerCinco = new Handler();
 		handlerCinco.postDelayed(new Runnable() {
 			@Override
@@ -224,6 +188,7 @@ public class LaminaTresActivity extends Activity {
 				creaSalidaTrivia();
 			}
 		}, 16500);
+		*/
 		/*
 		 * TimerTask task = new TimerTask() {
 		 * 
@@ -388,7 +353,8 @@ public class LaminaTresActivity extends Activity {
 			videoBackTrivia
 					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
 							+ R.raw.nuevayork);
-			preguntaTrivia.setText(getResources().getString(R.string.nuevayork));
+			preguntaTrivia
+					.setText(getResources().getString(R.string.nuevayork));
 			respuestaUno.setText("a) "
 					+ getResources().getString(R.string.rnuevayork1));
 			respuestaDos.setText("b) "
@@ -511,9 +477,11 @@ public class LaminaTresActivity extends Activity {
 			numeroDeRespuesta = 1;
 			break;
 		case 19:
-			videoBackTrivia.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
 							+ R.raw.frankfurt);
-			preguntaTrivia.setText(getResources().getString(R.string.frankfurt));
+			preguntaTrivia
+					.setText(getResources().getString(R.string.frankfurt));
 			respuestaUno.setText("a) "
 					+ getResources().getString(R.string.frankfurt1));
 			respuestaDos.setText("b) "
@@ -524,7 +492,8 @@ public class LaminaTresActivity extends Activity {
 			numeroDeRespuesta = 1;
 			break;
 		case 20:
-			videoBackTrivia.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
 							+ R.raw.londres);
 			preguntaTrivia.setText(getResources().getString(R.string.londres));
 			respuestaUno.setText("a) "
@@ -537,7 +506,8 @@ public class LaminaTresActivity extends Activity {
 			numeroDeRespuesta = 1;
 			break;
 		case 21:
-			videoBackTrivia.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
+			videoBackTrivia
+					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
 							+ R.raw.cuzco);
 			preguntaTrivia.setText(getResources().getString(R.string.cuzco));
 			respuestaUno.setText("a) "
@@ -558,682 +528,255 @@ public class LaminaTresActivity extends Activity {
 		respuestaUno.setEnabled(true);
 		respuestaDos.setEnabled(true);
 		respuestaTres.setEnabled(true);
-		layPregTrivia.startAnimation(animMundoOut);
-		imgMundoTrivia.startAnimation(animMundoOut);
-		creaSalidaTrivia();
 		Bundle bundle = getIntent().getExtras();
-		switch (bundle.getInt("ruta")) {
-		case 1:
-			final Handler handlerPregUnoArg = new Handler();
-			handlerPregUnoArg.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					// Do something after 5s = 5000ms
-					preguntaTrivia.setText(getResources().getString(
-							R.string.planArg));
-					respuestaUno.setText("a) "
-							+ getResources().getString(R.string.rlanArg_1));
-					respuestaDos.setText("b) "
-							+ getResources().getString(R.string.rlanArg_2));
-					respuestaTres.setText("c) "
-							+ getResources().getString(R.string.rlanArg_3));
-					respuestaCorrecta = 3;
-					numeroDeRespuesta = 2;
-					// layPregTrivia.startAnimation(animTriviaIn);
-					layPregTrivia.startAnimation(animMundoIn);
-					imgMundoTrivia.startAnimation(animMundoIn);
-					// mpSalidaTrivia.start();
-				}
-			}, 1000);
-			final Handler handlerPregArgSonido = new Handler();
-			handlerPregArgSonido.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					creaSalidaTrivia();
-				}
-			}, 2000);
-			break;
-		case 2:
-			final Handler handlerPregUnoSao = new Handler();
-			handlerPregUnoSao.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					// Do something after 5s = 5000ms
-					preguntaTrivia.setText(getResources().getString(
-							R.string.planSao));
-					respuestaUno.setText("a) "
-							+ getResources().getString(R.string.rlanSao_1));
-					respuestaDos.setText("b) "
-							+ getResources().getString(R.string.rlanSao_2));
-					respuestaTres.setText("c) "
-							+ getResources().getString(R.string.rlanSao_3));
-					respuestaCorrecta = 1;
-					numeroDeRespuesta = 2;
-					// layPregTrivia.startAnimation(animTriviaIn);
-					layPregTrivia.startAnimation(animMundoIn);
-					imgMundoTrivia.startAnimation(animMundoIn);
-					// mpSalidaTrivia.start();
-				}
-			}, 1000);
-			final Handler handlerPregSaoSonido = new Handler();
-			handlerPregSaoSonido.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					creaSalidaTrivia();
-				}
-			}, 2000);
-			break;
-		case 3:
-			final Handler handlerPregUnoRio = new Handler();
-			handlerPregUnoRio.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					// Do something after 5s = 5000ms
-					preguntaTrivia.setText(getResources().getString(
-							R.string.planRio));
-					respuestaUno.setText("a) "
-							+ getResources().getString(R.string.rlanRio_1));
-					respuestaDos.setText("b) "
-							+ getResources().getString(R.string.rlanRio_2));
-					respuestaTres.setText("c) "
-							+ getResources().getString(R.string.rlanRio_3));
-					respuestaCorrecta = 2;
-					numeroDeRespuesta = 2;
-					// layPregTrivia.startAnimation(animTriviaIn);
-					layPregTrivia.startAnimation(animMundoIn);
-					imgMundoTrivia.startAnimation(animMundoIn);
-					// mpSalidaTrivia.start();
-				}
-			}, 1000);
-			final Handler handlerPregRioSonido = new Handler();
-			handlerPregRioSonido.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					creaSalidaTrivia();
-				}
-			}, 2000);
-			break;
-		case 4:
-			final Handler handlerPregUnoBogota = new Handler();
-			handlerPregUnoBogota.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					// Do something after 5s = 5000ms
-					preguntaTrivia.setText(getResources().getString(
-							R.string.planBogota));
-					respuestaUno.setText("a) "
-							+ getResources().getString(R.string.rlanBogota_1));
-					respuestaDos.setText("b) "
-							+ getResources().getString(R.string.rlanBogota_2));
-					respuestaTres.setText("c) "
-							+ getResources().getString(R.string.rlanBogota_3));
-					respuestaCorrecta = 1;
-					numeroDeRespuesta = 2;
-					// layPregTrivia.startAnimation(animTriviaIn);
-					layPregTrivia.startAnimation(animMundoIn);
-					imgMundoTrivia.startAnimation(animMundoIn);
-					// mpSalidaTrivia.start();
-				}
-			}, 1000);
-			final Handler handlerPregBogotaSonido = new Handler();
-			handlerPregBogotaSonido.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					creaSalidaTrivia();
-				}
-			}, 2000);
-			break;
-		case 11:
-			final Handler handlerPregLosAngeles = new Handler();
-			handlerPregLosAngeles.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					// Do something after 5s = 5000ms
-					preguntaTrivia.setText(getResources().getString(
-							R.string.planLosAngeles));
-					respuestaUno.setText("a) "
-							+ getResources().getString(R.string.rlanLosAngeles_1));
-					respuestaDos.setText("b) "
-							+ getResources().getString(R.string.rlanLosAngeles_2));
-					respuestaTres.setText("c) "
-							+ getResources().getString(R.string.rlanLosAngeles_3));
-					respuestaCorrecta = 2;
-					numeroDeRespuesta = 2;
-					// layPregTrivia.startAnimation(animTriviaIn);
-					layPregTrivia.startAnimation(animMundoIn);
-					imgMundoTrivia.startAnimation(animMundoIn);
-					// mpSalidaTrivia.start();
-				}
-			}, 1000);
-			final Handler handlerPregLosAngelesSonido = new Handler();
-			handlerPregLosAngelesSonido.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					creaSalidaTrivia();
-				}
-			}, 2000);
-			break;
-		case 13:
-			final Handler handlerPregMexico = new Handler();
-			handlerPregMexico.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					// Do something after 5s = 5000ms
-					preguntaTrivia.setText(getResources().getString(
-							R.string.planMexico));
-					respuestaUno.setText("a) "
-							+ getResources().getString(R.string.rlanMexico_1));
-					respuestaDos.setText("b) "
-							+ getResources().getString(R.string.rlanMexico_2));
-					respuestaTres.setText("c) "
-							+ getResources().getString(R.string.rlanMexico_3));
-					respuestaCorrecta = 3;
-					numeroDeRespuesta = 2;
-					// layPregTrivia.startAnimation(animTriviaIn);
-					layPregTrivia.startAnimation(animMundoIn);
-					imgMundoTrivia.startAnimation(animMundoIn);
-					// mpSalidaTrivia.start();
-				}
-			}, 1000);
-			final Handler handlerPregMexicoSonido = new Handler();
-			handlerPregMexicoSonido.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					creaSalidaTrivia();
-				}
-			}, 2000);
-			break;
-		case 21:
-			final Handler handlerPregUnoLimaCuz = new Handler();
-			handlerPregUnoLimaCuz.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					// Do something after 5s = 5000ms
-					preguntaTrivia.setText(getResources().getString(
-							R.string.planLimaCuz));
-					respuestaUno.setText("a) "
-							+ getResources().getString(R.string.rlanLimaCuz_1));
-					respuestaDos.setText("b) "
-							+ getResources().getString(R.string.rlanLimaCuz_2));
-					respuestaTres.setText("c) "
-							+ getResources().getString(R.string.rlanLimaCuz_3));
-					respuestaCorrecta = 2;
-					numeroDeRespuesta = 2;
-					// layPregTrivia.startAnimation(animTriviaIn);
-					layPregTrivia.startAnimation(animMundoIn);
-					imgMundoTrivia.startAnimation(animMundoIn);
-					// mpSalidaTrivia.start();
-				}
-			}, 1000);
-			final Handler handlerPregLimaSonido = new Handler();
-			handlerPregLimaSonido.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					creaSalidaTrivia();
-				}
-			}, 2000);
-			break;
-		default:
-			int numeroRandom = generaRandom(14);
-			switch (numeroRandom) {
-			case 1:
-				final Handler handlerPregUno = new Handler();
-				handlerPregUno.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						// Do something after 5s = 5000ms
-						preguntaTrivia.setText(getResources().getString(
-								R.string.plan1));
-						respuestaUno.setText("a) "
-								+ getResources().getString(R.string.rlan1_1));
-						respuestaDos.setText("b) "
-								+ getResources().getString(R.string.rlan1_2));
-						respuestaTres.setText("c) "
-								+ getResources().getString(R.string.rlan1_3));
-						respuestaCorrecta = 1;
-						numeroDeRespuesta = 2;
-						// layPregTrivia.startAnimation(animTriviaIn);
-						layPregTrivia.startAnimation(animMundoIn);
-						imgMundoTrivia.startAnimation(animMundoIn);
-						// mpSalidaTrivia.start();
-					}
-				}, 1000);
-				final Handler handlerPregDosSonido = new Handler();
-				handlerPregDosSonido.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						creaSalidaTrivia();
-					}
-				}, 2000);
-				break;
-			case 2:
-				final Handler handlerPregDos = new Handler();
-				handlerPregDos.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						// Do something after 5s = 5000ms
-						preguntaTrivia.setText(getResources().getString(
-								R.string.plan7));
-						respuestaUno.setText("a) "
-								+ getResources().getString(R.string.rlan7_1));
-						respuestaDos.setText("b) "
-								+ getResources().getString(R.string.rlan7_2));
-						respuestaTres.setText("c) "
-								+ getResources().getString(R.string.rlan7_3));
-						respuestaCorrecta = 1;
-						numeroDeRespuesta = 2;
-						// layPregTrivia.startAnimation(animTriviaIn);
-						layPregTrivia.startAnimation(animMundoIn);
-						imgMundoTrivia.startAnimation(animMundoIn);
-						// mpSalidaTrivia.start();
-					}
-				}, 1000);
-
-				final Handler handlerPregTresSonido = new Handler();
-				handlerPregTresSonido.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						creaSalidaTrivia();
-					}
-				}, 2000);
-
-				break;
-			case 3:
-				final Handler handlerPregTres = new Handler();
-				handlerPregTres.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						// Do something after 5s = 5000ms
-						preguntaTrivia.setText(getResources().getString(
-								R.string.plan3));
-						respuestaUno.setText("a) "
-								+ getResources().getString(R.string.rlan3_1));
-						respuestaDos.setText("b) "
-								+ getResources().getString(R.string.rlan3_2));
-						respuestaTres.setText("c) "
-								+ getResources().getString(R.string.rlan3_3));
-						respuestaCorrecta = 2;
-						numeroDeRespuesta = 2;
-						// layPregTrivia.startAnimation(animTriviaIn);
-						layPregTrivia.startAnimation(animMundoIn);
-						imgMundoTrivia.startAnimation(animMundoIn);
-						// mpSalidaTrivia.start();
-					}
-				}, 1000);
-
-				final Handler handlerPregCuatroSonido = new Handler();
-				handlerPregCuatroSonido.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						creaSalidaTrivia();
-					}
-				}, 2000);
-
-				break;
-			case 4:
-				final Handler handlerPregCuatro = new Handler();
-				handlerPregCuatro.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						// Do something after 5s = 5000ms
-						preguntaTrivia.setText(getResources().getString(
-								R.string.plan3));
-						respuestaUno.setText("a) "
-								+ getResources().getString(R.string.rlan3_1));
-						respuestaDos.setText("b) "
-								+ getResources().getString(R.string.rlan3_2));
-						respuestaTres.setText("c) "
-								+ getResources().getString(R.string.rlan3_3));
-						respuestaCorrecta = 2;
-						numeroDeRespuesta = 2;
-						// layPregTrivia.startAnimation(animTriviaIn);
-						layPregTrivia.startAnimation(animMundoIn);
-						imgMundoTrivia.startAnimation(animMundoIn);
-						// mpSalidaTrivia.start();
-					}
-				}, 1000);
-
-				final Handler handlerPregCincoSonido = new Handler();
-				handlerPregCincoSonido.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						creaSalidaTrivia();
-					}
-				}, 2000);
-
-				break;
-			case 5:
-				final Handler handlerPregCinco = new Handler();
-				handlerPregCinco.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						// Do something after 5s = 5000ms
-						preguntaTrivia.setText(getResources().getString(
-								R.string.plan9));
-						respuestaUno.setText("a) "
-								+ getResources().getString(R.string.rlan9_1));
-						respuestaDos.setText("b) "
-								+ getResources().getString(R.string.rlan9_2));
-						respuestaTres.setText("c) "
-								+ getResources().getString(R.string.rlan9_3));
-						respuestaCorrecta = 2;
-						numeroDeRespuesta = 2;
-						// layPregTrivia.startAnimation(animTriviaIn);
-						layPregTrivia.startAnimation(animMundoIn);
-						imgMundoTrivia.startAnimation(animMundoIn);
-						// mpSalidaTrivia.start();
-					}
-				}, 1000);
-
-				final Handler handlerPregSeisSonido = new Handler();
-				handlerPregSeisSonido.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						creaSalidaTrivia();
-					}
-				}, 2000);
-
-				break;
-			case 6:
-				final Handler handlerPregSeis = new Handler();
-				handlerPregSeis.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						// Do something after 5s = 5000ms
-						preguntaTrivia.setText(getResources().getString(
-								R.string.plan12));
-						respuestaUno.setText("a) "
-								+ getResources().getString(R.string.rlan12_1));
-						respuestaDos.setText("b) "
-								+ getResources().getString(R.string.rlan12_2));
-						respuestaTres.setText("c) "
-								+ getResources().getString(R.string.rlan12_3));
-						respuestaCorrecta = 3;
-						numeroDeRespuesta = 2;
-						// layPregTrivia.startAnimation(animTriviaIn);
-						layPregTrivia.startAnimation(animMundoIn);
-						imgMundoTrivia.startAnimation(animMundoIn);
-						// mpSalidaTrivia.start();
-					}
-				}, 1000);
-
-				final Handler handlerPregSieteSonido = new Handler();
-				handlerPregSieteSonido.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						creaSalidaTrivia();
-					}
-				}, 2000);
-
-				break;
-			case 7:
-				final Handler handlerPregSiete = new Handler();
-				handlerPregSiete.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						// Do something after 5s = 5000ms
-						preguntaTrivia.setText(getResources().getString(
-								R.string.plan14));
-						respuestaUno.setText("a) "
-								+ getResources().getString(R.string.rlan14_1));
-						respuestaDos.setText("b) "
-								+ getResources().getString(R.string.rlan14_2));
-						respuestaTres.setText("c) "
-								+ getResources().getString(R.string.rlan14_3));
-						respuestaCorrecta = 1;
-						numeroDeRespuesta = 2;
-						// layPregTrivia.startAnimation(animTriviaIn);
-						layPregTrivia.startAnimation(animMundoIn);
-						imgMundoTrivia.startAnimation(animMundoIn);
-						// mpSalidaTrivia.start();
-					}
-				}, 1000);
-
-				final Handler handlerPregOchoSonido = new Handler();
-				handlerPregOchoSonido.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						creaSalidaTrivia();
-					}
-				}, 2000);
-
-				break;
-			case 8:
-				final Handler handlerPregOcho = new Handler();
-				handlerPregOcho.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						// Do something after 5s = 5000ms
-						preguntaTrivia.setText(getResources().getString(
-								R.string.plan7));
-						respuestaUno.setText("a) "
-								+ getResources().getString(R.string.rlan7_1));
-						respuestaDos.setText("b) "
-								+ getResources().getString(R.string.rlan7_2));
-						respuestaTres.setText("c) "
-								+ getResources().getString(R.string.rlan7_3));
-						respuestaCorrecta = 1;
-						numeroDeRespuesta = 2;
-						// layPregTrivia.startAnimation(animTriviaIn);
-						layPregTrivia.startAnimation(animMundoIn);
-						imgMundoTrivia.startAnimation(animMundoIn);
-						// mpSalidaTrivia.start();
-					}
-				}, 1000);
-
-				final Handler handlerPregNueveSonido = new Handler();
-				handlerPregNueveSonido.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						creaSalidaTrivia();
-					}
-				}, 2000);
-
-				break;
-			case 9:
-				final Handler handlerPregNueve = new Handler();
-				handlerPregNueve.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						// Do something after 5s = 5000ms
-						preguntaTrivia.setText(getResources().getString(
-								R.string.plan9));
-						respuestaUno.setText("a) "
-								+ getResources().getString(R.string.rlan9_1));
-						respuestaDos.setText("b) "
-								+ getResources().getString(R.string.rlan9_2));
-						respuestaTres.setText("c) "
-								+ getResources().getString(R.string.rlan9_3));
-						respuestaCorrecta = 2;
-						numeroDeRespuesta = 2;
-						// layPregTrivia.startAnimation(animTriviaIn);
-						layPregTrivia.startAnimation(animMundoIn);
-						imgMundoTrivia.startAnimation(animMundoIn);
-						// mpSalidaTrivia.start();
-					}
-				}, 1000);
-
-				final Handler handlerPregDiezSonido = new Handler();
-				handlerPregDiezSonido.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						creaSalidaTrivia();
-					}
-				}, 2000);
-
-				break;
-			case 10:
-				final Handler handlerPregDiez = new Handler();
-				handlerPregDiez.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						// Do something after 5s = 5000ms
-						preguntaTrivia.setText(getResources().getString(
-								R.string.plan10));
-						respuestaUno.setText("a) "
-								+ getResources().getString(R.string.rlan10_1));
-						respuestaDos.setText("b) "
-								+ getResources().getString(R.string.rlan10_2));
-						respuestaTres.setText("c) "
-								+ getResources().getString(R.string.rlan10_3));
-						respuestaCorrecta = 1;
-						numeroDeRespuesta = 2;
-						// layPregTrivia.startAnimation(animTriviaIn);
-						layPregTrivia.startAnimation(animMundoIn);
-						imgMundoTrivia.startAnimation(animMundoIn);
-						// mpSalidaTrivia.start();
-					}
-				}, 1000);
-
-				final Handler handlerPregOnceSonido = new Handler();
-				handlerPregOnceSonido.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						creaSalidaTrivia();
-					}
-				}, 2000);
-
-				break;
-			case 11:
-				final Handler handlerPregOnce = new Handler();
-				handlerPregOnce.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						// Do something after 5s = 5000ms
-						preguntaTrivia.setText(getResources().getString(
-								R.string.plan11));
-						respuestaUno.setText("a) "
-								+ getResources().getString(R.string.rlan11_1));
-						respuestaDos.setText("b) "
-								+ getResources().getString(R.string.rlan11_2));
-						respuestaTres.setText("c) "
-								+ getResources().getString(R.string.rlan11_3));
-						respuestaCorrecta = 3;
-						numeroDeRespuesta = 2;
-						// layPregTrivia.startAnimation(animTriviaIn);
-						layPregTrivia.startAnimation(animMundoIn);
-						imgMundoTrivia.startAnimation(animMundoIn);
-						// mpSalidaTrivia.start();
-					}
-				}, 1000);
-
-				final Handler handlerPreDoceSonido = new Handler();
-				handlerPreDoceSonido.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						creaSalidaTrivia();
-					}
-				}, 2000);
-
-				break;
-			case 12:
-				final Handler handlerPregDoce = new Handler();
-				handlerPregDoce.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						// Do something after 5s = 5000ms
-						preguntaTrivia.setText(getResources().getString(
-								R.string.plan12));
-						respuestaUno.setText("a) "
-								+ getResources().getString(R.string.rlan12_1));
-						respuestaDos.setText("b) "
-								+ getResources().getString(R.string.rlan12_2));
-						respuestaTres.setText("c) "
-								+ getResources().getString(R.string.rlan12_3));
-						respuestaCorrecta = 2;
-						numeroDeRespuesta = 2;
-						// layPregTrivia.startAnimation(animTriviaIn);
-						layPregTrivia.startAnimation(animMundoIn);
-						imgMundoTrivia.startAnimation(animMundoIn);
-						// mpSalidaTrivia.start();
-					}
-				}, 1000);
-
-				final Handler handlerPreTreceSonido = new Handler();
-				handlerPreTreceSonido.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						creaSalidaTrivia();
-					}
-				}, 2000);
-
-				break;
-			case 13:
-				final Handler handlerPregTrece = new Handler();
-				handlerPregTrece.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						// Do something after 5s = 5000ms
-						preguntaTrivia.setText(getResources().getString(
-								R.string.plan13));
-						respuestaUno.setText("a) "
-								+ getResources().getString(R.string.rlan13_1));
-						respuestaDos.setText("b) "
-								+ getResources().getString(R.string.rlan13_2));
-						respuestaTres.setText("c) "
-								+ getResources().getString(R.string.rlan13_3));
-						respuestaCorrecta = 1;
-						numeroDeRespuesta = 2;
-						// layPregTrivia.startAnimation(animTriviaIn);
-						layPregTrivia.startAnimation(animMundoIn);
-						imgMundoTrivia.startAnimation(animMundoIn);
-						// mpSalidaTrivia.start();
-					}
-				}, 1000);
-
-				final Handler handlerPreCatorceSonido = new Handler();
-				handlerPreCatorceSonido.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						creaSalidaTrivia();
-					}
-				}, 2000);
-
-				break;
-			case 14:
-				final Handler handlerPregCatorce = new Handler();
-				handlerPregCatorce.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						// Do something after 5s = 5000ms
-						preguntaTrivia.setText(getResources().getString(
-								R.string.plan14));
-						respuestaUno.setText("a) "
-								+ getResources().getString(R.string.rlan14_1));
-						respuestaDos.setText("b) "
-								+ getResources().getString(R.string.rlan14_2));
-						respuestaTres.setText("c) "
-								+ getResources().getString(R.string.rlan14_3));
-						respuestaCorrecta = 1;
-						numeroDeRespuesta = 2;
-						// layPregTrivia.startAnimation(animTriviaIn);
-						layPregTrivia.startAnimation(animMundoIn);
-						imgMundoTrivia.startAnimation(animMundoIn);
-						// mpSalidaTrivia.start();
-					}
-				}, 1000);
-
-				final Handler handlerPreQuinceSonido = new Handler();
-				handlerPreQuinceSonido.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						creaSalidaTrivia();
-					}
-				}, 2000);
-
-				break;
-			}
-			break;
-		}
+		setAnimacionListener(bundle.getInt("ruta"));
+		layPregTrivia.startAnimation(animMundoOut);
+		imgMundoTrivia.startAnimation(animMundoOutMundo);
+		creaSalidaTrivia2();
 	}
-	public void creaMpOk(){
+
+	public void creaMpOk() {
+		final MediaPlayer mpoK = MediaPlayer
+				.create(this, R.raw.sonido_correcto);
+		mpoK.start();
+		mpoK.setOnCompletionListener(new OnCompletionListener() {
+			public void onCompletion(MediaPlayer mp) {
+				mp.release();
+			};
+		});
+	}
+	public void creaMpOkCorrectaUno() {
 		final MediaPlayer mpoK = MediaPlayer.create(this, R.raw.sonido_correcto);
 		mpoK.start();
 		mpoK.setOnCompletionListener(new OnCompletionListener() {
-		    public void onCompletion(MediaPlayer mp) {
-		        mp.release();
-
-		    };
+			public void onCompletion(MediaPlayer mp) {
+				mp.release();
+				if (respuestaCorrecta != 1) {
+					Intent act = new Intent(
+							LaminaTresActivity.this,
+							GameOverActivity.class);
+					act.putExtra("game", 1);
+					startActivity(act);
+					overridePendingTransition(R.anim.fade_in,
+							R.anim.fade_out);
+					// mp.stop();
+					mpTrivia.stop();
+				} else if (respuestaCorrecta == 1) {
+					if (numeroDeRespuesta != 2) {
+						savingAnimation.stop();
+						preguntasLan();
+						ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_correcta);
+						imaIncorrecta2.setVisibility(View.GONE);
+					} else if (numeroDeRespuesta == 2) {
+						reconRutaJugada();
+						Intent act = new Intent(
+								LaminaTresActivity.this,
+								GameOverActivity.class);
+						act.putExtra("game", 2);
+						startActivity(act);
+						overridePendingTransition(
+								R.anim.fade_in, R.anim.fade_out);
+						// mp.stop();
+						mpTrivia.stop();
+					}
+				}
+			};
+		});
+	}
+	public void creaMpFailIncorrectaUno() {
+		final MediaPlayer mpFai = MediaPlayer.create(this, R.raw.sonido_incorrecto_large);
+		mpFai.start();
+		mpFai.setOnCompletionListener(new OnCompletionListener() {
+			public void onCompletion(MediaPlayer mp) {
+				mp.release();
+				if (respuestaCorrecta != 1) {
+					Intent act = new Intent(
+							LaminaTresActivity.this,
+							GameOverActivity.class);
+					act.putExtra("game", 1);
+					startActivity(act);
+					overridePendingTransition(R.anim.fade_in,
+							R.anim.fade_out);
+					// mp.stop();
+					mpTrivia.stop();
+				} else if (respuestaCorrecta == 1) {
+					if (numeroDeRespuesta != 2) {
+						savingAnimation.stop();
+						preguntasLan();
+						ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_correcta);
+						imaIncorrecta2.setVisibility(View.GONE);
+					} else if (numeroDeRespuesta == 2) {
+						reconRutaJugada();
+						Intent act = new Intent(
+								LaminaTresActivity.this,
+								GameOverActivity.class);
+						act.putExtra("game", 2);
+						startActivity(act);
+						overridePendingTransition(
+								R.anim.fade_in, R.anim.fade_out);
+						// mp.stop();
+						mpTrivia.stop();
+					}
+				}
+			};
+		});
+	}
+	public void creaMpOkCorrectaDos() {
+		final MediaPlayer mpoK = MediaPlayer
+				.create(this, R.raw.sonido_correcto);
+		mpoK.start();
+		mpoK.setOnCompletionListener(new OnCompletionListener() {
+			public void onCompletion(MediaPlayer mp) {
+				mp.release();
+				if (respuestaCorrecta != 2) {
+					mpTrivia.stop();
+					Intent act = new Intent(
+							LaminaTresActivity.this,
+							GameOverActivity.class);
+					act.putExtra("game", 1);
+					startActivity(act);
+					overridePendingTransition(R.anim.fade_in,
+							R.anim.fade_out);
+					// mp.stop();
+				} else if (respuestaCorrecta == 2) {
+					if (numeroDeRespuesta != 2) {
+						savingAnimation.stop();
+						// layPregTrivia.startAnimation(animTriviaOut);
+						preguntasLan();
+						ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_correcta);
+						imaIncorrecta2.setVisibility(View.GONE);
+					} else if (numeroDeRespuesta == 2) {
+						reconRutaJugada();
+						mpTrivia.stop();
+						Intent act = new Intent(
+								LaminaTresActivity.this,
+								GameOverActivity.class);
+						act.putExtra("game", 2);
+						startActivity(act);
+						overridePendingTransition(
+								R.anim.fade_in, R.anim.fade_out);
+						// mp.stop();
+					}
+				}
+			};
+		});
+	}
+	public void creaMpFailIncorrectaDos() {
+		final MediaPlayer mpFai = MediaPlayer.create(this, R.raw.sonido_incorrecto_large);
+		mpFai.start();
+		mpFai.setOnCompletionListener(new OnCompletionListener() {
+			public void onCompletion(MediaPlayer mp) {
+				mp.release();
+				if (respuestaCorrecta != 2) {
+					mpTrivia.stop();
+					Intent act = new Intent(
+							LaminaTresActivity.this,
+							GameOverActivity.class);
+					act.putExtra("game", 1);
+					startActivity(act);
+					overridePendingTransition(R.anim.fade_in,
+							R.anim.fade_out);
+					// mp.stop();
+				} else if (respuestaCorrecta == 2) {
+					if (numeroDeRespuesta != 2) {
+						savingAnimation.stop();
+						// layPregTrivia.startAnimation(animTriviaOut);
+						preguntasLan();
+						ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_correcta);
+						imaIncorrecta2.setVisibility(View.GONE);
+					} else if (numeroDeRespuesta == 2) {
+						reconRutaJugada();
+						mpTrivia.stop();
+						Intent act = new Intent(
+								LaminaTresActivity.this,
+								GameOverActivity.class);
+						act.putExtra("game", 2);
+						startActivity(act);
+						overridePendingTransition(
+								R.anim.fade_in, R.anim.fade_out);
+						// mp.stop();
+					}
+				}
+			};
+		});
+	}
+	public void creaMpOkCorrectaTres() {
+		final MediaPlayer mpoK = MediaPlayer
+				.create(this, R.raw.sonido_correcto);
+		mpoK.start();
+		mpoK.setOnCompletionListener(new OnCompletionListener() {
+			public void onCompletion(MediaPlayer mp) {
+				mp.release();
+				if (respuestaCorrecta != 3) {
+					mpTrivia.stop();
+					Intent act = new Intent(
+							LaminaTresActivity.this,
+							GameOverActivity.class);
+					act.putExtra("game", 1);
+					startActivity(act);
+					overridePendingTransition(R.anim.fade_in,
+							R.anim.fade_out);
+					// mp.stop();
+				} else if (respuestaCorrecta == 3) {
+					if (numeroDeRespuesta != 2) {
+						savingAnimation.stop();
+						// layPregTrivia.startAnimation(animTriviaOut);
+						preguntasLan();
+						ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_correcta);
+						imaIncorrecta2.setVisibility(View.GONE);
+					} else if (numeroDeRespuesta == 2) {
+						reconRutaJugada();
+						mpTrivia.stop();
+						Intent act = new Intent(
+								LaminaTresActivity.this,
+								GameOverActivity.class);
+						act.putExtra("game", 2);
+						startActivity(act);
+						overridePendingTransition(
+								R.anim.fade_in, R.anim.fade_out);
+						// mp.stop();
+					}
+				}
+			};
+		});
+	}
+	public void creaMpFailIncorrectaTres() {
+		final MediaPlayer mpFai = MediaPlayer.create(this, R.raw.sonido_incorrecto_large);
+		mpFai.start();
+		mpFai.setOnCompletionListener(new OnCompletionListener() {
+			public void onCompletion(MediaPlayer mp) {
+				mp.release();
+				if (respuestaCorrecta != 3) {
+					mpTrivia.stop();
+					Intent act = new Intent(
+							LaminaTresActivity.this,
+							GameOverActivity.class);
+					act.putExtra("game", 1);
+					startActivity(act);
+					overridePendingTransition(R.anim.fade_in,
+							R.anim.fade_out);
+					// mp.stop();
+				} else if (respuestaCorrecta == 3) {
+					if (numeroDeRespuesta != 2) {
+						savingAnimation.stop();
+						// layPregTrivia.startAnimation(animTriviaOut);
+						preguntasLan();
+						ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_correcta);
+						imaIncorrecta2.setVisibility(View.GONE);
+					} else if (numeroDeRespuesta == 2) {
+						reconRutaJugada();
+						mpTrivia.stop();
+						Intent act = new Intent(
+								LaminaTresActivity.this,
+								GameOverActivity.class);
+						act.putExtra("game", 2);
+						startActivity(act);
+						overridePendingTransition(
+								R.anim.fade_in, R.anim.fade_out);
+						// mp.stop();
+					}
+				}
+			};
 		});
 	}
 
@@ -1243,98 +786,14 @@ public class LaminaTresActivity extends Activity {
 				new OnClickListener() {
 					public void onClick(View arg0) {
 						creaSonidoMundo();
-						respuestaUno
-								.setBackgroundResource(R.drawable.botoncomenzar);
+						respuestaUno.setBackgroundResource(R.drawable.botoncomenzar);
 						imgMundoTrivia.setVisibility(View.VISIBLE);
+						setAnimationListenerRotacionMundo();
 						imgMundoTrivia.startAnimation(animMundoRotacion);
 						respuestaUno.setEnabled(false);
 						respuestaDos.setEnabled(false);
 						respuestaTres.setEnabled(false);
-						Handler handlerBtnUno = new Handler();
-						handlerBtnUno.postDelayed(new Runnable() {
-							@Override
-							public void run() {
-								// Do something after 5s = 5000ms
-								// mpMundo.stop();
-								switch (respuestaCorrecta) {
-								case 1:
-									respuestaUno
-											.setBackgroundResource(R.anim.anim_respuesta_correcta);
-									savingAnimation = (AnimationDrawable) respuestaUno
-											.getBackground();
-									savingAnimation.start();
-									ImageView imaCorrecta = (ImageView) findViewById(R.id.img_respuesta_correcta);
-									imaCorrecta.setVisibility(View.VISIBLE);
-									creaMpOk();
-									break;
-								case 2:
-									respuestaDos
-											.setBackgroundResource(R.anim.anim_respuesta_correcta);
-									savingAnimation = (AnimationDrawable) respuestaDos
-											.getBackground();
-									savingAnimation.start();
-									ImageView imaIncorrecta = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
-									imaIncorrecta.setVisibility(View.VISIBLE);
-									mpFail.start();
-									break;
-								case 3:
-									respuestaTres
-											.setBackgroundResource(R.anim.anim_respuesta_correcta);
-									savingAnimation = (AnimationDrawable) respuestaTres
-											.getBackground();
-									savingAnimation.start();
-									ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
-									imaIncorrecta2.setVisibility(View.VISIBLE);
-									mpFail.start();
-									break;
-								default:
-									break;
-								}
-							}
-						}, 2000);
 						// //////////////////////
-						if (respuestaCorrecta != 1) {
-							Handler handlerPasoGameOver = new Handler();
-							handlerPasoGameOver.postDelayed(new Runnable() {
-								@Override
-								public void run() {
-									// Do something after 5s = 5000ms
-									Intent act = new Intent(
-											LaminaTresActivity.this,
-											GameOverActivity.class);
-									act.putExtra("game", 1);
-									startActivity(act);
-									overridePendingTransition(R.anim.fade_in,
-											R.anim.fade_out);
-									// mp.stop();
-									mpTrivia.stop();
-								}
-							}, 5000);
-						} else if (respuestaCorrecta == 1) {
-							Handler handlerPasoGameOver = new Handler();
-							handlerPasoGameOver.postDelayed(new Runnable() {
-								@Override
-								public void run() {
-									if (numeroDeRespuesta != 2) {
-										savingAnimation.stop();
-										preguntasLan();
-										ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_correcta);
-										imaIncorrecta2.setVisibility(View.GONE);
-									} else if (numeroDeRespuesta == 2) {
-										reconRutaJugada();
-										Intent act = new Intent(
-												LaminaTresActivity.this,
-												GameOverActivity.class);
-										act.putExtra("game", 2);
-										startActivity(act);
-										overridePendingTransition(
-												R.anim.fade_in, R.anim.fade_out);
-										// mp.stop();
-										mpTrivia.stop();
-									}
-								}
-							}, 5000);
-						}
 					}
 				});
 		// /////////////////////////////////
@@ -1343,99 +802,13 @@ public class LaminaTresActivity extends Activity {
 				new OnClickListener() {
 					public void onClick(View arg0) {
 						creaSonidoMundo();
-						respuestaDos
-								.setBackgroundResource(R.drawable.botoncomenzar);
+						respuestaDos.setBackgroundResource(R.drawable.botoncomenzar);
 						respuestaUno.setEnabled(false);
 						respuestaDos.setEnabled(false);
 						respuestaTres.setEnabled(false);
+						setAnimationListenerRotacionMundoDos();
 						imgMundoTrivia.startAnimation(animMundoRotacion);
-						Handler handlerBtnDos = new Handler();
-						handlerBtnDos.postDelayed(new Runnable() {
-							@Override
-							public void run() {
-								// Do something after 5s = 5000ms
-								// mpMundo.stop();
-								switch (respuestaCorrecta) {
-								case 1:
-									respuestaUno
-											.setBackgroundResource(R.anim.anim_respuesta_correcta);
-									savingAnimation = (AnimationDrawable) respuestaUno
-											.getBackground();
-									savingAnimation.start();
-									ImageView imaIncorrecta = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
-									imaIncorrecta.setVisibility(View.VISIBLE);
-									mpFail.start();
-									break;
-								case 2:
-									respuestaDos
-											.setBackgroundResource(R.anim.anim_respuesta_correcta);
-									savingAnimation = (AnimationDrawable) respuestaDos
-											.getBackground();
-									savingAnimation.start();
-									ImageView imaCorrecta = (ImageView) findViewById(R.id.img_respuesta_correcta);
-									imaCorrecta.setVisibility(View.VISIBLE);
-									creaMpOk();
-									break;
-								case 3:
-									respuestaTres
-											.setBackgroundResource(R.anim.anim_respuesta_correcta);
-									savingAnimation = (AnimationDrawable) respuestaTres
-											.getBackground();
-									savingAnimation.start();
-									ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
-									imaIncorrecta2.setVisibility(View.VISIBLE);
-									mpFail.start();
-									break;
-								default:
-									break;
-								}
-							}
-						}, 2000);
 						// //////////////////////
-						if (respuestaCorrecta != 2) {
-							Handler handlerPasoGameOver = new Handler();
-							handlerPasoGameOver.postDelayed(new Runnable() {
-								@Override
-								public void run() {
-									// Do something after 5s = 5000ms
-									mpTrivia.stop();
-									Intent act = new Intent(
-											LaminaTresActivity.this,
-											GameOverActivity.class);
-									act.putExtra("game", 1);
-									startActivity(act);
-									overridePendingTransition(R.anim.fade_in,
-											R.anim.fade_out);
-									// mp.stop();
-								}
-							}, 5000);
-						} else if (respuestaCorrecta == 2) {
-							Handler handlerPasoGameOver = new Handler();
-							handlerPasoGameOver.postDelayed(new Runnable() {
-								@Override
-								public void run() {
-									// Do something after 5s = 5000ms
-									if (numeroDeRespuesta != 2) {
-										savingAnimation.stop();
-										// layPregTrivia.startAnimation(animTriviaOut);
-										preguntasLan();
-										ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_correcta);
-										imaIncorrecta2.setVisibility(View.GONE);
-									} else if (numeroDeRespuesta == 2) {
-										reconRutaJugada();
-										mpTrivia.stop();
-										Intent act = new Intent(
-												LaminaTresActivity.this,
-												GameOverActivity.class);
-										act.putExtra("game", 2);
-										startActivity(act);
-										overridePendingTransition(
-												R.anim.fade_in, R.anim.fade_out);
-										// mp.stop();
-									}
-								}
-							}, 5000);
-						}
 					}
 				});
 		// /////////////////////////////////
@@ -1449,97 +822,9 @@ public class LaminaTresActivity extends Activity {
 						respuestaUno.setEnabled(false);
 						respuestaDos.setEnabled(false);
 						respuestaTres.setEnabled(false);
+						setAnimationListenerRotacionMundoTres();
 						imgMundoTrivia.startAnimation(animMundoRotacion);
-						Handler handlerBtnTres = new Handler();
-						handlerBtnTres.postDelayed(new Runnable() {
-							@Override
-							public void run() {
-								// Do something after 5s = 5000ms
-								// mpMundo.stop();
-								switch (respuestaCorrecta) {
-								case 1:
-									respuestaUno
-											.setBackgroundResource(R.anim.anim_respuesta_correcta);
-									savingAnimation = (AnimationDrawable) respuestaUno
-											.getBackground();
-									savingAnimation.start();
-									ImageView imaIncorrecta = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
-									imaIncorrecta.setVisibility(View.VISIBLE);
-									mpFail.start();
-									mpFail.release();
-									break;
-								case 2:
-									respuestaDos
-											.setBackgroundResource(R.anim.anim_respuesta_correcta);
-									savingAnimation = (AnimationDrawable) respuestaDos
-											.getBackground();
-									savingAnimation.start();
-									ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
-									imaIncorrecta2.setVisibility(View.VISIBLE);
-									mpFail.start();
-									mpFail.release();
-									break;
-								case 3:
-									respuestaTres
-											.setBackgroundResource(R.anim.anim_respuesta_correcta);
-									savingAnimation = (AnimationDrawable) respuestaTres
-											.getBackground();
-									savingAnimation.start();
-									ImageView imaCorrecta = (ImageView) findViewById(R.id.img_respuesta_correcta);
-									imaCorrecta.setVisibility(View.VISIBLE);
-									creaMpOk();
-									break;
-								default:
-									break;
-								}
-							}
-						}, 2000);
 						// //////////////////////
-						if (respuestaCorrecta != 3) {
-							Handler handlerPasoGameOver = new Handler();
-							handlerPasoGameOver.postDelayed(new Runnable() {
-								@Override
-								public void run() {
-									// Do something after 5s = 5000ms
-									mpTrivia.stop();
-									Intent act = new Intent(
-											LaminaTresActivity.this,
-											GameOverActivity.class);
-									act.putExtra("game", 1);
-									startActivity(act);
-									overridePendingTransition(R.anim.fade_in,
-											R.anim.fade_out);
-									// mp.stop();
-									
-								}
-							}, 5000);
-						} else if (respuestaCorrecta == 3) {
-							Handler handlerPasoGameOver = new Handler();
-							handlerPasoGameOver.postDelayed(new Runnable() {
-								@Override
-								public void run() {
-									// Do something after 5s = 5000ms
-									if (numeroDeRespuesta != 2) {
-										savingAnimation.stop();
-										// layPregTrivia.startAnimation(animTriviaOut);
-										preguntasLan();
-										ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_correcta);
-										imaIncorrecta2.setVisibility(View.GONE);
-									} else if (numeroDeRespuesta == 2) {
-										reconRutaJugada();
-										mpTrivia.stop();
-										Intent act = new Intent(
-												LaminaTresActivity.this,
-												GameOverActivity.class);
-										act.putExtra("game", 2);
-										startActivity(act);
-										overridePendingTransition(
-												R.anim.fade_in, R.anim.fade_out);
-										// mp.stop();
-									}
-								}
-							}, 5000);
-						}
 					}
 				});
 		// /////////////////////////////////
@@ -1547,7 +832,7 @@ public class LaminaTresActivity extends Activity {
 
 	public int generaRandom(int max) {
 		int min = 1;
-		//int max = 2;
+		// int max = 2;
 
 		Random r = new Random();
 		int i1 = r.nextInt(max - min + 1) + min;
@@ -1622,23 +907,904 @@ public class LaminaTresActivity extends Activity {
 			break;
 		}
 	}
-	public void creaSalidaTrivia(){
-		MediaPlayer mpSalidaTrivia = MediaPlayer.create(this, R.raw.igh_fast_swoosh);
+
+	public void creaSalidaTrivia() {
+		MediaPlayer mpSalidaTrivia = MediaPlayer.create(this,
+				R.raw.igh_fast_swoosh);
 		mpSalidaTrivia.start();
 		mpSalidaTrivia.setOnCompletionListener(new OnCompletionListener() {
-		    public void onCompletion(MediaPlayer mpSali) {
-		    	mpSali.release();
-		    };
+			public void onCompletion(MediaPlayer mpSali) {
+				mpSali.release();
+			};
 		});
 	}
-	public void creaSonidoMundo(){
+
+	public void creaSalidaTrivia2() {
+		MediaPlayer mpSalidaTrivia2 = MediaPlayer.create(this,
+				R.raw.igh_fast_swoosh_large);
+		mpSalidaTrivia2.start();
+		mpSalidaTrivia2.setOnCompletionListener(new OnCompletionListener() {
+			public void onCompletion(MediaPlayer mpSalida) {
+				mpSalida.release();
+			};
+		});
+	}
+	public void creaSalidaTrivia3() {
+		MediaPlayer mpSalidaTrivia3 = MediaPlayer.create(this,
+				R.raw.igh_fast_swoosh_large_02);
+		mpSalidaTrivia3.start();
+		mpSalidaTrivia3.setOnCompletionListener(new OnCompletionListener() {
+			public void onCompletion(MediaPlayer mpSalida3) {
+				mpSalida3.release();
+			};
+		});
+	}
+
+	public void creaSonidoMundo() {
 		MediaPlayer mpMundo = MediaPlayer.create(this, R.raw.engranaje_mundo);
 		mpMundo.start();
 		mpMundo.setOnCompletionListener(new OnCompletionListener() {
-		    public void onCompletion(MediaPlayer mpMundoS) {
-		    	mpMundoS.release();
-		    };
+			public void onCompletion(MediaPlayer mpMundoS) {
+				mpMundoS.release();
+			};
 		});
+	}
+
+	public void fadeInWhite() {
+		imgWhiteTres.setVisibility(View.VISIBLE);
+		imgWhiteTres.setAlpha(0f);
+		imgWhiteTres.animate().setDuration(800).alpha(1)
+				.setListener(new AnimatorListenerAdapter() {
+					@Override
+					public void onAnimationEnd(Animator animation) {
+						imgWhiteTres.setVisibility(View.VISIBLE);
+						videoBackTriviaB.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.back_trivia_1);
+						videoBackTrivia.setVisibility(View.GONE);
+						videoBackTriviaB.start();
+						creaSalidaTrivia3();
+						fadeOutWhite();
+					}
+				});
+	}
+
+	public void fadeOutWhite() {
+		imgWhiteTres.animate().setDuration(800).alpha(0)
+				.setListener(new AnimatorListenerAdapter() {
+					@Override
+					public void onAnimationEnd(Animator animation) {
+						imgWhiteTres.setVisibility(View.GONE);
+					}
+				});
+	}
+	
+	public void setAnimacionListener(int opcion) {
+		animMundoOut = AnimationUtils.loadAnimation(this,R.anim.anim_translate_mundo_out);
+		switch (opcion) {
+		case 1:
+			animMundoOut.setAnimationListener(new Animation.AnimationListener() {
+				@Override
+				public void onAnimationEnd(Animation animation) {
+					preguntaTrivia.setText(getResources().getString(
+							R.string.planArg));
+					respuestaUno.setText("a) "
+							+ getResources().getString(R.string.rlanArg_1));
+					respuestaDos.setText("b) "
+							+ getResources().getString(R.string.rlanArg_2));
+					respuestaTres.setText("c) "
+							+ getResources().getString(R.string.rlanArg_3));
+					respuestaCorrecta = 3;
+					numeroDeRespuesta = 2;
+					layPregTrivia.startAnimation(animMundoIn);
+					imgMundoTrivia.startAnimation(animMundoIn);
+				}
+
+				@Override
+				public void onAnimationRepeat(Animation arg0) {
+					// TODO Auto-generated method stub
+
+				}
+
+				@Override
+				public void onAnimationStart(Animation animation) {
+					// TODO Auto-generated method stub
+
+				}
+			});
+			break;
+		case 3:
+			animMundoOut.setAnimationListener(new Animation.AnimationListener() {
+				@Override
+				public void onAnimationEnd(Animation animation) {
+					preguntaTrivia.setText(getResources().getString(
+							R.string.planRio));
+					respuestaUno.setText("a) "
+							+ getResources().getString(R.string.rlanRio_1));
+					respuestaDos.setText("b) "
+							+ getResources().getString(R.string.rlanRio_2));
+					respuestaTres.setText("c) "
+							+ getResources().getString(R.string.rlanRio_3));
+					respuestaCorrecta = 2;
+					numeroDeRespuesta = 2;
+					// layPregTrivia.startAnimation(animTriviaIn);
+					layPregTrivia.startAnimation(animMundoIn);
+					imgMundoTrivia.startAnimation(animMundoIn);
+					// mpSalidaTrivia.start();
+				}
+
+				@Override
+				public void onAnimationRepeat(Animation arg0) {
+					// TODO Auto-generated method stub
+
+				}
+
+				@Override
+				public void onAnimationStart(Animation animation) {
+					// TODO Auto-generated method stub
+
+				}
+			});
+			break;
+		case 4:
+			animMundoOut.setAnimationListener(new Animation.AnimationListener() {
+				@Override
+				public void onAnimationEnd(Animation animation) {
+					preguntaTrivia.setText(getResources().getString(
+							R.string.planBogota));
+					respuestaUno.setText("a) "
+							+ getResources().getString(R.string.rlanBogota_1));
+					respuestaDos.setText("b) "
+							+ getResources().getString(R.string.rlanBogota_2));
+					respuestaTres.setText("c) "
+							+ getResources().getString(R.string.rlanBogota_3));
+					respuestaCorrecta = 1;
+					numeroDeRespuesta = 2;
+					// layPregTrivia.startAnimation(animTriviaIn);
+					layPregTrivia.startAnimation(animMundoIn);
+					imgMundoTrivia.startAnimation(animMundoIn);
+					// mpSalidaTrivia.start();
+				}
+
+				@Override
+				public void onAnimationRepeat(Animation arg0) {
+					// TODO Auto-generated method stub
+
+				}
+
+				@Override
+				public void onAnimationStart(Animation animation) {
+					// TODO Auto-generated method stub
+
+				}
+			});
+			break;
+		case 11:
+			animMundoOut.setAnimationListener(new Animation.AnimationListener() {
+				@Override
+				public void onAnimationEnd(Animation animation) {
+					preguntaTrivia.setText(getResources().getString(
+							R.string.planLosAngeles));
+					respuestaUno.setText("a) "
+							+ getResources().getString(
+									R.string.rlanLosAngeles_1));
+					respuestaDos.setText("b) "
+							+ getResources().getString(
+									R.string.rlanLosAngeles_2));
+					respuestaTres.setText("c) "
+							+ getResources().getString(
+									R.string.rlanLosAngeles_3));
+					respuestaCorrecta = 2;
+					numeroDeRespuesta = 2;
+					// layPregTrivia.startAnimation(animTriviaIn);
+					layPregTrivia.startAnimation(animMundoIn);
+					imgMundoTrivia.startAnimation(animMundoIn);
+					// mpSalidaTrivia.start();
+				}
+
+				@Override
+				public void onAnimationRepeat(Animation arg0) {
+					// TODO Auto-generated method stub
+
+				}
+
+				@Override
+				public void onAnimationStart(Animation animation) {
+					// TODO Auto-generated method stub
+
+				}
+			});
+			break;
+		case 13:
+			animMundoOut.setAnimationListener(new Animation.AnimationListener() {
+				@Override
+				public void onAnimationEnd(Animation animation) {
+					preguntaTrivia.setText(getResources().getString(
+							R.string.planMexico));
+					respuestaUno.setText("a) "
+							+ getResources().getString(R.string.rlanMexico_1));
+					respuestaDos.setText("b) "
+							+ getResources().getString(R.string.rlanMexico_2));
+					respuestaTres.setText("c) "
+							+ getResources().getString(R.string.rlanMexico_3));
+					respuestaCorrecta = 3;
+					numeroDeRespuesta = 2;
+					// layPregTrivia.startAnimation(animTriviaIn);
+					layPregTrivia.startAnimation(animMundoIn);
+					imgMundoTrivia.startAnimation(animMundoIn);
+					// mpSalidaTrivia.start();
+				}
+
+				@Override
+				public void onAnimationRepeat(Animation arg0) {
+					// TODO Auto-generated method stub
+
+				}
+
+				@Override
+				public void onAnimationStart(Animation animation) {
+					// TODO Auto-generated method stub
+
+				}
+			});
+			break;
+		case 21:
+			animMundoOut.setAnimationListener(new Animation.AnimationListener() {
+				@Override
+				public void onAnimationEnd(Animation animation) {
+					preguntaTrivia.setText(getResources().getString(
+							R.string.planLimaCuz));
+					respuestaUno.setText("a) "
+							+ getResources().getString(R.string.rlanLimaCuz_1));
+					respuestaDos.setText("b) "
+							+ getResources().getString(R.string.rlanLimaCuz_2));
+					respuestaTres.setText("c) "
+							+ getResources().getString(R.string.rlanLimaCuz_3));
+					respuestaCorrecta = 2;
+					numeroDeRespuesta = 2;
+					// layPregTrivia.startAnimation(animTriviaIn);
+					layPregTrivia.startAnimation(animMundoIn);
+					imgMundoTrivia.startAnimation(animMundoIn);
+					// mpSalidaTrivia.start();
+				}
+
+				@Override
+				public void onAnimationRepeat(Animation arg0) {
+					// TODO Auto-generated method stub
+
+				}
+
+				@Override
+				public void onAnimationStart(Animation animation) {
+					// TODO Auto-generated method stub
+
+				}
+			});
+			break;
+		default:
+			int numeroRandom = generaRandom(14);
+			switch (numeroRandom) {
+			case 1:
+				animMundoOut.setAnimationListener(new Animation.AnimationListener() {
+					@Override
+					public void onAnimationEnd(Animation animation) {
+						preguntaTrivia.setText(getResources().getString(
+								R.string.plan1));
+						respuestaUno.setText("a) "
+								+ getResources().getString(R.string.rlan1_1));
+						respuestaDos.setText("b) "
+								+ getResources().getString(R.string.rlan1_2));
+						respuestaTres.setText("c) "
+								+ getResources().getString(R.string.rlan1_3));
+						respuestaCorrecta = 1;
+						numeroDeRespuesta = 2;
+						// layPregTrivia.startAnimation(animTriviaIn);
+						layPregTrivia.startAnimation(animMundoIn);
+						imgMundoTrivia.startAnimation(animMundoIn);
+						// mpSalidaTrivia.start();
+					}
+
+					@Override
+					public void onAnimationRepeat(Animation arg0) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onAnimationStart(Animation animation) {
+						// TODO Auto-generated method stub
+
+					}
+				});
+				break;
+			case 2:
+				animMundoOut.setAnimationListener(new Animation.AnimationListener() {
+					@Override
+					public void onAnimationEnd(Animation animation) {
+						preguntaTrivia.setText(getResources().getString(
+								R.string.plan7));
+						respuestaUno.setText("a) "
+								+ getResources().getString(R.string.rlan7_1));
+						respuestaDos.setText("b) "
+								+ getResources().getString(R.string.rlan7_2));
+						respuestaTres.setText("c) "
+								+ getResources().getString(R.string.rlan7_3));
+						respuestaCorrecta = 1;
+						numeroDeRespuesta = 2;
+						// layPregTrivia.startAnimation(animTriviaIn);
+						layPregTrivia.startAnimation(animMundoIn);
+						imgMundoTrivia.startAnimation(animMundoIn);
+						// mpSalidaTrivia.start();
+					}
+
+					@Override
+					public void onAnimationRepeat(Animation arg0) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onAnimationStart(Animation animation) {
+						// TODO Auto-generated method stub
+
+					}
+				});
+				break;
+			case 3:
+				animMundoOut.setAnimationListener(new Animation.AnimationListener() {
+					@Override
+					public void onAnimationEnd(Animation animation) {
+						preguntaTrivia.setText(getResources().getString(
+								R.string.plan3));
+						respuestaUno.setText("a) "
+								+ getResources().getString(R.string.rlan3_1));
+						respuestaDos.setText("b) "
+								+ getResources().getString(R.string.rlan3_2));
+						respuestaTres.setText("c) "
+								+ getResources().getString(R.string.rlan3_3));
+						respuestaCorrecta = 2;
+						numeroDeRespuesta = 2;
+						// layPregTrivia.startAnimation(animTriviaIn);
+						layPregTrivia.startAnimation(animMundoIn);
+						imgMundoTrivia.startAnimation(animMundoIn);
+						// mpSalidaTrivia.start();
+					}
+
+					@Override
+					public void onAnimationRepeat(Animation arg0) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onAnimationStart(Animation animation) {
+						// TODO Auto-generated method stub
+
+					}
+				});
+				break;
+			case 4:
+				animMundoOut.setAnimationListener(new Animation.AnimationListener() {
+					@Override
+					public void onAnimationEnd(Animation animation) {
+						preguntaTrivia.setText(getResources().getString(
+								R.string.plan3));
+						respuestaUno.setText("a) "
+								+ getResources().getString(R.string.rlan3_1));
+						respuestaDos.setText("b) "
+								+ getResources().getString(R.string.rlan3_2));
+						respuestaTres.setText("c) "
+								+ getResources().getString(R.string.rlan3_3));
+						respuestaCorrecta = 2;
+						numeroDeRespuesta = 2;
+						// layPregTrivia.startAnimation(animTriviaIn);
+						layPregTrivia.startAnimation(animMundoIn);
+						imgMundoTrivia.startAnimation(animMundoIn);
+						// mpSalidaTrivia.start();
+					}
+
+					@Override
+					public void onAnimationRepeat(Animation arg0) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onAnimationStart(Animation animation) {
+						// TODO Auto-generated method stub
+
+					}
+				});
+				break;
+			case 5:
+				animMundoOut.setAnimationListener(new Animation.AnimationListener() {
+					@Override
+					public void onAnimationEnd(Animation animation) {
+						preguntaTrivia.setText(getResources().getString(
+								R.string.plan9));
+						respuestaUno.setText("a) "
+								+ getResources().getString(R.string.rlan9_1));
+						respuestaDos.setText("b) "
+								+ getResources().getString(R.string.rlan9_2));
+						respuestaTres.setText("c) "
+								+ getResources().getString(R.string.rlan9_3));
+						respuestaCorrecta = 2;
+						numeroDeRespuesta = 2;
+						// layPregTrivia.startAnimation(animTriviaIn);
+						layPregTrivia.startAnimation(animMundoIn);
+						imgMundoTrivia.startAnimation(animMundoIn);
+						// mpSalidaTrivia.start();
+					}
+
+					@Override
+					public void onAnimationRepeat(Animation arg0) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onAnimationStart(Animation animation) {
+						// TODO Auto-generated method stub
+
+					}
+				});
+				break;
+			case 6:
+				animMundoOut.setAnimationListener(new Animation.AnimationListener() {
+					@Override
+					public void onAnimationEnd(Animation animation) {
+						preguntaTrivia.setText(getResources().getString(
+								R.string.plan12));
+						respuestaUno.setText("a) "
+								+ getResources().getString(R.string.rlan12_1));
+						respuestaDos.setText("b) "
+								+ getResources().getString(R.string.rlan12_2));
+						respuestaTres.setText("c) "
+								+ getResources().getString(R.string.rlan12_3));
+						respuestaCorrecta = 2;
+						numeroDeRespuesta = 2;
+						// layPregTrivia.startAnimation(animTriviaIn);
+						layPregTrivia.startAnimation(animMundoIn);
+						imgMundoTrivia.startAnimation(animMundoIn);
+						// mpSalidaTrivia.start();
+					}
+
+					@Override
+					public void onAnimationRepeat(Animation arg0) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onAnimationStart(Animation animation) {
+						// TODO Auto-generated method stub
+
+					}
+				});
+				break;
+			case 7:
+				animMundoOut.setAnimationListener(new Animation.AnimationListener() {
+					@Override
+					public void onAnimationEnd(Animation animation) {
+						preguntaTrivia.setText(getResources().getString(
+								R.string.plan14));
+						respuestaUno.setText("a) "
+								+ getResources().getString(R.string.rlan14_1));
+						respuestaDos.setText("b) "
+								+ getResources().getString(R.string.rlan14_2));
+						respuestaTres.setText("c) "
+								+ getResources().getString(R.string.rlan14_3));
+						respuestaCorrecta = 1;
+						numeroDeRespuesta = 2;
+						// layPregTrivia.startAnimation(animTriviaIn);
+						layPregTrivia.startAnimation(animMundoIn);
+						imgMundoTrivia.startAnimation(animMundoIn);
+						// mpSalidaTrivia.start();
+					}
+
+					@Override
+					public void onAnimationRepeat(Animation arg0) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onAnimationStart(Animation animation) {
+						// TODO Auto-generated method stub
+
+					}
+				});
+				break;
+			case 8:
+				animMundoOut.setAnimationListener(new Animation.AnimationListener() {
+					@Override
+					public void onAnimationEnd(Animation animation) {
+						preguntaTrivia.setText(getResources().getString(
+								R.string.plan7));
+						respuestaUno.setText("a) "
+								+ getResources().getString(R.string.rlan7_1));
+						respuestaDos.setText("b) "
+								+ getResources().getString(R.string.rlan7_2));
+						respuestaTres.setText("c) "
+								+ getResources().getString(R.string.rlan7_3));
+						respuestaCorrecta = 1;
+						numeroDeRespuesta = 2;
+						// layPregTrivia.startAnimation(animTriviaIn);
+						layPregTrivia.startAnimation(animMundoIn);
+						imgMundoTrivia.startAnimation(animMundoIn);
+						// mpSalidaTrivia.start();
+					}
+
+					@Override
+					public void onAnimationRepeat(Animation arg0) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onAnimationStart(Animation animation) {
+						// TODO Auto-generated method stub
+
+					}
+				});
+				break;
+			case 9:
+				animMundoOut.setAnimationListener(new Animation.AnimationListener() {
+					@Override
+					public void onAnimationEnd(Animation animation) {
+						preguntaTrivia.setText(getResources().getString(
+								R.string.plan9));
+						respuestaUno.setText("a) "
+								+ getResources().getString(R.string.rlan9_1));
+						respuestaDos.setText("b) "
+								+ getResources().getString(R.string.rlan9_2));
+						respuestaTres.setText("c) "
+								+ getResources().getString(R.string.rlan9_3));
+						respuestaCorrecta = 2;
+						numeroDeRespuesta = 2;
+						// layPregTrivia.startAnimation(animTriviaIn);
+						layPregTrivia.startAnimation(animMundoIn);
+						imgMundoTrivia.startAnimation(animMundoIn);
+						// mpSalidaTrivia.start();
+					}
+
+					@Override
+					public void onAnimationRepeat(Animation arg0) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onAnimationStart(Animation animation) {
+						// TODO Auto-generated method stub
+
+					}
+				});
+				break;
+			case 10:
+				animMundoOut.setAnimationListener(new Animation.AnimationListener() {
+					@Override
+					public void onAnimationEnd(Animation animation) {
+						preguntaTrivia.setText(getResources().getString(
+								R.string.plan10));
+						respuestaUno.setText("a) "
+								+ getResources().getString(R.string.rlan10_1));
+						respuestaDos.setText("b) "
+								+ getResources().getString(R.string.rlan10_2));
+						respuestaTres.setText("c) "
+								+ getResources().getString(R.string.rlan10_3));
+						respuestaCorrecta = 1;
+						numeroDeRespuesta = 2;
+						// layPregTrivia.startAnimation(animTriviaIn);
+						layPregTrivia.startAnimation(animMundoIn);
+						imgMundoTrivia.startAnimation(animMundoIn);
+						// mpSalidaTrivia.start();
+					}
+
+					@Override
+					public void onAnimationRepeat(Animation arg0) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onAnimationStart(Animation animation) {
+						// TODO Auto-generated method stub
+
+					}
+				});
+				break;
+			case 11:
+				animMundoOut.setAnimationListener(new Animation.AnimationListener() {
+					@Override
+					public void onAnimationEnd(Animation animation) {
+						preguntaTrivia.setText(getResources().getString(
+								R.string.plan11));
+						respuestaUno.setText("a) "
+								+ getResources().getString(R.string.rlan11_1));
+						respuestaDos.setText("b) "
+								+ getResources().getString(R.string.rlan11_2));
+						respuestaTres.setText("c) "
+								+ getResources().getString(R.string.rlan11_3));
+						respuestaCorrecta = 3;
+						numeroDeRespuesta = 2;
+						// layPregTrivia.startAnimation(animTriviaIn);
+						layPregTrivia.startAnimation(animMundoIn);
+						imgMundoTrivia.startAnimation(animMundoIn);
+						// mpSalidaTrivia.start();
+					}
+
+					@Override
+					public void onAnimationRepeat(Animation arg0) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onAnimationStart(Animation animation) {
+						// TODO Auto-generated method stub
+
+					}
+				});
+				break;
+			case 12:
+				animMundoOut.setAnimationListener(new Animation.AnimationListener() {
+					@Override
+					public void onAnimationEnd(Animation animation) {
+						preguntaTrivia.setText(getResources().getString(
+								R.string.plan12));
+						respuestaUno.setText("a) "
+								+ getResources().getString(R.string.rlan12_1));
+						respuestaDos.setText("b) "
+								+ getResources().getString(R.string.rlan12_2));
+						respuestaTres.setText("c) "
+								+ getResources().getString(R.string.rlan12_3));
+						respuestaCorrecta = 2;
+						numeroDeRespuesta = 2;
+						// layPregTrivia.startAnimation(animTriviaIn);
+						layPregTrivia.startAnimation(animMundoIn);
+						imgMundoTrivia.startAnimation(animMundoIn);
+						// mpSalidaTrivia.start();
+					}
+
+					@Override
+					public void onAnimationRepeat(Animation arg0) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onAnimationStart(Animation animation) {
+						// TODO Auto-generated method stub
+
+					}
+				});
+				break;
+			case 13:
+				animMundoOut.setAnimationListener(new Animation.AnimationListener() {
+					@Override
+					public void onAnimationEnd(Animation animation) {
+						preguntaTrivia.setText(getResources().getString(
+								R.string.plan13));
+						respuestaUno.setText("a) "
+								+ getResources().getString(R.string.rlan13_1));
+						respuestaDos.setText("b) "
+								+ getResources().getString(R.string.rlan13_2));
+						respuestaTres.setText("c) "
+								+ getResources().getString(R.string.rlan13_3));
+						respuestaCorrecta = 1;
+						numeroDeRespuesta = 2;
+						// layPregTrivia.startAnimation(animTriviaIn);
+						layPregTrivia.startAnimation(animMundoIn);
+						imgMundoTrivia.startAnimation(animMundoIn);
+						// mpSalidaTrivia.start();
+					}
+
+					@Override
+					public void onAnimationRepeat(Animation arg0) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onAnimationStart(Animation animation) {
+						// TODO Auto-generated method stub
+
+					}
+				});
+				break;
+			case 14:
+				animMundoOut.setAnimationListener(new Animation.AnimationListener() {
+					@Override
+					public void onAnimationEnd(Animation animation) {
+						preguntaTrivia.setText(getResources().getString(
+								R.string.plan14));
+						respuestaUno.setText("a) "
+								+ getResources().getString(R.string.rlan14_1));
+						respuestaDos.setText("b) "
+								+ getResources().getString(R.string.rlan14_2));
+						respuestaTres.setText("c) "
+								+ getResources().getString(R.string.rlan14_3));
+						respuestaCorrecta = 1;
+						numeroDeRespuesta = 2;
+						// layPregTrivia.startAnimation(animTriviaIn);
+						layPregTrivia.startAnimation(animMundoIn);
+						imgMundoTrivia.startAnimation(animMundoIn);
+						// mpSalidaTrivia.start();
+					}
+
+					@Override
+					public void onAnimationRepeat(Animation arg0) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onAnimationStart(Animation animation) {
+						// TODO Auto-generated method stub
+
+					}
+				});
+				break;
+			default:
+				break;
+			}
+			break;
+		}
+	}
+	public void setAnimationListenerRotacionMundo() {
+		animMundoRotacion = AnimationUtils.loadAnimation(this,R.anim.anim_rotacion_mundo);
+		animMundoRotacion.setAnimationListener(new Animation.AnimationListener() {
+					@Override
+					public void onAnimationEnd(Animation animation) {
+						switch (respuestaCorrecta) {
+						case 1:
+							respuestaUno.setBackgroundResource(R.anim.anim_respuesta_correcta);
+							savingAnimation = (AnimationDrawable) respuestaUno.getBackground();
+							savingAnimation.start();
+							ImageView imaCorrecta = (ImageView) findViewById(R.id.img_respuesta_correcta);
+							imaCorrecta.setVisibility(View.VISIBLE);
+							creaMpOkCorrectaUno();
+							break;
+						case 2:
+							respuestaDos.setBackgroundResource(R.anim.anim_respuesta_correcta);
+							savingAnimation = (AnimationDrawable) respuestaDos.getBackground();
+							savingAnimation.start();
+							ImageView imaIncorrecta = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
+							imaIncorrecta.setVisibility(View.VISIBLE);
+							creaMpFailIncorrectaUno();
+							break;
+						case 3:
+							respuestaTres.setBackgroundResource(R.anim.anim_respuesta_correcta);
+							savingAnimation = (AnimationDrawable) respuestaTres.getBackground();
+							savingAnimation.start();
+							ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
+							imaIncorrecta2.setVisibility(View.VISIBLE);
+							creaMpFailIncorrectaUno();
+							break;
+						default:
+							break;
+						}
+					}
+
+					@Override
+					public void onAnimationRepeat(Animation arg0) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onAnimationStart(Animation animation) {
+						// TODO Auto-generated method stub
+
+					}
+				});
+	}
+	public void setAnimationListenerRotacionMundoDos() {
+		animMundoRotacion = AnimationUtils.loadAnimation(this,R.anim.anim_rotacion_mundo);
+		animMundoRotacion.setAnimationListener(new Animation.AnimationListener() {
+					@Override
+					public void onAnimationEnd(Animation animation) {
+						switch (respuestaCorrecta) {
+						case 1:
+							respuestaUno
+									.setBackgroundResource(R.anim.anim_respuesta_correcta);
+							savingAnimation = (AnimationDrawable) respuestaUno
+									.getBackground();
+							savingAnimation.start();
+							ImageView imaIncorrecta = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
+							imaIncorrecta.setVisibility(View.VISIBLE);
+							creaMpFailIncorrectaDos();
+							break;
+						case 2:
+							respuestaDos
+									.setBackgroundResource(R.anim.anim_respuesta_correcta);
+							savingAnimation = (AnimationDrawable) respuestaDos
+									.getBackground();
+							savingAnimation.start();
+							ImageView imaCorrecta = (ImageView) findViewById(R.id.img_respuesta_correcta);
+							imaCorrecta.setVisibility(View.VISIBLE);
+							creaMpOkCorrectaDos();
+							break;
+						case 3:
+							respuestaTres
+									.setBackgroundResource(R.anim.anim_respuesta_correcta);
+							savingAnimation = (AnimationDrawable) respuestaTres
+									.getBackground();
+							savingAnimation.start();
+							ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
+							imaIncorrecta2.setVisibility(View.VISIBLE);
+							creaMpFailIncorrectaDos();
+							break;
+						default:
+							break;
+						}
+					}
+
+					@Override
+					public void onAnimationRepeat(Animation arg0) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onAnimationStart(Animation animation) {
+						// TODO Auto-generated method stub
+
+					}
+				});
+	}
+	public void setAnimationListenerRotacionMundoTres() {
+		animMundoRotacion = AnimationUtils.loadAnimation(this,R.anim.anim_rotacion_mundo);
+		animMundoRotacion.setAnimationListener(new Animation.AnimationListener() {
+					@Override
+					public void onAnimationEnd(Animation animation) {
+						switch (respuestaCorrecta) {
+						case 1:
+							respuestaUno
+									.setBackgroundResource(R.anim.anim_respuesta_correcta);
+							savingAnimation = (AnimationDrawable) respuestaUno
+									.getBackground();
+							savingAnimation.start();
+							ImageView imaIncorrecta = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
+							imaIncorrecta.setVisibility(View.VISIBLE);
+							creaMpFailIncorrectaTres();
+							break;
+						case 2:
+							respuestaDos
+									.setBackgroundResource(R.anim.anim_respuesta_correcta);
+							savingAnimation = (AnimationDrawable) respuestaDos
+									.getBackground();
+							savingAnimation.start();
+							ImageView imaIncorrecta2 = (ImageView) findViewById(R.id.img_respuesta_incorrecta);
+							imaIncorrecta2.setVisibility(View.VISIBLE);
+							creaMpFailIncorrectaTres();
+							break;
+						case 3:
+							respuestaTres
+									.setBackgroundResource(R.anim.anim_respuesta_correcta);
+							savingAnimation = (AnimationDrawable) respuestaTres
+									.getBackground();
+							savingAnimation.start();
+							ImageView imaCorrecta = (ImageView) findViewById(R.id.img_respuesta_correcta);
+							imaCorrecta.setVisibility(View.VISIBLE);
+							creaMpOkCorrectaTres();
+							break;
+						default:
+							break;
+						}
+					}
+
+					@Override
+					public void onAnimationRepeat(Animation arg0) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onAnimationStart(Animation animation) {
+						// TODO Auto-generated method stub
+
+					}
+				});
 	}
 
 	@Override

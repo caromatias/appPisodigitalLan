@@ -1,11 +1,8 @@
 package com.caromatias.apppisodigitallan;
 
-import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Handler;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
 import android.widget.VideoView;
@@ -21,6 +18,7 @@ public class GameOverActivity extends Activity {
 		setContentView(R.layout.activity_game_over);
 		// ///// AUDIO ////////
 		// sdBeginds = MediaPlayer.create(this, R.raw.jazz_dance);
+		/*
 		Handler handlerAumUno = new Handler();
 		handlerAumUno.postDelayed(new Runnable() {
 			@Override
@@ -155,6 +153,7 @@ public class GameOverActivity extends Activity {
 				audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
 			}
 		}, 10000);
+		*/
 		// ///// REDUCCION DE AUDIO /////////
 		Bundle bundle = getIntent().getExtras();
 		switch (bundle.getInt("game")) {
@@ -171,8 +170,8 @@ public class GameOverActivity extends Activity {
 						public void onCompletion(MediaPlayer mp) {
 							//LaminaTresActivity.mpFondo.stop();
 							sdBeginds.release();
-							mp.release();
-							videoGameOver.stopPlayback();
+							//mp.release();
+							//videoGameOver.stopPlayback();
 							Intent act = new Intent(GameOverActivity.this,
 									LaminaBienvenidaActivity.class);
 							startActivity(act);
