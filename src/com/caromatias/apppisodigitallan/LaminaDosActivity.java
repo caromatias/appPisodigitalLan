@@ -432,10 +432,10 @@ public class LaminaDosActivity extends Activity {
 	public void comienzaCuentaAtras() {
 		if(LaminaBienvenidaActivity.cargaLanTam == 1){
 			videoBackCarga.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.video_carga);
-			LaminaBienvenidaActivity.cargaLanTam = 2;
+			//LaminaBienvenidaActivity.cargaLanTam = 2;
 		}else{
 			videoBackCarga.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.video_carga_tam);
-			LaminaBienvenidaActivity.cargaLanTam = 1;
+			//LaminaBienvenidaActivity.cargaLanTam = 1;
 		}
 		videoBackCarga.start();
 		final Handler handlerCargaImg = new Handler();
@@ -527,6 +527,11 @@ public class LaminaDosActivity extends Activity {
 					 * 2100); } });
 					 */
 				} else if (currentRotation >= 60) {
+					if(LaminaBienvenidaActivity.cargaLanTam == 1){
+						LaminaBienvenidaActivity.cargaLanTam = 2;
+					}else{
+						LaminaBienvenidaActivity.cargaLanTam = 1;
+					}
 					creaMpOk();
 					System.gc();
 					cargaOk.setVisibility(View.VISIBLE);
