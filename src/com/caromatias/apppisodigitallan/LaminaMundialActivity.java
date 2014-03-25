@@ -67,6 +67,7 @@ public class LaminaMundialActivity extends Activity {
 				new OnClickListener() {
 					@Override
 					public void onClick(View v) {
+						btnGoGame.setEnabled(false);
 						reseteaBotones();
 						compAnimationBienvenida(1);
 						lay_principal.startAnimation(animMapaInter);
@@ -77,6 +78,7 @@ public class LaminaMundialActivity extends Activity {
 		findViewById(R.id.btn_brasil).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				btnGoGame.setEnabled(false);
 				compAnimationBienvenida(2);
 				lay_principal.startAnimation(animMapaInter);
 				btnBrasil.setBackgroundResource(R.drawable.botonrojo);
@@ -87,6 +89,7 @@ public class LaminaMundialActivity extends Activity {
 		findViewById(R.id.btn_chile).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				btnGoGame.setEnabled(false);
 				compAnimationBienvenida(3);
 				lay_principal.startAnimation(animMapaInter);
 				btnChile.setBackgroundResource(R.drawable.botonrojo);
@@ -97,6 +100,7 @@ public class LaminaMundialActivity extends Activity {
 				new OnClickListener() {
 					@Override
 					public void onClick(View v) {
+						btnGoGame.setEnabled(false);
 						compAnimationBienvenida(4);
 						lay_principal.startAnimation(animMapaInter);
 						btnColombia.setBackgroundResource(R.drawable.botonrojo);
@@ -107,6 +111,7 @@ public class LaminaMundialActivity extends Activity {
 				new OnClickListener() {
 					@Override
 					public void onClick(View v) {
+						btnGoGame.setEnabled(false);
 						compAnimationBienvenida(5);
 						lay_principal.startAnimation(animMapaInter);
 						btnEcuador.setBackgroundResource(R.drawable.botonrojo);
@@ -116,6 +121,7 @@ public class LaminaMundialActivity extends Activity {
 		findViewById(R.id.btn_peru).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				btnGoGame.setEnabled(false);
 				compAnimationBienvenida(6);
 				lay_principal.startAnimation(animMapaInter);
 				btnPeru.setBackgroundResource(R.drawable.botonrojo);
@@ -125,6 +131,7 @@ public class LaminaMundialActivity extends Activity {
 		findViewById(R.id.btn_internacional).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				btnGoGame.setEnabled(false);
 				compAnimationBienvenida(7);
 				lay_principal.startAnimation(animMapaInter);
 				btnInter.setBackgroundResource(R.drawable.botonrojo);
@@ -138,6 +145,7 @@ public class LaminaMundialActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
+						btnGoGame.setEnabled(false);
 						btnArgentina.setBackgroundResource(R.drawable.botonrojo);
 						animMapaInterOut.setAnimationListener(new Animation.AnimationListener() {
 							@Override
@@ -166,6 +174,7 @@ public class LaminaMundialActivity extends Activity {
 				new OnClickListener() {
 					@Override
 					public void onClick(View v) {
+						btnGoGame.setEnabled(false);
 						btnBrasil.setBackgroundResource(R.drawable.botonrojo);
 						animMapaInterOut.setAnimationListener(new Animation.AnimationListener() {
 							@Override
@@ -194,6 +203,7 @@ public class LaminaMundialActivity extends Activity {
 		findViewById(R.id.button_internacional_santiago).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				btnGoGame.setEnabled(false);
 				btnChile.setBackgroundResource(R.drawable.botonrojo);
 				animMapaInterOut.setAnimationListener(new Animation.AnimationListener() {
 					@Override
@@ -221,6 +231,7 @@ public class LaminaMundialActivity extends Activity {
 		findViewById(R.id.button_internacional_bogota).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				btnGoGame.setEnabled(false);
 				btnColombia.setBackgroundResource(R.drawable.botonrojo);
 				animMapaInterOut.setAnimationListener(new Animation.AnimationListener() {
 					@Override
@@ -248,6 +259,7 @@ public class LaminaMundialActivity extends Activity {
 		findViewById(R.id.lay_internacional_guayaquil).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				btnGoGame.setEnabled(false);
 				btnEcuador.setBackgroundResource(R.drawable.botonrojo);
 				animMapaInterOut.setAnimationListener(new Animation.AnimationListener() {
 					@Override
@@ -275,6 +287,7 @@ public class LaminaMundialActivity extends Activity {
 		findViewById(R.id.button_internacional_lima_1).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				btnGoGame.setEnabled(false);
 				btnPeru.setBackgroundResource(R.drawable.botonrojo);
 				animMapaInterOut.setAnimationListener(new Animation.AnimationListener() {
 					@Override
@@ -306,6 +319,7 @@ public class LaminaMundialActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
+						btnGoGame.setEnabled(false);
 						btnArgentina.setBackgroundResource(R.drawable.botonrojo);
 						animMapaInterOut.setAnimationListener(new Animation.AnimationListener() {
 							@Override
@@ -334,6 +348,7 @@ public class LaminaMundialActivity extends Activity {
 				new OnClickListener() {
 					@Override
 					public void onClick(View v) {
+						btnGoGame.setEnabled(false);
 						btnBrasil.setBackgroundResource(R.drawable.botonrojo);
 						animMapaInterOut.setAnimationListener(new Animation.AnimationListener() {
 							@Override
@@ -362,6 +377,7 @@ public class LaminaMundialActivity extends Activity {
 		findViewById(R.id.image_internacional_santiago).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				btnGoGame.setEnabled(false);
 				btnChile.setBackgroundResource(R.drawable.botonrojo);
 				animMapaInterOut.setAnimationListener(new Animation.AnimationListener() {
 					@Override
@@ -389,6 +405,7 @@ public class LaminaMundialActivity extends Activity {
 		findViewById(R.id.image_internacional_bogota).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				btnGoGame.setEnabled(false);
 				btnColombia.setBackgroundResource(R.drawable.botonrojo);
 				animMapaInterOut.setAnimationListener(new Animation.AnimationListener() {
 					@Override
@@ -416,6 +433,7 @@ public class LaminaMundialActivity extends Activity {
 		findViewById(R.id.image_internacional_guayaquil).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				btnGoGame.setEnabled(false);
 				btnEcuador.setBackgroundResource(R.drawable.botonrojo);
 				animMapaInterOut.setAnimationListener(new Animation.AnimationListener() {
 					@Override
@@ -443,6 +461,7 @@ public class LaminaMundialActivity extends Activity {
 		findViewById(R.id.image_internacional_lima_1).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				btnGoGame.setEnabled(false);
 				btnPeru.setBackgroundResource(R.drawable.botonrojo);
 				animMapaInterOut.setAnimationListener(new Animation.AnimationListener() {
 					@Override

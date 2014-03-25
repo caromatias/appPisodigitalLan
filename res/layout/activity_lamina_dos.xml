@@ -715,8 +715,8 @@
             android:id="@+id/txt_tacometro_porcentaje"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="835dp"
-            android:layout_marginTop="295dp"
+            android:layout_marginLeft="885dp"
+            android:layout_marginTop="302dp"
             android:text="0%"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#FFFFFF"
@@ -994,7 +994,7 @@
         android:layout_height="200dp"
         android:layout_marginTop="520dp"
         android:layout_marginLeft="1050dp"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/btn_next_interface"

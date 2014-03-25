@@ -64,6 +64,7 @@ public class LaminaColombiaActivity extends Activity {
 				new OnClickListener() {
 					@Override
 					public void onClick(View v) {
+						btnGoGame.setEnabled(false);
 						reseteaBotones();
 						compAnimationBienvenida(1);
 						imgMapaColombia.startAnimation(animMapaInter);
@@ -74,6 +75,7 @@ public class LaminaColombiaActivity extends Activity {
 		findViewById(R.id.btn_brasil).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				btnGoGame.setEnabled(false);
 				reseteaBotones();
 				compAnimationBienvenida(2);
 				imgMapaColombia.startAnimation(animMapaInter);
@@ -85,6 +87,7 @@ public class LaminaColombiaActivity extends Activity {
 		findViewById(R.id.btn_chile).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				btnGoGame.setEnabled(false);
 				reseteaBotones();
 				compAnimationBienvenida(3);
 				imgMapaColombia.startAnimation(animMapaInter);
@@ -96,6 +99,7 @@ public class LaminaColombiaActivity extends Activity {
 				new OnClickListener() {
 					@Override
 					public void onClick(View v) {
+						btnGoGame.setEnabled(false);
 						reseteaBotones();
 						compAnimationBienvenida(4);
 						imgMapaColombia.startAnimation(animMapaInter);
@@ -107,6 +111,7 @@ public class LaminaColombiaActivity extends Activity {
 				new OnClickListener() {
 					@Override
 					public void onClick(View v) {
+						btnGoGame.setEnabled(false);
 						reseteaBotones();
 						compAnimationBienvenida(5);
 						imgMapaColombia.startAnimation(animMapaInter);
@@ -117,6 +122,7 @@ public class LaminaColombiaActivity extends Activity {
 		findViewById(R.id.btn_peru).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				btnGoGame.setEnabled(false);
 				reseteaBotones();
 				compAnimationBienvenida(6);
 				imgMapaColombia.startAnimation(animMapaInter);
@@ -127,6 +133,7 @@ public class LaminaColombiaActivity extends Activity {
 		findViewById(R.id.btn_internacional).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				btnGoGame.setEnabled(false);
 				reseteaBotones();
 				compAnimationBienvenida(7);
 				imgMapaColombia.startAnimation(animMapaInter);
