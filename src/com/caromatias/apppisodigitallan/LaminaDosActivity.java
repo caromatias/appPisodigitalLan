@@ -9,6 +9,7 @@ import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
@@ -163,6 +164,11 @@ public class LaminaDosActivity extends Activity {
 		cargaFail = (ImageView) findViewById(R.id.img_mensaje_carga_fail);
 		videoBackCarga = (VideoView) findViewById(R.id.video_back_carga);
 		imgBackCarga = (ImageView) findViewById(R.id.img_back_carga);
+		if(LaminaBienvenidaActivity.cargaLanTam == 1){
+			imgBackCarga.setImageResource(R.drawable.img_back_carga);
+		}else{
+			imgBackCarga.setImageResource(R.drawable.carga_tam);
+		}
 		imgWhiteDos = (ImageView) findViewById(R.id.img_transicion_interface_uno);
 
 		muestraInterfaceJuego();
@@ -424,17 +430,19 @@ public class LaminaDosActivity extends Activity {
 	}
 
 	public void comienzaCuentaAtras() {
-		videoBackCarga
-				.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
-						+ R.raw.video_carga);
+		if(LaminaBienvenidaActivity.cargaLanTam == 1){
+			videoBackCarga.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.video_carga);
+			LaminaBienvenidaActivity.cargaLanTam = 2;
+		}else{
+			videoBackCarga.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.video_carga_tam);
+			LaminaBienvenidaActivity.cargaLanTam = 1;
+		}
 		videoBackCarga.start();
-		/*
-		 * final Handler handlerCargaImg = new Handler();
-		 * handlerCargaImg.postDelayed(new Runnable() {
-		 * 
-		 * @Override public void run() { imgBackCarga.setVisibility(View.GONE);
-		 * } }, 500);
-		 */
+		final Handler handlerCargaImg = new Handler();
+		handlerCargaImg.postDelayed(new Runnable() {
+		 @Override public void run() { 
+			 imgBackCarga.setVisibility(View.GONE);
+		 } }, 500);
 		comienzaCarga += 1;
 		new CountDownTimer(10000, 1000) {
 
@@ -1449,7 +1457,6 @@ public class LaminaDosActivity extends Activity {
 	}
 
 	public void muestraInterfaceJuego() {
-
 		layMasterComp.setVisibility(View.GONE);
 		videoInterface = (VideoView) findViewById(R.id.video_interface_uno);
 		nextInterface = (RelativeLayout) findViewById(R.id.next_interface);
@@ -1845,7 +1852,7 @@ public class LaminaDosActivity extends Activity {
 								View.GONE);
 						intentosCarga += 1;
 						comienzaCuentaAtras();
-						imgBackCarga.setVisibility(View.GONE);
+						//imgBackCarga.setVisibility(View.GONE);
 					}
 
 					@Override

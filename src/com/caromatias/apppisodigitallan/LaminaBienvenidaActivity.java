@@ -76,6 +76,7 @@ public class LaminaBienvenidaActivity extends Activity {
 	// ///////////////////////////////////
 	public static int juego = 1;
 	public static int cantidad = 0;
+	public static int cargaLanTam = 1;
 	public static int btn1 = 0;
 	public static int btn2 = 0;
 	public static int btn3 = 0;
