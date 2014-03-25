@@ -615,8 +615,10 @@ public class LaminaBrasilActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						LaminaBienvenidaActivity.mpFondoUno.stop();
-						LaminaBienvenidaActivity.mpFondoUno.release();
+						btnGoGame.setEnabled(false);
+						System.gc();
+						//LaminaBienvenidaActivity.mpFondoUno.stop();
+						//LaminaBienvenidaActivity.mpFondoUno.release();
 						Intent act = new Intent(LaminaBrasilActivity.this,LaminaDosActivity.class);
 						act.putExtra("isInterface", 0);
 						startActivity(act);

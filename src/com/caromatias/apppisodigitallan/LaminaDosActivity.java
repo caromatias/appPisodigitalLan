@@ -100,6 +100,8 @@ public class LaminaDosActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lamina_dos);
 
+		LaminaBienvenidaActivity.mpFondoUno.stop();
+		LaminaBienvenidaActivity.mpFondoUno.release();
 		findViewById(R.id.btn_comenzar_juego_despegue).setEnabled(true);
 		findViewById(R.id.btn_comenzar_juego_carga).setEnabled(true);
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
@@ -1548,6 +1550,7 @@ public class LaminaDosActivity extends Activity {
 
 						} else if (paso == 4) {
 							paso = 5;
+							findViewById(R.id.btn_next_interface).setEnabled(false);
 							videoInterface.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.interface_5);
 							videoInterface.start();
 							nextInterface.startAnimation(animNetxInterfaceOut);
