@@ -1,4 +1,4 @@
-package com.caromatias.apppisodigitallan;
+  package com.caromatias.apppisodigitallan;
 
 import pl.polidea.view.ZoomView;
 import android.media.AudioManager;
@@ -844,9 +844,10 @@ public class LaminaBienvenidaActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+				btnGoGame.setEnabled(false);
 				System.gc();
-				LaminaBienvenidaActivity.mpFondoUno.stop();
-				LaminaBienvenidaActivity.mpFondoUno.release();
+				//LaminaBienvenidaActivity.mpFondoUno.stop();
+				//LaminaBienvenidaActivity.mpFondoUno.release();
 				Intent act = new Intent(LaminaBienvenidaActivity.this,
 						LaminaDosActivity.class);
 				act.putExtra("isInterface", 0);
