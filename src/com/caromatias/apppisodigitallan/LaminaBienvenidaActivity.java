@@ -74,7 +74,7 @@ public class LaminaBienvenidaActivity extends Activity {
 	private TextView descPopInfo;
 	private Animation animMapaInter;
 	// ///////////////////////////////////
-	public static int juego = 1;
+	public static int juego = 0;
 	public static int cantidad = 0;
 	public static int cargaLanTam = 1;
 	public static int btn1 = 0;

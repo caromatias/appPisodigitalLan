@@ -100,8 +100,13 @@ public class LaminaDosActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lamina_dos);
 
-		LaminaBienvenidaActivity.mpFondoUno.stop();
-		LaminaBienvenidaActivity.mpFondoUno.release();
+		Bundle bundle = getIntent().getExtras();
+		if (bundle.getInt("isInterface") == 1) {
+			
+		}else{
+			LaminaBienvenidaActivity.mpFondoUno.stop();
+			LaminaBienvenidaActivity.mpFondoUno.release();
+		}
 		findViewById(R.id.btn_comenzar_juego_despegue).setEnabled(true);
 		findViewById(R.id.btn_comenzar_juego_carga).setEnabled(true);
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
@@ -397,8 +402,7 @@ public class LaminaDosActivity extends Activity {
 		txtPorcentajeCarga.setText("0%");
 
 		setAnimacionListenerCuentaAtras();
-		findViewById(R.id.txt_cuanta_atras_uno)
-				.startAnimation(animCuentasAtras);
+		findViewById(R.id.txt_cuanta_atras_uno).startAnimation(animCuentasAtras);
 
 		/*
 		 * final Handler handlerCargaSound = new Handler();
@@ -724,6 +728,12 @@ public class LaminaDosActivity extends Activity {
 	}
 
 	public void goRutas() {
+		
+		if(LaminaBienvenidaActivity.juego == 0){
+			LaminaBienvenidaActivity.juego = generaRandom();
+		}else{
+			
+		}
 
 		final RelativeLayout layJuegoDespegue = (RelativeLayout) findViewById(R.id.lay_juego_master);
 		final RelativeLayout layJuegoCarga = (RelativeLayout) findViewById(R.id.lay_juego_carga);
@@ -751,7 +761,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 1;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -775,7 +793,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 2;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -799,7 +825,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 3;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -823,7 +857,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 4;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -847,7 +889,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 5;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -871,7 +921,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 6;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -895,7 +953,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 7;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -919,7 +985,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 8;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -943,7 +1017,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 9;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -967,7 +1049,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 10;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -991,7 +1081,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 11;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -1015,7 +1113,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 12;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -1039,7 +1145,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 13;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -1063,7 +1177,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 14;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -1087,7 +1209,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 15;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -1111,7 +1241,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 16;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -1135,7 +1273,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 17;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -1159,7 +1305,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 18;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -1183,7 +1337,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 19;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -1207,7 +1369,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 20;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -1231,7 +1401,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 20;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -1255,7 +1433,15 @@ public class LaminaDosActivity extends Activity {
 				}
 				rutaSeleccionada = 21;
 				layMasterComp.setVisibility(View.GONE);
-				mpMapaJuego.stop();
+				//mpMapaJuego.stop();
+				if(mpMapaJuego.isPlaying())
+				{
+					mpMapaJuego.stop();
+				}
+				else
+				{
+					
+				}
 				// volumeJuego();
 			}
 		});
@@ -1477,14 +1663,16 @@ public class LaminaDosActivity extends Activity {
 					.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"
 							+ R.raw.interface_1);
 			videoInterface.start();
+			nextInterface.setVisibility(View.VISIBLE);
+			nextInterface.startAnimation(animNetxInterfaceIn);
 
 			videoInterface
 					.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 
 						@Override
 						public void onCompletion(MediaPlayer vmp) {
-							nextInterface.setVisibility(View.VISIBLE);
-							nextInterface.startAnimation(animNetxInterfaceIn);
+							//nextInterface.setVisibility(View.VISIBLE);
+							//nextInterface.startAnimation(animNetxInterfaceIn);
 						}
 					});
 		} else {
@@ -1792,8 +1980,7 @@ public class LaminaDosActivity extends Activity {
 	public void setAnimacionListenerCuentaAtras() {
 		animCuentasAtras = AnimationUtils.loadAnimation(this,
 				R.anim.anim_primer_cuenta);
-		animCuentasAtras
-				.setAnimationListener(new Animation.AnimationListener() {
+		animCuentasAtras.setAnimationListener(new Animation.AnimationListener() {
 					@Override
 					public void onAnimationEnd(Animation animation) {
 						findViewById(R.id.txt_cuanta_atras_uno).setVisibility(
@@ -1908,7 +2095,7 @@ public class LaminaDosActivity extends Activity {
 		mpMapaJuego.setOnCompletionListener(new OnCompletionListener() {
 			public void onCompletion(MediaPlayer mpMapa) {
 				Log.d("DEBUG", "ejecutado completo release");
-				mpMapa.release();
+				//mpMapa.release();
 			};
 		});
 	}
