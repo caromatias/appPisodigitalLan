@@ -100,8 +100,13 @@ public class LaminaDosActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lamina_dos);
 
-		LaminaBienvenidaActivity.mpFondoUno.stop();
-		LaminaBienvenidaActivity.mpFondoUno.release();
+		Bundle bundle = getIntent().getExtras();
+		if (bundle.getInt("isInterface") == 1) {
+			
+		}else{
+			LaminaBienvenidaActivity.mpFondoUno.stop();
+			LaminaBienvenidaActivity.mpFondoUno.release();
+		}
 		findViewById(R.id.btn_comenzar_juego_despegue).setEnabled(true);
 		findViewById(R.id.btn_comenzar_juego_carga).setEnabled(true);
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
