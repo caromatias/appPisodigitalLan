@@ -629,6 +629,14 @@
         android:scaleType="fitXY"
         android:visibility="gone" >
     </RelativeLayout>
+    
+    <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-3dp"
+        	android:layout_marginTop="653dp"
+            android:src="@drawable/elis_lantam" />
 
     <Button
         android:id="@+id/button_nuestra_flota"

@@ -217,7 +217,7 @@ public class GameOverActivity extends Activity {
 							mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
 							System.exit(0);
 						 }
-					 }, 8000);
+					 }, 10000);
 			}else{
 				videoGameOver = (VideoView) findViewById(R.id.video_game_over);
 				videoGameOver.setVideoPath("android.resource://com.caromatias.apppisodigitallan/"+ R.raw.felicitaciones);
